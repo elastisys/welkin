@@ -82,6 +82,7 @@ repos:
         entry: '\[[^\]]*\][(][^#][.\/]*[^.:]*[)]'
         language: pygrep
         files: ".*[.]md$"
+        exclude: "docs/operator-manual/user-alerts.md"
       - id: capitalize-common-names
         name: Please capitalize common names
         entry: "^[^`]{0,100} (git[Hh]ub|kubernetes|trivy|starboard|welkin)( |, |[.] )"
