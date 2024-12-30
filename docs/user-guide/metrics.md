@@ -127,7 +127,7 @@ The "Explore" mode is great for developing queries and exploring the data set. I
 
 ### Troubleshooting metrics collection
 
-It is possible to see if monitors are picked up by [accessing the Prometheus web interface](#accessing-the-prometheus-ui). Navigating to "Status" > "Service Discovery" will show all monitors picked by Prometheus, and the "(x/y active targets)" will show how many targets of those monitors are active. Active targets are actively scraped by Prometheus and inactive targets are those that fail to match the selectors of the monitor.
+It is possible to see if monitors are picked up by [accessing the Prometheus web interface](#accessing-the-prometheus-ui). Navigating to `"Status" > "Service Discovery"` will show all monitors picked by Prometheus, and to the right of each listed monitor there is a `x/y` indicating how many targets of those monitors are active. Active targets are actively scraped by Prometheus and inactive targets are those that fail to match the selectors of the monitor.
 
 Monitors can be expanded further down to list and inspect its targets, within each one the "Discovered Labels" column will list information about the object in Kubernetes, and in the "Target Labels" it will show the labels recorded from the target.
 
@@ -203,7 +203,11 @@ If the "Target Labels" is "Dropped" for a target then it means that it has been 
 
 The same concept applies to PodMonitors and Pods.
 
-Then when the targets are active it is possible to see scrape information by navigating to "Status" > "Targets". Here Prometheus gives information about the time, status, and duration for scrapes.
+Then when the targets are active it is possible to see scrape information by navigating to `"Status" > "Target health"`. Here Prometheus gives information about the time, status, and duration for scrapes.
+
+<!-- Remove this once Welkin v0.42 reaches EOL -->
+> [!NOTE]
+> The Prometheus UI was changed in Welkin v0.43, the `target` page was previously `"Status" > "Targets"`.
 
 ## Grafana Dashboards as Code
 
