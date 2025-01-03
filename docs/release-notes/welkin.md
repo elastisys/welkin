@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.42.1](#v0421) - 2025-01-02
 - [v0.42.0](#v0420) - 2024-11-14
 - [v0.41.0](#v0410) - 2024-10-02
 - [v0.40.1](#v0401) - 2024-09-18
@@ -56,6 +57,20 @@
 !!!note
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-apps/tree/main/changelog).
+
+<!--
+    Release notes before 2024-11-29 are excluded from spellchecking.
+    Please make sure to put new release notes above this line.
+-->
+<!-- vale off -->
+
+## v0.42.1
+
+Released 2025-01-02
+
+### Other(s)
+
+- Use Mirror for Bitnami images
 
 ## v0.42.0
 
