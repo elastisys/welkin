@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v7.2.7-ck8s1](#v727-ck8s1) - 2025-01-07
 - [v7.2.5-ck8s1](#v725-ck8s1) - 2024-10-07
 - [v6.2.6-ck8s4](#v626-ck8s4) - 2024-05-03
 - [v6.2.6-ck8s1](#v626-ck8s1) - 2023-05-10
@@ -23,6 +24,18 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v7.2.7-ck8s1
+
+Released 2025-01-07
+
+### Release highlights
+
+- Security patch for [CVE-2024-46981](https://app.opencve.io/cve/CVE-2024-46981)
+
+### Improvement(s)
+
+- Added more alerts to capture more scenarios
 
 ## v7.2.5-ck8s1
 
