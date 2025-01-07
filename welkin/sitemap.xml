@@ -565,6 +565,146 @@
          <lastmod>2025-01-07</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-harbor-properties-persistence-properties-type/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-harbor-properties-persistence-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-harbor-properties-persistence/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-harbor-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-harbor/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-objectstorage-properties-type/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-objectstorage-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties-objectstorage/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-0/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0-properties-objectstorage-properties-sync-properties-enabled/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0-properties-objectstorage-properties-sync-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0-properties-objectstorage-properties-sync/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0-properties-objectstorage-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0-properties-objectstorage/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-0/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties-objectstorage-properties-restore-properties-addtargetsfromsync/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties-objectstorage-properties-restore-properties-enabled/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties-objectstorage-properties-restore-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties-objectstorage-properties-restore/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties-objectstorage-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties-objectstorage/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1-anyof-1/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if-allof-1/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-if/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then-properties-objectstorage-properties-sync-properties-syncdefaultbuckets/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then-properties-objectstorage-properties-sync-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then-properties-objectstorage-properties-sync/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then-properties-objectstorage-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then-properties-objectstorage/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then-properties/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10-then/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-10/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-allof-2-if-properties-falco-properties-enabled/</loc>
          <lastmod>2025-01-07</lastmod>
     </url>
@@ -4265,7 +4405,19 @@
          <lastmod>2025-01-07</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-restore-config-properties-rclone-restore-targets-rclone-restore-target-properties-path-to-restore-to/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-restore-config-properties-rclone-restore-targets-rclone-restore-target-properties-path-to-sync-from/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-restore-config-properties-rclone-restore-targets-rclone-restore-target-properties-source-bucket-to-sync/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-restore-config-properties-rclone-restore-targets-rclone-restore-target-properties-suffix-to-cronjob-name/</loc>
          <lastmod>2025-01-07</lastmod>
     </url>
     <url>
@@ -4321,7 +4473,19 @@
          <lastmod>2025-01-07</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-from/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-to/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-source-bucket-to-sync/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-suffix-to-cronjob-name/</loc>
          <lastmod>2025-01-07</lastmod>
     </url>
     <url>

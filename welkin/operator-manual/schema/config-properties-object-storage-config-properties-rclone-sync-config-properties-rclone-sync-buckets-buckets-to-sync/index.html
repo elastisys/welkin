@@ -3906,9 +3906,36 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#sourcepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      sourcePath
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#destinationtype" class="md-nav__link">
     <span class="md-ellipsis">
       destinationType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destinationpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      destinationPath
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namesuffix" class="md-nav__link">
+    <span class="md-ellipsis">
+      nameSuffix
     </span>
   </a>
   
@@ -3972,6 +3999,21 @@ if(!document.__defineGetter__) {
 </table>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="./">Buckets to sync</a>)</p>
+<p><strong>EXAMPLES</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-environment-harbor</span>
+<span class="nt">sourceType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span>
+<span class="nt">sourcePath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//docker</span>
+<span class="nt">destinationPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/docker</span>
+<span class="nt">destinationType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
+<span class="nt">nameSuffix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-environemnt-harbor</span>
+<span class="nt">sourceType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span>
+<span class="nt">sourcePath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/backups</span>
+<span class="nt">destinationPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/backups</span>
+<span class="nt">destinationType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
+<span class="nt">nameSuffix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">backups</span>
+</code></pre></div>
 <p><strong>PROPERTIES</strong>:</p>
 <table>
 <thead>
@@ -4013,11 +4055,32 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-type-of-source/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/sourceType">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#sourcepath">sourcePath</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-from/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/sourcePath">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="#destinationtype">destinationType</a></td>
 <td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-type-of-destination/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/destinationType">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#destinationpath">destinationPath</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-to/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/destinationPath">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#namesuffix">nameSuffix</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-suffix-to-cronjob-name/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/nameSuffix">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4107,6 +4170,26 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">azure</span>
 </code></pre></div>
+<h2 id="sourcepath">sourcePath<a class="headerlink" href="#sourcepath" title="Permanent link">&para;</a></h2>
+<p>Rclone will sync all files from this path.
+Defaults to "" (root of bucket).</p>
+<p><code>sourcePath</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-from/">Path to sync from</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-from/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/sourcePath">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-from/">Path to sync from</a>)</p>
 <h2 id="destinationtype">destinationType<a class="headerlink" href="#destinationtype" title="Permanent link">&para;</a></h2>
 <p><code>destinationType</code></p>
 <ul>
@@ -4132,9 +4215,49 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">azure</span>
 </code></pre></div>
+<h2 id="destinationpath">destinationPath<a class="headerlink" href="#destinationpath" title="Permanent link">&para;</a></h2>
+<p>Rclone will sync files to this patch.
+Defaults to "" (root of bucket).</p>
+<p><code>destinationPath</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-to/">Path to sync to</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-to/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/destinationPath">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-path-to-sync-to/">Path to sync to</a>)</p>
+<h2 id="namesuffix">nameSuffix<a class="headerlink" href="#namesuffix" title="Permanent link">&para;</a></h2>
+<p>Suffix added to the end of cronjob name.
+Defaults to "custom". The default buckets have "default" as suffix</p>
+<p><code>nameSuffix</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-suffix-to-cronjob-name/">Suffix to cronjob name</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-suffix-to-cronjob-name/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/sync/properties/buckets/items/properties/nameSuffix">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-object-storage-config-properties-rclone-sync-config-properties-rclone-sync-buckets-buckets-to-sync-properties-suffix-to-cronjob-name/">Suffix to cronjob name</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Tue Jan  7 03:48:35 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/4e52119d53f745e7ae58694b8790ebec9e2471af">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Tue Jan  7 12:25:46 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c8783f39d2bc342487fd7f3e9a2c4bb6ab30b50b">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
