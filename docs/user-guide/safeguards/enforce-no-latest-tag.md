@@ -19,7 +19,7 @@ tags:
 
 !!!important
 
-    This safeguard is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.
+    This guardrail is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.
 
 Using the `:latest` tag can lead to inconsistent deployments, where it is difficult to rollback. In Welkin we suggest using explicit tags for your container images. This way you know that image version `v1.0.0` will be deployed if you are using the `:v1.0.0` tag.
 

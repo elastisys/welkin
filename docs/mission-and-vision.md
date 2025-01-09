@@ -28,7 +28,7 @@ Below we explain what we mean with each word in the mission and vision.
     - Documentation should help application developers throughout their journey of getting started and making the best use of the platform.
     - Documentation should be searchable, for example, application developers should be able to copy-paste an error message to quickly recover from it.
 - **Makes security and compliance easy**:
-    - The platform should make it hard for application developers to do the wrong thing by employing safeguards and secure defaults.
+    - The platform should make it hard for application developers to do the wrong thing by employing guardrails and secure defaults.
 
 ### Best administrator experience
 

@@ -9,7 +9,7 @@ tags:
 
 !!!important
 
-    - This group of safeguards are enabled by default and will deny or mutate on violations. As a result, resources that violate this policy will either not be created or they will be mutated to conform to the policy, depending on the type of violation.
+    - This group of guardrails are enabled by default and will deny or mutate on violations. As a result, resources that violate this policy will either not be created or they will be mutated to conform to the policy, depending on the type of violation.
 
 This page helps you understand why warnings are emitted when deploying workloads similar to:
 

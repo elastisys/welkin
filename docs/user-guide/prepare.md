@@ -116,12 +116,12 @@ Welkin runs containerized applications in a Kubernetes platform. It is a Certifi
 
 However, there are some restrictions in place for security reasons. In particular, **containers cannot be run as root**. Following this [best practice](https://docs.docker.com/develop/develop-images/instructions/#user) is a simple way to ensure additional security for your containerized applications deployed in Kubernetes.
 
-There are additional safeguards in place that reflect the security posture of Welkin that impact your application. These prevent users from doing potentially unsafe things. In particular, users are not allowed to:
+There are additional guardrails in place that reflect the security posture of Welkin that impact your application. These prevent users from doing potentially unsafe things. In particular, users are not allowed to:
 
 {%
     include "./demarcation.md"
-    start="<!--safeguards-start-->"
-    end="<!--safeguards-end-->"
+    start="<!--guardrails-start-->"
+    end="<!--guardrails-end-->"
 %}
 
 ## Next step? Deploying!

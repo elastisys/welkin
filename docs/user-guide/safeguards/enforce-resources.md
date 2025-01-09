@@ -26,7 +26,7 @@ Note to contributors: Aim for the following format.
 
 !!!important
 
-    This safeguard is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.
+    This guardrail is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.
 
 ## Problem
 

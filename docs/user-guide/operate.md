@@ -83,7 +83,7 @@ Capacity management is about having sufficient capacity for your needs, be they 
 
 Your Welkin administrator should perform capacity management _of the platform_, to ensure that there is a sufficient amount of spare capacity on a cluster level.
 
-As an Application Developer, you should perform capacity management on a Pod level. This primarily means setting [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) correctly for containers inside Pods, making use of multiple instances in your Deployments and Stateful Sets (possibly via [horizontal Pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)). The use of resource requests and limits is enforced via an Welkin [safeguard](safeguards/enforce-resources.md).
+As an Application Developer, you should perform capacity management on a Pod level. This primarily means setting [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) correctly for containers inside Pods, making use of multiple instances in your Deployments and Stateful Sets (possibly via [horizontal Pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)). The use of resource requests and limits is enforced via an Welkin [guardrail](safeguards/enforce-resources.md).
 
 ## Automate with CI/CD
 

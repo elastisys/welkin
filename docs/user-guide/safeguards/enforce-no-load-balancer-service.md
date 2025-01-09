@@ -8,7 +8,7 @@ tags: []
 
 !!!important
 
-    This safeguard is enabled by default for some infrastructure providers and will deny violations. As a result, on those specific infrastructure providers resources that violate this policy will not be created.
+    This guardrail is enabled by default for some infrastructure providers and will deny violations. As a result, on those specific infrastructure providers resources that violate this policy will not be created.
 
 Some infrastructure providers do not support `Service` of `type: LoadBalancer`, e.g. because the load-balancers don't integrate with Kubernetes.
 In such cases your administrator will deploy a policy to prevent such Services from being deployed.
