@@ -47,7 +47,7 @@ Welkin enables organizations across Europe to accelerate innovation through open
 
 ## What is Welkin?
 
-<img src="img/components-of-welkin.svg" alt="Components of Welkin" />
+<img src="img/marchitecture_pyramid_welkin.svg" alt="Components of Welkin" />
 
 ## Benefits of Welkin
 
