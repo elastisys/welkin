@@ -112,6 +112,7 @@ The Welkin Apps layer initializes and reads the following configuration files an
 
 - `backups` is a folder in which Welkin stores copies of previous configurations.
 See this as a convenience, given that all configuration is already in git.
+Note that these Welkin configuration backups are **unrelated** to [application or platform data backups](../user-guide/backup.md).
 - `defaults` is a folder which contains the default `common-config.yaml`, `sc-config.yaml` and `wc-config.yaml` for the infrastructure provider and flavor you chose when you initialized the configuration repository using Welkin.
 Do not change these files, as they may be overridden by Welkin.
 Instead, override configuration values with the files described below.
