@@ -27,6 +27,7 @@ Welkin recommends using the Cluster API implementation when setting up a new Env
 Cluster API offers features such as Cluster autoscaling, Node self-healing and faster Kubernetes upgrades.
 On the downside, it requires a mature Cluster API provider.
 Not all infrastructure providers have a mature Cluster API provider.
+See [ADR-0033 Run Cluster API Controllers on Management Cluster](../adr/0033-run-cluster-api-controllers-on-service-cluster.md) for more implementation details.
 
 Therefore, Welkin Environments can also be set up using Kubespray.
 Kubespray runs on pretty much any infrastructure you throw at it.
