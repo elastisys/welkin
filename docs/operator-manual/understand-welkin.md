@@ -39,8 +39,13 @@ The [provider audit](provider-audit.md) is a systematic way to discover and unde
 ## Configuration Repository
 
 Welkin abides to the configuration-as-code and infrastructure-as-code principles.
-In essence, all Welkin configuration is stored in text files (most frequently YAML).
-Welkin expects you to stores these files in a git repository, which is why we refer to Welkin configuration as configuration repository.
+This makes it easy to integrate Welkin with your existing CI/CD end embrace full GitOps.
+In essence:
+
+- All Welkin configuration is stored in text files (most frequently YAML).
+Welkin expects you to stores these files in a git repository, which is why we refer to Welkin configuration as **configuration repository**.
+- All Welkin operations are done via a command-line interface (CLI) which requires no graphical interface.
+The commands can run either on the platform administrator's laptop or in a CI/CD pipeline.
 
 A typical configuration repository looks as follows:
 
@@ -58,6 +63,7 @@ my-welkin-environment
 |   |-- secrets.yaml
 |   `-- values.yaml
 |-- common-config.yaml
+|-- ck8s-cluster-api
 |-- compliantkubernetes-apps
 |-- compliantkubernetes-kubespray
 |-- defaults
@@ -107,6 +113,8 @@ This folder is optional and ignored by Welkin.
 We recommend having separate folders for changes, incidents and maintenance.
 - `.sops.yaml` contains [sops](https://github.com/getsops/sops) configuration, used by Welkin to encrypt secrets.
 Welkin makes sure to decrypt secrets when it needs them.
+- `ck8s-cluster-api`, `compliantkubernetes-apps` and `compliantkubernetes-kubespray` are the git submodules of the Cluster API, Apps and Kubespray layer, respectively.
+These contains the command-line tools to operate Welkin.
 
 The Welkin Kubespray layer initializes and reads the following configuration files and folders:
 
