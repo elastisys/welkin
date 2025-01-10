@@ -42,7 +42,7 @@ Welkin abides to the configuration-as-code and infrastructure-as-code principles
 In essence, all Welkin configuration is stored in text files (most frequently YAML).
 Welkin expects you to stores these files in a git repository, which is why we refer to Welkin configuration as configuration repository.
 
-A typical configuration repository when using [Welkin Kubespray](https://github.com/elastisys/compliantkubernetes-kubespray) looks as follows:
+A typical configuration repository looks as follows:
 
 ```console
 my-welkin-environment
@@ -51,6 +51,12 @@ my-welkin-environment
 |   `-- incidents
 |   `-- maintenance
 |-- backups
+|-- capi
+|   |-- defaults
+|   |   `-- values.yaml
+|   |-- clusterctl-config.yaml
+|   |-- secrets.yaml
+|   `-- values.yaml
 |-- common-config.yaml
 |-- compliantkubernetes-apps
 |-- compliantkubernetes-kubespray
@@ -107,6 +113,16 @@ The Welkin Kubespray layer initializes and reads the following configuration fil
 - `sc-config` and `wc-config` store configuration for the Service Cluster and Workload Cluster, respectively.
 These folders are consumed by Ansible, which is part of this layer.
 If `group_vars`, `all` and `inventory.ini` look new to you, we recommend you [learn more about Ansible](understand-the-basics.md).
+
+The Welkin Cluster API layer initialized and reads the following configuration files and folders:
+
+- `capi/defaults` is a folder which contains the default `capi/values.yaml` for the infrastructure provider and flavor you chose when you initialized the configuration repository using Welkin.
+Do not change these files, as they may be overridden by Welkin.
+Instead, override configuration values with the files described below.
+- `capi/secrets.yaml` contains secrets.
+This file is encrypted using the information in `.sops.yaml`.
+You should only edit this file using sops to make sure secrets never end up in plain text in the configuration repository.
+- `capi/values.yaml` contains override configuration.
 
 The Welkin Apps layer initializes and reads the following configuration files and folders:
 
