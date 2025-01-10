@@ -106,7 +106,7 @@ The Welkin Kubespray layer initializes and reads the following configuration fil
 
 - `sc-config` and `wc-config` store configuration for the Service Cluster and Workload Cluster, respectively.
 These folders are consumed by Ansible, which is part of this layer.
-If `group_vars`, `all` and `inventory.ini` look new to you, we recommend you learn more about Ansible.
+If `group_vars`, `all` and `inventory.ini` look new to you, we recommend you [learn more about Ansible](understand-the-basics.md).
 
 The Welkin Apps layer initializes and reads the following configuration files and folders:
 
