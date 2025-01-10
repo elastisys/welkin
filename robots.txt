@@ -1,0 +1,4 @@
+# Ask bots not to scrape old versions of the site
+User-agent: *
+Disallow: /welkin-*
+Sitemap: https://elastisys.io/welkin/sitemap.xml
