@@ -34,9 +34,9 @@ tags:
 
 # Can I?
 
-Welkin comes with a lot of safeguards to ensure you protect your business reputation and earn the trust of your Application Developers. Furthermore, it is a good idea to keep regulators happy, since they bring public trust into digitalization. Public trust is necessary to shift Application Developers away from pen-and-paper to drive usage of your amazing application.
+Welkin comes with a lot of guardrails to ensure you protect your business reputation and earn the trust of your Application Developers. Furthermore, it is a good idea to keep regulators happy, since they bring public trust into digitalization. Public trust is necessary to shift Application Developers away from pen-and-paper to drive usage of your amazing application.
 
-If you used Kubernetes before, especially if you acted as a Platform Administrator, then being a Welkin user might feel a bit limiting. For example, you might not be able to run containers with root (`uid=0`) as you were used to. Again, these are not limitations, rather safeguards.
+If you used Kubernetes before, especially if you acted as a Platform Administrator, then being a Welkin user might feel a bit limiting. For example, you might not be able to run containers with root (`uid=0`) as you were used to. Again, these are not limitations, rather guardrails.
 
 ## Why?
 
@@ -52,19 +52,18 @@ Welkin does not allow users to make any changes which may compromise the securit
 
 ## Specifics
 
-To stick to the general principles above, Welkin comes with some technical safeguards. These are implemented through [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) enforcing that user namespaces adhere to the `restricted` [Pod Security Standard](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted), in combination with OPA Policies and RBAC. This list may be updated in the future to take into account the fast evolving risk and technological landscape.
+To stick to the general principles above, Welkin comes with some technical guardrails. These are implemented through [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) enforcing that user namespaces adhere to the `restricted` [Pod Security Standard](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted), in combination with OPA Policies and RBAC. This list may be updated in the future to take into account the fast evolving risk and technological landscape.
 
 More technically, Welkin does not allow users to:
 
-<!--safeguards-start-->
-
+<!--guardrails-start-->
 - change the Kubernetes API through [CustomResourceDefinitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) or [Dynamic Webhooks](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#what-are-admission-webhooks);
 - run container images as root or mount [`hostPath`s](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath);
 - mutate ClusterRoles or Roles so as to [escalate privileges](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping);
 - mutate Kubernetes resources in administrator-owned namespaces, such as `monitoring` or `kube-system`;
 - re-configure system Pods, such as Prometheus or Fluentd;
 - access the hosts directly.
-<!--safeguards-end-->
+<!--guardrails-end-->
 
 ## But what if I really need to?
 

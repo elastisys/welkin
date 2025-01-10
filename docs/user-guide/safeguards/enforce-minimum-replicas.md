@@ -8,7 +8,7 @@ tags: []
 
 !!!important
 
-    - This safeguard is enabled by default and will warn on violations. As a result, resources that violate this policy will generate warning messages, but will still be created.
+    - This guardrail is enabled by default and will warn on violations. As a result, resources that violate this policy will generate warning messages, but will still be created.
 
 Welkin by default recommends a minimum of 2 replicas for Deployments and StatefulSets.
 

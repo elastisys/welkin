@@ -19,7 +19,7 @@ tags:
 
 !!!important
 
-    - This safeguard is enabled by default and will warn on violations. As a result, resources that violate this policy will generate warning messages, but will still be created.
+    - This guardrail is enabled by default and will warn on violations. As a result, resources that violate this policy will generate warning messages, but will still be created.
 
 NetworkPolicies are useful in two cases: segregating tenants hosted in the same environment and further segregating application components. Both help you achieve better data protection.
 

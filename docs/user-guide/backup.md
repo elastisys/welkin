@@ -75,12 +75,6 @@ The Welkin administrator will take the following measure to ensure backups are p
 
     **Why?** This ensures backups are available even if the primary location is subject to a disaster, such as extreme weather. The backups also remain available -- though unlikely confidential -- in case an attacker manages to gain access to the cluster.
 
-<!--
-
-!!!note
-    This safeguard is pending an internal investigation and process change.
-
-3. The buckets holding the backups are configured with [object lock](https://docs.safespring.com/storage/object-locking/), if the underlying cloud provider supports it. This means that backups cannot be modified or erase until a given retention time, even with privileged credentials.
+1. The buckets holding the backups are configured with [object lock](https://docs.safespring.com/storage/object-locking/), if the underlying cloud provider supports it. This means that backups cannot be modified or erase until a given retention time, even with privileged credentials.
 
     **Why?** This ensures backups are available -- though unlikely confidential -- even if the whole Welkin environment is compromised.
--->

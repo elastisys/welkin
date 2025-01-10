@@ -48,7 +48,7 @@ If you are not familiar with Kubernetes since before, following our three-step p
 
 It may be a good idea to **follow along** in all of these, even if you have worked with similar systems before.
 
-If you are familiar with similar systems, a common next step for Application Developers that are already used to Kubernetes is to read up on the [safeguards that Welkin ships with](safeguards/index.md).
+If you are familiar with similar systems, a common next step for Application Developers that are already used to Kubernetes is to read up on the [guardrails that Welkin ships with](safeguards/index.md).
 You may also wish to use the "Go Deeper" link in the site's navigational bar to find more information about specific topics, such as:
 
 - how to set up [log-based](log-based-alerts.md) or [metric-based](alerts.md) alerts,

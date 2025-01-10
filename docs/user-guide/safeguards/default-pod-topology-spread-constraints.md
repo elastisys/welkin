@@ -16,7 +16,7 @@ Note to contributors: Aim for the following format.
 # Default Pod Topology Spread Constraints
 
 !!!important
-    * This safeguard is enabled by default as since [Welkin Kubespray v2.25.0-ck8s1](../../release-notes/kubespray.md#v2250-ck8s1) and [Welkin Cluster API v0.3.0](../../release-notes/capi.md#v030).
+    * This guardrail is enabled by default as since [Welkin Kubespray v2.25.0-ck8s1](../../release-notes/kubespray.md#v2250-ck8s1) and [Welkin Cluster API v0.3.0](../../release-notes/capi.md#v030).
 
 ## Problem
 
