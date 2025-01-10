@@ -127,7 +127,7 @@ They only take as input explicit choices that you made and describe how an Envir
 The following files and folders are stored by Welkin in the configuration repository and contain information from an Environment:
 
 - `.state` is a folder which contains the "state", i.e., files produced by Welkin needed to access an Environment during daily operations, in particular kubeconfig and S3 object storage access.
-If needed, these files will be encrypted with sops.
+Typically, these files should be encrypted with sops for information security purposes.
 In Welkin, kubeconfigs generally don't contain credentials, only pointer to OpenID configuration, hence are usually not encrypted.
 
 To make sure your whole team knows exactly which version of Welkin an Environment runs, it is common practice to add the source code, in the example above `compliantkubernetes-apps` and `compliantkubernetes-kubespray`, as git submodules.
