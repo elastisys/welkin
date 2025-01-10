@@ -134,8 +134,23 @@ In Welkin, kubeconfigs generally don't contain credentials, only pointer to Open
 To make sure your whole team knows exactly which version of Welkin an Environment runs, it is common practice to add the source code, in the example above `compliantkubernetes-apps` and `compliantkubernetes-kubespray`, as git submodules.
 An alternative is to pack all Welkin source code in a Docker image.
 
+## Default Configuration: Flavors and Providers
+
+To make it easy to get started, Welkin supports several default configurations depending on the flavor, provider and installer:
+
+- **Flavor** (`CK8S_FLAVOR`) is either `prod`, `dev` or `air-gapped`.
+  - The `prod` flavor is designed for most production environments.
+  - The `dev` flavor tries to have a smaller footprint. It is designed for contributors -- people developing Welkin -- and might not be stable enough for application development environments.
+  - The `air-gapped` flavor is designed for [air-gapped networks](air-gapped.md).
+- **Provider** (`CK8S_CLOUD_PROVIDER`) is the name of the underlying infrastructure provider, such as `baremetal` or `openstack`.
+- **Installer** (`CK8S_K8S_INSTALLER`) is the name Kubernetes-lifecycle layer, `capi` for Cluster API or `kubespray` for Kubespray.
+
 ## What does it mean to use Welkin as a Platform Administrator on a daily basis?
 
 You must specify a configuration repository in the environment variable `CK8S_CONFIG_PATH`.
 Then you can interact with Welkin via commands such as `ck8s` and `ck8s-kubespray` provided in the source code.
 A typical usage of these commands is describe later in this guide.
+
+## Next Steps
+
+Now that you have a good understanding for Welkin, proceed with a [provider audit](provider-audit.md) to understand the capabilities of the underlying infrastructure provider and determine how to best configure Welkin.
