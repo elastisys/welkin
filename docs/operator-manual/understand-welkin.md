@@ -163,9 +163,9 @@ An alternative is to pack all Welkin source code in a Docker image.
 To make it easy to get started, Welkin supports several default configurations depending on the flavor, provider and installer:
 
 - **Flavor** (`CK8S_FLAVOR`) is either `prod`, `dev` or `air-gapped`.
-  - The `prod` flavor is designed for most production environments.
-  - The `dev` flavor tries to have a smaller footprint. It is designed for contributors -- people developing Welkin -- and might not be stable enough for application development environments.
-  - The `air-gapped` flavor is designed for [air-gapped networks](air-gapped.md).
+    - The `prod` flavor is designed for most production environments.
+    - The `dev` flavor tries to have a smaller footprint. It is designed for contributors -- people developing Welkin -- and might not be stable enough for application development environments.
+    - The `air-gapped` flavor is designed for [air-gapped networks](air-gapped.md).
 - **Provider** (`CK8S_CLOUD_PROVIDER`) is the name of the underlying infrastructure provider, such as `baremetal` or `openstack`.
 - **Installer** (`CK8S_K8S_INSTALLER`) is the name Kubernetes-lifecycle layer, `capi` for Cluster API or `kubespray` for Kubespray.
 
