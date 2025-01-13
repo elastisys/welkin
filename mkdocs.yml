@@ -167,7 +167,7 @@ nav:
           - "How to Delegate": "user-guide/delegation.md"
           - "How many environments?": "user-guide/how-many-environments.md"
           - "Cluster API": "user-guide/cluster-api.md"
-      - "Safeguards":
+      - "Guardrails":
           - "Overview": "user-guide/safeguards/index.md"
           - "Enforce No Root": "user-guide/safeguards/enforce-no-root.md"
           - "Enforce Restricted Privileges": "user-guide/safeguards/enforce-podsecuritypolicies.md"

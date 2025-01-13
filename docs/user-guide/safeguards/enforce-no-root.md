@@ -20,7 +20,7 @@ tags:
 
 !!!important
 
-    This safeguard is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.
+    This guardrail is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.
 
 Many container runtimes and operating system vulnerabilities need code running as root to become a threat. To minimize this risk, application should only run as root when strictly necessary.
 

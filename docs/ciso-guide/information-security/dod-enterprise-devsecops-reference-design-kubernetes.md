@@ -31,7 +31,7 @@ These are addressed in the following list:
 
 - Welkin [is a Certified Kubernetes distribution](https://landscape.cncf.io/?item=platform--certified-kubernetes-distribution--elastisys-compliant-kubernetes).
 - Welkin has no vendor-specific tooling, instead opting for pure open source that is portable and avoids vendor lock-in (as per [ADR-0015](../../adr/0015-we-believe-in-community-driven-open-source.md)).
-- Welkin does not dictate a particular definition of "hardened containers". Instead, Welkin puts multiple important safeguards in place, such as:
+- Welkin does not dictate a particular definition of "hardened containers". Instead, Welkin puts multiple important guardrails in place, such as:
     - [forbidding containers to run as root](../../user-guide/safeguards/enforce-no-root.md)
     - mandating [adherence to the Restricted Pod Security Standard](../../user-guide/safeguards/enforce-podsecuritypolicies.md);
     - requiring [microsegmentation via Network Policies](../../user-guide/safeguards/enforce-networkpolicies.md);
@@ -55,7 +55,7 @@ Given its high level of privilege, it is going to be a highly valuable target.
 
 Instead, Welkin takes a more restrictive approach to containers that run within it.
 We add layers upon layers of security on top of it, and keep it running with low privileges.
-This means that all safeguards put in place work for us, rather than against us.
+This means that all guardrails put in place work for us, rather than against us.
 And we do not circumvent them by putting all our faith in a privileged sidecar.
 
 Table 1 calls out the following named security features, and we describe what we do within that space as follows:
@@ -63,7 +63,7 @@ Table 1 calls out the following named security features, and we describe what we
 - **Logging Agent**, for which we use Fluentd to forward all logs into the logging system. Going beyond the requirements of the Reference Design, our setup with two clusters ensures that no application in the Workload Cluster can overwrite or modify the logs that are stored in the OpenSearch instance in the Management Cluster. Thereby, we offer tamper-proof logging, which the DoD Reference Design does not.
 - **Logging Storage and Retrieval**, which is what OpenSearch is for.
 - **Log Visualization and Analysis**, which is what OpenSearch Dashboards offer.
-- **Container Policy Enforcement**, which in the DoD Reference Design is about ensuring compliance with the US military's Security Content Automation Protocol (SCAP). In Welkin, the following safeguards provide defence in depth, which is similar in scope:
+- **Container Policy Enforcement**, which in the DoD Reference Design is about ensuring compliance with the US military's Security Content Automation Protocol (SCAP). In Welkin, the following guardrails provide defence in depth, which is similar in scope:
     - [forbidding containers to run as root](../../user-guide/safeguards/enforce-no-root.md);
     - mandating [adherence to the Restricted Pod Security Standard](../../user-guide/safeguards/enforce-podsecuritypolicies.md);
     - requiring [microsegmentation via Network Policies](../../user-guide/safeguards/enforce-networkpolicies.md) providing both [vulnerability scanning](../../user-guide/registry.md) and [intrusion detection](../intrusion-detection.md) for applications; and
