@@ -16,7 +16,7 @@ This raises the question: should we consider integrating cloud-managed Kubernete
 - We want to best serve Application Developers.
 - We want to make the Platform Administrator life easier.
 - We want to maintain fine-grained control over the Kubernetes stack.
-- We want to reduce the complexity of the testing matrix
+- We want to reduce the complexity of the testing matrix.
 - We want to keep platform portability
 
 ## Considered Options
