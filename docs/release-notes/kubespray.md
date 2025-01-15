@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v2.26.0-ck8s2](#v2260-ck8s2) - 2025-01-14
 - [v2.26.0-ck8s1](#v2260-ck8s1) - 2024-11-08
 - [v2.25.0-ck8s4](#v2250-ck8s4) - 2024-09-04
 - [v2.25.0-ck8s3](#v2250-ck8s3) - 2024-07-26
@@ -35,6 +36,12 @@
 !!!note
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/changelog/).
+
+### v2.26.0-ck8s2
+
+#### Improvement(s)
+
+- Fixed issues that could occur when removing nodes or replacing control plane nodes.
 
 <!--
     Release notes before 2024-11-29 are excluded from spellchecking.
