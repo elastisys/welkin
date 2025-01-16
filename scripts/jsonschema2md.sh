@@ -2,27 +2,28 @@
 
 set -euo pipefail
 
-declare here target
-here="$(dirname "$(dirname "$(readlink "${BASH_SOURCE[0]}")")")"
-target="${here}/docs/operator-manual/schema"
+declare here root target
+here="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+root="$(dirname "${here}")"
+target="${root}/docs/operator-manual/schema"
 
 log.trace() {
-  echo "trace: ${@}" >&2
+  echo -e "trace: ${@}" >&2
 }
 
 log.note() {
   if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
-    echo "::notice::${@}"
+    echo -e "::notice::${@}"
   else
-    echo "note: ${@}" >&2
+    echo -e "note: ${@}" >&2
   fi
 }
 
 log.error() {
   if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
-    echo "::error::${@}"
+    echo -e "::error::${@}"
   else
-    echo "error: ${@}" >&2
+    echo -e "error: ${@}" >&2
   fi
   exit 1
 }
@@ -35,58 +36,143 @@ yq() {
   fi
 }
 
-# Special handling of release branches
-declare revision
-if [[ -n "${OVERRIDE_REF_NAME:-}" ]]; then
-  revision="${OVERRIDE_REF_NAME}"
-elif [[ "${GITHUB_REF_NAME:-}" =~ release- ]]; then
-  revision="$(cut -d- -f2 <<< "${GITHUB_REF_NAME}")"
+usage() {
+  echo "${0}: Generate documentation for JSON Schema from path or from repositories.
 
-  declare tags
-  tags="$(curl -s "https://api.github.com/repos/elastisys/compliantkubernetes-apps/tags")"
+  usage: ${0} [arguments...]
+    --path <path> - Collect schemas from the given directory path
+        example: ~/repo/elastisys/compliantkubernetes-apps
+        note: Mutually exclusive with --repo
+    --repo <repo> - Collect schemas from the given repository
+        default: elastisys/compliantkubernetes-apps
+        note: Mutually exclusive with --path
+    --rev <rev> - Collect schemas from the given revision, used with --repo
+        default: \${GITHUB_REF_NAME:-main}
+        note: If the revision is a release branch it will attempt to find the latest matching release tag
 
-  # Resolve the full revision from tags
-  revision="$(yq "[.[].name] | sort | reverse | [.[] | select(match(\"${revision}\"))] | .[0]" <<< "${tags}")"
+  The script will default to --repo elastisys/compliantkubernetes-apps and --rev \${GITHUB_REF_NAME:-main}.
+  Additionally the path or repo must keep the schemas in the config/schema subdirectory.
+  "
+}
 
-  if [[ "${revision}" == "null" ]]; then
-    log.error "unable to resolve full revision for ${GITHUB_REF_NAME}"
+declare mode path_arg repo_arg rev_arg
+
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    --help)
+      usage
+      exit 0
+      ;;
+    --path)
+      [[ -z "${mode:-}" ]] || log.error "option --${mode} is already set\n\n$(usage)"
+      mode="path"
+      [[ -n "${2:-}" ]] || log.error "option --path requires a second argument as the path\n\n$(usage)"
+      path_arg="${2}"
+      shift 2
+      ;;
+    --repo)
+      [[ -z "${mode:-}" ]] || log.error "option --${mode} is already set\n\n$(usage)"
+      mode="repo"
+      [[ -n "${2:-}" ]] || log.error "option --repo requires a second argument as the repository\n\n$(usage)"
+      repo_arg="${2}"
+      shift 2
+      ;;
+    --rev)
+      [[ -n "${2:-}" ]] || log.error "option --rev requires a second argument as the revision\n\n$(usage)"
+      rev_arg="${2}"
+      shift 2
+      ;;
+    *)
+      log.error "unknown argument $1\n\n$(usage)"
+      ;;
+  esac
+done
+
+[[ -d "${target}" ]] || log.error "missing expected ${target} directory"
+
+repo.resolve() {
+  local repo="${1}" rev="${2}"
+
+  if [[ "${rev}" =~ release- ]]; then
+    revision="$(cut -d- -f2 <<< "${rev}")"
+
+    declare tags
+    tags="$(curl -s "https://api.github.com/repos/${repo}/tags")"
+
+    # Resolve the full revision from tags
+    revision="$(yq "[.[].name] | sort | reverse | [.[] | select(match(\"${revision}\"))] | .[0]" <<< "${tags}")"
+
+    if [[ "${revision}" == "null" ]]; then
+      log.error "unable to resolve full revision for ${rev}"
+    fi
+
+  else
+    revision="${rev}"
   fi
 
-else
-  revision="${GITHUB_REF_NAME:-main}"
-fi
+  commit="$(curl -s "https://api.github.com/repos/${repo}/commits/${revision}")"
+  commit_url="$(yq '.html_url' <<< "${commit}")"
 
-declare commit commit_url
-commit="$(curl -s "https://api.github.com/repos/elastisys/compliantkubernetes-apps/commits/${revision}")"
-commit_url="$(yq '.html_url' <<< "${commit}")"
+  log.note "resolved revision: ${revision}@${commit_url}"
+}
 
-log.note "resolved revision: ${revision}@${commit_url}"
+repo.collect() {
+  local repo="${1}" rev="${2}" temp="${3}"
 
-declare generation_time
+  curl -sL "https://raw.githubusercontent.com/${repo}/${rev}/config/schemas/config.yaml" -o "${temp}/config.yaml"
+  curl -sL "https://raw.githubusercontent.com/${repo}/${rev}/config/schemas/secrets.yaml" -o "${temp}/secrets.yaml"
+
+  if [[ "$(head -n 1 "${temp}/config.yaml")" == "404: Not Found" ]]; then
+    log.error "unable to collect config schema: 404 not found"
+  fi
+  if [[ "$(head -n 1 "${temp}/secrets.yaml")" == "404: Not Found" ]]; then
+    log.error "unable to collect secrets schema: 404 not found"
+  fi
+
+  log.trace "collected schema from repo"
+}
+
+path.collect() {
+  local path="${1}"
+
+  [[ -f "${path}/config/schemas/config.yaml" ]] || log.error "unable to collect config schema: file is missing"
+  cp "${path}/config/schemas/config.yaml" "${temp}/config.yaml"
+  [[ -f "${path}/config/schemas/secrets.yaml" ]] || log.error "unable to collect secrets schema: file is missing"
+  cp "${path}/config/schemas/secrets.yaml" "${temp}/secrets.yaml"
+
+  log.trace "collected schema from path"
+}
+
+declare commit commit_url generation_time revision staging temp
+
 generation_time="$(date)"
-
-declare temp staging
-temp="$(mktemp -d)"
 staging="$(mktemp -d)"
+temp="$(mktemp -d)"
 
-curl -sL "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/config.yaml" -o "${temp}/config.yaml"
-curl -sL "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/secrets.yaml" -o "${temp}/secrets.yaml"
-
-if [[ "$(head -n 1 "${temp}/config.yaml")" == "404: Not Found" ]]; then
-  log.error "unable to fetch config schema: 404 not found"
-fi
-if [[ "$(head -n 1 "${temp}/secrets.yaml")" == "404: Not Found" ]]; then
-  log.error "unable to fetch secrets schema: 404 not found"
-fi
-
-log.trace "fetched schema"
+case "${mode:-"repo"}" in
+repo)
+  # resolve commit commit_url revision
+  repo.resolve "${repo_arg:-"elastisys/compliantkubernetes-apps"}" "${rev_arg:-"${GITHUB_REF_NAME:-"main"}"}"
+  # collect ${temp}/config.yaml ${temp}/secrets.yaml from repo
+  repo.collect "${repo_arg:-"elastisys/compliantkubernetes-apps"}" "${revision}" "${temp}"
+  ;;
+path)
+  # collect ${temp}/config.yaml ${temp}/secrets.yaml from path
+  path.collect "${path_arg}"
+  commit="unknown"
+  commit_url="unknown"
+  revision="local"
+  ;;
+esac
 
 yq -oj ".\"\$id\" = \"https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/config.yaml\"" < "${temp}/config.yaml" > "${temp}/config.schema.json"
 yq -oj ".\"\$id\" = \"https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/secrets.yaml\"" < "${temp}/secrets.yaml" > "${temp}/secrets.schema.json"
 
 log.trace "converted schema"
 
+pushd "${root}" &>/dev/null || log.error "failed to change directory"
 npx jsonschema2md -d "${temp}" -f yaml -o "${staging}" -x "${staging}/json"
+popd &>/dev/null || log.error "failed to change directory"
 
 log.trace "generated documentation"
 

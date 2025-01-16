@@ -292,9 +292,12 @@ not_in_nav: |
   adr/*.md
   user-guide/list-of-non-functional-application-requirements.html
   operator-manual/common.md
+  operator-manual/schema/config-additional-properties.md
   operator-manual/schema/config-additionalproperties.md
+  operator-manual/schema/config-allof*
   operator-manual/schema/config-defs*
   operator-manual/schema/config-properties-*
+  operator-manual/schema/secrets-additional-properties.md
   operator-manual/schema/secrets-additionalproperties.md
   operator-manual/schema/secrets-defs*
   operator-manual/schema/secrets-properties-*

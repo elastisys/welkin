@@ -39,9 +39,7 @@ jobs:
           SKIP: no-commit-to-branch
 
       - name: Auto-generate documentation
-        run: ./scripts/jsonschema2md.sh
-        env:
-          OVERRIDE_REF_NAME: main
+        run: ./scripts/jsonschema2md.sh --rev main
 
       - name: Build docs
         run: mkdocs build

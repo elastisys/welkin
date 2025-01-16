@@ -128,8 +128,8 @@ This documentation is only generated in the GitHub Actions deploy workflow, as i
 To auto-generate and preview locally run from the root of this repository:
 
 > [!tip]
->
-> To auto-generate and preview for a different branch set the `GITHUB_REF_NAME` variable to the branch in Apps you want to target.
+> By default this will fetch the schemas from `elastisys/compliantkubernetes-apps@main`.
+> It can target a local path or a different repository or revision, see the arguments using `--help`.
 
 ```bash
 npm install
