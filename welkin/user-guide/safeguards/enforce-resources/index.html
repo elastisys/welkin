@@ -1040,7 +1040,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1050,7 +1050,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4063,7 +4063,7 @@ Note to contributors: Aim for the following format.
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This safeguard is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.</p>
+<p>This guardrail is enabled by default and will deny violations. As a result, resources that violate this policy will not be created.</p>
 </div>
 <h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
 <p>A major source of application downtime is insufficient capacity. For example, if a Node reaches 100% CPU utilization, then application Pods hosted on it will run slow, leading to bad end-user experience. If a Node runs into memory pressure, the application will run slower, as less memory is available for the <a href="https://en.wikipedia.org/wiki/Page_cache">page cache</a>. High memory pressure may lead to the Node triggering the infamous <a href="https://en.wikipedia.org/wiki/Out_of_memory#Recovery">Out-of-Memory (OOM) Killer</a>, killing a victim, either your application or a platform component.</p>

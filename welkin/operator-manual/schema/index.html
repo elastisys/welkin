@@ -1036,7 +1036,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1046,7 +1046,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4172,10 +4172,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-persistent-volumes/" title="Configure capacity management alerts on persistent volumes">Capacity Management Alerts Persistent Volumes</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/persistentVolume</code></p>
 </li>
 <li>
-<p><a href="config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/" title="Alert when a node's resource requests reaches the limits in percent">Capacity Management Alerts Request Limit</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit</code></p>
-</li>
-<li>
-<p><a href="config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/" title="Configure a node pattern and the request limit to alert for">Capacity Management Alerts Request Limit Term</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimitTerm</code></p>
+<p><a href="config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/" title="Alert when a node's resource requests reaches the limits in percent">Capacity Management Alerts Request Limit</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit</code></p>
 </li>
 <li>
 <p><a href="config-properties-cluster-admin/" title="Configure the cluster admins">Cluster Admin</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/clusterAdmin</code></p>
@@ -4314,6 +4311,18 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-external-traffic-policy/" title="Configure global ingress external traffic policy">External Traffic Policy</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/externalTrafficPolicy</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-clusterrolebindings/" title="Configure extra ClusterRoleBindings for Application Developers">Extra Application Developer ClusterRoleBindings</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoleBindings</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-clusterroles/" title="Configure extra ClusterRoles that are not originally part of Welkin">Extra Application Developer ClusterRoles</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoles</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-rolebindings/" title="Configure extra RoleBindings for Application Developers">Extra Application Developer RoleBindings</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoleBindings</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-roles/" title="Configure extra Roles for Application Developers">Extra Application Developer Roles</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoles</code></p>
 </li>
 <li>
 <p><a href="config-properties-network-policies-config-properties-network-policies-fluentd-properties-extra-output-rule/" title="Configure extra output egress rules">Extra Output Rule</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/networkPolicies/properties/fluentd/properties/extraOutput</code></p>
@@ -4943,6 +4952,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-defs-podantiaffinity/" title="Pod anti affinity is a group of inter pod anti affinity scheduling rules">PodAntiAffinity</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.core.v1.PodAntiAffinity</code></p>
 </li>
 <li>
+<p><a href="config-defs-policyrule/" title="PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to">PolicyRule</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.PolicyRule</code></p>
+</li>
+<li>
 <p><a href="config-properties-harbor-config-properties-portal-config/" title="Configuration options for Portal">Portal Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/portal</code></p>
 </li>
 <li>
@@ -5090,6 +5102,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-harbor-config-properties-storage-driver-s3-config/" title="Configuration options for S3">Storage Driver S3 Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/s3</code></p>
 </li>
 <li>
+<p><a href="config-defs-subject/" title="Subject contains a reference to the object or user identities a role binding applies to">Subject</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.Subject</code></p>
+</li>
+<li>
 <p><a href="config-properties-object-storage-config-properties-swift-backend-config/" title="[!note]">Swift Backend Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/swift</code></p>
 </li>
 <li>
@@ -5171,6 +5186,12 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-thanos-config-properties-thanos-store-gateway-properties-thanos-store-gateway-persistence/" title="Configure persistence for Thanos Store Gateway">Thanos Store Gateway Persistence</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/thanos/properties/storegateway/properties/persistence</code></p>
 </li>
 <li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-rolebindings-additionalproperties-properties-the-reference-to-a-role-to-use-for-this-rolebinding/" title="The reference to a role to use for this RoleBinding">The reference to a role to use for this RoleBinding</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoleBindings/additionalProperties/properties/roleRef</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-clusterrolebindings-additionalproperties-properties-the-reference-to-a-role-to-use-for-this-rolebinding/" title="The reference to a role to use for this RoleBinding">The reference to a role to use for this RoleBinding</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoleBindings/additionalProperties/properties/roleRef</code></p>
+</li>
+<li>
 <p><a href="config-defs-toleration/" title="The pod this Toleration is attached to tolerates any taint that matches the triple &lt;key,value,effect&gt; using the matching operator &lt;operator&gt;">Toleration</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.core.v1.Toleration</code></p>
 </li>
 <li>
@@ -5249,6 +5270,9 @@ if(!document.__defineGetter__) {
 <h4 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
+<p><a href="config-defs-policyrule-properties-apigroups/" title="APIGroups is the name of the APIGroup that contains the resources">APIGroups</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.PolicyRule/properties/apiGroups</code></p>
+</li>
+<li>
 <p><a href="config-properties-hnc-hierarchical-namespace-controller-config-properties-additional-allow-propagate-resources-list/" title="Additional resources to enable opt-in propagation for">Additional Allow Propagate Resources List</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/additionalAllowPropagateResources</code></p>
 </li>
 <li>
@@ -5274,9 +5298,6 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-opa-gatekeeper-config-properties-allow-dev-crds-properties-dev-crds-extra-crds-dev-crds-extra-crds-properties-crd-names/" title="Configure the names of the CRDs">CRD Names</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gatekeeper/properties/allowUserCRDs/properties/extraCRDs/items/properties/names</code></p>
-</li>
-<li>
-<p><a href="config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="Configure a list of node patterns and request limits to alert for">Capacity Management Alerts Request Limit List</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimitList</code></p>
 </li>
 <li>
 <p><a href="config-properties-clusterapi-config-properties-clusters/" title="List of clusters to monitor">Clusters</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/clusterApi/properties/clusters</code></p>
@@ -5435,6 +5456,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-defs-nodeselector-properties-node-selector-terms/" title="Required">Node Selector Terms</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.core.v1.NodeSelector/properties/nodeSelectorTerms</code></p>
 </li>
 <li>
+<p><a href="config-defs-policyrule-properties-nonresourceurls/" title="NonResourceURLs is a set of partial urls that a user should have access to">NonResourceURLs</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.PolicyRule/properties/nonResourceURLs</code></p>
+</li>
+<li>
 <p><a href="config-properties-opensearch-config-properties-opensearch-curator-properties-opensearch-curator-retention/" title="Configures the retention of indices in OpenSearch">OpenSearch Curator Retention</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/curator/properties/retention</code></p>
 </li>
 <li>
@@ -5477,6 +5501,12 @@ if(!document.__defineGetter__) {
 <p><a href="secrets-properties-opensearch-secrets-defs-opensearch-user-properties-opensearch-user-security-roles/" title="Configures the security roles the user will have">OpenSearch User Security Roles</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/secrets.yaml#/properties/opensearch/$defs/user/properties/securityRoles</code></p>
 </li>
 <li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-roles-additionalproperties-properties-policyrules-for-this-role/" title="PolicyRules for this Role">PolicyRules for this Role</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoles/additionalProperties/properties/rules</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-clusterroles-additionalproperties-properties-policyrules-for-this-role/" title="PolicyRules for this ClusterRole">PolicyRules for this Role</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoles/additionalProperties/properties/rules</code></p>
+</li>
+<li>
 <p><a href="config-defs-port-number-list/" title="A 16 bit unsigned integer">Port Number List</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/portlist</code></p>
 </li>
 <li>
@@ -5516,6 +5546,12 @@ if(!document.__defineGetter__) {
 <p><a href="config-defs-podantiaffinity-properties-required-during-scheduling-ignored-during-execution/" title="If the anti-affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node">Required During Scheduling Ignored During Execution</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.core.v1.PodAntiAffinity/properties/requiredDuringSchedulingIgnoredDuringExecution</code></p>
 </li>
 <li>
+<p><a href="config-defs-policyrule-properties-resourcenames/" title="ResourceNames is an optional white list of names that the rule applies to">ResourceNames</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.PolicyRule/properties/resourceNames</code></p>
+</li>
+<li>
+<p><a href="config-defs-policyrule-properties-resources/" title="Resources is a list of resources this rule applies to">Resources</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.PolicyRule/properties/resources</code></p>
+</li>
+<li>
 <p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-alerts-exclude/" title="Exclude buckets from S3 alerts">S3 Bucket Alerts Exclude</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/exclude</code></p>
 </li>
 <li>
@@ -5534,6 +5570,12 @@ if(!document.__defineGetter__) {
 <p><a href="secrets-properties-dex-secrets-properties-dex-static-clients-dex-static-client-properties-static-client-redirect-uris/" title="Configure the redirection URIs for this static client">Static Client Redirect URIs</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/secrets.yaml#/properties/dex/properties/additionalStaticClients/items/properties/redirectURIs</code></p>
 </li>
 <li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-rolebindings-additionalproperties-properties-subjects-to-apply-role-to/" title="Configure Subjects that a role apply to">Subjects to apply role to</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoleBindings/additionalProperties/properties/subjects</code></p>
+</li>
+<li>
+<p><a href="config-properties-user-config-properties-extra-application-developer-clusterrolebindings-additionalproperties-properties-subjects-to-apply-role-to/" title="Configure Subjects that a role apply to">Subjects to apply role to</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoleBindings/additionalProperties/properties/subjects</code></p>
+</li>
+<li>
 <p><a href="config-properties-hnc-hierarchical-namespace-controller-config-properties-unpropagated-annotations/" title="Annotations that will be stripped from propagated objects">Unpropagated Annotations</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/unpropagatedAnnotations</code></p>
 </li>
 <li>
@@ -5548,11 +5590,14 @@ if(!document.__defineGetter__) {
 <li>
 <p><a href="config-properties-velero-config-properties-velero-excluded-namespaces-1/" title="Configure dynamic namespaces to exclude from backups, prefer this for overrides over excludedNamespaces">Velero Excluded namespaces</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/velero/properties/excludedExtraNamespaces</code></p>
 </li>
+<li>
+<p><a href="config-defs-policyrule-properties-verbs/" title="Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule">Verbs</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.rbac.v1.PolicyRule/properties/verbs</code></p>
+</li>
 </ul>
 <h2 id="version-note">Version Note<a class="headerlink" href="#version-note" title="Permanent link">&para;</a></h2>
 <p>The schemas linked above follow the JSON Schema Spec version: <code>https://json-schema.org/draft/2020-12/schema</code></p>
 <hr />
-<p>Generated Fri Jan 10 10:01:28 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/8c3fc63549be3f3792af56d7b650fd78b7ee1c1b">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jan 17 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/a5d4de653fcd0a8cb5396509b27aa1d9b37ace0c">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

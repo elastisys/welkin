@@ -1170,7 +1170,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1180,7 +1180,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4218,7 +4218,7 @@ if(!document.__defineGetter__) {
 <h3 id="capacity-management">Capacity Management<a class="headerlink" href="#capacity-management" title="Permanent link">&para;</a></h3>
 <p>Capacity management is about having sufficient capacity for your needs, be they in terms of storage or computational power.</p>
 <p>Your Welkin administrator should perform capacity management <em>of the platform</em>, to ensure that there is a sufficient amount of spare capacity on a cluster level.</p>
-<p>As an Application Developer, you should perform capacity management on a Pod level. This primarily means setting <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">resource requests</a> correctly for containers inside Pods, making use of multiple instances in your Deployments and Stateful Sets (possibly via <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">horizontal Pod autoscaling</a>). The use of resource requests and limits is enforced via an Welkin <a href="../safeguards/enforce-resources/">safeguard</a>.</p>
+<p>As an Application Developer, you should perform capacity management on a Pod level. This primarily means setting <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">resource requests</a> correctly for containers inside Pods, making use of multiple instances in your Deployments and Stateful Sets (possibly via <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">horizontal Pod autoscaling</a>). The use of resource requests and limits is enforced via an Welkin <a href="../safeguards/enforce-resources/">guardrail</a>.</p>
 <h2 id="automate-with-cicd">Automate with CI/CD<a class="headerlink" href="#automate-with-cicd" title="Permanent link">&para;</a></h2>
 <p>Welkin comes with <a href="../additional-services/argocd/">Argo CD</a> as an Additional Service.</p>
 <p>Welkin can also be integrated with an <a href="../ci-cd/">external CI/CD</a>, such as GitHub Actions.</p>

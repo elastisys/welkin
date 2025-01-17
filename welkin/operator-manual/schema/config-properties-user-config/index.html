@@ -1032,7 +1032,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1042,7 +1042,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3989,6 +3989,42 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#extraroles" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraRoles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrarolebindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraRoleBindings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraclusterroles" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraClusterRoles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extraclusterrolebindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraClusterRoleBindings
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4135,6 +4171,34 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-user-config-properties-kafka/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/kafka">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#extraroles">extraRoles</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-user-config-properties-extra-application-developer-roles/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoles">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#extrarolebindings">extraRoleBindings</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-user-config-properties-extra-application-developer-rolebindings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoleBindings">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#extraclusterroles">extraClusterRoles</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-user-config-properties-extra-application-developer-clusterroles/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoles">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#extraclusterrolebindings">extraClusterRoleBindings</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-user-config-properties-extra-application-developer-clusterrolebindings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoleBindings">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4362,9 +4426,88 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-user-config-properties-kafka/">Kafka</a>)</p>
+<h2 id="extraroles">extraRoles<a class="headerlink" href="#extraroles" title="Permanent link">&para;</a></h2>
+<p>Configure extra Roles for Application Developers
+The Roles are added to all Application Developer namespaces configured in user.namespaces</p>
+<p><code>extraRoles</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-roles/">Extra Application Developer Roles</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-user-config-properties-extra-application-developer-roles/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoles">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-roles/">Extra Application Developer Roles</a>)</p>
+<h2 id="extrarolebindings">extraRoleBindings<a class="headerlink" href="#extrarolebindings" title="Permanent link">&para;</a></h2>
+<p>Configure extra RoleBindings for Application Developers
+The RoleBindings are added to all Application Developer namespaces configured in user.namespaces</p>
+<p><code>extraRoleBindings</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-rolebindings/">Extra Application Developer RoleBindings</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-user-config-properties-extra-application-developer-rolebindings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraRoleBindings">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-rolebindings/">Extra Application Developer RoleBindings</a>)</p>
+<h2 id="extraclusterroles">extraClusterRoles<a class="headerlink" href="#extraclusterroles" title="Permanent link">&para;</a></h2>
+<p>Configure extra ClusterRoles that are not originally part of Welkin
+These are intended to be used for Application Developers</p>
+<p><code>extraClusterRoles</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-clusterroles/">Extra Application Developer ClusterRoles</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-user-config-properties-extra-application-developer-clusterroles/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoles">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-clusterroles/">Extra Application Developer ClusterRoles</a>)</p>
+<h2 id="extraclusterrolebindings">extraClusterRoleBindings<a class="headerlink" href="#extraclusterrolebindings" title="Permanent link">&para;</a></h2>
+<p>Configure extra ClusterRoleBindings for Application Developers</p>
+<p><code>extraClusterRoleBindings</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-clusterrolebindings/">Extra Application Developer ClusterRoleBindings</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-user-config-properties-extra-application-developer-clusterrolebindings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/extraClusterRoleBindings">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-user-config-properties-extra-application-developer-clusterrolebindings/">Extra Application Developer ClusterRoleBindings</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Jan 10 10:01:28 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/8c3fc63549be3f3792af56d7b650fd78b7ee1c1b">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jan 17 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/a5d4de653fcd0a8cb5396509b27aa1d9b37ace0c">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

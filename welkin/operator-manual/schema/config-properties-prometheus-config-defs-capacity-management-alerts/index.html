@@ -1032,7 +1032,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1042,7 +1042,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3929,25 +3929,16 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#requestlimit" class="md-nav__link">
     <span class="md-ellipsis">
-      requestlimit
+      requestLimit
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#requestlimitlist" class="md-nav__link">
+  <a href="#nodegrouprequestsexcludepattern" class="md-nav__link">
     <span class="md-ellipsis">
-      requestlimitList
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requestlimitterm" class="md-nav__link">
-    <span class="md-ellipsis">
-      requestlimitTerm
+      nodeGroupRequestsExcludePattern
     </span>
   </a>
   
@@ -4052,25 +4043,18 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-disk-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/disklimit">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#requestlimit">requestlimit</a></td>
+<td style="text-align: left;"><a href="#requestlimit">requestLimit</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#requestlimitlist">requestlimitList</a></td>
-<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;"><a href="#nodegrouprequestsexcludepattern">nodeGroupRequestsExcludePattern</a></td>
+<td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimitList">Welkin Apps Config</a></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="#requestlimitterm">requestlimitTerm</a></td>
-<td style="text-align: left;"><code>object</code></td>
-<td style="text-align: left;">Optional</td>
-<td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimitTerm">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-exclude-pattern/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/nodeGroupRequestsExcludePattern">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4161,9 +4145,9 @@ if(!document.__defineGetter__) {
 <p>The default value is:</p>
 <div class="highlight"><pre><span></span><code><span class="mi">75</span>
 </code></pre></div>
-<h2 id="requestlimit">requestlimit<a class="headerlink" href="#requestlimit" title="Permanent link">&para;</a></h2>
+<h2 id="requestlimit">requestLimit<a class="headerlink" href="#requestlimit" title="Permanent link">&para;</a></h2>
 <p>Alert when a node's resource requests reaches the limits in percent.</p>
-<p><code>requestlimit</code></p>
+<p><code>requestLimit</code></p>
 <ul>
 <li>
 <p>is optional</p>
@@ -4175,52 +4159,36 @@ if(!document.__defineGetter__) {
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit/">Capacity Management Alerts Request Limit</a>)</p>
-<h2 id="requestlimitlist">requestlimitList<a class="headerlink" href="#requestlimitlist" title="Permanent link">&para;</a></h2>
-<p>Configure a list of node patterns and request limits to alert for.</p>
-<p><code>requestlimitList</code></p>
+<h2 id="nodegrouprequestsexcludepattern">nodeGroupRequestsExcludePattern<a class="headerlink" href="#nodegrouprequestsexcludepattern" title="Permanent link">&para;</a></h2>
+<p>Configure a pattern of node groups to exclude from the resource request alerts. This can be used to exclude certain node groups from request alerts, while still getting usage alerts for those node groups.</p>
+<p><code>nodeGroupRequestsExcludePattern</code></p>
 <ul>
 <li>
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>object[]</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
+<p>Type: <code>string</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-exclude-pattern/">Capacity Management Alerts Request Exclude Pattern</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimitList">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-exclude-pattern/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/nodeGroupRequestsExcludePattern">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>object[]</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
-<h2 id="requestlimitterm">requestlimitTerm<a class="headerlink" href="#requestlimitterm" title="Permanent link">&para;</a></h2>
-<p>Configure a node pattern and the request limit to alert for.</p>
-<p><code>requestlimitTerm</code></p>
-<ul>
-<li>
-<p>is optional</p>
-</li>
-<li>
-<p>Type: <code>object</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
-</li>
-<li>
-<p>cannot be null</p>
-</li>
-<li>
-<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimitTerm">Welkin Apps Config</a></p>
-</li>
-</ul>
-<p><strong>TYPE</strong>:</p>
-<p><code>object</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
+<p><code>string</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-exclude-pattern/">Capacity Management Alerts Request Exclude Pattern</a>)</p>
+<p><strong>EXAMPLES</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">.*redis.*|.*postgres.*</span>
+</code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Jan 10 10:01:28 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/8c3fc63549be3f3792af56d7b650fd78b7ee1c1b">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jan 17 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/a5d4de653fcd0a8cb5396509b27aa1d9b37ace0c">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

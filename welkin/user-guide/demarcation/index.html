@@ -1113,7 +1113,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1123,7 +1123,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4114,8 +4114,8 @@ if(!document.__defineGetter__) {
 </ul>
 </div>
 <h1 id="can-i">Can I?<a class="headerlink" href="#can-i" title="Permanent link">&para;</a></h1>
-<p>Welkin comes with a lot of safeguards to ensure you protect your business reputation and earn the trust of your Application Developers. Furthermore, it is a good idea to keep regulators happy, since they bring public trust into digitalization. Public trust is necessary to shift Application Developers away from pen-and-paper to drive usage of your amazing application.</p>
-<p>If you used Kubernetes before, especially if you acted as a Platform Administrator, then being a Welkin user might feel a bit limiting. For example, you might not be able to run containers with root (<code>uid=0</code>) as you were used to. Again, these are not limitations, rather safeguards.</p>
+<p>Welkin comes with a lot of guardrails to ensure you protect your business reputation and earn the trust of your Application Developers. Furthermore, it is a good idea to keep regulators happy, since they bring public trust into digitalization. Public trust is necessary to shift Application Developers away from pen-and-paper to drive usage of your amazing application.</p>
+<p>If you used Kubernetes before, especially if you acted as a Platform Administrator, then being a Welkin user might feel a bit limiting. For example, you might not be able to run containers with root (<code>uid=0</code>) as you were used to. Again, these are not limitations, rather guardrails.</p>
 <h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
 <p>As previously reported, <a href="https://www.techtarget.com/searchitoperations/news/252487963/Kubernetes-security-defaults-prompt-upstream-dilemma">Kubernetes is not secure by default, nor by itself</a>.
 This is due to the fact that Kubernetes prefers to keep its "wow, it just works" experience. This might be fine for a company that does not process personal data. However, if you are in a regulated industry, for example, because you process personal data or health information, your regulators will be extremely unhappy to learn that your platform does not conform to security best practices.</p>
@@ -4124,10 +4124,9 @@ The mission of administrators is to make you, the Welkin user, succeed. Besides 
 <h2 id="general-principle">General Principle<a class="headerlink" href="#general-principle" title="Permanent link">&para;</a></h2>
 <p>Welkin does not allow users to make any changes which may compromise the security of the platform. This includes compromising or working around access control, logging, monitoring, backups, alerting, etc. For example, accidental deletion of the CustomResourceDefinitions of Prometheus would prevent administrators from getting alerts and fixing cluster issues before your application is impacted. Similarly, accidentally deleting Fluentd Pods would make it impossible to capture the Kubernetes audit log and investigate data breaches.</p>
 <h2 id="specifics">Specifics<a class="headerlink" href="#specifics" title="Permanent link">&para;</a></h2>
-<p>To stick to the general principles above, Welkin comes with some technical safeguards. These are implemented through <a href="https://kubernetes.io/docs/concepts/security/pod-security-admission/">Pod Security Admission</a> enforcing that user namespaces adhere to the <code>restricted</code> <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted">Pod Security Standard</a>, in combination with OPA Policies and RBAC. This list may be updated in the future to take into account the fast evolving risk and technological landscape.</p>
+<p>To stick to the general principles above, Welkin comes with some technical guardrails. These are implemented through <a href="https://kubernetes.io/docs/concepts/security/pod-security-admission/">Pod Security Admission</a> enforcing that user namespaces adhere to the <code>restricted</code> <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted">Pod Security Standard</a>, in combination with OPA Policies and RBAC. This list may be updated in the future to take into account the fast evolving risk and technological landscape.</p>
 <p>More technically, Welkin does not allow users to:</p>
-<!--safeguards-start-->
-
+<!--guardrails-start-->
 <ul>
 <li>change the Kubernetes API through <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">CustomResourceDefinitions</a> or <a href="https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#what-are-admission-webhooks">Dynamic Webhooks</a>;</li>
 <li>run container images as root or mount <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath"><code>hostPath</code>s</a>;</li>
@@ -4136,7 +4135,7 @@ The mission of administrators is to make you, the Welkin user, succeed. Besides 
 <li>re-configure system Pods, such as Prometheus or Fluentd;</li>
 <li>access the hosts directly.</li>
 </ul>
-<!--safeguards-end-->
+<!--guardrails-end-->
 
 <h2 id="but-what-if-i-really-need-to">But what if I really need to?<a class="headerlink" href="#but-what-if-i-really-need-to" title="Permanent link">&para;</a></h2>
 <p>Unfortunately, many application asks for more permissions than Welkin allows by default. When looking at the Kubernetes resources, the following are problematic:</p>

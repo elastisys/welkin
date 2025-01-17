@@ -1036,7 +1036,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1046,7 +1046,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4157,7 +4157,7 @@ These are addressed in the following list:</p>
 <ul>
 <li>Welkin <a href="https://landscape.cncf.io/?item=platform--certified-kubernetes-distribution--elastisys-compliant-kubernetes">is a Certified Kubernetes distribution</a>.</li>
 <li>Welkin has no vendor-specific tooling, instead opting for pure open source that is portable and avoids vendor lock-in (as per <a href="../../../adr/0015-we-believe-in-community-driven-open-source/">ADR-0015</a>).</li>
-<li>Welkin does not dictate a particular definition of "hardened containers". Instead, Welkin puts multiple important safeguards in place, such as:<ul>
+<li>Welkin does not dictate a particular definition of "hardened containers". Instead, Welkin puts multiple important guardrails in place, such as:<ul>
 <li><a href="../../../user-guide/safeguards/enforce-no-root/">forbidding containers to run as root</a></li>
 <li>mandating <a href="../../../user-guide/safeguards/enforce-podsecuritypolicies/">adherence to the Restricted Pod Security Standard</a>;</li>
 <li>requiring <a href="../../../user-guide/safeguards/enforce-networkpolicies/">microsegmentation via Network Policies</a>;</li>
@@ -4178,14 +4178,14 @@ By design, it is reachable by the application running within the main container 
 Given its high level of privilege, it is going to be a highly valuable target.</p>
 <p>Instead, Welkin takes a more restrictive approach to containers that run within it.
 We add layers upon layers of security on top of it, and keep it running with low privileges.
-This means that all safeguards put in place work for us, rather than against us.
+This means that all guardrails put in place work for us, rather than against us.
 And we do not circumvent them by putting all our faith in a privileged sidecar.</p>
 <p>Table 1 calls out the following named security features, and we describe what we do within that space as follows:</p>
 <ul>
 <li><strong>Logging Agent</strong>, for which we use Fluentd to forward all logs into the logging system. Going beyond the requirements of the Reference Design, our setup with two clusters ensures that no application in the Workload Cluster can overwrite or modify the logs that are stored in the OpenSearch instance in the Management Cluster. Thereby, we offer tamper-proof logging, which the DoD Reference Design does not.</li>
 <li><strong>Logging Storage and Retrieval</strong>, which is what OpenSearch is for.</li>
 <li><strong>Log Visualization and Analysis</strong>, which is what OpenSearch Dashboards offer.</li>
-<li><strong>Container Policy Enforcement</strong>, which in the DoD Reference Design is about ensuring compliance with the US military's Security Content Automation Protocol (SCAP). In Welkin, the following safeguards provide defence in depth, which is similar in scope:<ul>
+<li><strong>Container Policy Enforcement</strong>, which in the DoD Reference Design is about ensuring compliance with the US military's Security Content Automation Protocol (SCAP). In Welkin, the following guardrails provide defence in depth, which is similar in scope:<ul>
 <li><a href="../../../user-guide/safeguards/enforce-no-root/">forbidding containers to run as root</a>;</li>
 <li>mandating <a href="../../../user-guide/safeguards/enforce-podsecuritypolicies/">adherence to the Restricted Pod Security Standard</a>;</li>
 <li>requiring <a href="../../../user-guide/safeguards/enforce-networkpolicies/">microsegmentation via Network Policies</a> providing both <a href="../../../user-guide/registry/">vulnerability scanning</a> and <a href="../../intrusion-detection/">intrusion detection</a> for applications; and</li>

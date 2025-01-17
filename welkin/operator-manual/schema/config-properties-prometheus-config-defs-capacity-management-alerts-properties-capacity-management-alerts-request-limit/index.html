@@ -1032,7 +1032,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1042,7 +1042,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3935,7 +3935,7 @@ if(!document.__defineGetter__) {
 <p>This is auto-generated documentation from a JSON schema that is under construction, this will improve over time.</p>
 </div>
 <p><a href="../config/">Return to the root config schema</a></p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/capacityManagementAlerts/properties/requestlimit
+<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/capacityManagementAlerts/properties/requestLimit
 </code></pre></div>
 <p>Alert when a node's resource requests reaches the limits in percent.</p>
 <table>
@@ -3980,61 +3980,69 @@ if(!document.__defineGetter__) {
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="#cpu">cpu</a></td>
-<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;"><code>number</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit/properties/cpu">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-cpu-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit/properties/cpu">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#memory">memory</a></td>
-<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;"><code>number</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit/properties/memory">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-memory-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit/properties/memory">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="cpu">cpu<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
-<p>Configure a list of node patterns and request limits to alert for.</p>
+<p>Configure a CPU request percentage limit to alert for.</p>
 <p><code>cpu</code></p>
 <ul>
 <li>
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>object[]</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
+<p>Type: <code>number</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-cpu-request-limit/">Capacity Management Alerts CPU Request Limit</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit/properties/cpu">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-cpu-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit/properties/cpu">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>object[]</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
+<p><code>number</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-cpu-request-limit/">Capacity Management Alerts CPU Request Limit</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">80</span>
+</code></pre></div>
 <h2 id="memory">memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
-<p>Configure a list of node patterns and request limits to alert for.</p>
+<p>Configure a memory request percentage limit to alert for.</p>
 <p><code>memory</code></p>
 <ul>
 <li>
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>object[]</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
+<p>Type: <code>number</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-memory-request-limit/">Capacity Management Alerts Memory Request Limit</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestlimit/properties/memory">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-memory-request-limit/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/capacityManagementAlerts/properties/requestLimit/properties/memory">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>object[]</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-term/">Capacity Management Alerts Request Limit Term</a>)</p>
+<p><code>number</code> (<a href="../config-properties-prometheus-config-defs-capacity-management-alerts-properties-capacity-management-alerts-request-limit-properties-capacity-management-alerts-memory-request-limit/">Capacity Management Alerts Memory Request Limit</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">80</span>
+</code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Jan 10 10:01:28 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/8c3fc63549be3f3792af56d7b650fd78b7ee1c1b">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jan 17 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/a5d4de653fcd0a8cb5396509b27aa1d9b37ace0c">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

@@ -1038,7 +1038,7 @@ if(!document.__defineGetter__) {
             
   
   <span class="md-ellipsis">
-    Safeguards
+    Guardrails
   </span>
   
 
@@ -1048,7 +1048,7 @@ if(!document.__defineGetter__) {
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Safeguards
+            Guardrails
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4657,7 +4657,7 @@ kubectl<span class="w"> </span>edit<span class="w"> </span>-n<span class="w"> </
 <p>Example error:</p>
 <p><code>Failed to load live state: Cluster level Namespace "application" can not be managed when in namespaced mode</code></p>
 <p>Our Argo CD installation is using the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/installation/#non-high-availability">namespaced method</a>. This means that Argo CD has access to Roles with permissions to CRUD on objects in the inclusion list. It has a <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters">list of namespaces</a> that it can look at and reconcile things every few seconds. Any feature that requires Argo CD cluster-wide installation will not be supported with our offering.</p>
-<p>The reason for this choice is that, according to the <a href="../../../mission-and-vision/">Welkin mission and vision</a>, the platform should make it hard for Application Developers to do the wrong thing by employing safeguards and secure defaults. With this configuration, we prevent Argo CD from having access to objects in the inclusions list across the entire cluster. This prevents objects from being deployed into namespaces owned by the Platform Administrator, which could compromise platform security and stability. For example, this choice adds another layer of protection, preventing the Application Developer from interfering with backups. Read more about it <a href="../../demarcation/#general-principle">here</a>.</p>
+<p>The reason for this choice is that, according to the <a href="../../../mission-and-vision/">Welkin mission and vision</a>, the platform should make it hard for Application Developers to do the wrong thing by employing guardrails and secure defaults. With this configuration, we prevent Argo CD from having access to objects in the inclusions list across the entire cluster. This prevents objects from being deployed into namespaces owned by the Platform Administrator, which could compromise platform security and stability. For example, this choice adds another layer of protection, preventing the Application Developer from interfering with backups. Read more about it <a href="../../demarcation/#general-principle">here</a>.</p>
 <p>Argo CD is not allowed to manage its own namespace. This means that features such as <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">Apps of Apps</a> does not work by default. Read more about the decision <a href="../../../adr/0044-argocd-managing-its-own-namespace/">here</a>.</p>
 <div class="admonition elastisys">
 <p class="admonition-title">Apps of Apps (preview)</p>
