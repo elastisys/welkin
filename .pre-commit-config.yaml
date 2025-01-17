@@ -51,10 +51,32 @@ repos:
 
   - repo: local
     hooks:
+      # must be before vale-run to install vale without conflict
       - id: vale
-        name: "Vale: A linter for prose"
-        entry: ./scripts/vale.sh
-        language: script
+        name: list prose in markdown files with vale - sync
+        alias: vale-sync
+        types: [markdown]
+        language: python
+        pass_filenames: false
+        require_serial: true
+        additional_dependencies:
+          - vale==3.9.1.0
+        entry: vale
+        args:
+          - sync
+
+      # must be after vale-sync to install vale without conflict
+      - id: vale
+        name: list prose in markdown files with vale - run
+        alias: vale-run
+        types: [markdown]
+        language: python
+        additional_dependencies:
+          - vale==3.9.1.0
+        entry: vale
+        args:
+          - --output=line
+
       - id: svg-must-embed
         name: SVGs must embed all images
         entry: 'image[^>]* xlink:href="https'
