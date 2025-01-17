@@ -4417,7 +4417,7 @@ sudo<span class="w"> </span><span class="si">${</span><span class="nv">RUNTIME</
 <p class="admonition-title">Important</p>
 <p>With this setup it is <strong>your</strong> responsibility to ensure that any Falco modules, rules and/or plugins are kept up to date.</p>
 </div>
-<p>If nodes in the Clusters have a kernel version &gt;=5.8, you can use <code>modern-bpf</code> instead to avoid Falco having to download drivers from the Internet, as everything is already embedded into Falco (as long as this is supported, see requirements <a href="https://falco.org/docs/event-sources/kernel/#requirements">here</a>):</p>
+<p>If nodes in the Clusters have a kernel version &gt;=5.8, you can use <code>modern-bpf</code> instead to avoid Falco having to download drivers from the Internet, as everything is already embedded into Falco (as long as this is supported, see requirements <a href="https://falco.org/docs/concepts/event-sources/kernel/#requirements">here</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">falco</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">driver</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">modern-bpf</span>
