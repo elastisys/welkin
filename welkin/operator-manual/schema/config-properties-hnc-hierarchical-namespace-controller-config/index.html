@@ -3909,15 +3909,6 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
-  <a href="#excludedextranamespaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      excludedExtraNamespaces
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#excludednamespaces" class="md-nav__link">
     <span class="md-ellipsis">
       excludedNamespaces
@@ -4096,13 +4087,6 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-hnc-hierarchical-namespace-controller-config-properties-additional-allow-propagate-resources-list/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/additionalAllowPropagateResources">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#excludedextranamespaces">excludedExtraNamespaces</a></td>
-<td style="text-align: left;"><code>array</code></td>
-<td style="text-align: left;">Optional</td>
-<td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-hnc-hierarchical-namespace-controller-config-properties-excluded-extra-namespaces/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/excludedExtraNamespaces">Welkin Apps Config</a></td>
-</tr>
-<tr>
 <td style="text-align: left;"><a href="#excludednamespaces">excludedNamespaces</a></td>
 <td style="text-align: left;"><code>array</code></td>
 <td style="text-align: left;">Optional</td>
@@ -4223,28 +4207,9 @@ Objects that should be propagated must have one of the annotations listed here <
 <div class="highlight"><pre><span></span><code><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkpolicies</span>
 <span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io</span>
 </code></pre></div>
-<h2 id="excludedextranamespaces">excludedExtraNamespaces<a class="headerlink" href="#excludedextranamespaces" title="Permanent link">&para;</a></h2>
-<p>Extra excluded namespace, here we should add the namespaces that are more likely to change</p>
-<p><a href="https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/docs/user-guide/how-to.md#including-and-excluding-namespaces-from-hnc">Including and excluding namespaces</a></p>
-<p><code>excludedExtraNamespaces</code></p>
-<ul>
-<li>
-<p>is optional</p>
-</li>
-<li>
-<p>Type: <code>string[]</code></p>
-</li>
-<li>
-<p>cannot be null</p>
-</li>
-<li>
-<p>defined in: <a href="../config-properties-hnc-hierarchical-namespace-controller-config-properties-excluded-extra-namespaces/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/excludedExtraNamespaces">Welkin Apps Config</a></p>
-</li>
-</ul>
-<p><strong>TYPE</strong>:</p>
-<p><code>string[]</code></p>
 <h2 id="excludednamespaces">excludedNamespaces<a class="headerlink" href="#excludednamespaces" title="Permanent link">&para;</a></h2>
-<p>Excluded namespaces</p>
+<p>Namespaces excluded by HNC, here you can configure a list of namespaces to exclude from HNC in addition to the default excluded namespaces.</p>
+<p><a href="https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/docs/user-guide/how-to.md#including-and-excluding-namespaces-from-hnc">Including and excluding namespaces</a></p>
 <p><code>excludedNamespaces</code></p>
 <ul>
 <li>
@@ -4442,7 +4407,7 @@ Objects that should be propagated must have one of the annotations listed here <
 <p><code>boolean</code> (<a href="../config-properties-hnc-hierarchical-namespace-controller-config-properties-webhook-match-conditions-enable/">Webhook Match Conditions Enable</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Jan 17 11:20:26 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/21d3fb5edf0a78045f31d915952147e74879472a">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jan 17 13:22:01 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9e3a40e2692527be93c8e9c5698255ee01ff698b">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
