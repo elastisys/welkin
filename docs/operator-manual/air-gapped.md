@@ -196,7 +196,7 @@ falco:
 
     With this setup it is **your** responsibility to ensure that any Falco modules, rules and/or plugins are kept up to date.
 
-If nodes in the Clusters have a kernel version >=5.8, you can use `modern-bpf` instead to avoid Falco having to download drivers from the Internet, as everything is already embedded into Falco (as long as this is supported, see requirements [here](https://falco.org/docs/event-sources/kernel/#requirements)):
+If nodes in the Clusters have a kernel version >=5.8, you can use `modern-bpf` instead to avoid Falco having to download drivers from the Internet, as everything is already embedded into Falco (as long as this is supported, see requirements [here](https://falco.org/docs/concepts/event-sources/kernel/#requirements):
 
 ```yaml
 falco:
