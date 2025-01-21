@@ -4244,7 +4244,7 @@ Before going into production, don't forget to go through the <a href="../../go-l
 <h2 id="best-practices-recommended">Best Practices Recommended<a class="headerlink" href="#best-practices-recommended" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Eviction Policy</strong>: Choose the <a href="https://redis.io/docs/reference/eviction/">eviction policy</a> that works for your application. The <code>default</code> eviction policy for our Managed Redis is <code>allkeys-lru</code>, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.
+<p><strong>Eviction Policy</strong>: Choose the <a href="https://redis.io/docs/latest/develop/reference/eviction/">eviction policy</a> that works for your application. The <code>default</code> eviction policy for our Managed Redis is <code>allkeys-lru</code>, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.
   !!!Note</p>
 <p>Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.</p>
 </li>
