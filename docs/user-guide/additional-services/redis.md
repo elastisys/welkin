@@ -154,7 +154,7 @@ Check out the [release notes](../../release-notes/redis.md) for the Redis cluste
 
 ## Best Practices Recommended
 
-- **Eviction Policy**: Choose the [eviction policy](https://redis.io/docs/reference/eviction/) that works for your application. The `default` eviction policy for our Managed Redis is `allkeys-lru`, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.
+- **Eviction Policy**: Choose the [eviction policy](https://redis.io/docs/latest/develop/reference/eviction/) that works for your application. The `default` eviction policy for our Managed Redis is `allkeys-lru`, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.
   !!!Note
 
       Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.

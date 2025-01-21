@@ -98,7 +98,7 @@ See also:
 - [Architecture Diagram Level 2: Clusters](architecture.md#level-2-clusters)
 - [Cluster on Kubernetes Glossary](https://kubernetes.io/docs/reference/glossary/?all=true#term-cluster)
 - [PostgreSQL Database Cluster](https://www.postgresql.org/docs/current/creating-cluster.html)
-- [Redis Cluster](https://redis.io/docs/management/scaling/)
+- [Redis Cluster](https://redis.io/docs/latest/operate/oss_and_stack/management/scaling/)
 - [RabbitMQ Clustering Guide](https://www.rabbitmq.com/clustering.html)
 
 ## Contributor
