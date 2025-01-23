@@ -21,13 +21,13 @@ This raises the question: should we consider integrating cloud-managed Kubernete
 
 ## Considered Options
 
-- Yes, always use Managed Kubernetes services.
-- Yes, use Managed Kubernetes services if they provide sufficient functionality.
-- No, we do not use Managed Kubernetes services because we want to reduce QA complexity and keep platform portability.
+1. Yes, always use Managed Kubernetes services.
+2. Yes, use Managed Kubernetes services if they provide sufficient functionality.
+3. No, we do not use Managed Kubernetes services because we want to reduce QA complexity and keep platform portability.
 
 ## Decision Outcome
 
-Chosen option: 2 - No, we do not use Managed Kubernetes services because we want to reduce QA complexity and keep platform portability.
+Chosen option: 3 - No, we do not use Managed Kubernetes services because we want to reduce QA complexity and keep platform portability.
 
 While managed Kubernetes services may seem appealing, adopting them introduces challenges that conflict with our operational and strategic goals.
 These include:
