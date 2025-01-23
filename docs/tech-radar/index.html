@@ -25,18 +25,18 @@ radar_visualization({
     grid: "#bbb",
     inactive: "#ddd"
   },
-  title: "Welkin Tech Radar — 2022-09-09",
+  title: "Welkin Tech Radar — 2025-01-21",
   quadrants: [
-    { name: "Languages" },
+    { name: "Languages", },
     { name: "CNCF Projects" },
     { name: "Techniques" },
     { name: "Tools" },
   ],
   rings: [
-    { name: "ADOPT", color: "#93c47d" },
-    { name: "TRIAL", color: "#93d2c2" },
-    { name: "ASSESS", color: "#fbdb84" },
-    { name: "HOLD", color: "#efafa9" }
+    { name: "ADOPT", color: "#5ba300" },
+    { name: "TRIAL", color: "#009eb0" },
+    { name: "ASSESS", color: "#c7ba00" },
+    { name: "HOLD", color: "#e09b96" }
   ],
   print_layout: true,
   // zoomed_quadrant: 0,
@@ -47,13 +47,27 @@ radar_visualization({
       quadrant: 3,
       ring: 0,
       label: "Ansible",
-      active: false,
+      active: true,
       moved: 0
     },
     {
       quadrant: 0,
       ring: 0,
       label: "Bash",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 0,
+      ring: 0,
+      label: "Python",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 0,
+      ring: 0,
+      label: "Go",
       active: false,
       moved: 0
     },
@@ -67,47 +81,229 @@ radar_visualization({
     {
       quadrant: 1,
       ring: 0,
-      label: "cert-manager",
+      label: "Cert-manager",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Containerd",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Fluentd",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Harbor",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Dex",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "ArgoCD",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "OpenSearch",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "NGINX-ingress controller",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Calico",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Velero",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Kured",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "RabbitMQ",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "postgresql",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Timescale DB",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "Kyverno",
       active: false,
       moved: 0
     },
     {
       quadrant: 1,
       ring: 2,
-      label: "Cluster API",
+      label: "Cilium",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "Knative",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "Istio",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "Telepresence",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "OpenTofu",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "KubeFlow",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "CloudNativePG",
+      active: false,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 2,
+      label: "Redis",
       active: true,
-      moved: 1
+      moved: 0
     },
     {
       quadrant: 1,
       ring: 0,
       label: "Falco",
-      active: false,
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "OAuth2",
+      active: true,
       moved: 0
     },
     {
       quadrant: 3,
       ring: 0,
       label: "Grafana",
-      active: false,
+      active: true,
       moved: 0
     },
     {
       quadrant: 1,
       ring: 0,
       label: "Helm",
-      active: false,
+      active: true,
       moved: 0
     },
     {
       quadrant: 2,
       ring: 0,
-      label: "Infrastructure-as-Code",
-      active: false,
+      label: "Infrastructure as Code",
+      active: true,
       moved: 0
     },
     {
-      quadrant: 1,
+      quadrant: 2,
+      ring: 0,
+      label: "Configuration Management",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 2,
+      ring: 0,
+      label: "PaaS",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 2,
+      ring: 0,
+      label: "GitOps",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 2,
+      ring: 0,
+      label: "Policy as Code",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 0,
       ring: 3,
       label: "jsonnet",
       active: false,
@@ -121,17 +317,31 @@ radar_visualization({
       moved: 1
     },
     {
-      quadrant: 3,
-      ring: 3,
-      label: "InfluxDB",
+      quadrant: 1,
+      ring: 0,
+      label: "Trivy",
       active: true,
-      moved: 0
+      moved: 1
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Jaeger",
+      active: true,
+      moved: 1
+    },
+    {
+      quadrant: 1,
+      ring: 0,
+      label: "Cluster API",
+      active: true,
+      moved: 1
     },
     {
       quadrant: 3,
       ring: 0,
       label: "jq",
-      active: false,
+      active: true,
       moved: 0
     },
     {
@@ -145,26 +355,26 @@ radar_visualization({
       quadrant: 1,
       ring: 0,
       label: "OPA/Gatekeeper",
-      active: false,
+      active: true,
       moved: 0
     },
     {
       quadrant: 1,
       ring: 0,
       label: "Prometheus",
-      active: false,
+      active: true,
       moved: 0
     },
     {
       quadrant: 1,
       ring: 0,
       label: "Rook",
-      active: false,
+      active: true,
       moved: 0
     },
     {
       quadrant: 1,
-      ring: 1,
+      ring: 0,
       label: "Tekton",
       active: true,
       moved: 1
@@ -173,7 +383,21 @@ radar_visualization({
       quadrant: 3,
       ring: 0,
       label: "Terraform",
-      active: false,
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 3,
+      ring: 0,
+      label: "Rclone",
+      active: true,
+      moved: 0
+    },
+    {
+      quadrant: 3,
+      ring: 0,
+      label: "Cluster-API",
+      active: true,
       moved: 0
     },
     {
