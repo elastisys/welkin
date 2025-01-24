@@ -1,4 +1,4 @@
-# Welkin to consist of both public and private open source
+# [Superseded by [ADR-0059](0059-welkin-to-consist-public-open-source-code-and-proprietary-documentation.md)]Welkin to consist of both public and private open source
 
 - Status: Accepted
 - Deciders: Management Team
