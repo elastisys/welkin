@@ -76,7 +76,12 @@ Welkin also captures highly privileged SSH access to the worker Nodes in the `au
 
 ### Assessment on Usage of Group Accounts
 
-Some security standards, such as [BDEW Requirement 4.5.2](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf), require usage of group accounts to be clearly specified.
+Usage of group accounts needs to be clearly specified, according to:
+
+- [BDEW Requirement 4.5.2](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf);
+- ISO/IEC 27002:2022 5.16, 5.17, 5.18, 8.5, 8.15;
+- ISO/IEC 27019:2017 9.2.1, 9.3.1, 9.4.2, 12.4.1
+
 Furthermore, a clear assessment needs to documented to show that such usage does not add an unacceptable risk.
 This section provides such an assessment.
 
@@ -100,6 +105,10 @@ To mitigate the risk of insider attacks or platform administrator account take-o
 - Do background checks on people with platform administrator access.
 - Enforce security hygiene on platform administrator workstations, e.g., no personal errands nor unauthorized applications.
 - Enforce storing SSH keys on a Hardware Security Module (HSM) which requires user interaction before logging in, such as [YubiKeys](https://www.yubico.com/).
+
+Regarding the last point, the BDEW white paper itself recommends:
+
+> Where technically possible, strong 2-factor authentication shall be used, e.g. through the use of tokens or smart cards.
 
 Note that, except these two group accounts on the underlying Linux operating system level on Nodes (`ubuntu` and `root`), all Welkin access happens via individual accounts, as illustrated in the [Credentials](../operator-manual/credentials.md) page.
 
