@@ -101,7 +101,7 @@ To mitigate the risk of insider attacks or platform administrator account take-o
 - Enforce security hygiene on platform administrator workstations, e.g., no personal errands nor unauthorized applications.
 - Enforce storing SSH keys on a Hardware Security Module (HSM) which requires user interaction before logging in, such as [YubiKeys](https://www.yubico.com/).
 
-Note that, except these two group accounts (`ubuntu` and `root`), all Welkin access happens via individual accounts, as illustrated in the [Credentials](../operator-manual/credentials.md) page.
+Note that, except these two group accounts on the underlying Linux operating system level on Nodes (`ubuntu` and `root`), all Welkin access happens via individual accounts, as illustrated in the [Credentials](../operator-manual/credentials.md) page.
 
 ## Audit Logs for Additional Services
 
