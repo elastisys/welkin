@@ -74,6 +74,35 @@ Welkin also captures highly privileged SSH access to the worker Nodes in the `au
 
     Many data protection regulation will require you to [individually identify administrators](../adr/0005-use-individual-ssh-keys.md), hence individual SSH keys. This allows you to individually identify administrators in the SSH access log.
 
+### Assessment on Usage of Group Accounts
+
+Some security standards, such as [BDEW Requirement 4.5.2](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf), require usage of group accounts to be clearly specified.
+Furthermore, a clear assessment needs to documented to show that such usage does not add an unacceptable risk.
+This section provides such an assessment.
+
+Platform administrators need to perform certain operations, such as Kubespray upgrades and incident resolution, via a very privileged access.
+Welkin recommends such access be done by SSH-ing using the group account `ubuntu` with individual SSH keys, then using `sudo` to gain access to the `root` account.
+This is standard practice with the [Ubuntu Cloud Images](https://cloud-images.ubuntu.com/) recommended by Welkin.
+
+We assessed such usage not to pose unnecessary risk because:
+
+- The individual having logged in can be identified in the SSH Access Logs by looking at the IP address and SSH key.
+Seeing a log line `EVE_IP logged in as EVE_USERNAME using EVE_SSH_KEY` does not reduce any risk compared to `EVE_IP logged in as ubuntu using EVE_SSH_KEY`.
+Hence, in case of an insider attack or a platform administrator account take-over, one can already narrow down a list of suspected individuals.
+- Even with individual accounts, we are extremely limited in knowing exactly what the platform administrator did after they logged in, due to technical reasons.
+Most interesting actions are often hidden in temporary scripts, such as those installed in `/tmp` during normal Ansible usage.
+If we really wanted to be 100% able to prove that an individual did something bad, then we would need individual accounts *and* individual root accounts *and* eBPF intercept all syscalls *and* log these into a tamper-proof environment.
+This is, of course, not technically impossible, however super-costly.
+
+To mitigate the risk of insider attacks or platform administrator account take-over, Welkin recommends the following security measures:
+
+- Severely limit the number of people with platform administrator access.
+- Do background checks on people with platform administrator access.
+- Enforce security hygiene on platform administrator workstations, e.g., no personal errands nor unauthorized applications.
+- Enforce storing SSH keys on a Hardware Security Module (HSM) which requires user interaction before logging in, such as [YubiKeys](https://www.yubico.com/).
+
+Note that, except these two group accounts (`ubuntu` and `root`), all Welkin access happens via individual accounts, as illustrated in the [Credentials](../operator-manual/credentials.md) page.
+
 ## Audit Logs for Additional Services
 
 The Kubernetes Audit Logs capture user access to additional services, i.e., `kubectl exec` or `kubectl port-forward` commands. Additional services usually do not have audit logging enabled, since that generates a lot of log entries. Too often the extra bandwidth, storage capacity, performance loss comes with little benefit to data security.
