@@ -91,7 +91,7 @@ Seeing a log line `EVE_IP logged in as EVE_USERNAME using EVE_SSH_KEY` does not 
 Hence, in case of an insider attack or a platform administrator account take-over, one can already narrow down a list of suspected individuals.
 - Even with individual accounts, we are extremely limited in knowing exactly what the platform administrator did after they logged in, due to technical reasons.
 Most interesting actions are often hidden in temporary scripts, such as those installed in `/tmp` during normal Ansible usage.
-If we really wanted to be 100% able to prove that an individual did something bad, then we would need individual accounts *and* individual root accounts *and* eBPF intercept all syscalls *and* log these into a tamper-proof environment.
+If we really wanted to be 100% able to prove that an individual did something bad, then we would need individual accounts _and_ individual root accounts _and_ eBPF intercept all syscalls _and_ log these into a tamper-proof environment.
 This is, of course, not technically impossible, however super-costly.
 
 To mitigate the risk of insider attacks or platform administrator account take-over, Welkin recommends the following security measures:
