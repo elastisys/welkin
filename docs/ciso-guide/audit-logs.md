@@ -76,7 +76,7 @@ Welkin also captures highly privileged SSH access to the worker Nodes in the `au
 
 ### Assessment on Usage of Group Accounts
 
-Usage of group accounts needs to be clearly specified, according to:
+Usage of group accounts needs to be restricted to exceptional situations and clearly specified, according to:
 
 - [BDEW Requirement 4.5.2](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf);
 - ISO/IEC 27002:2022 5.16, 5.17, 5.18, 8.5, 8.15;
@@ -85,7 +85,13 @@ Usage of group accounts needs to be clearly specified, according to:
 Furthermore, a clear assessment needs to documented to show that such usage does not add an unacceptable risk.
 This section provides such an assessment.
 
-Platform administrators need to perform certain operations, such as Kubespray upgrades and incident resolution, via a very privileged access.
+Platform administrators need to perform certain exceptional operations via a very privileged access.
+These operations are:
+
+- Kubespray maintenance;
+- incident resolution at the operating system level;
+- [break glass scenarios](../operator-manual/break-glass.md).
+
 Welkin recommends such access be done by SSH-ing using the group account `ubuntu` with individual SSH keys, then using `sudo` to gain access to the `root` account.
 This is standard practice with the [Ubuntu Cloud Images](https://cloud-images.ubuntu.com/) recommended by Welkin.
 
