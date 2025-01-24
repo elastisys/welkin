@@ -78,7 +78,9 @@ Welkin also captures highly privileged SSH access to the worker Nodes in the `au
 
 Usage of group accounts needs to be restricted to exceptional situations and clearly specified, according to:
 
+<!-- vale off -->
 - [BDEW "Anforderungen an sichere Steuerungs- und Telekommunikationssysteme" v3.0 Requirement 4.5.2](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf);
+<!-- vale on -->
 - ISO/IEC 27002:2022 5.16, 5.17, 5.18, 8.5, 8.15;
 - ISO/IEC 27019:2017 9.2.1, 9.3.1, 9.4.2, 12.4.1
 
