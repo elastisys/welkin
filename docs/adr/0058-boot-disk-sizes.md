@@ -1,4 +1,4 @@
-# Boot disk size on nodes
+# Boot disk size on Nodes
 
 - Status: Accepted
 - Deciders: Product Team
@@ -6,11 +6,11 @@
 
 ## Context and Problem Statement
 
-This ADR supersedes [adr-0032](0032-boot-disk-size.md) which previously established that all nodes should have boot disk of size 100GB irrespective of node size and that control plane Nodes should have 100GB local disk.
+This ADR supersedes [ADR-0032](0032-boot-disk-size.md) which previously established that all Nodes should have boot disk of size 100GB irrespective of Node size and that control plane Nodes should have 100GB local disk.
 
-After running like this for over 1 year we have discovered that for small and medium environments this is too much and can be lowered for some of the nodes to reduce the infrastructure cost for our customers.
+After running like this for over 1 year we have discovered that for small and medium environments this is too much and can be lowered for some of the Nodes to reduce the infrastructure footprint.
 
-Should we use different boot disk sizes for nodes than we set before?
+Should we use different boot disk sizes for Nodes than we set before?
 
 ## Decision Drivers
 
@@ -20,38 +20,38 @@ Should we use different boot disk sizes for nodes than we set before?
 
 ## Considered Options
 
-- Do nothing and keep decision from adr-0032
-- Change boot disk size to 50GB for all nodes irrespective of size and type.
-- Keep boot disk size to minimum 100GB for all WC worker nodes
-- Keep boot disk size to minimum 100GB for all WC Elastisys nodes
-- Keep boot disk size to minimum 100GB for all control plane nodes in both MC and WC
-- Keep boot disk size to minimum 100GB for all control plane nodes in WC
-- Change boot disk size to minimum 50GB for all nodes irrespective of size and type in MC cluster and leave all WC cluster nodes with 100GB boot disk size.
-- Keep boot disk size to minimum 100GB as recommended size for all nodes irrespective of size and type and on request change MC nodes and some WC nodes to use 50GB
-- Do not change the default values
+1. Do nothing and keep decision from ADR-0032
+1. Change boot disk size to 50GB for all Nodes irrespective of size and type.
+1. Keep boot disk size to minimum 100GB for all WC worker Nodes
+1. Keep boot disk size to minimum 100GB for all WC Elastisys Nodes
+1. Keep boot disk size to minimum 100GB for all control plane Nodes in both MC and WC
+1. Keep boot disk size to minimum 100GB for all control plane Nodes in WC
+1. Change boot disk size to minimum 50GB for all Nodes irrespective of size and type in MC cluster and leave all WC cluster Nodes with 100GB boot disk size.
+1. Keep the recommended boot disk size to minimum 100GB for all Nodes irrespective of size and type, however allow on request to change MC Nodes and some WC Nodes to use 50GB.
+1. Do not change the default values
 
 ## Decision Outcome
 
-Chosen option: 1 + 3 + 4 + 9
+Chosen option: 8 + 9
 
 ### Positive Consequences
 
-- Improved Reliability for application nodes by choosing option 3
-- Reduce the number of alerts and ops time from option 3 and 4
+- Improved Reliability for application Nodes
+- Reduce the number of alerts and ops time
 - Improve platform stability and scalability
 - Reduce the infrastructure cost for small and medium environments.
 - By not changing default configurations, no existing clusters will be impacted, reducing the risk of unintentional disruption.
 
 ### Negative Consequences
 
-- Some alerts might appear for nodes that will use 50GB volumes
+- Some alerts might appear for Nodes that will use 50GB volumes
 - More ops time would be needed to scale up the 50GB volumes
 
 ## Recommendation to Platform Administrators
 
 - Try to use same VM flavors on all environments
 - Use VM flavor with local disk of minimum 50GB, recommended 100GB or whichever is closest to this size depending on Infrastructure Provider for control plane Nodes.
-- For worker nodes use 100GB boot disk size on Infrastructure Providers that allow it and on the ones that we can't use the VM flavor with the closest disk size.
+- For worker Node use 100GB boot disk size on Infrastructure Providers that allow it and on the ones that we can't use the VM flavor with the closest disk size.
 
 ## Links
 
