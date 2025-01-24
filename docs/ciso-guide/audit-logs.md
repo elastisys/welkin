@@ -92,7 +92,7 @@ Hence, in case of an insider attack or a platform administrator account take-ove
 - Even with individual accounts, we are extremely limited in knowing exactly what the platform administrator did after they logged in, due to technical reasons.
 Most interesting actions are often hidden in temporary scripts, such as those installed in `/tmp` during normal Ansible usage.
 If we really wanted to be 100% able to prove that an individual did something bad, then we would need individual accounts _and_ individual root accounts _and_ eBPF intercept all syscalls _and_ log these into a tamper-proof environment.
-This is, of course, not technically impossible, however super-costly.
+This is, of course, not technically impossible, however very costly in terms of system resources -- not to mention questionable in terms of added security, given the permissions of root accounts.
 
 To mitigate the risk of insider attacks or platform administrator account take-over, Welkin recommends the following security measures:
 
