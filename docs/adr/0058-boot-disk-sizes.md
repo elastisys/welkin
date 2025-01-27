@@ -32,7 +32,7 @@ Should we use different boot disk sizes for Nodes than we set before?
 
 ## Decision Outcome
 
-Chosen option: 8 + 9
+Chosen option: 8 + 9. This means we will keep the recommended boot disk size to minimum 100GB for all Nodes irrespective of size and type, however allow on request to change MC Nodes and some WC Nodes to use 50GB. The default value stays at 100 GB.
 
 ### Positive Consequences
 
