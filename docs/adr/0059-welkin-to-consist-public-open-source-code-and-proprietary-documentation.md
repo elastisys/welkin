@@ -24,7 +24,7 @@ Given these factors, should Welkin move to a model of fully public open-source c
 
 ## Considered Options
 
-1. Yes, move to a model of fully public open-source code while keeping documentation proprietary.
+1. Yes, move to a model of fully public open-source code.
 1. No, keep decision made in ADR0055
 
 ## Decision Outcome
