@@ -8,7 +8,9 @@
 
 Welkin’s current policy, as defined in ADR-0055, is to maintain a mix of public and private open-source components for its product. This approach aimed to balance openness with control over sensitive intellectual property.
 
-However, a critical challenge has emerged. Infrastructure operators, who are key stakeholders, require access to the codebase to understand, troubleshoot, and maintain critical systems. Restricting access to portions of the code limits their ability to operate effectively and creates friction in their workflows.
+However, new information has emerged.
+Essential and important entities (as defined in NIS2), who are key stakeholders, require access to the codebase to understand, troubleshoot, and maintain critical systems.
+Restricting access to portions of the code limits their ability to operate effectively and creates friction in their workflows.
 
 Additionally, by maintaining a private portion of the open-source code, we introduce unnecessary complexity into our development and operational processes. Ensuring parity between public and private repositories adds overhead and detracts from our goals of transparency and ease of use.
 
