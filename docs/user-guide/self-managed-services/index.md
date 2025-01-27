@@ -35,5 +35,5 @@ To get started, we recommend you [check out this PR](https://github.com/elastisy
 - [Kubernetes Operator Pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 - [ISO 27019:2024](https://www.iso.org/standard/85056.html)
 <!-- vale off -->
-- [BDEW Whitepaper Anforderungen an sichere Steuerungs- und Telekommunikationssysteme](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf)
+- [BDEW Whitepaper Anforderungen an sichere Steuerungs- und Telekommunikationssysteme v3.0](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf)
 <!-- vale on -->
