@@ -55,4 +55,4 @@ Chosen option: 8 + 9
 
 ## Links
 
-- [Some recommendations](https://serverfault.com/questions/977871/recommended-disk-size-for-gke-nodes)
+- [Discussion on boot disk size](https://serverfault.com/questions/977871/recommended-disk-size-for-gke-nodes)
