@@ -3175,6 +3175,21 @@ if(!document.__defineGetter__) {
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SSH Access Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assessment-on-usage-of-group-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment on Usage of Group Accounts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4044,6 +4059,21 @@ if(!document.__defineGetter__) {
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SSH Access Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assessment-on-usage-of-group-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment on Usage of Group Accounts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4179,6 +4209,50 @@ The audit logs cover calls to the Kubernetes API, specifically <strong>who</stro
 </ul>
 <p>Many data protection regulation will require you to <a href="../../adr/0005-use-individual-ssh-keys/">individually identify administrators</a>, hence individual SSH keys. This allows you to individually identify administrators in the SSH access log.</p>
 </div>
+<h3 id="assessment-on-usage-of-group-accounts">Assessment on Usage of Group Accounts<a class="headerlink" href="#assessment-on-usage-of-group-accounts" title="Permanent link">&para;</a></h3>
+<p>Usage of group accounts needs to be restricted to exceptional situations and clearly specified, according to:</p>
+<!-- vale off -->
+<ul>
+<li><a href="https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf">BDEW "Anforderungen an sichere Steuerungs- und Telekommunikationssysteme" v3.0 Requirement 4.5.2</a>;</li>
+</ul>
+<!-- vale on -->
+<ul>
+<li>ISO/IEC 27002:2022 5.16, 5.17, 5.18, 8.5, 8.15;</li>
+<li>ISO/IEC 27019:2017 9.2.1, 9.3.1, 9.4.2, 12.4.1</li>
+</ul>
+<p>Furthermore, a clear assessment needs to documented to show that such usage does not add an unacceptable risk.
+This section provides such an assessment.</p>
+<p>Platform administrators need to perform certain exceptional operations via a very privileged access.
+These operations are:</p>
+<ul>
+<li>Kubespray maintenance;</li>
+<li>incident resolution at the operating system level;</li>
+<li><a href="../../operator-manual/break-glass/">break glass scenarios</a>.</li>
+</ul>
+<p>Welkin recommends such access be done by SSH-ing using the group account <code>ubuntu</code> with individual SSH keys, then using <code>sudo</code> to gain access to the <code>root</code> account.
+This is standard practice with the <a href="https://cloud-images.ubuntu.com/">Ubuntu Cloud Images</a> recommended by Welkin.</p>
+<p>We assessed such usage not to pose unnecessary risk because:</p>
+<ul>
+<li>The individual having logged in can be identified in the SSH Access Logs by looking at the IP address and SSH key.
+Seeing a log line <code>EVE_IP logged in as EVE_USERNAME using EVE_SSH_KEY</code> does not reduce any risk compared to <code>EVE_IP logged in as ubuntu using EVE_SSH_KEY</code>.
+Hence, in case of an insider attack or a platform administrator account take-over, one can already narrow down a list of suspected individuals.</li>
+<li>Even with individual accounts, we are extremely limited in knowing exactly what the platform administrator did after they logged in, due to technical reasons.
+Most interesting actions are often hidden in temporary scripts, such as those installed in <code>/tmp</code> during normal Ansible usage.
+If we really wanted to be 100% able to prove that an individual did something bad, then we would need individual accounts <em>and</em> individual root accounts <em>and</em> eBPF intercept all syscalls <em>and</em> log these into a tamper-proof environment.
+This is, of course, not technically impossible, however very costly in terms of system resources -- not to mention questionable in terms of added security, given the permissions of root accounts.</li>
+</ul>
+<p>To mitigate the risk of insider attacks or platform administrator account take-over, Welkin recommends the following security measures:</p>
+<ul>
+<li>Severely limit the number of people with platform administrator access.</li>
+<li>Do background checks on people with platform administrator access.</li>
+<li>Enforce security hygiene on platform administrator workstations, e.g., no personal errands nor unauthorized applications.</li>
+<li>Enforce storing SSH keys on a Hardware Security Module (HSM) which requires user interaction before logging in, such as <a href="https://www.yubico.com/">YubiKeys</a>.</li>
+</ul>
+<p>Regarding the last point, the BDEW white paper itself recommends:</p>
+<blockquote>
+<p>Where technically possible, strong 2-factor authentication shall be used, e.g. through the use of tokens or smart cards.</p>
+</blockquote>
+<p>Note that, except these two group accounts on the underlying Linux operating system level on Nodes (<code>ubuntu</code> and <code>root</code>), all Welkin access happens via individual accounts, as illustrated in the <a href="../../operator-manual/credentials/">Credentials</a> page.</p>
 <h2 id="audit-logs-for-additional-services">Audit Logs for Additional Services<a class="headerlink" href="#audit-logs-for-additional-services" title="Permanent link">&para;</a></h2>
 <p>The Kubernetes Audit Logs capture user access to additional services, i.e., <code>kubectl exec</code> or <code>kubectl port-forward</code> commands. Additional services usually do not have audit logging enabled, since that generates a lot of log entries. Too often the extra bandwidth, storage capacity, performance loss comes with little benefit to data security.</p>
 <p><strong>Prefer audit logs in your application to capture audit-worthy events</strong>, such as login, logout, patient record access, patient record change, etc. Resist the temptation to enable audit logging too "low" in the stack. Messages like "Redis client connected" are plenty and add little value to your data protection posture.</p>
