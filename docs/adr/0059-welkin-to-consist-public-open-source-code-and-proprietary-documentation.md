@@ -29,7 +29,7 @@ Given these factors, should Welkin move to a model of fully public open-source c
 
 ## Decision Outcome
 
-Option 1: Move to a model of fully public open-source code while keeping documentation proprietary.
+Option 1: Move to a model of fully public open-source code.
 
 This reflects Welkin's commitment to supporting its users, especially critical infrastructure operators, while continuing to provide value through proprietary offerings.
 
