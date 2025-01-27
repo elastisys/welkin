@@ -188,6 +188,7 @@ nav:
           - "Jaeger (preview)": "user-guide/additional-services/jaeger.md"
           - "Argo CD (preview)": "user-guide/additional-services/argocd.md"
       - "Self-Managed Services":
+          - "Overview": "user-guide/self-managed-services/index.md"
           - "FerretDB (self-managed)": "user-guide/self-managed-services/ferretdb.md"
           - "Keycloak (self-managed)": "user-guide/self-managed-services/keycloak.md"
           - "JupyterHub (self-managed)": "user-guide/self-managed-services/jupyterhub.md"
@@ -287,6 +288,7 @@ nav:
   - "Official Training": "https://elastisys.com/training/"
   - "Blog": "https://elastisys.com/blog/"
   - "Privacy Policy": "https://elastisys.com/legal/privacy-policy/"
+  - "Request a Feature": "request-a-feature.md"
 
 not_in_nav: |
   adr/*.md
