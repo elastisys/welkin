@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.43.0](#v0430) - 2025-01-27
 - [v0.42.1](#v0421) - 2025-01-02
 - [v0.42.0](#v0420) - 2024-11-14
 - [v0.41.0](#v0410) - 2024-10-02
@@ -63,6 +64,26 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.43.0
+
+Released 2025-01-27
+
+!!! danger "Security Notice(s)"
+
+    - Upgrades Grafana to `11.3.0` to fix [CVE-2024-9264](https://nvd.nist.gov/vuln/detail/cve-2024-9264)
+    - OpenSearch Dashboards was upgraded to `2.17.1` which mitigates [CVE-2024-45801](https://github.com/advisories/GHSA-mmhx-hmjr-r674)
+
+### Improvement(s)
+
+- Upgraded Grafana to 11.3.0 and chart to 8.5.9
+- Upgraded OpenSearch to v2.17.1
+- Upgraded Harbor to v2.12.1
+
+### Other(s)
+
+- Added JSON schema contribution guide
+- Rebrand to Welkin in configuration and documentation
 
 ## v0.42.1
 
