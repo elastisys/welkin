@@ -5,7 +5,7 @@ Also, application developers have rather [limited permissions](../demarcation.md
 Together, these help your organization comply with various regulations and information security standards, such as:
 
 <!-- vale off -->
-- [BDEW Whitepaper Anforderungen an sichere Steuerungs- und Telekommunikationssysteme](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf) Requirement 4.1.1 Minimal-Need-To-Know-Prinzip.
+- [BDEW Whitepaper Anforderungen an sichere Steuerungs- und Telekommunikationssysteme v3.0](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf) Requirement 4.1.1 Minimal-Need-To-Know-Prinzip.
 <!-- vale on -->
 
 However, Welkin also empathises with application developers who need to "get things done".
