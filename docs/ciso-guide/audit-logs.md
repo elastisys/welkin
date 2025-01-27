@@ -74,6 +74,52 @@ Welkin also captures highly privileged SSH access to the worker Nodes in the `au
 
     Many data protection regulation will require you to [individually identify administrators](../adr/0005-use-individual-ssh-keys.md), hence individual SSH keys. This allows you to individually identify administrators in the SSH access log.
 
+### Assessment on Usage of Group Accounts
+
+Usage of group accounts needs to be restricted to exceptional situations and clearly specified, according to:
+
+<!-- vale off -->
+- [BDEW "Anforderungen an sichere Steuerungs- und Telekommunikationssysteme" v3.0 Requirement 4.5.2](https://www.bdew.de/media/documents/BDEW-OE-VSE-Whitepaper-3.0.pdf);
+<!-- vale on -->
+- ISO/IEC 27002:2022 5.16, 5.17, 5.18, 8.5, 8.15;
+- ISO/IEC 27019:2017 9.2.1, 9.3.1, 9.4.2, 12.4.1
+
+Furthermore, a clear assessment needs to documented to show that such usage does not add an unacceptable risk.
+This section provides such an assessment.
+
+Platform administrators need to perform certain exceptional operations via a very privileged access.
+These operations are:
+
+- Kubespray maintenance;
+- incident resolution at the operating system level;
+- [break glass scenarios](../operator-manual/break-glass.md).
+
+Welkin recommends such access be done by SSH-ing using the group account `ubuntu` with individual SSH keys, then using `sudo` to gain access to the `root` account.
+This is standard practice with the [Ubuntu Cloud Images](https://cloud-images.ubuntu.com/) recommended by Welkin.
+
+We assessed such usage not to pose unnecessary risk because:
+
+- The individual having logged in can be identified in the SSH Access Logs by looking at the IP address and SSH key.
+Seeing a log line `EVE_IP logged in as EVE_USERNAME using EVE_SSH_KEY` does not reduce any risk compared to `EVE_IP logged in as ubuntu using EVE_SSH_KEY`.
+Hence, in case of an insider attack or a platform administrator account take-over, one can already narrow down a list of suspected individuals.
+- Even with individual accounts, we are extremely limited in knowing exactly what the platform administrator did after they logged in, due to technical reasons.
+Most interesting actions are often hidden in temporary scripts, such as those installed in `/tmp` during normal Ansible usage.
+If we really wanted to be 100% able to prove that an individual did something bad, then we would need individual accounts _and_ individual root accounts _and_ eBPF intercept all syscalls _and_ log these into a tamper-proof environment.
+This is, of course, not technically impossible, however very costly in terms of system resources -- not to mention questionable in terms of added security, given the permissions of root accounts.
+
+To mitigate the risk of insider attacks or platform administrator account take-over, Welkin recommends the following security measures:
+
+- Severely limit the number of people with platform administrator access.
+- Do background checks on people with platform administrator access.
+- Enforce security hygiene on platform administrator workstations, e.g., no personal errands nor unauthorized applications.
+- Enforce storing SSH keys on a Hardware Security Module (HSM) which requires user interaction before logging in, such as [YubiKeys](https://www.yubico.com/).
+
+Regarding the last point, the BDEW white paper itself recommends:
+
+> Where technically possible, strong 2-factor authentication shall be used, e.g. through the use of tokens or smart cards.
+
+Note that, except these two group accounts on the underlying Linux operating system level on Nodes (`ubuntu` and `root`), all Welkin access happens via individual accounts, as illustrated in the [Credentials](../operator-manual/credentials.md) page.
+
 ## Audit Logs for Additional Services
 
 The Kubernetes Audit Logs capture user access to additional services, i.e., `kubectl exec` or `kubectl port-forward` commands. Additional services usually do not have audit logging enabled, since that generates a lot of log entries. Too often the extra bandwidth, storage capacity, performance loss comes with little benefit to data security.
