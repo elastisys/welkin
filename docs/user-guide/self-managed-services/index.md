@@ -11,7 +11,7 @@ Together, these help your organization comply with various regulations and infor
 However, Welkin also empathises with application developers who need to "get things done".
 Indeed, application developer may need to leverage the [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) pattern for increased productivity and may perceive Welkin to be too restrictive.
 
-To fulfill the needs of application developer, Welkin introduces the concept of self-managed services.
+To fulfill the needs of application developers, Welkin introduces the concept of self-managed services.
 Each self-managed service is a Welkin feature which provides just enough permissions to install an Operator, while at the same time complying with minimal-need-to-know principles.
 Self-managed services are disabled by default and need to be enabled by the platform administrator to comply with secure-by-default principles.
 
