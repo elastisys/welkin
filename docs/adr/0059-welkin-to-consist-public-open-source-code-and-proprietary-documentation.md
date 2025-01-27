@@ -12,7 +12,7 @@ However, a critical challenge has emerged. Infrastructure operators, who are key
 
 Additionally, by maintaining a private portion of the open-source code, we introduce unnecessary complexity into our development and operational processes. Ensuring parity between public and private repositories adds overhead and detracts from our goals of transparency and ease of use.
 
-Given these factors, should Welkin move to a model of fully public open-source code while keeping documentation proprietary.
+Given these factors, should Welkin move to a model of fully public open-source code while keeping documentation proprietary?
 
 ## Decision Drivers
 
