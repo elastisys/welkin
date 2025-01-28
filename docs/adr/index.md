@@ -131,8 +131,11 @@ This log lists the architectural decisions for Welkin.
 - [ADR-0052](0052-azure-encryption-at-rest.md) - Azure Encryption-at-Rest for Object Storage and Block Storage
 - [ADR-0053](0053-do-not-expose-platform-observability-services-to-end-users.md) - Do not expose platform observability services to end-users
 - [ADR-0054](0054-allow-write-access-to-endpoints-and-endpointslices-after-risk-acceptance.md) - Allow Application Developer write access to Endpoints and EndpointSlices after Proper Risk Acceptance
-- [ADR-0055](0055-welkin-to-consist-of-both-public-and-private-open-source.md) - Welkin to consist of both public and private open source
+- [ADR-0055](0055-welkin-to-consist-of-both-public-and-private-open-source.md) - [Superseded by [ADR-0059](0059-welkin-to-consist-public-open-source-code-and-proprietary-documentation.md)]Welkin to consist of both public and private open source
 - [ADR-0056](0056-allow-snippets-annotations-after-risk-acceptance.md) - Only allow Ingress Snippet Annotations after Proper Risk Acceptance
+- [ADR-0057](0057-why-we-do-not-use-cloud-managed-kubernetes-services.md) - Do Not Use Managed Kubernetes Services
+- [ADR-0058](0058-boot-disk-sizes.md) - Boot disk size on Nodes
+- [ADR-0059](0059-welkin-to-consist-public-open-source-code-and-proprietary-documentation.md) - Welkin to Consist of Public Open Source Code and Proprietary Documentation
 
 <!-- adrlogstop -->
 
