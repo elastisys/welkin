@@ -1,6 +1,6 @@
-# Boot disk size on nodes
+# [Superseded by [ADR-0058](0058-boot-disk-sizes.md)]Boot disk size on nodes
 
-- Status: accepted
+- Status: superseded by [ADR-0058](0058-boot-disk-sizes.md)
 - Deciders: Cristian Klein, Olle Larsson, Lucian Vlad, Fredrik Liv, Robin Wallace, Pavan Gunda
 - Date: 2023-02-14
 
