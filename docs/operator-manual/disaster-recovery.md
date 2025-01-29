@@ -146,13 +146,20 @@ os_url=https://opensearch.$(yq4 '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-c
 List snapshot repositories:
 
 ```bash
-# Simple
-❯ curl -kL -u "${user}:${password}" "${os_url}/_cat/repositories?v"
+curl -kL -u "${user}:${password}" "${os_url}/_cat/repositories?v"
+```
+
+Output should be similar to:
+
+```console
 id                   type
 opensearch-snapshots   s3
+```
 
-# Detailed
-❯ curl -kL -u "${user}:${password}" "${os_url}/_snapshot/?pretty"
+<details><summary>Detailed output</summary>
+
+```bash
+curl -kL -u "${user}:${password}" "${os_url}/_snapshot/?pretty"
 {
   "opensearch-snapshots" : {
     "type" : "s3",
@@ -164,24 +171,34 @@ opensearch-snapshots   s3
 }
 ```
 
+</details>
+
 List available snapshots:
 
 ```bash
 snapshot_repo=<name/id from previous step>
 
-# Simple
-❯ curl -kL -u "${user}:${password}" "${os_url}/_cat/snapshots/${snapshot_repo}?v&s=id"
+curl -kL -u "${user}:${password}" "${os_url}/_cat/snapshots/${snapshot_repo}?v&s=id"
+```
+
+Output should be similar to:
+
+```console
 id                         status start_epoch start_time end_epoch  end_time duration indices successful_shards failed_shards total_shards
 snapshot-20211231_120002z SUCCESS 1640952003  12:00:03   1640952082 12:01:22     1.3m      54                54             0           54
 snapshot-20220101_000003z SUCCESS 1640995203  00:00:03   1640995367 00:02:47     2.7m      59                59             0           59
 snapshot-20220101_120002z SUCCESS 1641038403  12:00:03   1641038533 12:02:13     2.1m      57                57             0           57
 ...
+```
 
+<details><summary>Detailed output</summary>
+
+```bash
 # Detailed list of all snapshots
 curl -kL -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/_all?pretty"
 
 # Detailed list of specific snapshot
-❯ curl -kL -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/snapshot-20220104_120002z?pretty"
+curl -kL -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/snapshot-20220104_120002z?pretty"
 {{
   "snapshots" : [
     {
@@ -213,9 +230,9 @@ curl -kL -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/_all?pre
     }
   ]
 }
-
-
 ```
+
+</details>
 
 You usually select the latest snapshot containing the indices you want to restore.
 Restore one or multiple indices from a snapshot
