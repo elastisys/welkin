@@ -4596,13 +4596,15 @@ Replace the previous snapshot repository if it is unusable.</p>
 </ul>
 </div>
 <p>List snapshot repositories:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Simple</span>
-❯<span class="w"> </span>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cat/repositories?v&quot;</span>
-id<span class="w">                   </span><span class="nb">type</span>
-opensearch-snapshots<span class="w">   </span>s3
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cat/repositories?v&quot;</span>
+</code></pre></div>
+<p>Output should be similar to:</p>
+<div class="highlight"><pre><span></span><code><span class="go">id                   type</span>
+<span class="go">opensearch-snapshots   s3</span>
+</code></pre></div>
+<details><summary>Detailed output</summary>
 
-<span class="c1"># Detailed</span>
-❯<span class="w"> </span>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/?pretty&quot;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/?pretty&quot;</span>
 <span class="o">{</span>
 <span class="w">  </span><span class="s2">&quot;opensearch-snapshots&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="s2">&quot;type&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;s3&quot;</span>,
@@ -4613,22 +4615,28 @@ opensearch-snapshots<span class="w">   </span>s3
 <span class="w">  </span><span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
+
+</details>
+
 <p>List available snapshots:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">snapshot_repo</span><span class="o">=</span>&lt;name/id<span class="w"> </span>from<span class="w"> </span>previous<span class="w"> </span>step&gt;
 
-<span class="c1"># Simple</span>
-❯<span class="w"> </span>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cat/snapshots/</span><span class="si">${</span><span class="nv">snapshot_repo</span><span class="si">}</span><span class="s2">?v&amp;s=id&quot;</span>
-id<span class="w">                         </span>status<span class="w"> </span>start_epoch<span class="w"> </span>start_time<span class="w"> </span>end_epoch<span class="w">  </span>end_time<span class="w"> </span>duration<span class="w"> </span>indices<span class="w"> </span>successful_shards<span class="w"> </span>failed_shards<span class="w"> </span>total_shards
-snapshot-20211231_120002z<span class="w"> </span>SUCCESS<span class="w"> </span><span class="m">1640952003</span><span class="w">  </span><span class="m">12</span>:00:03<span class="w">   </span><span class="m">1640952082</span><span class="w"> </span><span class="m">12</span>:01:22<span class="w">     </span><span class="m">1</span>.3m<span class="w">      </span><span class="m">54</span><span class="w">                </span><span class="m">54</span><span class="w">             </span><span class="m">0</span><span class="w">           </span><span class="m">54</span>
-snapshot-20220101_000003z<span class="w"> </span>SUCCESS<span class="w"> </span><span class="m">1640995203</span><span class="w">  </span><span class="m">00</span>:00:03<span class="w">   </span><span class="m">1640995367</span><span class="w"> </span><span class="m">00</span>:02:47<span class="w">     </span><span class="m">2</span>.7m<span class="w">      </span><span class="m">59</span><span class="w">                </span><span class="m">59</span><span class="w">             </span><span class="m">0</span><span class="w">           </span><span class="m">59</span>
-snapshot-20220101_120002z<span class="w"> </span>SUCCESS<span class="w"> </span><span class="m">1641038403</span><span class="w">  </span><span class="m">12</span>:00:03<span class="w">   </span><span class="m">1641038533</span><span class="w"> </span><span class="m">12</span>:02:13<span class="w">     </span><span class="m">2</span>.1m<span class="w">      </span><span class="m">57</span><span class="w">                </span><span class="m">57</span><span class="w">             </span><span class="m">0</span><span class="w">           </span><span class="m">57</span>
-...
+curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cat/snapshots/</span><span class="si">${</span><span class="nv">snapshot_repo</span><span class="si">}</span><span class="s2">?v&amp;s=id&quot;</span>
+</code></pre></div>
+<p>Output should be similar to:</p>
+<div class="highlight"><pre><span></span><code><span class="go">id                         status start_epoch start_time end_epoch  end_time duration indices successful_shards failed_shards total_shards</span>
+<span class="go">snapshot-20211231_120002z SUCCESS 1640952003  12:00:03   1640952082 12:01:22     1.3m      54                54             0           54</span>
+<span class="go">snapshot-20220101_000003z SUCCESS 1640995203  00:00:03   1640995367 00:02:47     2.7m      59                59             0           59</span>
+<span class="go">snapshot-20220101_120002z SUCCESS 1641038403  12:00:03   1641038533 12:02:13     2.1m      57                57             0           57</span>
+<span class="go">...</span>
+</code></pre></div>
+<details><summary>Detailed output</summary>
 
-<span class="c1"># Detailed list of all snapshots</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Detailed list of all snapshots</span>
 curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/</span><span class="si">${</span><span class="nv">snapshot_repo</span><span class="si">}</span><span class="s2">/_all?pretty&quot;</span>
 
 <span class="c1"># Detailed list of specific snapshot</span>
-❯<span class="w"> </span>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/</span><span class="si">${</span><span class="nv">snapshot_repo</span><span class="si">}</span><span class="s2">/snapshot-20220104_120002z?pretty&quot;</span>
+curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/</span><span class="si">${</span><span class="nv">snapshot_repo</span><span class="si">}</span><span class="s2">/snapshot-20220104_120002z?pretty&quot;</span>
 <span class="o">{{</span>
 <span class="w">  </span><span class="s2">&quot;snapshots&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="o">[</span>
 <span class="w">    </span><span class="o">{</span>
@@ -4661,6 +4669,9 @@ curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span
 <span class="w">  </span><span class="o">]</span>
 <span class="o">}</span>
 </code></pre></div>
+
+</details>
+
 <p>You usually select the latest snapshot containing the indices you want to restore.
 Restore one or multiple indices from a snapshot</p>
 <div class="admonition note">
