@@ -297,6 +297,89 @@ docker run --rm -ti -v $(pwd)/opensearch-dump:/tmp elasticdump/elasticsearch-dum
 
 For more examples and how to use the tool, read the documentation [in the repository](https://github.com/elasticsearch-dump/elasticsearch-dump#use).
 
+## Logs over HTTP
+
+Some applications might not directly output certain logs to stdout/stderr.
+For example, [MinIO](https://min.io/docs/minio/windows/operations/monitoring/minio-logging.html#publish-audit-logs-to-http-webhook) can be configured to send audit logs to an HTTP endpoint.
+In such cases, we recommend running your own instance of Fluentd as a sidecar container.
+Said sidecar container outputs received HTTP requests to stdout.
+This allows Welkin -- which happens to also use Fluentd -- to pick up, filter and buffer the logs.
+
+In the example below, we use "Fluentd" to refer to _your_ instance of Fluentd.
+Below is an example of how to configure MinIO to send audit logs over HTTP to a Fluentd sidecar container:
+
+1. Create a ConfigMap containing the following [Fluentd configuration](https://docs.fluentd.org/configuration/config-file):
+
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: fluentd-config
+      namespace: minio
+    data:
+      fluent.conf: |
+        <source>
+          @type http
+        #  @log_level debug # uncomment this to get fluentd debug logs
+          port 9880
+          bind 127.0.0.1
+          <parse>
+            @type json
+          </parse>
+        </source>
+        <match **>
+          @type stdout
+          <format>
+            @type json
+          </format>
+        </match>
+    ```
+
+1. Add the following container and volume mounts to the MinIO workload to run Fluentd as a sidecar:
+
+    ```yaml
+    spec:
+      containers:
+      - name: fluentd
+        image: ghcr.io/elastisys/fluentd-forwarder:v4.7.5-ck8s1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 9880
+        resources:
+        requests:
+          cpu: 10m
+          memory: 100M
+        securityContext:
+          runAsUser: 1000
+        volumeMounts:
+        - mountPath: /etc/fluent
+          name: fluentd-config
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: fluentd-config
+        name: fluentd-config
+    ```
+
+1. Configure the following environment variables for the MinIO container for it to send its audit logs to the Fluentd sidecar:
+
+    ```yaml
+    env:
+    - name: MINIO_AUDIT_WEBHOOK_ENABLE
+      value: "on"
+    - name: MINIO_AUDIT_WEBHOOK_ENDPOINT
+      value: http://localhost:9880/minioaudit.log
+    ```
+
+1. Verify by generating MinIO audit logs by running the [MinIO client](https://min.io/docs/minio/linux/reference/minio-mc.html) and then checking logs in OpenSearch:
+
+    ```sh
+    mc admin info <TARGET>
+    ```
+
+    ![MinIO audit logs in OpenSearch](./img/opensearch-minio-audit-logs.png)
+
 ## Log review dashboard
 
 This dashboard can be viewed to get a quick overview of the cluster's state.
