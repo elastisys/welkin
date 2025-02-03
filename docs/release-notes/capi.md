@@ -4,11 +4,21 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.4.1](#v041) - 2025-02-04
 - [v0.4.0](#v040) - 2024-11-28
 - [v0.3.0](#v030) - 2024-08-23
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.4.1
+
+Released 2025-02-04
+
+### Upgraded
+
+- Upgraded Ubuntu images to 24.04
+- Bumped default Kubernetes version to v1.30.9
 
 ## v0.4.0
 
