@@ -367,9 +367,12 @@ Restoring from a backup with Velero is meant to be a type of disaster recovery.
 **Velero will not overwrite existing Resources when restoring.**
 As such, if you want to restore the state of a Resource that is still running, the Resource must be deleted first.
 
-To restore the state from the latest daily backup, run:
+If you want to restore the entire cluster, all you need to run to restore the state from the latest daily backup, is:
 
 ```bash
+./bin/ck8s ops velero sc restore create --from-schedule velero-daily-backup --wait
+# Make sure application dependencies like Harbor, Postgres, RabbitMQ
+# and Redis are restored/installed before restoring wc with velero.
 ./bin/ck8s ops velero wc restore create --from-schedule velero-daily-backup --wait
 ```
 
