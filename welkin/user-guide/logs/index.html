@@ -938,6 +938,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#logs-over-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logs over HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#log-review-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       Log review dashboard
@@ -4295,6 +4304,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#logs-over-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logs over HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#log-review-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       Log review dashboard
@@ -4636,6 +4654,83 @@ docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </
 <span class="w">  </span>--searchBody<span class="o">=</span><span class="s1">&#39;{&quot;query&quot;:{......}}&#39;</span>
 </code></pre></div>
 <p>For more examples and how to use the tool, read the documentation <a href="https://github.com/elasticsearch-dump/elasticsearch-dump#use">in the repository</a>.</p>
+<h2 id="logs-over-http">Logs over HTTP<a class="headerlink" href="#logs-over-http" title="Permanent link">&para;</a></h2>
+<p>Some applications might not directly output certain logs to stdout/stderr.
+For example, <a href="https://min.io/docs/minio/windows/operations/monitoring/minio-logging.html#publish-audit-logs-to-http-webhook">MinIO</a> can be configured to send audit logs to an HTTP endpoint.
+In such cases, we recommend running your own instance of Fluentd as a sidecar container.
+Said sidecar container outputs received HTTP requests to stdout.
+This allows Welkin -- which happens to also use Fluentd -- to pick up, filter and buffer the logs.</p>
+<p>In the example below, we use "Fluentd" to refer to <em>your</em> instance of Fluentd.
+Below is an example of how to configure MinIO to send audit logs over HTTP to a Fluentd sidecar container:</p>
+<ol>
+<li>
+<p>Create a ConfigMap containing the following <a href="https://docs.fluentd.org/configuration/config-file">Fluentd configuration</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluentd-config</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minio</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">fluent.conf</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">&lt;source&gt;</span>
+<span class="w">      </span><span class="no">@type http</span>
+<span class="w">    </span><span class="no">#  @log_level debug # uncomment this to get fluentd debug logs</span>
+<span class="w">      </span><span class="no">port 9880</span>
+<span class="w">      </span><span class="no">bind 127.0.0.1</span>
+<span class="w">      </span><span class="no">&lt;parse&gt;</span>
+<span class="w">        </span><span class="no">@type json</span>
+<span class="w">      </span><span class="no">&lt;/parse&gt;</span>
+<span class="w">    </span><span class="no">&lt;/source&gt;</span>
+<span class="w">    </span><span class="no">&lt;match **&gt;</span>
+<span class="w">      </span><span class="no">@type stdout</span>
+<span class="w">      </span><span class="no">&lt;format&gt;</span>
+<span class="w">        </span><span class="no">@type json</span>
+<span class="w">      </span><span class="no">&lt;/format&gt;</span>
+<span class="w">    </span><span class="no">&lt;/match&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the following container and volume mounts to the MinIO workload to run Fluentd as a sidecar:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluentd</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/elastisys/fluentd-forwarder:v4.7.5-ck8s1</span>
+<span class="w">    </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
+<span class="w">      </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9880</span>
+<span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+<span class="w">      </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100M</span>
+<span class="w">    </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/fluent</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluentd-config</span>
+<span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">configMap</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">defaultMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">420</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluentd-config</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluentd-config</span>
+</code></pre></div>
+</li>
+<li>
+<p>Configure the following environment variables for the MinIO container for it to send its audit logs to the Fluentd sidecar:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">env</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MINIO_AUDIT_WEBHOOK_ENABLE</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;on&quot;</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MINIO_AUDIT_WEBHOOK_ENDPOINT</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:9880/minioaudit.log</span>
+</code></pre></div>
+</li>
+<li>
+<p>Verify by generating MinIO audit logs by running the <a href="https://min.io/docs/minio/linux/reference/minio-mc.html">MinIO client</a> and then checking logs in OpenSearch:</p>
+<div class="highlight"><pre><span></span><code>mc<span class="w"> </span>admin<span class="w"> </span>info<span class="w"> </span>&lt;TARGET&gt;
+</code></pre></div>
+<p><img alt="MinIO audit logs in OpenSearch" src="../img/opensearch-minio-audit-logs.png" /></p>
+</li>
+</ol>
 <h2 id="log-review-dashboard">Log review dashboard<a class="headerlink" href="#log-review-dashboard" title="Permanent link">&para;</a></h2>
 <p>This dashboard can be viewed to get a quick overview of the cluster's state.</p>
 <p><img alt="Log review dashboard" src="../../img/log-review-dashboard.png" /></p>
