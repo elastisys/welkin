@@ -4769,8 +4769,11 @@ Here is a basic example of how to use Velero to take a backup of all Kubernetes 
 <p>Restoring from a backup with Velero is meant to be a type of disaster recovery.
 <strong>Velero will not overwrite existing Resources when restoring.</strong>
 As such, if you want to restore the state of a Resource that is still running, the Resource must be deleted first.</p>
-<p>To restore the state from the latest daily backup, run:</p>
-<div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>velero<span class="w"> </span>wc<span class="w"> </span>restore<span class="w"> </span>create<span class="w"> </span>--from-schedule<span class="w"> </span>velero-daily-backup<span class="w"> </span>--wait
+<p>If you want to restore the entire cluster, all you need to run to restore the state from the latest daily backup, is:</p>
+<div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>velero<span class="w"> </span>sc<span class="w"> </span>restore<span class="w"> </span>create<span class="w"> </span>--from-schedule<span class="w"> </span>velero-daily-backup<span class="w"> </span>--wait
+<span class="c1"># Make sure application dependencies like Harbor, Postgres, RabbitMQ</span>
+<span class="c1"># and Redis are restored/installed before restoring wc with velero.</span>
+./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>velero<span class="w"> </span>wc<span class="w"> </span>restore<span class="w"> </span>create<span class="w"> </span>--from-schedule<span class="w"> </span>velero-daily-backup<span class="w"> </span>--wait
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
