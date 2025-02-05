@@ -69,7 +69,7 @@ kubectl apply -k crds
 
 #### Namespace
 
-You need to create a namespace where Flux will work. This namespace should be called `flux-system`. Create this [sub-namespace](../namespaces.md) under e.g. `production`.
+You need to create a namespace where Flux will work. This namespace must be called `flux-system`. Create this [sub-namespace](../namespaces.md) under e.g. `production`.
 
 `kubectl hns create -n production flux-system`
 

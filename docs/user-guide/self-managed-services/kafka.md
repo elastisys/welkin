@@ -59,7 +59,7 @@ kubectl apply -f crds/kafka-crds.yaml
 
 ### Namespace
 
-You need to create a namespace where Strimzi Kafka Operator will work. This namespace should be called `kafka`. Create this [sub-namespace](../namespaces.md) under e.g. `production`.
+You need to create a namespace where Strimzi Kafka Operator will work. This namespace must be called `kafka`. Create this [sub-namespace](../namespaces.md) under e.g. `production`.
 
 `kubectl hns create -n production kafka`
 
