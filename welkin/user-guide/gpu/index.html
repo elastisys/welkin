@@ -717,6 +717,54 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#managing-node-types-for-gpu-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Node Types for GPU Workloads
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Node Types for GPU Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-labels-and-taints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Labels and Taints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Labels and Taints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-gpu-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Configure GPU Workloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-example-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced example Scenario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#further-reading" class="md-nav__link">
     <span class="md-ellipsis">
       Further Reading
@@ -4014,6 +4062,54 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#managing-node-types-for-gpu-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Node Types for GPU Workloads
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Node Types for GPU Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-labels-and-taints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node Labels and Taints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Labels and Taints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-gpu-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Configure GPU Workloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-example-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced example Scenario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#further-reading" class="md-nav__link">
     <span class="md-ellipsis">
       Further Reading
@@ -4078,10 +4174,96 @@ Here's an example of how to configure GPU resources for a Pod:</p>
 <span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">nvidia.com/gpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
+<h3 id="managing-node-types-for-gpu-workloads">Managing Node Types for GPU Workloads<a class="headerlink" href="#managing-node-types-for-gpu-workloads" title="Permanent link">&para;</a></h3>
+<p>GPU Nodes are essential for certain high-performance workloads, such as machine learning or data processing.
+Clusters often host a variety of workloads, some of which require GPU Nodes, while others can run on standard CPU Nodes.
+To optimize resource usage and prevent unnecessary costs—since GPU Nodes are significantly more expensive than CPU Nodes—we have introduced multiple Node types with corresponding labels and taints.
+This ensures workloads are deployed on appropriate Node types based on their requirements.</p>
+<h4 id="node-labels-and-taints">Node Labels and Taints<a class="headerlink" href="#node-labels-and-taints" title="Permanent link">&para;</a></h4>
+<p>To enforce resource-specific scheduling, Nodes have been configured with the following labels and taints:</p>
+<ul>
+<li>
+<p><strong>CPU Nodes</strong>:</p>
+<ul>
+<li><strong>Label</strong>: <code>elastisys.io/node-group=worker</code></li>
+<li><strong>Taint</strong>: None</li>
+<li>These Nodes serve as the default option for general workloads and require no additional configuration in Pod specifications.</li>
+</ul>
+</li>
+<li>
+<p><strong>GPU Nodes</strong>:</p>
+<ul>
+<li><strong>Labels</strong>:<ul>
+<li><code>elastisys.io/node-type=gpu</code></li>
+<li><code>elastisys.io/node-group=gpu-worker</code></li>
+</ul>
+</li>
+<li><strong>Taint</strong>: <code>elastisys.io/node-type=gpu:NoSchedule</code></li>
+<li>These Nodes are reserved exclusively for workloads requiring GPU resources. To schedule Pods on GPU Nodes, specific <strong>node affinity</strong> and <strong>toleration</strong> must be configured in the Pod definition.</li>
+</ul>
+</li>
+</ul>
+<p>By using these labels and taints, we ensure that:</p>
+<ol>
+<li>General workloads remain on CPU Nodes by default.</li>
+<li>Only workloads explicitly configured to use <code>GPUs</code> are scheduled on GPU Nodes.</li>
+</ol>
+<div class="admonition elastisys-self-managed">
+<p class="admonition-title">For Elastisys Self-Managed Customers</p>
+<p>Elastisys can help you ensure that your GPU Nodes are labeled and tainted as described in this page.
+This prevents workloads from unintentionally consuming GPU resources, thereby avoiding unnecessary expenses.</p>
+</div>
+<h5 id="how-to-configure-gpu-workloads">How to Configure GPU Workloads<a class="headerlink" href="#how-to-configure-gpu-workloads" title="Permanent link">&para;</a></h5>
+<p>Application developers who need to deploy workloads on GPU Nodes must include the appropriate affinity and toleration settings in the Pod specification. Below is an example configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">affinity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">nodeAffinity</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchExpressions</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elastisys.io/node-type</span>
+<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+<span class="w">              </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span>
+<span class="w">  </span><span class="nt">tolerations</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoSchedule</span>
+<span class="w">      </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elastisys.io/node-type</span>
+<span class="w">      </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equal</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span>
+</code></pre></div>
+<p>This configuration ensures the workload is scheduled only on GPU Nodes.</p>
+<h5 id="advanced-example-scenario">Advanced example Scenario<a class="headerlink" href="#advanced-example-scenario" title="Permanent link">&para;</a></h5>
+<p>Let’s imagine you have a workload that specifically requires a GPU flavor called <code>Standard_B2s</code>.
+You want to ensure this workload is scheduled exclusively on Nodes with this GPU type. Here’s how you can achieve this:</p>
+<ol>
+<li>Ask your platform administrator, or if you're an Elastisys Managed Service Customer you can file a service ticket <a href="https://elastisys.atlassian.net/servicedesk/">here</a> and ask to add a new GPU flavor <code>Standard_B2s</code> and a label to that GPU Node like <code>node.kubernetes.io/instance-type=Standard_B2s</code></li>
+<li>Modify the workload manifest file to include the additional label. The updated manifest would look like this:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">affinity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">nodeAffinity</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchExpressions</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elastisys.io/node-type</span>
+<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+<span class="w">              </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node.kubernetes.io/instance-type</span>
+<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+<span class="w">              </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standard_B2s</span>
+<span class="w">  </span><span class="nt">tolerations</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoSchedule</span>
+<span class="w">      </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elastisys.io/node-type</span>
+<span class="w">      </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equal</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span>
+</code></pre></div>
+<p>This configuration ensures that the workload is only scheduled on GPU Nodes labeled with both <code>elastisys.io/node-type=gpu</code> and <code>node.Kubernetes.io/instance-type=Standard_B2s</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If your cluster is using the cluster autoscaling feature and there's currently not enough resources, the autoscaler will create one for you.
-It might take a couple of minutes for the new node to join the cluster and to install all the pre-requisites.</p>
+It might take a couple of minutes for the new Node to join the cluster and to install all the pre-requisites.</p>
 </div>
 <h3 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h3>
 <ul>
