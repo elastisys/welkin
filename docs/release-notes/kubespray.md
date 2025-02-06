@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v2.26.0-ck8s3](#v2260-ck8s3) - 2025-02-06
 - [v2.26.0-ck8s2](#v2260-ck8s2) - 2025-01-14
 - [v2.26.0-ck8s1](#v2260-ck8s1) - 2024-11-08
 - [v2.25.0-ck8s4](#v2250-ck8s4) - 2024-09-04
@@ -36,6 +37,12 @@
 !!!note
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/changelog/).
+
+### v2.26.0-ck8s3
+
+#### Improvement(s)
+
+- Added guide to migrate to Ubuntu 24.04
 
 ### v2.26.0-ck8s2
 
