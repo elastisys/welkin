@@ -4013,6 +4013,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#preventaccidentaldeletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      preventAccidentalDeletion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resourcerequests" class="md-nav__link">
     <span class="md-ellipsis">
       resourceRequests
@@ -4200,6 +4209,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-open-policy-agent-config-properties-safeguard-reject-load-balancer-service/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/rejectLoadBalancerService">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#preventaccidentaldeletion">preventAccidentalDeletion</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-open-policy-agent-config-properties-safeguard-prevent-accidental-deletion/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/preventAccidentalDeletion">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#resourcerequests">resourceRequests</a></td>
@@ -4445,6 +4461,25 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-open-policy-agent-config-properties-safeguard-reject-load-balancer-service/">Safeguard Reject Load Balancer Service</a>)</p>
+<h2 id="preventaccidentaldeletion">preventAccidentalDeletion<a class="headerlink" href="#preventaccidentaldeletion" title="Permanent link">&para;</a></h2>
+<p>Configure constraint to reject deletion of sensitive resources.</p>
+<p><code>preventAccidentalDeletion</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-open-policy-agent-config-properties-safeguard-prevent-accidental-deletion/">Safeguard Prevent Accidental Deletion</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-open-policy-agent-config-properties-safeguard-prevent-accidental-deletion/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/preventAccidentalDeletion">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-open-policy-agent-config-properties-safeguard-prevent-accidental-deletion/">Safeguard Prevent Accidental Deletion</a>)</p>
 <h2 id="resourcerequests">resourceRequests<a class="headerlink" href="#resourcerequests" title="Permanent link">&para;</a></h2>
 <p>Configure constraint to only allow Pods configured with resource requests.</p>
 <div class="admonition note">
@@ -4571,7 +4606,7 @@ if(!document.__defineGetter__) {
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Feb  5 08:19:59 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/e7c71e493efedf0e260441eb9cab2e121708a681">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Feb  6 03:48:18 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/0625311790bfd49b629396c8975b65b4d6efbd4a">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
