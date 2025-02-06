@@ -4263,7 +4263,7 @@ curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/strimzi
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>crds/kafka-crds.yaml
 </code></pre></div>
 <h3 id="namespace">Namespace<a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h3>
-<p>You need to create a namespace where Strimzi Kafka Operator will work. This namespace should be called <code>kafka</code>. Create this <a href="../../namespaces/">sub-namespace</a> under e.g. <code>production</code>.</p>
+<p>You need to create a namespace where Strimzi Kafka Operator will work. This namespace must be called <code>kafka</code>. Create this <a href="../../namespaces/">sub-namespace</a> under e.g. <code>production</code>.</p>
 <p><code>kubectl hns create -n production kafka</code></p>
 <h3 id="roles-and-rolebindings">Roles and RoleBindings<a class="headerlink" href="#roles-and-rolebindings" title="Permanent link">&para;</a></h3>
 <p>You need to create the necessary Roles for Strimzi Kafka Operator to function. This needs to be done in every namespace that you want Strimzi Kafka Operator to work in.</p>
