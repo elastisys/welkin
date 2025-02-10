@@ -25,7 +25,7 @@ Specifically:
 You can use it to store container images produced by your Continuous Integration (CI) solution.
 Welkin does not require a particular CI solution.
 It facilitates security by having fine grained access control and built-in container image vulnerability scanning.
-- **Argo CD**: Is a Continuous Delivery (CD) solution.
+- **Argo CD (Additional Managed Service)**: Is a Continuous Delivery (CD) solution.
 It helps you deploy your application -- usually represented by a Helm Chart -- into a Welkin environment.
 Argo CD pulls changes from a Git repository, hence, it allows you practice GitOps, which improves security by reducing the number of people who need Kubernetes access.
 - **Kubernetes**: Is the "engine" of the platform, the "spider in the net" if you will.
@@ -35,7 +35,7 @@ It also hosts several dashboards which allow you to demonstrate compliance with 
 - **OpenSearch**: Allows you to observe application and platform logs.
 It is also home to platform audit logs, which allows you to determine who did what and when.
 This improves security both by reducing incentives to act carelessly and by facilitating after-the-fact investigations.
-- **Jaeger**: Allows you to observe application traces.
+- **Jaeger (Additional Managed Service)**: Allows you to observe application traces.
 Jaeger can further simplify incident and performance management.
 - **Falco**: Observes your application and alerts in case of behavior which is suspecious security-wise.
 This improves security by watching for "unknown unknowns".
