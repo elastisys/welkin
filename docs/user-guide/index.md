@@ -10,6 +10,35 @@ We know software developers are busy people that want to get up and running as s
 
 Use the navigational bar to the side to jump to the section that interests you the most.
 
+## Orientation: The DevSecOps Loop
+
+![img/devsecops.svg](../img/devsecops.svg)
+
+As an application platform, the main job of Welkin is to reduce your cognitive load.
+The picture above helps you get a good grasp of how Welkin can support your everyday work.
+It consists of a DevSecOps loop.
+As you can see, Welkin integrates open-source projects, which help you do application Ops (operations) and application Sec (security).
+
+Specifically:
+
+- **Harbor**: Is a container registry.
+You can use it to store container images produced by your Continuous Integration (CI) solution.
+Welkin does not require a particular CI solution.
+- **Argo CD**: Is a Continuous Delivery (CD) solution.
+It helps you deploy your application -- usually represented by a Helm Chart -- into a Welkin environment.
+- **Kubernetes**: Is the "engine" of the platform, the "spider in the net" if you will.
+- **Grafana**: Allows you to observe application metrics.
+- **OpenSearch**: Allows you to observe application logs.
+- **Jaeger**: Allows you to observe application traces.
+- **Falco**: Observes your application and alerts in case of behavior which is suspecious security-wise.
+- **Cert-Manager**: Automates provisioning of TLS certificates.
+- **Velero**: Handles backups.
+- **Open Policy Agent**: Enforces guardrails to make it easy for you to do the right thing.
+- **Dex**: Integrates Welkin with your Identity Provider (IdP).
+- **Trivy**: Scans containers for known security vulnerabilities.
+- **Rclone**: Copies the primary backup to a secondary backup infrastructure provider.
+- **Kured**: Automates application of kernel and base Operating System (OS) patches.
+
 ## Getting started quickly
 
 Welkin is a Kubernetes distribution that consists of the best (community-driven) open source components in the cloud native space, configured for security and platform stability.
