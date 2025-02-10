@@ -31,7 +31,7 @@ It helps you deploy your application -- usually represented by a Helm Chart -- i
 - **OpenSearch**: Allows you to observe application logs.
 - **Jaeger**: Allows you to observe application traces.
 - **Falco**: Observes your application and alerts in case of behavior which is suspecious security-wise.
-- **Cert-Manager**: Automates provisioning of TLS certificates.
+- **cert-manager**: Automates provisioning of TLS certificates.
 - **Velero**: Handles backups.
 - **Open Policy Agent**: Enforces guardrails to make it easy for you to do the right thing.
 - **Dex**: Integrates Welkin with your Identity Provider (IdP).
