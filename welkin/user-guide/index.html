@@ -435,6 +435,15 @@ if(!document.__defineGetter__) {
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#orientation-the-devsecops-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orientation: The DevSecOps Loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getting-started-quickly" class="md-nav__link">
     <span class="md-ellipsis">
       Getting started quickly
@@ -4017,6 +4026,15 @@ if(!document.__defineGetter__) {
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#orientation-the-devsecops-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orientation: The DevSecOps Loop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getting-started-quickly" class="md-nav__link">
     <span class="md-ellipsis">
       Getting started quickly
@@ -4082,6 +4100,48 @@ if(!document.__defineGetter__) {
 <h1 id="application-developer-overview">Application Developer Overview<a class="headerlink" href="#application-developer-overview" title="Permanent link">&para;</a></h1>
 <p>We know software developers are busy people that want to get up and running as soon as possible!</p>
 <p>Use the navigational bar to the side to jump to the section that interests you the most.</p>
+<h2 id="orientation-the-devsecops-loop">Orientation: The DevSecOps Loop<a class="headerlink" href="#orientation-the-devsecops-loop" title="Permanent link">&para;</a></h2>
+<p><img alt="img/devsecops.svg" src="../img/devsecops.svg" /></p>
+<p>As an application platform, the main job of Welkin is to reduce your cognitive load.
+The picture above helps you get a good grasp of how Welkin can support your everyday work.
+It consists of a DevSecOps loop.
+As you can see, Welkin integrates open-source projects, which help you do application Ops (operations) and application Sec (security).</p>
+<p>Specifically:</p>
+<ul>
+<li><strong>Harbor</strong>: Is a container registry.
+You can use it to store container images produced by your Continuous Integration (CI) solution.
+Welkin does not require a particular CI solution.
+It facilitates security by having fine grained access control and built-in container image vulnerability scanning.</li>
+<li><strong>Argo CD (Additional Managed Service)</strong>: Is a Continuous Delivery (CD) solution.
+It helps you deploy your application -- usually represented by a Helm Chart -- into a Welkin environment.
+Argo CD pulls changes from a Git repository, hence, it allows you practice GitOps, which improves security by reducing the number of people who need Kubernetes access.</li>
+<li><strong>Kubernetes</strong>: Is the "engine" of the platform, the "spider in the net" if you will.
+Welkin security-hardens Kubernetes, e.g., with restrictive access control, Pod Security Standards and OpenID authentication.</li>
+<li><strong>Grafana</strong>: Allows you to observe application metrics.
+It also hosts several dashboards which allow you to demonstrate compliance with common security controls.</li>
+<li><strong>OpenSearch</strong>: Allows you to observe application and platform logs.
+It is also home to platform audit logs, which allows you to determine who did what and when.
+This improves security both by reducing incentives to act carelessly and by facilitating after-the-fact investigations.</li>
+<li><strong>Jaeger (Additional Managed Service)</strong>: Allows you to observe application traces.
+Jaeger can further simplify incident and performance management.</li>
+<li><strong>Falco</strong>: Observes your application and alerts in case of behavior which is suspecious security-wise.
+This improves security by watching for "unknown unknowns".</li>
+<li><strong>cert-manager</strong>: Automates provisioning of TLS certificates.
+This makes it easy for you to implement encryption-at-rest over untrusted networks.</li>
+<li><strong>Velero</strong>: Handles backups and disaster recovery.
+This enables the platform administrator to help you recover even from the worst incident.</li>
+<li><strong>Open Policy Agent</strong>: Enforces guardrails to avoid trivial security mistakes, which may lead to compromising information confidentiality, integrity or availability.
+Guardrails instill a culture of security by making it easier to use Welkin the right way.</li>
+<li><strong>Dex</strong>: Integrates Welkin with your Identity Provider (IdP).
+This improves security by making sure that each application developer accesses the platform with an individual account.
+Said individual account makes its way into platform audit logs, which store who did what and when.</li>
+<li><strong>Trivy</strong>: Scans containers for known security vulnerabilities.
+This helps you deliver code which is free from vulnerabilities, which is an essential security requirement.</li>
+<li><strong>Rclone</strong>: Copies the primary backup to a secondary backup infrastructure provider.
+This improves resilience against ransomware attacks by making it harder for an attacker to compromise backups.</li>
+<li><strong>Kured</strong>: Automates application of kernel and base Operating System (OS) patches.
+This essentially it does automated vulnerability management "below" the container runtime.</li>
+</ul>
 <h2 id="getting-started-quickly">Getting started quickly<a class="headerlink" href="#getting-started-quickly" title="Permanent link">&para;</a></h2>
 <p>Welkin is a Kubernetes distribution that consists of the best (community-driven) open source components in the cloud native space, configured for security and platform stability.
 It does not contain any proprietary technology, and no vendor-specific tooling, such as command-line tools or abstractions that only work in this distribution.
