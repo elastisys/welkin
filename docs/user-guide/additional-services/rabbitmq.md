@@ -125,11 +125,13 @@ To expose the AMQP URL to your application, follow one of the following upstream
 - [Create a Pod that has access to the secret data through a Volume](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume)
 - [Define container environment variables using Secret data](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data)
 
-## Allow your Pods to communicate with the RabbitMQ cluster
+### Allow your Pods to communicate with the RabbitMQ cluster
 
-The RabbitMQ cluster is protected by Network Policies. To allow your application communicating with the cluster, add the following label to your Pods: `elastisys.io/rabbitmq-<cluster_name>-access: allow`
+The RabbitMQ cluster is protected by Network Policies.
 
-You can get `cluster_name` from your administrator.
+To allow your application to communicate with the RabbitMQ cluster, add the following label to your Pods: `elastisys.io/rabbitmq-${RABBITMQ_CLUSTER}-access: allow`
+
+Using the `${RABBITMQ_CLUSTER}` from before, you can also get it from your administrator
 
 ## Using a RabbitMQ Cluster
 
