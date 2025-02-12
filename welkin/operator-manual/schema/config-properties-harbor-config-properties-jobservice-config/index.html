@@ -3959,6 +3959,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      replicas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       resources
@@ -4068,6 +4077,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-harbor-config-properties-jobservice-config-properties-jobloggers-config/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/jobservice/properties/jobLoggers">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#replicas">replicas</a></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-harbor-config-properties-jobservice-config-properties-jobservice-replication/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/jobservice/properties/replicas">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="#resources">resources</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
@@ -4140,6 +4156,29 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>string[]</code></p>
+<h2 id="replicas">replicas<a class="headerlink" href="#replicas" title="Permanent link">&para;</a></h2>
+<p>Number of Jobservice pods</p>
+<p><code>replicas</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>number</code> (<a href="../config-properties-harbor-config-properties-jobservice-config-properties-jobservice-replication/">Jobservice replication</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-harbor-config-properties-jobservice-config-properties-jobservice-replication/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/jobservice/properties/replicas">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>number</code> (<a href="../config-properties-harbor-config-properties-jobservice-config-properties-jobservice-replication/">Jobservice replication</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">1</span>
+</code></pre></div>
 <h2 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p>Resource requests are used by the kube-scheduler to pick a node to schedule pods on.</p>
 <p>Limits are enforced. Resources are commonly 'cpu' and 'memory'.</p>
@@ -4189,7 +4228,7 @@ if(!document.__defineGetter__) {
 <p><code>object</code> (<a href="../config-properties-harbor-config-properties-jobservice-config-properties-scan-data-exports-config/">Scan Data Exports Config</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Tue Feb 11 03:48:20 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c2eebd10c4ef1cc766e2a837d324682ca4b0e799">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Feb 12 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/097d3729459d7b88c628b1a91fe8ccccdf35eee9">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

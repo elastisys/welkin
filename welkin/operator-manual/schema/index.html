@@ -4450,6 +4450,15 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-harbor-config-properties-gc-garbage-collection-config/" title="Configuration options for GC (Garbage Collection)">GC (Garbage Collection) Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/gc</code></p>
 </li>
 <li>
+<p><a href="config-properties-gpu-config/" title="Configure the GPU Operator and its dependencies">GPU Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu</code></p>
+</li>
+<li>
+<p><a href="config-properties-gpu-config-properties-gpu-daemonsets-config/" title="Configure GPU Daemonsets">GPU Daemonsets Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/daemonsets</code></p>
+</li>
+<li>
+<p><a href="config-properties-gpu-config-properties-gpu-operator-config/" title="Configure GPU Operator">GPU Operator Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/operator</code></p>
+</li>
+<li>
 <p><a href="config-properties-global-options/" title="Some common options used in various helm charts">Global options</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global</code></p>
 </li>
 <li>
@@ -4835,6 +4844,15 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-network-policies-config-properties-network-policies-cert-manager-properties-network-policies-cert-manager-lets-encrypt/" title="Configure network policy rule to allow cert-manager to reach Let's Encrypt">Network Policies cert-manager Let's Encrypt</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/networkPolicies/properties/certManager/properties/letsencrypt</code></p>
+</li>
+<li>
+<p><a href="config-properties-gpu-config-properties-node-feature-discovery-config/" title="Configure Node Feature Discovery">Node Feature Discovery Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/nodeFeatureDiscovery</code></p>
+</li>
+<li>
+<p><a href="config-properties-gpu-config-properties-node-feature-discovery-config-properties-node-feature-discovery-control-plane-config/" title="Configure Node Feature Discovery Control Plane">Node Feature Discovery Control Plane Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/nodeFeatureDiscovery/properties/controlPlane</code></p>
+</li>
+<li>
+<p><a href="config-properties-gpu-config-properties-node-feature-discovery-config-properties-node-feature-discovery-worker-config/" title="Configure Node Feature Discovery workers">Node Feature Discovery worker Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/nodeFeatureDiscovery/properties/worker</code></p>
 </li>
 <li>
 <p><a href="config-properties-node-local-dns/" title="Configure node-local-dns, node local DNS resolving and caching">Node Local DNS</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/nodeLocalDns</code></p>
@@ -5320,6 +5338,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-hnc-hierarchical-namespace-controller-config-properties-additional-allow-propagate-resources-list/" title="Additional resources to enable opt-in propagation for">Additional Allow Propagate Resources List</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/additionalAllowPropagateResources</code></p>
 </li>
 <li>
+<p><a href="config-properties-alerts-config-properties-additional-custom-routes/" title="Additional route receivers that will be added to the configuration of alertmanager[!note]">Additional custom routes</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/customRoutes</code></p>
+</li>
+<li>
 <p><a href="config-properties-user-config-properties-admin-groups/" title="List of groups that Application Developers are apart of that should have access to the cluster">Admin Groups</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/adminGroups</code></p>
 </li>
 <li>
@@ -5332,7 +5353,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-cluster-admin-properties-admin-users/" title="Configure the cluster admin users">Admin Users</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/clusterAdmin/properties/users</code></p>
 </li>
 <li>
-<p><a href="config-properties-alerts-config-properties-alert-custom-receivers/">Alert Custom Receivers</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/customReceivers</code></p>
+<p><a href="config-properties-alerts-config-properties-alert-custom-receivers/" title="Additional receivers that will be added to the configuration of alertmanager[!note]">Alert Custom Receivers</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/customReceivers</code></p>
 </li>
 <li>
 <p><a href="config-properties-prometheus-config-properties-alertmanager-config-properties-alertmanager-group-by/" title="Configure Alertmanager to group certain alerts based on labels">Alertmanager Group By</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec/properties/groupBy</code></p>
@@ -5641,7 +5662,7 @@ if(!document.__defineGetter__) {
 <h2 id="version-note">Version Note<a class="headerlink" href="#version-note" title="Permanent link">&para;</a></h2>
 <p>The schemas linked above follow the JSON Schema Spec version: <code>https://json-schema.org/draft/2020-12/schema</code></p>
 <hr />
-<p>Generated Tue Feb 11 03:48:20 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c2eebd10c4ef1cc766e2a837d324682ca4b0e799">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Feb 12 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/097d3729459d7b88c628b1a91fe8ccccdf35eee9">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

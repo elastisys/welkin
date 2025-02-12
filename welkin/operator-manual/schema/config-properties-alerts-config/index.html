@@ -3950,6 +3950,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#customroutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      customRoutes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#opsgenie" class="md-nav__link">
     <span class="md-ellipsis">
       opsGenie
@@ -4061,6 +4070,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-alerts-config-properties-alert-custom-receivers/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/customReceivers">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#customroutes">customRoutes</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-alerts-config-properties-additional-custom-routes/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/customRoutes">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="#opsgenie">opsGenie</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
@@ -4102,6 +4118,11 @@ if(!document.__defineGetter__) {
 <p><strong>TYPE</strong>:</p>
 <p><code>string</code> (<a href="../config-properties-alerts-config-properties-alert-to/">Alert To</a>)</p>
 <h2 id="customreceivers">customReceivers<a class="headerlink" href="#customreceivers" title="Permanent link">&para;</a></h2>
+<p>Additional receivers that will be added to the configuration of alertmanager</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a href="https://prometheus.io/docs/alerting/latest/configuration/#receiver">the upstream documentation</a> for reference.</p>
+</div>
 <p><code>customReceivers</code></p>
 <ul>
 <li>
@@ -4119,6 +4140,33 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>array</code> (<a href="../config-properties-alerts-config-properties-alert-custom-receivers/">Alert Custom Receivers</a>)</p>
+<h2 id="customroutes">customRoutes<a class="headerlink" href="#customroutes" title="Permanent link">&para;</a></h2>
+<p>Additional route receivers that will be added to the configuration of alertmanager</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a href="https://prometheus.io/docs/alerting/latest/configuration/#route">the upstream documentation</a> for reference.</p>
+</div>
+<p><code>customRoutes</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>array</code> (<a href="../config-properties-alerts-config-properties-additional-custom-routes/">Additional custom routes</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-alerts-config-properties-additional-custom-routes/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/customRoutes">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>array</code> (<a href="../config-properties-alerts-config-properties-additional-custom-routes/">Additional custom routes</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[]</span>
+</code></pre></div>
 <h2 id="opsgenie">opsGenie<a class="headerlink" href="#opsgenie" title="Permanent link">&para;</a></h2>
 <p>Configure alerting to OpsGenie.</p>
 <p><code>opsGenie</code></p>
@@ -4178,7 +4226,7 @@ if(!document.__defineGetter__) {
 <p><code>object</code> (<a href="../config-properties-alerts-config-properties-alert-slack-config/">Alert Slack Config</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Tue Feb 11 03:48:20 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c2eebd10c4ef1cc766e2a837d324682ca4b0e799">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Feb 12 03:48:13 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/097d3729459d7b88c628b1a91fe8ccccdf35eee9">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
