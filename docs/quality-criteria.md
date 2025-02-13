@@ -65,5 +65,5 @@ Each release of Welkin is quality assured.
 Some, but not all, of the quality assurance steps are public.
 Please find them linked below:
 
-- [Welkin Kubespray Release Checklist](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/.github/ISSUE_TEMPLATE/release.md)
 - [Welkin Apps Release Checklist](https://github.com/elastisys/compliantkubernetes-apps/blob/main/release/qa-checklist.md)
+- [Welkin Kubespray Release Checklist](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/release/qa-checklist.md)
