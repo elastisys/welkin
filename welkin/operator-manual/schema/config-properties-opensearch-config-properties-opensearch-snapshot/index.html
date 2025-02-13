@@ -3995,24 +3995,6 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
-  <a href="#backupstartingdeadlineseconds" class="md-nav__link">
-    <span class="md-ellipsis">
-      backupStartingDeadlineSeconds
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backupactivedeadlineseconds" class="md-nav__link">
-    <span class="md-ellipsis">
-      backupActiveDeadlineSeconds
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#retentionschedule" class="md-nav__link">
     <span class="md-ellipsis">
       retentionSchedule
@@ -4048,6 +4030,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#retentionage" class="md-nav__link">
+    <span class="md-ellipsis">
+      retentionAge
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4077,7 +4068,7 @@ if(!document.__defineGetter__) {
 <p><a href="../config/">Return to the root config schema</a></p>
 <div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot
 </code></pre></div>
-<p>Configures the CronJob and repository to take snapshots in OpenSearch.</p>
+<p>Configure OpenSearch snapshot creation and retention.</p>
 <p>This requires that <code>objectStorage</code> is configured, and will use the bucket or container set in <code>objectStorage.buckets.opensearch</code>.</p>
 <table>
 <thead>
@@ -4169,20 +4160,6 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-defs-cronschedule/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/backupSchedule">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#backupstartingdeadlineseconds">backupStartingDeadlineSeconds</a></td>
-<td style="text-align: left;"><code>number</code></td>
-<td style="text-align: left;">Optional</td>
-<td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/backupStartingDeadlineSeconds">Welkin Apps Config</a></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="#backupactivedeadlineseconds">backupActiveDeadlineSeconds</a></td>
-<td style="text-align: left;"><code>number</code></td>
-<td style="text-align: left;">Optional</td>
-<td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-active-deadline/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/backupActiveDeadlineSeconds">Welkin Apps Config</a></td>
-</tr>
-<tr>
 <td style="text-align: left;"><a href="#retentionschedule">retentionSchedule</a></td>
 <td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
@@ -4209,6 +4186,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-defs-kubernetes-resource-requirements/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/retentionResources">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#retentionage">retentionAge</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/retentionAge">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4353,7 +4337,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Backup CronJob Schedule</a>)</p>
+<p>Type: <code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Snapshot Backup Schedule</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
@@ -4363,7 +4347,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Backup CronJob Schedule</a>)</p>
+<p><code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Snapshot Backup Schedule</a>)</p>
 <p><strong>CONSTRAINTS</strong>:</p>
 <p><strong>pattern</strong>: the string must match the following regular expression:&#x20;</p>
 <div class="highlight"><pre><span></span><code>^(((\*\/)?([0-5]?[0-9])((\,|\-|\/)([0-5]?[0-9]))*|\*)[^\S\r\n]+((\*\/)?((2[0-3]|1[0-9]|[0-9]|00))((\,|\-|\/)(2[0-3]|1[0-9]|[0-9]|00))*|\*)[^\S\r\n]+((\*\/)?([1-9]|[12][0-9]|3[01])((\,|\-|\/)([1-9]|[12][0-9]|3[01]))*|\*)[^\S\r\n]+((\*\/)?([1-9]|1[0-2])((\,|\-|\/)([1-9]|1[0-2]))*|\*|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec))[^\S\r\n]+((\*\/)?[0-6]((\,|\-|\/)[0-6])*|\*|00|(sun|mon|tue|wed|thu|fri|sat)))$|^@(annually|yearly|monthly|weekly|daily|hourly|reboot)$
@@ -4372,50 +4356,6 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <p><strong>DEFAULTS</strong>:</p>
 <p>The default value is:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;0 */2 * * *&quot;</span>
-</code></pre></div>
-<h2 id="backupstartingdeadlineseconds">backupStartingDeadlineSeconds<a class="headerlink" href="#backupstartingdeadlineseconds" title="Permanent link">&para;</a></h2>
-<p><code>backupStartingDeadlineSeconds</code></p>
-<ul>
-<li>
-<p>is optional</p>
-</li>
-<li>
-<p>Type: <code>number</code> (<a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline/">OpenSearch Backup Job Starting Deadline</a>)</p>
-</li>
-<li>
-<p>cannot be null</p>
-</li>
-<li>
-<p>defined in: <a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/backupStartingDeadlineSeconds">Welkin Apps Config</a></p>
-</li>
-</ul>
-<p><strong>TYPE</strong>:</p>
-<p><code>number</code> (<a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline/">OpenSearch Backup Job Starting Deadline</a>)</p>
-<p><strong>DEFAULTS</strong>:</p>
-<p>The default value is:</p>
-<div class="highlight"><pre><span></span><code><span class="mi">600</span>
-</code></pre></div>
-<h2 id="backupactivedeadlineseconds">backupActiveDeadlineSeconds<a class="headerlink" href="#backupactivedeadlineseconds" title="Permanent link">&para;</a></h2>
-<p><code>backupActiveDeadlineSeconds</code></p>
-<ul>
-<li>
-<p>is optional</p>
-</li>
-<li>
-<p>Type: <code>number</code> (<a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-active-deadline/">OpenSearch Backup Job Active Deadline</a>)</p>
-</li>
-<li>
-<p>cannot be null</p>
-</li>
-<li>
-<p>defined in: <a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-active-deadline/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/backupActiveDeadlineSeconds">Welkin Apps Config</a></p>
-</li>
-</ul>
-<p><strong>TYPE</strong>:</p>
-<p><code>number</code> (<a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-active-deadline/">OpenSearch Backup Job Active Deadline</a>)</p>
-<p><strong>DEFAULTS</strong>:</p>
-<p>The default value is:</p>
-<div class="highlight"><pre><span></span><code><span class="mi">600</span>
 </code></pre></div>
 <h2 id="retentionschedule">retentionSchedule<a class="headerlink" href="#retentionschedule" title="Permanent link">&para;</a></h2>
 <p>Schedule to check for and remove old snapshots.
@@ -4426,7 +4366,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Retention CronJob Schedule</a>)</p>
+<p>Type: <code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Snapshot Retention Schedule</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
@@ -4436,7 +4376,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Retention CronJob Schedule</a>)</p>
+<p><code>string</code> (<a href="../config-defs-cronschedule/">OpenSearch Snapshot Retention Schedule</a>)</p>
 <p><strong>CONSTRAINTS</strong>:</p>
 <p><strong>pattern</strong>: the string must match the following regular expression:&#x20;</p>
 <div class="highlight"><pre><span></span><code>^(((\*\/)?([0-5]?[0-9])((\,|\-|\/)([0-5]?[0-9]))*|\*)[^\S\r\n]+((\*\/)?((2[0-3]|1[0-9]|[0-9]|00))((\,|\-|\/)(2[0-3]|1[0-9]|[0-9]|00))*|\*)[^\S\r\n]+((\*\/)?([1-9]|[12][0-9]|3[01])((\,|\-|\/)([1-9]|[12][0-9]|3[01]))*|\*)[^\S\r\n]+((\*\/)?([1-9]|1[0-2])((\,|\-|\/)([1-9]|1[0-2]))*|\*|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec))[^\S\r\n]+((\*\/)?[0-6]((\,|\-|\/)[0-6])*|\*|00|(sun|mon|tue|wed|thu|fri|sat)))$|^@(annually|yearly|monthly|weekly|daily|hourly|reboot)$
@@ -4444,7 +4384,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <p><a href="https://regexr.com/?expression=%5E(((%5C*%5C%2F)%3F(%5B0-5%5D%3F%5B0-9%5D)((%5C%2C%7C%5C-%7C%5C%2F)(%5B0-5%5D%3F%5B0-9%5D))*%7C%5C*)%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F((2%5B0-3%5D%7C1%5B0-9%5D%7C%5B0-9%5D%7C00))((%5C%2C%7C%5C-%7C%5C%2F)(2%5B0-3%5D%7C1%5B0-9%5D%7C%5B0-9%5D%7C00))*%7C%5C*)%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F(%5B1-9%5D%7C%5B12%5D%5B0-9%5D%7C3%5B01%5D)((%5C%2C%7C%5C-%7C%5C%2F)(%5B1-9%5D%7C%5B12%5D%5B0-9%5D%7C3%5B01%5D))*%7C%5C*)%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F(%5B1-9%5D%7C1%5B0-2%5D)((%5C%2C%7C%5C-%7C%5C%2F)(%5B1-9%5D%7C1%5B0-2%5D))*%7C%5C*%7C(jan%7Cfeb%7Cmar%7Capr%7Cmay%7Cjun%7Cjul%7Caug%7Csep%7Coct%7Cnov%7Cdec))%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F%5B0-6%5D((%5C%2C%7C%5C-%7C%5C%2F)%5B0-6%5D)*%7C%5C*%7C00%7C(sun%7Cmon%7Ctue%7Cwed%7Cthu%7Cfri%7Csat)))%24%7C%5E%40(annually%7Cyearly%7Cmonthly%7Cweekly%7Cdaily%7Chourly%7Creboot)%24" title="try regular expression with regexr.com">try pattern</a></p>
 <p><strong>DEFAULTS</strong>:</p>
 <p>The default value is:</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;@daily&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;0 0 * * *&quot;</span>
 </code></pre></div>
 <h2 id="retentionstartingdeadlineseconds">retentionStartingDeadlineSeconds<a class="headerlink" href="#retentionstartingdeadlineseconds" title="Permanent link">&para;</a></h2>
 <p><code>retentionStartingDeadlineSeconds</code></p>
@@ -4518,9 +4458,31 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">256Mi</span>
 <span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">250m</span>
 </code></pre></div>
+<h2 id="retentionage">retentionAge<a class="headerlink" href="#retentionage" title="Permanent link">&para;</a></h2>
+<p><code>retentionAge</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age/">OpenSearch Maximum Snapshot Age</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/retentionAge">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age/">OpenSearch Maximum Snapshot Age</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;10d&quot;</span>
+</code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Feb 12 09:36:30 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/885b946f8aacd1da182fdb8e909655d19402007e">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Feb 13 03:48:19 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9f089b2928f73a9a284919fb08ddb8ade2a9c7dc">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

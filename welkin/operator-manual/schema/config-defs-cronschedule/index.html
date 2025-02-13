@@ -23,7 +23,7 @@
     
     
       
-        <title>OpenSearch Retention CronJob Schedule Schema - Elastisys Welkin®</title>
+        <title>OpenSearch Snapshot Retention Schedule Schema - Elastisys Welkin®</title>
       
     
     
@@ -68,7 +68,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="OpenSearch Retention CronJob Schedule Schema - Elastisys Welkin®" >
+        <meta  property="og:title"  content="OpenSearch Snapshot Retention Schedule Schema - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -85,7 +85,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="OpenSearch Retention CronJob Schedule Schema - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="OpenSearch Snapshot Retention Schedule Schema - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -147,7 +147,7 @@ if(!document.__defineGetter__) {
     <div data-md-component="skip">
       
         
-        <a href="#opensearch-retention-cronjob-schedule-schema" class="md-skip">
+        <a href="#opensearch-snapshot-retention-schedule-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -186,7 +186,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenSearch Retention CronJob Schedule Schema
+              OpenSearch Snapshot Retention Schedule Schema
             
           </span>
         </div>
@@ -3944,7 +3944,7 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="opensearch-retention-cronjob-schedule-schema">OpenSearch Retention CronJob Schedule Schema<a class="headerlink" href="#opensearch-retention-cronjob-schedule-schema" title="Permanent link">&para;</a></h1>
+<h1 id="opensearch-snapshot-retention-schedule-schema">OpenSearch Snapshot Retention Schedule Schema<a class="headerlink" href="#opensearch-snapshot-retention-schedule-schema" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is auto-generated documentation from a JSON schema that is under construction, this will improve over time.</p>
@@ -3981,7 +3981,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </tbody>
 </table>
 <p><strong>TYPE</strong>:</p>
-<p><code>string</code> (<a href="./">OpenSearch Retention CronJob Schedule</a>)</p>
+<p><code>string</code> (<a href="./">OpenSearch Snapshot Retention Schedule</a>)</p>
 <p><strong>CONSTRAINTS</strong>:</p>
 <p><strong>pattern</strong>: the string must match the following regular expression:&#x20;</p>
 <div class="highlight"><pre><span></span><code>^(((\*\/)?([0-5]?[0-9])((\,|\-|\/)([0-5]?[0-9]))*|\*)[^\S\r\n]+((\*\/)?((2[0-3]|1[0-9]|[0-9]|00))((\,|\-|\/)(2[0-3]|1[0-9]|[0-9]|00))*|\*)[^\S\r\n]+((\*\/)?([1-9]|[12][0-9]|3[01])((\,|\-|\/)([1-9]|[12][0-9]|3[01]))*|\*)[^\S\r\n]+((\*\/)?([1-9]|1[0-2])((\,|\-|\/)([1-9]|1[0-2]))*|\*|(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec))[^\S\r\n]+((\*\/)?[0-6]((\,|\-|\/)[0-6])*|\*|00|(sun|mon|tue|wed|thu|fri|sat)))$|^@(annually|yearly|monthly|weekly|daily|hourly|reboot)$
@@ -3989,11 +3989,11 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <p><a href="https://regexr.com/?expression=%5E(((%5C*%5C%2F)%3F(%5B0-5%5D%3F%5B0-9%5D)((%5C%2C%7C%5C-%7C%5C%2F)(%5B0-5%5D%3F%5B0-9%5D))*%7C%5C*)%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F((2%5B0-3%5D%7C1%5B0-9%5D%7C%5B0-9%5D%7C00))((%5C%2C%7C%5C-%7C%5C%2F)(2%5B0-3%5D%7C1%5B0-9%5D%7C%5B0-9%5D%7C00))*%7C%5C*)%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F(%5B1-9%5D%7C%5B12%5D%5B0-9%5D%7C3%5B01%5D)((%5C%2C%7C%5C-%7C%5C%2F)(%5B1-9%5D%7C%5B12%5D%5B0-9%5D%7C3%5B01%5D))*%7C%5C*)%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F(%5B1-9%5D%7C1%5B0-2%5D)((%5C%2C%7C%5C-%7C%5C%2F)(%5B1-9%5D%7C1%5B0-2%5D))*%7C%5C*%7C(jan%7Cfeb%7Cmar%7Capr%7Cmay%7Cjun%7Cjul%7Caug%7Csep%7Coct%7Cnov%7Cdec))%5B%5E%5CS%5Cr%5Cn%5D%2B((%5C*%5C%2F)%3F%5B0-6%5D((%5C%2C%7C%5C-%7C%5C%2F)%5B0-6%5D)*%7C%5C*%7C00%7C(sun%7Cmon%7Ctue%7Cwed%7Cthu%7Cfri%7Csat)))%24%7C%5E%40(annually%7Cyearly%7Cmonthly%7Cweekly%7Cdaily%7Chourly%7Creboot)%24" title="try regular expression with regexr.com">try pattern</a></p>
 <p><strong>DEFAULTS</strong>:</p>
 <p>The default value is:</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;@daily&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;0 0 * * *&quot;</span>
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Feb 12 09:36:30 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/885b946f8aacd1da182fdb8e909655d19402007e">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Feb 13 03:48:19 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9f089b2928f73a9a284919fb08ddb8ade2a9c7dc">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

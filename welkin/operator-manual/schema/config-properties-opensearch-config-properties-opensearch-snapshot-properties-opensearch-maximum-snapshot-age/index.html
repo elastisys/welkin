@@ -13,7 +13,7 @@
         <meta name="author" content="Elastisys AB">
       
       
-        <link rel="canonical" href="https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline/">
+        <link rel="canonical" href="https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>OpenSearch Backup Job Starting Deadline Schema - Elastisys Welkin®</title>
+        <title>OpenSearch Maximum Snapshot Age Schema - Elastisys Welkin®</title>
       
     
     
@@ -68,12 +68,12 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="OpenSearch Backup Job Starting Deadline Schema - Elastisys Welkin®" >
+        <meta  property="og:title"  content="OpenSearch Maximum Snapshot Age Schema - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
       
-        <meta  property="og:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline.png" >
+        <meta  property="og:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,16 +81,16 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline/" >
+        <meta  property="og:url"  content="https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="OpenSearch Backup Job Starting Deadline Schema - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="OpenSearch Maximum Snapshot Age Schema - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
       
-        <meta  name="twitter:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-backup-job-starting-deadline.png" >
+        <meta  name="twitter:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-snapshot-age.png" >
       
     
     
@@ -147,7 +147,7 @@ if(!document.__defineGetter__) {
     <div data-md-component="skip">
       
         
-        <a href="#opensearch-backup-job-starting-deadline-schema" class="md-skip">
+        <a href="#opensearch-maximum-snapshot-age-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -186,7 +186,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenSearch Backup Job Starting Deadline Schema
+              OpenSearch Maximum Snapshot Age Schema
             
           </span>
         </div>
@@ -3944,13 +3944,13 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="opensearch-backup-job-starting-deadline-schema">OpenSearch Backup Job Starting Deadline Schema<a class="headerlink" href="#opensearch-backup-job-starting-deadline-schema" title="Permanent link">&para;</a></h1>
+<h1 id="opensearch-maximum-snapshot-age-schema">OpenSearch Maximum Snapshot Age Schema<a class="headerlink" href="#opensearch-maximum-snapshot-age-schema" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is auto-generated documentation from a JSON schema that is under construction, this will improve over time.</p>
 </div>
 <p><a href="../config/">Return to the root config schema</a></p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/backupStartingDeadlineSeconds
+<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/snapshot/properties/retentionAge
 </code></pre></div>
 <table>
 <thead>
@@ -3979,14 +3979,14 @@ if(!document.__defineGetter__) {
 </tbody>
 </table>
 <p><strong>TYPE</strong>:</p>
-<p><code>number</code> (<a href="./">OpenSearch Backup Job Starting Deadline</a>)</p>
+<p><code>string</code> (<a href="./">OpenSearch Maximum Snapshot Age</a>)</p>
 <p><strong>DEFAULTS</strong>:</p>
 <p>The default value is:</p>
-<div class="highlight"><pre><span></span><code><span class="mi">600</span>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;10d&quot;</span>
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Feb 12 09:36:30 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/885b946f8aacd1da182fdb8e909655d19402007e">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Feb 13 03:48:19 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9f089b2928f73a9a284919fb08ddb8ade2a9c7dc">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
