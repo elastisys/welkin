@@ -1501,6 +1501,15 @@ if(!document.__defineGetter__) {
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allow your Pods to communicate with the RabbitMQ cluster
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4136,6 +4145,15 @@ if(!document.__defineGetter__) {
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allow your Pods to communicate with the RabbitMQ cluster
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4344,6 +4362,10 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume">Create a Pod that has access to the secret data through a Volume</a></li>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data">Define container environment variables using Secret data</a></li>
 </ul>
+<h3 id="allow-your-pods-to-communicate-with-the-rabbitmq-cluster">Allow your Pods to communicate with the RabbitMQ cluster<a class="headerlink" href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" title="Permanent link">&para;</a></h3>
+<p>The RabbitMQ cluster is protected by Network Policies.</p>
+<p>To allow your application to communicate with the RabbitMQ cluster, add the following label to your Pods: <code>elastisys.io/rabbitmq-${RABBITMQ_CLUSTER}-access: allow</code></p>
+<p>Using the <code>${RABBITMQ_CLUSTER}</code> from before, you can also get it from your administrator</p>
 <h2 id="using-a-rabbitmq-cluster">Using a RabbitMQ Cluster<a class="headerlink" href="#using-a-rabbitmq-cluster" title="Permanent link">&para;</a></h2>
 <p>Best practices for using RabbitMQ in Welkin.</p>
 <div class="admonition note">
