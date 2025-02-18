@@ -146,6 +146,7 @@ prober
 PVC
 RBAC
 toleration
+emptyDir
 
 # OpenSearch terms
 Configurer
