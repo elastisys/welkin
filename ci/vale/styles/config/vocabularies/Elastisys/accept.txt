@@ -133,6 +133,7 @@ Autoscaler
 autoscaled
 CRD
 CronJob
+emptyDir
 finalizer
 kops
 kubeadm
