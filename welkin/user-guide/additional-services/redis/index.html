@@ -4271,11 +4271,11 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 <p>Make sure to use a Redis client library with Sentinel support. For example:</p>
 <ul>
 <li><a href="https://github.com/danigosa/django-redis-sentinel-redux#how-to-use-it">Django-Redis Client that supports Sentinel Cluster HA</a>
-    If the linked code example doesn't work, try <code>LOCATION: redis://mymaster/db</code>.</li>
+      If the linked code example doesn't work, try <code>LOCATION: redis://mymaster/db</code>.</li>
 </ul>
-<p>If your library doesn't support sentinel you could use this project - <a href="https://github.com/anubhavmishra/redis-sentinel-proxy">Redis sentinel proxy</a>
-    Note that the default configuration in this repository will not ensure HA for redis.
-    For this you'll either need to use multiple replicas or use it as a sidecar for your applications.</p>
+<p>If your library doesn't support sentinel you could use this project - <a href="https://github.com/anubhavmishra/redis-sentinel-proxy">Redis sentinel proxy</a>.
+Note that the default configuration in this repository will not ensure HA for Redis.
+For this you'll either need to use multiple replicas or use it as a sidecar for your applications.</p>
 </div>
 <h2 id="follow-the-go-live-checklist">Follow the Go-Live Checklist<a class="headerlink" href="#follow-the-go-live-checklist" title="Permanent link">&para;</a></h2>
 <p>You should be all set.
@@ -4285,9 +4285,11 @@ Before going into production, don't forget to go through the <a href="../../go-l
 <h2 id="best-practices-recommended">Best Practices Recommended<a class="headerlink" href="#best-practices-recommended" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Eviction Policy</strong>: Choose the <a href="https://redis.io/docs/latest/develop/reference/eviction/">eviction policy</a> that works for your application. The <code>default</code> eviction policy for our Managed Redis is <code>allkeys-lru</code>, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.
-  !!!Note</p>
+<p><strong>Eviction Policy</strong>: Choose the <a href="https://redis.io/docs/latest/develop/reference/eviction/">eviction policy</a> that works for your application. The <code>default</code> eviction policy for our Managed Redis is <code>allkeys-lru</code>, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.</p>
+</div>
 </li>
 <li>
 <p><strong>Set TTL</strong>: If possible, take the advantage of expiring keys, such as temporary OAuth authentication keys. When you set the key, set it with some expiration and Redis will clean up for you. Refer to <a href="https://redis.io/commands/ttl/">TTL</a></p>
@@ -4296,9 +4298,11 @@ Before going into production, don't forget to go through the <a href="../../go-l
 <li><strong>Monitor memory usage</strong>: Monitor the usage in Grafana dashboard to ensure that you don't run out of memory and have the chance to scale your cache before seeing issues.</li>
 <li>
 <p><strong>Manage idle connection</strong>: The number of connections to Redis increases if connections are not properly terminated. This can lead to bad performance. Therefore, we recommend to setting <code>timeout</code> which allows you to set the number of seconds before idle client connections are automatically terminated.
-  The default <code>timeout</code> for our Managed Redis is set to <code>0</code>, which means the idle clients do not timeout and remain connected until the client issues the termination.
-  !!!Note</p>
+  The default <code>timeout</code> for our Managed Redis is set to <code>0</code>, which means the idle clients do not timeout and remain connected until the client issues the termination.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.</p>
+</div>
 </li>
 <li>
 <p><strong>Cache-hit ratio</strong>: You should regularly monitor your <code>cache-hit</code> ratio so that you know what percentage of key lookups are successfully returned by keys in your Redis instance.
