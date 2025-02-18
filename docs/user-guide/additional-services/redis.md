@@ -88,9 +88,8 @@ export REDIS_SENTINEL_HOST=$(kubectl -n $NAMESPACE get configmap $CONFIG_MAP -o 
 export REDIS_SENTINEL_PORT=$(kubectl -n $NAMESPACE get configmap $CONFIG_MAP -o 'jsonpath={.data.REDIS_SENTINEL_PORT}')
 ```
 
-!!!important
-
-    At the time of this writing, we do not recommend to use a Redis cluster in a multi-tenant fashion. One Redis cluster should have only one purpose.
+> [!IMPORTANT]
+> At the time of this writing, we do not recommend to use a Redis cluster in a multi-tenant fashion. One Redis cluster should have only one purpose.
 
 ## Create a ConfigMap
 
@@ -132,16 +131,15 @@ To expose the Redis cluster to your application, follow one of the following ups
 - [Create a Pod that has access to the ConfigMap data through a Volume](https://kubernetes.io/docs/concepts/configuration/configmap/#using-configmaps-as-files-from-a-pod)
 - [Define container environment variables using ConfigMap data](https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods)
 
-!!!important
-
-    Make sure to use a Redis client library with Sentinel support. For example:
-
-    * [Django-Redis Client that supports Sentinel Cluster HA](https://github.com/danigosa/django-redis-sentinel-redux#how-to-use-it)
-        If the linked code example doesn't work, try `LOCATION: redis://mymaster/db`.
-
-    If your library doesn't support sentinel you could use this project - [Redis sentinel proxy](https://github.com/anubhavmishra/redis-sentinel-proxy)
-        Note that the default configuration in this repository will not ensure HA for redis.
-        For this you'll either need to use multiple replicas or use it as a sidecar for your applications.
+> [!IMPORTANT]
+> Make sure to use a Redis client library with Sentinel support. For example:
+>
+> - [Django-Redis Client that supports Sentinel Cluster HA](https://github.com/danigosa/django-redis-sentinel-redux#how-to-use-it)
+>       If the linked code example doesn't work, try `LOCATION: redis://mymaster/db`.
+>
+> If your library doesn't support sentinel you could use this project - [Redis sentinel proxy](https://github.com/anubhavmishra/redis-sentinel-proxy).
+> Note that the default configuration in this repository will not ensure HA for Redis.
+> For this you'll either need to use multiple replicas or use it as a sidecar for your applications.
 
 ## Follow the Go-Live Checklist
 
@@ -155,18 +153,18 @@ Check out the [release notes](../../release-notes/redis.md) for the Redis cluste
 ## Best Practices Recommended
 
 - **Eviction Policy**: Choose the [eviction policy](https://redis.io/docs/latest/develop/reference/eviction/) that works for your application. The `default` eviction policy for our Managed Redis is `allkeys-lru`, which means any key can be evicted under memory pressure irrespective of whether the key is expired or not. It will keep the most recently used keys and remove the least recently used (LRU) key.
-  !!!Note
 
-      Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.
+    > [!NOTE]
+    > Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.
 
 - **Set TTL**: If possible, take the advantage of expiring keys, such as temporary OAuth authentication keys. When you set the key, set it with some expiration and Redis will clean up for you. Refer to [TTL](https://redis.io/commands/ttl/)
 - **Avoid expensive or blocking operations**: Since Redis command processing is single-threaded, operations like the [KEYS](https://redis.io/commands/keys/) command are expensive and should be avoided. You can avoid `KEYS` by using [SCAN](https://redis.io/commands/scan/) to reduce CPU spikes.
 - **Monitor memory usage**: Monitor the usage in Grafana dashboard to ensure that you don't run out of memory and have the chance to scale your cache before seeing issues.
 - **Manage idle connection**: The number of connections to Redis increases if connections are not properly terminated. This can lead to bad performance. Therefore, we recommend to setting `timeout` which allows you to set the number of seconds before idle client connections are automatically terminated.
   The default `timeout` for our Managed Redis is set to `0`, which means the idle clients do not timeout and remain connected until the client issues the termination.
-  !!!Note
 
-      Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.
+    > [!NOTE]
+    Since this is a server setting, it cannot be set by the user itself, but needs to be set by the administrators. Please send a support ticket with the values you would like to set.
 
 - **Cache-hit ratio**: You should regularly monitor your `cache-hit` ratio so that you know what percentage of key lookups are successfully returned by keys in your Redis instance.
   `info stats` command provides `keyspace_hits` & `keyspace_misses` metric data to further calculate cache hit ratio for a running Redis instance.
