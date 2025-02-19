@@ -62,12 +62,37 @@ See [the instructions in `compliantkubernetes-apps` for how to restore off-site 
 
 ### Backup
 
-OpenSearch is set up to store backups in an S3 bucket. There is a CronJob called `opensearch-backup` in the cluster that is invoking the snapshot process in OpenSearch.
+OpenSearch is set up to store snapshots in an S3 bucket. There is a [Snapshot Management (SM) policy](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-management/) in OpenSearch which is responsible for the lifecycle management of snapshots, i.e. creation and retention. Note that any manually created snapshot will not be handled by the SM policy, and should be manually cleaned up when no longer needed. If you need to create a snapshot on-demand, you may do so through the OpenSearch API.
 
-To take a snapshot on-demand, execute:
+Configure the following variables:
 
-```sh
-./bin/ck8s ops kubectl sc -n opensearch-system create job --from=cronjob/opensearch-backup <name-of-job>
+```bash
+user=admin
+password=$(sops -d ${CK8S_CONFIG_PATH}/secrets.yaml | yq4 '.opensearch.adminPassword')
+os_url=https://opensearch.$(yq4 '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-config.yaml)
+```
+
+Get the name of the snapshot repository:
+
+```bash
+curl -kL -u "${user}:${password}" "${os_url}/_cat/repositories?v"
+```
+
+Set variable for the snapshot repository:
+
+```bash
+snapshot_repo=<name/id from previous step>
+```
+
+Take snapshot:
+
+```bash
+curl -kL -u "${user}:${password}" -X PUT "${os_url}/_snapshot/${snapshot_repo}/manual-snapshot" -H 'Content-Type: application/json' -d'
+{
+  "indices": "*,-.opendistro_security",
+  "include_global_state": false
+}
+'
 ```
 
 ### Optional: Start new cluster from snapshot
