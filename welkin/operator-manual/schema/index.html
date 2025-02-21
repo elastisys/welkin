@@ -4156,6 +4156,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-alerts-config-properties-alert-slack-config/" title="Configure alerting to Slack">Alert Slack Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/slack</code></p>
 </li>
 <li>
+<p><a href="config-properties-alerts-config-properties-alert-runbooks/" title="Configure runbooks for alertsRunbooks can be configured on an alert group level or per individual alert">Alert runbooks</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/runbookUrls</code></p>
+</li>
+<li>
 <p><a href="config-properties-user-config-properties-alertmanager-config/" title="Configuration for application developer controlled alertmanager">Alertmanager Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/alertmanager</code></p>
 </li>
 <li>
@@ -4181,6 +4184,12 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-external-traffic-policy-properties-allowlist-range/" title="Configure allowlist CIDR ranges for ingresses">Allowlist Range</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/externalTrafficPolicy/properties/whitelistRange</code></p>
+</li>
+<li>
+<p><a href="config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts/" title="Configure whether to split KubeletDownForXm alerts into autoscaled and non-autoscaled nodes groups">Autoscaled NodeGroup Alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts</code></p>
+</li>
+<li>
+<p><a href="config-properties-prometheus-config-properties-autoscaled-nodegroup-alerts/" title="Configure whether to split KubeletDownForXm alerts into autoscaled and non-autoscaled nodes groups">Autoscaled NodeGroup Alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/autoscaledNodeGroupAlerts</code></p>
 </li>
 <li>
 <p><a href="config-properties-object-storage-config-properties-azure-backend-config/" title="Only supports Azure Public Cloud">Azure Backend Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/azure</code></p>
@@ -5092,6 +5101,15 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-rook-ceph-config-properties-rook-ceph-pod-security-policies/" title="Configure Pod Security Policies for Rook Ceph">Rook Ceph Pod Security Policies</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/rookCeph/properties/gatekeeperPsp</code></p>
 </li>
 <li>
+<p><a href="config-properties-alerts-config-properties-alert-runbooks-defs-runbooks-for-alerts/" title="Example:group: link-to-alert-group-runbook">Runbooks for alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/runbookUrls/$defs/upstreamRunbook</code></p>
+</li>
+<li>
+<p><a href="config-properties-alerts-config-properties-alert-runbooks-defs-runbooks-for-alerts-1/" title="Example:group: link-to-alert-group-runbook">Runbooks for alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/runbookUrls/$defs/noUpstreamRunbook</code></p>
+</li>
+<li>
+<p><a href="config-properties-alerts-config-properties-alert-runbooks-properties-runbooks-for-thanos-alerts/" title="Example:group: link-to-alert-group-runbook">Runbooks for thanos alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/runbookUrls/properties/thanos</code></p>
+</li>
+<li>
 <p><a href="config-properties-object-storage-config-properties-s3-backend-config/" title="Supports both AWS and non-AWS implementations">S3 Backend Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/s3</code></p>
 </li>
 <li>
@@ -5357,6 +5375,9 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-prometheus-config-properties-alertmanager-config-properties-alertmanager-storage-properties-alertmanager-volume-claim-template-properties-alertmanager-volume-claim-spec-properties-alertmanager-volume-access-mode/" title="Configure the access mode of the persistent storage for Alertmanager">Alertmanager Volume Access Mode</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec/properties/storage/properties/volumeClaimTemplate/properties/spec/properties/accessModes</code></p>
+</li>
+<li>
+<p><a href="config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label-values/" title="The label values to a autoscaled node group if their are multiple autoscaled node groups">Autoscaled node group label values</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts/properties/groupLabelValues</code></p>
 </li>
 <li>
 <p><a href="config-properties-opa-gatekeeper-config-properties-allow-dev-crds-properties-dev-crds-extra-crds-dev-crds-extra-crds-properties-crd-names/" title="Configure the names of the CRDs">CRD Names</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gatekeeper/properties/allowUserCRDs/properties/extraCRDs/items/properties/names</code></p>
@@ -5659,7 +5680,7 @@ if(!document.__defineGetter__) {
 <h2 id="version-note">Version Note<a class="headerlink" href="#version-note" title="Permanent link">&para;</a></h2>
 <p>The schemas linked above follow the JSON Schema Spec version: <code>https://json-schema.org/draft/2020-12/schema</code></p>
 <hr />
-<p>Generated Thu Feb 20 03:48:12 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9f089b2928f73a9a284919fb08ddb8ade2a9c7dc">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Feb 21 03:48:10 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c551678c9c9fa61c8b67c06cd8a9f4c0e8720dea">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

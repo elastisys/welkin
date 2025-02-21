@@ -4013,6 +4013,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#autoscalednodegroupalerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      autoscaledNodeGroupAlerts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       resources
@@ -4301,6 +4310,39 @@ if(!document.__defineGetter__) {
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#autoscalednodegroupalerts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      autoscaledNodeGroupAlerts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="autoscaledNodeGroupAlerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouplabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      groupLabel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouplabelvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      groupLabelValues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4444,6 +4486,13 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-prometheus-config-properties-webhook-alerts/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/webhookAlerts">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#autoscalednodegroupalerts">autoscaledNodeGroupAlerts</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-properties-autoscaled-nodegroup-alerts/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/autoscaledNodeGroupAlerts">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#resources">resources</a></td>
@@ -4665,6 +4714,25 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-prometheus-config-properties-webhook-alerts/">Webhook Alerts</a>)</p>
+<h2 id="autoscalednodegroupalerts">autoscaledNodeGroupAlerts<a class="headerlink" href="#autoscalednodegroupalerts" title="Permanent link">&para;</a></h2>
+<p>Configure whether to split KubeletDownForXm alerts into autoscaled and non-autoscaled nodes groups.</p>
+<p><code>autoscaledNodeGroupAlerts</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-prometheus-config-properties-autoscaled-nodegroup-alerts/">Autoscaled NodeGroup Alerts</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-prometheus-config-properties-autoscaled-nodegroup-alerts/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/autoscaledNodeGroupAlerts">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-prometheus-config-properties-autoscaled-nodegroup-alerts/">Autoscaled NodeGroup Alerts</a>)</p>
 <h2 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p>Resource requests are used by the kube-scheduler to pick a node to schedule pods on.</p>
 <p>Limits are enforced. Resources are commonly 'cpu' and 'memory'.</p>
@@ -5395,9 +5463,82 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>string[]</code> (<a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-alerts-exclude-s3-bucket-name/">S3 Bucket Name</a>)</p>
+<h3 id="autoscalednodegroupalerts_1">autoscaledNodeGroupAlerts<a class="headerlink" href="#autoscalednodegroupalerts_1" title="Permanent link">&para;</a></h3>
+<p>Reference this group by using</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="s2">&quot;https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts&quot;</span><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required</th>
+<th style="text-align: left;">Nullable</th>
+<th style="text-align: left;">Defined by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="#grouplabel">groupLabel</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts/properties/groupLabel">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#grouplabelvalues">groupLabelValues</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label-values/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts/properties/groupLabelValues">Welkin Apps Config</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="grouplabel">groupLabel<a class="headerlink" href="#grouplabel" title="Permanent link">&para;</a></h4>
+<p>The label to identity whether a node belongs to an autoscaled node group.</p>
+<p><code>groupLabel</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label/">Autoscaled node group label</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts/properties/groupLabel">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label/">Autoscaled node group label</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;node-restriction.kubernetes.io/autoscaled-node-type&quot;</span>
+</code></pre></div>
+<h4 id="grouplabelvalues">groupLabelValues<a class="headerlink" href="#grouplabelvalues" title="Permanent link">&para;</a></h4>
+<p>The label values to a autoscaled node group if their are multiple autoscaled node groups.</p>
+<p><code>groupLabelValues</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string[]</code></p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts-properties-autoscaled-node-group-label-values/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts/properties/groupLabelValues">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string[]</code></p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Feb 20 03:48:12 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9f089b2928f73a9a284919fb08ddb8ade2a9c7dc">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Feb 21 03:48:10 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c551678c9c9fa61c8b67c06cd8a9f4c0e8720dea">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
