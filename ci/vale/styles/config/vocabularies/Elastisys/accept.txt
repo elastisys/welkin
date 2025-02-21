@@ -133,6 +133,7 @@ Autoscaler
 autoscaled
 CRD
 CronJob
+emptyDir
 finalizer
 kops
 kubeadm
@@ -146,7 +147,6 @@ prober
 PVC
 RBAC
 toleration
-emptyDir
 
 # OpenSearch terms
 Configurer
