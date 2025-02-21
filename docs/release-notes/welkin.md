@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.44.0](#v0440) - 2025-02-21
 - [v0.43.0](#v0430) - 2025-01-27
 - [v0.42.1](#v0421) - 2025-01-02
 - [v0.42.0](#v0420) - 2024-11-14
@@ -64,6 +65,30 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.44.0
+
+Released 2025-02-21
+
+!!! warning "Application Developer Notice(s)"
+    - Prometheus has been upgraded to [version 3.0](https://prometheus.io/blog/2024/11/14/prometheus-3-0/). This includes changes to the Prometheus UI. Prometheus V3 comes with some changes that may affect existing PromQL expressions in alerts or dashboards. Please have a look at the Prometheus V3 [migration guide](https://prometheus.io/docs/prometheus/3.0/migration/).
+    - The [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html) was added to Welkin. The Operator can be installed by a Platform Administrator and facilitates provisioning GPU on infrastructure providers where this is supported.
+
+### Feature(s)
+
+- Added the NVIDIA GPU Operator.
+
+### Improvement(s)
+
+- Upgraded kube-prometheus-stack to 67.11.0.
+- Upgraded Falco to v0.40.0.
+- Upgraded Fluentd to v1.18.0.
+- Upgraded OpenSearch and OpenSearch Dashboards to v2.18.0.
+
+### Other(s)
+
+- Changed some messages and documentation to Welkin, as part of our rebranding.
+- Fixed KubeContainerOOMKilled alert for newly created pods.
 
 ## v0.43.0
 
