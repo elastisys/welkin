@@ -2921,6 +2921,18 @@
          <lastmod>2025-02-21</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-fluentd-config-properties-fluentd-forwarder-properties-fluentd-forwarder-image-config-properties-repository/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-fluentd-config-properties-fluentd-forwarder-properties-fluentd-forwarder-image-config-properties-tag/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-fluentd-config-properties-fluentd-forwarder-properties-fluentd-forwarder-image-config/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-fluentd-config-properties-fluentd-forwarder-properties-livenessthresholdseconds/</loc>
          <lastmod>2025-02-21</lastmod>
     </url>
@@ -4974,6 +4986,38 @@
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-load-balancer-service/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-local-storage-emptydir-properties-safeguard-reject-local-storage-emptydir-enforcement-metaenum/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-local-storage-emptydir-properties-safeguard-reject-local-storage-emptydir-enforcement/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-local-storage-emptydir-properties-safeguard-rejecting-local-storage-emptydir-enabled/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-local-storage-emptydir/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-pod-without-controller-properties-safeguard-reject-pod-without-controller-enabled/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-pod-without-controller-properties-safeguard-reject-pod-without-controller-enforcement-metaenum/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-pod-without-controller-properties-safeguard-reject-pod-without-controller-enforcement/</loc>
+         <lastmod>2025-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-open-policy-agent-config-properties-safeguard-reject-pod-without-controller/</loc>
          <lastmod>2025-02-21</lastmod>
     </url>
     <url>
