@@ -14,12 +14,12 @@ Note to contributors: Aim for the following format.
 * Resolution
 -->
 
-# Avoid Cluster autoscaler failing to scale down Nodes due to local storage emptydir usage
+# Avoid Cluster autoscaler failing to scale down Nodes due to usage of Pods without any backing controller
 
 !!!important
 
     This guardrail is enabled by default and will warn on violations, but only on clusters with cluster autoscaling.
-    As a result, resources that violate this policy will not be created.
+    As a result, resources that violate this policy will generate warning messages, but will still be created.
 
 ## Problem
 
