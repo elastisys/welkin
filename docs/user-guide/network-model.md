@@ -136,7 +136,7 @@ spec:
 
 !!!example
 
-    Feel free to take inspiration from the [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L34).
+    Feel free to take inspiration from the [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L37-L43).
 
     If you want to protect your Ingress with OAuth2-based authentication, check out [oauth2-proxy](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/oauth2-proxy.yaml).
 
@@ -148,7 +148,7 @@ spec:
 
     Some load-balancers fronting Welkin do not preserve source IP. This makes source IP allowlisting unusable.
 
-    To check if source IP is preserved, check the HTTP request headers received by your application, specifically `x-forwarded-for` and `x-real-ip`. The [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L24) logs all HTTP request headers, as shown in the screenshot below.
+    To check if source IP is preserved, check the HTTP request headers received by your application, specifically `x-forwarded-for` and `x-real-ip`. The [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L29) logs all HTTP request headers, as shown in the screenshot below.
 
     ![HTTP request headers shown in the user demo](img/http-request-headers.png)
 
