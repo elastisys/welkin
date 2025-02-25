@@ -4528,9 +4528,25 @@ Most commands found in these instructions are expected to be run from the <a hre
 <p>Examples can be files containing Identity Provider, Infrastructure Provider, or DNS critical information.</p>
 <h2 id="opensearch">OpenSearch<a class="headerlink" href="#opensearch" title="Permanent link">&para;</a></h2>
 <h3 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h3>
-<p>OpenSearch is set up to store backups in an S3 bucket. There is a CronJob called <code>opensearch-backup</code> in the cluster that is invoking the snapshot process in OpenSearch.</p>
-<p>To take a snapshot on-demand, execute:</p>
-<div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span>sc<span class="w"> </span>-n<span class="w"> </span>opensearch-system<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>--from<span class="o">=</span>cronjob/opensearch-backup<span class="w"> </span>&lt;name-of-job&gt;
+<p>OpenSearch is set up to store snapshots in an S3 bucket. There is a <a href="https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-management/">Snapshot Management (SM) policy</a> in OpenSearch which is responsible for the lifecycle management of snapshots, i.e. creation and retention. Note that any manually created snapshot will not be handled by the SM policy, and should be manually cleaned up when no longer needed. If you need to create a snapshot on-demand, you may do so through the OpenSearch API.</p>
+<p>Configure the following variables:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">user</span><span class="o">=</span>admin
+<span class="nv">password</span><span class="o">=</span><span class="k">$(</span>sops<span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">CK8S_CONFIG_PATH</span><span class="si">}</span>/secrets.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>yq4<span class="w"> </span><span class="s1">&#39;.opensearch.adminPassword&#39;</span><span class="k">)</span>
+<span class="nv">os_url</span><span class="o">=</span>https://opensearch.<span class="k">$(</span>yq4<span class="w"> </span><span class="s1">&#39;.global.opsDomain&#39;</span><span class="w"> </span><span class="si">${</span><span class="nv">CK8S_CONFIG_PATH</span><span class="si">}</span>/common-config.yaml<span class="k">)</span>
+</code></pre></div>
+<p>Get the name of the snapshot repository:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cat/repositories?v&quot;</span>
+</code></pre></div>
+<p>Set variable for the snapshot repository:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">snapshot_repo</span><span class="o">=</span>&lt;name/id<span class="w"> </span>from<span class="w"> </span>previous<span class="w"> </span>step&gt;
+</code></pre></div>
+<p>Take snapshot:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-kL<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/</span><span class="si">${</span><span class="nv">snapshot_repo</span><span class="si">}</span><span class="s2">/manual-snapshot&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>-d<span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">  &quot;indices&quot;: &quot;*,-.opendistro_security&quot;,</span>
+<span class="s1">  &quot;include_global_state&quot;: false</span>
+<span class="s1">}</span>
+<span class="s1">&#39;</span>
 </code></pre></div>
 <h3 id="optional-start-new-cluster-from-snapshot">Optional: Start new cluster from snapshot<a class="headerlink" href="#optional-start-new-cluster-from-snapshot" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
