@@ -4356,7 +4356,7 @@ kubectl<span class="w"> </span>patch<span class="w"> </span>serviceaccount<span 
 
 <div class="admonition important">
 <p class="admonition-title">Use <code>topologySpreadConstraints</code> if you want cross-data-center resilience</p>
-<p>If you want your application to tolerate a whole zone (data-center) to go down, you need to add <code>topologySpreadConstraints</code> by uncommenting the relevant section in <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L76-L82">values.yaml</a>.</p>
+<p>If you want your application to tolerate a whole zone (data-center) to go down, you need to add <code>topologySpreadConstraints</code> by uncommenting the relevant section in <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L84-L96">values.yaml</a>.</p>
 <p>In order for this to work, your administrator must configure the Nodes with zone labels. You can verify if this was performed correctly typing <code>kubectl get nodes --show-labels</code> and checking if Nodes feature the <code>topology.kubernetes.io/zone</code> label.</p>
 </div>
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>

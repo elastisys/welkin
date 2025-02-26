@@ -4119,7 +4119,7 @@ Note to contributors: Aim for the following format.
 <p>If you get the following error:</p>
 <div class="highlight"><pre><span></span><code>Error: UPGRADE FAILED: failed to create resource: admission webhook &quot;validation.gatekeeper.sh&quot; denied the request: [denied by require-resource-requests] Container &quot;welkin-user-demo&quot; has no resource requests
 </code></pre></div>
-<p>Then you are missing resource requests for some containers of your Pods. The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L42-L51">user demo</a> gives a good example to get you started.</p>
+<p>Then you are missing resource requests for some containers of your Pods. The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L54-L63">user demo</a> gives a good example to get you started.</p>
 <p>If your administrator has not enforced this policy yet, you can view current violations of the policy by running:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>k8sresourcerequests.constraints.gatekeeper.sh<span class="w"> </span>require-resource-requests<span class="w"> </span>-ojson<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.status.violations
 </code></pre></div>

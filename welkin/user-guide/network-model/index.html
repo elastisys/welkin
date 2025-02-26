@@ -4398,7 +4398,7 @@ if(!document.__defineGetter__) {
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Feel free to take inspiration from the <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L34">user demo</a>.</p>
+<p>Feel free to take inspiration from the <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L37-L43">user demo</a>.</p>
 <p>If you want to protect your Ingress with OAuth2-based authentication, check out <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/oauth2-proxy.yaml">oauth2-proxy</a>.</p>
 </div>
 <div class="admonition important">
@@ -4408,7 +4408,7 @@ if(!document.__defineGetter__) {
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Some load-balancers fronting Welkin do not preserve source IP. This makes source IP allowlisting unusable.</p>
-<p>To check if source IP is preserved, check the HTTP request headers received by your application, specifically <code>x-forwarded-for</code> and <code>x-real-ip</code>. The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L24">user demo</a> logs all HTTP request headers, as shown in the screenshot below.</p>
+<p>To check if source IP is preserved, check the HTTP request headers received by your application, specifically <code>x-forwarded-for</code> and <code>x-real-ip</code>. The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L29">user demo</a> logs all HTTP request headers, as shown in the screenshot below.</p>
 <p><img alt="HTTP request headers shown in the user demo" src="../img/http-request-headers.png" /></p>
 </div>
 <h2 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h2>

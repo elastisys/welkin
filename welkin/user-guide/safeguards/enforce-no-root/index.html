@@ -4101,7 +4101,7 @@ if(!document.__defineGetter__) {
 <p>This means that your Dockerfile has no <code>USER</code> directive and your application would run as root.</p>
 <p>To ensure your application does not run as root, you have two options:</p>
 <ol>
-<li>Change the Dockerfile to <code>USER 1000</code> or whatever numeric ID corresponds to your user. This is what the <a href="https://github.com/elastisys/welkin/blob/main/user-demo/Dockerfile#L10-L11">user demo does</a>.</li>
+<li>Change the Dockerfile to <code>USER 1000</code> or whatever numeric ID corresponds to your user. This is what the <a href="https://github.com/elastisys/welkin/blob/main/user-demo/Dockerfile#L10-L12">user demo does</a>.</li>
 <li>
 <p>Add the following snippet to the <code>spec</code> of your Pod manifest:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">securityContext</span><span class="p">:</span>
