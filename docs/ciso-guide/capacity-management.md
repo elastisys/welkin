@@ -35,12 +35,12 @@ tags:
 
 ![Kubernetes Status Dashboard](img/kubernetes-status.png)
 
-The Welkin Status Dashboard shows a quick overview of the status of your Kubernetes cluster.
+The Welkin Status Dashboard shows a quick overview of the status of your Kubernetes Cluster.
 This includes:
 
-- Unhealthy pods
-- Unhealthy nodes
-- Resource requested of the total resources in the cluster
+- Unhealthy Pods
+- Unhealthy Nodes
+- Resource requested of the total resources in the Cluster
 - Pods with missing resource requests
 
-This makes it easy to identify when your cluster is not working correctly and helps you identify configuration that isn't following best practise.
+This makes it easy to identify when your Cluster is not working correctly and helps you identify configuration that isn't following best practise.

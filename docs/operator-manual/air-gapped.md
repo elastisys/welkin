@@ -29,7 +29,7 @@ The following is a generic system context diagram over an air-gapped network con
 These guidelines show how to configure Welkin Apps to work in an air-gapped network.
 For setting up the Kubernetes layer, please refer to the [Kubespray air-gap installation documentation](https://kubespray.io/#/docs/operations/offline-environment) or [Cluster-API documentation](https://cluster-api.sigs.k8s.io/clusterctl/configuration.html?highlight=release#image-overrides) for further instructions.
 
-This guide will assume that you have a Platform Administrator Machine that can access both the Internet and the air-gapped network over SSH, this includes SSH access to both the Cluster nodes and hosts for the different offline services described in the system context diagram above. This "Platform Administrator Machine" can be your local machine or a bastion host.
+This guide will assume that you have a Platform Administrator Machine that can access both the Internet and the air-gapped network over SSH, this includes SSH access to both the Cluster Nodes and hosts for the different offline services described in the system context diagram above. This "Platform Administrator Machine" can be your local machine or a bastion host.
 
 Start by initializing your Welkin Apps configuration (see the quickstart section [here](https://github.com/elastisys/compliantkubernetes-apps?tab=readme-ov-file#quickstart) for more info on initializing and deploying Welkin Apps) with the `air-gapped` flavor by setting the `CK8S_FLAVOR` environment variable:
 
@@ -196,7 +196,7 @@ falco:
 
     With this setup it is **your** responsibility to ensure that any Falco modules, rules and/or plugins are kept up to date.
 
-If nodes in the Clusters have a kernel version >=5.8, you can use `modern-bpf` instead to avoid Falco having to download drivers from the Internet, as everything is already embedded into Falco (as long as this is supported, see requirements [here](https://falco.org/docs/concepts/event-sources/kernel/#requirements):
+If Nodes in the Clusters have a kernel version >=5.8, you can use `modern-bpf` instead to avoid Falco having to download drivers from the Internet, as everything is already embedded into Falco (as long as this is supported, see requirements [here](https://falco.org/docs/concepts/event-sources/kernel/#requirements):
 
 ```yaml
 falco:
@@ -307,7 +307,7 @@ Seeing HTTP metrics for the `/users` endpoint of the user demo in Grafana Dashbo
 
 ![Air-gapped User Demo metrics in Grafana](../img/air-gapped-grafana-demo.png)
 
-Seeing logs from the user demo pods in OpenSearch Dashboards:
+Seeing logs from the user demo Pods in OpenSearch Dashboards:
 
 ![Air-gapped User Demo logs in OpenSearch Dashboards](../img/air-gapped-opensearch-demo.png)
 

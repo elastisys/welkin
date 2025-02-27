@@ -32,7 +32,7 @@ However, with Welkin, you don't need to deal with (2).
 
 ## Solution
 
-Welkin comes with strong cluster-level default `topologySpreadConstraints`.
+Welkin comes with strong Cluster-level default `topologySpreadConstraints`.
 
 ### Single-Zone Clusters
 

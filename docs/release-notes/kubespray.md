@@ -48,7 +48,7 @@
 
 #### Improvement(s)
 
-- Fixed issues that could occur when removing nodes or replacing control plane nodes.
+- Fixed issues that could occur when removing Nodes or replacing control plane Nodes.
 
 <!--
     Release notes before 2024-11-29 are excluded from spellchecking.
@@ -65,8 +65,8 @@
 
 #### Feature(s)
 
-- Support for using existing floating IPs when provisioning nodes with the Openstack terraform module.
-- Support for provisioning nodes without public IPs with the Upcloud terraform module.
+- Support for using existing floating IPs when provisioning Nodes with the Openstack terraform module.
+- Support for provisioning Nodes without public IPs with the Upcloud terraform module.
 
 ### v2.25.0-ck8s4
 
@@ -189,7 +189,7 @@ Released 2023-02-06
 #### Changed
 
 - **Improved setup for OpenStack with additional server groups** <br/>
-  This allows anti-affinity to be set between arbitrary nodes, improving scheduling and stability.
+  This allows anti-affinity to be set between arbitrary Nodes, improving scheduling and stability.
 - **Switched from using upstream Kubespray repository as submodule to the Elastisys fork**
 
 #### Added
@@ -203,7 +203,7 @@ Released 2022-10-24
 
 #### Changed
 
-- **Changed a Kubespray variable which is required for upgrading clusters on cloud providers that don't have external IPs on their control plane nodes**
+- **Changed a Kubespray variable which is required for upgrading Clusters on cloud providers that don't have external IPs on their control plane Nodes**
 
 ### v2.20.0-ck8s1
 
@@ -255,7 +255,7 @@ Released 2022-04-26.
 #### Updated
 
 - **Kubespray updated to `v2.18.1`** <br/>
-  This introduces some fixes for cluster using containerd as container manager.
+  This introduces some fixes for Cluster using containerd as container manager.
 - **Updated default etcd version to `3.5.3`**
   This fixes an issue where [etcd data might get corrupted](https://groups.google.com/a/kubernetes.io/g/dev/c/B7gJs88XtQc/m/rSgNOzV2BwAJ).
 

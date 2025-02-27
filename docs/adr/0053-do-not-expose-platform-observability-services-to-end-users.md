@@ -37,7 +37,7 @@ The core problem is how to securely manage the ingestion of observability data f
 **External Clients:**
 We will allow external clients to push observability data (logs, metrics, traces) directly into our platform observability services under the following conditions:
 
-- **Logs:** External clients can push logs to our OpenSearch service with authentication and authorization mechanisms. However, as per our [ToS-A5.3 As a whole, for the intended use-case](https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case), OpenSearch is optimized for platform and containerized application observability which means logs are expected to come from the application running in the workload cluster, and external logs should align with this use-case, with exceptions allowed for observability of legacy code that brings business value to the workload cluster.
+- **Logs:** External clients can push logs to our OpenSearch service with authentication and authorization mechanisms. However, as per our [ToS-A5.3 As a whole, for the intended use-case](https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case), OpenSearch is optimized for platform and containerized application observability which means logs are expected to come from the application running in the workload Cluster, and external logs should align with this use-case, with exceptions allowed for observability of legacy code that brings business value to the workload Cluster.
 - **Metrics:** External clients can push metrics to a Prometheus Pushgateway, which Prometheus scrapes periodically.
 - **Traces:** While we do not currently support traces from external clients, we may explore the option of allowing external clients to push traces to an OpenTelemetry collector in our platform observability services.
 
@@ -67,7 +67,7 @@ We recommend that Application Developers route observability data through a secu
 
 ### Positive Consequences
 
-- It reduces the risk of unauthorized access to our platform observability services, protecting the cluster from data leaks, credential abuse, and DoS attacks.
+- It reduces the risk of unauthorized access to our platform observability services, protecting the Cluster from data leaks, credential abuse, and DoS attacks.
 - By routing observable data from public clients through a backend API, we maintain control over the data flow and can apply additional security measures, such as logging and throttling.
 - We can selectively allow trusted external services to push observability data directly, without exposing our platform observability services to the broader internet.
 
@@ -96,6 +96,6 @@ We recommend that Application Developers route observability data through a secu
 
 - [opentelemetry-collector](https://medium.com/opentelemetry/securing-your-opentelemetry-collector-1a4f9fa5bd6f)
 - [k8s-otel-expose](https://opentelemetry.io/blog/2022/k8s-otel-expose/)
-- [deployment](https://opentelemetry.io/docs/collector/deployment/)
+- [Deployment](https://opentelemetry.io/docs/collector/deployment/)
 - [Data-leakage](https://www.fortinet.com/resources/cyberglossary/data-leak)
 - [ToS-A5.3 As a whole, for the intended use-case](https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case)

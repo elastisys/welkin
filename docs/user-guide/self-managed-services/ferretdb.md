@@ -18,11 +18,11 @@ search:
 
     Make sure to load-test your application with FerretDB before going into production.
 
-[FerretDB](https://www.ferretdb.com/) is a database that is an open-source alternative to MongoDB that uses PostgreSQL as its backend database. This documentation details how to run FerretDB in a Welkin cluster using the Managed [PostgreSQL service](../additional-services/postgresql.md).
+[FerretDB](https://www.ferretdb.com/) is a database that is an open-source alternative to MongoDB that uses PostgreSQL as its backend database. This documentation details how to run FerretDB in a Welkin Cluster using the Managed [PostgreSQL service](../additional-services/postgresql.md).
 
 ## Pushing FerretDB image to Harbor
 
-These instructions will pull the FerretDB container image and push it to another registry. If you are using managed Harbor as your container registry, please follow [these instructions](../deploy.md) on how to authenticate, create a new project, and how to create a robot account and using it in a pull-secret to be able to pull an image from Harbor to your cluster safely:
+These instructions will pull the FerretDB container image and push it to another registry. If you are using managed Harbor as your container registry, please follow [these instructions](../deploy.md) on how to authenticate, create a new project, and how to create a robot account and using it in a pull-secret to be able to pull an image from Harbor to your Cluster safely:
 
 ```sh
 TAG=1.0.0

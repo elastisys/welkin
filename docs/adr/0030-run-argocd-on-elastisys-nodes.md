@@ -1,4 +1,4 @@
-# Run ArgoCD on the Elastisys nodes
+# Run ArgoCD on the Elastisys Nodes
 
 - Status: accepted
 - Deciders: arch meeting
@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-We run additional services in the Workload Cluster on dedicated nodes, currently databases (PostgreSQL), in-memory caches (Redis), message queues (RabbitMQ) and distributed tracing (Jaeger).
+We run additional services in the Workload Cluster on dedicated Nodes, currently databases (PostgreSQL), in-memory caches (Redis), message queues (RabbitMQ) and distributed tracing (Jaeger).
 Where should we run ArgoCD?
 
 ## Decision Drivers
@@ -20,23 +20,23 @@ Where should we run ArgoCD?
 
 - Spread ArgoCD services on application Nodes.
 - Run ArgoCD services on dedicated Nodes.
-- Run ArgoCD services on Elastisys Nodes, and scale up the nodes.
+- Run ArgoCD services on Elastisys Nodes, and scale up the Nodes.
 
 ## Decision Outcome
 
-Chosen option: "Run ArgoCD services on Elastisys Nodes, and scale up the nodes.", because it improves the stability and security of the platform, avoids resource waste and makes the ArgoCD service more affordable to the Application Developers.
+Chosen option: "Run ArgoCD services on Elastisys Nodes, and scale up the Nodes.", because it improves the stability and security of the platform, avoids resource waste and makes the ArgoCD service more affordable to the Application Developers.
 
 Scale up the Elastisys Nodes to 4C8GB before installing managed ArgoCD.
 
 ### Positive Consequences
 
-- The ArgoCD service infrastructure footprint is lower than when using dedicated nodes, due to less per-Node overhead (Fluentd, Falco)..
+- The ArgoCD service infrastructure footprint is lower than when using dedicated Nodes, due to less per-Node overhead (Fluentd, Falco)..
 - Security and stability of additional services is somewhat improved, e.g., SystemOOM due to an application won't impact ArgoCD
 
 ### Negative Consequences
 
-- We need to scale up the Elastisys nodes to 4C8GB
-- We are sharing the Elastisys nodes resources with the other Elastisys platform components, e.g., Ingress Controller.
+- We need to scale up the Elastisys Nodes to 4C8GB
+- We are sharing the Elastisys Nodes resources with the other Elastisys platform components, e.g., Ingress Controller.
 
 ## Recommendations to Platform Administrators
 

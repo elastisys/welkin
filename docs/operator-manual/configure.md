@@ -1,6 +1,6 @@
 # Advanced Configuration
 
-You have already been exposed to some of Welkin's configuration options while creating a cluster. If not, read [that section](on-prem-standard.md) first.
+You have already been exposed to some of Welkin's configuration options while creating a Cluster. If not, read [that section](on-prem-standard.md) first.
 
 This section will outline some advanced configuration topics.
 

@@ -42,7 +42,7 @@ sudo apt install rabbitmq-server
 
 RabbitMQ provides the management plugin which allows control over everything within it, including messaging topology and access control.
 
-Your administrator will set up a Secret inside Welkin containing the credentials of the default admin user, which is all you need to access your RabbitMQ cluster.
+Your administrator will set up a Secret inside Welkin containing the credentials of the default admin user, which is all you need to access your RabbitMQ Cluster.
 The Secret has the following shape:
 
 ```yaml
@@ -97,7 +97,7 @@ To access the management UI, proceed as follows:
 
 ### Create an Application Secret
 
-First, check that you are on the right Welkin cluster, in the right **application** namespace:
+First, check that you are on the right Welkin Cluster, in the right **application** namespace:
 
 ```bash
 kubectl get nodes
@@ -125,11 +125,11 @@ To expose the AMQP URL to your application, follow one of the following upstream
 - [Create a Pod that has access to the secret data through a Volume](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume)
 - [Define container environment variables using Secret data](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data)
 
-### Allow your Pods to communicate with the RabbitMQ cluster
+### Allow your Pods to communicate with the RabbitMQ Cluster
 
-The RabbitMQ cluster is protected by Network Policies.
+The RabbitMQ Cluster is protected by Network Policies.
 
-To allow your application to communicate with the RabbitMQ cluster, add the following label to your Pods: `elastisys.io/rabbitmq-${RABBITMQ_CLUSTER}-access: allow`
+To allow your application to communicate with the RabbitMQ Cluster, add the following label to your Pods: `elastisys.io/rabbitmq-${RABBITMQ_CLUSTER}-access: allow`
 
 Using the `${RABBITMQ_CLUSTER}` from before, you can also get it from your administrator
 
@@ -143,13 +143,13 @@ Best practices for using RabbitMQ in Welkin.
 
 ### Cluster Division
 
-RabbitMQ is a multi tenant system and has the concept of virtual host or vhost which provides logical separation of resources within it. Each vhost acts as their own RabbitMQ cluster and have their own connection, channels, exchanges, queues, and bindings.
+RabbitMQ is a multi tenant system and has the concept of virtual host or vhost which provides logical separation of resources within it. Each vhost acts as their own RabbitMQ Cluster and have their own connection, channels, exchanges, queues, and bindings.
 
 Messages cannot flow directly between exchanges and queues in different vhosts, instead if that is required there must be a client that consumes messages in one vhost and then publishes messages in another vhost. This can also be realised with two plugins:
 
-- [**Federation plugin**](https://www.rabbitmq.com/federation.html) - Provides federated exchanges and queue which connect to an upstream cluster or vhost, allowing consumers to access message from the upstream source.
+- [**Federation plugin**](https://www.rabbitmq.com/federation.html) - Provides federated exchanges and queue which connect to an upstream Cluster or vhost, allowing consumers to access message from the upstream source.
 
-- [**Shovel plugin**](https://www.rabbitmq.com/shovel.html) - Provides a client which connect both to an upstream and downstream cluster or vhost, consuming and publishing messages between them.
+- [**Shovel plugin**](https://www.rabbitmq.com/shovel.html) - Provides a client which connect both to an upstream and downstream Cluster or vhost, consuming and publishing messages between them.
 
 ### Connection and Channel Management
 
@@ -212,7 +212,7 @@ Before going into production, don't forget to go through the [go-live checklist]
 
 ## Welkin RabbitMQ Release Notes
 
-Check out the [release notes](../../release-notes/rabbitmq.md) for the RabbitMQ cluster that runs in Welkin environments!
+Check out the [release notes](../../release-notes/rabbitmq.md) for the RabbitMQ Cluster that runs in Welkin environments!
 
 ## Further Reading
 

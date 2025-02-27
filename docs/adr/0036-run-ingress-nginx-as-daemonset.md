@@ -24,36 +24,36 @@ What do we do for Infra Providers that do not have Service type LoadBalancer?
 ## Considered Options
 
 1. Keep running the Ingress-NGINX as a DaemonSet.
-1. Run Ingress-NGINX as a deployment with 2 or more replicas depending on the environment size and requirements.
-1. Do not run Ingress-NGINX on the AMS nodes.
+1. Run Ingress-NGINX as a Deployment with 2 or more replicas depending on the environment size and requirements.
+1. Do not run Ingress-NGINX on the AMS Nodes.
 1. For Infra Providers without Service type LoadBalancer continue using host network as decided in adr0008
-1. For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to node ports 30080/30443.
+1. For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to Node ports 30080/30443.
 
 ## Decision Outcome
 
 Chosen options: 1 & 3 & 5
 
 - "Keep running Ingress-NGINX as a DaemonSet."
-- "Do not run Ingress-NGINX on the AMS nodes."
-- "For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to node ports 30080/30443" -> This supersedes adr0008.
+- "Do not run Ingress-NGINX on the AMS Nodes."
+- "For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to Node ports 30080/30443" -> This supersedes adr0008.
 
 ### Positive Consequences
 
 - We keep things simple and have the same solution on all Infrastructure Providers.
-- We keep the platform stable and secure and not risk when we replace nodes or nodes become unavailable.
+- We keep the platform stable and secure and not risk when we replace Nodes or Nodes become unavailable.
 - No changes are needed.
-- More resources are available on the AMS nodes.
+- More resources are available on the AMS Nodes.
 - Reduce complexity.
 - We will now use `externalTrafficPolicy: local` and with this we will reduce latency and preserve the client’s source IP address, which is essential for some applications that rely on knowing the client's IP, such as for logging, security, or geolocation services.
 
 ### Negative Consequences
 
-- Feels like some resources are wasted on very large environments with many nodes.
+- Feels like some resources are wasted on very large environments with many Nodes.
 
 ## Recommendation to Platform Administrators
 
-- Do not run the Ingress-NGINX on the AMS nodes.
-- For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to node ports 30080/30443
+- Do not run the Ingress-NGINX on the AMS Nodes.
+- For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to Node ports 30080/30443
 
 ## Links
 

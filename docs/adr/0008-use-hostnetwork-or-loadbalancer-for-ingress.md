@@ -27,9 +27,9 @@ Many regulations require traffic to be encrypted over public Internet. Welkin so
 
 Chosen options:
 
-1. Use host network if Kubernetes-controlled load balancer is unavailable or undesired. If necessary, front the worker nodes with a manual or Terraform-controlled load-balancer. This includes:
+1. Use host network if Kubernetes-controlled load balancer is unavailable or undesired. If necessary, front the worker Nodes with a manual or Terraform-controlled load-balancer. This includes:
 
-    - Where load-balancing does not add value, e.g., if a Deployment is planned to have only a single-node or single-worker for the foreseeable future: Point the DNS entry to the worker IP instead.
+    - Where load-balancing does not add value, e.g., if a Deployment is planned to have only a single-Node or single-worker for the foreseeable future: Point the DNS entry to the worker IP instead.
     - Exoscale currently falls in this category, due to its Kubernetes integration being rather recent.
     - Safespring falls in this category, since it is missing load balancers.
     - If the Infrastructure Provider is missing a storage controller, it might be undesirable to perform integration "just" for load-balancing.

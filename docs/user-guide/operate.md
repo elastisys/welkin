@@ -16,9 +16,9 @@ In this step, you will learn how to operate your application on Welkin.
 
 To monitor your application, you will log in to your Grafana. Recall how to log in to your web portals from [Step 1: Prepare](prepare.md).
 
-Grafana visually displays the monitoring data that Prometheus has collected on your behalf. A significant amount of metrics are already collected for you, out of the box, on Welkin. This means you can visualize data about the cluster immediately.
+Grafana visually displays the monitoring data that Prometheus has collected on your behalf. A significant amount of metrics are already collected for you, out of the box, on Welkin. This means you can visualize data about the Cluster immediately.
 
-But Prometheus can also be instructed to collect specific metrics from your own application. Perhaps this is more useful to you than monitoring metrics that relate to cluster health (in particular if somebody else managed Welkin for you).
+But Prometheus can also be instructed to collect specific metrics from your own application. Perhaps this is more useful to you than monitoring metrics that relate to Cluster health (in particular if somebody else managed Welkin for you).
 
 To instruct Prometheus on how to do this, you create a [ServiceMonitor](https://blog.container-solutions.com/prometheus-operator-beginners-guide). This is a Kubernetes resource that configures Prometheus and specifies how to collect metrics from a particular application.
 
@@ -81,7 +81,7 @@ Go deeper into [backups](backup.md).
 
 Capacity management is about having sufficient capacity for your needs, be they in terms of storage or computational power.
 
-Your Welkin administrator should perform capacity management _of the platform_, to ensure that there is a sufficient amount of spare capacity on a cluster level.
+Your Welkin administrator should perform capacity management _of the platform_, to ensure that there is a sufficient amount of spare capacity on a Cluster level.
 
 As an Application Developer, you should perform capacity management on a Pod level. This primarily means setting [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) correctly for containers inside Pods, making use of multiple instances in your Deployments and Stateful Sets (possibly via [horizontal Pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)). The use of resource requests and limits is enforced via an Welkin [guardrail](safeguards/enforce-resources.md).
 

@@ -10,7 +10,7 @@ tags:
     end="<!--for-sme-customers-end-->"
 %}
 
-Help! Something is wrong with my Welkin cluster. Fear no more, this guide will help you make sense.
+Help! Something is wrong with my Welkin Cluster. Fear no more, this guide will help you make sense.
 
 This guide assumes that:
 
@@ -101,7 +101,7 @@ Are systemd units running fine? You should see `running` and not `degraded`.
 ansible -i $CK8S_CONFIG_PATH/${CLUSTER}-config/inventory.ini all -m shell -a 'systemctl is-system-running'
 ```
 
-### Are the Kubernetes clusters doing fine?
+### Are the Kubernetes Clusters doing fine?
 
 Are the Nodes reporting in on Kubernetes? All Kubernetes Nodes, both control-plane and workers, should be `Ready`:
 
@@ -256,8 +256,8 @@ If the infrastructure is not managed by Terraform you can skip to step 3:
 
 1. Add a new Node by editing the `*.tfvars`.
 1. Re-apply Terraform.
-1. Add the new node to the `inventory.ini` (skip this step if the cluster is using a dynamic inventory).
-1. Re-apply Kubespray only for the new node.
+1. Add the new Node to the `inventory.ini` (skip this step if the Cluster is using a dynamic inventory).
+1. Re-apply Kubespray only for the new Node.
 
     ```bash
     cd [welkin-kubespray-root-dir]
@@ -268,7 +268,7 @@ If the infrastructure is not managed by Terraform you can skip to step 3:
     ./bin/ck8s-kubespray run-playbook $CLUSTER scale.yml -b --limit=[new_node_name]
     ```
 
-1. Add SSH keys to the new node if necessary
+1. Add SSH keys to the new Node if necessary
 
     ```bash
     ./bin/ck8s-kubespray apply-ssh $CLUSTER --limit=[new_node_name]
@@ -290,7 +290,7 @@ If the infrastructure is not managed by Terraform you can skip to step 3:
     ./bin/ck8s ops helmfile wc -l app=workload-cluster-np -i apply
     ```
 
-    Check that the new Node joined the cluster, as shown [here](#are-the-kubernetes-clusters-doing-fine).
+    Check that the new Node joined the Cluster, as shown [here](#are-the-kubernetes-clusters-doing-fine).
 
 ## A systemd unit failed
 
@@ -318,7 +318,7 @@ Please check the following upstream documents:
 
 ## Pod seems not fine
 
-Make sure you are on the **right** cluster:
+Make sure you are on the **right** Cluster:
 
 ```bash
 echo $CK8S_CONFIG_PATH
@@ -351,7 +351,7 @@ Try to kill and check if the underlying Deployment, StatefulSet or DaemonSet wil
 
 ## Helm Release is `failed`
 
-Make sure you are on the **right** cluster:
+Make sure you are on the **right** Cluster:
 
 ```bash
 echo $CK8S_CONFIG_PATH
@@ -395,7 +395,7 @@ Waiting for HTTP-01 challenge propagation: failed to perform self check
     dial tcp: lookup opensearch.domain on 10.177.0.3:53: no such host'
 ```
 
-Then you might have a DNS issue inside your cluster. Make sure that `global.clusterDns` in `common-config.yaml` is set to the CoreDNS Service IP returned by `kubectl get svc -n kube-system coredns`.
+Then you might have a DNS issue inside your Cluster. Make sure that `global.clusterDns` in `common-config.yaml` is set to the CoreDNS Service IP returned by `kubectl get svc -n kube-system coredns`.
 
 ### Failed to perform self check: connection timed out
 
@@ -455,7 +455,7 @@ First try to delete the backup
 ./velero backup delete velero-daily-backup-20211005143248
 ```
 
-Then kill all the pods under the velero namespace
+Then kill all the Pods under the velero namespace
 
 ```bash
 ./bin/ck8s ops kubectl wc delete pods -n velero --all
@@ -478,7 +478,7 @@ velero backup create --from-schedule velero-daily-backup
 
 ## How do I use `kubectl` and `helm` directly?
 
-This guide makes heavy use of the `compliantkubernetes-apps` CLI to access and control Welkin clusters. However, you can use `kubectl` and `helm` directly, by exporting a `KUBECONFIG` like so:
+This guide makes heavy use of the `compliantkubernetes-apps` CLI to access and control Welkin Clusters. However, you can use `kubectl` and `helm` directly, by exporting a `KUBECONFIG` like so:
 
 ```bash
 export KUBECONFIG=${CK8S_CONFIG_PATH}/.state/kube_config_${CLUSTER}.yaml

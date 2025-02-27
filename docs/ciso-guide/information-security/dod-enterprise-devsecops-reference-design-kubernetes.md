@@ -47,7 +47,7 @@ Note that the majority of Section 3 of the Reference Design describes the softwa
 
 Table 1 (Page 15) makes it clear that the DoD and the Welkin have divergent views on what is appropriate to run inside a Pod.
 The features listed there make it clear that the sidecar that DoD issues in their environments must run with very high privilege.
-Otherwise, features such as rerouting all network traffic via service mesh, scanning the underlying node for vulnerabilities, and adaptively restricting the main container's runtime behavior would simply not be possible.
+Otherwise, features such as rerouting all network traffic via service mesh, scanning the underlying Node for vulnerabilities, and adaptively restricting the main container's runtime behavior would simply not be possible.
 
 In the view of Welkin, this means that such a sidecar would _itself_ become an attack vector.
 By design, it is reachable by the application running within the main container in the Pod.
@@ -60,7 +60,7 @@ And we do not circumvent them by putting all our faith in a privileged sidecar.
 
 Table 1 calls out the following named security features, and we describe what we do within that space as follows:
 
-- **Logging Agent**, for which we use Fluentd to forward all logs into the logging system. Going beyond the requirements of the Reference Design, our setup with two clusters ensures that no application in the Workload Cluster can overwrite or modify the logs that are stored in the OpenSearch instance in the Management Cluster. Thereby, we offer tamper-proof logging, which the DoD Reference Design does not.
+- **Logging Agent**, for which we use Fluentd to forward all logs into the logging system. Going beyond the requirements of the Reference Design, our setup with two Clusters ensures that no application in the Workload Cluster can overwrite or modify the logs that are stored in the OpenSearch instance in the Management Cluster. Thereby, we offer tamper-proof logging, which the DoD Reference Design does not.
 - **Logging Storage and Retrieval**, which is what OpenSearch is for.
 - **Log Visualization and Analysis**, which is what OpenSearch Dashboards offer.
 - **Container Policy Enforcement**, which in the DoD Reference Design is about ensuring compliance with the US military's Security Content Automation Protocol (SCAP). In Welkin, the following guardrails provide defence in depth, which is similar in scope:
@@ -69,16 +69,16 @@ Table 1 calls out the following named security features, and we describe what we
     - requiring [microsegmentation via Network Policies](../../user-guide/safeguards/enforce-networkpolicies.md) providing both [vulnerability scanning](../../user-guide/registry.md) and [intrusion detection](../intrusion-detection.md) for applications; and
     - enforcing container images pulls from only [allowlisted container registries](../../user-guide/safeguards/enforce-trusted-registries.md).
 - **Runtime Defense**, which in Welkin is offered via the intrusion detection system Falco.
-- **Service Mesh Proxy** and **Service Mesh**, which the document later spells out as offering in-cluster workload identity and network traffic encryption features. In all Kubernetes-integrated service meshes, the workload identity ultimately comes from the Kubernetes API, which means that they are from a security perspective equivalent to the Pod selectors used in e.g. Network Policies: if an attacker can fool or impersonate the Kubernetes API server, no amount of additional use of cryptography will help because the Kubernetes API as source of truth is regarded as authoritative. Network traffic can be encrypted in Welkin by enabling node-to-node encryption in Calico, the CNI of choice. So while Welkin does not ship with a service mesh, it has equivalent workload identity and over-the-wire network security features as one.
+- **Service Mesh Proxy** and **Service Mesh**, which the document later spells out as offering in-Cluster workload identity and network traffic encryption features. In all Kubernetes-integrated service meshes, the workload identity ultimately comes from the Kubernetes API, which means that they are from a security perspective equivalent to the Pod selectors used in e.g. Network Policies: if an attacker can fool or impersonate the Kubernetes API server, no amount of additional use of cryptography will help because the Kubernetes API as source of truth is regarded as authoritative. Network traffic can be encrypted in Welkin by enabling Node-to-Node encryption in Calico, the CNI of choice. So while Welkin does not ship with a service mesh, it has equivalent workload identity and over-the-wire network security features as one.
 - **Vulnerability Management** and **CVE Service**, for which Welkin includes the Trivy vulnerability scanner for both the Harbor container registry and for scanning the running workloads using the Trivy Operator.
-- **Host Based Security**, which Welkin addresses by making it easy to apply upgrades and to reboot nodes with Kured or to replace them, depending on if the cluster is installed via Kubespray or Cluster API.
+- **Host Based Security**, which Welkin addresses by making it easy to apply upgrades and to reboot Nodes with Kured or to replace them, depending on if the Cluster is installed via Kubespray or Cluster API.
 - **Artifact Repository**, which in Welkin is offered by the Harbor container registry.
 - **Zero Trust Model Down to the Container Level**, which is poorly defined in the Reference Design document, but the table contents suggests that it relates to the features of a Service Mesh, so see that bullet for the answer.
 
 ## Section 4, Software Factory Kubernetes Reference Design
 
 Section 4 of the Reference Design is highly DoD-specific, but Application Developers in Welkin are recommended to take inspiration from it in setting up their own CI/CD systems.
-As for the final step, deploying to Welkin, it is recommended to either use the [Argo CD additional managed service](../../user-guide/additional-services/argocd.md) or to set up deployment as a final step in a CI system, [as per our instructions](../../user-guide/ci-cd.md).
+As for the final step, deploying to Welkin, it is recommended to either use the [Argo CD additional managed service](../../user-guide/additional-services/argocd.md) or to set up Deployment as a final step in a CI system, [as per our instructions](../../user-guide/ci-cd.md).
 
 ## Section 5, Additional Tools and Activities
 
@@ -102,12 +102,12 @@ Disregarding all references to DoD-internal systems the following useful informa
 
 ### General Tools and Activity Advice
 
-- Using a GitOps-based deployment tool and process is advised, because of three reasons:
+- Using a GitOps-based Deployment tool and process is advised, because of three reasons:
     - Eliminates the need to open ports and to share keys with externally running CI/CD services, such as GitHub Actions.
     - Eliminates environment configuration drift.
     - Ensures the desired state is always represented in Git, which (although not mentioned in the Reference Design document) also brings the benefits of clear and non-repudiable auditability, thanks to signed commits.
 - Analyze network flows between components. In Welkin, this is done using the [Jaeger additional managed service](../../user-guide/additional-services/jaeger.md) for applications deployed onto the environment. This is not the same as a full network flow analyzer, because it doesn't work on the low level of capturing all traffic across the entire network. However, it does show to a fine level of detail how applications interact with each other. The fact that it's more focused on application-only traffic may both be a strength or a weakness, depending on perspective.
-- Section 5.1 lists the common advanced deployment strategies: Blue/Green, Canary, Rolling, and Continuous (which is a special case of Rolling). All these can be implemented in Welkin in Argo and with a bit more effort in a manual or scripted way using normal Kubernetes primitives.
+- Section 5.1 lists the common advanced Deployment strategies: Blue/Green, Canary, Rolling, and Continuous (which is a special case of Rolling). All these can be implemented in Welkin in Argo and with a bit more effort in a manual or scripted way using normal Kubernetes primitives.
 - Section 5.2 is concerned with monitoring, logging, and alerting based on monitoring and logging. These are supported in Welkin, thanks to the Prometheus monitoring stack which includes Alert Manager, and log-based alerting in OpenSearch.
 
 ## Summary

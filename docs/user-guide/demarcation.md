@@ -48,7 +48,7 @@ The mission of administrators is to make you, the Welkin user, succeed. Besides 
 
 ## General Principle
 
-Welkin does not allow users to make any changes which may compromise the security of the platform. This includes compromising or working around access control, logging, monitoring, backups, alerting, etc. For example, accidental deletion of the CustomResourceDefinitions of Prometheus would prevent administrators from getting alerts and fixing cluster issues before your application is impacted. Similarly, accidentally deleting Fluentd Pods would make it impossible to capture the Kubernetes audit log and investigate data breaches.
+Welkin does not allow users to make any changes which may compromise the security of the platform. This includes compromising or working around access control, logging, monitoring, backups, alerting, etc. For example, accidental deletion of the CustomResourceDefinitions of Prometheus would prevent administrators from getting alerts and fixing Cluster issues before your application is impacted. Similarly, accidentally deleting Fluentd Pods would make it impossible to capture the Kubernetes audit log and investigate data breaches.
 
 ## Specifics
 

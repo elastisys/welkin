@@ -1,4 +1,4 @@
-# Run csi-cinder-controllerplugin on the Elastisys nodes
+# Run csi-cinder-controllerplugin on the Elastisys Nodes
 
 - Status: accepted
 - Deciders: arch meeting
@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-We use the Cinder CSI Driver to manage the lifecycle of OpenStack Cinder Volumes. Currently the csi-cinder-controllerplugin is running on arbitrary nodes.
+We use the Cinder CSI Driver to manage the lifecycle of OpenStack Cinder Volumes. Currently the csi-cinder-controllerplugin is running on arbitrary Nodes.
 Where should we run the csi-cinder-controllerplugin?
 
 ## Decision Drivers
@@ -21,7 +21,7 @@ Where should we run the csi-cinder-controllerplugin?
 
 ## Decision Outcome
 
-Chosen option: "Run the csi-cinder-controllerplugin on Elastisys Nodes", because it improves the stability and security of the platform and makes the application nodes "light"
+Chosen option: "Run the csi-cinder-controllerplugin on Elastisys Nodes", because it improves the stability and security of the platform and makes the application Nodes "light"
 
 ### Positive Consequences
 

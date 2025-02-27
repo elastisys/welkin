@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-We have received a few requests from Application Developers to enable external replication on PostgreSQL so that they are able to create copies of the PostgreSQL cluster themselves to use for testing, development, tuning and disaster recovery purposes.
+We have received a few requests from Application Developers to enable external replication on PostgreSQL so that they are able to create copies of the PostgreSQL Cluster themselves to use for testing, development, tuning and disaster recovery purposes.
 Should we allow and enable external replication for PostgreSQL, or should we offer an alternative that can mimic that?
 
 ## Decision Drivers
@@ -29,7 +29,7 @@ Chosen options: Clone the S3 bucket containing the files using rclone to another
 We rclone the backups (once per night) in this new S3 bucket.
 We provide no SLA on the rclone job.
 
-The option `Allow external replication on PostgreSQL` is putting the platform stability and integrity at risk, because external replication is done via the replication slots and if the destination of the replication is unreachable or stopped, then the WAL files are kept on disc until the files are sent to destination and confirmed to be received. This means that the WAL files will pile up until the cluster runs out of space and crashes. This also leads to data loss and data corruption.
+The option `Allow external replication on PostgreSQL` is putting the platform stability and integrity at risk, because external replication is done via the replication slots and if the destination of the replication is unreachable or stopped, then the WAL files are kept on disc until the files are sent to destination and confirmed to be received. This means that the WAL files will pile up until the Cluster runs out of space and crashes. This also leads to data loss and data corruption.
 
 On Infrastructure Providers that do not have native S3 support with ACL capabilities we need endpoint/credentials from the user to a S3 bucket of their choosing that we can rclone to. We rclone the backups (once per night) in this new S3 bucket and provide credentials to the Application Developer. We provide no SLA on the rclone job.
 The diagram of the solution looks like this:
@@ -37,8 +37,8 @@ The diagram of the solution looks like this:
 
 ### Positive Consequences
 
-- We make the Platform Administrators life easier by offering them a possibility to clone/replicate their PostgreSQL cluster from the S3 bucket containing the base backup and WAL files.
-- Platform Administrators can now use 3rd party tools that can pull the base backup and WAL files and clone the PostgreSQL cluster in another location.
+- We make the Platform Administrators life easier by offering them a possibility to clone/replicate their PostgreSQL Cluster from the S3 bucket containing the base backup and WAL files.
+- Platform Administrators can now use 3rd party tools that can pull the base backup and WAL files and clone the PostgreSQL Cluster in another location.
 - Increase Application Developer autonomy
 
 ### Negative Consequences
@@ -58,7 +58,7 @@ Offer this only on request.
 ### [option 1] - Allow external replication on PostgreSQL
 
 - Good, because we satisfy the Application Developer need
-- Bad, because it comes with a big risk of breaking the PostgreSQL cluster and cause downtime.
+- Bad, because it comes with a big risk of breaking the PostgreSQL Cluster and cause downtime.
 
 ### [option 2] - Do not allow external replication on PostgreSQL
 

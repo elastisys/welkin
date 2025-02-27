@@ -217,7 +217,7 @@ fi
         ```
 
 The example above can be modified to only export certain logs, by adding a query using [OpenSearch Query DSL](https://opensearch.org/docs/latest/opensearch/query-dsl/index/) with the `--searchBody '<query>'` flag.
-This way it is possible to filter on certain labels to only export logs for a particular namespace, deployment, or even using identifier within structured logs.
+This way it is possible to filter on certain labels to only export logs for a particular namespace, Deployment, or even using identifier within structured logs.
 An example for a specific namespace would be:
 
 ```json
@@ -264,7 +264,7 @@ Since the Query DSL is in JSON format it must be properly quoted or escaped to k
 
 ## Deploying CronJobs
 
-The simplest way to prepare this for deployment is to build a container image including Bash, Elasticdump and s3cmd, and set up a CronJob to run this on a preferred schedule.
+The simplest way to prepare this for Deployment is to build a container image including Bash, Elasticdump and s3cmd, and set up a CronJob to run this on a preferred schedule.
 
 Here are some examples of how to build and deploy them:
 

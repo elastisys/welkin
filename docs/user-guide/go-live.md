@@ -24,7 +24,7 @@ To move from production anxiety to production karma, here is a checklist to go t
     - **Why?** This ensures that the application can be updated without downtime.
     - **How?** Make a trivial change to your application, e.g., add `Lorem ipsum` in the output of some API, and redeploy.
     - **Desired outcome**: Measured downtime is acceptable.
-    - **Possible resolutions**: Make sure you have the right [deployment strategy](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/). Prefer `RollingUpdate` over `Recreate`. Ensure other parameters of the deployment strategy are tuned as needed.
+    - **Possible resolutions**: Make sure you have the right [Deployment strategy](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/). Prefer `RollingUpdate` over `Recreate`. Ensure other parameters of the Deployment strategy are tuned as needed.
 - [ ] Load testing was performed while doing a rolling reboot of Nodes:
     - **Why?** Node failure may cause application downtime. Said downtime can be large if it happens at night, when administrators need to wake up before they can respond. Also, administrators need some extra capacity for performing critical security updates on the base operating system of the Nodes.
     - **How?** As above, but now ask the administrator to perform a rolling reboot of Nodes.

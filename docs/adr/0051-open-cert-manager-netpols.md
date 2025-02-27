@@ -19,9 +19,9 @@ For DNS-01 challenges one needs:
 
 For HTTP-01 challenges one needs:
 
-- The certificate domain must point towards the Ingress-controller of the cluster.
+- The certificate domain must point towards the Ingress-controller of the Cluster.
     - Application developer responsibility.
-- The Network Policy must be configured to allow cert-manager controller access to the Ingress-controller of the cluster, and the Ingress-controller access to the cert-manager resolver.
+- The Network Policy must be configured to allow cert-manager controller access to the Ingress-controller of the Cluster, and the Ingress-controller access to the cert-manager resolver.
     - Platform administrator responsibility.
 
 This means that there is a shared responsibility.

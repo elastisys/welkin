@@ -133,7 +133,7 @@ To configure the Workload Cluster to use Dex running in the Management Cluster f
 - `kube_oidc_client_id` should be set to `kubelogin`
 - `kube_oidc_client_secret` should be set to a Dex client secret generated with the apps configuration, it can be found in `${CK8S_CONFIG_PATH}/secrets.yaml` under the key `dex.kubeloginClientSecret` after running `ck8s init` (see [instructions on deploying apps](#deploying-welkin-apps)).
 
-To generate kubeconfigs that use OIDC for authentication, the following variables should be set in the configuration files for both clusters (both can't be true):
+To generate kubeconfigs that use OIDC for authentication, the following variables should be set in the configuration files for both Clusters (both can't be true):
 
 ```yaml
 create_oidc_kubeconfig: true
@@ -144,12 +144,12 @@ For more information on managing OIDC kubeconfigs and RBAC, or on running withou
 
 ### Copy the VMs information to the inventory files
 
-Add the host name, user and IP address of each VM that you prepared above in `${CK8S_CONFIG_PATH}/sc-config/inventory.ini` for Management Cluster and `${CK8S_CONFIG_PATH}/wc-config/inventory.ini` for Workload Cluster. Moreover, you also need to add the host names of the master nodes under `[kube_control_plane]`, etcd nodes under `[etcd]` and worker nodes under `[kube_node]`.
+Add the host name, user and IP address of each VM that you prepared above in `${CK8S_CONFIG_PATH}/sc-config/inventory.ini` for Management Cluster and `${CK8S_CONFIG_PATH}/wc-config/inventory.ini` for Workload Cluster. Moreover, you also need to add the host names of the master Nodes under `[kube_control_plane]`, etcd Nodes under `[etcd]` and worker Nodes under `[kube_node]`.
 
 > [!NOTE]
 > Make sure that the user has SSH access to the VMs.
 
-### Run Kubespray to deploy the Kubernetes clusters
+### Run Kubespray to deploy the Kubernetes Clusters
 
 ```bash
 for CLUSTER in "${CLUSTERS[@]}"; do
@@ -162,7 +162,7 @@ done
 
 ## Rook Block Storage
 
-Normally, we want to use block storage solutions provided by the infra provider. However, this is not always available, especially for on-prem environments. In such cases we can partition separate volumes on Nodes in the cluster for Rook-Ceph and use that as a block storage solution.
+Normally, we want to use block storage solutions provided by the infra provider. However, this is not always available, especially for on-prem environments. In such cases we can partition separate volumes on Nodes in the Cluster for Rook-Ceph and use that as a block storage solution.
 
 {%
     include "./common.md"
@@ -187,7 +187,7 @@ Normally, we want to use block storage solutions provided by the infra provider.
     ```
     Once you get the IP address edit `${CK8S_CONFIG_PATH}/common-config.yaml` file  and set  the value  to `global.clusterDns` field.
 
-???+note "Configure the load balancer IP on the loopback interface for each worker node"
+???+note "Configure the load balancer IP on the loopback interface for each worker Node"
 
     The Kubernetes data plane Nodes (i.e., worker Nodes) cannot connect to themselves with the IP address of the load balancer that fronts them. The easiest is to configure the load balancer's IP address on the loopback interface of each Nodes. Create `/etc/netplan/20-eip-fix.yaml` file and add the following to it. `${loadblancer_ip_address}` should be replaced with the IP address of the load balancer for each cluster.
 

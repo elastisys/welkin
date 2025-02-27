@@ -18,7 +18,7 @@ Keycloak is a widely recognized open-source Identity and Access Management (IAM)
 
 As of May 2023, Keycloak is a [CNCF Incubating project](https://www.cncf.io/blog/2023/04/11/keycloak-joins-cncf-as-an-incubating-project/).
 
-In this guide we outline the necessary steps to configure and deploy a Keycloak instance on a Welkin cluster that is using the [managed PostgreSQL service](../additional-services/postgresql.md).
+In this guide we outline the necessary steps to configure and deploy a Keycloak instance on a Welkin Cluster that is using the [managed PostgreSQL service](../additional-services/postgresql.md).
 
 This will provide you with a robust and secure IAM solution to manage user access and authorization for your applications running on Welkin.
 
@@ -42,9 +42,9 @@ echo $APP_DATABASE
 
 ## Configure Keycloak with managed PostgreSQL
 
-We chose Bitnami's Helm chart for [Keycloak](https://github.com/bitnami/charts/tree/main/bitnami/keycloak) due to its open-source nature, ease of deployment, security optimization, and active maintenance.
+We chose Bitnami's Helm chart for [Keycloak](https://github.com/bitnami/charts/tree/main/bitnami/keycloak) due to its open-source nature, ease of Deployment, security optimization, and active maintenance.
 
-Bitnami is a well known provider of pre-configured, open-source application stacks that simplify deployment and management in various environments, such as Kubernetes. They offer a Helm chart for Keycloak, which streamlines deployment while adhering to Kubernetes best practices for security.
+Bitnami is a well known provider of pre-configured, open-source application stacks that simplify Deployment and management in various environments, such as Kubernetes. They offer a Helm chart for Keycloak, which streamlines Deployment while adhering to Kubernetes best practices for security.
 
 ### Deploying Keycloak
 
@@ -90,7 +90,7 @@ production: true # (4)
 proxy: edge
 ```
 
-1. The example provided serves as a starting point for configuring resource requests and limits for your Keycloak deployment. Be sure to tailor these values to your specific requirements, and monitor your deployment to optimize resource allocation for your unique use case.
+1. The example provided serves as a starting point for configuring resource requests and limits for your Keycloak Deployment. Be sure to tailor these values to your specific requirements, and monitor your Deployment to optimize resource allocation for your unique use case.
 1. Insert the variables that you got from initial preparation.
 1. Configure the Ingress hostname and which issuer you will be using.
 1. Enabling production mode and TLS for HTTPS. Disclaimer: Enabling production mode does not mean that the configuration here is ready for production. Please see further reading on Production configuration.

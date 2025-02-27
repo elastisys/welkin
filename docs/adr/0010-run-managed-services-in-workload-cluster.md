@@ -19,14 +19,14 @@ Where should these run?
 - We want to make it easy to run these services with regulatory compliance in mind, e.g., we should be able to reuse Welkin features around monitoring, logging, access control and network segregation.
 - We want to make it difficult for Welkin users to negatively affect managed services.
 - We want to keep support for multiple Workload Cluster, i.e., application multi-tenancy.
-- Many Infrastructure Providers do not support Service type LoadBalancer, which complicates exposing non-HTTP services outside a Kubernetes cluster.
+- Many Infrastructure Providers do not support Service type LoadBalancer, which complicates exposing non-HTTP services outside a Kubernetes Cluster.
 - Management Cluster might not exist in a future packaging of Welkin.
 
 ## Considered Options
 
 - Run managed services in Workload Cluster
 - Run managed services in Management Cluster
-- Run managed services in yet another cluster
+- Run managed services in yet another Cluster
 
 ## Decision Outcome
 

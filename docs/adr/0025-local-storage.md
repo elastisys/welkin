@@ -36,12 +36,12 @@ Chosen option: Use local storage with local-volume-provisioner and move the code
 
 ### Negative Consequences
 
-- Scaling the storage becomes harder as it will involve replacing the nodes.
+- Scaling the storage becomes harder as it will involve replacing the Nodes.
 - We are limited by the size of the volumes that are available within the Infrastructure Provider offering.
 
 ## Recommendation to Platform Administrators
 
-When using the local-volume-provisioner please create dedicated partitions and make sure to reserve enough space for the boot partition. Failing to do so can lead to entire disc to become full and the node will become unresponsive and crash.
+When using the local-volume-provisioner please create dedicated partitions and make sure to reserve enough space for the boot partition. Failing to do so can lead to entire disc to become full and the Node will become unresponsive and crash.
 
 ## Links
 

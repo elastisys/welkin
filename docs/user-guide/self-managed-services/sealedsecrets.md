@@ -16,13 +16,13 @@ search:
    end='<!--disclaimer-end-->'
 %}
 
-This page will help you to install [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets), so that you are allowed to install the cluster-wide resources that are required by Sealed Secrets.
+This page will help you to install [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets), so that you are allowed to install the Cluster-wide resources that are required by Sealed Secrets.
 
 This guide is a complement to [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets/tree/v0.24.2) own documentation.
 
 ## Preparation
 
-The self-managed cluster-wide resources feature adds specific Roles, ServiceAccounts, etc. for you.
+The self-managed Cluster-wide resources feature adds specific Roles, ServiceAccounts, etc. for you.
 This enables you to install and manage the resources that Sealed Secrets needs.
 These pre-installed resources are propagated via HNC from your root Namespace ([recall the documentation of this feature](../namespaces.md)).
 

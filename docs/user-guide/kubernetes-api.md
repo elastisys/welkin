@@ -16,7 +16,7 @@ tags:
 The Kubernetes API is the entrypoint to managing your Kubernetes resources.
 Your Welkin administrator will provide you with a kubeconfig file upon onboarding, which is required to access the API.
 
-The following sections describe how to access the cluster in order to manage your Kubernetes resources.
+The following sections describe how to access the Cluster in order to manage your Kubernetes resources.
 
 ## Authentication and Access Control in Welkin
 
@@ -25,7 +25,7 @@ The kubeconfig file provides individual access to the Kubernetes API through [De
 Normally, you should authenticate using your organizations identity provider connected to Dex, but it is also possible for your administrator to configure static usernames and passwords.
 
 The authorization is done by the Kubernetes API based on [Kubernetes role-based access controls](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
-Your cluster administrator will grant you permissions as part of onboarding.
+Your Cluster administrator will grant you permissions as part of onboarding.
 You have administrator access to the user workload Kubernetes Namespaces by default.
 In order to follow [the principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), you as a user should only have sufficient access to manage resources required by your application.
 User access to the Kubernetes API may need to be restricted from case to case to follow the principle of least privilege.
@@ -51,7 +51,7 @@ The kubeconfig file can be used with `kubectl` by:
 ### Authenticating to the Kubernetes API
 
 To authenticate to the Kubernetes API, run a `kubectl` command.
-The `oidc-login` plugin will launch a browser where you log in to the cluster:
+The `oidc-login` plugin will launch a browser where you log in to the Cluster:
 
 ![Dex login page](img/dex-login.png)
 
@@ -60,7 +60,7 @@ Select your log in method and log in:
 
 ![User authentication page](img/user-login.png)
 
-Once you have logged in through the browser, you are authenticated to the cluster:
+Once you have logged in through the browser, you are authenticated to the Cluster:
 
 ![Successful login](img/dex-authenticated.png)
 
@@ -73,7 +73,7 @@ You are now logged in and can use `kubectl` to manage your Kubernetes resources!
 
 ### Pre-verification
 
-Make sure you are in the right namespace on the right cluster:
+Make sure you are in the right namespace on the right Cluster:
 
 ```bash
 kubectl get nodes
@@ -82,7 +82,7 @@ kubectl config view --minify --output 'jsonpath={..namespace}'; echo
 
 ### Configure an Image Pull Secret
 
-To start, make sure you configure the Kubernetes cluster with an image pull secret. Ideally, you should create a container registry [Robot Account](https://goharbor.io/docs/2.2.0/working-with-projects/project-configuration/create-robot-accounts/), which only has pull permissions and use its token.
+To start, make sure you configure the Kubernetes Cluster with an image pull secret. Ideally, you should create a container registry [Robot Account](https://goharbor.io/docs/2.2.0/working-with-projects/project-configuration/create-robot-accounts/), which only has pull permissions and use its token.
 
 !!!important
 

@@ -123,7 +123,7 @@ While this new field is not usable for queries as said before, but if we saw the
 
 ## Mapping constraints
 
-There is a limit to the number of fields a mapping can have but it's a limit that can be changed. The default value is a 1000 fields per index. This limit is there to prevent cluster performance issues, as resource utilization increases a lot when you have a large number of fields in an index.
+There is a limit to the number of fields a mapping can have but it's a limit that can be changed. The default value is a 1000 fields per index. This limit is there to prevent Cluster performance issues, as resource utilization increases a lot when you have a large number of fields in an index.
 
 ![Fields Limit](../img/explicit_mapping_8.png)
 

@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-To increase adoption of Welkin, we were asked to observe the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment). Currently, Welkin's handing of kubeconfig is astonishing. Most tools in the ecosystem use the standard `KUBECONFIG` environment variable and kubeconfig context implemented in the client-go library. These tools leave it up to the user to set `KUBECONFIG` or use the default `~/.kube/config`. Similarly, there is a default kubeconfig context which can be overwritten via command-line. Tools that get cluster credentials generate a context related to the name of the cluster.
+To increase adoption of Welkin, we were asked to observe the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment). Currently, Welkin's handing of kubeconfig is astonishing. Most tools in the ecosystem use the standard `KUBECONFIG` environment variable and kubeconfig context implemented in the client-go library. These tools leave it up to the user to set `KUBECONFIG` or use the default `~/.kube/config`. Similarly, there is a default kubeconfig context which can be overwritten via command-line. Tools that get Cluster credentials generate a context related to the name of the Cluster.
 
 Tools that behave as such include:
 
@@ -34,7 +34,7 @@ Tools that behave as such include:
 
 We chose using standard kubeconfig mechanism, because it improves integration both with tools "below" Welkin and "on top" of Welkin.
 
-Tools that produce Kubernetes contexts are expected to use an approach similar to `kubectl config set-cluster`, `set-credentials` and `set-context`. The name of the cluster, user and context should be derived from the name of the cluster.
+Tools that produce Kubernetes contexts are expected to use an approach similar to `kubectl config set-cluster`, `set-credentials` and `set-context`. The name of the Cluster, user and context should be derived from the name of the Cluster.
 
 Tools that consume Kubernetes contexts are expected to use an approach similar to `kubectl`, `helm` or `helmfile` (see links below).
 
