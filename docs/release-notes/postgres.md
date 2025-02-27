@@ -42,7 +42,7 @@ Released 2022-08-24
 Changes:
 
 - Upgraded postgres-operator to version `v1.8.2`
-- Added a service which allows users to port-forward to the service instead of directly to pods
+- Added a service which allows users to port-forward to the service instead of directly to Pods
 
 ### v1.7.1-ck8s2
 

@@ -56,7 +56,7 @@ sudo apt install redis-tools
 
 ## Getting Access
 
-Your administrator will set up a ConfigMap inside Welkin, which contains all information you need to access your Redis cluster.
+Your administrator will set up a ConfigMap inside Welkin, which contains all information you need to access your Redis Cluster.
 The ConfigMap has the following shape:
 
 ```yaml
@@ -89,11 +89,11 @@ export REDIS_SENTINEL_PORT=$(kubectl -n $NAMESPACE get configmap $CONFIG_MAP -o 
 ```
 
 > [!IMPORTANT]
-> At the time of this writing, we do not recommend to use a Redis cluster in a multi-tenant fashion. One Redis cluster should have only one purpose.
+> At the time of this writing, we do not recommend to use a Redis Cluster in a multi-tenant fashion. One Redis Cluster should have only one purpose.
 
 ## Create a ConfigMap
 
-First, check that you are on the right Welkin cluster, in the right **application** namespace:
+First, check that you are on the right Welkin Cluster, in the right **application** namespace:
 
 ```bash
 kubectl get nodes
@@ -114,9 +114,9 @@ data:
 EOF
 ```
 
-## Allow your Pods to communicate with the Redis cluster
+## Allow your Pods to communicate with the Redis Cluster
 
-The Redis cluster is protected by Network Policies. Add the following label to your Pods: `elastisys.io/redis-<cluster_name>-access: allow`
+The Redis Cluster is protected by Network Policies. Add the following label to your Pods: `elastisys.io/redis-<cluster_name>-access: allow`
 
 `cluster_name` can be retrieved from the ConfigMap provided by your administrator:
 
@@ -126,7 +126,7 @@ kubectl -n $NAMESPACE get configmap $CONFIG_MAP -o 'jsonpath={.data.REDIS_CLUSTE
 
 ## Expose Redis Connection Parameters to Your Application
 
-To expose the Redis cluster to your application, follow one of the following upstream documentation:
+To expose the Redis Cluster to your application, follow one of the following upstream documentation:
 
 - [Create a Pod that has access to the ConfigMap data through a Volume](https://kubernetes.io/docs/concepts/configuration/configmap/#using-configmaps-as-files-from-a-pod)
 - [Define container environment variables using ConfigMap data](https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods)
@@ -148,7 +148,7 @@ Before going into production, don't forget to go through the [go-live checklist]
 
 ## Welkin Redis Release Notes
 
-Check out the [release notes](../../release-notes/redis.md) for the Redis cluster that runs in Welkin environments!
+Check out the [release notes](../../release-notes/redis.md) for the Redis Cluster that runs in Welkin environments!
 
 ## Best Practices Recommended
 

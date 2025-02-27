@@ -9,13 +9,13 @@ search:
 # Continuous Development
 
 When developing on Kubernetes, it can be time-consuming to manually run commands to build new images,
-push images to a container registry, update Kubernetes manifests, and deploy new manifests to the cluster with
+push images to a container registry, update Kubernetes manifests, and deploy new manifests to the Cluster with
 each source-code change.
 
 [Skaffold](https://skaffold.dev/) is a tool that can be used to ease this process.
 Skaffold will automate the process of building, pushing and deploying new images based on changes to the source-code.
 
-Skaffold requires minimal setup as the tool has no cluster-side components, and will automatically detect the configuration to use.
+Skaffold requires minimal setup as the tool has no Cluster-side components, and will automatically detect the configuration to use.
 
 ## Installing Skaffold
 
@@ -96,11 +96,11 @@ skaffold dev
 
 When you run `skaffold dev`, Skaffold will first build, and deploy all of the artifacts specified in `skaffold.yaml`.
 Skaffold will then begin monitoring all source file dependencies for all artifacts specified in the project and rebuild
-the associated artifacts and redeploy the new changes to your cluster as changes are made to these source files.
-So any changes made to the source-files will automatically be updated in the cluster.
+the associated artifacts and redeploy the new changes to your Cluster as changes are made to these source files.
+So any changes made to the source-files will automatically be updated in the Cluster.
 
 When starting `skaffold dev`, the logs of the deployed artifacts will automatically be directed to the console, which makes it
-easy to debug the application in the cluster.
+easy to debug the application in the Cluster.
 
 If `ingress.hostname` was configured previously the application can be accessed from there directly. Otherwise the flag
 `--port-forward` can be added to the command, and Skaffold will automatically forward the ports on the application
@@ -112,7 +112,7 @@ skaffold dev --port-forward
 
 ### Application updates
 
-When the application has been built and deployed to the cluster Skaffold shows which URL to access,
+When the application has been built and deployed to the Cluster Skaffold shows which URL to access,
 shows the logs of the application, and starts listening for changes in the source-files.
 
 ![Skaffold Output1](img/skaffold-output1.png)
@@ -136,7 +136,7 @@ res.send({
 ```
 
 And then save the file, Skaffold will automatically detect the change, build a new image, and deploy the new image
-to the cluster. After the deployment has stabilized, when visiting the same URL, the output is now:
+to the Cluster. After the Deployment has stabilized, when visiting the same URL, the output is now:
 
 ```json
 { "hostname": "welkin-user-demo-54bbdcf6fc-gthsc", "version": "0.0.1", "hello": "world" }
@@ -144,7 +144,7 @@ to the cluster. After the deployment has stabilized, when visiting the same URL,
 
 ### Configuration updates
 
-To see the amount of pods, run (inside another terminal):
+To see the amount of Pods, run (inside another terminal):
 
 ```bash
 $ kubectl get pods
@@ -153,18 +153,18 @@ welkin-user-demo-7645db4f5c-h4xks   1/1     Running   0          45s
 welkin-user-demo-7645db4f5c-svqfs   1/1     Running   0          35s
 ```
 
-There are two pods running. To change this, edit the file `deploy/welkin-user-demo/values.yaml`:
+There are two Pods running. To change this, edit the file `deploy/welkin-user-demo/values.yaml`:
 
 ```diff
 - replicaCount: 2
 + replicaCount: 1
 ```
 
-And save the file, this will also trigger Skaffold to update the deployment.
+And save the file, this will also trigger Skaffold to update the Deployment.
 Because the modification only impacts the Kubernetes configuration, the application image does
 not need to be rebuilt, and a new Helm revision may be deployed right away.
 
-Once the deployments have stabilized the amount of pods can be inspected again:
+Once the deployments have stabilized the amount of Pods can be inspected again:
 
 ```bash
 $ kubectl get pods
@@ -175,7 +175,7 @@ welkin-user-demo-7645db4f5c-svqfs   1/1     Running   0          4m45s
 ## Clean-up
 
 To stop Skaffold `ctrl + c` can be used and will trigger Skaffold to stop listening for changes and
-clean-up the deployed artifacts from the cluster.
+clean-up the deployed artifacts from the Cluster.
 
 The clean-up can also be triggered by running:
 

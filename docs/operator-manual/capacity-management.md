@@ -74,9 +74,9 @@ Welkin triggers a P2 alert when:
 
 ### How?
 
-[Add a new Node](../operator-manual/troubleshooting.md#node-seems-really-not-fine-i-want-a-new-one) of the same type as the other Nodes in the cluster.
+[Add a new Node](../operator-manual/troubleshooting.md#node-seems-really-not-fine-i-want-a-new-one) of the same type as the other Nodes in the Cluster.
 
-If the cluster has 6 Nodes, consider consolidating to 3 Nodes of twice-the-size -- in number of CPUs or memory or both. This may have several benefits:
+If the Cluster has 6 Nodes, consider consolidating to 3 Nodes of twice-the-size -- in number of CPUs or memory or both. This may have several benefits:
 
 - it may reduces infrastructure cost;
 - it reduces platform administrator burden;

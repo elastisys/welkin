@@ -95,10 +95,10 @@ curl -kL -u "${user}:${password}" -X PUT "${os_url}/_snapshot/${snapshot_repo}/m
 '
 ```
 
-### Optional: Start new cluster from snapshot
+### Optional: Start new Cluster from snapshot
 
 > [!NOTE]
-> Only perform the steps in this section if you are starting a new cluster from a snapshot.
+> Only perform the steps in this section if you are starting a new Cluster from a snapshot.
 > Otherwise, skip ahead to the [**Restore**](#restore) section.
 
 Before you install OpenSearch you should disable the initial index creation to make the restore process leaner by setting the following configuration option:
@@ -123,7 +123,7 @@ indices="kubernetes-*,kubeaudit-*,other-*,authlog-*"
 ```
 
 > [!NOTE]
-> This process assumes that you are using the same S3 bucket as your previous cluster. If you aren't:
+> This process assumes that you are using the same S3 bucket as your previous Cluster. If you aren't:
 >
 > - Register a new S3 snapshot repository to the old bucket as [described here](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-restore/#register-repository)
 > - Use the newly registered snapshot repository in the restore process
@@ -329,7 +329,7 @@ curl -kL -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/
 ### Backup
 
 Harbor is set up to store backups of the database in an S3 bucket (note that this does not include the actual images, since those are already stored in S3 by default).
-There is a CronJob called `harbor-backup-cronjob` in the cluster that is taking a database dump and uploading it to a S3 bucket.
+There is a CronJob called `harbor-backup-cronjob` in the Cluster that is taking a database dump and uploading it to a S3 bucket.
 
 To take a backup on-demand, execute
 
@@ -351,7 +351,7 @@ These instructions focuses on backups for the Workload Cluster using the Velero 
 For instructions on using Velero in the Management Cluster see the [Grafana section](#grafana).
 
 > [!NOTE]
-> The steps for running Velero in this document assumes `v0.39` or later of Welkin, as the Velero CLI is now part of the `ck8s ops` CLI making it easier to operate on both clusters with Velero without having to manually set `KUBECONFIG`, as long as `CK8S_CONFIG_PATH` points to the correct environment.
+> The steps for running Velero in this document assumes `v0.39` or later of Welkin, as the Velero CLI is now part of the `ck8s ops` CLI making it easier to operate on both Clusters with Velero without having to manually set `KUBECONFIG`, as long as `CK8S_CONFIG_PATH` points to the correct environment.
 
 Read more about Velero [here](../user-guide/backup.md).
 
@@ -361,7 +361,7 @@ Read more about Velero [here](../user-guide/backup.md).
 ### Backup
 
 Velero is set up to take daily backups and store them in an S3 bucket.
-The daily backup will not take backups of everything in a Kubernetes cluster, it will instead look for certain labels and annotations.
+The daily backup will not take backups of everything in a Kubernetes Cluster, it will instead look for certain labels and annotations.
 Read more about those labels and annotations [here](../user-guide/backup.md#backing-up).
 
 It is also possible to take on-demand backups.
@@ -392,7 +392,7 @@ Restoring from a backup with Velero is meant to be a type of disaster recovery.
 **Velero will not overwrite existing Resources when restoring.**
 As such, if you want to restore the state of a Resource that is still running, the Resource must be deleted first.
 
-If you want to restore the entire cluster, all you need to run to restore the state from the latest daily backup, is:
+If you want to restore the entire Cluster, all you need to run to restore the state from the latest daily backup, is:
 
 ```bash
 ./bin/ck8s ops velero sc restore create --from-schedule velero-daily-backup --wait
@@ -424,7 +424,7 @@ Restoring volumes with the volume binding mode `WaitForFirstConsumer` requires s
 So by either manually creating a Pod of the kind that normally binds the volume
 or creating a special purpose Pod that only binds the volume, we can let Velero complete the restoration.
 
-For the second case, the following method can be used to get the restore to proceed to completion without starting the actual pods that use them.
+For the second case, the following method can be used to get the restore to proceed to completion without starting the actual Pods that use them.
 
 Check if there are any volumes stuck in Pending.
 
@@ -607,12 +607,12 @@ and you can then use the following to handpick resources from the backup you wan
 
 ## Grafana
 
-This section refers to the Management cluster and specifically to the user Grafana, not the ops Grafana.
+This section refers to the Management Cluster and specifically to the user Grafana, not the ops Grafana.
 
 ### Backup
 
 Backups of Grafana dashboards created by Application Developers are included in the daily Velero backup in the Management Cluster.
-We then include the Grafana deployment, Pod, and PVC (including the data).
+We then include the Grafana Deployment, Pod, and PVC (including the data).
 Manual backups can be taken using Velero (include the same resources).
 
 To manually create a backup run:
@@ -626,7 +626,7 @@ To manually create a backup run:
 To restore the Grafana backup you must:
 
 - Have Grafana installed
-- Delete the Grafana deployment, PVC and PV
+- Delete the Grafana Deployment, PVC and PV
 
   ```bash
   ./bin/ck8s ops kubectl sc delete deploy -n monitoring user-grafana

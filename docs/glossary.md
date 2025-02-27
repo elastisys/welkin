@@ -53,7 +53,7 @@ See also:
 
 ## Application Developer
 
-A person who writes an application that runs in a Kubernetes cluster.
+A person who writes an application that runs in a Kubernetes Cluster.
 
 Usage notes:
 
@@ -74,7 +74,7 @@ See also:
 
 ## Apps layer (or Welkin layer)
 
-Denotes the Welkin components installed on top of a Kubernetes cluster.
+Denotes the Welkin components installed on top of a Kubernetes Cluster.
 
 Usage notes:
 
@@ -87,7 +87,7 @@ See also:
 
 ## Cluster
 
-Can refer to a [Kubernetes Cluster](#kubernetes-cluster), a PostgreSQL cluster, a Redis cluster, a RabbitMQ cluster, an OpenSearch Cluster, etc.
+Can refer to a [Kubernetes Cluster](#kubernetes-cluster), a PostgreSQL Cluster, a Redis Cluster, a RabbitMQ Cluster, an OpenSearch Cluster, etc.
 
 Usage notes:
 
@@ -158,7 +158,7 @@ See also:
 
 ## Environment
 
-One instance of a Welkin deployment. One Environment is composed of two [Kubernetes Clusters](#kubernetes-cluster), the [Management Cluster](#management-cluster) and [Workload Cluster](#workload-cluster).
+One instance of a Welkin Deployment. One Environment is composed of two [Kubernetes Clusters](#kubernetes-cluster), the [Management Cluster](#management-cluster) and [Workload Cluster](#workload-cluster).
 
 Usage notes:
 
@@ -186,7 +186,7 @@ See also:
 
 ## Kubernetes Cluster
 
-A set of worker machines, called nodes, that run containerized applications. Every cluster has at least one worker node.
+A set of worker machines, called Nodes, that run containerized applications. Every Cluster has at least one worker Node.
 
 Usage notes:
 
@@ -231,7 +231,7 @@ See also:
 
 ## Management Cluster
 
-A Kubernetes cluster hosting some platform components.
+A Kubernetes Cluster hosting some platform components.
 
 Usage notes:
 
@@ -316,7 +316,7 @@ See also:
 
 ## Workload Cluster
 
-A Kubernetes cluster hosting the Application which is used by the [End User](#end-user).
+A Kubernetes Cluster hosting the Application which is used by the [End User](#end-user).
 
 See also:
 

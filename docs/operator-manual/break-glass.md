@@ -9,9 +9,9 @@ In this section we describe a workaround when access to the environment is broke
 
 ## Platform Administrator Access
 
-When Dex or the OpenID provider is malfunctioning, the Platform Administrator might be unable to access the cluster. The following steps will give you temporary access sufficient for troubleshooting and recovery:
+When Dex or the OpenID provider is malfunctioning, the Platform Administrator might be unable to access the Cluster. The following steps will give you temporary access sufficient for troubleshooting and recovery:
 
-1. `SSH` to one of the control-plane nodes.
+1. `SSH` to one of the control-plane Nodes.
 
 1. Use `/etc/kubernetes/admin.conf` and run `kubectl` commands to check the problem
 

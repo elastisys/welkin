@@ -32,21 +32,21 @@ This page discusses integration between Welkin and external CI/CD solutions.
 
 For the purpose of Welkin, one can distinguish between two "styles" of CI/CD: push-style and pull-style.
 
-**Push-style or external CI/CD** -- like [GitLab CI](https://docs.gitlab.com/ee/ci/) or [GitHub Actions](https://docs.github.com/en/actions) -- means that a commit will trigger some commands on a CI/CD worker, which will push changes into the Welkin cluster. The CI/CD worker generally runs outside the Kubernetes cluster. Push-style CI/CD solutions should work out-of-the-box and require no special considerations for Welkin.
+**Push-style or external CI/CD** -- like [GitLab CI](https://docs.gitlab.com/ee/ci/) or [GitHub Actions](https://docs.github.com/en/actions) -- means that a commit will trigger some commands on a CI/CD worker, which will push changes into the Welkin Cluster. The CI/CD worker generally runs outside the Kubernetes Cluster. Push-style CI/CD solutions should work out-of-the-box and require no special considerations for Welkin.
 
-**Pull-styles or in-cluster CI/CD** -- like [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) or [Flux](https://fluxcd.io/) -- means that a special controller is installed inside the cluster, which monitors a Git repository. When a change is detected the controller "pulls" changes into the cluster from the Git repository. The special controller often requires considerable permissions and introduces a new notion of access control, which is problematic from a compliance perspective.
+**Pull-styles or in-Cluster CI/CD** -- like [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) or [Flux](https://fluxcd.io/) -- means that a special controller is installed inside the Cluster, which monitors a Git repository. When a change is detected the controller "pulls" changes into the Cluster from the Git repository. The special controller often requires considerable permissions and introduces a new notion of access control, which is problematic from a compliance perspective.
 
 Below we show how to use external CI/CD solutions.
 
 ## External CI/CD
 
-External CI/CD works pretty much as if you would access Welkin from your laptop, running `kubectl` or `helm` against the cluster, as required to deploy your application. However, for improved access control, the `KUBECONFIG` provided to your CI/CD pipeline should employ a ServiceAccount which is used only by your CI/CD pipeline. This ServiceAccount should be bound to a Role which gets the least permissions possible. For example, if your application only consists of a Deployment, Service and Ingress, those should be the only resources available to the Role.
+External CI/CD works pretty much as if you would access Welkin from your laptop, running `kubectl` or `helm` against the Cluster, as required to deploy your application. However, for improved access control, the `KUBECONFIG` provided to your CI/CD pipeline should employ a ServiceAccount which is used only by your CI/CD pipeline. This ServiceAccount should be bound to a Role which gets the least permissions possible. For example, if your application only consists of a Deployment, Service and Ingress, those should be the only resources available to the Role.
 
 To create a `KUBECONFIG` for your CI/CD pipeline, proceed as shown below.
 
 ### Pre-verification
 
-First, make sure you are in the right namespace on the right cluster:
+First, make sure you are in the right namespace on the right Cluster:
 
 ```bash
 kubectl get nodes

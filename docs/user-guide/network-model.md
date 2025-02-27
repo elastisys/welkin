@@ -45,7 +45,7 @@ The diagram above present a useful model when reasoning about networking in Welk
 
 Your application Pods, as well as Pods of [additional services](additional-services/index.md), can communicate on a secure private network, via [RFC1918](https://datatracker.ietf.org/doc/html/rfc1918) private IP addresses. It is analogous to a [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) in VM-based workloads.
 
-In Welkin, it is the responsibility of the administrator to ensure the in-cluster private network is secure and trusted, either by performing an [infrastructure audit](../operator-manual/provider-audit.md) or deploying [Pod-to-Pod encryption](https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/).
+In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an [infrastructure audit](../operator-manual/provider-audit.md) or deploying [Pod-to-Pod encryption](https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/).
 
 You should use NetworkPolicies to segregate your Pods. This improves your security posture by reducing the blast radius in case parts of your application are under attack.
 
@@ -57,7 +57,7 @@ You should use NetworkPolicies to segregate your Pods. This improves your securi
 
 ## Private DNS
 
-The private network also features a private DNS. A Service `my-svc` in the namespace `my-namespace` can be accessed from within the Kubernetes cluster as `my-svc.my-namespace`.
+The private network also features a private DNS. A Service `my-svc` in the namespace `my-namespace` can be accessed from within the Kubernetes Cluster as `my-svc.my-namespace`.
 
 IP addresses of Pods are not stable. For example, the rollout of a new container image creates new Pods, which will have new IP addresses. Therefore, you should always use private DNS names of Services to connect your application Pods, as well as to connect your application to [additional services](additional-services/index.md).
 

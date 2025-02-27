@@ -155,7 +155,7 @@ ingress:
 
 ### Pushing the JupyterHub Images to Harbor
 
-This sections shows how to pull the required images for JupyterHub and push them to another registry. If you are using the managed Harbor as your container registry, please follow [these instructions](../deploy.md) on how to authenticate, create a new project, and how to create a robot account and using it in a pull-secret to be able to pull an image from Harbor to your cluster safely.
+This sections shows how to pull the required images for JupyterHub and push them to another registry. If you are using the managed Harbor as your container registry, please follow [these instructions](../deploy.md) on how to authenticate, create a new project, and how to create a robot account and using it in a pull-secret to be able to pull an image from Harbor to your Cluster safely.
 
 !!!note
 
@@ -190,7 +190,7 @@ helm upgrade --install jupyterhub jupyterhub/jupyterhub --values values.yaml
 
 ## Known Issues / Limitations
 
-- JupyterHub's custom user scheduler is disabled (which [can help with efficient node downscaling](https://z2jh.jupyter.org/en/latest/administrator/optimization.html#scaling-down-efficiently)). For safety reasons, developers in Welkin do not have the rights required to deploy it.
+- JupyterHub's custom user scheduler is disabled (which [can help with efficient Node downscaling](https://z2jh.jupyter.org/en/latest/administrator/optimization.html#scaling-down-efficiently)). For safety reasons, developers in Welkin do not have the rights required to deploy it.
 
 - JupyterHub's Admin functionality is limited since some of the admin functions require container root access. Pre-installed Python packages for users can not be added through the admin interface. They can be added by [modifying the Docker image](https://z2jh.jupyter.org/en/stable/jupyterhub/customizing/user-environment.html#choose-and-use-an-existing-docker-image), pushing it to your image registry and redeploying JupyterHub. **NOTE** Users can still install their own packages.
 

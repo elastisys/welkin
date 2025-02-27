@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-With Tekton we need to decide where to run it, as it will need considerable permissions in the target cluster to be able to manage it.
+With Tekton we need to decide where to run it, as it will need considerable permissions in the target Cluster to be able to manage it.
 
 So, where should we run Tekton?
 
@@ -19,7 +19,7 @@ So, where should we run Tekton?
 ## Considered Options
 
 - Tekton on Management Cluster
-- Tekton on each cluster
+- Tekton on each Cluster
 
 ## Decision Outcome
 
@@ -41,7 +41,7 @@ Chosen option "Tekton on Management Cluster", because it will follow nicely toge
 ### Tekton on Management Cluster
 
 - Good, single instance to setup and manage
-- Good, centralised management of all clusters
+- Good, centralised management of all Clusters
 - Good, environment can be managed as a group or individually if needed
 - Good, Tekton itself should be unaffected if it applies a bad change to the Workload Cluster and will be available to perform rollback
 - Bad, Tekton itself can potentially go into a bad state if it applies a bad change to the Management Cluster
@@ -49,12 +49,12 @@ Chosen option "Tekton on Management Cluster", because it will follow nicely toge
 - Bad, aggregating high privilege credentials in Management Cluster
 - Good, limited access to Management Cluster
 
-### Tekton on each cluster
+### Tekton on each Cluster
 
 - Bad, multiple instances to setup and manage
-- Bad, individual management of each cluster
-- Good, each cluster individually impacted by failures
-- Bad, Tekton itself can potentially go into a bad state if it applies a bad change to the cluster
+- Bad, individual management of each Cluster
+- Good, each Cluster individually impacted by failures
+- Bad, Tekton itself can potentially go into a bad state if it applies a bad change to the Cluster
 - Bad, need for high privilege credentials in Workload Cluster
 - Good, no aggregation of high privilege credentials in Management Cluster
 - Bad, wider access to Workload Cluster

@@ -45,7 +45,7 @@ Chosen option: "disallow `gid=0` by default". Enabling it on a case-by-case basi
 
 ### Negative Consequences
 
-- Some users will complain about their container images not starting, and we will need to add a less restricted PodSecurityPolicy in their cluster.
+- Some users will complain about their container images not starting, and we will need to add a less restricted PodSecurityPolicy in their Cluster.
 
 ## Other Considerations
 

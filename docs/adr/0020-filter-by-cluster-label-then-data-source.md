@@ -1,4 +1,4 @@
-# Filter by cluster label then data source
+# Filter by Cluster label then data source
 
 - Status: accepted
 - Deciders: arch meeting
@@ -11,11 +11,11 @@ Technical Story: <https://github.com/elastisys/compliantkubernetes-apps/issues/7
 Welkin allows multiple Workload Clusters to be connected to a single Management Cluster.
 This allows the metrics of multiple Workload Clusters to be inspected via the same dashboards.
 
-How should we organise metrics to allow users and admins to select for which clusters they want to see metrics?
+How should we organise metrics to allow users and admins to select for which Clusters they want to see metrics?
 
 ## Decision Drivers
 
-- We want to be able to see metrics for a single cluster, for multiple cluster, and even for all clusters.
+- We want to be able to see metrics for a single Cluster, for multiple Cluster, and even for all Clusters.
 - We want to be able to reuse upstream dashboards, and [some are missing filters](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/templates/grafana/dashboards-1.14/alertmanager-overview.yaml) for the `cluster` variable.
 - We want to stay flexible.
 
@@ -34,7 +34,7 @@ because it fulfills the all decision drivers with little complexity.
 
 [Prom-label-enforcer](https://github.com/prometheus-community/prom-label-proxy) can be used to create multiple data sources from a single data store, discriminating by `cluster` label. To simplify Thanos configuration, we can also discriminate based on `tenant_id`, which will always contain the same value as `cluster`.
 
-In general, we will aim to fix dashboards missing the `cluster` variable upstream. However, by also providing filtering based on data source, we facilitate our users to reuse their dashboards, which might not be cluster-aware.
+In general, we will aim to fix dashboards missing the `cluster` variable upstream. However, by also providing filtering based on data source, we facilitate our users to reuse their dashboards, which might not be Cluster-aware.
 
 ### Positive Consequences
 

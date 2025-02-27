@@ -1,10 +1,10 @@
 # Getting Started
 
-Setting up Welkin consists of two parts: setting up [at least two vanilla Kubernetes clusters](../architecture.md#level-2-clusters) and deploying `compliantkubernetes-apps` on top of them.
+Setting up Welkin consists of two parts: setting up [at least two vanilla Kubernetes Clusters](../architecture.md#level-2-clusters) and deploying `compliantkubernetes-apps` on top of them.
 
-## Pre-requisites for Creating Vanilla Kubernetes clusters
+## Pre-requisites for Creating Vanilla Kubernetes Clusters
 
-In theory, any vanilla Kubernetes cluster can be used for Welkin. We suggest the [Kubespray](https://github.com/kubernetes-sigs/kubespray) way. To this end, you need:
+In theory, any vanilla Kubernetes Cluster can be used for Welkin. We suggest the [Kubespray](https://github.com/kubernetes-sigs/kubespray) way. To this end, you need:
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Python3 pip](https://packaging.python.org/en/latest/guides/installing-using-linux-tools/)

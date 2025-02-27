@@ -56,13 +56,13 @@ All Ingress traffic will go through load balancers and there will not be any maj
 ## Cluster autoscaling
 
 > [!WARNING]
-> For Elastisys Managed Services customers that have or want to use the cluster autoscaling feature, please ensure your workload does not prevent the autoscaler from removing nodes, e.g. running pods that configure non-memory `emptyDir` volumes.
-> Please go through the list in the [cluster autoscaling documentation](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node).
+> For Elastisys Managed Services customers that have or want to use the Cluster autoscaling feature, please ensure your workload does not prevent the autoscaler from removing Nodes, e.g. running Pods that configure non-memory `emptyDir` volumes.
+> Please go through the list in the [Cluster autoscaling documentation](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node).
 
 The [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/clusterapi/README.md) will scale up a Cluster if there are Pods in the Pending state (refer to the [Kubernetes documentation on Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)) that cannot currently be scheduled because of a lack of resources with the current set of Nodes.
 This means that the scaling is based on resource **requests** on Pods, not the actual current CPU/memory utilization.
 In turn, this means the autoscaler cannot prevent Nodes from running out of CPU or memory if the resource requests are not close to the actual usage: to benefit the most from autoscaling, you need to set resource requests as correctly as possible.
-The autoscaler will scale down a Cluster if there are unneeded nodes for more than 10 minutes.
-A node is unneeded if it has less than cpu and memory requests less that 50% of its capacity and all pods running there can be moved to other nodes (refer to [this documentation](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work) for more information)
+The autoscaler will scale down a Cluster if there are unneeded Nodes for more than 10 minutes.
+A Node is unneeded if it has less than cpu and memory requests less that 50% of its capacity and all Pods running there can be moved to other Nodes (refer to [this documentation](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work) for more information)
 
 Cluster autoscaling will not be needed for everyone and might not be available on all Infrastructure Providers, contact your Platform Administrator to see if it could be possible to enable for you.

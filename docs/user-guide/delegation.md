@@ -69,7 +69,7 @@ The next section covers delegation to users and groups.
 
 ### Pre-verification
 
-First, make sure you are in the right namespace on the right cluster:
+First, make sure you are in the right namespace on the right Cluster:
 
 ```bash
 kubectl get nodes

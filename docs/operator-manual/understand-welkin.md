@@ -11,7 +11,7 @@ It allows you to create a mental model and reason about complex failure modes, s
 
 In particular, notice that:
 
-- Welkin is composed of at least two Kubernetes clusters:
+- Welkin is composed of at least two Kubernetes Clusters:
     - at least one Workload Cluster: this hosts the application(s) of the Application Developer; and
     - one Service Cluster: this provides several [Service Endpoints](../glossary.md#service-endpoint) to the Application Developers, in particular around authentication and observability.
 - Welkin is composed of two layers:

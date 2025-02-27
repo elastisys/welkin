@@ -26,7 +26,7 @@ Should we use different boot disk sizes for Nodes than we set before?
 1. Keep boot disk size to minimum 100GB for all WC Elastisys Nodes
 1. Keep boot disk size to minimum 100GB for all control plane Nodes in both MC and WC
 1. Keep boot disk size to minimum 100GB for all control plane Nodes in WC
-1. Change boot disk size to minimum 50GB for all Nodes irrespective of size and type in MC cluster and leave all WC cluster Nodes with 100GB boot disk size.
+1. Change boot disk size to minimum 50GB for all Nodes irrespective of size and type in MC Cluster and leave all WC Cluster Nodes with 100GB boot disk size.
 1. Keep the recommended boot disk size to minimum 100GB for all Nodes irrespective of size and type, however allow on request to change MC Nodes and some WC Nodes to use 50GB.
 1. Do not change the default values
 
@@ -40,7 +40,7 @@ Chosen option: 8 + 9. This means we will keep the recommended boot disk size to 
 - Reduce the number of alerts and ops time
 - Improve platform stability and scalability
 - Reduce the infrastructure cost for small and medium environments.
-- By not changing default configurations, no existing clusters will be impacted, reducing the risk of unintentional disruption.
+- By not changing default configurations, no existing Clusters will be impacted, reducing the risk of unintentional disruption.
 
 ### Negative Consequences
 

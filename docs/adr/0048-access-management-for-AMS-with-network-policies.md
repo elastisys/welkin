@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-Elastisys is working around the clock to improve the security of our platform, so as to allow Application Developers to better protect Personal Data. Currently, we don't have the access management for the AMS-es i.e how these are supposed to be accessed by pods that are deployed by Application Developers.
+Elastisys is working around the clock to improve the security of our platform, so as to allow Application Developers to better protect Personal Data. Currently, we don't have the access management for the AMS-es i.e how these are supposed to be accessed by Pods that are deployed by Application Developers.
 
 We are considering Network Policies for AMS-es to enhance security and control. A key aspect of this change concerns how these services, such as our additional managed Redis or PostgreSQL, etc. instances, interact with applications deployed by Application Developers.
 
@@ -30,12 +30,12 @@ How should the access be managed and how should it be communicated to the Applic
 1. Give Application Developers a heads up before deploying the new AMS-es Release with Network Policies enabled and let Application Developers label the namespaces they Want to communicate with AMS-es.
 
     - `Good`, because Application Developers will have the freedom to choose which namespaces need access, promoting responsibility and autonomy.
-    - `Good`, because notification from us will allow developers to prepare and avoid sudden access issues upon AMS-es deployment.
+    - `Good`, because notification from us will allow developers to prepare and avoid sudden access issues upon AMS-es Deployment.
     - `Bad`, because some developers might overlook the communication, leading to inconsistencies in access management.
 
-1. Still Give Application Developers a heads up but we label all the Application Developer namespaces that already exist and let them add and remove labels after the deployment.
+1. Still Give Application Developers a heads up but we label all the Application Developer namespaces that already exist and let them add and remove labels after the Deployment.
 
-    - `Good`, because it ensures all current applications maintain access post-deployment of AMS-es new release, preventing service disruptions.
+    - `Good`, because it ensures all current applications maintain access post-Deployment of AMS-es new release, preventing service disruptions.
     - `Bad`, because initially grants broad access, potentially exposing AMS-es to namespaces that no longer require it.
 
 1. Allow Application Developer Namespace Labels
@@ -52,15 +52,15 @@ How should the access be managed and how should it be communicated to the Applic
 
 **Access Management Strategy:**
 
-Chosen option 1 & 2 i.e We will allow specific AMS-es Pod labels, specifically `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` and Application developers need to add the labels to their existing application pods with `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` to ensure continuity.
+Chosen option 1 & 2 i.e We will allow specific AMS-es Pod labels, specifically `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` and Application developers need to add the labels to their existing application Pods with `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` to ensure continuity.
 
 Example- `elastisys.io/redis-<redis-cluster-name>-access: allow`.
 
-This label will enable communication between Application Developers application pods and the designated AMS-es.
+This label will enable communication between Application Developers application Pods and the designated AMS-es.
 
 **For New Additional Managed Services (AMS-es) Clusters Ordered:**
 
-Network Policy will be enabled by default. Application Developers will need to actively label the application pods with `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` to gain access to our AMS-es.
+Network Policy will be enabled by default. Application Developers will need to actively label the application Pods with `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` to gain access to our AMS-es.
 
 ### Positive Consequences
 

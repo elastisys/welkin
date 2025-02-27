@@ -16,7 +16,7 @@ search:
  end='<!--disclaimer-end-->'
 %}
 
-[Apache Kafka®](https://kafka.apache.org/) is an open-source distributed event streaming platform. To run an Apache Kafka® cluster on Kubernetes you can use an operator. This guide uses the [Strimzi Kafka Operator](https://github.com/strimzi/strimzi-kafka-operator).
+[Apache Kafka®](https://kafka.apache.org/) is an open-source distributed event streaming platform. To run an Apache Kafka® Cluster on Kubernetes you can use an operator. This guide uses the [Strimzi Kafka Operator](https://github.com/strimzi/strimzi-kafka-operator).
 
 Strimzi is a [CNCF Sandbox project](https://www.cncf.io/projects/strimzi/).
 
@@ -28,9 +28,9 @@ This page will show you how to install Strimzi Kafka Operator on Welkin. You can
 
 ## Enable Self-Managed Kafka
 
-This guide depends on the [self-managed cluster resources](../../operator-manual/user-managed-crds.md) feature to be enabled. This is so Strimzi Kafka Operator gets the necessary CRDs and ClusterRoles installed.
+This guide depends on the [self-managed Cluster resources](../../operator-manual/user-managed-crds.md) feature to be enabled. This is so Strimzi Kafka Operator gets the necessary CRDs and ClusterRoles installed.
 
-Strimzi Kafka Operator also requires the image repository `quay.io/strimzi` to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed cluster resources feature.
+Strimzi Kafka Operator also requires the image repository `quay.io/strimzi` to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed Cluster resources feature.
 
 ## Setup CRDs and RBAC
 
@@ -46,7 +46,7 @@ In Kubernetes you will need to:
 
 ### CRDs
 
-You need to apply the Custom Resource Definitions (CRDs) required by Strimzi Kafka Operator. This is typically not allowed in a Welkin Environment, but with Kafka enabled with the self-managed cluster resources feature, this allows you to apply these yourself.
+You need to apply the Custom Resource Definitions (CRDs) required by Strimzi Kafka Operator. This is typically not allowed in a Welkin Environment, but with Kafka enabled with the self-managed Cluster resources feature, this allows you to apply these yourself.
 
 ```bash
 mkdir crds
@@ -101,7 +101,7 @@ kubectl apply -f sa-cm/kafka-sa-cm.yaml
 
 With the initial prep done, you are now ready to deploy the operator.
 
-You can find the deployment manifest [here](https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.44.0/install/cluster-operator/060-Deployment-strimzi-cluster-operator.yaml). Deploying this on Welkin does require a Security Context to be added.
+You can find the Deployment manifest [here](https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.44.0/install/cluster-operator/060-Deployment-strimzi-cluster-operator.yaml). Deploying this on Welkin does require a Security Context to be added.
 
 Edit the manifest and add this under `spec.template.spec.containers[0]`:
 
@@ -130,11 +130,11 @@ curl https://raw.githubusercontent.com/elastisys/welkin/main/docs/user-guide/sel
 kubectl apply -f deployment/kafka-operator-deployment.yaml
 ```
 
-To configure the Strimzi Kafka Operator to watch multiple namespaces (e.g. running Kafka clusters in different namespaces other than the kafka namespace), refer to [Further reading](#further-reading).
+To configure the Strimzi Kafka Operator to watch multiple namespaces (e.g. running Kafka Clusters in different namespaces other than the kafka namespace), refer to [Further reading](#further-reading).
 
-## Deploy your Kafka cluster
+## Deploy your Kafka Cluster
 
-You are now ready to deploy your Kafka cluster!
+You are now ready to deploy your Kafka Cluster!
 
 The example files provided by Strimzi [here](https://github.com/strimzi/strimzi-kafka-operator/tree/0.44.0/examples/kafka) serves as a good starting point.
 
@@ -157,11 +157,11 @@ kubectl apply -f kafka-cluster/persistent-single.yaml
 
     The example above has very low resource requests. It is recommended to adjust these according to your cluster.
 
-Refer to [Further reading](#further-reading) to learn more about how you can configure your Kafka cluster.
+Refer to [Further reading](#further-reading) to learn more about how you can configure your Kafka Cluster.
 
 ## Testing
 
-After you have deployed your Kafka cluster, you can test sending and receiving messages to see if it works!
+After you have deployed your Kafka Cluster, you can test sending and receiving messages to see if it works!
 
 To do this, you can use a producer and consumer as seen [here](https://strimzi.io/quickstarts/), under the section "Send and receive messages". But since Welkin requires resource requests to be specified, just copy pasting those commands will not work.
 
@@ -180,7 +180,7 @@ kubectl apply -f kafka-testing/kafka-producer.yaml
 kubectl apply -f kafka-testing/kafka-consumer.yaml
 ```
 
-After the pods have started you can send and receive messages with `kubectl exec`.
+After the Pods have started you can send and receive messages with `kubectl exec`.
 
 ```bash
 kubectl exec -it kafka-producer -- bin/kafka-console-producer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic my-topic

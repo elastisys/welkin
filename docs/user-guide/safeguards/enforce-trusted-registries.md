@@ -32,7 +32,7 @@ Note to contributors: Aim for the following format.
 
 ## Problem
 
-A healthy security posture requires you to ensure your code has no known vulnerabilities. Welkin comes with a [registry](../registry.md) which includes vulnerability scanning of container images. It can even be configured to prevent the Kubernetes cluster from pulling images with vulnerabilities above a set criticality. This is a per-project setting, so you could, for example, have a stricter policy for publicly facing application components -- e.g., the front office -- and a less strict policy for internal application components -- e.g., the back office.
+A healthy security posture requires you to ensure your code has no known vulnerabilities. Welkin comes with a [registry](../registry.md) which includes vulnerability scanning of container images. It can even be configured to prevent the Kubernetes Cluster from pulling images with vulnerabilities above a set criticality. This is a per-project setting, so you could, for example, have a stricter policy for publicly facing application components -- e.g., the front office -- and a less strict policy for internal application components -- e.g., the back office.
 
 Public container registry, such as Docker Hub and Quay, might not stick to the vulnerability management you require, perhaps being at times too strict or too loose.
 

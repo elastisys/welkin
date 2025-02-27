@@ -4,17 +4,17 @@
 
 ### Deploy Rook
 
-To deploy Rook, go to the `compliantkubernetes-kubespray` repository, change directory to `rook` and follow the instructions [here](https://github.com/elastisys/compliantkubernetes-kubespray/tree/main/rook#rook-ceph) for each cluster.
+To deploy Rook, go to the `compliantkubernetes-kubespray` repository, change directory to `rook` and follow the instructions [here](https://github.com/elastisys/compliantkubernetes-kubespray/tree/main/rook#rook-ceph) for each Cluster.
 
 > [!NOTE]
-> If the kubeconfig files for the clusters are encrypted with SOPS, you need to decrypt them before using them:
+> If the kubeconfig files for the Clusters are encrypted with SOPS, you need to decrypt them before using them:
 >
 > ```bash
 > sops --decrypt ${CK8S_CONFIG_PATH}/.state/kube_config_$CLUSTER.yaml > $CLUSTER.yaml
 > export KUBECONFIG=$CLUSTER.yaml
 > ```
 
-Please restart the operator Pod, `rook-ceph-operator*`, if some pods stalls in initialization state as shown below:
+Please restart the operator Pod, `rook-ceph-operator*`, if some Pods stalls in initialization state as shown below:
 
 ```console
 rook-ceph     rook-ceph-crashcollector-minion-0-b75b9fc64-tv2vg    0/1     Init:0/2   0          24m
@@ -66,7 +66,7 @@ done
 
 <!--clone-apps-start-->
 
-Now that the Kubernetes clusters are up and running, we are ready to install Welkin Apps.
+Now that the Kubernetes Clusters are up and running, we are ready to install Welkin Apps.
 
 ### Clone `compliantkubernetes-apps` and Install Pre-requisites
 
@@ -139,7 +139,7 @@ sops ${CK8S_CONFIG_PATH}/secrets.yaml
 The default configuration for the Management Cluster and Workload Cluster are available in the directory `${CK8S_CONFIG_PATH}/defaults/` and can be used as a reference for available options.
 
 > [!WARNING]
-> Do not modify the read-only default configurations files found in the directory `${CK8S_CONFIG_PATH}/defaults/`. Instead configure the cluster by modifying the regular files `${CK8S_CONFIG_PATH}/sc-config.yaml` and `${CK8S_CONFIG_PATH}/wc-config.yaml` as they will override the default options.
+> Do not modify the read-only default configurations files found in the directory `${CK8S_CONFIG_PATH}/defaults/`. Instead configure the Cluster by modifying the regular files `${CK8S_CONFIG_PATH}/sc-config.yaml` and `${CK8S_CONFIG_PATH}/wc-config.yaml` as they will override the default options.
 
 <!--configure-apps-stop-->
 

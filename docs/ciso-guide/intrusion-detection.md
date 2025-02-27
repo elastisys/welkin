@@ -45,7 +45,7 @@ tags:
 
 ![Intrusion Detection Dashboard](img/intrusion-detection.png)
 
-The Welkin Intrusion Detection Dashboard allows to quickly audit any suspicious activity performed by code inside the cluster, such as writing to suspicious files (e.g., in `/etc`) or attempting suspicious external network connections (e.g., SSH to a command-and-control server). Such activities may indicate anything from a misconfiguration issue to an ongoing attack. Therefore, this dashboard should be regularly reviewed, perhaps even daily.
+The Welkin Intrusion Detection Dashboard allows to quickly audit any suspicious activity performed by code inside the Cluster, such as writing to suspicious files (e.g., in `/etc`) or attempting suspicious external network connections (e.g., SSH to a command-and-control server). Such activities may indicate anything from a misconfiguration issue to an ongoing attack. Therefore, this dashboard should be regularly reviewed, perhaps even daily.
 
 ## Handling Non-Compliance
 

@@ -16,7 +16,7 @@ search:
  end='<!--disclaimer-end-->'
 %}
 
-Flux is an open-source tool for continuous delivery (CD) and GitOps in Kubernetes. It allows you to automate and manage the deployment of applications and configurations in a Kubernetes cluster using a Git repository as the source of truth.
+Flux is an open-source tool for continuous delivery (CD) and GitOps in Kubernetes. It allows you to automate and manage the Deployment of applications and configurations in a Kubernetes Cluster using a Git repository as the source of truth.
 
 Flux is a [CNCF Graduated project](https://www.cncf.io/projects/flux/).
 
@@ -29,9 +29,9 @@ This page will help you install Flux in a Welkin environment.
 
 ### Dependencies
 
-This guide depends on the [self-managed cluster resources](../../operator-manual/user-managed-crds.md) feature to be enabled. This is so Flux gets the necessary CRDs and ClusterRoles installed.
+This guide depends on the [self-managed Cluster resources](../../operator-manual/user-managed-crds.md) feature to be enabled. This is so Flux gets the necessary CRDs and ClusterRoles installed.
 
-Flux also requires the image repository `ghcr.io/fluxcd` to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed cluster resources feature.
+Flux also requires the image repository `ghcr.io/fluxcd` to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed Cluster resources feature.
 
 ### Git
 
@@ -56,7 +56,7 @@ In Kubernetes you will need to:
 
 #### CRDs
 
-You need to apply the Custom Resource Definitions (CRDs) required by Flux. This is typically not allowed in a Welkin Environment, but with Flux enabled with the self-managed cluster resources feature, this allows you to apply these yourself.
+You need to apply the Custom Resource Definitions (CRDs) required by Flux. This is typically not allowed in a Welkin Environment, but with Flux enabled with the self-managed Cluster resources feature, this allows you to apply these yourself.
 
 ```sh
 mkdir crds
@@ -132,7 +132,7 @@ subjects:
 
     Installing Flux with `flux bootstrap` command does not work when installing in a Welkin environment, please follow our instructions instead.
 
-The script below can be used to generate Flux manifests and a basic cluster folder structure similar to `flux bootstrap`. Be sure to configure the environment variables in the script.
+The script below can be used to generate Flux manifests and a basic Cluster folder structure similar to `flux bootstrap`. Be sure to configure the environment variables in the script.
 
 ```sh
 # Generate Manifest files
@@ -202,7 +202,7 @@ Read the Further Reading, keep in mind the (updated) list of Known Issues, both 
 
 Error produced: `Error from server (NotFound): error when creating "roles/": roles.rbac.authorization.k8s.io "role" not found`
 
-There is a [known issue](https://github.com/fluxcd/flux2/discussions/3203) with Role and RoleBindings not being able to be applied together using Flux in a GitOps way. For example, if you apply a Role and a RoleBinding that uses the Role, then Flux will fail to apply. If the Role already exists in the cluster then Flux will succeed.
+There is a [known issue](https://github.com/fluxcd/flux2/discussions/3203) with Role and RoleBindings not being able to be applied together using Flux in a GitOps way. For example, if you apply a Role and a RoleBinding that uses the Role, then Flux will fail to apply. If the Role already exists in the Cluster then Flux will succeed.
 
 Flux uses the [server-side apply](https://kubernetes.io/docs/reference/using-api/server-side-apply/), which requires the ‘bind’ permission to properly apply RoleBindings. And we cannot give you this due to [privilege escalation issues](https://kubernetes.io/docs/concepts/security/rbac-good-practices/#bind-verb) with this permission.
 

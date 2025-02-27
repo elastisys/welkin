@@ -73,10 +73,10 @@ Welkin interacts with a lot of credentials. This document captures all of them i
 ## Cloud Controller (Integration) Credentials
 
 - Purpose: allow Kubernetes control Nodes, specifically the [cloud-controller-manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/), to create LoadBalancers and PersistentVolumes
-- Owner: each Kubernetes cluster should have their own
+- Owner: each Kubernetes Cluster should have their own
 - Type: service account
 - Use for:
-    - Configuring Kubespray to set up a Kubernetes cluster with cloud integration
+    - Configuring Kubespray to set up a Kubernetes Cluster with cloud integration
 - Do not use for:
     - AWS. Use [AWS IAM Node Roles](https://github.com/kubernetes-sigs/kubespray/blob/master/contrib/terraform/aws/modules/iam/main.tf) instead.
     - Exoscale. We currently don't integrate with Exoscale for LoadBalancer or PersistentVolumes.
@@ -87,7 +87,7 @@ Welkin interacts with a lot of credentials. This document captures all of them i
 - Purpose:
     - Allow backup of various components, e.g., PVCs via Velero, Thanos metrics, OpenSearch Indexes, PostgreSQL databases.
     - Allow long-term logging, e.g., Management Cluster logs
-- Owner: each Welkin cluster should have their own
+- Owner: each Welkin Cluster should have their own
 - Type: service account
 - Use for:
     - Backup
@@ -102,7 +102,7 @@ Welkin interacts with a lot of credentials. This document captures all of them i
 
 - Purpose:
     - Allow the Cluster to issue alerts to OpsGenie.
-- Owner: each Welkin cluster should have their own
+- Owner: each Welkin Cluster should have their own
 - Type: service account
 - Use for: alerting
 - Do not use for:
@@ -113,7 +113,7 @@ Welkin interacts with a lot of credentials. This document captures all of them i
 - Purpose:
     - Complete the "OAuth dance" between Grafana, OpenSearch Dashboard, Harbor and kubectl, on one side, and Dex, on the other side.
     - Used both by administrators and users.
-- Owner: each Welkin cluster should have their own
+- Owner: each Welkin Cluster should have their own
 - Type: not secret
 - Misc:
     - We have determined that the OpenID client secret should not be treated as a secret. See risk analysis [here](https://github.com/dexidp/dex/issues/469) and [here](https://security.stackexchange.com/questions/225809/what-is-the-worst-i-can-do-if-i-know-openid-connect-client-secret).

@@ -11,7 +11,7 @@ Technical Story:
 
 ## Context and Problem Statement
 
-Currently, we create per-cluster SSH key pairs, which are shared among administrators. This is problematic from an information security perspective for a few reasons:
+Currently, we create per-Cluster SSH key pairs, which are shared among administrators. This is problematic from an information security perspective for a few reasons:
 
 1. It reduces the auditability of various actions, e.g., who SSH-ed into the Kubernetes control plane Nodes.
 1. It makes credential management challenging, e.g., when onboarding/offboarding administrators.
@@ -31,11 +31,11 @@ Currently, we create per-cluster SSH key pairs, which are shared among administr
 
 ## Decision Outcome
 
-We will manage SSH keys via an Ansible role, since it allows rotating/adding/deleting keys without rebooting nodes. Also, it caters to more environments, e.g., BYO-VMs and BYO-metal. The [compliantkubernetes-kubespray](https://github.com/elastisys/compliantkubernetes-kubespray) project will make it easy to configure SSH keys.
+We will manage SSH keys via an Ansible role, since it allows rotating/adding/deleting keys without rebooting Nodes. Also, it caters to more environments, e.g., BYO-VMs and BYO-metal. The [compliantkubernetes-kubespray](https://github.com/elastisys/compliantkubernetes-kubespray) project will make it easy to configure SSH keys.
 
 ### Bootstrapping
 
-The above decision raises a chicken-and-egg problem: Ansible needs SSH access to the nodes, but the SSH access is managed via Ansible. This issue is solved as follows.
+The above decision raises a chicken-and-egg problem: Ansible needs SSH access to the Nodes, but the SSH access is managed via Ansible. This issue is solved as follows.
 
 For cloud deployments, all Terraform providers support injecting at least one public SSH key via cloud-init:
 
@@ -44,7 +44,7 @@ For cloud deployments, all Terraform providers support injecting at least one pu
 - [GCP](https://github.com/kubernetes-sigs/kubespray/blob/release-2.15/contrib/terraform/gcp/variables.tf#L57)
 - [OpenStack](https://github.com/kubernetes-sigs/kubespray/blob/release-2.15/contrib/terraform/openstack/variables.tf#L81)
 
-The administrator who creates the cluster bootstraps SSH access by providing their own public SSH key via cloud-init. Then, the Ansible role adds the public SSH keys of the other administrators.
+The administrator who creates the Cluster bootstraps SSH access by providing their own public SSH key via cloud-init. Then, the Ansible role adds the public SSH keys of the other administrators.
 
 BYO-VM and BYO-metal deployments are handled similarly, except that the initial public SSH key is delivered by email/Slack to the VM/metal administrator.
 

@@ -29,7 +29,7 @@ Released 2024-12-09
 
 #### Improvement(s)
 
-- Updated cluster operator to `2.9.0`, updated server to `3.13.7` and monitoring to `2.9.0`.
+- Updated Cluster operator to `2.9.0`, updated server to `3.13.7` and monitoring to `2.9.0`.
 - Updated the backup process to use `rabbitmqctl` for improved reliability and compatibility.
 - Added a `LICENSE` file to the repository to provide clarity on usage and distribution.
 
@@ -48,7 +48,7 @@ Released 2023-07-03
 
 #### Updated
 
-- Updated cluster operator to `v2.3.0`, updated server to `3.11.18`
+- Updated Cluster operator to `v2.3.0`, updated server to `3.11.18`
 - Include updated Overview dashboard
 
 ### v3.10.7-ck8s2

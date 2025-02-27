@@ -29,7 +29,7 @@ Where should alerting be configured, so as to quickly converge to the optimal al
 ## Decision Drivers
 
 - Allow to quickly silence, un-silence and re-prioritize alerts.
-- Allow arbitrary flexibility, e.g., who should be notified, when should notification happen, when should escalation happen, for what cluster and namespaces should notification happen, etc.
+- Allow arbitrary flexibility, e.g., who should be notified, when should notification happen, when should escalation happen, for what Cluster and namespaces should notification happen, etc.
 - Leverage existing tools and processes.
 
 ## Considered Options

@@ -41,7 +41,7 @@ Hence, forwarders are subject to the following tensions:
 
 ## Decision Outcome
 
-Chosen option: `emptyDir` for Prometheus as forwarder, because it allows monitoring of the storage system in some cases (e.g. Rook) and can redeploy automatically after node failure. It also keeps the complexity down without much risk of data loss.
+Chosen option: `emptyDir` for Prometheus as forwarder, because it allows monitoring of the storage system in some cases (e.g. Rook) and can redeploy automatically after Node failure. It also keeps the complexity down without much risk of data loss.
 
 Fluentd as forwarder is deployed via DaemonSet. Both, `emptyDir` and `hostPath` can be used.
 
@@ -53,29 +53,29 @@ Fluentd as forwarder is deployed via DaemonSet. Both, `emptyDir` and `hostPath` 
 
 ### Negative Consequences
 
-- Buffered monitoring information is lost if node is lost.
+- Buffered monitoring information is lost if Node is lost.
 - `emptyDir` can cause disk pressure. This can be handled by alerting on low disk space.
 
 ## Pros and Cons of the Options
 
 ### Use underlying storage provider
 
-- Good, because the forwarder can be restarted on any node.
+- Good, because the forwarder can be restarted on any Node.
 - Good, because the buffer can be large.
-- Good, because no buffered monitoring information is lost if a node goes down.
+- Good, because no buffered monitoring information is lost if a Node goes down.
 - Good, because buffered monitoring information is preserved if the forwarder is redeployed.
-- Bad, because non-node-local storage is generally slower. Note, however, that at least Safespring and CityCloud use a central Ceph storage cluster for the VM's boot disk, which wipes out node-local's storage advantage.)
+- Bad, because non-Node-local storage is generally slower. Note, however, that at least Safespring and CityCloud use a central Ceph storage Cluster for the VM's boot disk, which wipes out Node-local's storage advantage.)
 - Bad, because the forwarder will fail if storage provider goes down. This is especially problematic for Exoscale, bare-metal and BYO-VMs.
 - Bad, because the forwarder cannot monitor the storage provider (circular dependency).
 - Bad, because setting right ownership requires init containers or [alpha features](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods).
 
 ### Use Local Persistent Volumes
 
-- Bad, because the forwarder cannot be restarted on any node without manual action: "if a node becomes unhealthy, then the local volume becomes inaccessible by the Pod. The Pod using this volume is unable to run.".
-- Bad, because the amount of forwarding depends on the node's local disk size.
-- Bad, because buffered monitoring information is lost if the forwarder's node goes down.
+- Bad, because the forwarder cannot be restarted on any Node without manual action: "if a Node becomes unhealthy, then the local volume becomes inaccessible by the Pod. The Pod using this volume is unable to run.".
+- Bad, because the amount of forwarding depends on the Node's local disk size.
+- Bad, because buffered monitoring information is lost if the forwarder's Node goes down.
 - Good, because buffered monitoring information is preserved if the forwarder is redeployed.
-- Good, because node-local storage is generally faster.
+- Good, because Node-local storage is generally faster.
 - Good, because the forwarder will survive failure of storage provider.
 - Good, because the forwarder can monitor the storage provider (no circular dependency).
 - Bad, because local persistent storage requires an additional configuration step.
@@ -83,11 +83,11 @@ Fluentd as forwarder is deployed via DaemonSet. Both, `emptyDir` and `hostPath` 
 
 ### Use `emptyDir`
 
-- Good, because the forwarder can be restarted on any node without manual action.
-- Bad, because the amount of forwarding depends on the node's local disk size.
-- Bad, because buffered monitoring information is lost if the forwarder's node goes down.
+- Good, because the forwarder can be restarted on any Node without manual action.
+- Bad, because the amount of forwarding depends on the Node's local disk size.
+- Bad, because buffered monitoring information is lost if the forwarder's Node goes down.
 - Bad, because buffered monitoring information is lost if the forwarder is (not carefully enough) redeployed.
-- Good, because node-local storage is generally faster.
+- Good, because Node-local storage is generally faster.
 - Good, because the forwarder will survive failure of storage provider.
 - Good, because the forwarder can monitor the storage provider (no circular dependency).
 - Good, because works out of the box.
@@ -97,7 +97,7 @@ Fluentd as forwarder is deployed via DaemonSet. Both, `emptyDir` and `hostPath` 
 
 Similar to Local Persistent Volumes, but
 
-- Worse, because if the forwarder is redeployed on a new node, buffering information may appear/disappear.
+- Worse, because if the forwarder is redeployed on a new Node, buffering information may appear/disappear.
 - Better, because it requires no extra storage provider configuration.
 
 ## Links

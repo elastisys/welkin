@@ -57,7 +57,7 @@ Released 2024-10-07
 
 ### Other(s)
 
-- Add Redis_CLUSTER_NAME to user-access-ConfigMap
+- Add Redis_Cluster_NAME to user-access-ConfigMap
 - Fixed the sentinel metrics port
 
 ## v6.2.6-ck8s4
@@ -70,12 +70,12 @@ Released 2024-05-03
 
 ### Feature(s)
 
-- Network Policies are added to the cluster deployments which will deny access by default.
+- Network Policies are added to the Cluster deployments which will deny access by default.
 
 ### Improvement(s)
 
-- Added stricter Sentinel scheduling for better resilience to node failure.
-- Scaled down `maxmemory` to better prevent Redis pods from getting OOMKilled.
+- Added stricter Sentinel scheduling for better resilience to Node failure.
+- Scaled down `maxmemory` to better prevent Redis Pods from getting OOMKilled.
 
 ## v6.2.6-ck8s1
 
@@ -93,7 +93,7 @@ Changes:
 Added:
 
 - Added RBAC for users to be able to port-forward to Redis
-- Added nodeAffinity for the label `elastisys.io/ams-cluster-name` which will be set for each cluster in `values.yaml`
+- Added nodeAffinity for the label `elastisys.io/ams-cluster-name` which will be set for each Cluster in `values.yaml`
 
 ## v1.1.1-ck8s4
 
@@ -117,7 +117,7 @@ Released 2022-08-23
 
 Changes:
 
-- Improved support for running multiple Redis clusters in one Kubernetes environment.
+- Improved support for running multiple Redis Clusters in one Kubernetes environment.
 
 ## v1.1.1-ck8s1
 

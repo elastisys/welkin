@@ -17,9 +17,9 @@ We have tested:
 - [Monokle](#monokle)
 - [Kubernetes Extension for Visual Studio Code](#kubernetes-extension-for-visual-studio-code)
 
-Both of these projects are installed locally, and have no cluster-side component.
+Both of these projects are installed locally, and have no Cluster-side component.
 Both use the _exact same permissions_ as your Welkin user has.
-This makes it a perfectly _safe and secure_ user interface to use and does **not** compromise your cluster's stability or security posture.
+This makes it a perfectly _safe and secure_ user interface to use and does **not** compromise your Cluster's stability or security posture.
 
 ## Note for macOS and Linux users
 

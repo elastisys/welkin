@@ -112,7 +112,7 @@ for SUBDOMAIN in "${SUBDOMAINS[@]}"; do
 done
 ```
 
-### Reusing clusters
+### Reusing Clusters
 
 If you for some reason need to reinstall Welkin from scratch, we have some scripts that removes all objects created by this repository.
 The scripts can be found [here](https://github.com/elastisys/compliantkubernetes-apps/tree/main/scripts) _(clean-sc.sh and clean-wc.sh)_.

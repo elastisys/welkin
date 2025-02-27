@@ -46,7 +46,7 @@ sudo apt-get install postgresql-client
 
 ## Getting Access
 
-Your administrator will set up a Secret inside Welkin, which contains all information you need to access your PostgreSQL cluster.
+Your administrator will set up a Secret inside Welkin, which contains all information you need to access your PostgreSQL Cluster.
 The Secret has the following shape:
 
 ```yaml
@@ -131,7 +131,7 @@ Continue with the second console in the next section to create a Secret with thi
 
 ## Create an Application Secret
 
-First, check that you are on the right Welkin cluster, in the right **application** namespace:
+First, check that you are on the right Welkin Cluster, in the right **application** namespace:
 
 ```bash
 kubectl get nodes
@@ -167,7 +167,7 @@ EOF
 
 ## Expose PostgreSQL credentials to Your Application
 
-To expose the PostgreSQL cluster credentials to your application, follow one of the following upstream documentation:
+To expose the PostgreSQL Cluster credentials to your application, follow one of the following upstream documentation:
 
 - [Create a Pod that has access to the secret data through a Volume](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume)
 - [Define container environment variables using Secret data](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data)
@@ -181,7 +181,7 @@ Before going into production, don't forget to go through the [go-live checklist]
 
 ## Welkin PostgreSQL Release Notes
 
-Check out the [release notes](../../release-notes/postgres.md) for the PostgreSQL cluster that runs in Welkin environments!
+Check out the [release notes](../../release-notes/postgres.md) for the PostgreSQL Cluster that runs in Welkin environments!
 
 ## Further Reading
 

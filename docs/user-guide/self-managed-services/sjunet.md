@@ -18,11 +18,11 @@ Sjunet is for actors that are working with the Swedish healthcare system that re
 
 The architecture diagram below shows how Welkin connects to Sjunet and who is responsible for what.
 
-The Platform Administrator configures NodeLocalDNS to use Sjunet's DNS to resolve Sjunet domains. Together with static routes, network traffic heading to Sjunet is routed to a virtual machine acting as a gateway. The gateway will be co-located within the same security group as the cluster to ensure that traffic between the cluster and the gateway is secure and closed off from the outside.
+The Platform Administrator configures NodeLocalDNS to use Sjunet's DNS to resolve Sjunet domains. Together with static routes, network traffic heading to Sjunet is routed to a virtual machine acting as a gateway. The gateway will be co-located within the same security group as the Cluster to ensure that traffic between the Cluster and the gateway is secure and closed off from the outside.
 
 Inera, which is the administrators of Sjunet, require you to use a [VPN](https://inera.atlassian.net/wiki/spaces/OISJU/pages/406618308/Teknisk+anslutning#Anslutning-via-VPN-%C3%B6ver-internet) when connecting to Sjunet over the public network.
 
-The Application Developer is responsible to install a supported VPN client on the VM acting as the gateway and connect it to Sjunet's VPN. Together with the static networking route within the cluster, this means that traffic intended for Sjunet will be routed correctly via the gateway.
+The Application Developer is responsible to install a supported VPN client on the VM acting as the gateway and connect it to Sjunet's VPN. Together with the static networking route within the Cluster, this means that traffic intended for Sjunet will be routed correctly via the gateway.
 
 ![Architectural diagram](img/sjunet.svg)
 

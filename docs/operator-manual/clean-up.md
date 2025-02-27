@@ -1,4 +1,4 @@
-# Removing Welkin Apps from your cluster
+# Removing Welkin Apps from your Cluster
 
 <!--clean-up-start-->
 

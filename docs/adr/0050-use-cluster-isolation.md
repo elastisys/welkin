@@ -113,7 +113,7 @@ This goes against [ADR-0033 Run Cluster API controllers on Management Cluster](0
 ### Tamper-Proof Logging
 
 Some regulations and information security standards require tamper-proof logging.
-In other words, a compromise of the application deployment should not enable an attacker to remove their trails and hinder forensics.
+In other words, a compromise of the application Deployment should not enable an attacker to remove their trails and hinder forensics.
 Welkin already observes this principle for its observability stack, e.g., the access that the Workload Cluster has to the Service Cluster cannot be used to remove old log entries.
 (Of course, garbage new log entries may be created, but that only makes an attack more obvious during [log review](../ciso-guide/log-review.md).
 
