@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4184,7 +4226,7 @@ if(!document.__defineGetter__) {
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>postgresql-client
 </code></pre></div>
 <h2 id="getting-access">Getting Access<a class="headerlink" href="#getting-access" title="Permanent link">&para;</a></h2>
-<p>Your administrator will set up a Secret inside Welkin, which contains all information you need to access your PostgreSQL cluster.
+<p>Your administrator will set up a Secret inside Welkin, which contains all information you need to access your PostgreSQL Cluster.
 The Secret has the following shape:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
@@ -4254,7 +4296,7 @@ cat<span class="w"> </span><span class="s">&lt;&lt;EOF | psql -d postgres -h 127
 </code></pre></div>
 <p>Continue with the second console in the next section to create a Secret with this information.</p>
 <h2 id="create-an-application-secret">Create an Application Secret<a class="headerlink" href="#create-an-application-secret" title="Permanent link">&para;</a></h2>
-<p>First, check that you are on the right Welkin cluster, in the right <strong>application</strong> namespace:</p>
+<p>First, check that you are on the right Welkin Cluster, in the right <strong>application</strong> namespace:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
@@ -4282,7 +4324,7 @@ When this variable is set to <code>require</code>, it will do a full verificatio
 To get the intended mode for <code>require</code> set the variable to <code>no-verify</code> instead.</p>
 </div>
 <h2 id="expose-postgresql-credentials-to-your-application">Expose PostgreSQL credentials to Your Application<a class="headerlink" href="#expose-postgresql-credentials-to-your-application" title="Permanent link">&para;</a></h2>
-<p>To expose the PostgreSQL cluster credentials to your application, follow one of the following upstream documentation:</p>
+<p>To expose the PostgreSQL Cluster credentials to your application, follow one of the following upstream documentation:</p>
 <ul>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume">Create a Pod that has access to the secret data through a Volume</a></li>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data">Define container environment variables using Secret data</a></li>
@@ -4293,7 +4335,7 @@ To get the intended mode for <code>require</code> set the variable to <code>no-v
 <p>You should be all set.
 Before going into production, don't forget to go through the <a href="../../go-live/">go-live checklist</a>.</p>
 <h2 id="welkin-postgresql-release-notes">Welkin PostgreSQL Release Notes<a class="headerlink" href="#welkin-postgresql-release-notes" title="Permanent link">&para;</a></h2>
-<p>Check out the <a href="../../../release-notes/postgres/">release notes</a> for the PostgreSQL cluster that runs in Welkin environments!</p>
+<p>Check out the <a href="../../../release-notes/postgres/">release notes</a> for the PostgreSQL Cluster that runs in Welkin environments!</p>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.postgresql.org/docs/13/sql-createuser.html">Creating users</a></li>

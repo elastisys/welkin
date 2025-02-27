@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4024,8 +4066,8 @@ One such ClusterRole is <code>admin</code>.
 It is meant to be granted on a per namespace basis, and it grants read and write permissions on <em>most</em> of the default namespaced resources.
 Welkin grants the <code>admin</code> ClusterRole in the appropriate namespaces to application developers.
 The <code>admin</code> ClusterRole is elevated with additional privileges through the use of the ClusterRole aggregation feature.
-Application developers are granted additional permissions for some cluster-wide resources through the use of extra ClusterRoles and clusterRoleBindings.</p>
-<p>At times, application developers request access to additional resources not yet granted by Welkin, both concerning namespaced and cluster-scoped resources.
+Application developers are granted additional permissions for some Cluster-wide resources through the use of extra ClusterRoles and clusterRoleBindings.</p>
+<p>At times, application developers request access to additional resources not yet granted by Welkin, both concerning namespaced and Cluster-scoped resources.
 How should we manage such requests and when should the core permissions granted by Welkin be elevated?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>

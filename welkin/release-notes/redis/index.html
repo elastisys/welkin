@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4415,7 +4457,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="others">Other(s)<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Add Redis_CLUSTER_NAME to user-access-ConfigMap</li>
+<li>Add Redis_Cluster_NAME to user-access-ConfigMap</li>
 <li>Fixed the sentinel metrics port</li>
 </ul>
 <h2 id="v626-ck8s4">v6.2.6-ck8s4<a class="headerlink" href="#v626-ck8s4" title="Permanent link">&para;</a></h2>
@@ -4428,12 +4470,12 @@ if(!document.__defineGetter__) {
 </div>
 <h3 id="features_1">Feature(s)<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Network Policies are added to the cluster deployments which will deny access by default.</li>
+<li>Network Policies are added to the Cluster deployments which will deny access by default.</li>
 </ul>
 <h3 id="improvements_2">Improvement(s)<a class="headerlink" href="#improvements_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Added stricter Sentinel scheduling for better resilience to node failure.</li>
-<li>Scaled down <code>maxmemory</code> to better prevent Redis pods from getting OOMKilled.</li>
+<li>Added stricter Sentinel scheduling for better resilience to Node failure.</li>
+<li>Scaled down <code>maxmemory</code> to better prevent Redis Pods from getting OOMKilled.</li>
 </ul>
 <h2 id="v626-ck8s1">v6.2.6-ck8s1<a class="headerlink" href="#v626-ck8s1" title="Permanent link">&para;</a></h2>
 <p>Released 2023-05-10</p>
@@ -4449,7 +4491,7 @@ if(!document.__defineGetter__) {
 <p>Added:</p>
 <ul>
 <li>Added RBAC for users to be able to port-forward to Redis</li>
-<li>Added nodeAffinity for the label <code>elastisys.io/ams-cluster-name</code> which will be set for each cluster in <code>values.yaml</code></li>
+<li>Added nodeAffinity for the label <code>elastisys.io/ams-cluster-name</code> which will be set for each Cluster in <code>values.yaml</code></li>
 </ul>
 <h2 id="v111-ck8s4">v1.1.1-ck8s4<a class="headerlink" href="#v111-ck8s4" title="Permanent link">&para;</a></h2>
 <p>Released 2022-12-09</p>
@@ -4467,7 +4509,7 @@ if(!document.__defineGetter__) {
 <p>Released 2022-08-23</p>
 <p>Changes:</p>
 <ul>
-<li>Improved support for running multiple Redis clusters in one Kubernetes environment.</li>
+<li>Improved support for running multiple Redis Clusters in one Kubernetes environment.</li>
 </ul>
 <h2 id="v111-ck8s1">v1.1.1-ck8s1<a class="headerlink" href="#v111-ck8s1" title="Permanent link">&para;</a></h2>
 <p>Released 2022-03-07</p>

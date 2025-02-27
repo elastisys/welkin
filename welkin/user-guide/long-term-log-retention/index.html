@@ -1356,6 +1356,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4287,7 +4329,7 @@ s3cmd<span class="w"> </span><span class="se">\</span>
 </div>
 </div>
 <p>The example above can be modified to only export certain logs, by adding a query using <a href="https://opensearch.org/docs/latest/opensearch/query-dsl/index/">OpenSearch Query DSL</a> with the <code>--searchBody '&lt;query&gt;'</code> flag.
-This way it is possible to filter on certain labels to only export logs for a particular namespace, deployment, or even using identifier within structured logs.
+This way it is possible to filter on certain labels to only export logs for a particular namespace, Deployment, or even using identifier within structured logs.
 An example for a specific namespace would be:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -4328,7 +4370,7 @@ perform_export<span class="o">()</span><span class="w"> </span><span class="o">{
 </code></pre></div>
 </div>
 <h2 id="deploying-cronjobs">Deploying CronJobs<a class="headerlink" href="#deploying-cronjobs" title="Permanent link">&para;</a></h2>
-<p>The simplest way to prepare this for deployment is to build a container image including Bash, Elasticdump and s3cmd, and set up a CronJob to run this on a preferred schedule.</p>
+<p>The simplest way to prepare this for Deployment is to build a container image including Bash, Elasticdump and s3cmd, and set up a CronJob to run this on a preferred schedule.</p>
 <p>Here are some examples of how to build and deploy them:</p>
 <div class="admonition example">
 <p class="admonition-title">Example: <code>Containerfile</code> / <code>Dockerfile</code></p>

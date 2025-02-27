@@ -1395,6 +1395,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4222,14 +4264,14 @@ Therefore, we only recommend to read this page if you have an existing CI/CD sol
 <h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p><img alt="Styles of CI/CD pipelines" src="../img/ci-cd.drawio.svg" /></p>
 <p>For the purpose of Welkin, one can distinguish between two "styles" of CI/CD: push-style and pull-style.</p>
-<p><strong>Push-style or external CI/CD</strong> -- like <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> or <a href="https://docs.github.com/en/actions">GitHub Actions</a> -- means that a commit will trigger some commands on a CI/CD worker, which will push changes into the Welkin cluster. The CI/CD worker generally runs outside the Kubernetes cluster. Push-style CI/CD solutions should work out-of-the-box and require no special considerations for Welkin.</p>
-<p><strong>Pull-styles or in-cluster CI/CD</strong> -- like <a href="https://argo-cd.readthedocs.io/en/stable/">ArgoCD</a> or <a href="https://fluxcd.io/">Flux</a> -- means that a special controller is installed inside the cluster, which monitors a Git repository. When a change is detected the controller "pulls" changes into the cluster from the Git repository. The special controller often requires considerable permissions and introduces a new notion of access control, which is problematic from a compliance perspective.</p>
+<p><strong>Push-style or external CI/CD</strong> -- like <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> or <a href="https://docs.github.com/en/actions">GitHub Actions</a> -- means that a commit will trigger some commands on a CI/CD worker, which will push changes into the Welkin Cluster. The CI/CD worker generally runs outside the Kubernetes Cluster. Push-style CI/CD solutions should work out-of-the-box and require no special considerations for Welkin.</p>
+<p><strong>Pull-styles or in-Cluster CI/CD</strong> -- like <a href="https://argo-cd.readthedocs.io/en/stable/">ArgoCD</a> or <a href="https://fluxcd.io/">Flux</a> -- means that a special controller is installed inside the Cluster, which monitors a Git repository. When a change is detected the controller "pulls" changes into the Cluster from the Git repository. The special controller often requires considerable permissions and introduces a new notion of access control, which is problematic from a compliance perspective.</p>
 <p>Below we show how to use external CI/CD solutions.</p>
 <h2 id="external-cicd">External CI/CD<a class="headerlink" href="#external-cicd" title="Permanent link">&para;</a></h2>
-<p>External CI/CD works pretty much as if you would access Welkin from your laptop, running <code>kubectl</code> or <code>helm</code> against the cluster, as required to deploy your application. However, for improved access control, the <code>KUBECONFIG</code> provided to your CI/CD pipeline should employ a ServiceAccount which is used only by your CI/CD pipeline. This ServiceAccount should be bound to a Role which gets the least permissions possible. For example, if your application only consists of a Deployment, Service and Ingress, those should be the only resources available to the Role.</p>
+<p>External CI/CD works pretty much as if you would access Welkin from your laptop, running <code>kubectl</code> or <code>helm</code> against the Cluster, as required to deploy your application. However, for improved access control, the <code>KUBECONFIG</code> provided to your CI/CD pipeline should employ a ServiceAccount which is used only by your CI/CD pipeline. This ServiceAccount should be bound to a Role which gets the least permissions possible. For example, if your application only consists of a Deployment, Service and Ingress, those should be the only resources available to the Role.</p>
 <p>To create a <code>KUBECONFIG</code> for your CI/CD pipeline, proceed as shown below.</p>
 <h3 id="pre-verification">Pre-verification<a class="headerlink" href="#pre-verification" title="Permanent link">&para;</a></h3>
-<p>First, make sure you are in the right namespace on the right cluster:</p>
+<p>First, make sure you are in the right namespace on the right Cluster:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>

@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4177,7 +4219,7 @@ if(!document.__defineGetter__) {
 <h2 id="welkin-network-security-dashboard">Welkin Network Security Dashboard<a class="headerlink" href="#welkin-network-security-dashboard" title="Permanent link">&para;</a></h2>
 <p><img alt="Network Security Dashboard" src="../img/network-security.png" /></p>
 <p>The Welkin Network Security Dashboard allows to audit violations of NetworkPolicies (i.e., "firewall rules"). In the best case, denied traffic indicates a misconfiguration. In worst case, denied traffic indicates an ongoing security attack.</p>
-<p>Significant or unexpected increases of allowed traffic should also be closely monitored. In best case, these may indicate inefficient application code which may cause capacity issues later. In worst case, these may indicate an attempt to exfiltrate large amounts of data or to use the cluster as a reflector for an <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack#Amplification">amplification attack</a>.</p>
+<p>Significant or unexpected increases of allowed traffic should also be closely monitored. In best case, these may indicate inefficient application code which may cause capacity issues later. In worst case, these may indicate an attempt to exfiltrate large amounts of data or to use the Cluster as a reflector for an <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack#Amplification">amplification attack</a>.</p>
 <p>Therefore, this dashboard should be regularly reviewed, perhaps even daily.</p>
 <h2 id="handling-non-compliance">Handling Non-Compliance<a class="headerlink" href="#handling-non-compliance" title="Permanent link">&para;</a></h2>
 <p>Make sure you have a proper incident management policy in place. If an attack is ongoing, it might be better to take the system offline to protect data from getting in the wrong hands. Platform Administrator need to be trained on what events justify such an extreme action, otherwise, escalating the issue along the reporting chain may add delays that favor the attacker.</p>

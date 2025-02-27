@@ -1266,6 +1266,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -3991,7 +4033,7 @@ All seems fine, but somehow you feel anxious about going into production 24/7.</
 <li><strong>Why?</strong> This ensures that the application can be updated without downtime.</li>
 <li><strong>How?</strong> Make a trivial change to your application, e.g., add <code>Lorem ipsum</code> in the output of some API, and redeploy.</li>
 <li><strong>Desired outcome</strong>: Measured downtime is acceptable.</li>
-<li><strong>Possible resolutions</strong>: Make sure you have the right <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/">deployment strategy</a>. Prefer <code>RollingUpdate</code> over <code>Recreate</code>. Ensure other parameters of the deployment strategy are tuned as needed.</li>
+<li><strong>Possible resolutions</strong>: Make sure you have the right <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/">Deployment strategy</a>. Prefer <code>RollingUpdate</code> over <code>Recreate</code>. Ensure other parameters of the Deployment strategy are tuned as needed.</li>
 </ul>
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Load testing was performed while doing a rolling reboot of Nodes:<ul>

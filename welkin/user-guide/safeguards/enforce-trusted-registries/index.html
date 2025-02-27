@@ -1347,6 +1347,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4121,7 +4163,7 @@ Note to contributors: Aim for the following format.
 </ul>
 </div>
 <h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
-<p>A healthy security posture requires you to ensure your code has no known vulnerabilities. Welkin comes with a <a href="../../registry/">registry</a> which includes vulnerability scanning of container images. It can even be configured to prevent the Kubernetes cluster from pulling images with vulnerabilities above a set criticality. This is a per-project setting, so you could, for example, have a stricter policy for publicly facing application components -- e.g., the front office -- and a less strict policy for internal application components -- e.g., the back office.</p>
+<p>A healthy security posture requires you to ensure your code has no known vulnerabilities. Welkin comes with a <a href="../../registry/">registry</a> which includes vulnerability scanning of container images. It can even be configured to prevent the Kubernetes Cluster from pulling images with vulnerabilities above a set criticality. This is a per-project setting, so you could, for example, have a stricter policy for publicly facing application components -- e.g., the front office -- and a less strict policy for internal application components -- e.g., the back office.</p>
 <p>Public container registry, such as Docker Hub and Quay, might not stick to the vulnerability management you require, perhaps being at times too strict or too loose.</p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p>You can designate a set of registries, a project within a registry or specific container images as trusted. By this you declared that you did a risk analysis and determined that they fulfill your security requirements.</p>

@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4099,7 +4141,7 @@ if(!document.__defineGetter__) {
 <p><strong>External Clients:</strong>
 We will allow external clients to push observability data (logs, metrics, traces) directly into our platform observability services under the following conditions:</p>
 <ul>
-<li><strong>Logs:</strong> External clients can push logs to our OpenSearch service with authentication and authorization mechanisms. However, as per our <a href="https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case">ToS-A5.3 As a whole, for the intended use-case</a>, OpenSearch is optimized for platform and containerized application observability which means logs are expected to come from the application running in the workload cluster, and external logs should align with this use-case, with exceptions allowed for observability of legacy code that brings business value to the workload cluster.</li>
+<li><strong>Logs:</strong> External clients can push logs to our OpenSearch service with authentication and authorization mechanisms. However, as per our <a href="https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case">ToS-A5.3 As a whole, for the intended use-case</a>, OpenSearch is optimized for platform and containerized application observability which means logs are expected to come from the application running in the workload Cluster, and external logs should align with this use-case, with exceptions allowed for observability of legacy code that brings business value to the workload Cluster.</li>
 <li><strong>Metrics:</strong> External clients can push metrics to a Prometheus Pushgateway, which Prometheus scrapes periodically.</li>
 <li><strong>Traces:</strong> While we do not currently support traces from external clients, we may explore the option of allowing external clients to push traces to an OpenTelemetry collector in our platform observability services.</li>
 </ul>
@@ -4132,7 +4174,7 @@ We recommend that Application Developers route observability data through a secu
 </ul>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>It reduces the risk of unauthorized access to our platform observability services, protecting the cluster from data leaks, credential abuse, and DoS attacks.</li>
+<li>It reduces the risk of unauthorized access to our platform observability services, protecting the Cluster from data leaks, credential abuse, and DoS attacks.</li>
 <li>By routing observable data from public clients through a backend API, we maintain control over the data flow and can apply additional security measures, such as logging and throttling.</li>
 <li>We can selectively allow trusted external services to push observability data directly, without exposing our platform observability services to the broader internet.</li>
 </ul>
@@ -4160,7 +4202,7 @@ We recommend that Application Developers route observability data through a secu
 <ul>
 <li><a href="https://medium.com/opentelemetry/securing-your-opentelemetry-collector-1a4f9fa5bd6f">opentelemetry-collector</a></li>
 <li><a href="https://opentelemetry.io/blog/2022/k8s-otel-expose/">k8s-otel-expose</a></li>
-<li><a href="https://opentelemetry.io/docs/collector/deployment/">deployment</a></li>
+<li><a href="https://opentelemetry.io/docs/collector/deployment/">Deployment</a></li>
 <li><a href="https://www.fortinet.com/resources/cyberglossary/data-leak">Data-leakage</a></li>
 <li><a href="https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case">ToS-A5.3 As a whole, for the intended use-case</a></li>
 </ul>

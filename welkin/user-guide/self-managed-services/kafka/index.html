@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -1810,7 +1852,7 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#deploy-your-kafka-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy your Kafka cluster
+      Deploy your Kafka Cluster
     </span>
   </a>
   
@@ -4147,7 +4189,7 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#deploy-your-kafka-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploy your Kafka cluster
+      Deploy your Kafka Cluster
     </span>
   </a>
   
@@ -4227,7 +4269,7 @@ It is disabled by default, so please ask your Platform Administrator to enable t
 <p>You can ask for this feature to be enabled by filing a <a href="https://elastisys.atlassian.net/servicedesk/customer/portals">service ticket</a>.
 This is a preview feature. For more information, please read <a href="https://elastisys.com/legal/terms-of-service/#91-preview-features">ToS 9.1 Preview Features</a>.</p>
 </div>
-<p><a href="https://kafka.apache.org/">Apache Kafka®</a> is an open-source distributed event streaming platform. To run an Apache Kafka® cluster on Kubernetes you can use an operator. This guide uses the <a href="https://github.com/strimzi/strimzi-kafka-operator">Strimzi Kafka Operator</a>.</p>
+<p><a href="https://kafka.apache.org/">Apache Kafka®</a> is an open-source distributed event streaming platform. To run an Apache Kafka® Cluster on Kubernetes you can use an operator. This guide uses the <a href="https://github.com/strimzi/strimzi-kafka-operator">Strimzi Kafka Operator</a>.</p>
 <p>Strimzi is a <a href="https://www.cncf.io/projects/strimzi/">CNCF Sandbox project</a>.</p>
 <p>This page will show you how to install Strimzi Kafka Operator on Welkin. You can configure the operator to watch a single or multiple namespaces.</p>
 <div class="admonition note">
@@ -4235,8 +4277,8 @@ This is a preview feature. For more information, please read <a href="https://el
 <p>This installation guide has been tested with Strimzi Kafka Operator version <a href="https://github.com/strimzi/strimzi-kafka-operator/tree/0.44.0">0.44.0</a>.</p>
 </div>
 <h2 id="enable-self-managed-kafka">Enable Self-Managed Kafka<a class="headerlink" href="#enable-self-managed-kafka" title="Permanent link">&para;</a></h2>
-<p>This guide depends on the <a href="../../../operator-manual/user-managed-crds/">self-managed cluster resources</a> feature to be enabled. This is so Strimzi Kafka Operator gets the necessary CRDs and ClusterRoles installed.</p>
-<p>Strimzi Kafka Operator also requires the image repository <code>quay.io/strimzi</code> to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed cluster resources feature.</p>
+<p>This guide depends on the <a href="../../../operator-manual/user-managed-crds/">self-managed Cluster resources</a> feature to be enabled. This is so Strimzi Kafka Operator gets the necessary CRDs and ClusterRoles installed.</p>
+<p>Strimzi Kafka Operator also requires the image repository <code>quay.io/strimzi</code> to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed Cluster resources feature.</p>
 <h2 id="setup-crds-and-rbac">Setup CRDs and RBAC<a class="headerlink" href="#setup-crds-and-rbac" title="Permanent link">&para;</a></h2>
 <p>In Kubernetes you will need to:</p>
 <ol>
@@ -4254,7 +4296,7 @@ This is a preview feature. For more information, please read <a href="https://el
 </li>
 </ol>
 <h3 id="crds">CRDs<a class="headerlink" href="#crds" title="Permanent link">&para;</a></h3>
-<p>You need to apply the Custom Resource Definitions (CRDs) required by Strimzi Kafka Operator. This is typically not allowed in a Welkin Environment, but with Kafka enabled with the self-managed cluster resources feature, this allows you to apply these yourself.</p>
+<p>You need to apply the Custom Resource Definitions (CRDs) required by Strimzi Kafka Operator. This is typically not allowed in a Welkin Environment, but with Kafka enabled with the self-managed Cluster resources feature, this allows you to apply these yourself.</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>crds
 
 <span class="c1"># Fetches Strimzi Kafka Operator CRDs for v0.44.0 and saves it in the crds directory</span>
@@ -4291,7 +4333,7 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 </code></pre></div>
 <h2 id="install-strimzi-kafka-operator">Install Strimzi Kafka Operator<a class="headerlink" href="#install-strimzi-kafka-operator" title="Permanent link">&para;</a></h2>
 <p>With the initial prep done, you are now ready to deploy the operator.</p>
-<p>You can find the deployment manifest <a href="https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.44.0/install/cluster-operator/060-Deployment-strimzi-cluster-operator.yaml">here</a>. Deploying this on Welkin does require a Security Context to be added.</p>
+<p>You can find the Deployment manifest <a href="https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/0.44.0/install/cluster-operator/060-Deployment-strimzi-cluster-operator.yaml">here</a>. Deploying this on Welkin does require a Security Context to be added.</p>
 <p>Edit the manifest and add this under <code>spec.template.spec.containers[0]</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">securityContext</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">allowPrivilegeEscalation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
@@ -4312,9 +4354,9 @@ curl<span class="w"> </span>https://raw.githubusercontent.com/elastisys/welkin/m
 
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment/kafka-operator-deployment.yaml
 </code></pre></div>
-<p>To configure the Strimzi Kafka Operator to watch multiple namespaces (e.g. running Kafka clusters in different namespaces other than the kafka namespace), refer to <a href="#further-reading">Further reading</a>.</p>
-<h2 id="deploy-your-kafka-cluster">Deploy your Kafka cluster<a class="headerlink" href="#deploy-your-kafka-cluster" title="Permanent link">&para;</a></h2>
-<p>You are now ready to deploy your Kafka cluster!</p>
+<p>To configure the Strimzi Kafka Operator to watch multiple namespaces (e.g. running Kafka Clusters in different namespaces other than the kafka namespace), refer to <a href="#further-reading">Further reading</a>.</p>
+<h2 id="deploy-your-kafka-cluster">Deploy your Kafka Cluster<a class="headerlink" href="#deploy-your-kafka-cluster" title="Permanent link">&para;</a></h2>
+<p>You are now ready to deploy your Kafka Cluster!</p>
 <p>The example files provided by Strimzi <a href="https://github.com/strimzi/strimzi-kafka-operator/tree/0.44.0/examples/kafka">here</a> serves as a good starting point.</p>
 <p>Welkin requires that resource requests are specified for all containers. By default, the Strimzi Cluster Operator does not specify CPU and memory resource requests and limits for its deployed operands.</p>
 <p>Refer to <a href="#further-reading">Further reading</a> for more information about resources.</p>
@@ -4330,9 +4372,9 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <p class="admonition-title">Note</p>
 <p>The example above has very low resource requests. It is recommended to adjust these according to your cluster.</p>
 </div>
-<p>Refer to <a href="#further-reading">Further reading</a> to learn more about how you can configure your Kafka cluster.</p>
+<p>Refer to <a href="#further-reading">Further reading</a> to learn more about how you can configure your Kafka Cluster.</p>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<p>After you have deployed your Kafka cluster, you can test sending and receiving messages to see if it works!</p>
+<p>After you have deployed your Kafka Cluster, you can test sending and receiving messages to see if it works!</p>
 <p>To do this, you can use a producer and consumer as seen <a href="https://strimzi.io/quickstarts/">here</a>, under the section "Send and receive messages". But since Welkin requires resource requests to be specified, just copy pasting those commands will not work.</p>
 <p>You need to create a Pod manifest using the image <code>quay.io/strimzi/kafka:0.44.0-kafka-3.8.0</code>, and then you need to add your resource requests to this manifest. You also need to have an initial sleep command in the Pod manifest, to sleep the container for a while, this is to avoid the Pod going into the "Completed" stage instantly.</p>
 <p>Alternatively you can download a ready to use producer and consumer Pod manifests:</p>
@@ -4345,7 +4387,7 @@ curl<span class="w"> </span>https://raw.githubusercontent.com/elastisys/welkin/m
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kafka-testing/kafka-producer.yaml
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kafka-testing/kafka-consumer.yaml
 </code></pre></div>
-<p>After the pods have started you can send and receive messages with <code>kubectl exec</code>.</p>
+<p>After the Pods have started you can send and receive messages with <code>kubectl exec</code>.</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>kafka-producer<span class="w"> </span>--<span class="w"> </span>bin/kafka-console-producer.sh<span class="w"> </span>--bootstrap-server<span class="w"> </span>my-cluster-kafka-bootstrap:9092<span class="w"> </span>--topic<span class="w"> </span>my-topic
 
 kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>kafka-consumer<span class="w"> </span>--<span class="w"> </span>bin/kafka-console-consumer.sh<span class="w"> </span>--bootstrap-server<span class="w"> </span>my-cluster-kafka-bootstrap:9092<span class="w"> </span>--topic<span class="w"> </span>my-topic<span class="w"> </span>--from-beginning

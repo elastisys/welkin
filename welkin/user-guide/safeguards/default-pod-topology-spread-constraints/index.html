@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://elastisys.io/welkin/user-guide/safeguards/default-pod-topology-spread-constraints/">
       
       
-        <link rel="prev" href="../enforce-minimum-replicas/">
+        <link rel="prev" href="../enforce-no-pod-without-controller/">
       
       
         <link rel="next" href="../../additional-services/">
@@ -1255,6 +1255,48 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
   </span>
   
 
@@ -4159,7 +4201,7 @@ This involves two things:</p>
 <p>In Welkin, dealing with (1) above is still the Application Developer's responsibility.</p>
 <p>However, with Welkin, you don't need to deal with (2).</p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
-<p>Welkin comes with strong cluster-level default <code>topologySpreadConstraints</code>.</p>
+<p>Welkin comes with strong Cluster-level default <code>topologySpreadConstraints</code>.</p>
 <h3 id="single-zone-clusters">Single-Zone Clusters<a class="headerlink" href="#single-zone-clusters" title="Permanent link">&para;</a></h3>
 <p>If your Cluster is hosted on a single zone, then your administrator will have configured the following default <code>topologySpreadConstraints</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">maxSkew</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
@@ -4267,7 +4309,7 @@ The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welk
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../enforce-minimum-replicas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enforce Minimum Replicas">
+          <a href="../enforce-no-pod-without-controller/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enforce No Pod Without Controller">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4277,7 +4319,7 @@ The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welk
                 Previous
               </span>
               <div class="md-ellipsis">
-                Enforce Minimum Replicas
+                Enforce No Pod Without Controller
               </div>
             </div>
           </a>

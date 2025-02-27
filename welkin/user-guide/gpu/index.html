@@ -1383,6 +1383,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4159,7 +4201,7 @@ In this guide, we'll focus on how to use GPU in the Welkin platform.</p>
 Check with the platform administrator to find out if your environment has support for GPU workload.</p>
 </div>
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<p>To use GPU resources in your cluster, you need to create a deployment that is using the resource <code>nvidia.com/gpu</code>.
+<p>To use GPU resources in your Cluster, you need to create a Deployment that is using the resource <code>nvidia.com/gpu</code>.
 Here's an example of how to configure GPU resources for a Pod:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
@@ -4199,7 +4241,7 @@ This ensures workloads are deployed on appropriate Node types based on their req
 </ul>
 </li>
 <li><strong>Taint</strong>: <code>elastisys.io/node-type=gpu:NoSchedule</code></li>
-<li>These Nodes are reserved exclusively for workloads requiring GPU resources. To schedule Pods on GPU Nodes, specific <strong>node affinity</strong> and <strong>toleration</strong> must be configured in the Pod definition.</li>
+<li>These Nodes are reserved exclusively for workloads requiring GPU resources. To schedule Pods on GPU Nodes, specific <strong>Node affinity</strong> and <strong>toleration</strong> must be configured in the Pod definition.</li>
 </ul>
 </li>
 </ul>
@@ -4262,8 +4304,8 @@ You want to ensure this workload is scheduled exclusively on Nodes with this GPU
 <p>This configuration ensures that the workload is only scheduled on GPU Nodes labeled with both <code>elastisys.io/node-type=gpu</code> and <code>node.Kubernetes.io/instance-type=Standard_B2s</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your cluster is using the cluster autoscaling feature and there's currently not enough resources, the autoscaler will create one for you.
-It might take a couple of minutes for the new Node to join the cluster and to install all the pre-requisites.</p>
+<p>If your Cluster is using the Cluster autoscaling feature and there's currently not enough resources, the autoscaler will create one for you.
+It might take a couple of minutes for the new Node to join the Cluster and to install all the pre-requisites.</p>
 </div>
 <h3 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h3>
 <ul>

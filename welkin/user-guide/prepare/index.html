@@ -1344,6 +1344,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4102,9 +4144,9 @@ if(!document.__defineGetter__) {
 <h2 id="install-prerequisite-software">Install Prerequisite Software<a class="headerlink" href="#install-prerequisite-software" title="Permanent link">&para;</a></h2>
 <p>Required software:</p>
 <ul>
-<li><a href="https://github.com/int128/kubelogin">oidc-login</a>, which helps you log into your Kubernetes cluster via OpenID Connect integration with your Identity Provider of choice</li>
+<li><a href="https://github.com/int128/kubelogin">oidc-login</a>, which helps you log into your Kubernetes Cluster via OpenID Connect integration with your Identity Provider of choice</li>
 </ul>
-<p>Your cluster management software of choice, of which you can choose either or both:</p>
+<p>Your Cluster management software of choice, of which you can choose either or both:</p>
 <ul>
 <li><a href="https://kubernetes.io/docs/tasks/tools/">kubectl</a>, a command-line tool to help manage your Kubernetes resources</li>
 <li><a href="https://github.com/MuhammedKalkan/OpenLens/releases">OpenLens</a>, a graphical user interface to help manage your Kubernetes resources (see also our <a href="../kubernetes-ui/">dedicated page on Lens integration</a>)</li>
@@ -4155,7 +4197,7 @@ curl<span class="w"> </span>--insecure<span class="w"> </span>--head<span class=
 <p>Additional endpoints are also available, depending on if your platform has these additional managed services (AMS) or not:</p>
 <ul>
 <li><code>jaeger.$DOMAIN</code> -- the <a href="../additional-services/jaeger/">Jaeger</a> distributed tracing observability tool</li>
-<li><code>argocd.$DOMAIN</code> -- the <a href="../additional-services/argocd/">Argo CD</a> continuous deployment GitOps tool</li>
+<li><code>argocd.$DOMAIN</code> -- the <a href="../additional-services/argocd/">Argo CD</a> continuous Deployment GitOps tool</li>
 </ul>
 <!--endpoint-access-end-->
 

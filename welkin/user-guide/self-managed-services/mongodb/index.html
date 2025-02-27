@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4089,10 +4131,10 @@ It is disabled by default, so please ask your Platform Administrator to enable t
 <p>You can ask for this feature to be enabled by filing a <a href="https://elastisys.atlassian.net/servicedesk/customer/portals">service ticket</a>.
 This is a preview feature. For more information, please read <a href="https://elastisys.com/legal/terms-of-service/#91-preview-features">ToS 9.1 Preview Features</a>.</p>
 </div>
-<p>This page will help you to install <a href="https://github.com/mongodb/mongodb-kubernetes-operator">MongoDB Community Operator</a>, so that you are allowed to install the cluster-wide resources that are required by MongoDB.</p>
+<p>This page will help you to install <a href="https://github.com/mongodb/mongodb-kubernetes-operator">MongoDB Community Operator</a>, so that you are allowed to install the Cluster-wide resources that are required by MongoDB.</p>
 <p>This guide is a complement to the <a href="https://github.com/mongodb/mongodb-kubernetes-operator/tree/v0.8.3">MongoDB Community Operator's</a> own documentation.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
-<p>The self-managed cluster-wide resources feature adds specific Roles, ServiceAccounts, etc. for you.
+<p>The self-managed Cluster-wide resources feature adds specific Roles, ServiceAccounts, etc. for you.
 This enables you to install and manage the resources that the MongoDB Community Operator needs.
 These pre-installed resources are propagated via HNC from your root namespace (<a href="../../namespaces/">recall the documentation of this feature</a>).</p>
 <p>First create a new namespace using HNC, using the snippet below.

@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -3996,11 +4038,11 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
 <p>Argo CD cannot create HNC namespaces and deploy services into them.
-Our current Argo offering is a namespaced installation where a CronJob patches the cluster <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters">secret</a> with the list of managed Namespaces every minute.
+Our current Argo offering is a namespaced installation where a CronJob patches the Cluster <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters">secret</a> with the list of managed Namespaces every minute.
 An issue occurs when an Application Developer tries to create an Application which also includes a Namespace.
-As the new <strong>not yet created/patched to the cluster secret</strong> namespace is not managed, Argo CD fails at the comparison stage.</p>
+As the new <strong>not yet created/patched to the Cluster secret</strong> namespace is not managed, Argo CD fails at the comparison stage.</p>
 <p>Currently, upstream ArgoCD is unaware of HNC resources, and does not give subnamespaces the needed precedence, read more <a href="https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/#how-does-it-work">here</a>.
-The cluster secret that takes a list of managed namespaces, does not take a regular expression, so it is hard for Application Developers to create namespaces as part of an Application.</p>
+The Cluster secret that takes a list of managed namespaces, does not take a regular expression, so it is hard for Application Developers to create namespaces as part of an Application.</p>
 <p>So, do we want to let Application Developer create and delete subnamespaces dynamically via Argo CD?
 If yes, how?</p>
 <h2 id="decision-drivers">Decision Drivers <!-- optional --><a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
@@ -4040,16 +4082,16 @@ If yes, how?</p>
 </ul>
 </li>
 <li>
-<p>Test to see if ArgoCD accepts regex in cluster secret.</p>
+<p>Test to see if ArgoCD accepts regex in Cluster secret.</p>
 <ul>
 <li>We investigated this, but found that the secret does not accept wildcards or regex. See the open issue <a href="https://github.com/argoproj/argo-cd/issues/10054#issue-1310861246">here</a>.</li>
 </ul>
 </li>
 <li>
-<p>Setup Argo CD cluster-wide installation.</p>
+<p>Setup Argo CD Cluster-wide installation.</p>
 <ul>
-<li>Bad, because cluster-wide installation would give Argo a lot of permissions and right now, there is no good solution to stop Argo from deploying applications into our system namespaces such as Falco, gatekeeper-system, etc., assuming that one needs to use a wildcard as destinations in ArgoCD projects.</li>
-<li>Bad, because even if Argo CD is installed cluster-wide, When ArgoCD syncs by kind, it does not prioritize subnamespaces first. See <a href="https://github.com/argoproj/gitops-engine/blob/bc9ce5764fa306f58cf59199a94f6c968c775a2d/pkg/sync/sync_tasks.go#L27-L66">here</a>.</li>
+<li>Bad, because Cluster-wide installation would give Argo a lot of permissions and right now, there is no good solution to stop Argo from deploying applications into our system namespaces such as Falco, gatekeeper-system, etc., assuming that one needs to use a wildcard as destinations in ArgoCD projects.</li>
+<li>Bad, because even if Argo CD is installed Cluster-wide, When ArgoCD syncs by kind, it does not prioritize subnamespaces first. See <a href="https://github.com/argoproj/gitops-engine/blob/bc9ce5764fa306f58cf59199a94f6c968c775a2d/pkg/sync/sync_tasks.go#L27-L66">here</a>.</li>
 <li>Bad, because this would also require us to build a lot of OPA policies and later makes it hard to pivot to new ways.</li>
 </ul>
 </li>

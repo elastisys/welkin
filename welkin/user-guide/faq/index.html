@@ -1266,6 +1266,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4202,10 +4244,10 @@ Here is an example command (please replace the <code>$MY_HARBOR_IMAGE</code>):</
 <p>You have two options to resolve this issue:</p>
 <ol>
 <li>
-<p>Send a request to your administrator to disable TLS in the PostgreSQL cluster. Although it sounds "bad", it does not compromise security, since;</p>
+<p>Send a request to your administrator to disable TLS in the PostgreSQL Cluster. Although it sounds "bad", it does not compromise security, since;</p>
 <ul>
 <li>Traffic between kubectl and the Kubernetes API is encrypted.</li>
-<li>In-cluster network is trusted.</li>
+<li>In-Cluster network is trusted.</li>
 </ul>
 </li>
 <li>
@@ -4257,12 +4299,12 @@ Residual risks include, but are not limited to:</p>
 <p>The risks are usually due to novelty of the feature or uncertainties in the open-source ecosystem.
 By using Preview Features, the Customer accepts these additional risks.</p>
 <h2 id="why-are-my-grafana-dashboards-not-working">Why are my Grafana dashboards not working?<a class="headerlink" href="#why-are-my-grafana-dashboards-not-working" title="Permanent link">&para;</a></h2>
-<p>Sometimes when increasing the amount of metrics emitted to Prometheus, or selecting a larger time frame for your dashboards, they might stop working and show errors similar to <code>"Status: 504. Timeout exceeded while awaiting headers"</code>. This is likely due to the Grafana pods running OOM (Out Of Memory). Fetching a larger volume of data requires more memory for the Grafana pods to temporarily store that data for processing and visualization.</p>
+<p>Sometimes when increasing the amount of metrics emitted to Prometheus, or selecting a larger time frame for your dashboards, they might stop working and show errors similar to <code>"Status: 504. Timeout exceeded while awaiting headers"</code>. This is likely due to the Grafana Pods running OOM (Out Of Memory). Fetching a larger volume of data requires more memory for the Grafana Pods to temporarily store that data for processing and visualization.</p>
 <p>If you are facing this issue, you can:</p>
 <ul>
 <li>See if you can optimize your dashboard queries, making sure you aren't fetching big volumes of data that doesn't necessarily need to be monitored.</li>
 <li>Lower the time frame for the dashboard, visualizing smaller intervals of the metrics.</li>
-<li>Contact your Platform Administrators and get them to increase the memory limits of Grafana or if your a Managed services customer, send us a ticket to increase the limit. As Grafana doesn't live in the workload cluster, it won’t use any resources associated with your applications.</li>
+<li>Contact your Platform Administrators and get them to increase the memory limits of Grafana or if your a Managed services customer, send us a ticket to increase the limit. As Grafana doesn't live in the workload Cluster, it won’t use any resources associated with your applications.</li>
 </ul>
 
 

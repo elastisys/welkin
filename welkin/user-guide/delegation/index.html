@@ -1410,6 +1410,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4325,7 +4367,7 @@ Please read the upstream documentation linked below to learn how a Harbor admin 
 <p>For delegating permissions to ServiceAccounts, follow the example on the <a href="../ci-cd/#external-cicd">CI/CD page</a>.</p>
 <p>The next section covers delegation to users and groups.</p>
 <h3 id="pre-verification">Pre-verification<a class="headerlink" href="#pre-verification" title="Permanent link">&para;</a></h3>
-<p>First, make sure you are in the right namespace on the right cluster:</p>
+<p>First, make sure you are in the right namespace on the right Cluster:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>

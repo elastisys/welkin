@@ -1482,6 +1482,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4371,7 +4413,7 @@ if(!document.__defineGetter__) {
 <h1 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h1>
 <p>This guide gives an introduction to Prometheus and Grafana and where they fit in Welkin, in terms of reducing the compliance burden.</p>
 <h2 id="why-prometheus-and-grafana">Why Prometheus and Grafana?<a class="headerlink" href="#why-prometheus-and-grafana" title="Permanent link">&para;</a></h2>
-<p>Prometheus is an open-source solution for monitoring and alerting. It works by collecting and processing metrics from the various services in the cluster. It is widely used, stable, and a <a href="https://www.cncf.io/">CNCF</a> member. It is relatively easy to write ServiceMonitors for any custom services to get monitoring data from them into Prometheus.</p>
+<p>Prometheus is an open-source solution for monitoring and alerting. It works by collecting and processing metrics from the various services in the Cluster. It is widely used, stable, and a <a href="https://www.cncf.io/">CNCF</a> member. It is relatively easy to write ServiceMonitors for any custom services to get monitoring data from them into Prometheus.</p>
 <p>Grafana is the most widely used technology for visualization of metrics and analytics. It supports a multitude of data sources and it is easy to create custom dashboards. Grafana is created by Grafana Labs, a CNCF Silver Member.</p>
 <h2 id="compliance-needs">Compliance needs<a class="headerlink" href="#compliance-needs" title="Permanent link">&para;</a></h2>
 <p>The requirements to comply with ISO 27001 are stated in ISO <a href="https://www.isms.online/iso-27001/">27001:2013</a> The annexes that mostly concerns monitoring and alerting are <a href="https://www.isms.online/iso-27001/annex-a-12-operations-security/">Annex 12</a>, article A.12.1.3 "capacity management", and <a href="https://www.isms.online/iso-27001/annex-a-16-information-security-incident-management/">Annex 16</a> which deals with incident management.</p>
@@ -4394,7 +4436,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="prometheus-and-grafana-in-welkin">Prometheus and Grafana in Welkin<a class="headerlink" href="#prometheus-and-grafana-in-welkin" title="Permanent link">&para;</a></h2>
 <h3 id="prometheus">Prometheus<a class="headerlink" href="#prometheus" title="Permanent link">&para;</a></h3>
-<p>Welkin installs the prometheus-operator by default. The Prometheus Operator for Kubernetes provides easy monitoring definitions for Kubernetes services and deployment and management of Prometheus instances as it can create/configure/manage Prometheus clusters atop Kubernetes. The following CRDs are installed by default.</p>
+<p>Welkin installs the prometheus-operator by default. The Prometheus Operator for Kubernetes provides easy monitoring definitions for Kubernetes services and Deployment and management of Prometheus instances as it can create/configure/manage Prometheus Clusters atop Kubernetes. The following CRDs are installed by default.</p>
 <!-- vale off -->
 <table>
 <thead>
@@ -4464,10 +4506,10 @@ if(!document.__defineGetter__) {
 If you have configured Dex you can login with a connected account, which can be limited to specific email domains.</p>
 <p>Welkin deploys Grafana with a selection of dashboards by default. Dashboards are accessed by clicking the Dashboard icon (four squares) at the left-hand side of the Grafana window and selecting Browse. Some examples of useful dashboards are listed below.</p>
 <h4 id="node-health">Node health<a class="headerlink" href="#node-health" title="Permanent link">&para;</a></h4>
-<p>The Nodes dashboard (Node Exporter / Nodes) gives a quick overview of the status (health) of a node in the cluster. By selecting an instance in the "instance" dropdown metrics for CPU, Load, Memory, Disk and Network I/O is showed for that node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.</p>
+<p>The Nodes dashboard (Node Exporter / Nodes) gives a quick overview of the status (health) of a Node in the Cluster. By selecting an instance in the "instance" dropdown metrics for CPU, Load, Memory, Disk and Network I/O is showed for that Node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.</p>
 <p><img alt="Node Health" src="../../img/node_health.png" title="Nodes dashboard" /></p>
 <h4 id="pod-health">Pod health<a class="headerlink" href="#pod-health" title="Permanent link">&para;</a></h4>
-<p>The Pods dashboard (Kubernetes/Compute resources/Pods) gives a quick overview of the status (health) of a Pod in the cluster. By selecting a Pod in the "Pod" dropdown metrics for CPU, Memory, and Network I/O is showed for that node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.</p>
+<p>The Pods dashboard (Kubernetes/Compute resources/Pods) gives a quick overview of the status (health) of a Pod in the Cluster. By selecting a Pod in the "Pod" dropdown metrics for CPU, Memory, and Network I/O is showed for that Node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.</p>
 <p><img alt="Pod health" src="../../img/pod_health.png" title="Pod health" /></p>
 <h2 id="collecting-metrics">Collecting metrics<a class="headerlink" href="#collecting-metrics" title="Permanent link">&para;</a></h2>
 <p>Configuring Prometheus to collect metrics from an application requires either a ServiceMonitor or a PodMonitor, targeting a Kubernetes Service or Pod respectively. They are both described upstream in the <a href="https://prometheus-operator.dev/docs/api-reference/api/">API reference for Prometheus Operator</a>. In general ServiceMonitors are recommended over PodMonitors, and it is the most common way to configure metrics collection.</p>

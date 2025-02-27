@@ -23,7 +23,7 @@
     
     
       
-        <title>Harder Pod eviction when nodes are going OOM - Elastisys Welkin®</title>
+        <title>Harder Pod eviction when Nodes are going OOM - Elastisys Welkin®</title>
       
     
     
@@ -68,7 +68,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Harder Pod eviction when nodes are going OOM - Elastisys Welkin®" >
+        <meta  property="og:title"  content="Harder Pod eviction when Nodes are going OOM - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -85,7 +85,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Harder Pod eviction when nodes are going OOM - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="Harder Pod eviction when Nodes are going OOM - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -186,7 +186,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Harder Pod eviction when nodes are going OOM
+              Harder Pod eviction when Nodes are going OOM
             
           </span>
         </div>
@@ -1247,6 +1247,48 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
   </span>
   
 
@@ -4021,42 +4063,42 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="harder-pod-eviction-when-nodes-are-going-oom">Harder Pod eviction when nodes are going OOM<a class="headerlink" href="#harder-pod-eviction-when-nodes-are-going-oom" title="Permanent link">&para;</a></h1>
+<h1 id="harder-pod-eviction-when-nodes-are-going-oom">Harder Pod eviction when Nodes are going OOM<a class="headerlink" href="#harder-pod-eviction-when-nodes-are-going-oom" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Status: accepted</li>
 <li>Deciders: arch meeting</li>
 <li>Date: 2022-12-08</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>We had several incidents where nodes are going OOM and become unresponsive when too many pods are being scheduled on them. This also leads to pods getting evicted, and this applies to our pods that are responsible for the platform security and compliance.
+<p>We had several incidents where Nodes are going OOM and become unresponsive when too many Pods are being scheduled on them. This also leads to Pods getting evicted, and this applies to our Pods that are responsible for the platform security and compliance.
 Should we enable kubelet hard eviction so as to behold the vital components?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We want to ensure platform security and stability.</li>
 <li>We want to make it hard for Application Developers to break the platform via trivial mistakes.</li>
-<li>We want to make sure that the critical components are not evicted when nodes are overcommitted.</li>
+<li>We want to make sure that the critical components are not evicted when Nodes are overcommitted.</li>
 </ul>
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Enable kubelet hard eviction.</li>
 <li>Adjust OOM score so that kernel does not OOM critical Pods</li>
 <li>Setup priority class for all our apps</li>
-<li>Do not make any changes and reinforce the responsibility to the customer for not overloading the nodes.</li>
+<li>Do not make any changes and reinforce the responsibility to the customer for not overloading the Nodes.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p>Chosen options: <code>Enable kubelet hard eviction</code> &amp; <code>Setup priority class for all our apps</code> .</p>
-<p>The option <code>Adjust OOM score so that kernel does not OOM critical Pods</code> is not viable as it can be used only if we set requests=limits on all our pods (see <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#node-out-of-memory-behavior">here</a> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/#create-a-pod-that-gets-assigned-a-qos-class-of-guaranteed">here</a>), and this will not allow us to benefit from the burstable capabilities of Kubernetes and have a static allocation of resources which locks the resources on the nodes even if they are not used most of the time. This reduces the available resources for the Application Developer on the nodes.</p>
+<p>The option <code>Adjust OOM score so that kernel does not OOM critical Pods</code> is not viable as it can be used only if we set requests=limits on all our Pods (see <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#node-out-of-memory-behavior">here</a> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/#create-a-pod-that-gets-assigned-a-qos-class-of-guaranteed">here</a>), and this will not allow us to benefit from the burstable capabilities of Kubernetes and have a static allocation of resources which locks the resources on the Nodes even if they are not used most of the time. This reduces the available resources for the Application Developer on the Nodes.</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Security and stability of the platform is somewhat improved.</li>
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Application Developer pods will be stuck in pending until resources are available and this might make the Application Developer feel that their pods are less important.</li>
+<li>Application Developer Pods will be stuck in pending until resources are available and this might make the Application Developer feel that their Pods are less important.</li>
 <li><a href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#kubelet-may-not-observe-memory-pressure-right-away">kubectl may not observe pressure right away</a></li>
 </ul>
 <h2 id="recommendation-to-platform-administrators">Recommendation to Platform Administrators<a class="headerlink" href="#recommendation-to-platform-administrators" title="Permanent link">&para;</a></h2>
-<p>Test multiple configurations using kubelet hard eviction, priority classes and other option to obtain the desired behaviour where the nodes do not become unresponsive and our components are not getting evicted when the node is overcommitted by the Application Developer.</p>
+<p>Test multiple configurations using kubelet hard eviction, priority classes and other option to obtain the desired behaviour where the Nodes do not become unresponsive and our components are not getting evicted when the Node is overcommitted by the Application Developer.</p>
 
 
 

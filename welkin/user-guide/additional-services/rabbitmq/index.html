@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -1504,7 +1546,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Allow your Pods to communicate with the RabbitMQ cluster
+      Allow your Pods to communicate with the RabbitMQ Cluster
     </span>
   </a>
   
@@ -4148,7 +4190,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Allow your Pods to communicate with the RabbitMQ cluster
+      Allow your Pods to communicate with the RabbitMQ Cluster
     </span>
   </a>
   
@@ -4291,7 +4333,7 @@ if(!document.__defineGetter__) {
 </code></pre></div>
 <h3 id="accessing-the-management-ui">Accessing the Management UI<a class="headerlink" href="#accessing-the-management-ui" title="Permanent link">&para;</a></h3>
 <p>RabbitMQ provides the management plugin which allows control over everything within it, including messaging topology and access control.</p>
-<p>Your administrator will set up a Secret inside Welkin containing the credentials of the default admin user, which is all you need to access your RabbitMQ cluster.
+<p>Your administrator will set up a Secret inside Welkin containing the credentials of the default admin user, which is all you need to access your RabbitMQ Cluster.
 The Secret has the following shape:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
@@ -4341,7 +4383,7 @@ kubectl<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;
 </li>
 </ol>
 <h3 id="create-an-application-secret">Create an Application Secret<a class="headerlink" href="#create-an-application-secret" title="Permanent link">&para;</a></h3>
-<p>First, check that you are on the right Welkin cluster, in the right <strong>application</strong> namespace:</p>
+<p>First, check that you are on the right Welkin Cluster, in the right <strong>application</strong> namespace:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
@@ -4362,9 +4404,9 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume">Create a Pod that has access to the secret data through a Volume</a></li>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data">Define container environment variables using Secret data</a></li>
 </ul>
-<h3 id="allow-your-pods-to-communicate-with-the-rabbitmq-cluster">Allow your Pods to communicate with the RabbitMQ cluster<a class="headerlink" href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" title="Permanent link">&para;</a></h3>
-<p>The RabbitMQ cluster is protected by Network Policies.</p>
-<p>To allow your application to communicate with the RabbitMQ cluster, add the following label to your Pods: <code>elastisys.io/rabbitmq-${RABBITMQ_CLUSTER}-access: allow</code></p>
+<h3 id="allow-your-pods-to-communicate-with-the-rabbitmq-cluster">Allow your Pods to communicate with the RabbitMQ Cluster<a class="headerlink" href="#allow-your-pods-to-communicate-with-the-rabbitmq-cluster" title="Permanent link">&para;</a></h3>
+<p>The RabbitMQ Cluster is protected by Network Policies.</p>
+<p>To allow your application to communicate with the RabbitMQ Cluster, add the following label to your Pods: <code>elastisys.io/rabbitmq-${RABBITMQ_CLUSTER}-access: allow</code></p>
 <p>Using the <code>${RABBITMQ_CLUSTER}</code> from before, you can also get it from your administrator</p>
 <h2 id="using-a-rabbitmq-cluster">Using a RabbitMQ Cluster<a class="headerlink" href="#using-a-rabbitmq-cluster" title="Permanent link">&para;</a></h2>
 <p>Best practices for using RabbitMQ in Welkin.</p>
@@ -4373,14 +4415,14 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 <p>RabbitMQ is built as a plugin based system, by default only a limited set of plugins are enabled, contact your service-specific administrator about enabling the ones you require.</p>
 </div>
 <h3 id="cluster-division">Cluster Division<a class="headerlink" href="#cluster-division" title="Permanent link">&para;</a></h3>
-<p>RabbitMQ is a multi tenant system and has the concept of virtual host or vhost which provides logical separation of resources within it. Each vhost acts as their own RabbitMQ cluster and have their own connection, channels, exchanges, queues, and bindings.</p>
+<p>RabbitMQ is a multi tenant system and has the concept of virtual host or vhost which provides logical separation of resources within it. Each vhost acts as their own RabbitMQ Cluster and have their own connection, channels, exchanges, queues, and bindings.</p>
 <p>Messages cannot flow directly between exchanges and queues in different vhosts, instead if that is required there must be a client that consumes messages in one vhost and then publishes messages in another vhost. This can also be realised with two plugins:</p>
 <ul>
 <li>
-<p><a href="https://www.rabbitmq.com/federation.html"><strong>Federation plugin</strong></a> - Provides federated exchanges and queue which connect to an upstream cluster or vhost, allowing consumers to access message from the upstream source.</p>
+<p><a href="https://www.rabbitmq.com/federation.html"><strong>Federation plugin</strong></a> - Provides federated exchanges and queue which connect to an upstream Cluster or vhost, allowing consumers to access message from the upstream source.</p>
 </li>
 <li>
-<p><a href="https://www.rabbitmq.com/shovel.html"><strong>Shovel plugin</strong></a> - Provides a client which connect both to an upstream and downstream cluster or vhost, consuming and publishing messages between them.</p>
+<p><a href="https://www.rabbitmq.com/shovel.html"><strong>Shovel plugin</strong></a> - Provides a client which connect both to an upstream and downstream Cluster or vhost, consuming and publishing messages between them.</p>
 </li>
 </ul>
 <h3 id="connection-and-channel-management">Connection and Channel Management<a class="headerlink" href="#connection-and-channel-management" title="Permanent link">&para;</a></h3>
@@ -4432,7 +4474,7 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 <p>You should be all set.
 Before going into production, don't forget to go through the <a href="../../go-live/">go-live checklist</a>.</p>
 <h2 id="welkin-rabbitmq-release-notes">Welkin RabbitMQ Release Notes<a class="headerlink" href="#welkin-rabbitmq-release-notes" title="Permanent link">&para;</a></h2>
-<p>Check out the <a href="../../../release-notes/rabbitmq/">release notes</a> for the RabbitMQ cluster that runs in Welkin environments!</p>
+<p>Check out the <a href="../../../release-notes/rabbitmq/">release notes</a> for the RabbitMQ Cluster that runs in Welkin environments!</p>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.rabbitmq.com/management.html">RabbitMQ Management UI</a></li>

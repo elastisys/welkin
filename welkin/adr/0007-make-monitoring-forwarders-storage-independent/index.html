@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4113,7 +4155,7 @@ Hence, forwarders are subject to the following tensions:</p>
 <li>Use <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath"><code>hostPath</code></a> volumes.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>Chosen option: <code>emptyDir</code> for Prometheus as forwarder, because it allows monitoring of the storage system in some cases (e.g. Rook) and can redeploy automatically after node failure. It also keeps the complexity down without much risk of data loss.</p>
+<p>Chosen option: <code>emptyDir</code> for Prometheus as forwarder, because it allows monitoring of the storage system in some cases (e.g. Rook) and can redeploy automatically after Node failure. It also keeps the complexity down without much risk of data loss.</p>
 <p>Fluentd as forwarder is deployed via DaemonSet. Both, <code>emptyDir</code> and <code>hostPath</code> can be used.</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4123,28 +4165,28 @@ Hence, forwarders are subject to the following tensions:</p>
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Buffered monitoring information is lost if node is lost.</li>
+<li>Buffered monitoring information is lost if Node is lost.</li>
 <li><code>emptyDir</code> can cause disk pressure. This can be handled by alerting on low disk space.</li>
 </ul>
 <h2 id="pros-and-cons-of-the-options">Pros and Cons of the Options<a class="headerlink" href="#pros-and-cons-of-the-options" title="Permanent link">&para;</a></h2>
 <h3 id="use-underlying-storage-provider">Use underlying storage provider<a class="headerlink" href="#use-underlying-storage-provider" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Good, because the forwarder can be restarted on any node.</li>
+<li>Good, because the forwarder can be restarted on any Node.</li>
 <li>Good, because the buffer can be large.</li>
-<li>Good, because no buffered monitoring information is lost if a node goes down.</li>
+<li>Good, because no buffered monitoring information is lost if a Node goes down.</li>
 <li>Good, because buffered monitoring information is preserved if the forwarder is redeployed.</li>
-<li>Bad, because non-node-local storage is generally slower. Note, however, that at least Safespring and CityCloud use a central Ceph storage cluster for the VM's boot disk, which wipes out node-local's storage advantage.)</li>
+<li>Bad, because non-Node-local storage is generally slower. Note, however, that at least Safespring and CityCloud use a central Ceph storage Cluster for the VM's boot disk, which wipes out Node-local's storage advantage.)</li>
 <li>Bad, because the forwarder will fail if storage provider goes down. This is especially problematic for Exoscale, bare-metal and BYO-VMs.</li>
 <li>Bad, because the forwarder cannot monitor the storage provider (circular dependency).</li>
 <li>Bad, because setting right ownership requires init containers or <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods">alpha features</a>.</li>
 </ul>
 <h3 id="use-local-persistent-volumes">Use Local Persistent Volumes<a class="headerlink" href="#use-local-persistent-volumes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Bad, because the forwarder cannot be restarted on any node without manual action: "if a node becomes unhealthy, then the local volume becomes inaccessible by the Pod. The Pod using this volume is unable to run.".</li>
-<li>Bad, because the amount of forwarding depends on the node's local disk size.</li>
-<li>Bad, because buffered monitoring information is lost if the forwarder's node goes down.</li>
+<li>Bad, because the forwarder cannot be restarted on any Node without manual action: "if a Node becomes unhealthy, then the local volume becomes inaccessible by the Pod. The Pod using this volume is unable to run.".</li>
+<li>Bad, because the amount of forwarding depends on the Node's local disk size.</li>
+<li>Bad, because buffered monitoring information is lost if the forwarder's Node goes down.</li>
 <li>Good, because buffered monitoring information is preserved if the forwarder is redeployed.</li>
-<li>Good, because node-local storage is generally faster.</li>
+<li>Good, because Node-local storage is generally faster.</li>
 <li>Good, because the forwarder will survive failure of storage provider.</li>
 <li>Good, because the forwarder can monitor the storage provider (no circular dependency).</li>
 <li>Bad, because local persistent storage requires an additional configuration step.</li>
@@ -4152,11 +4194,11 @@ Hence, forwarders are subject to the following tensions:</p>
 </ul>
 <h3 id="use-emptydir">Use <code>emptyDir</code><a class="headerlink" href="#use-emptydir" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Good, because the forwarder can be restarted on any node without manual action.</li>
-<li>Bad, because the amount of forwarding depends on the node's local disk size.</li>
-<li>Bad, because buffered monitoring information is lost if the forwarder's node goes down.</li>
+<li>Good, because the forwarder can be restarted on any Node without manual action.</li>
+<li>Bad, because the amount of forwarding depends on the Node's local disk size.</li>
+<li>Bad, because buffered monitoring information is lost if the forwarder's Node goes down.</li>
 <li>Bad, because buffered monitoring information is lost if the forwarder is (not carefully enough) redeployed.</li>
-<li>Good, because node-local storage is generally faster.</li>
+<li>Good, because Node-local storage is generally faster.</li>
 <li>Good, because the forwarder will survive failure of storage provider.</li>
 <li>Good, because the forwarder can monitor the storage provider (no circular dependency).</li>
 <li>Good, because works out of the box.</li>
@@ -4165,7 +4207,7 @@ Hence, forwarders are subject to the following tensions:</p>
 <h3 id="use-hostpath">Use <code>hostPath</code><a class="headerlink" href="#use-hostpath" title="Permanent link">&para;</a></h3>
 <p>Similar to Local Persistent Volumes, but</p>
 <ul>
-<li>Worse, because if the forwarder is redeployed on a new node, buffering information may appear/disappear.</li>
+<li>Worse, because if the forwarder is redeployed on a new Node, buffering information may appear/disappear.</li>
 <li>Better, because it requires no extra storage provider configuration.</li>
 </ul>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>

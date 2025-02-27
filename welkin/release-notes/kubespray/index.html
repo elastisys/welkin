@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -5516,7 +5558,7 @@ if(!document.__defineGetter__) {
 <h3 id="v2260-ck8s2">v2.26.0-ck8s2<a class="headerlink" href="#v2260-ck8s2" title="Permanent link">&para;</a></h3>
 <h4 id="improvements_1">Improvement(s)<a class="headerlink" href="#improvements_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Fixed issues that could occur when removing nodes or replacing control plane nodes.</li>
+<li>Fixed issues that could occur when removing Nodes or replacing control plane Nodes.</li>
 </ul>
 <!--
     Release notes before 2024-11-29 are excluded from spellchecking.
@@ -5532,8 +5574,8 @@ if(!document.__defineGetter__) {
 </ul>
 <h4 id="features">Feature(s)<a class="headerlink" href="#features" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Support for using existing floating IPs when provisioning nodes with the Openstack terraform module.</li>
-<li>Support for provisioning nodes without public IPs with the Upcloud terraform module.</li>
+<li>Support for using existing floating IPs when provisioning Nodes with the Openstack terraform module.</li>
+<li>Support for provisioning Nodes without public IPs with the Upcloud terraform module.</li>
 </ul>
 <h3 id="v2250-ck8s4">v2.25.0-ck8s4<a class="headerlink" href="#v2250-ck8s4" title="Permanent link">&para;</a></h3>
 <h4 id="improvements_2">Improvement(s)<a class="headerlink" href="#improvements_2" title="Permanent link">&para;</a></h4>
@@ -5635,7 +5677,7 @@ if(!document.__defineGetter__) {
 <h4 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Improved setup for OpenStack with additional server groups</strong> <br/>
-  This allows anti-affinity to be set between arbitrary nodes, improving scheduling and stability.</li>
+  This allows anti-affinity to be set between arbitrary Nodes, improving scheduling and stability.</li>
 <li><strong>Switched from using upstream Kubespray repository as submodule to the Elastisys fork</strong></li>
 </ul>
 <h4 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h4>
@@ -5647,7 +5689,7 @@ if(!document.__defineGetter__) {
 <p>Released 2022-10-24</p>
 <h4 id="changed_2">Changed<a class="headerlink" href="#changed_2" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Changed a Kubespray variable which is required for upgrading clusters on cloud providers that don't have external IPs on their control plane nodes</strong></li>
+<li><strong>Changed a Kubespray variable which is required for upgrading Clusters on cloud providers that don't have external IPs on their control plane Nodes</strong></li>
 </ul>
 <h3 id="v2200-ck8s1">v2.20.0-ck8s1<a class="headerlink" href="#v2200-ck8s1" title="Permanent link">&para;</a></h3>
 <p>Released 2022-10-10</p>
@@ -5689,7 +5731,7 @@ if(!document.__defineGetter__) {
 <h4 id="updated_11">Updated<a class="headerlink" href="#updated_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Kubespray updated to <code>v2.18.1</code></strong> <br/>
-  This introduces some fixes for cluster using containerd as container manager.</li>
+  This introduces some fixes for Cluster using containerd as container manager.</li>
 <li><strong>Updated default etcd version to <code>3.5.3</code></strong>
   This fixes an issue where <a href="https://groups.google.com/a/kubernetes.io/g/dev/c/B7gJs88XtQc/m/rSgNOzV2BwAJ">etcd data might get corrupted</a>.</li>
 </ul>

@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4013,7 +4055,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#tekton-on-each-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Tekton on each cluster
+      Tekton on each Cluster
     </span>
   </a>
   
@@ -4052,7 +4094,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2023-03-15</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>With Tekton we need to decide where to run it, as it will need considerable permissions in the target cluster to be able to manage it.</p>
+<p>With Tekton we need to decide where to run it, as it will need considerable permissions in the target Cluster to be able to manage it.</p>
 <p>So, where should we run Tekton?</p>
 <h2 id="decision-drivers">Decision Drivers <!-- optional --><a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4063,7 +4105,7 @@ if(!document.__defineGetter__) {
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Tekton on Management Cluster</li>
-<li>Tekton on each cluster</li>
+<li>Tekton on each Cluster</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p>Chosen option "Tekton on Management Cluster", because it will follow nicely together with the decision for Cluster API controller and management hierarchy. No credentials have to be stored in the Workload Cluster, and management can be done centralised.</p>
@@ -4084,7 +4126,7 @@ if(!document.__defineGetter__) {
 <h3 id="tekton-on-management-cluster">Tekton on Management Cluster<a class="headerlink" href="#tekton-on-management-cluster" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Good, single instance to setup and manage</li>
-<li>Good, centralised management of all clusters</li>
+<li>Good, centralised management of all Clusters</li>
 <li>Good, environment can be managed as a group or individually if needed</li>
 <li>Good, Tekton itself should be unaffected if it applies a bad change to the Workload Cluster and will be available to perform rollback</li>
 <li>Bad, Tekton itself can potentially go into a bad state if it applies a bad change to the Management Cluster</li>
@@ -4092,12 +4134,12 @@ if(!document.__defineGetter__) {
 <li>Bad, aggregating high privilege credentials in Management Cluster</li>
 <li>Good, limited access to Management Cluster</li>
 </ul>
-<h3 id="tekton-on-each-cluster">Tekton on each cluster<a class="headerlink" href="#tekton-on-each-cluster" title="Permanent link">&para;</a></h3>
+<h3 id="tekton-on-each-cluster">Tekton on each Cluster<a class="headerlink" href="#tekton-on-each-cluster" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Bad, multiple instances to setup and manage</li>
-<li>Bad, individual management of each cluster</li>
-<li>Good, each cluster individually impacted by failures</li>
-<li>Bad, Tekton itself can potentially go into a bad state if it applies a bad change to the cluster</li>
+<li>Bad, individual management of each Cluster</li>
+<li>Good, each Cluster individually impacted by failures</li>
+<li>Bad, Tekton itself can potentially go into a bad state if it applies a bad change to the Cluster</li>
 <li>Bad, need for high privilege credentials in Workload Cluster</li>
 <li>Good, no aggregation of high privilege credentials in Management Cluster</li>
 <li>Bad, wider access to Workload Cluster</li>

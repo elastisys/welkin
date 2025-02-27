@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4353,7 +4395,7 @@ It is disabled by default, so please ask your Platform Administrator to enable t
 <p>You can ask for this feature to be enabled by filing a <a href="https://elastisys.atlassian.net/servicedesk/customer/portals">service ticket</a>.
 This is a preview feature. For more information, please read <a href="https://elastisys.com/legal/terms-of-service/#91-preview-features">ToS 9.1 Preview Features</a>.</p>
 </div>
-<p>Flux is an open-source tool for continuous delivery (CD) and GitOps in Kubernetes. It allows you to automate and manage the deployment of applications and configurations in a Kubernetes cluster using a Git repository as the source of truth.</p>
+<p>Flux is an open-source tool for continuous delivery (CD) and GitOps in Kubernetes. It allows you to automate and manage the Deployment of applications and configurations in a Kubernetes Cluster using a Git repository as the source of truth.</p>
 <p>Flux is a <a href="https://www.cncf.io/projects/flux/">CNCF Graduated project</a>.</p>
 <p>This page will help you install Flux in a Welkin environment.</p>
 <div class="admonition note">
@@ -4362,8 +4404,8 @@ This is a preview feature. For more information, please read <a href="https://el
 </div>
 <h2 id="initial-prep">Initial Prep<a class="headerlink" href="#initial-prep" title="Permanent link">&para;</a></h2>
 <h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
-<p>This guide depends on the <a href="../../../operator-manual/user-managed-crds/">self-managed cluster resources</a> feature to be enabled. This is so Flux gets the necessary CRDs and ClusterRoles installed.</p>
-<p>Flux also requires the image repository <code>ghcr.io/fluxcd</code> to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed cluster resources feature.</p>
+<p>This guide depends on the <a href="../../../operator-manual/user-managed-crds/">self-managed Cluster resources</a> feature to be enabled. This is so Flux gets the necessary CRDs and ClusterRoles installed.</p>
+<p>Flux also requires the image repository <code>ghcr.io/fluxcd</code> to be allowlisted. Ask your Platform Administrator to do this while enabling the self-managed Cluster resources feature.</p>
 <h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
 <p>You need to setup a Git repository that will contain the manifest files. This can be a personal or organization repository. <em>It is strongly recommended that it is a private (as in: not public) repository.</em></p>
 <p>Next you need to generate an SSH key that will be used to communicate with the Git repository. The private key will be used as a Kubernetes Secret in a later step.</p>
@@ -4379,7 +4421,7 @@ This is a preview feature. For more information, please read <a href="https://el
 <li>Create Roles/RoleBindings for Flux.</li>
 </ol>
 <h4 id="crds">CRDs<a class="headerlink" href="#crds" title="Permanent link">&para;</a></h4>
-<p>You need to apply the Custom Resource Definitions (CRDs) required by Flux. This is typically not allowed in a Welkin Environment, but with Flux enabled with the self-managed cluster resources feature, this allows you to apply these yourself.</p>
+<p>You need to apply the Custom Resource Definitions (CRDs) required by Flux. This is typically not allowed in a Welkin Environment, but with Flux enabled with the self-managed Cluster resources feature, this allows you to apply these yourself.</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>crds
 
 <span class="c1"># Fetches Flux CRDs for v2.1.2 and saves it in the crds directory</span>
@@ -4434,7 +4476,7 @@ subjects:
 <p class="admonition-title">Note</p>
 <p>Installing Flux with <code>flux bootstrap</code> command does not work when installing in a Welkin environment, please follow our instructions instead.</p>
 </div>
-<p>The script below can be used to generate Flux manifests and a basic cluster folder structure similar to <code>flux bootstrap</code>. Be sure to configure the environment variables in the script.</p>
+<p>The script below can be used to generate Flux manifests and a basic Cluster folder structure similar to <code>flux bootstrap</code>. Be sure to configure the environment variables in the script.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generate Manifest files</span>
 
 <span class="c1"># Be sure to edit the variables below!</span>
@@ -4497,7 +4539,7 @@ curl<span class="w"> </span>https://raw.githubusercontent.com/elastisys/welkin/m
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <h3 id="role-and-rolebindings-does-not-apply-correctly">Role and RoleBindings does not apply correctly<a class="headerlink" href="#role-and-rolebindings-does-not-apply-correctly" title="Permanent link">&para;</a></h3>
 <p>Error produced: <code>Error from server (NotFound): error when creating "roles/": roles.rbac.authorization.k8s.io "role" not found</code></p>
-<p>There is a <a href="https://github.com/fluxcd/flux2/discussions/3203">known issue</a> with Role and RoleBindings not being able to be applied together using Flux in a GitOps way. For example, if you apply a Role and a RoleBinding that uses the Role, then Flux will fail to apply. If the Role already exists in the cluster then Flux will succeed.</p>
+<p>There is a <a href="https://github.com/fluxcd/flux2/discussions/3203">known issue</a> with Role and RoleBindings not being able to be applied together using Flux in a GitOps way. For example, if you apply a Role and a RoleBinding that uses the Role, then Flux will fail to apply. If the Role already exists in the Cluster then Flux will succeed.</p>
 <p>Flux uses the <a href="https://kubernetes.io/docs/reference/using-api/server-side-apply/">server-side apply</a>, which requires the ‘bind’ permission to properly apply RoleBindings. And we cannot give you this due to <a href="https://kubernetes.io/docs/concepts/security/rbac-good-practices/#bind-verb">privilege escalation issues</a> with this permission.</p>
 <p>You can workaround this using the Flux Kustomization <a href="https://fluxcd.io/flux/components/kustomize/kustomizations/#dependencies"><code>dependsOn</code></a> functionality. By splitting the Roles and RoleBindings into separate folders and then creating two Kustomizations for them where the RoleBindings will depend on the Roles. Then the Roles will be applied before the RoleBindings and so the issue will not occur. Refer to the previous link for an example.</p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>

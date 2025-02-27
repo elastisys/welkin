@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -2415,7 +2457,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#are-the-kubernetes-clusters-doing-fine" class="md-nav__link">
     <span class="md-ellipsis">
-      Are the Kubernetes clusters doing fine?
+      Are the Kubernetes Clusters doing fine?
     </span>
   </a>
   
@@ -4272,7 +4314,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#are-the-kubernetes-clusters-doing-fine" class="md-nav__link">
     <span class="md-ellipsis">
-      Are the Kubernetes clusters doing fine?
+      Are the Kubernetes Clusters doing fine?
     </span>
   </a>
   
@@ -4555,7 +4597,7 @@ The command <code>ck8s diagnostics</code> can be provided with different flags t
 <p>Please also provide us with your terminal in a text format.
 We need to look both at the commands you typed and their output.</p>
 </div>
-<p>Help! Something is wrong with my Welkin cluster. Fear no more, this guide will help you make sense.</p>
+<p>Help! Something is wrong with my Welkin Cluster. Fear no more, this guide will help you make sense.</p>
 <p>This guide assumes that:</p>
 <ul>
 <li>You have <a href="../getting-started/">pre-requisites</a> installed.</li>
@@ -4609,7 +4651,7 @@ We need to look both at the commands you typed and their output.</p>
 <p>Are systemd units running fine? You should see <code>running</code> and not <code>degraded</code>.</p>
 <div class="highlight"><pre><span></span><code>ansible<span class="w"> </span>-i<span class="w"> </span><span class="nv">$CK8S_CONFIG_PATH</span>/<span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span>-config/inventory.ini<span class="w"> </span>all<span class="w"> </span>-m<span class="w"> </span>shell<span class="w"> </span>-a<span class="w"> </span><span class="s1">&#39;systemctl is-system-running&#39;</span>
 </code></pre></div>
-<h3 id="are-the-kubernetes-clusters-doing-fine">Are the Kubernetes clusters doing fine?<a class="headerlink" href="#are-the-kubernetes-clusters-doing-fine" title="Permanent link">&para;</a></h3>
+<h3 id="are-the-kubernetes-clusters-doing-fine">Are the Kubernetes Clusters doing fine?<a class="headerlink" href="#are-the-kubernetes-clusters-doing-fine" title="Permanent link">&para;</a></h3>
 <p>Are the Nodes reporting in on Kubernetes? All Kubernetes Nodes, both control-plane and workers, should be <code>Ready</code>:</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span><span class="nv">$CLUSTER</span><span class="w"> </span>get<span class="w"> </span>nodes
 </code></pre></div>
@@ -4703,9 +4745,9 @@ If the infrastructure is not managed by Terraform you can skip to step 3:</p>
 <ol>
 <li>Add a new Node by editing the <code>*.tfvars</code>.</li>
 <li>Re-apply Terraform.</li>
-<li>Add the new node to the <code>inventory.ini</code> (skip this step if the cluster is using a dynamic inventory).</li>
+<li>Add the new Node to the <code>inventory.ini</code> (skip this step if the Cluster is using a dynamic inventory).</li>
 <li>
-<p>Re-apply Kubespray only for the new node.</p>
+<p>Re-apply Kubespray only for the new Node.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="o">[</span>welkin-kubespray-root-dir<span class="o">]</span>
 
 <span class="nv">CLUSTER</span><span class="o">=[</span>sc<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="o">]</span>
@@ -4715,7 +4757,7 @@ If the infrastructure is not managed by Terraform you can skip to step 3:</p>
 </code></pre></div>
 </li>
 <li>
-<p>Add SSH keys to the new node if necessary</p>
+<p>Add SSH keys to the new Node if necessary</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s-kubespray<span class="w"> </span>apply-ssh<span class="w"> </span><span class="nv">$CLUSTER</span><span class="w"> </span>--limit<span class="o">=[</span>new_node_name<span class="o">]</span>
 </code></pre></div>
 </li>
@@ -4733,7 +4775,7 @@ If the infrastructure is not managed by Terraform you can skip to step 3:</p>
 <span class="c1"># or</span>
 ./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>helmfile<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workload-cluster-np<span class="w"> </span>-i<span class="w"> </span>apply
 </code></pre></div>
-<p>Check that the new Node joined the cluster, as shown <a href="#are-the-kubernetes-clusters-doing-fine">here</a>.</p>
+<p>Check that the new Node joined the Cluster, as shown <a href="#are-the-kubernetes-clusters-doing-fine">here</a>.</p>
 </li>
 </ol>
 <h2 id="a-systemd-unit-failed">A systemd unit failed<a class="headerlink" href="#a-systemd-unit-failed" title="Permanent link">&para;</a></h2>
@@ -4753,7 +4795,7 @@ journalctl<span class="w"> </span>--unit<span class="w"> </span><span class="nv"
 <li><a href="https://github.com/rook/rook/blob/master/Documentation/Troubleshooting/ceph-common-issues.md">Ceph Common Issues</a></li>
 </ul>
 <h2 id="pod-seems-not-fine">Pod seems not fine<a class="headerlink" href="#pod-seems-not-fine" title="Permanent link">&para;</a></h2>
-<p>Make sure you are on the <strong>right</strong> cluster:</p>
+<p>Make sure you are on the <strong>right</strong> Cluster:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$CK8S_CONFIG_PATH</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$CLUSTER</span>
 </code></pre></div>
@@ -4773,7 +4815,7 @@ journalctl<span class="w"> </span>--unit<span class="w"> </span><span class="nv"
 ./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span><span class="nv">$CLUSTER</span><span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-A<span class="w"> </span>--watch
 </code></pre></div>
 <h2 id="helm-release-is-failed">Helm Release is <code>failed</code><a class="headerlink" href="#helm-release-is-failed" title="Permanent link">&para;</a></h2>
-<p>Make sure you are on the <strong>right</strong> cluster:</p>
+<p>Make sure you are on the <strong>right</strong> Cluster:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$CK8S_CONFIG_PATH</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$CLUSTER</span>
 </code></pre></div>
@@ -4801,7 +4843,7 @@ journalctl<span class="w"> </span>--unit<span class="w"> </span><span class="nv"
     Get &quot;http://url/.well-known/acme-challenge/xVfDZoLlqs4tad2qOiCT4sjChNRausd5iNpbWuGm5ls&quot;:
     dial tcp: lookup opensearch.domain on 10.177.0.3:53: no such host&#39;
 </code></pre></div>
-<p>Then you might have a DNS issue inside your cluster. Make sure that <code>global.clusterDns</code> in <code>common-config.yaml</code> is set to the CoreDNS Service IP returned by <code>kubectl get svc -n kube-system coredns</code>.</p>
+<p>Then you might have a DNS issue inside your Cluster. Make sure that <code>global.clusterDns</code> in <code>common-config.yaml</code> is set to the CoreDNS Service IP returned by <code>kubectl get svc -n kube-system coredns</code>.</p>
 <h3 id="failed-to-perform-self-check-connection-timed-out">Failed to perform self check: connection timed out<a class="headerlink" href="#failed-to-perform-self-check-connection-timed-out" title="Permanent link">&para;</a></h3>
 <p>If with <code>kubectl describe challenges -A</code> you get an error similar to below:</p>
 <div class="highlight"><pre><span></span><code>Reason: Waiting for http-01 challenge propagation: failed to perform self check GET request &#39;http://abc.com/.well-known/acme-challenge/Oej8tloD2wuHNBWS6eVhSKmGkZNfjLRemPmpJoHOPkA&#39;: Get &quot;http://abc.com/.well-known/acme-challenge/Oej8tloD2wuHNBWS6eVhSKmGkZNfjLRemPmpJoHOPkA&quot;: dial tcp 18.192.17.98:80: connect: connection timed out
@@ -4837,7 +4879,7 @@ velero-daily-backup-20211005143248<span class="w">   </span>InProgress<span clas
 <p>First try to delete the backup</p>
 <div class="highlight"><pre><span></span><code>./velero<span class="w"> </span>backup<span class="w"> </span>delete<span class="w"> </span>velero-daily-backup-20211005143248
 </code></pre></div>
-<p>Then kill all the pods under the velero namespace</p>
+<p>Then kill all the Pods under the velero namespace</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span>wc<span class="w"> </span>delete<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> </span>--all
 </code></pre></div>
 <p>Check that the backup is gone</p>
@@ -4849,7 +4891,7 @@ NAME<span class="w">                                 </span>STATUS<span class="w
 <div class="highlight"><pre><span></span><code>velero<span class="w"> </span>backup<span class="w"> </span>create<span class="w"> </span>--from-schedule<span class="w"> </span>velero-daily-backup
 </code></pre></div>
 <h2 id="how-do-i-use-kubectl-and-helm-directly">How do I use <code>kubectl</code> and <code>helm</code> directly?<a class="headerlink" href="#how-do-i-use-kubectl-and-helm-directly" title="Permanent link">&para;</a></h2>
-<p>This guide makes heavy use of the <code>compliantkubernetes-apps</code> CLI to access and control Welkin clusters. However, you can use <code>kubectl</code> and <code>helm</code> directly, by exporting a <code>KUBECONFIG</code> like so:</p>
+<p>This guide makes heavy use of the <code>compliantkubernetes-apps</code> CLI to access and control Welkin Clusters. However, you can use <code>kubectl</code> and <code>helm</code> directly, by exporting a <code>KUBECONFIG</code> like so:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="si">${</span><span class="nv">CK8S_CONFIG_PATH</span><span class="si">}</span>/.state/kube_config_<span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span>.yaml
 
 kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A

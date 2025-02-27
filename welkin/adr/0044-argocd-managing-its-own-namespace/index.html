@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4045,7 +4087,7 @@ This service account has a larger set of permissions than a developer's most pri
 <p>Chosen option:</p>
 <ul>
 <li>No, we do not allow ArgoCD to manage its own namespace.<ul>
-<li>ArgoCD, through an Application Developer's configuration, should not deploy standard Kubernetes resources (such as pods or secrets) directly into its own namespace. If there is a requirement for such deployments, it should be initiated through a service ticket, ensuring that it undergoes thorough security and stability assessments to prevent any compromises to the platform.</li>
+<li>ArgoCD, through an Application Developer's configuration, should not deploy standard Kubernetes resources (such as Pods or secrets) directly into its own namespace. If there is a requirement for such deployments, it should be initiated through a service ticket, ensuring that it undergoes thorough security and stability assessments to prevent any compromises to the platform.</li>
 </ul>
 </li>
 </ul>

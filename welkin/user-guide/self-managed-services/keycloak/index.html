@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4129,7 +4171,7 @@ At the very least, you must:</p>
 <p>This page will help you succeed in connecting your application to an identity and access management solution Keycloak, which meets your security and compliance requirements.</p>
 <p>Keycloak is a widely recognized open-source Identity and Access Management (IAM) solution that provides user authentication and authorization services for applications. It offers a comprehensive set of features, including Single Sign-On (SSO), user federation, and social login support, making it a popular choice for securing applications in a variety of industries.</p>
 <p>As of May 2023, Keycloak is a <a href="https://www.cncf.io/blog/2023/04/11/keycloak-joins-cncf-as-an-incubating-project/">CNCF Incubating project</a>.</p>
-<p>In this guide we outline the necessary steps to configure and deploy a Keycloak instance on a Welkin cluster that is using the <a href="../../additional-services/postgresql/">managed PostgreSQL service</a>.</p>
+<p>In this guide we outline the necessary steps to configure and deploy a Keycloak instance on a Welkin Cluster that is using the <a href="../../additional-services/postgresql/">managed PostgreSQL service</a>.</p>
 <p>This will provide you with a robust and secure IAM solution to manage user access and authorization for your applications running on Welkin.</p>
 <h2 id="initial-preparation">Initial preparation<a class="headerlink" href="#initial-preparation" title="Permanent link">&para;</a></h2>
 <p><em>Note: This guide assumes that you have managed PostgreSQL as an additional service.</em></p>
@@ -4148,8 +4190,8 @@ At the very least, you must:</p>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$APP_DATABASE</span>
 </code></pre></div>
 <h2 id="configure-keycloak-with-managed-postgresql">Configure Keycloak with managed PostgreSQL<a class="headerlink" href="#configure-keycloak-with-managed-postgresql" title="Permanent link">&para;</a></h2>
-<p>We chose Bitnami's Helm chart for <a href="https://github.com/bitnami/charts/tree/main/bitnami/keycloak">Keycloak</a> due to its open-source nature, ease of deployment, security optimization, and active maintenance.</p>
-<p>Bitnami is a well known provider of pre-configured, open-source application stacks that simplify deployment and management in various environments, such as Kubernetes. They offer a Helm chart for Keycloak, which streamlines deployment while adhering to Kubernetes best practices for security.</p>
+<p>We chose Bitnami's Helm chart for <a href="https://github.com/bitnami/charts/tree/main/bitnami/keycloak">Keycloak</a> due to its open-source nature, ease of Deployment, security optimization, and active maintenance.</p>
+<p>Bitnami is a well known provider of pre-configured, open-source application stacks that simplify Deployment and management in various environments, such as Kubernetes. They offer a Helm chart for Keycloak, which streamlines Deployment while adhering to Kubernetes best practices for security.</p>
 <h3 id="deploying-keycloak">Deploying Keycloak<a class="headerlink" href="#deploying-keycloak" title="Permanent link">&para;</a></h3>
 <p>Below is a sample <strong>values.yaml</strong> file that can be used to deploy Keycloak, please read the notes and change what is necessary.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)</span>
@@ -4191,7 +4233,7 @@ At the very least, you must:</p>
 <span class="nt">proxy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edge</span>
 </code></pre></div>
 <ol>
-<li>The example provided serves as a starting point for configuring resource requests and limits for your Keycloak deployment. Be sure to tailor these values to your specific requirements, and monitor your deployment to optimize resource allocation for your unique use case.</li>
+<li>The example provided serves as a starting point for configuring resource requests and limits for your Keycloak Deployment. Be sure to tailor these values to your specific requirements, and monitor your Deployment to optimize resource allocation for your unique use case.</li>
 <li>Insert the variables that you got from initial preparation.</li>
 <li>Configure the Ingress hostname and which issuer you will be using.</li>
 <li>Enabling production mode and TLS for HTTPS. Disclaimer: Enabling production mode does not mean that the configuration here is ready for production. Please see further reading on Production configuration.</li>

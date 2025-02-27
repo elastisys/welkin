@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4406,7 +4448,7 @@ if(!document.__defineGetter__) {
 <h2 id="secret-management">Secret Management<a class="headerlink" href="#secret-management" title="Permanent link">&para;</a></h2>
 <p>Secret values should never be stored in plain-text in code repositories. The following sections will describe three supported approaches on how Application Developers can do secret management with Elastisys Managed Argo CD.</p>
 <h3 id="with-helm-secrets">With Helm Secrets<a class="headerlink" href="#with-helm-secrets" title="Permanent link">&para;</a></h3>
-<p>Argo CD can be configured to decrypt files encrypted with <code>sops</code> using <a href="https://github.com/jkroepke/helm-secrets#helm-secrets">Helm Secrets</a>. To be able to use Helm-secrets with Argo CD, you will need to contact your Platform Administrator requesting that you want to use this feature and for which OIDC group, users or ServiceAccounts (otherwise the Application Developer group used for accessing the cluster is assumed). Once your Platform Administrator has approved your request, you should be able to create and manage a Kubernetes Secret resource in the <code>argocd-system</code> namespace as instructed below.</p>
+<p>Argo CD can be configured to decrypt files encrypted with <code>sops</code> using <a href="https://github.com/jkroepke/helm-secrets#helm-secrets">Helm Secrets</a>. To be able to use Helm-secrets with Argo CD, you will need to contact your Platform Administrator requesting that you want to use this feature and for which OIDC group, users or ServiceAccounts (otherwise the Application Developer group used for accessing the Cluster is assumed). Once your Platform Administrator has approved your request, you should be able to create and manage a Kubernetes Secret resource in the <code>argocd-system</code> namespace as instructed below.</p>
 <p>The following steps will show how to get started with encrypting files using <code>sops</code> and <code>gpg</code>, storing the encrypted files in a Helm chart, and lastly deploying the Helm chart with Argo CD.</p>
 <ol>
 <li>
@@ -4480,7 +4522,7 @@ kubectl<span class="w"> </span>-n<span class="w"> </span>argocd-system<span clas
 </li>
 </ol>
 <h3 id="with-sealedsecrets">With SealedSecrets<a class="headerlink" href="#with-sealedsecrets" title="Permanent link">&para;</a></h3>
-<p>The following steps assumes SealedSecrets is installed in the cluster. For installing SealedSecrets in a Welkin cluster, refer to <a href="../../self-managed-services/sealedsecrets/">the self-managed guide</a>. You will need to contact your Platform Administrator requesting that you want to use SealedSecrets together with Argo CD.</p>
+<p>The following steps assumes SealedSecrets is installed in the Cluster. For installing SealedSecrets in a Welkin Cluster, refer to <a href="../../self-managed-services/sealedsecrets/">the self-managed guide</a>. You will need to contact your Platform Administrator requesting that you want to use SealedSecrets together with Argo CD.</p>
 <ol>
 <li>
 <p>Create a SealedSecret, the following steps will create a SealedSecret for the namespace in the current Kubernetes context:</p>
@@ -4697,8 +4739,8 @@ kubectl<span class="w"> </span>edit<span class="w"> </span>-n<span class="w"> </
 <h2 id="restrictions">Restrictions<a class="headerlink" href="#restrictions" title="Permanent link">&para;</a></h2>
 <p>Example error:</p>
 <p><code>Failed to load live state: Cluster level Namespace "application" can not be managed when in namespaced mode</code></p>
-<p>Our Argo CD installation is using the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/installation/#non-high-availability">namespaced method</a>. This means that Argo CD has access to Roles with permissions to CRUD on objects in the inclusion list. It has a <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters">list of namespaces</a> that it can look at and reconcile things every few seconds. Any feature that requires Argo CD cluster-wide installation will not be supported with our offering.</p>
-<p>The reason for this choice is that, according to the <a href="../../../mission-and-vision/">Welkin mission and vision</a>, the platform should make it hard for Application Developers to do the wrong thing by employing guardrails and secure defaults. With this configuration, we prevent Argo CD from having access to objects in the inclusions list across the entire cluster. This prevents objects from being deployed into namespaces owned by the Platform Administrator, which could compromise platform security and stability. For example, this choice adds another layer of protection, preventing the Application Developer from interfering with backups. Read more about it <a href="../../demarcation/#general-principle">here</a>.</p>
+<p>Our Argo CD installation is using the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/installation/#non-high-availability">namespaced method</a>. This means that Argo CD has access to Roles with permissions to CRUD on objects in the inclusion list. It has a <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters">list of namespaces</a> that it can look at and reconcile things every few seconds. Any feature that requires Argo CD Cluster-wide installation will not be supported with our offering.</p>
+<p>The reason for this choice is that, according to the <a href="../../../mission-and-vision/">Welkin mission and vision</a>, the platform should make it hard for Application Developers to do the wrong thing by employing guardrails and secure defaults. With this configuration, we prevent Argo CD from having access to objects in the inclusions list across the entire Cluster. This prevents objects from being deployed into namespaces owned by the Platform Administrator, which could compromise platform security and stability. For example, this choice adds another layer of protection, preventing the Application Developer from interfering with backups. Read more about it <a href="../../demarcation/#general-principle">here</a>.</p>
 <p>Argo CD is not allowed to manage its own namespace. This means that features such as <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">Apps of Apps</a> does not work by default. Read more about the decision <a href="../../../adr/0044-argocd-managing-its-own-namespace/">here</a>.</p>
 <div class="admonition elastisys">
 <p class="admonition-title">Apps of Apps (preview)</p>

@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4022,7 +4064,7 @@ if(!document.__defineGetter__) {
 <p>How should we handle CRDs?</p>
 <p>We previously decided on letting upstream projects handle CRDs in any way they please as to decrease our own maintenance efforts. This decision has since proved to be flawed, due to the way some upstream project has decided to handle CRDs.</p>
 <p>Helm 3 has <a href="https://helm.sh/docs/topics/charts/#custom-resource-definitions-crds">support for installing CRDs</a>, but not upgrading them, but not all upstream projects use this way of installing CRDs. Instead they include the CRDs as regular resources in the chart, meaning that there is no way of deleting the installed chart release without also removing CRDs and any associated Custom Resource objects.</p>
-<p>One example of an issue that this can cause is that both our Apps and Cluster API uses cert-manager to provision certificates. If one were to uninstall cert-manager using our Apps, they would lose required certificate resources that Cluster API needs for its cluster management. A reinstall of cert-manager with Apps would not reinstall these specific Cluster API certificates. This is an issue since we do not want Apps to mess with the underlying infrastructure layer, be it Kubespray or Cluster API.</p>
+<p>One example of an issue that this can cause is that both our Apps and Cluster API uses cert-manager to provision certificates. If one were to uninstall cert-manager using our Apps, they would lose required certificate resources that Cluster API needs for its Cluster management. A reinstall of cert-manager with Apps would not reinstall these specific Cluster API certificates. This is an issue since we do not want Apps to mess with the underlying infrastructure layer, be it Kubespray or Cluster API.</p>
 <h2 id="decision-drivers">Decision Drivers <!-- optional --><a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We need to manage CRDs in a way that is consistent and that allows us to perform necessary actions in Apps without unintended effects on the environment.</li>
@@ -4030,7 +4072,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Option 1: Make cert-manager opt-in in Apps so that we can disable it for CAPI clusters, and let CAPI handle it.</li>
+<li>Option 1: Make cert-manager opt-in in Apps so that we can disable it for CAPI Clusters, and let CAPI handle it.</li>
 <li>Option 2: Improve Apps handling of CRDs, avoiding removing CRDs when uninstalling / cleaning apps, using the way Helm 3 recommends.</li>
 <li>Option 3: Make use of CAPI Operator to handle missing certs.</li>
 </ul>

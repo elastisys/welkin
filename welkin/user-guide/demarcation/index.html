@@ -1344,6 +1344,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4163,7 +4205,7 @@ This is due to the fact that Kubernetes prefers to keep its "wow, it just works"
 <p>In case of Welkin this implies a clear separation of roles and responsibilities between Welkin users and administrators.
 The mission of administrators is to make you, the Welkin user, succeed. Besides allowing you to develop features as fast as possible, the administrator also needs to ensure that you build on top of a platform that lives up to regulatory requirements, specifically data privacy and data security regulations.</p>
 <h2 id="general-principle">General Principle<a class="headerlink" href="#general-principle" title="Permanent link">&para;</a></h2>
-<p>Welkin does not allow users to make any changes which may compromise the security of the platform. This includes compromising or working around access control, logging, monitoring, backups, alerting, etc. For example, accidental deletion of the CustomResourceDefinitions of Prometheus would prevent administrators from getting alerts and fixing cluster issues before your application is impacted. Similarly, accidentally deleting Fluentd Pods would make it impossible to capture the Kubernetes audit log and investigate data breaches.</p>
+<p>Welkin does not allow users to make any changes which may compromise the security of the platform. This includes compromising or working around access control, logging, monitoring, backups, alerting, etc. For example, accidental deletion of the CustomResourceDefinitions of Prometheus would prevent administrators from getting alerts and fixing Cluster issues before your application is impacted. Similarly, accidentally deleting Fluentd Pods would make it impossible to capture the Kubernetes audit log and investigate data breaches.</p>
 <h2 id="specifics">Specifics<a class="headerlink" href="#specifics" title="Permanent link">&para;</a></h2>
 <p>To stick to the general principles above, Welkin comes with some technical guardrails. These are implemented through <a href="https://kubernetes.io/docs/concepts/security/pod-security-admission/">Pod Security Admission</a> enforcing that user namespaces adhere to the <code>restricted</code> <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted">Pod Security Standard</a>, in combination with OPA Policies and RBAC. This list may be updated in the future to take into account the fast evolving risk and technological landscape.</p>
 <p>More technically, Welkin does not allow users to:</p>

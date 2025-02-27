@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4141,7 +4183,7 @@ However this might be too strict in some cases, so an alternative is still to al
 <p><img alt="Source" src="../../img/explicit_mapping_7.png" /></p>
 <p>While this new field is not usable for queries as said before, but if we saw the need, we can create a new index with the <em>producer</em> field in the explicit mapping, then re-index the documents in <strong>movies</strong> index to where the new index is.</p>
 <h2 id="mapping-constraints">Mapping constraints<a class="headerlink" href="#mapping-constraints" title="Permanent link">&para;</a></h2>
-<p>There is a limit to the number of fields a mapping can have but it's a limit that can be changed. The default value is a 1000 fields per index. This limit is there to prevent cluster performance issues, as resource utilization increases a lot when you have a large number of fields in an index.</p>
+<p>There is a limit to the number of fields a mapping can have but it's a limit that can be changed. The default value is a 1000 fields per index. This limit is there to prevent Cluster performance issues, as resource utilization increases a lot when you have a large number of fields in an index.</p>
 <p><img alt="Fields Limit" src="../../img/explicit_mapping_8.png" /></p>
 <p>Also, note that new fields can be added to an explicit mapping, but field types cannot be changed. The general pattern here is to create a new index with a new mapping and bring documents over in what's called a re-index operation.</p>
 

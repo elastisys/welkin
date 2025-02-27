@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4196,7 +4238,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="welkin-intrusion-detection-dashboard">Welkin Intrusion Detection Dashboard<a class="headerlink" href="#welkin-intrusion-detection-dashboard" title="Permanent link">&para;</a></h2>
 <p><img alt="Intrusion Detection Dashboard" src="../img/intrusion-detection.png" /></p>
-<p>The Welkin Intrusion Detection Dashboard allows to quickly audit any suspicious activity performed by code inside the cluster, such as writing to suspicious files (e.g., in <code>/etc</code>) or attempting suspicious external network connections (e.g., SSH to a command-and-control server). Such activities may indicate anything from a misconfiguration issue to an ongoing attack. Therefore, this dashboard should be regularly reviewed, perhaps even daily.</p>
+<p>The Welkin Intrusion Detection Dashboard allows to quickly audit any suspicious activity performed by code inside the Cluster, such as writing to suspicious files (e.g., in <code>/etc</code>) or attempting suspicious external network connections (e.g., SSH to a command-and-control server). Such activities may indicate anything from a misconfiguration issue to an ongoing attack. Therefore, this dashboard should be regularly reviewed, perhaps even daily.</p>
 <h2 id="handling-non-compliance">Handling Non-Compliance<a class="headerlink" href="#handling-non-compliance" title="Permanent link">&para;</a></h2>
 <p>Make sure you have a proper incident management policy in place. If an attack is ongoing, it might be better to take the system offline to protect data from getting in the wrong hands. Platform Administrators need to be trained on what events justify such an extreme action, otherwise, escalating the issue along the reporting chain may add delays that favor the attacker.</p>
 <p>In less severe cases, simply contact the developers to investigate their code and fix any potential misconfiguration.</p>

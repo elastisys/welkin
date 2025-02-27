@@ -935,7 +935,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#patching-the-os-on-the-nodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Patching the OS on the nodes
+      Patching the OS on the Nodes
     </span>
   </a>
   
@@ -1343,6 +1343,48 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
   </span>
   
 
@@ -4049,7 +4091,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#patching-the-os-on-the-nodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Patching the OS on the nodes
+      Patching the OS on the Nodes
     </span>
   </a>
   
@@ -4102,23 +4144,23 @@ if(!document.__defineGetter__) {
 <h1 id="what-to-expect-from-maintenance">What to expect from maintenance<a class="headerlink" href="#what-to-expect-from-maintenance" title="Permanent link">&para;</a></h1>
 <h2 id="different-kinds-of-maintenance">Different kinds of maintenance<a class="headerlink" href="#different-kinds-of-maintenance" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Patching the underlying OS on the nodes</li>
+<li>Patching the underlying OS on the Nodes</li>
 <li>Upgrading the Welkin application stack</li>
 <li>Upgrading Kubernetes</li>
 </ul>
 <h2 id="what-impact-could-these-kinds-of-maintenance-have-on-your-application">What impact could these kinds of maintenance have on your application?<a class="headerlink" href="#what-impact-could-these-kinds-of-maintenance-have-on-your-application" title="Permanent link">&para;</a></h2>
 <p>Let's go through them one by one.</p>
-<h3 id="patching-the-os-on-the-nodes">Patching the OS on the nodes<a class="headerlink" href="#patching-the-os-on-the-nodes" title="Permanent link">&para;</a></h3>
-<p>Some service disruption is expected here, the nodes need to reboot in order to install the OS upgrades/security patches. This should be done automatically by Kured in almost all cases going forward, luckily Kured can be scheduled to perform these upgrades during night-time or whenever application traffic is expected to be low. Thanks to Kured these upgrades are not usually a problem.</p>
+<h3 id="patching-the-os-on-the-nodes">Patching the OS on the Nodes<a class="headerlink" href="#patching-the-os-on-the-nodes" title="Permanent link">&para;</a></h3>
+<p>Some service disruption is expected here, the Nodes need to reboot in order to install the OS upgrades/security patches. This should be done automatically by Kured in almost all cases going forward, luckily Kured can be scheduled to perform these upgrades during night-time or whenever application traffic is expected to be low. Thanks to Kured these upgrades are not usually a problem.</p>
 <h3 id="upgrading-the-welkin-application-stack">Upgrading the Welkin application stack<a class="headerlink" href="#upgrading-the-welkin-application-stack" title="Permanent link">&para;</a></h3>
 <p>There is barely any downtime expected from upgrading the base Welkin application stack. This is because most of the components being upgraded are not intertwined with your application, the only exception being NGINX Ingress Controller, which is not commonly upgraded.</p>
 <p>If you have any other managed services from us such as PostgreSQL, Redis, RabbitMQ or TimescaleDB, these services might be upgraded during the application maintenance windows. Upgrading these services can cause some short service disruptions and make them temporarily unreachable for your application.</p>
 <h3 id="upgrading-kubernetes">Upgrading Kubernetes<a class="headerlink" href="#upgrading-kubernetes" title="Permanent link">&para;</a></h3>
-<p>The most impactful type of maintenance is the Kubernetes upgrade, which requires nodes to be <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_drain/">drained</a> while they are being upgraded. We do these upgrades in scheduled maintenance windows <strong>during office hours</strong>. The way we handle the upgrades is that we drain and upgrade all nodes, one at the time.</p>
-<p>If parts of your application is running on just one node, then service disruptions are to be expected, and parts of the application may become unreachable for short periods during the maintenance window.</p>
-<p>The worst case would be if the nodes were almost out of available resources, then the pods may not be schedulable on another node while getting evicted. This would mean that the pods running on that node would need to wait for its node to be ready again before it can be scheduled, which could result in minutes of downtime.</p>
-<p>Note that this is not just a problem for Welkin, the same process would need to be followed when upgrading a "vanilla" Kubernetes cluster.</p>
-<p>To minimize the impact on the application you should use <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L5">two or more replicas</a> for your application and also set up <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L84-L96">topologySpreadConstraints</a> to make sure that the replicas do not get scheduled on the same node.</p>
+<p>The most impactful type of maintenance is the Kubernetes upgrade, which requires Nodes to be <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_drain/">drained</a> while they are being upgraded. We do these upgrades in scheduled maintenance windows <strong>during office hours</strong>. The way we handle the upgrades is that we drain and upgrade all Nodes, one at the time.</p>
+<p>If parts of your application is running on just one Node, then service disruptions are to be expected, and parts of the application may become unreachable for short periods during the maintenance window.</p>
+<p>The worst case would be if the Nodes were almost out of available resources, then the Pods may not be schedulable on another Node while getting evicted. This would mean that the Pods running on that Node would need to wait for its Node to be ready again before it can be scheduled, which could result in minutes of downtime.</p>
+<p>Note that this is not just a problem for Welkin, the same process would need to be followed when upgrading a "vanilla" Kubernetes Cluster.</p>
+<p>To minimize the impact on the application you should use <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L5">two or more replicas</a> for your application and also set up <a href="https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L84-L96">topologySpreadConstraints</a> to make sure that the replicas do not get scheduled on the same Node.</p>
 
 
 

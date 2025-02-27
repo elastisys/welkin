@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4029,9 +4071,9 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
 <p>Some of the Application Developers request multiple AMS packages of the same size or different sizes, using 1 package per request or multiple packages in the same request (batch-order).
-How should we add the second or n-th package? Should we scale the nodes vertically or horizontally?
-If we scale horizontally, then in some cases we need to add AMS packages of different sizes and this brings up the problem where we need to stick the package to a specific set of nodes otherwise for example, after a maintenance that reboots the nodes, a postgres-4 package might be scheduled on a node that was intended for a postgres-8 package and the postgres-8 Pod will not be able to be scheduled anymore because it does not fit on the postgres-4 node.
-How can we overcome this issue? Should we add a <code>elastisys.io/ams-cluster-name</code> label/taint for the AMS with dedicated nodes?</p>
+How should we add the second or n-th package? Should we scale the Nodes vertically or horizontally?
+If we scale horizontally, then in some cases we need to add AMS packages of different sizes and this brings up the problem where we need to stick the package to a specific set of Nodes otherwise for example, after a maintenance that reboots the Nodes, a postgres-4 package might be scheduled on a Node that was intended for a postgres-8 package and the postgres-8 Pod will not be able to be scheduled anymore because it does not fit on the postgres-4 Node.
+How can we overcome this issue? Should we add a <code>elastisys.io/ams-cluster-name</code> label/taint for the AMS with dedicated Nodes?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We want to deliver a stable and secure platform.</li>
@@ -4042,22 +4084,22 @@ How can we overcome this issue? Should we add a <code>elastisys.io/ams-cluster-n
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Always scale the nodes vertically and fit multiple PostgreSQL packages on the same pair of nodes.</p>
+<p>Always scale the Nodes vertically and fit multiple PostgreSQL packages on the same pair of Nodes.</p>
 <ul>
-<li>but how many packages should we place on the same pair of nodes? max 3 packages? max 5 packages?</li>
-<li>up to what node sizes?</li>
+<li>but how many packages should we place on the same pair of Nodes? max 3 packages? max 5 packages?</li>
+<li>up to what Node sizes?</li>
 <li>what about resource waste? we will not find VM flavors that match exactly our sum of packages.</li>
 </ul>
-<p>On the other hand we reduce the resources allocated to our services(each node is eating ~ 1 CPU and 2GB ram, by placing 3 packages on the same node we reduce by 2CPU and 4GB RAM the resource waste)</p>
+<p>On the other hand we reduce the resources allocated to our services(each Node is eating ~ 1 CPU and 2GB ram, by placing 3 packages on the same Node we reduce by 2CPU and 4GB RAM the resource waste)</p>
 </li>
 <li>
-<p>Always scale horizontally and place each package on its own set of dedicated nodes.</p>
+<p>Always scale horizontally and place each package on its own set of dedicated Nodes.</p>
 </li>
 <li>
-<p>Scale the AMS dedicated nodes vertically so that it fits all packages on the same set of nodes.</p>
+<p>Scale the AMS dedicated Nodes vertically so that it fits all packages on the same set of Nodes.</p>
 <ul>
-<li>but how many packages should we place on the same pair of nodes? max 3 packages? max 5 packages?</li>
-<li>up to what node sizes?</li>
+<li>but how many packages should we place on the same pair of Nodes? max 3 packages? max 5 packages?</li>
+<li>up to what Node sizes?</li>
 <li>what about resource waste? we will not find VM flavors that match exactly our sum of packages.</li>
 </ul>
 </li>
@@ -4066,10 +4108,10 @@ How can we overcome this issue? Should we add a <code>elastisys.io/ams-cluster-n
 <p>Chosen options: 2</p>
 <ol>
 <li>
-<p>Always scale horizontally and place each package on its own set of dedicated nodes.</p>
+<p>Always scale horizontally and place each package on its own set of dedicated Nodes.</p>
 <ul>
-<li>"Add additional label <code>elastisys.io/ams-cluster-name</code> to a set of nodes dedicated to a specific package"</li>
-<li>"Do not taint the nodes."</li>
+<li>"Add additional label <code>elastisys.io/ams-cluster-name</code> to a set of Nodes dedicated to a specific package"</li>
+<li>"Do not taint the Nodes."</li>
 </ul>
 <p>Respect <a href="../0022-use-dedicated-nodes-for-additional-services/">ADR-0022</a> and add the <code>elastisys.io/node-type</code> taint and label.</p>
 </li>
@@ -4078,7 +4120,7 @@ How can we overcome this issue? Should we add a <code>elastisys.io/ams-cluster-n
 <ul>
 <li>The platform stability and scalability is improved.</li>
 <li>We provide extra isolation of the AMS.</li>
-<li>Being able to choose from options of scaling the nodes both vertically and horizontally shows that we are flexible and we can satisfy more of the Application Developer needs.</li>
+<li>Being able to choose from options of scaling the Nodes both vertically and horizontally shows that we are flexible and we can satisfy more of the Application Developer needs.</li>
 <li>We can add more labels that will better describe and schedule our AMS services, like <code>local-disk</code> and others.</li>
 <li>With options 1 and 3 more resources are available to the Application Developer.</li>
 </ul>
@@ -4086,7 +4128,7 @@ How can we overcome this issue? Should we add a <code>elastisys.io/ams-cluster-n
 <ul>
 <li>For option 2 we need to add the new label to the AMS repository and update documentation.</li>
 <li>The infrastructure footprint is increased for option 2.</li>
-<li>With options 1 and 3 the stability of the AMS package is reduced, because if 1 node is unresponsive then it will affect not 1 AMS package, but multiple AMS packages.</li>
+<li>With options 1 and 3 the stability of the AMS package is reduced, because if 1 Node is unresponsive then it will affect not 1 AMS package, but multiple AMS packages.</li>
 </ul>
 <h2 id="recommendations-to-platform-administrators">Recommendations to Platform Administrators<a class="headerlink" href="#recommendations-to-platform-administrators" title="Permanent link">&para;</a></h2>
 <ul>

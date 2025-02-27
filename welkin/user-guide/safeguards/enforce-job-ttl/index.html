@@ -1320,6 +1320,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4026,7 +4068,7 @@ if(!document.__defineGetter__) {
 </ul>
 </div>
 <p>In Kubernetes, Jobs that are not managed by a higher-level resource such as a Cronjob, will most likely not get cleaned up automatically as Jobs do not have a default time-to-live, TTL, configured.
-In worst case the number of finished jobs could accumulate to such a volume that it might impact the stability of the Kubernetes cluster.</p>
+In worst case the number of finished jobs could accumulate to such a volume that it might impact the stability of the Kubernetes Cluster.</p>
 <p>However, by default in Welkin, there is a policy that demands Jobs to have a TTL. Jobs that do not explicitly set a TTL (<code>spec.ttlSecondsAfterFinished</code>) will automatically get a TTL of 7 days.</p>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>

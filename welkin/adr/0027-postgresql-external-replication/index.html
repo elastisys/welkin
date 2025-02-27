@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4079,7 +4121,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2022-10-27</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>We have received a few requests from Application Developers to enable external replication on PostgreSQL so that they are able to create copies of the PostgreSQL cluster themselves to use for testing, development, tuning and disaster recovery purposes.
+<p>We have received a few requests from Application Developers to enable external replication on PostgreSQL so that they are able to create copies of the PostgreSQL Cluster themselves to use for testing, development, tuning and disaster recovery purposes.
 Should we allow and enable external replication for PostgreSQL, or should we offer an alternative that can mimic that?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4099,14 +4141,14 @@ Should we allow and enable external replication for PostgreSQL, or should we off
 <p>Chosen options: Clone the S3 bucket containing the files using rclone to another bucket in a new project preferably owned by the Application Developer and from there the Application Developer is free to use it.
 We rclone the backups (once per night) in this new S3 bucket.
 We provide no SLA on the rclone job.</p>
-<p>The option <code>Allow external replication on PostgreSQL</code> is putting the platform stability and integrity at risk, because external replication is done via the replication slots and if the destination of the replication is unreachable or stopped, then the WAL files are kept on disc until the files are sent to destination and confirmed to be received. This means that the WAL files will pile up until the cluster runs out of space and crashes. This also leads to data loss and data corruption.</p>
+<p>The option <code>Allow external replication on PostgreSQL</code> is putting the platform stability and integrity at risk, because external replication is done via the replication slots and if the destination of the replication is unreachable or stopped, then the WAL files are kept on disc until the files are sent to destination and confirmed to be received. This means that the WAL files will pile up until the Cluster runs out of space and crashes. This also leads to data loss and data corruption.</p>
 <p>On Infrastructure Providers that do not have native S3 support with ACL capabilities we need endpoint/credentials from the user to a S3 bucket of their choosing that we can rclone to. We rclone the backups (once per night) in this new S3 bucket and provide credentials to the Application Developer. We provide no SLA on the rclone job.
 The diagram of the solution looks like this:
 <img alt="Diagram" src="../../img/adr-0027.drawio.svg" /></p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>We make the Platform Administrators life easier by offering them a possibility to clone/replicate their PostgreSQL cluster from the S3 bucket containing the base backup and WAL files.</li>
-<li>Platform Administrators can now use 3rd party tools that can pull the base backup and WAL files and clone the PostgreSQL cluster in another location.</li>
+<li>We make the Platform Administrators life easier by offering them a possibility to clone/replicate their PostgreSQL Cluster from the S3 bucket containing the base backup and WAL files.</li>
+<li>Platform Administrators can now use 3rd party tools that can pull the base backup and WAL files and clone the PostgreSQL Cluster in another location.</li>
 <li>Increase Application Developer autonomy</li>
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
@@ -4123,7 +4165,7 @@ Offer this only on request.</p>
 <h3 id="option-1-allow-external-replication-on-postgresql">[option 1] - Allow external replication on PostgreSQL<a class="headerlink" href="#option-1-allow-external-replication-on-postgresql" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Good, because we satisfy the Application Developer need</li>
-<li>Bad, because it comes with a big risk of breaking the PostgreSQL cluster and cause downtime.</li>
+<li>Bad, because it comes with a big risk of breaking the PostgreSQL Cluster and cause downtime.</li>
 </ul>
 <h3 id="option-2-do-not-allow-external-replication-on-postgresql">[option 2] - Do not allow external replication on PostgreSQL<a class="headerlink" href="#option-2-do-not-allow-external-replication-on-postgresql" title="Permanent link">&para;</a></h3>
 <ul>

@@ -23,7 +23,7 @@
     
     
       
-        <title>Run csi-cinder-controllerplugin on the Elastisys nodes - Elastisys Welkin®</title>
+        <title>Run csi-cinder-controllerplugin on the Elastisys Nodes - Elastisys Welkin®</title>
       
     
     
@@ -68,7 +68,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Run csi-cinder-controllerplugin on the Elastisys nodes - Elastisys Welkin®" >
+        <meta  property="og:title"  content="Run csi-cinder-controllerplugin on the Elastisys Nodes - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -85,7 +85,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Run csi-cinder-controllerplugin on the Elastisys nodes - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="Run csi-cinder-controllerplugin on the Elastisys Nodes - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -186,7 +186,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Run csi-cinder-controllerplugin on the Elastisys nodes
+              Run csi-cinder-controllerplugin on the Elastisys Nodes
             
           </span>
         </div>
@@ -1247,6 +1247,48 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
   </span>
   
 
@@ -4030,14 +4072,14 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="run-csi-cinder-controllerplugin-on-the-elastisys-nodes">Run csi-cinder-controllerplugin on the Elastisys nodes<a class="headerlink" href="#run-csi-cinder-controllerplugin-on-the-elastisys-nodes" title="Permanent link">&para;</a></h1>
+<h1 id="run-csi-cinder-controllerplugin-on-the-elastisys-nodes">Run csi-cinder-controllerplugin on the Elastisys Nodes<a class="headerlink" href="#run-csi-cinder-controllerplugin-on-the-elastisys-nodes" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Status: accepted</li>
 <li>Deciders: arch meeting</li>
 <li>Date: 2023-01-26</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>We use the Cinder CSI Driver to manage the lifecycle of OpenStack Cinder Volumes. Currently the csi-cinder-controllerplugin is running on arbitrary nodes.
+<p>We use the Cinder CSI Driver to manage the lifecycle of OpenStack Cinder Volumes. Currently the csi-cinder-controllerplugin is running on arbitrary Nodes.
 Where should we run the csi-cinder-controllerplugin?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4050,7 +4092,7 @@ Where should we run the csi-cinder-controllerplugin?</p>
 <li>Run the csi-cinder-controllerplugin on Elastisys Nodes.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>Chosen option: "Run the csi-cinder-controllerplugin on Elastisys Nodes", because it improves the stability and security of the platform and makes the application nodes "light"</p>
+<p>Chosen option: "Run the csi-cinder-controllerplugin on Elastisys Nodes", because it improves the stability and security of the platform and makes the application Nodes "light"</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The application Nodes infrastructure footprint is lower.</li>

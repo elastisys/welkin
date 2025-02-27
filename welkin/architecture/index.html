@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4174,7 +4216,7 @@ if(!document.__defineGetter__) {
 <p>Compliance imposes restrictions on all levels of the tech stack. Your compliance focus should mostly lie on your application. Welkin ensures that the platform hosting your application is compliant. Finally, you need the whole software stack on a hardware that is managed in a compliant way, either via an ISO 27001-certified Infrastructure Provider or using on-prem hardware.</p>
 <h2 id="level-2-clusters">Level 2: Clusters<a class="headerlink" href="#level-2-clusters" title="Permanent link">&para;</a></h2>
 <p>Most regulations require logging to a tamper-proof environment. This is usually interpreted as an attacker gaining access to your application should not be able to delete logs showing their attack and the harm caused by their attack.</p>
-<p>To achieve this, Welkin is implemented as two Kubernetes clusters</p>
+<p>To achieve this, Welkin is implemented as two Kubernetes Clusters</p>
 <ul>
 <li>A <strong>Workload Cluster</strong>, which hosts your application, and</li>
 <li>A <strong>Management Cluster</strong>, which hosts services for monitoring, logging and vulnerability management.</li>

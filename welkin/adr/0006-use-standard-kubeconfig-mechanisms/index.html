@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4004,7 +4046,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2021-02-02</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>To increase adoption of Welkin, we were asked to observe the <a href="https://en.wikipedia.org/wiki/Principle_of_least_astonishment">Principle of Least Astonishment</a>. Currently, Welkin's handing of kubeconfig is astonishing. Most tools in the ecosystem use the standard <code>KUBECONFIG</code> environment variable and kubeconfig context implemented in the client-go library. These tools leave it up to the user to set <code>KUBECONFIG</code> or use the default <code>~/.kube/config</code>. Similarly, there is a default kubeconfig context which can be overwritten via command-line. Tools that get cluster credentials generate a context related to the name of the cluster.</p>
+<p>To increase adoption of Welkin, we were asked to observe the <a href="https://en.wikipedia.org/wiki/Principle_of_least_astonishment">Principle of Least Astonishment</a>. Currently, Welkin's handing of kubeconfig is astonishing. Most tools in the ecosystem use the standard <code>KUBECONFIG</code> environment variable and kubeconfig context implemented in the client-go library. These tools leave it up to the user to set <code>KUBECONFIG</code> or use the default <code>~/.kube/config</code>. Similarly, there is a default kubeconfig context which can be overwritten via command-line. Tools that get Cluster credentials generate a context related to the name of the Cluster.</p>
 <p>Tools that behave as such include:</p>
 <ul>
 <li><code>gcloud container clusters get-credentials</code></li>
@@ -4029,7 +4071,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p>We chose using standard kubeconfig mechanism, because it improves integration both with tools "below" Welkin and "on top" of Welkin.</p>
-<p>Tools that produce Kubernetes contexts are expected to use an approach similar to <code>kubectl config set-cluster</code>, <code>set-credentials</code> and <code>set-context</code>. The name of the cluster, user and context should be derived from the name of the cluster.</p>
+<p>Tools that produce Kubernetes contexts are expected to use an approach similar to <code>kubectl config set-cluster</code>, <code>set-credentials</code> and <code>set-context</code>. The name of the Cluster, user and context should be derived from the name of the Cluster.</p>
 <p>Tools that consume Kubernetes contexts are expected to use an approach similar to <code>kubectl</code>, <code>helm</code> or <code>helmfile</code> (see links below).</p>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>

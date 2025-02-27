@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4033,7 +4075,7 @@ if(!document.__defineGetter__) {
 <li>Create a process of how we should move to use personal SSH keys</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>Currently, we create per-cluster SSH key pairs, which are shared among administrators. This is problematic from an information security perspective for a few reasons:</p>
+<p>Currently, we create per-Cluster SSH key pairs, which are shared among administrators. This is problematic from an information security perspective for a few reasons:</p>
 <ol>
 <li>It reduces the auditability of various actions, e.g., who SSH-ed into the Kubernetes control plane Nodes.</li>
 <li>It makes credential management challenging, e.g., when onboarding/offboarding administrators.</li>
@@ -4052,9 +4094,9 @@ if(!document.__defineGetter__) {
 <li>Manage SSH keys via an Ansible role.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>We will manage SSH keys via an Ansible role, since it allows rotating/adding/deleting keys without rebooting nodes. Also, it caters to more environments, e.g., BYO-VMs and BYO-metal. The <a href="https://github.com/elastisys/compliantkubernetes-kubespray">compliantkubernetes-kubespray</a> project will make it easy to configure SSH keys.</p>
+<p>We will manage SSH keys via an Ansible role, since it allows rotating/adding/deleting keys without rebooting Nodes. Also, it caters to more environments, e.g., BYO-VMs and BYO-metal. The <a href="https://github.com/elastisys/compliantkubernetes-kubespray">compliantkubernetes-kubespray</a> project will make it easy to configure SSH keys.</p>
 <h3 id="bootstrapping">Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permanent link">&para;</a></h3>
-<p>The above decision raises a chicken-and-egg problem: Ansible needs SSH access to the nodes, but the SSH access is managed via Ansible. This issue is solved as follows.</p>
+<p>The above decision raises a chicken-and-egg problem: Ansible needs SSH access to the Nodes, but the SSH access is managed via Ansible. This issue is solved as follows.</p>
 <p>For cloud deployments, all Terraform providers support injecting at least one public SSH key via cloud-init:</p>
 <ul>
 <li><a href="https://github.com/kubernetes-sigs/kubespray/blob/release-2.15/contrib/terraform/aws/variables.tf#L9">AWS</a></li>
@@ -4062,7 +4104,7 @@ if(!document.__defineGetter__) {
 <li><a href="https://github.com/kubernetes-sigs/kubespray/blob/release-2.15/contrib/terraform/gcp/variables.tf#L57">GCP</a></li>
 <li><a href="https://github.com/kubernetes-sigs/kubespray/blob/release-2.15/contrib/terraform/openstack/variables.tf#L81">OpenStack</a></li>
 </ul>
-<p>The administrator who creates the cluster bootstraps SSH access by providing their own public SSH key via cloud-init. Then, the Ansible role adds the public SSH keys of the other administrators.</p>
+<p>The administrator who creates the Cluster bootstraps SSH access by providing their own public SSH key via cloud-init. Then, the Ansible role adds the public SSH keys of the other administrators.</p>
 <p>BYO-VM and BYO-metal deployments are handled similarly, except that the initial public SSH key is delivered by email/Slack to the VM/metal administrator.</p>
 <h2 id="recommendations-to-platform-administrators">Recommendations to Platform Administrators<a class="headerlink" href="#recommendations-to-platform-administrators" title="Permanent link">&para;</a></h2>
 <ul>

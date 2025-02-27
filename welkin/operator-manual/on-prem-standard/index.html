@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -2039,7 +2081,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#run-kubespray-to-deploy-the-kubernetes-clusters" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Kubespray to deploy the Kubernetes clusters
+      Run Kubespray to deploy the Kubernetes Clusters
     </span>
   </a>
   
@@ -4227,7 +4269,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#run-kubespray-to-deploy-the-kubernetes-clusters" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Kubespray to deploy the Kubernetes clusters
+      Run Kubespray to deploy the Kubernetes Clusters
     </span>
   </a>
   
@@ -4518,18 +4560,18 @@ git<span class="w"> </span>switch<span class="w"> </span>-d<span class="w"> </sp
 <li><code>kube_oidc_client_id</code> should be set to <code>kubelogin</code></li>
 <li><code>kube_oidc_client_secret</code> should be set to a Dex client secret generated with the apps configuration, it can be found in <code>${CK8S_CONFIG_PATH}/secrets.yaml</code> under the key <code>dex.kubeloginClientSecret</code> after running <code>ck8s init</code> (see <a href="#deploying-welkin-apps">instructions on deploying apps</a>).</li>
 </ul>
-<p>To generate kubeconfigs that use OIDC for authentication, the following variables should be set in the configuration files for both clusters (both can't be true):</p>
+<p>To generate kubeconfigs that use OIDC for authentication, the following variables should be set in the configuration files for both Clusters (both can't be true):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">create_oidc_kubeconfig</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="nt">kubeconfig_localhost</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <p>For more information on managing OIDC kubeconfigs and RBAC, or on running without OIDC, <a href="https://github.com/elastisys/compliantkubernetes-kubespray#kubeconfig">see the Welkin Kubespray documentation</a>.</p>
 <h3 id="copy-the-vms-information-to-the-inventory-files">Copy the VMs information to the inventory files<a class="headerlink" href="#copy-the-vms-information-to-the-inventory-files" title="Permanent link">&para;</a></h3>
-<p>Add the host name, user and IP address of each VM that you prepared above in <code>${CK8S_CONFIG_PATH}/sc-config/inventory.ini</code> for Management Cluster and <code>${CK8S_CONFIG_PATH}/wc-config/inventory.ini</code> for Workload Cluster. Moreover, you also need to add the host names of the master nodes under <code>[kube_control_plane]</code>, etcd nodes under <code>[etcd]</code> and worker nodes under <code>[kube_node]</code>.</p>
+<p>Add the host name, user and IP address of each VM that you prepared above in <code>${CK8S_CONFIG_PATH}/sc-config/inventory.ini</code> for Management Cluster and <code>${CK8S_CONFIG_PATH}/wc-config/inventory.ini</code> for Workload Cluster. Moreover, you also need to add the host names of the master Nodes under <code>[kube_control_plane]</code>, etcd Nodes under <code>[etcd]</code> and worker Nodes under <code>[kube_node]</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Make sure that the user has SSH access to the VMs.</p>
 </div>
-<h3 id="run-kubespray-to-deploy-the-kubernetes-clusters">Run Kubespray to deploy the Kubernetes clusters<a class="headerlink" href="#run-kubespray-to-deploy-the-kubernetes-clusters" title="Permanent link">&para;</a></h3>
+<h3 id="run-kubespray-to-deploy-the-kubernetes-clusters">Run Kubespray to deploy the Kubernetes Clusters<a class="headerlink" href="#run-kubespray-to-deploy-the-kubernetes-clusters" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>CLUSTER<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTERS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">    </span>compliantkubernetes-kubespray/bin/ck8s-kubespray<span class="w"> </span>apply<span class="w"> </span><span class="nv">$CLUSTER</span><span class="w"> </span>--flush-cache
 <span class="k">done</span>
@@ -4539,19 +4581,19 @@ git<span class="w"> </span>switch<span class="w"> </span>-d<span class="w"> </sp
 <p>The kubeconfig for the Workload Cluster (<code>.state/kube_config_wc.yaml</code>) will not be usable until you have installed Dex in the Management Cluster (by <a href="#deploying-welkin-apps">deploying apps</a>).</p>
 </div>
 <h2 id="rook-block-storage">Rook Block Storage<a class="headerlink" href="#rook-block-storage" title="Permanent link">&para;</a></h2>
-<p>Normally, we want to use block storage solutions provided by the infra provider. However, this is not always available, especially for on-prem environments. In such cases we can partition separate volumes on Nodes in the cluster for Rook-Ceph and use that as a block storage solution.</p>
+<p>Normally, we want to use block storage solutions provided by the infra provider. However, this is not always available, especially for on-prem environments. In such cases we can partition separate volumes on Nodes in the Cluster for Rook-Ceph and use that as a block storage solution.</p>
 <!-- markdownlint-disable-file first-line-h1 -->
 
 <h3 id="deploy-rook">Deploy Rook<a class="headerlink" href="#deploy-rook" title="Permanent link">&para;</a></h3>
-<p>To deploy Rook, go to the <code>compliantkubernetes-kubespray</code> repository, change directory to <code>rook</code> and follow the instructions <a href="https://github.com/elastisys/compliantkubernetes-kubespray/tree/main/rook#rook-ceph">here</a> for each cluster.</p>
+<p>To deploy Rook, go to the <code>compliantkubernetes-kubespray</code> repository, change directory to <code>rook</code> and follow the instructions <a href="https://github.com/elastisys/compliantkubernetes-kubespray/tree/main/rook#rook-ceph">here</a> for each Cluster.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the kubeconfig files for the clusters are encrypted with SOPS, you need to decrypt them before using them:</p>
+<p>If the kubeconfig files for the Clusters are encrypted with SOPS, you need to decrypt them before using them:</p>
 <div class="highlight"><pre><span></span><code>sops<span class="w"> </span>--decrypt<span class="w"> </span><span class="si">${</span><span class="nv">CK8S_CONFIG_PATH</span><span class="si">}</span>/.state/kube_config_<span class="nv">$CLUSTER</span>.yaml<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$CLUSTER</span>.yaml
 <span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="nv">$CLUSTER</span>.yaml
 </code></pre></div>
 </div>
-<p>Please restart the operator Pod, <code>rook-ceph-operator*</code>, if some pods stalls in initialization state as shown below:</p>
+<p>Please restart the operator Pod, <code>rook-ceph-operator*</code>, if some Pods stalls in initialization state as shown below:</p>
 <div class="highlight"><pre><span></span><code><span class="go">rook-ceph     rook-ceph-crashcollector-minion-0-b75b9fc64-tv2vg    0/1     Init:0/2   0          24m</span>
 <span class="go">rook-ceph     rook-ceph-crashcollector-minion-1-5cfb88b66f-mggrh   0/1     Init:0/2   0          36m</span>
 <span class="go">rook-ceph     rook-ceph-crashcollector-minion-2-5c74ffffb6-jwk55   0/1     Init:0/2   0          14m</span>
@@ -4596,7 +4638,7 @@ git<span class="w"> </span>switch<span class="w"> </span>-d<span class="w"> </sp
 Once you get the IP address edit <code>${CK8S_CONFIG_PATH}/common-config.yaml</code> file  and set  the value  to <code>global.clusterDns</code> field.</p>
 </details>
 <details class="note" open="open">
-<summary>Configure the load balancer IP on the loopback interface for each worker node</summary>
+<summary>Configure the load balancer IP on the loopback interface for each worker Node</summary>
 <p>The Kubernetes data plane Nodes (i.e., worker Nodes) cannot connect to themselves with the IP address of the load balancer that fronts them. The easiest is to configure the load balancer's IP address on the loopback interface of each Nodes. Create <code>/etc/netplan/20-eip-fix.yaml</code> file and add the following to it. <code>${loadblancer_ip_address}</code> should be replaced with the IP address of the load balancer for each cluster.</p>
 <p><div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
@@ -4638,7 +4680,7 @@ vim<span class="w"> </span><span class="si">${</span><span class="nv">CK8S_CONFI
 <p>The default configuration for the Management Cluster and Workload Cluster are available in the directory <code>${CK8S_CONFIG_PATH}/defaults/</code> and can be used as a reference for available options.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not modify the read-only default configurations files found in the directory <code>${CK8S_CONFIG_PATH}/defaults/</code>. Instead configure the cluster by modifying the regular files <code>${CK8S_CONFIG_PATH}/sc-config.yaml</code> and <code>${CK8S_CONFIG_PATH}/wc-config.yaml</code> as they will override the default options.</p>
+<p>Do not modify the read-only default configurations files found in the directory <code>${CK8S_CONFIG_PATH}/defaults/</code>. Instead configure the Cluster by modifying the regular files <code>${CK8S_CONFIG_PATH}/sc-config.yaml</code> and <code>${CK8S_CONFIG_PATH}/wc-config.yaml</code> as they will override the default options.</p>
 </div>
 <h3 id="create-s3-buckets">Create S3 buckets<a class="headerlink" href="#create-s3-buckets" title="Permanent link">&para;</a></h3>
 <p>You can use the following script to create required S3 buckets.

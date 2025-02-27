@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4013,7 +4055,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#kubeadm-via-in-house-tool-ck8s-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      kubeadm via in-house tool (ck8s-cluster)
+      kubeadm via in-house tool (ck8s-Cluster)
     </span>
   </a>
   
@@ -4061,26 +4103,26 @@ if(!document.__defineGetter__) {
 <li>Date: 2020-11-17</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>Welkin promises: "Multi-cloud. Open source. Compliant". So far, we delivered on our multi-cloud promise by using our in-house <code>ck8s-cluster</code> implementation. This strategy feels unsustainable for two reasons: First, we don't have the resources to catch up and keep up with open source projects in the cluster life-cycle space. Second, we don't want to differentiate on how to set up vanilla Kubernetes cluster, i.e., lower in the Kubernetes stack. Rather we want to differentiate on services on top of vanilla Kubernetes clusters.</p>
+<p>Welkin promises: "Multi-cloud. Open source. Compliant". So far, we delivered on our multi-cloud promise by using our in-house <code>ck8s-cluster</code> implementation. This strategy feels unsustainable for two reasons: First, we don't have the resources to catch up and keep up with open source projects in the Cluster life-cycle space. Second, we don't want to differentiate on how to set up vanilla Kubernetes Cluster, i.e., lower in the Kubernetes stack. Rather we want to differentiate on services on top of vanilla Kubernetes Clusters.</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
-<li>We want to differentiate on top of vanilla Kubernetes cluster.</li>
+<li>We want to differentiate on top of vanilla Kubernetes Cluster.</li>
 <li>We want to be able to run Welkin on top of as many Infrastructure Providers as possible.</li>
 <li>We promise building on top of best-of-breeds open source projects.</li>
-<li>We want to reduce burden with developing and maintaining our in-house tooling for cluster life-cycle management.</li>
+<li>We want to reduce burden with developing and maintaining our in-house tooling for Cluster life-cycle management.</li>
 </ul>
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.rancher.com/">Rancher</a></li>
-<li><a href="https://github.com/elastisys/ck8s-cluster">kubeadm via in-house tools (ck8s-cluster)</a></li>
+<li><a href="https://github.com/elastisys/ck8s-cluster">kubeadm via in-house tools (ck8s-Cluster)</a></li>
 <li><a href="https://github.com/kubernetes-sigs/kubespray">Kubespray</a></li>
 <li><a href="https://github.com/kubernetes/kops">kops</a></li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>We chose Kubespray, because it is best aligned with our interests, both feature- and roadmap-wise. It has a large community and is expected to be well maintained in the future. It uses kubeadm for domain knowledge on how to set up Kubernetes clusters.</p>
+<p>We chose Kubespray, because it is best aligned with our interests, both feature- and roadmap-wise. It has a large community and is expected to be well maintained in the future. It uses kubeadm for domain knowledge on how to set up Kubernetes Clusters.</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>We learn how to use a widely-used tool for cluster lifecycle management.</li>
+<li>We learn how to use a widely-used tool for Cluster lifecycle management.</li>
 <li>We support many Infrastructure Providers.</li>
 <li>We can differentiate on top of vanilla Kubernetes.</li>
 </ul>
@@ -4093,16 +4135,16 @@ if(!document.__defineGetter__) {
 <h2 id="pros-and-cons-of-the-options">Pros and Cons of the Options<a class="headerlink" href="#pros-and-cons-of-the-options" title="Permanent link">&para;</a></h2>
 <h3 id="rancher">Rancher<a class="headerlink" href="#rancher" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Good, because it provides cluster life-cycle management at scale.</li>
-<li>Bad, because it creates clusters in an opinionated way, which is insufficiently flexible for our needs.</li>
+<li>Good, because it provides Cluster life-cycle management at scale.</li>
+<li>Bad, because it creates Clusters in an opinionated way, which is insufficiently flexible for our needs.</li>
 <li>Bad, because it is not a community project, hence entails long-term licensing uncertainty.</li>
 </ul>
-<h3 id="kubeadm-via-in-house-tool-ck8s-cluster">kubeadm via in-house tool (ck8s-cluster)<a class="headerlink" href="#kubeadm-via-in-house-tool-ck8s-cluster" title="Permanent link">&para;</a></h3>
+<h3 id="kubeadm-via-in-house-tool-ck8s-cluster">kubeadm via in-house tool (ck8s-Cluster)<a class="headerlink" href="#kubeadm-via-in-house-tool-ck8s-cluster" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Good, because we know it and we built it.</li>
 <li>Good, because it works well for current use-cases.</li>
 <li>Bad, because it entails a lot of effort to develop and maintain.</li>
-<li>Bad, because it is lagging behind feature-wise with other cluster life-cycle solutions.</li>
+<li>Bad, because it is lagging behind feature-wise with other Cluster life-cycle solutions.</li>
 </ul>
 <h3 id="kops">kops<a class="headerlink" href="#kops" title="Permanent link">&para;</a></h3>
 <ul>

@@ -1410,6 +1410,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4245,13 +4287,13 @@ if(!document.__defineGetter__) {
 <h1 id="kubernetes-api">Kubernetes API<a class="headerlink" href="#kubernetes-api" title="Permanent link">&para;</a></h1>
 <p>The Kubernetes API is the entrypoint to managing your Kubernetes resources.
 Your Welkin administrator will provide you with a kubeconfig file upon onboarding, which is required to access the API.</p>
-<p>The following sections describe how to access the cluster in order to manage your Kubernetes resources.</p>
+<p>The following sections describe how to access the Cluster in order to manage your Kubernetes resources.</p>
 <h2 id="authentication-and-access-control-in-welkin">Authentication and Access Control in Welkin<a class="headerlink" href="#authentication-and-access-control-in-welkin" title="Permanent link">&para;</a></h2>
 <p>In order to facilitate access control and audit logging, Welkin imposes a certain way to access the Kubernetes API.
 The kubeconfig file provides individual access to the Kubernetes API through <a href="https://github.com/dexidp/dex">Dex</a>.
 Normally, you should authenticate using your organizations identity provider connected to Dex, but it is also possible for your administrator to configure static usernames and passwords.</p>
 <p>The authorization is done by the Kubernetes API based on <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Kubernetes role-based access controls</a>.
-Your cluster administrator will grant you permissions as part of onboarding.
+Your Cluster administrator will grant you permissions as part of onboarding.
 You have administrator access to the user workload Kubernetes Namespaces by default.
 In order to follow <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">the principle of least privilege</a>, you as a user should only have sufficient access to manage resources required by your application.
 User access to the Kubernetes API may need to be restricted from case to case to follow the principle of least privilege.</p>
@@ -4272,12 +4314,12 @@ User access to the Kubernetes API may need to be restricted from case to case to
 </ul>
 <h3 id="authenticating-to-the-kubernetes-api">Authenticating to the Kubernetes API<a class="headerlink" href="#authenticating-to-the-kubernetes-api" title="Permanent link">&para;</a></h3>
 <p>To authenticate to the Kubernetes API, run a <code>kubectl</code> command.
-The <code>oidc-login</code> plugin will launch a browser where you log in to the cluster:</p>
+The <code>oidc-login</code> plugin will launch a browser where you log in to the Cluster:</p>
 <p><img alt="Dex login page" src="../img/dex-login.png" /></p>
 <p>This page contains the authentication options provided by your administrator.
 Select your log in method and log in:</p>
 <p><img alt="User authentication page" src="../img/user-login.png" /></p>
-<p>Once you have logged in through the browser, you are authenticated to the cluster:</p>
+<p>Once you have logged in through the browser, you are authenticated to the Cluster:</p>
 <p><img alt="Successful login" src="../img/dex-authenticated.png" /></p>
 <p>Your credentials will then be used by the Kubernetes API to make sure you are authorized.
 You are now logged in and can use <code>kubectl</code> to manage your Kubernetes resources!</p>
@@ -4285,12 +4327,12 @@ You are now logged in and can use <code>kubectl</code> to manage your Kubernetes
 <!--user-demo-kubernetes-api-start-->
 
 <h3 id="pre-verification">Pre-verification<a class="headerlink" href="#pre-verification" title="Permanent link">&para;</a></h3>
-<p>Make sure you are in the right namespace on the right cluster:</p>
+<p>Make sure you are in the right namespace on the right Cluster:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
 <h3 id="configure-an-image-pull-secret">Configure an Image Pull Secret<a class="headerlink" href="#configure-an-image-pull-secret" title="Permanent link">&para;</a></h3>
-<p>To start, make sure you configure the Kubernetes cluster with an image pull secret. Ideally, you should create a container registry <a href="https://goharbor.io/docs/2.2.0/working-with-projects/project-configuration/create-robot-accounts/">Robot Account</a>, which only has pull permissions and use its token.</p>
+<p>To start, make sure you configure the Kubernetes Cluster with an image pull secret. Ideally, you should create a container registry <a href="https://goharbor.io/docs/2.2.0/working-with-projects/project-configuration/create-robot-accounts/">Robot Account</a>, which only has pull permissions and use its token.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Using your own registry credentials as an image pull secret, instead of creating a robot account, is against best practices and may violate data privacy regulations.</p>

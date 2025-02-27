@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4061,9 +4103,9 @@ if(!document.__defineGetter__) {
 <p>Sjunet is for actors that are working with the Swedish healthcare system that require a high available, stable and secure network. Today there are over 100 services, such as Nationell patientöversikt, Intygstjänster and Födelseanmälan, using Sjunet to be reliably available for hospital and healthcare centers.</p>
 <h2 id="how-welkin-connects-to-sjunet">How Welkin connects to Sjunet<a class="headerlink" href="#how-welkin-connects-to-sjunet" title="Permanent link">&para;</a></h2>
 <p>The architecture diagram below shows how Welkin connects to Sjunet and who is responsible for what.</p>
-<p>The Platform Administrator configures NodeLocalDNS to use Sjunet's DNS to resolve Sjunet domains. Together with static routes, network traffic heading to Sjunet is routed to a virtual machine acting as a gateway. The gateway will be co-located within the same security group as the cluster to ensure that traffic between the cluster and the gateway is secure and closed off from the outside.</p>
+<p>The Platform Administrator configures NodeLocalDNS to use Sjunet's DNS to resolve Sjunet domains. Together with static routes, network traffic heading to Sjunet is routed to a virtual machine acting as a gateway. The gateway will be co-located within the same security group as the Cluster to ensure that traffic between the Cluster and the gateway is secure and closed off from the outside.</p>
 <p>Inera, which is the administrators of Sjunet, require you to use a <a href="https://inera.atlassian.net/wiki/spaces/OISJU/pages/406618308/Teknisk+anslutning#Anslutning-via-VPN-%C3%B6ver-internet">VPN</a> when connecting to Sjunet over the public network.</p>
-<p>The Application Developer is responsible to install a supported VPN client on the VM acting as the gateway and connect it to Sjunet's VPN. Together with the static networking route within the cluster, this means that traffic intended for Sjunet will be routed correctly via the gateway.</p>
+<p>The Application Developer is responsible to install a supported VPN client on the VM acting as the gateway and connect it to Sjunet's VPN. Together with the static networking route within the Cluster, this means that traffic intended for Sjunet will be routed correctly via the gateway.</p>
 <p><img alt="Architectural diagram" src="../img/sjunet.svg" /></p>
 <p><em><img alt="Welkin" src="../img/bac8d3.png" /> <code>Platform Administrators</code> area of responsibility <img alt="Application Developer" src="../img/b1ddf0.png" /> <code>Application Developers</code> area of responsibility <img alt="Inera" src="../img/76608a.png" /> <code>Ineras</code> area of responsibility</em></p>
 <div class="admonition elastisys">

@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4201,7 +4243,7 @@ if(!document.__defineGetter__) {
 <p class="admonition-title">Warning</p>
 <p>This method is deprecated and will be removed in the future.</p>
 </div>
-<p>The Jaeger agent is exposed as a DaemonSet. Your application needs to be told where the agent is located by setting the environment variable <code>JAEGER_AGENT_HOST</code> to the value of the Kubernetes node’s IP:</p>
+<p>The Jaeger agent is exposed as a DaemonSet. Your application needs to be told where the agent is located by setting the environment variable <code>JAEGER_AGENT_HOST</code> to the value of the Kubernetes Node’s IP:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
 <span class="nt">spec</span><span class="p">:</span>

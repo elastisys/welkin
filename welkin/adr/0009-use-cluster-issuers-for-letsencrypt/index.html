@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4030,13 +4072,13 @@ if(!document.__defineGetter__) {
 <p>Technical Story: <a href="https://github.com/elastisys/compliantkubernetes-apps/issues/300">Make apps less fragile</a></p>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
 <p>Data protection regulations require encrypting network traffic over public networks, e.g., via HTTPS. This requires provisioning and rotating TLS certificates. To automate this task, we use the <a href="https://cert-manager.io/">cert-manager</a>, which automates provisioning and rotation of TLS certificates from <a href="https://letsencrypt.org/">Let's Encrypt</a>.</p>
-<p>There are two ways to configure Let's Encrypt as an issuers for cert-manager: <a href="https://cert-manager.io/docs/concepts/issuer/">Issuer and ClusterIssuer</a>. The former is namespaced, whereas the latter is cluster-wide. Should we use Issuer or ClusterIssuer?</p>
+<p>There are two ways to configure Let's Encrypt as an issuers for cert-manager: <a href="https://cert-manager.io/docs/concepts/issuer/">Issuer and ClusterIssuer</a>. The former is namespaced, whereas the latter is Cluster-wide. Should we use Issuer or ClusterIssuer?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We want to make compliantkubernetes-apps less fragile, and Let's Encrypt rate limiting is a cause of fragility.</li>
 <li>We want to make it easy for users to get started with Welkin in a "secure by default" manner.</li>
 <li>We want to have a clear separation between user and administrator resources, responsibilities and privileges.</li>
-<li>We want to keep the option open for "light" renderings, i.e., a single Kubernetes clusters that hosts both Management Cluster and Workload Cluster components.</li>
+<li>We want to keep the option open for "light" renderings, i.e., a single Kubernetes Clusters that hosts both Management Cluster and Workload Cluster components.</li>
 </ul>
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4046,7 +4088,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p>Chosen option: "Use ClusterIssuers in the Management Cluster; optionally enable ClusterIssuers in the Workload Cluster(s)", because it reduces fragility, clarifies responsibilities, makes it easy to get started securely.</p>
-<p>Each cluster is configured with an optional ClusterIssuer called <code>letsencrypt-prod</code> for Let's Encrypt production and <code>letsencrypt-staging</code> for Let's Encrypt staging. The email address for the ClusterIssuers is configured by the administrator.</p>
+<p>Each Cluster is configured with an optional ClusterIssuer called <code>letsencrypt-prod</code> for Let's Encrypt production and <code>letsencrypt-staging</code> for Let's Encrypt staging. The email address for the ClusterIssuers is configured by the administrator.</p>
 <h2 id="recommendations-to-platform-administrators">Recommendations to Platform Administrators<a class="headerlink" href="#recommendations-to-platform-administrators" title="Permanent link">&para;</a></h2>
 <h3 id="direct-lets-encrypt-emails-to-a-logging-mailbox">Direct Let's Encrypt emails to a "logging" mailbox<a class="headerlink" href="#direct-lets-encrypt-emails-to-a-logging-mailbox" title="Permanent link">&para;</a></h3>
 <p>Although Let's Encrypt does not require an email address, cert-managers seems to require all ClusterIssuers/Issuers to be configured with a syntactically valid email address. Said email address will receive notifications when certificates are close to expiry. Given that Welkin comes with <a href="../../ciso-guide/cryptography/">Cryptography</a> dashboards, these emails do not seem useful. <strong>Hence, ClusterIssuer emails should be directed to an address that has "logging" but not "alerting" status.</strong></p>

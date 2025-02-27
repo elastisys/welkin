@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4206,7 +4248,7 @@ Amongst others, the TSL prohibits using TimescaleDB "Community Edition" for data
 
 <p>This page will help you succeed in connecting your application to the time-series database TimescaleDB which meets your security and compliance requirements.</p>
 <p>TimescaleDB is an extension on top of our managed PostgreSQL.
-This means that your administrator will be setting up a complete PostgreSQL cluster for you and you just use it for TimescaleDB via the TimescaleDB extension.</p>
+This means that your administrator will be setting up a complete PostgreSQL Cluster for you and you just use it for TimescaleDB via the TimescaleDB extension.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>TimescaleDB is not a viable option for collecting all metrics from the Kubernetes cluster. The data is uncompressed and would take a lot of space to store and use a lot of resources to analyze, unless you want to use it with a very short retention period.
@@ -4217,7 +4259,7 @@ This is not usually a problem for collecting application specific metrics, since
 <p>Due to very different performance-tuning characteristics, Timescale and PostgreSQL databases should never run on the same PostgreSQL cluster.
 To comply with this, it is essential that every PostgreSQL database that gets created on the PostgreSQL cluster also has the Timescale extension created for it.</p>
 </div>
-<p>If you want to use TimescaleDB on your Welkin cluster, ask your administrator to provision a new PostgreSQL cluster inside your Welkin environment. Then set up the TimescaleDB extension.</p>
+<p>If you want to use TimescaleDB on your Welkin Cluster, ask your administrator to provision a new PostgreSQL Cluster inside your Welkin environment. Then set up the TimescaleDB extension.</p>
 <!-- markdownlint-disable MD044 -->
 
 <h2 id="install-prerequisites">Install Prerequisites<a class="headerlink" href="#install-prerequisites" title="Permanent link">&para;</a></h2>
@@ -4226,7 +4268,7 @@ To comply with this, it is essential that every PostgreSQL database that gets cr
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>postgresql-client
 </code></pre></div>
 <h2 id="getting-access">Getting Access<a class="headerlink" href="#getting-access" title="Permanent link">&para;</a></h2>
-<p>Your administrator will set up a Secret inside Welkin, which contains all information you need to access your PostgreSQL cluster.
+<p>Your administrator will set up a Secret inside Welkin, which contains all information you need to access your PostgreSQL Cluster.
 The Secret has the following shape:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
@@ -4296,7 +4338,7 @@ cat<span class="w"> </span><span class="s">&lt;&lt;EOF | psql -d postgres -h 127
 </code></pre></div>
 <p>Continue with the second console in the next section to create a Secret with this information.</p>
 <h2 id="create-an-application-secret">Create an Application Secret<a class="headerlink" href="#create-an-application-secret" title="Permanent link">&para;</a></h2>
-<p>First, check that you are on the right Welkin cluster, in the right <strong>application</strong> namespace:</p>
+<p>First, check that you are on the right Welkin Cluster, in the right <strong>application</strong> namespace:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
@@ -4324,7 +4366,7 @@ When this variable is set to <code>require</code>, it will do a full verificatio
 To get the intended mode for <code>require</code> set the variable to <code>no-verify</code> instead.</p>
 </div>
 <h2 id="expose-postgresql-credentials-to-your-application">Expose PostgreSQL credentials to Your Application<a class="headerlink" href="#expose-postgresql-credentials-to-your-application" title="Permanent link">&para;</a></h2>
-<p>To expose the PostgreSQL cluster credentials to your application, follow one of the following upstream documentation:</p>
+<p>To expose the PostgreSQL Cluster credentials to your application, follow one of the following upstream documentation:</p>
 <ul>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume">Create a Pod that has access to the secret data through a Volume</a></li>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data">Define container environment variables using Secret data</a></li>
@@ -4346,7 +4388,7 @@ To get the intended mode for <code>require</code> set the variable to <code>no-v
 <p>You should be all set.
 Before going into production, don't forget to go through the <a href="../../go-live/">go-live checklist</a>.</p>
 <h2 id="welkin-timescaledb-release-notes">Welkin TimescaleDB Release Notes<a class="headerlink" href="#welkin-timescaledb-release-notes" title="Permanent link">&para;</a></h2>
-<p>Check out the <a href="../../../release-notes/postgres/">release notes</a> for the TimescaleDB/PostgreSQL cluster that runs in Welkin environments!</p>
+<p>Check out the <a href="../../../release-notes/postgres/">release notes</a> for the TimescaleDB/PostgreSQL Cluster that runs in Welkin environments!</p>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://docs.timescale.com/getting-started/latest/">Getting started with Timescale</a></li>

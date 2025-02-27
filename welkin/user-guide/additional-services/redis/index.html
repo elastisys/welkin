@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -1473,7 +1515,7 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#allow-your-pods-to-communicate-with-the-redis-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Allow your Pods to communicate with the Redis cluster
+      Allow your Pods to communicate with the Redis Cluster
     </span>
   </a>
   
@@ -4090,7 +4132,7 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#allow-your-pods-to-communicate-with-the-redis-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Allow your Pods to communicate with the Redis cluster
+      Allow your Pods to communicate with the Redis Cluster
     </span>
   </a>
   
@@ -4209,7 +4251,7 @@ if(!document.__defineGetter__) {
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>redis-tools
 </code></pre></div>
 <h2 id="getting-access">Getting Access<a class="headerlink" href="#getting-access" title="Permanent link">&para;</a></h2>
-<p>Your administrator will set up a ConfigMap inside Welkin, which contains all information you need to access your Redis cluster.
+<p>Your administrator will set up a ConfigMap inside Welkin, which contains all information you need to access your Redis Cluster.
 The ConfigMap has the following shape:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
@@ -4237,10 +4279,10 @@ The ConfigMap has the following shape:</p>
 </code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>At the time of this writing, we do not recommend to use a Redis cluster in a multi-tenant fashion. One Redis cluster should have only one purpose.</p>
+<p>At the time of this writing, we do not recommend to use a Redis Cluster in a multi-tenant fashion. One Redis Cluster should have only one purpose.</p>
 </div>
 <h2 id="create-a-configmap">Create a ConfigMap<a class="headerlink" href="#create-a-configmap" title="Permanent link">&para;</a></h2>
-<p>First, check that you are on the right Welkin cluster, in the right <strong>application</strong> namespace:</p>
+<p>First, check that you are on the right Welkin Cluster, in the right <strong>application</strong> namespace:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
@@ -4255,13 +4297,13 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 <span class="s">    REDIS_SENTINEL_PORT: &quot;$REDIS_SENTINEL_PORT&quot;</span>
 <span class="s">EOF</span>
 </code></pre></div>
-<h2 id="allow-your-pods-to-communicate-with-the-redis-cluster">Allow your Pods to communicate with the Redis cluster<a class="headerlink" href="#allow-your-pods-to-communicate-with-the-redis-cluster" title="Permanent link">&para;</a></h2>
-<p>The Redis cluster is protected by Network Policies. Add the following label to your Pods: <code>elastisys.io/redis-&lt;cluster_name&gt;-access: allow</code></p>
+<h2 id="allow-your-pods-to-communicate-with-the-redis-cluster">Allow your Pods to communicate with the Redis Cluster<a class="headerlink" href="#allow-your-pods-to-communicate-with-the-redis-cluster" title="Permanent link">&para;</a></h2>
+<p>The Redis Cluster is protected by Network Policies. Add the following label to your Pods: <code>elastisys.io/redis-&lt;cluster_name&gt;-access: allow</code></p>
 <p><code>cluster_name</code> can be retrieved from the ConfigMap provided by your administrator:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NAMESPACE</span><span class="w"> </span>get<span class="w"> </span>configmap<span class="w"> </span><span class="nv">$CONFIG_MAP</span><span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;jsonpath={.data.REDIS_CLUSTER_NAME}&#39;</span>
 </code></pre></div>
 <h2 id="expose-redis-connection-parameters-to-your-application">Expose Redis Connection Parameters to Your Application<a class="headerlink" href="#expose-redis-connection-parameters-to-your-application" title="Permanent link">&para;</a></h2>
-<p>To expose the Redis cluster to your application, follow one of the following upstream documentation:</p>
+<p>To expose the Redis Cluster to your application, follow one of the following upstream documentation:</p>
 <ul>
 <li><a href="https://kubernetes.io/docs/concepts/configuration/configmap/#using-configmaps-as-files-from-a-pod">Create a Pod that has access to the ConfigMap data through a Volume</a></li>
 <li><a href="https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods">Define container environment variables using ConfigMap data</a></li>
@@ -4281,7 +4323,7 @@ For this you'll either need to use multiple replicas or use it as a sidecar for 
 <p>You should be all set.
 Before going into production, don't forget to go through the <a href="../../go-live/">go-live checklist</a>.</p>
 <h2 id="welkin-redis-release-notes">Welkin Redis Release Notes<a class="headerlink" href="#welkin-redis-release-notes" title="Permanent link">&para;</a></h2>
-<p>Check out the <a href="../../../release-notes/redis/">release notes</a> for the Redis cluster that runs in Welkin environments!</p>
+<p>Check out the <a href="../../../release-notes/redis/">release notes</a> for the Redis Cluster that runs in Welkin environments!</p>
 <h2 id="best-practices-recommended">Best Practices Recommended<a class="headerlink" href="#best-practices-recommended" title="Permanent link">&para;</a></h2>
 <ul>
 <li>

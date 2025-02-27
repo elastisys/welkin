@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4047,9 +4089,9 @@ if(!document.__defineGetter__) {
 <p>Chosen options:</p>
 <ol>
 <li>
-<p>Use host network if Kubernetes-controlled load balancer is unavailable or undesired. If necessary, front the worker nodes with a manual or Terraform-controlled load-balancer. This includes:</p>
+<p>Use host network if Kubernetes-controlled load balancer is unavailable or undesired. If necessary, front the worker Nodes with a manual or Terraform-controlled load-balancer. This includes:</p>
 <ul>
-<li>Where load-balancing does not add value, e.g., if a Deployment is planned to have only a single-node or single-worker for the foreseeable future: Point the DNS entry to the worker IP instead.</li>
+<li>Where load-balancing does not add value, e.g., if a Deployment is planned to have only a single-Node or single-worker for the foreseeable future: Point the DNS entry to the worker IP instead.</li>
 <li>Exoscale currently falls in this category, due to its Kubernetes integration being rather recent.</li>
 <li>Safespring falls in this category, since it is missing load balancers.</li>
 <li>If the Infrastructure Provider is missing a storage controller, it might be undesirable to perform integration "just" for load-balancing.</li>

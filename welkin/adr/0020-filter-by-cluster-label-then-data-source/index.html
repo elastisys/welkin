@@ -23,7 +23,7 @@
     
     
       
-        <title>Filter by cluster label then data source - Elastisys Welkin®</title>
+        <title>Filter by Cluster label then data source - Elastisys Welkin®</title>
       
     
     
@@ -68,7 +68,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Filter by cluster label then data source - Elastisys Welkin®" >
+        <meta  property="og:title"  content="Filter by Cluster label then data source - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -85,7 +85,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Filter by cluster label then data source - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="Filter by Cluster label then data source - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -186,7 +186,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Filter by cluster label then data source
+              Filter by Cluster label then data source
             
           </span>
         </div>
@@ -1247,6 +1247,48 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
   </span>
   
 
@@ -4012,7 +4054,7 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="filter-by-cluster-label-then-data-source">Filter by cluster label then data source<a class="headerlink" href="#filter-by-cluster-label-then-data-source" title="Permanent link">&para;</a></h1>
+<h1 id="filter-by-cluster-label-then-data-source">Filter by Cluster label then data source<a class="headerlink" href="#filter-by-cluster-label-then-data-source" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Status: accepted</li>
 <li>Deciders: arch meeting</li>
@@ -4022,10 +4064,10 @@ if(!document.__defineGetter__) {
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
 <p>Welkin allows multiple Workload Clusters to be connected to a single Management Cluster.
 This allows the metrics of multiple Workload Clusters to be inspected via the same dashboards.</p>
-<p>How should we organise metrics to allow users and admins to select for which clusters they want to see metrics?</p>
+<p>How should we organise metrics to allow users and admins to select for which Clusters they want to see metrics?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
-<li>We want to be able to see metrics for a single cluster, for multiple cluster, and even for all clusters.</li>
+<li>We want to be able to see metrics for a single Cluster, for multiple Cluster, and even for all Clusters.</li>
 <li>We want to be able to reuse upstream dashboards, and <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/templates/grafana/dashboards-1.14/alertmanager-overview.yaml">some are missing filters</a> for the <code>cluster</code> variable.</li>
 <li>We want to stay flexible.</li>
 </ul>
@@ -4041,7 +4083,7 @@ This allows the metrics of multiple Workload Clusters to be inspected via the sa
 "Filter primarily by <code>cluster</code> label, but allow filtering by data source",
 because it fulfills the all decision drivers with little complexity.</p>
 <p><a href="https://github.com/prometheus-community/prom-label-proxy">Prom-label-enforcer</a> can be used to create multiple data sources from a single data store, discriminating by <code>cluster</code> label. To simplify Thanos configuration, we can also discriminate based on <code>tenant_id</code>, which will always contain the same value as <code>cluster</code>.</p>
-<p>In general, we will aim to fix dashboards missing the <code>cluster</code> variable upstream. However, by also providing filtering based on data source, we facilitate our users to reuse their dashboards, which might not be cluster-aware.</p>
+<p>In general, we will aim to fix dashboards missing the <code>cluster</code> variable upstream. However, by also providing filtering based on data source, we facilitate our users to reuse their dashboards, which might not be Cluster-aware.</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>We support both dashboards with <code>cluster</code> filter and without</li>

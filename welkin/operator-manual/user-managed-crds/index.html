@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -2192,7 +2234,7 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#enable-self-managed-cluster-wide-resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Enable self-managed cluster-wide resources
+      Enable self-managed Cluster-wide resources
     </span>
   </a>
   
@@ -4009,7 +4051,7 @@ if(!document.__defineGetter__) {
         <li class="md-nav__item">
   <a href="#enable-self-managed-cluster-wide-resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Enable self-managed cluster-wide resources
+      Enable self-managed Cluster-wide resources
     </span>
   </a>
   
@@ -4036,13 +4078,13 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="self-managed-cluster-resources-preview">Self-managed cluster resources (Preview)<a class="headerlink" href="#self-managed-cluster-resources-preview" title="Permanent link">&para;</a></h1>
-<p>Adding certain cluster-wide resources, such as CustomResourceDefinitions, are cluster-wide settings that are prohibited by Welkin <a href="../../user-guide/demarcation/">for security purposes</a>.
-However, many popular applications, in particular ones with Operators, require cluster-wide resources to be installed.
-This preview feature enables application developers to self-manage a <strong>predefined</strong> set of such cluster-wide resources.
-This trade-off means that application developers get the ability to install and manage such popular applications, but without compromising the security posture of the cluster.
-By enabling this feature, a predefined set of cluster-wide resources is allowed to be installed.
-In addition to CustomResourceDefinitions, other cluster-wide resources, such as the required ClusterRoles and ServiceAccounts are installed.
+<h1 id="self-managed-cluster-resources-preview">Self-managed Cluster resources (Preview)<a class="headerlink" href="#self-managed-cluster-resources-preview" title="Permanent link">&para;</a></h1>
+<p>Adding certain Cluster-wide resources, such as CustomResourceDefinitions, are Cluster-wide settings that are prohibited by Welkin <a href="../../user-guide/demarcation/">for security purposes</a>.
+However, many popular applications, in particular ones with Operators, require Cluster-wide resources to be installed.
+This preview feature enables application developers to self-manage a <strong>predefined</strong> set of such Cluster-wide resources.
+This trade-off means that application developers get the ability to install and manage such popular applications, but without compromising the security posture of the Cluster.
+By enabling this feature, a predefined set of Cluster-wide resources is allowed to be installed.
+In addition to CustomResourceDefinitions, other Cluster-wide resources, such as the required ClusterRoles and ServiceAccounts are installed.
 The list of currently supported applications for self-management is:</p>
 <ul>
 <li>SealedSecrets</li>
@@ -4054,8 +4096,8 @@ The list of currently supported applications for self-management is:</p>
 <p>Welkin does not allow application developers to install ClusterRoles and ClusterRoleBindings.
 For pre-approved operators that require ClusterRoles and ClusterRoleBindings.
 They are installed during enabling of self-managed-CRDs feature.
-The installation of self-managed cluster resources can be limited to a pre-defined Namespace. For example, Sealed Secrets is required to be installed in the namespace <code>sealed-secrets</code>. This to correctly bind a cluster role to the service account.</p>
-<h2 id="enable-self-managed-cluster-wide-resources">Enable self-managed cluster-wide resources<a class="headerlink" href="#enable-self-managed-cluster-wide-resources" title="Permanent link">&para;</a></h2>
+The installation of self-managed Cluster resources can be limited to a pre-defined Namespace. For example, Sealed Secrets is required to be installed in the namespace <code>sealed-secrets</code>. This to correctly bind a Cluster role to the service account.</p>
+<h2 id="enable-self-managed-cluster-wide-resources">Enable self-managed Cluster-wide resources<a class="headerlink" href="#enable-self-managed-cluster-wide-resources" title="Permanent link">&para;</a></h2>
 <p>By default, this feature is disabled.
 To enable it, add the following snippet to the environments <code>wc-config.yaml</code> file</p>
 <div class="highlight"><pre><span></span><code><span class="nt">user</span><span class="p">:</span>

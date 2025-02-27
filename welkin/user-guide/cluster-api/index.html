@@ -1347,6 +1347,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4114,14 +4156,14 @@ Also depending on underlying cloud infrastructure, the IP might not be exclusive
 <h2 id="cluster-autoscaling">Cluster autoscaling<a class="headerlink" href="#cluster-autoscaling" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>For Elastisys Managed Services customers that have or want to use the cluster autoscaling feature, please ensure your workload does not prevent the autoscaler from removing nodes, e.g. running pods that configure non-memory <code>emptyDir</code> volumes.
-Please go through the list in the <a href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node">cluster autoscaling documentation</a>.</p>
+<p>For Elastisys Managed Services customers that have or want to use the Cluster autoscaling feature, please ensure your workload does not prevent the autoscaler from removing Nodes, e.g. running Pods that configure non-memory <code>emptyDir</code> volumes.
+Please go through the list in the <a href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node">Cluster autoscaling documentation</a>.</p>
 </div>
 <p>The <a href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/clusterapi/README.md">Cluster Autoscaler</a> will scale up a Cluster if there are Pods in the Pending state (refer to the <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/">Kubernetes documentation on Pod Lifecycle</a>) that cannot currently be scheduled because of a lack of resources with the current set of Nodes.
 This means that the scaling is based on resource <strong>requests</strong> on Pods, not the actual current CPU/memory utilization.
 In turn, this means the autoscaler cannot prevent Nodes from running out of CPU or memory if the resource requests are not close to the actual usage: to benefit the most from autoscaling, you need to set resource requests as correctly as possible.
-The autoscaler will scale down a Cluster if there are unneeded nodes for more than 10 minutes.
-A node is unneeded if it has less than cpu and memory requests less that 50% of its capacity and all pods running there can be moved to other nodes (refer to <a href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work">this documentation</a> for more information)</p>
+The autoscaler will scale down a Cluster if there are unneeded Nodes for more than 10 minutes.
+A Node is unneeded if it has less than cpu and memory requests less that 50% of its capacity and all Pods running there can be moved to other Nodes (refer to <a href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work">this documentation</a> for more information)</p>
 <p>Cluster autoscaling will not be needed for everyone and might not be available on all Infrastructure Providers, contact your Platform Administrator to see if it could be possible to enable for you.</p>
 
 

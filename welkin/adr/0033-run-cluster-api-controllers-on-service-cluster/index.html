@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4004,7 +4046,7 @@ if(!document.__defineGetter__) {
           <li class="md-nav__item">
   <a href="#independent-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Independent cluster
+      Independent Cluster
     </span>
   </a>
   
@@ -4061,59 +4103,59 @@ if(!document.__defineGetter__) {
 <li>Date: 2023-03-15</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>With Cluster API there multiple different ways to organise the management hierarchy that have different impacts on the environment in regard to cost, availability, security and ease of deployment and maintainability.</p>
+<p>With Cluster API there multiple different ways to organise the management hierarchy that have different impacts on the environment in regard to cost, availability, security and ease of Deployment and maintainability.</p>
 <p>Where should we run the Cluster API controller?</p>
 <h2 id="decision-drivers">Decision Drivers <!-- optional --><a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We want to minimise the impact it has on resources</li>
-<li>We want to ease the deployment and maintenance process</li>
+<li>We want to ease the Deployment and maintenance process</li>
 <li>We want to be able to tolerate faults in management and Workload Clusters</li>
 <li>We want to maintain good security posture</li>
 </ul>
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Independent clusters<ul>
-<li>All clusters run the Cluster API controllers and all clusters manage themselves independently.</li>
+<li>Independent Clusters<ul>
+<li>All Clusters run the Cluster API controllers and all Clusters manage themselves independently.</li>
 </ul>
 </li>
 <li>Controller Cluster<ul>
-<li>A new separate Controller Cluster runs the Cluster API controllers and manages all clusters in the environment.</li>
+<li>A new separate Controller Cluster runs the Cluster API controllers and manages all Clusters in the environment.</li>
 </ul>
 </li>
 <li>Management Cluster<ul>
-<li>The Management Cluster runs the Cluster API controllers and manages all clusters in the environment.</li>
+<li>The Management Cluster runs the Cluster API controllers and manages all Clusters in the environment.</li>
 </ul>
 </li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>Chosen option: "Management Cluster", because it strikes the balance between security, as it has relatively good availability properties and no Kubernetes admin credentials have to be stored in the Workload Cluster, and maintainability, as clusters can be managed centralised.</p>
+<p>Chosen option: "Management Cluster", because it strikes the balance between security, as it has relatively good availability properties and no Kubernetes admin credentials have to be stored in the Workload Cluster, and maintainability, as Clusters can be managed centralised.</p>
 <h3 id="positive-consequences">Positive Consequences <!-- optional --><a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Requires no additional resources</li>
 <li>Requires single instance of Cluster API controllers per environment</li>
-<li>Requires less deployment and maintenance efforts to manage</li>
+<li>Requires less Deployment and maintenance efforts to manage</li>
 <li>Management Cluster already provides services to allow backups, monitoring, and logging</li>
 <li>Workload Cluster will not have Kubernetes admin credentials</li>
 </ul>
 <h3 id="negative-consequences">Negative Consequences <!-- optional --><a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Cluster API controllers availability relies on Management Cluster<ul>
-<li>Main consideration is control plane, since Management Cluster has sufficient nodes for the controller to reschedule</li>
+<li>Main consideration is control plane, since Management Cluster has sufficient Nodes for the controller to reschedule</li>
 <li>Workload Cluster will still function but it will lose auto heal and auto scaling functions</li>
 </ul>
 </li>
 <li>Management Cluster will have Kubernetes admin credentials for the Workload Cluster</li>
 </ul>
 <h2 id="pros-and-cons-of-the-options">Pros and Cons of the Options <!-- optional --><a class="headerlink" href="#pros-and-cons-of-the-options" title="Permanent link">&para;</a></h2>
-<h3 id="independent-cluster">Independent cluster<a class="headerlink" href="#independent-cluster" title="Permanent link">&para;</a></h3>
+<h3 id="independent-cluster">Independent Cluster<a class="headerlink" href="#independent-cluster" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Good, no additional resource requirements</li>
-<li>Good, all clusters have required supporting services</li>
-<li>Good, all clusters are independently impacted by failures</li>
-<li>Good, all clusters are independently impacted by configuration mistakes, although...</li>
+<li>Good, all Clusters have required supporting services</li>
+<li>Good, all Clusters are independently impacted by failures</li>
+<li>Good, all Clusters are independently impacted by configuration mistakes, although...</li>
 <li>Bad, it is easier to do configuration mistakes</li>
-<li>Bad, it requires more effort to manage for each cluster</li>
-<li>Bad, all clusters have to be bootstrapped</li>
+<li>Bad, it requires more effort to manage for each Cluster</li>
+<li>Bad, all Clusters have to be bootstrapped</li>
 <li>Bad, will contain Kubernetes admin credentials in Workload Cluster</li>
 </ul>
 <h3 id="controller-cluster">Controller Cluster<a class="headerlink" href="#controller-cluster" title="Permanent link">&para;</a></h3>
@@ -4123,10 +4165,10 @@ if(!document.__defineGetter__) {
 <li>Bad, Management and Workload Cluster lose management (auto healing and auto scaling) on Controller Cluster failure, although...</li>
 <li>Good, Management and Workload Cluster state can be backed up and restored</li>
 <li>Good, environment can be managed as a group or individually if needed, although...</li>
-<li>Bad, all cluster can be impacted by configuration mistakes, although...</li>
+<li>Bad, all Cluster can be impacted by configuration mistakes, although...</li>
 <li>Good, it is harder for configuration mistakes</li>
-<li>Good, it requires less effort to manage each cluster</li>
-<li>Good, single cluster has to be bootstrapped</li>
+<li>Good, it requires less effort to manage each Cluster</li>
+<li>Good, single Cluster has to be bootstrapped</li>
 <li>Good, will not contain Kubernetes admin credentials in Workload Cluster</li>
 </ul>
 <h3 id="management-cluster">Management Cluster<a class="headerlink" href="#management-cluster" title="Permanent link">&para;</a></h3>
@@ -4136,10 +4178,10 @@ if(!document.__defineGetter__) {
 <li>Bad, Workload Cluster lose management (auto healing and auto scaling) on Management Cluster failure, although...</li>
 <li>Good, Workload Cluster state can be backed up and restored</li>
 <li>Good, environment can be managed as a group or individually if needed, although...</li>
-<li>Bad, all cluster can be impacted by configuration mistakes, although...</li>
+<li>Bad, all Cluster can be impacted by configuration mistakes, although...</li>
 <li>Good, it is harder for configuration mistakes</li>
-<li>Good, it requires less effort to manage each cluster</li>
-<li>Good, single cluster has to be bootstrapped</li>
+<li>Good, it requires less effort to manage each Cluster</li>
+<li>Good, single Cluster has to be bootstrapped</li>
 <li>Good, will not contain Kubernetes admin credentials in Workload Cluster</li>
 </ul>
 

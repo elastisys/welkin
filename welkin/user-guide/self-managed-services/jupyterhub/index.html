@@ -1269,6 +1269,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4278,7 +4320,7 @@ helm<span class="w"> </span>repo<span class="w"> </span>update
 <li>This should not be treated as a secret. See risk analysis <a href="https://github.com/dexidp/dex/issues/469">here</a> and <a href="https://security.stackexchange.com/questions/225809/what-is-the-worst-i-can-do-if-i-know-openid-connect-client-secret">here</a>.</li>
 </ol>
 <h3 id="pushing-the-jupyterhub-images-to-harbor">Pushing the JupyterHub Images to Harbor<a class="headerlink" href="#pushing-the-jupyterhub-images-to-harbor" title="Permanent link">&para;</a></h3>
-<p>This sections shows how to pull the required images for JupyterHub and push them to another registry. If you are using the managed Harbor as your container registry, please follow <a href="../../deploy/">these instructions</a> on how to authenticate, create a new project, and how to create a robot account and using it in a pull-secret to be able to pull an image from Harbor to your cluster safely.</p>
+<p>This sections shows how to pull the required images for JupyterHub and push them to another registry. If you are using the managed Harbor as your container registry, please follow <a href="../../deploy/">these instructions</a> on how to authenticate, create a new project, and how to create a robot account and using it in a pull-secret to be able to pull an image from Harbor to your Cluster safely.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Run the following commands in the same directory as the location of your <code>values.yaml</code> file, since it will automatically update it with the correct images. If not, images will need to be manually set in the <code>values.yaml</code>.</p>
@@ -4307,7 +4349,7 @@ sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s|nam
 <h2 id="known-issues-limitations">Known Issues / Limitations<a class="headerlink" href="#known-issues-limitations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>JupyterHub's custom user scheduler is disabled (which <a href="https://z2jh.jupyter.org/en/latest/administrator/optimization.html#scaling-down-efficiently">can help with efficient node downscaling</a>). For safety reasons, developers in Welkin do not have the rights required to deploy it.</p>
+<p>JupyterHub's custom user scheduler is disabled (which <a href="https://z2jh.jupyter.org/en/latest/administrator/optimization.html#scaling-down-efficiently">can help with efficient Node downscaling</a>). For safety reasons, developers in Welkin do not have the rights required to deploy it.</p>
 </li>
 <li>
 <p>JupyterHub's Admin functionality is limited since some of the admin functions require container root access. Pre-installed Python packages for users can not be added through the admin interface. They can be added by <a href="https://z2jh.jupyter.org/en/stable/jupyterhub/customizing/user-environment.html#choose-and-use-an-existing-docker-image">modifying the Docker image</a>, pushing it to your image registry and redeploying JupyterHub. <strong>NOTE</strong> Users can still install their own packages.</p>

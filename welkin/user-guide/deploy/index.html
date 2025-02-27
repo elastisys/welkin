@@ -1446,6 +1446,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4320,12 +4362,12 @@ docker<span class="w"> </span>push<span class="w"> </span>harbor.<span class="nv
 <!-- markdownlint-disable MD044 -->
 
 <h3 id="pre-verification">Pre-verification<a class="headerlink" href="#pre-verification" title="Permanent link">&para;</a></h3>
-<p>Make sure you are in the right namespace on the right cluster:</p>
+<p>Make sure you are in the right namespace on the right Cluster:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>--output<span class="w"> </span><span class="s1">&#39;jsonpath={..namespace}&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span>
 </code></pre></div>
 <h3 id="configure-an-image-pull-secret">Configure an Image Pull Secret<a class="headerlink" href="#configure-an-image-pull-secret" title="Permanent link">&para;</a></h3>
-<p>To start, make sure you configure the Kubernetes cluster with an image pull secret. Ideally, you should create a container registry <a href="https://goharbor.io/docs/2.2.0/working-with-projects/project-configuration/create-robot-accounts/">Robot Account</a>, which only has pull permissions and use its token.</p>
+<p>To start, make sure you configure the Kubernetes Cluster with an image pull secret. Ideally, you should create a container registry <a href="https://goharbor.io/docs/2.2.0/working-with-projects/project-configuration/create-robot-accounts/">Robot Account</a>, which only has pull permissions and use its token.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Using your own registry credentials as an image pull secret, instead of creating a robot account, is against best practices and may violate data privacy regulations.</p>

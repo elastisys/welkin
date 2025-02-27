@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4078,7 +4120,7 @@ if(!document.__defineGetter__) {
 <li>We don't currently run Blackbox in the Workload Cluster, so we'll need a bit of extra capacity.</li>
 </ul>
 <h2 id="recommendations-to-platform-administrators">Recommendations to Platform Administrators<a class="headerlink" href="#recommendations-to-platform-administrators" title="Permanent link">&para;</a></h2>
-<p>Blackbox should only be used for measuring uptime of internal services, i.e., those that are only exposed within the Kubernetes cluster. Examples include additional services, such as PostgreSQL, Redis and RabbitMQ.</p>
+<p>Blackbox should only be used for measuring uptime of internal services, i.e., those that are only exposed within the Kubernetes Cluster. Examples include additional services, such as PostgreSQL, Redis and RabbitMQ.</p>
 <p>For external endpoints -- specifically, Dex, Grafana, Kibana, Harbor and Ingress Controllers -- prefer using an external uptime service which integrates with an On-Call Management Tool, e.g., <a href="https://docs.opsgenie.com/v1.0/docs/copperegg-integration">Uptime Cloud Monitor Integration for Opsgenie</a>.</p>
 <p>External uptime measurement should achieve the similar effect as the commands below:</p>
 <div class="highlight"><pre><span></span><code><span class="go">curl --head https://dex.$DOMAIN/healthz</span>

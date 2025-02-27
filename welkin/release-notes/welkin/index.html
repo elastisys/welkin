@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -7083,7 +7125,7 @@ if(!document.__defineGetter__) {
 <h3 id="others">Other(s)<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Changed some messages and documentation to Welkin, as part of our rebranding.</li>
-<li>Fixed KubeContainerOOMKilled alert for newly created pods.</li>
+<li>Fixed KubeContainerOOMKilled alert for newly created Pods.</li>
 </ul>
 <h2 id="v0430">v0.43.0<a class="headerlink" href="#v0430" title="Permanent link">&para;</a></h2>
 <p>Released 2025-01-27</p>
@@ -7170,7 +7212,7 @@ if(!document.__defineGetter__) {
 <h3 id="others_4">Other(s)<a class="headerlink" href="#others_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix for install-requirements script.</li>
-<li>Fixed a broken cluster status dashboard.</li>
+<li>Fixed a broken Cluster status dashboard.</li>
 </ul>
 <h2 id="v0400">v0.40.0<a class="headerlink" href="#v0400" title="Permanent link">&para;</a></h2>
 <p>Released 2024-08-21</p>
@@ -7185,7 +7227,7 @@ if(!document.__defineGetter__) {
 <li>OpenSearch and OpenSearch Dashboards has been upgraded to v2.15.0.</li>
 <li>Harbor has been upgraded to v2.11.0.</li>
 <li>Dex has been upgraded to v2.40.0.</li>
-<li>Added node filter to more graphs in the Kubernetes status dashboard.</li>
+<li>Added Node filter to more graphs in the Kubernetes status dashboard.</li>
 <li>Increased default Grafana timeout.</li>
 <li>Improved diagnostics script.</li>
 </ul>
@@ -7268,7 +7310,7 @@ if(!document.__defineGetter__) {
 <li>OpenSearch and OpenSearch Dashboards were upgraded to v2.12</li>
 <li>Grafana was upgraded to v10.4</li>
 <li>Falco was upgraded to v0.37.1</li>
-<li>A new capacity management Grafana dashboard is now available. This will give better visibility over resource usage per node groups</li>
+<li>A new capacity management Grafana dashboard is now available. This will give better visibility over resource usage per Node groups</li>
 <li>We recommend using the <a href="https://cert-manager.io/docs/configuration/acme/http01/#ingressclassname">ingressClassName</a> field over the <code>class</code> field for cert-manager issuers</li>
 </ul>
 <h2 id="v0360">v0.36.0<a class="headerlink" href="#v0360" title="Permanent link">&para;</a></h2>
@@ -7345,7 +7387,7 @@ if(!document.__defineGetter__) {
 </div>
 <h3 id="features_7">Feature(s)<a class="headerlink" href="#features_7" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Dashboard for visualizing how spread-out pods are across nodes</li>
+<li>Dashboard for visualizing how spread-out Pods are across Nodes</li>
 <li>Application developers can now self manage CRDs for MongoDB, SealedSecrets and Flux</li>
 <li>Upgrade HNC and expose opt-in propagation</li>
 </ul>
@@ -7409,7 +7451,7 @@ if(!document.__defineGetter__) {
 <li>To make it less sensitive to semi-consistent blocked network traffic.</li>
 </ul>
 </li>
-<li><strong>Reduced CPU requests for some components in the service cluster.</strong></li>
+<li><strong>Reduced CPU requests for some components in the service Cluster.</strong></li>
 </ul>
 <h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -7437,7 +7479,7 @@ if(!document.__defineGetter__) {
 <h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Added RBAC for admin users to view events and logs.</strong></li>
-<li><strong>Possibility to add custom config for node-local-dns.</strong></li>
+<li><strong>Possibility to add custom config for Node-local-dns.</strong></li>
 <li><strong>Harbor GC is enabled by default and will run every Sunday at midnight UTC.</strong></li>
 </ul>
 <h2 id="v0301">v0.30.1<a class="headerlink" href="#v0301" title="Permanent link">&para;</a></h2>
@@ -7472,7 +7514,7 @@ if(!document.__defineGetter__) {
 <ul>
 <li><strong>Kubernetes PodSecurityPolcies have been replaced with Kubernetes Pod Security Standards and additional Gatekeeper Constraints and Mutations.</strong><ul>
 <li>This should not affect user applications as the default behavior is kept, and the new default restricted Pod Security Standard is slightly less restricted than the previous restricted PodSecurityPolicy following the upstream changes;</li>
-<li>You might see <code>warnings</code> generated by PodSecurity while deploying manifests into your Kubernetes cluster, if fields are unset or do not follow the <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted">Restricted policy for the Pod Security Standards</a>. If fields are unset, the new Gatekeeper mutations will set defaults, that follow the restricted Pod Security Standards, as the Pods get scheduled.</li>
+<li>You might see <code>warnings</code> generated by PodSecurity while deploying manifests into your Kubernetes Cluster, if fields are unset or do not follow the <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted">Restricted policy for the Pod Security Standards</a>. If fields are unset, the new Gatekeeper mutations will set defaults, that follow the restricted Pod Security Standards, as the Pods get scheduled.</li>
 </ul>
 </li>
 <li><strong>Trivy Operator has replaced Starboard Operator as the online security scanning tool.</strong><ul>
@@ -7502,12 +7544,12 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="changed_4">Changed<a class="headerlink" href="#changed_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>The Fluentd deployment has changed considerably and users must ensure that their custom filters continue to work as expected.</strong></li>
+<li><strong>The Fluentd Deployment has changed considerably and users must ensure that their custom filters continue to work as expected.</strong></li>
 </ul>
 <h3 id="updated_6">Updated<a class="headerlink" href="#updated_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>cert-manager updated to <code>v1.11.0</code>.</strong><ul>
-<li>The containers in pods created by cert-manager have been renamed to better reflect what they do. This can be breaking for automation that relies on these names being static.</li>
+<li>The containers in Pods created by cert-manager have been renamed to better reflect what they do. This can be breaking for automation that relies on these names being static.</li>
 <li>The cert-manager Gateway API integration now uses the v1beta1 API version. ExperimentalGatewayAPISupport alpha feature users must upgrade to v1beta of Gateway API.</li>
 </ul>
 </li>
@@ -7529,7 +7571,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Use FQDN for services connecting from the Workload Cluster to the service cluster to prevent resolve timeouts.</strong></li>
+<li><strong>Use FQDN for services connecting from the Workload Cluster to the service Cluster to prevent resolve timeouts.</strong></li>
 <li><strong>Fixed <code>KubeletDown</code> alert rule not alerting if a kubelet was missing.</strong></li>
 <li><strong>Added permissions to the <code>alerting_full_access</code> role in OpenSearch to be able to view notification channels.</strong></li>
 <li><strong>Added <code>fluent-plugin-record-modifier</code> to the Fluentd image to prevent mapping errors.</strong></li>
@@ -7538,7 +7580,7 @@ if(!document.__defineGetter__) {
 <h3 id="added_5">Added<a class="headerlink" href="#added_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Improved security posture by adding Network Policies for some of the networking and storage components.</strong></li>
-<li><strong>Added alert for less kubelets than nodes in the cluster.</strong></li>
+<li><strong>Added alert for less kubelets than Nodes in the Cluster.</strong></li>
 <li><strong>Added alert for object limits in buckets.</strong></li>
 </ul>
 <h2 id="v0270">v0.27.0<a class="headerlink" href="#v0270" title="Permanent link">&para;</a></h2>
@@ -7562,7 +7604,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Fixed an issue with the "Kubernetes cluster status" Grafana dashboard not loading data for some panels</strong></li>
+<li><strong>Fixed an issue with the "Kubernetes Cluster status" Grafana dashboard not loading data for some panels</strong></li>
 <li><strong>Rclone can now be configured to run every x minutes/hours/days/week/month/year.</strong></li>
 </ul>
 <h3 id="added_6">Added<a class="headerlink" href="#added_6" title="Permanent link">&para;</a></h3>
@@ -7573,7 +7615,7 @@ if(!document.__defineGetter__) {
 <li><strong>The settings for this might need to be tweaked to better suit the environment.</strong></li>
 </ul>
 </li>
-<li><strong>Added an alert for failed evicted pods (KubeFailedEvictedPods).</strong></li>
+<li><strong>Added an alert for failed evicted Pods (KubeFailedEvictedPods).</strong></li>
 </ul>
 <h2 id="v0260">v0.26.0<a class="headerlink" href="#v0260" title="Permanent link">&para;</a></h2>
 <p>Released 2022-09-19</p>
@@ -7589,10 +7631,10 @@ if(!document.__defineGetter__) {
 <h3 id="added_7">Added<a class="headerlink" href="#added_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Option to create custom solvers for Let's Encrypt issuers, including a simple way to add secrets</strong></li>
-<li><strong>Kube-bench runs on every node</strong>
-  Automated CIS tests are performed on each node using kube-bench
+<li><strong>Kube-bench runs on every Node</strong>
+  Automated CIS tests are performed on each Node using kube-bench
   Added a CIS kube-bench Grafana dashboard</li>
-<li><strong>Added option for kured to notify to slack when draning and rebooting nodes</strong></li>
+<li><strong>Added option for kured to notify to slack when draning and rebooting Nodes</strong></li>
 <li><strong>Allow users to proxy and port-forward to Prometheus running in the Workload Cluster</strong></li>
 </ul>
 <h2 id="v0250">v0.25.0<a class="headerlink" href="#v0250" title="Permanent link">&para;</a></h2>
@@ -7600,7 +7642,7 @@ if(!document.__defineGetter__) {
 <h3 id="added_8">Added<a class="headerlink" href="#added_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Added Hierarchical Namespace Controller</strong><br/> Allowing users to create and manage subnamespaces, namespaces within namespaces. You can read more about this in our <a href="../../user-guide/faq/#how-do-i-add-a-new-namespace">FAQ</a>.</li>
-<li><strong>Added support for custom solvers in cluster issuers</strong> <br/> Allowing DNS01 challenges for certificate requests.</li>
+<li><strong>Added support for custom solvers in Cluster issuers</strong> <br/> Allowing DNS01 challenges for certificate requests.</li>
 <li><strong>Added support for running Harbor in High Availability</strong></li>
 </ul>
 <h3 id="updated_9">Updated<a class="headerlink" href="#updated_9" title="Permanent link">&para;</a></h3>
@@ -7614,7 +7656,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="changed_7">Changed<a class="headerlink" href="#changed_7" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>New additions to the Kubernetes cluster status Grafana dashboard</strong> <br/> It now shows information about resource requests and limits per node, and resource usage vs request per Pod.</li>
+<li><strong>New additions to the Kubernetes Cluster status Grafana dashboard</strong> <br/> It now shows information about resource requests and limits per Node, and resource usage vs request per Pod.</li>
 </ul>
 <h2 id="v0241">v0.24.1<a class="headerlink" href="#v0241" title="Permanent link">&para;</a></h2>
 <p>Released 2022-08-01</p>
@@ -7634,12 +7676,12 @@ if(!document.__defineGetter__) {
   Upgrades for Helm, Helmfile and Helm-secrets.</p>
 </li>
 <li>
-<p><strong>Image upgrade to node-local-dns</strong><br/></p>
+<p><strong>Image upgrade to Node-local-dns</strong><br/></p>
 </li>
 </ul>
 <h3 id="changed_8">Changed<a class="headerlink" href="#changed_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Improved stability to automatic node reboots</strong><br/></li>
+<li><strong>Improved stability to automatic Node reboots</strong><br/></li>
 </ul>
 <h3 id="added_9">Added<a class="headerlink" href="#added_9" title="Permanent link">&para;</a></h3>
 <ul>
@@ -7665,7 +7707,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>The deployment of Dex is now properly configured to be HA, ensuring that the Dex instances are placed on different Kubernetes worker nodes.</strong><br/></li>
+<li><strong>The Deployment of Dex is now properly configured to be HA, ensuring that the Dex instances are placed on different Kubernetes worker Nodes.</strong><br/></li>
 </ul>
 <h2 id="v0220">v0.22.0<a class="headerlink" href="#v0220" title="Permanent link">&para;</a></h2>
 <p>Released 2022-06-01</p>
@@ -7730,14 +7772,14 @@ if(!document.__defineGetter__) {
 <ul>
 <li>
 <p><strong>Added kured - Kubernetes Reboot Daemon.</strong><br/>
-  This enables automatic node reboots and security patching of the underlying base Operating System image, container runtime and Kubernetes cluster components.</p>
+  This enables automatic Node reboots and security patching of the underlying base Operating System image, container runtime and Kubernetes Cluster components.</p>
 </li>
 <li>
 <p><strong>Added Fluentd Grafana dashboard and alerts.</strong><br/></p>
 </li>
 <li>
 <p><strong>Added RBAC for admin users.</strong><br/>
-  Admin users can now list pods cluster wide and run the kubectl top command.</p>
+  Admin users can now list Pods Cluster wide and run the kubectl top command.</p>
 </li>
 <li>
 <p><strong>Added containerd support for Fluentd.</strong><br/></p>
@@ -7751,7 +7793,7 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><strong>Persist Dex state in Kubernetes.</strong><br/>
-  This ensure the JWT token received from an OpenID provider is valid even after security patching of Kubernetes cluster components.</p>
+  This ensure the JWT token received from an OpenID provider is valid even after security patching of Kubernetes Cluster components.</p>
 </li>
 <li>
 <p><strong>Add ingressClassName in ingresses where that configuration option is available.</strong><br/></p>

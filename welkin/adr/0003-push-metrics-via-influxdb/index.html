@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4057,7 +4099,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Existing Welkin clusters will need some manual migration steps, in particular changing the <code>prometheus.$opsDomain</code> DNS entry.</li>
+<li>Existing Welkin Clusters will need some manual migration steps, in particular changing the <code>prometheus.$opsDomain</code> DNS entry.</li>
 <li>The Management Cluster exposes yet another endpoint, which should only be available to Workload Clusters and not the Internet. HTTP authentication (over HTTPS) feels sufficient for now, but we need a follow-up decision on how to add another layer of protection to these endpoints.</li>
 <li>The Workload Clusters will have to properly label their metrics.</li>
 <li>Although not easy, metrics can be overwritten from the Workload Cluster. We will improve on this when (a) demand for closing this risk increases, (b) we re-evaluate long-term metrics storage.</li>

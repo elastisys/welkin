@@ -23,7 +23,7 @@
     
     
       
-        <title>Run ArgoCD on the Elastisys nodes - Elastisys Welkin®</title>
+        <title>Run ArgoCD on the Elastisys Nodes - Elastisys Welkin®</title>
       
     
     
@@ -68,7 +68,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Run ArgoCD on the Elastisys nodes - Elastisys Welkin®" >
+        <meta  property="og:title"  content="Run ArgoCD on the Elastisys Nodes - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -85,7 +85,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Run ArgoCD on the Elastisys nodes - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="Run ArgoCD on the Elastisys Nodes - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
@@ -186,7 +186,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Run ArgoCD on the Elastisys nodes
+              Run ArgoCD on the Elastisys Nodes
             
           </span>
         </div>
@@ -1247,6 +1247,48 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
   </span>
   
 
@@ -4030,14 +4072,14 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="run-argocd-on-the-elastisys-nodes">Run ArgoCD on the Elastisys nodes<a class="headerlink" href="#run-argocd-on-the-elastisys-nodes" title="Permanent link">&para;</a></h1>
+<h1 id="run-argocd-on-the-elastisys-nodes">Run ArgoCD on the Elastisys Nodes<a class="headerlink" href="#run-argocd-on-the-elastisys-nodes" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Status: accepted</li>
 <li>Deciders: arch meeting</li>
 <li>Date: 2023-01-26</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>We run additional services in the Workload Cluster on dedicated nodes, currently databases (PostgreSQL), in-memory caches (Redis), message queues (RabbitMQ) and distributed tracing (Jaeger).
+<p>We run additional services in the Workload Cluster on dedicated Nodes, currently databases (PostgreSQL), in-memory caches (Redis), message queues (RabbitMQ) and distributed tracing (Jaeger).
 Where should we run ArgoCD?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4050,20 +4092,20 @@ Where should we run ArgoCD?</p>
 <ul>
 <li>Spread ArgoCD services on application Nodes.</li>
 <li>Run ArgoCD services on dedicated Nodes.</li>
-<li>Run ArgoCD services on Elastisys Nodes, and scale up the nodes.</li>
+<li>Run ArgoCD services on Elastisys Nodes, and scale up the Nodes.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>Chosen option: "Run ArgoCD services on Elastisys Nodes, and scale up the nodes.", because it improves the stability and security of the platform, avoids resource waste and makes the ArgoCD service more affordable to the Application Developers.</p>
+<p>Chosen option: "Run ArgoCD services on Elastisys Nodes, and scale up the Nodes.", because it improves the stability and security of the platform, avoids resource waste and makes the ArgoCD service more affordable to the Application Developers.</p>
 <p>Scale up the Elastisys Nodes to 4C8GB before installing managed ArgoCD.</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The ArgoCD service infrastructure footprint is lower than when using dedicated nodes, due to less per-Node overhead (Fluentd, Falco)..</li>
+<li>The ArgoCD service infrastructure footprint is lower than when using dedicated Nodes, due to less per-Node overhead (Fluentd, Falco)..</li>
 <li>Security and stability of additional services is somewhat improved, e.g., SystemOOM due to an application won't impact ArgoCD</li>
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>We need to scale up the Elastisys nodes to 4C8GB</li>
-<li>We are sharing the Elastisys nodes resources with the other Elastisys platform components, e.g., Ingress Controller.</li>
+<li>We need to scale up the Elastisys Nodes to 4C8GB</li>
+<li>We are sharing the Elastisys Nodes resources with the other Elastisys platform components, e.g., Ingress Controller.</li>
 </ul>
 <h2 id="recommendations-to-platform-administrators">Recommendations to Platform Administrators<a class="headerlink" href="#recommendations-to-platform-administrators" title="Permanent link">&para;</a></h2>
 <p>Specifically, use the following Node labels</p>

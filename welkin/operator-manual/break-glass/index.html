@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4048,10 +4090,10 @@ if(!document.__defineGetter__) {
 <h1 id="break-glass">Break-glass<a class="headerlink" href="#break-glass" title="Permanent link">&para;</a></h1>
 <p>In this section we describe a workaround when access to the environment is broken for the Platform Administrators/operators and/or users.</p>
 <h2 id="platform-administrator-access">Platform Administrator Access<a class="headerlink" href="#platform-administrator-access" title="Permanent link">&para;</a></h2>
-<p>When Dex or the OpenID provider is malfunctioning, the Platform Administrator might be unable to access the cluster. The following steps will give you temporary access sufficient for troubleshooting and recovery:</p>
+<p>When Dex or the OpenID provider is malfunctioning, the Platform Administrator might be unable to access the Cluster. The following steps will give you temporary access sufficient for troubleshooting and recovery:</p>
 <ol>
 <li>
-<p><code>SSH</code> to one of the control-plane nodes.</p>
+<p><code>SSH</code> to one of the control-plane Nodes.</p>
 </li>
 <li>
 <p>Use <code>/etc/kubernetes/admin.conf</code> and run <code>kubectl</code> commands to check the problem</p>

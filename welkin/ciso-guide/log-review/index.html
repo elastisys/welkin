@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4282,7 +4324,7 @@ a process for regularly testing, assessing and evaluating the effectiveness of t
 <p>By <em>review period</em>, we mean the time elapsed since the last review of the logs, e.g., 30 days.</p>
 <p>Aim for a review which is both <strong>wide</strong> and <strong>deep</strong>. By wide we mean that you should vary the time interval, time point, filters, etc., when reviewing log entries. By deep we mean that you should actually read and try to understand a sample of logs.</p>
 <ol>
-<li>Open up a browser and open the Welkin <a href="../../user-guide/logs/">logs</a> of the cluster you are reviewing. This functionality is currently offered by OpenSearch.</li>
+<li>Open up a browser and open the Welkin <a href="../../user-guide/logs/">logs</a> of the Cluster you are reviewing. This functionality is currently offered by OpenSearch.</li>
 <li>Search for the following keywords on all indices -- i.e., search over each index pattern -- over the last review period: <code>error</code>, <code>failed</code>, <code>failure</code>, <code>deny</code>, <code>denied</code>, <code>blocked</code>, <code>invalid</code>, <code>expired</code>, <code>unable</code>, <code>unauthorized</code>, <code>bad</code>, <code>401</code>, <code>403</code>, <code>500</code>, <code>unknown</code>. Sample a few keywords you recently encountered during your work, e.g., <code>already installed</code> or <code>not found</code>; be creative and unpredictable.</li>
 <li>Vary the time point, the time interval, filters, etc.</li>
 <li>Include the total amount of logs in each log category in your review (set the time interval bigger than retention). Is it the same, significantly less or significantly more logs compared to the last check? If there is a major difference, it could be worth investigating further to figure out why that is.</li>

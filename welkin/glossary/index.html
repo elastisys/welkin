@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4405,7 +4447,7 @@ See also:
 <li><a href="https://en.wikipedia.org/wiki/Air_gap_(networking)">Air gap (networking) on Wikipedia</a></li>
 </ul>
 <h2 id="application-developer">Application Developer<a class="headerlink" href="#application-developer" title="Permanent link">&para;</a></h2>
-<p>A person who writes an application that runs in a Kubernetes cluster.</p>
+<p>A person who writes an application that runs in a Kubernetes Cluster.</p>
 <p>Usage notes:</p>
 <ul>
 <li>It's okay to use "developer", if it's clear from the context that we refer to an Application Developer.</li>
@@ -4429,7 +4471,7 @@ See also:
 <li><a href="https://www.cncf.io/certification/ckad/">Certified Kubernetes Application Developer (CKAD)</a></li>
 </ul>
 <h2 id="apps-layer-or-welkin-layer">Apps layer (or Welkin layer)<a class="headerlink" href="#apps-layer-or-welkin-layer" title="Permanent link">&para;</a></h2>
-<p>Denotes the Welkin components installed on top of a Kubernetes cluster.</p>
+<p>Denotes the Welkin components installed on top of a Kubernetes Cluster.</p>
 <p>Usage notes:</p>
 <ul>
 <li>This term is likely to be known and understood only by <a href="#platform-administrator">Platform Administrators</a> and <a href="#contributor">Contributors</a>. Use only when addressing these two audiences.</li>
@@ -4440,7 +4482,7 @@ See also:
 <li><a href="https://github.com/elastisys/compliantkubernetes-apps/">Apps layer source code</a></li>
 </ul>
 <h2 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">&para;</a></h2>
-<p>Can refer to a <a href="#kubernetes-cluster">Kubernetes Cluster</a>, a PostgreSQL cluster, a Redis cluster, a RabbitMQ cluster, an OpenSearch Cluster, etc.</p>
+<p>Can refer to a <a href="#kubernetes-cluster">Kubernetes Cluster</a>, a PostgreSQL Cluster, a Redis Cluster, a RabbitMQ Cluster, an OpenSearch Cluster, etc.</p>
 <p>Usage notes:</p>
 <ul>
 <li>If it's not clear from the context what kind of Cluster you refer to, please spell it out. E.g., "The PostgreSQL Cluster runs inside the Workload Cluster." instead of "The Cluster runs inside the Workload Cluster."</li>
@@ -4499,7 +4541,7 @@ Instead, EU Member States must implement a process for identifying critical enti
 <li><a href="https://en.wikipedia.org/wiki/End_user">End User on Wikipedia</a></li>
 </ul>
 <h2 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
-<p>One instance of a Welkin deployment. One Environment is composed of two <a href="#kubernetes-cluster">Kubernetes Clusters</a>, the <a href="#management-cluster">Management Cluster</a> and <a href="#workload-cluster">Workload Cluster</a>.</p>
+<p>One instance of a Welkin Deployment. One Environment is composed of two <a href="#kubernetes-cluster">Kubernetes Clusters</a>, the <a href="#management-cluster">Management Cluster</a> and <a href="#workload-cluster">Workload Cluster</a>.</p>
 <p>Usage notes:</p>
 <ul>
 <li>Make sure to distinguish between Environment and Cluster.</li>
@@ -4521,7 +4563,7 @@ As an example on how this process could look like, please refer to the NIS-era <
 <li><a href="https://www.msb.se/contentassets/b15833b9aaa0425ca0c898cc0a120c81/myndigheten-for-samhallsskydd-och-beredskaps-foreskrifter-om-anmalan-och-identifiering-av-leverantorer-av-samhallsviktiga-tjanster-2024-4-pdf.pdf">Swedish MSBFS 2024:4 Rules on identification of providers of essential services</a></li>
 </ul>
 <h2 id="kubernetes-cluster">Kubernetes Cluster<a class="headerlink" href="#kubernetes-cluster" title="Permanent link">&para;</a></h2>
-<p>A set of worker machines, called nodes, that run containerized applications. Every cluster has at least one worker node.</p>
+<p>A set of worker machines, called Nodes, that run containerized applications. Every Cluster has at least one worker Node.</p>
 <p>Usage notes:</p>
 <ul>
 <li>Prefer <a href="#workload-cluster">Workload Cluster</a> or <a href="#management-cluster">Management Cluster</a> to avoid confusion.</li>
@@ -4561,7 +4603,7 @@ As an example on how this process could look like, please refer to the NIS-era <
 <li><a href="https://cluster-api.sigs.k8s.io/user/concepts.html#infrastructure-provider">Infrastructure provider on The Cluster API Book</a></li>
 </ul>
 <h2 id="management-cluster">Management Cluster<a class="headerlink" href="#management-cluster" title="Permanent link">&para;</a></h2>
-<p>A Kubernetes cluster hosting some platform components.</p>
+<p>A Kubernetes Cluster hosting some platform components.</p>
 <p>Usage notes:</p>
 <ul>
 <li>Do NOT use "Service Cluster". That terms is poorly recognized and hereby deprecated.</li>
@@ -4634,7 +4676,7 @@ As an example on how this process could look like, please refer to the NIS-era <
 <li><a href="https://en.wikipedia.org/wiki/API">API on Wikipedia</a></li>
 </ul>
 <h2 id="workload-cluster">Workload Cluster<a class="headerlink" href="#workload-cluster" title="Permanent link">&para;</a></h2>
-<p>A Kubernetes cluster hosting the Application which is used by the <a href="#end-user">End User</a>.</p>
+<p>A Kubernetes Cluster hosting the Application which is used by the <a href="#end-user">End User</a>.</p>
 <p>See also:</p>
 <ul>
 <li><a href="https://cluster-api.sigs.k8s.io/user/concepts.html#workload-cluster">Workload Cluster on The Cluster API Book</a></li>

@@ -1263,6 +1263,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4053,35 +4095,35 @@ What do we do for Infra Providers that do not have Service type LoadBalancer?</p
 <h2 id="considered-options">Considered Options<a class="headerlink" href="#considered-options" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Keep running the Ingress-NGINX as a DaemonSet.</li>
-<li>Run Ingress-NGINX as a deployment with 2 or more replicas depending on the environment size and requirements.</li>
-<li>Do not run Ingress-NGINX on the AMS nodes.</li>
+<li>Run Ingress-NGINX as a Deployment with 2 or more replicas depending on the environment size and requirements.</li>
+<li>Do not run Ingress-NGINX on the AMS Nodes.</li>
 <li>For Infra Providers without Service type LoadBalancer continue using host network as decided in adr0008</li>
-<li>For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to node ports 30080/30443.</li>
+<li>For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to Node ports 30080/30443.</li>
 </ol>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p>Chosen options: 1 &amp; 3 &amp; 5</p>
 <ul>
 <li>"Keep running Ingress-NGINX as a DaemonSet."</li>
-<li>"Do not run Ingress-NGINX on the AMS nodes."</li>
-<li>"For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to node ports 30080/30443" -&gt; This supersedes adr0008.</li>
+<li>"Do not run Ingress-NGINX on the AMS Nodes."</li>
+<li>"For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to Node ports 30080/30443" -&gt; This supersedes adr0008.</li>
 </ul>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>We keep things simple and have the same solution on all Infrastructure Providers.</li>
-<li>We keep the platform stable and secure and not risk when we replace nodes or nodes become unavailable.</li>
+<li>We keep the platform stable and secure and not risk when we replace Nodes or Nodes become unavailable.</li>
 <li>No changes are needed.</li>
-<li>More resources are available on the AMS nodes.</li>
+<li>More resources are available on the AMS Nodes.</li>
 <li>Reduce complexity.</li>
 <li>We will now use <code>externalTrafficPolicy: local</code> and with this we will reduce latency and preserve the client’s source IP address, which is essential for some applications that rely on knowing the client's IP, such as for logging, security, or geolocation services.</li>
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Feels like some resources are wasted on very large environments with many nodes.</li>
+<li>Feels like some resources are wasted on very large environments with many Nodes.</li>
 </ul>
 <h2 id="recommendation-to-platform-administrators">Recommendation to Platform Administrators<a class="headerlink" href="#recommendation-to-platform-administrators" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Do not run the Ingress-NGINX on the AMS nodes.</li>
-<li>For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to node ports 30080/30443</li>
+<li>Do not run the Ingress-NGINX on the AMS Nodes.</li>
+<li>For Infra Providers without Service type LoadBalancer start using Service type NodePort for NGINX and also use the external load balancer to route traffic from ports 80/443 to Node ports 30080/30443</li>
 </ul>
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>

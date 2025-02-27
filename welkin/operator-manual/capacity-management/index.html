@@ -1267,6 +1267,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4286,8 +4328,8 @@ Keeping the application secure means having sufficient capacity in the environme
 <p>Nodes dedicated for data services, such as PostgreSQL, are excluded from Kubernetes requests to allocatable calculation.</p>
 </div>
 <h3 id="how">How?<a class="headerlink" href="#how" title="Permanent link">&para;</a></h3>
-<p><a href="../troubleshooting/#node-seems-really-not-fine-i-want-a-new-one">Add a new Node</a> of the same type as the other Nodes in the cluster.</p>
-<p>If the cluster has 6 Nodes, consider consolidating to 3 Nodes of twice-the-size -- in number of CPUs or memory or both. This may have several benefits:</p>
+<p><a href="../troubleshooting/#node-seems-really-not-fine-i-want-a-new-one">Add a new Node</a> of the same type as the other Nodes in the Cluster.</p>
+<p>If the Cluster has 6 Nodes, consider consolidating to 3 Nodes of twice-the-size -- in number of CPUs or memory or both. This may have several benefits:</p>
 <ul>
 <li>it may reduces infrastructure cost;</li>
 <li>it reduces platform administrator burden;</li>

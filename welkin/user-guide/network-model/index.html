@@ -1410,6 +1410,48 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-local-storage-emptydir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Local Storage EmptyDir
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../safeguards/enforce-no-pod-without-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enforce No Pod Without Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../safeguards/default-pod-topology-spread-constraints/" class="md-nav__link">
         
   
@@ -4327,7 +4369,7 @@ if(!document.__defineGetter__) {
 </div>
 <h2 id="private-network">Private Network<a class="headerlink" href="#private-network" title="Permanent link">&para;</a></h2>
 <p>Your application Pods, as well as Pods of <a href="../additional-services/">additional services</a>, can communicate on a secure private network, via <a href="https://datatracker.ietf.org/doc/html/rfc1918">RFC1918</a> private IP addresses. It is analogous to a <a href="https://en.wikipedia.org/wiki/Virtual_private_cloud">VPC</a> in VM-based workloads.</p>
-<p>In Welkin, it is the responsibility of the administrator to ensure the in-cluster private network is secure and trusted, either by performing an <a href="../../operator-manual/provider-audit/">infrastructure audit</a> or deploying <a href="https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/">Pod-to-Pod encryption</a>.</p>
+<p>In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an <a href="../../operator-manual/provider-audit/">infrastructure audit</a> or deploying <a href="https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/">Pod-to-Pod encryption</a>.</p>
 <p>You should use NetworkPolicies to segregate your Pods. This improves your security posture by reducing the blast radius in case parts of your application are under attack.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -4335,7 +4377,7 @@ if(!document.__defineGetter__) {
 <p>More example recipes for Kubernetes Network Policies that you can just copy paste can be found <a href="https://github.com/ahmetb/kubernetes-network-policy-recipes">here</a>.</p>
 </div>
 <h2 id="private-dns">Private DNS<a class="headerlink" href="#private-dns" title="Permanent link">&para;</a></h2>
-<p>The private network also features a private DNS. A Service <code>my-svc</code> in the namespace <code>my-namespace</code> can be accessed from within the Kubernetes cluster as <code>my-svc.my-namespace</code>.</p>
+<p>The private network also features a private DNS. A Service <code>my-svc</code> in the namespace <code>my-namespace</code> can be accessed from within the Kubernetes Cluster as <code>my-svc.my-namespace</code>.</p>
 <p>IP addresses of Pods are not stable. For example, the rollout of a new container image creates new Pods, which will have new IP addresses. Therefore, you should always use private DNS names of Services to connect your application Pods, as well as to connect your application to <a href="../additional-services/">additional services</a>.</p>
 <h2 id="ingress">Ingress<a class="headerlink" href="#ingress" title="Permanent link">&para;</a></h2>
 <p>Your End Users should never ever access the private network directly. Instead external access is enabled by creating Ingress objects. Welkin already comes with cert-manager and is already configured with a ClusterIssuer. A secure ACME protocol is used to issue and rotate certificates using the <a href="https://letsencrypt.org/">Let's Encrypt</a> public service.</p>
