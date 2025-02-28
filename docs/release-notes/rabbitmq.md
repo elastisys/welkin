@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v4.0.6-ck8s1](#v406-ck8s1) - 2025-02-28
 - [v3.13.7-ck8s1](#v3137-ck8s1) - 2024-12-09
 - [v3.12.6-ck8s1](#v3126-ck8s1) - 2024-01-17
 - [v3.11.18-ck8s1](#v31118-ck8s1) - 2023-07-03
@@ -22,6 +23,23 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+### v4.0.6-ck8s1
+
+Released 2025-02-28
+
+!!! warning "Application Developer Notice(s)"
+
+    - From now on Network Policies will deny access to the RabbitMQ cluster by default. To gain access to the RabbitMQ clusters add this label to your pods: `elastisys.io/rabbitmq-<cluster_name>-access: allow`
+    - AMQP 1.0 is now a core protocol, and is always enabled.<br>Classic queue mirroring is now removed.
+
+#### Feature(s)
+
+- Network Policies are added to the Cluster deployments which will deny access by default.
+
+#### Improvement(s)
+
+- RabbitMQ is upgraded v4.0, which is a new major release.
 
 ### v3.13.7-ck8s1
 
