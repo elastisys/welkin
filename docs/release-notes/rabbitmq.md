@@ -30,7 +30,9 @@ Released 2025-02-28
 
 !!! warning "Application Developer Notice(s)"
 
-    - From now on Network Policies will deny access to the RabbitMQ cluster by default. To gain access to the RabbitMQ clusters add this label to your pods: `elastisys.io/rabbitmq-<cluster_name>-access: allow`
+    - Added Network Policies:
+        - For new clusters, these will deny access to the RabbitMQ cluster by default. To gain access to the RabbitMQ clusters, add this label to your pods: `elastisys.io/rabbitmq-<cluster_name>-access: allow`
+        - For existing clusters, these will **not** deny access to the RabbitMQ cluster by default. Once your pods have been labeled with `elastisys.io/rabbitmq-<cluster_name>-access: allow`, enforcement can be enabled by sending a Service Request to your Platform Administrator.
     - AMQP 1.0 is now a core protocol, and is always enabled.<br>Classic queue mirroring is now removed.
 
 #### Feature(s)
