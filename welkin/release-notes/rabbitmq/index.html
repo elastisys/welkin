@@ -3758,6 +3758,39 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v406-ck8s1" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.0.6-ck8s1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.0.6-ck8s1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature(s)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improvement(s)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v3137-ck8s1" class="md-nav__link">
     <span class="md-ellipsis">
       v3.13.7-ck8s1
@@ -3768,7 +3801,7 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improvements" class="md-nav__link">
+  <a href="#improvements_1" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4258,6 +4291,39 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v406-ck8s1" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.0.6-ck8s1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.0.6-ck8s1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature(s)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improvement(s)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v3137-ck8s1" class="md-nav__link">
     <span class="md-ellipsis">
       v3.13.7-ck8s1
@@ -4268,7 +4334,7 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improvements" class="md-nav__link">
+  <a href="#improvements_1" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4501,6 +4567,7 @@ if(!document.__defineGetter__) {
 <!-- BEGIN TOC -->
 
 <ul>
+<li><a href="#v406-ck8s1">v4.0.6-ck8s1</a> - 2025-02-28</li>
 <li><a href="#v3137-ck8s1">v3.13.7-ck8s1</a> - 2024-12-09</li>
 <li><a href="#v3126-ck8s1">v3.12.6-ck8s1</a> - 2024-01-17</li>
 <li><a href="#v31118-ck8s1">v3.11.18-ck8s1</a> - 2023-07-03</li>
@@ -4521,9 +4588,30 @@ if(!document.__defineGetter__) {
 -->
 <!-- vale off -->
 
+<h3 id="v406-ck8s1">v4.0.6-ck8s1<a class="headerlink" href="#v406-ck8s1" title="Permanent link">&para;</a></h3>
+<p>Released 2025-02-28</p>
+<div class="admonition warning">
+<p class="admonition-title">Application Developer Notice(s)</p>
+<ul>
+<li>Added Network Policies:<ul>
+<li>For new clusters, these will deny access to the RabbitMQ cluster by default. To gain access to the RabbitMQ clusters, add this label to your pods: <code>elastisys.io/rabbitmq-&lt;cluster_name&gt;-access: allow</code></li>
+<li>For existing clusters, these will <strong>not</strong> deny access to the RabbitMQ cluster by default. Once your pods have been labeled with <code>elastisys.io/rabbitmq-&lt;cluster_name&gt;-access: allow</code>, enforcement can be enabled by sending a Service Request to your Platform Administrator.</li>
+</ul>
+</li>
+<li>AMQP 1.0 is now a core protocol, and is always enabled.<br>Classic queue mirroring is now removed.</li>
+</ul>
+</div>
+<h4 id="features">Feature(s)<a class="headerlink" href="#features" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Network Policies are added to the Cluster deployments which will deny access by default.</li>
+</ul>
+<h4 id="improvements">Improvement(s)<a class="headerlink" href="#improvements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>RabbitMQ is upgraded v4.0, which is a new major release.</li>
+</ul>
 <h3 id="v3137-ck8s1">v3.13.7-ck8s1<a class="headerlink" href="#v3137-ck8s1" title="Permanent link">&para;</a></h3>
 <p>Released 2024-12-09</p>
-<h4 id="improvements">Improvement(s)<a class="headerlink" href="#improvements" title="Permanent link">&para;</a></h4>
+<h4 id="improvements_1">Improvement(s)<a class="headerlink" href="#improvements_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Updated Cluster operator to <code>2.9.0</code>, updated server to <code>3.13.7</code> and monitoring to <code>2.9.0</code>.</li>
 <li>Updated the backup process to use <code>rabbitmqctl</code> for improved reliability and compatibility.</li>
