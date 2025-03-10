@@ -98,3 +98,8 @@ sudo apt install pre-commit
 sudo apt install python3-pip
 sudo pip install nodeenv --break-system-packages --upgrade
 ```
+
+## 📜 Licensing Information
+
+All source files in this repository are licensed under the Apache License, Version 2.0 unless otherwise stated.
+See the [LICENSE](LICENSE.md) file for full details.
