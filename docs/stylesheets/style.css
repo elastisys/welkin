@@ -115,6 +115,11 @@
   font-family: var(--elastisys-details-font);
   font-weight: var(--elastisys-details-weight);
 }
+
+.md-content .landing-page a[role=button]:hover {
+  background-color: var(--md-accent-fg-color);
+}
+
 .md-content .landing-page .columns-always {
   margin: 0;
   padding: 0;

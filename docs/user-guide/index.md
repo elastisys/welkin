@@ -12,7 +12,7 @@ Use the navigational bar to the side to jump to the section that interests you t
 
 ## Orientation: The DevSecOps Loop
 
-![img/devsecops.svg](../img/devsecops.svg)
+<img class="add-white-background" src="../img/devsecops.svg" alt="DevSecOps Loop and Welkin components" />
 
 As an application platform, the main job of Welkin is to reduce your cognitive load.
 The picture above helps you get a good grasp of how Welkin can support your everyday work.
