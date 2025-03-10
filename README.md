@@ -102,4 +102,4 @@ sudo pip install nodeenv --break-system-packages --upgrade
 ## 📜 Licensing Information
 
 All source files in this repository are licensed under the Apache License, Version 2.0 unless otherwise stated.
-See the [LICENSE](./LICENSE) file for full details.
+See the [LICENSE](LICENSE) file for full details.
