@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.42.2](#v0422) - 2025-03-12
 - [v0.42.1](#v0421) - 2025-01-02
 - [v0.42.0](#v0420) - 2024-11-14
 - [v0.41.0](#v0410) - 2024-10-02
@@ -63,6 +64,18 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.42.2
+
+Released 2025-03-12
+
+!!! warning "Application Developer Notice(s)"
+
+    - Permissions to modify the additional Fluentd ConfigMaps have been removed.<br>Reach out to a Platform Administrator if any changes to the Fluentd config or plugins are needed!
+
+### Deprecation(s)
+
+- Remove permissions for Application Developers to modify the additional Fluentd ConfigMaps
 
 ## v0.42.1
 
