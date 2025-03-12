@@ -8,6 +8,7 @@
 
 - [v0.44.0](#v0440) - 2025-02-21
 - [v0.43.0](#v0430) - 2025-01-27
+- [v0.42.2](#v0422) - 2025-03-12
 - [v0.42.1](#v0421) - 2025-01-02
 - [v0.42.0](#v0420) - 2024-11-14
 - [v0.41.0](#v0410) - 2024-10-02
@@ -109,6 +110,18 @@ Released 2025-01-27
 
 - Added JSON schema contribution guide
 - Rebrand to Welkin in configuration and documentation
+
+## v0.42.2
+
+Released 2025-03-12
+
+!!! warning "Application Developer Notice(s)"
+
+    - Permissions to modify the additional Fluentd ConfigMaps have been removed.<br>Reach out to a Platform Administrator if any changes to the Fluentd config or plugins are needed!
+
+### Deprecation(s)
+
+- Remove permissions for Application Developers to modify the additional Fluentd ConfigMaps
 
 ## v0.42.1
 
