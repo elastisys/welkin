@@ -7,6 +7,7 @@
 <!-- BEGIN TOC -->
 
 - [v0.44.0](#v0440) - 2025-02-21
+- [v0.43.1](#v0431) - 2025-03-12
 - [v0.43.0](#v0430) - 2025-01-27
 - [v0.42.2](#v0422) - 2025-03-12
 - [v0.42.1](#v0421) - 2025-01-02
@@ -90,6 +91,18 @@ Released 2025-02-21
 
 - Changed some messages and documentation to Welkin, as part of our rebranding.
 - Fixed KubeContainerOOMKilled alert for newly created Pods.
+
+## v0.43.1
+
+Released 2025-03-12
+
+!!! warning "Application Developer Notice(s)"
+
+    - Permissions to modify the additional Fluentd ConfigMaps have been removed.<br>Reach out to a Platform Administrator if any changes to the Fluentd config or plugins are needed!
+
+### Deprecation(s)
+
+- Remove permissions for Application Developers to modify the additional Fluentd ConfigMaps
 
 ## v0.43.0
 
