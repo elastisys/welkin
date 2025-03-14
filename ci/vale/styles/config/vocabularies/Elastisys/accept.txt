@@ -23,8 +23,8 @@ Spotahome
 Sjunet
 Telavox
 Telia
-Tempus
 vSphere
+Vitec
 Yopass
 Zalando
 
