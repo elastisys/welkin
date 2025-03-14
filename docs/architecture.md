@@ -7,6 +7,9 @@ tags:
 
 # Architecture
 
+<!-- All images on this page need a white background -->
+<div class="add-white-background" markdown="1">
+
 Below we present the architecture of Welkin, using the [C4 model](https://c4model.com/).
 
 For the nitty-gritty details, see [Architectural Decision Records](adr/index.md).
@@ -70,3 +73,5 @@ Click on the diagram below to see the nuts-and-bolts of Welkin backup.
 ## Level 3: Access Control
 
 [![C4 Model, Level 3 Diagram, Access Control](img/welkin-c4model-level3-access-control.drawio.svg)](img/welkin-c4model-level3-access-control.drawio.svg)
+
+</div>
