@@ -3077,6 +3077,14 @@
          <lastmod>2025-03-14</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-gpu-config-properties-device-plugin-configuration/</loc>
+         <lastmod>2025-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-gpu-config-properties-enable-additional-dcgm-metrics/</loc>
+         <lastmod>2025-03-14</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-gpu-config-properties-gpu-daemonsets-config/</loc>
          <lastmod>2025-03-14</lastmod>
     </url>
@@ -3086,6 +3094,14 @@
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-gpu-config-properties-gpu-operator-enabled/</loc>
+         <lastmod>2025-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-gpu-config-properties-mig-configuration-properties-mig-strategy/</loc>
+         <lastmod>2025-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-gpu-config-properties-mig-configuration/</loc>
          <lastmod>2025-03-14</lastmod>
     </url>
     <url>

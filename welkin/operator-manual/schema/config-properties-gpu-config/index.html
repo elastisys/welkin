@@ -4009,6 +4009,33 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mig" class="md-nav__link">
+    <span class="md-ellipsis">
+      mig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceplugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      devicePlugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrametrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraMetrics
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4107,6 +4134,27 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-gpu-config-properties-gpu-daemonsets-config/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/daemonsets">Welkin Apps Config</a></td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="#mig">mig</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-gpu-config-properties-mig-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/mig">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#deviceplugin">devicePlugin</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-gpu-config-properties-device-plugin-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/devicePlugin">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#extrametrics">extraMetrics</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-gpu-config-properties-enable-additional-dcgm-metrics/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/extraMetrics">Welkin Apps Config</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="enabled">enabled<a class="headerlink" href="#enabled" title="Permanent link">&para;</a></h2>
@@ -4184,9 +4232,66 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-gpu-config-properties-gpu-daemonsets-config/">GPU Daemonsets Config</a>)</p>
+<h2 id="mig">mig<a class="headerlink" href="#mig" title="Permanent link">&para;</a></h2>
+<p>Configure MIG options like strategy</p>
+<p><code>mig</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-gpu-config-properties-mig-configuration/">MIG Configuration</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-gpu-config-properties-mig-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/mig">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-gpu-config-properties-mig-configuration/">MIG Configuration</a>)</p>
+<h2 id="deviceplugin">devicePlugin<a class="headerlink" href="#deviceplugin" title="Permanent link">&para;</a></h2>
+<p>Configuration for the device plugin, e.g. timeslicing</p>
+<p><code>devicePlugin</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-gpu-config-properties-device-plugin-configuration/">Device Plugin Configuration</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-gpu-config-properties-device-plugin-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/devicePlugin">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-gpu-config-properties-device-plugin-configuration/">Device Plugin Configuration</a>)</p>
+<h2 id="extrametrics">extraMetrics<a class="headerlink" href="#extrametrics" title="Permanent link">&para;</a></h2>
+<p>Adds some profiling metrics in DCGM if it's available in your GPU setup</p>
+<p><code>extraMetrics</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-gpu-config-properties-enable-additional-dcgm-metrics/">Enable Additional DCGM Metrics</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-gpu-config-properties-enable-additional-dcgm-metrics/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/gpu/properties/extraMetrics">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-gpu-config-properties-enable-additional-dcgm-metrics/">Enable Additional DCGM Metrics</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Mar 14 03:51:27 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/9ff02ecd0d94d8adba081002935fa8572bc3c616">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Mar 14 15:52:57 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/fb56c39918f50f7a8c0e60ca8c34802db4399fbc">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
