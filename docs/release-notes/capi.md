@@ -30,7 +30,7 @@ Released 2024-11-28
 
 ### Improvement(s)
 
-- `kube-system` pods are now prevented from scheduling on autoscaled nodes, to ensure that the nodes can be automatically scaled down again.
+- `kube-system` Pods are now prevented from scheduling on autoscaled Nodes, to ensure that the Nodes can be automatically scaled down again.
 
 ## v0.3.0
 

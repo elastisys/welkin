@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v2.14.3-ck8s1](#v2143-ck8s1) - 2025-03-05
 - [v2.12.0-ck8s1](#v2120-ck8s1) - 2024-09-02
 - [v2.9.9-ck8s1](#v299-ck8s1) - 2024-03-20
 - [v2.9.5-ck8s1](#v295-ck8s1) - 2024-01-30
@@ -16,6 +17,18 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v2.14.3-ck8s1
+
+Released 2025-03-05
+
+### Feature(s)
+
+- Added support for read-only local users
+
+### Improvement(s)
+
+- Upgraded ArgoCD to v2.14.3
 
 ### v2.12.0-ck8s1
 

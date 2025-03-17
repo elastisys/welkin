@@ -35,7 +35,7 @@ Welkin includes backup functionality through Velero, a backup tool for Kubernete
 
 ## What is Velero?
 
-[Velero](https://velero.io/) is an open source, cloud native tool for backing up and migrating Kubernetes Resources and Persistent Volumes. It has been developed by VMware since 2017. It allows for both manual and scheduled backups, and also allows for subsets of Resources in a cluster to be backed up rather than necessarily backing up everything.
+[Velero](https://velero.io/) is an open source, cloud native tool for backing up and migrating Kubernetes Resources and Persistent Volumes. It has been developed by VMware since 2017. It allows for both manual and scheduled backups, and also allows for subsets of Resources in a Cluster to be backed up rather than necessarily backing up everything.
 
 ## Usage
 
@@ -71,9 +71,9 @@ The Welkin administrator will take the following measure to ensure backups are p
 
     **Why?** This ensures backups remain confidential, even if, e.g., hard drives are not safely disposed.
 
-1. Backups are replicated to an off-site location, if requested. This process is performed from outside the cluster, hence the users -- or attackers gaining access to their application -- cannot access the off-site replicas.
+1. Backups are replicated to an off-site location, if requested. This process is performed from outside the Cluster, hence the users -- or attackers gaining access to their application -- cannot access the off-site replicas.
 
-    **Why?** This ensures backups are available even if the primary location is subject to a disaster, such as extreme weather. The backups also remain available -- though unlikely confidential -- in case an attacker manages to gain access to the cluster.
+    **Why?** This ensures backups are available even if the primary location is subject to a disaster, such as extreme weather. The backups also remain available -- though unlikely confidential -- in case an attacker manages to gain access to the Cluster.
 
 1. The buckets holding the backups are configured with [object lock](https://docs.safespring.com/storage/object-locking/), if the underlying cloud provider supports it. This means that backups cannot be modified or erase until a given retention time, even with privileged credentials.
 

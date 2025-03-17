@@ -12,7 +12,7 @@ Going through these basic troubleshooting steps should help you as an Applicatio
 
 If you are using Lens instead of the `kubectl` command-line interface, clicking through your Deployments and Pods will reveal the same information as the commands given below.
 
-## Is the Kubernetes cluster fine?
+## Is the Kubernetes Cluster fine?
 
 All Nodes need to have status `Ready`.
 

@@ -21,7 +21,7 @@ Warning: would violate PodSecurity "restricted:latest":
     seccompProfile (pod or container "<container-name>" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
 ```
 
-Additionally, why pods are not scheduled and events are emitted from workloads similar to:
+Additionally, why Pods are not scheduled and events are emitted from workloads similar to:
 
 ```console
 $ kubectl -n <namespace> get events
@@ -39,7 +39,7 @@ $ kubectl -n <namespace> get events
 
     If any of these restrictions causes friction when deploying your application, please file a [service ticket](https://elastisys.atlassian.net/servicedesk/) and we'll happily advise you on how to reduce privileges required by your application.
 
-Kubernetes by default allows any Pod to run with any privileges it requests, which easily allows an application to take full control over a cluster and everything in it.
+Kubernetes by default allows any Pod to run with any privileges it requests, which easily allows an application to take full control over a Cluster and everything in it.
 To minimise this risk Welkin employs two systems to restrict what privileges an application can request:
 
 - [Kubernetes - Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) (PSA)
@@ -69,11 +69,11 @@ This standard includes the following:
 
 - Escalation and privileged mode are disallowed.
 
-  Usually applications don't need this unless they need to have low-level access to the nodes to access and manage hardware.
+  Usually applications don't need this unless they need to have low-level access to the Nodes to access and manage hardware.
 
 - Host namespaces, host networks, host ports, and host paths are disallowed.
 
-  Usually applications don't need this unless they need to have low-level access to the nodes to access and manage system resources.
+  Usually applications don't need this unless they need to have low-level access to the Nodes to access and manage system resources.
 
 - Running with the `seccomp` profile `Localhost` or `RuntimeDefault` (set by default).
 
@@ -85,7 +85,7 @@ This standard includes the following:
 
 - Running with the `NET_BIND_SERVICE` capability added and `ALL` capabilities dropped (set by default).
 
-  Usually applications don't need any capabilities unless they need to have low-level access to the nodes to access and manage system resources. The `NET_BIND_SERVICE` is an exception that allows processes to bind ports under 1024.
+  Usually applications don't need any capabilities unless they need to have low-level access to the Nodes to access and manage system resources. The `NET_BIND_SERVICE` is an exception that allows processes to bind ports under 1024.
 
 - Running with the following volume types:
 

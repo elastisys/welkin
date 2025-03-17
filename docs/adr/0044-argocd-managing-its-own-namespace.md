@@ -33,7 +33,7 @@ Do we want to make `argocd-system` a managed namespace in our ArgoCD offering?
 Chosen option:
 
 - No, we do not allow ArgoCD to manage its own namespace.
-    - ArgoCD, through an Application Developer's configuration, should not deploy standard Kubernetes resources (such as pods or secrets) directly into its own namespace. If there is a requirement for such deployments, it should be initiated through a service ticket, ensuring that it undergoes thorough security and stability assessments to prevent any compromises to the platform.
+    - ArgoCD, through an Application Developer's configuration, should not deploy standard Kubernetes resources (such as Pods or secrets) directly into its own namespace. If there is a requirement for such deployments, it should be initiated through a service ticket, ensuring that it undergoes thorough security and stability assessments to prevent any compromises to the platform.
 
 ### Positive Consequences
 

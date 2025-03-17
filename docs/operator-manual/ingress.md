@@ -1,6 +1,6 @@
 # Ingress
 
-Welkin uses the Ingress NGINX Controller to route external traffic to the correct Service inside the cluster. Welkin can configure the Ingress Controller in two different ways depending on the underlying infrastructure.
+Welkin uses the Ingress NGINX Controller to route external traffic to the correct Service inside the Cluster. Welkin can configure the Ingress Controller in two different ways depending on the underlying infrastructure.
 
 ## Using a Service of type LoadBalancer
 
@@ -16,15 +16,15 @@ provider with an external ip-address. Any DNS records should be pointed to the I
 
 For any Infrastructure Provider (or bare metal) not supporting these kind of public load balancers the Ingress Controller
 uses the host network instead. This is done by configuring the Ingress Controller as a DaemonSet so one Pod
-is created on each node. The Pods are configured to use the host network, so all traffic received on the node
+is created on each Node. The Pods are configured to use the host network, so all traffic received on the Node
 on port 80 and 443 will be intercepted by the Ingress Controller Pod and then routed to the desired Service.
 
-On some Infrastructure Providers there is load balancing available for the worker nodes. For example Exoscale uses an "elastic IP"
-which provides one external IP which load balances to the available worker nodes. For these Infrastructure Providers this external IP
+On some Infrastructure Providers there is load balancing available for the worker Nodes. For example Exoscale uses an "elastic IP"
+which provides one external IP which load balances to the available worker Nodes. For these Infrastructure Providers this external IP
 of the load balancers should be used as the entry point in the DNS.
 
 For the Infrastructure Providers where this is not available the easiest option is to just point the DNS to the IP of any, or all, of
-the worker nodes. This is of course not a optimal solution because it adds a single point of failure on the worker node which
+the worker Nodes. This is of course not a optimal solution because it adds a single point of failure on the worker Node which
 is selected by the DNS. Another option is to use any existing load balancer service if this is available.
 
 ## Installation

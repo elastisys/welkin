@@ -32,7 +32,7 @@ However, with Welkin, you don't need to deal with (2).
 
 ## Solution
 
-Welkin comes with strong cluster-level default `topologySpreadConstraints`.
+Welkin comes with strong Cluster-level default `topologySpreadConstraints`.
 
 ### Single-Zone Clusters
 
@@ -67,7 +67,7 @@ This implies that your application is more likely to tolerate a zone going down.
 ## What if I need to customize my `topologySpreadConstraints`?
 
 Simply override this in your application Helm Chart.
-The [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L84) provides an example on how to achieve this.
+The [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L84-L96) provides an example on how to achieve this.
 
 ## Further Reading
 

@@ -96,7 +96,7 @@ This log lists the architectural decisions for Welkin.
 - [ADR-0017](0017-persist-dex.md) - Persist Dex
 - [ADR-0018](0018-use-probe-to-measure-internal-uptime.md) - Use Probe to Measure Uptime of Internal Welkin Services
 - [ADR-0019](0019-push-metrics-via-thanos.md) - Push Metrics via Thanos
-- [ADR-0020](0020-filter-by-cluster-label-then-data-source.md) - Filter by cluster label then data source
+- [ADR-0020](0020-filter-by-cluster-label-then-data-source.md) - Filter by Cluster label then data source
 - [ADR-0021](0021-tls-for-additional-services.md) - Default to TLS for performance-insensitive additional services
 - [ADR-0022](0022-use-dedicated-nodes-for-additional-services.md) - Use Dedicated Nodes for Additional Services
 - [ADR-0023](0023-allow-snippets-annotations.md) - [Superseded by [ADR-0056](0056-allow-snippets-annotations-after-risk-acceptance.md)] Only allow Ingress Configuration Snippet Annotations after Proper Risk Acceptance
@@ -104,11 +104,11 @@ This log lists the architectural decisions for Welkin.
 - [ADR-0025](0025-local-storage.md) - Use local-volume-provisioner for Managed Services that requires high-speed disks
 - [ADR-0026](0026-hnc.md) - Use `environment-name` as the default root of Hierarchical Namespace Controller (HNC)
 - [ADR-0027](0027-postgresql-external-replication.md) - PostgreSQL - Enable external replication
-- [ADR-0028](0028-harder-pod-eviction-when-node-goes-OOM.md) - Harder Pod eviction when nodes are going OOM
+- [ADR-0028](0028-harder-pod-eviction-when-node-goes-OOM.md) - Harder Pod eviction when Nodes are going OOM
 - [ADR-0029](0029-expose-jaeger-ui.md) - Expose Jaeger UI in WC
-- [ADR-0030](0030-run-argocd-on-elastisys-nodes.md) - Run ArgoCD on the Elastisys nodes
-- [ADR-0031](0031-run-csi-cinder-controllerplugin-on-elastisys-nodes.md) - Run csi-cinder-controllerplugin on the Elastisys nodes
-- [ADR-0032](0032-boot-disk-size.md) - Boot disk size on nodes
+- [ADR-0030](0030-run-argocd-on-elastisys-nodes.md) - Run ArgoCD on the Elastisys Nodes
+- [ADR-0031](0031-run-csi-cinder-controllerplugin-on-elastisys-nodes.md) - Run csi-cinder-controllerplugin on the Elastisys Nodes
+- [ADR-0032](0032-boot-disk-size.md) - Boot disk size on Nodes
 - [ADR-0033](0033-run-cluster-api-controllers-on-service-cluster.md) - Run Cluster API controllers on Management Cluster
 - [ADR-0034](0034-how-to-run-multiple-ams-packages-of-the-same-type.md) - How to run multiple AMS packages of the same type in the same environment
 - [ADR-0035](0035-run-tekton-on-service-cluster.md) - Run Tekton on Management Cluster

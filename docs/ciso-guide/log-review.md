@@ -70,7 +70,7 @@ By _review period_, we mean the time elapsed since the last review of the logs, 
 
 Aim for a review which is both **wide** and **deep**. By wide we mean that you should vary the time interval, time point, filters, etc., when reviewing log entries. By deep we mean that you should actually read and try to understand a sample of logs.
 
-1. Open up a browser and open the Welkin [logs](../user-guide/logs.md) of the cluster you are reviewing. This functionality is currently offered by OpenSearch.
+1. Open up a browser and open the Welkin [logs](../user-guide/logs.md) of the Cluster you are reviewing. This functionality is currently offered by OpenSearch.
 1. Search for the following keywords on all indices -- i.e., search over each index pattern -- over the last review period: `error`, `failed`, `failure`, `deny`, `denied`, `blocked`, `invalid`, `expired`, `unable`, `unauthorized`, `bad`, `401`, `403`, `500`, `unknown`. Sample a few keywords you recently encountered during your work, e.g., `already installed` or `not found`; be creative and unpredictable.
 1. Vary the time point, the time interval, filters, etc.
 1. Include the total amount of logs in each log category in your review (set the time interval bigger than retention). Is it the same, significantly less or significantly more logs compared to the last check? If there is a major difference, it could be worth investigating further to figure out why that is.

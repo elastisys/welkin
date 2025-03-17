@@ -19,7 +19,7 @@ In this guide, we'll focus on how to use GPU in the Welkin platform.
 
 ## Deployment
 
-To use GPU resources in your cluster, you need to create a deployment that is using the resource `nvidia.com/gpu`.
+To use GPU resources in your Cluster, you need to create a Deployment that is using the resource `nvidia.com/gpu`.
 Here's an example of how to configure GPU resources for a Pod:
 
 ```yaml
@@ -58,7 +58,7 @@ To enforce resource-specific scheduling, Nodes have been configured with the fol
         - `elastisys.io/node-type=gpu`
         - `elastisys.io/node-group=gpu-worker`
     - **Taint**: `elastisys.io/node-type=gpu:NoSchedule`
-    - These Nodes are reserved exclusively for workloads requiring GPU resources. To schedule Pods on GPU Nodes, specific **node affinity** and **toleration** must be configured in the Pod definition.
+    - These Nodes are reserved exclusively for workloads requiring GPU resources. To schedule Pods on GPU Nodes, specific **Node affinity** and **toleration** must be configured in the Pod definition.
 
 By using these labels and taints, we ensure that:
 
@@ -127,8 +127,8 @@ You want to ensure this workload is scheduled exclusively on Nodes with this GPU
 This configuration ensures that the workload is only scheduled on GPU Nodes labeled with both `elastisys.io/node-type=gpu` and `node.Kubernetes.io/instance-type=Standard_B2s`.
 
 > [!NOTE]
-> If your cluster is using the cluster autoscaling feature and there's currently not enough resources, the autoscaler will create one for you.
-> It might take a couple of minutes for the new Node to join the cluster and to install all the pre-requisites.
+> If your Cluster is using the Cluster autoscaling feature and there's currently not enough resources, the autoscaler will create one for you.
+> It might take a couple of minutes for the new Node to join the Cluster and to install all the pre-requisites.
 
 ### Further Reading
 

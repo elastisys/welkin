@@ -35,7 +35,7 @@ Should we consider using `Role-Based Access Control (RBAC)` and potentially runn
 
 1. Run Ingress-NGINX in chroot with custom seccomp profile
 
-    - `Good`, because attackers can not exploit recent CVEs to access secrets cluster-wide.
+    - `Good`, because attackers can not exploit recent CVEs to access secrets Cluster-wide.
     - `Bad`, because if someone were to break out of the chroot and attack the controller itself, they would have access to the `clone` and `unshare` syscalls on the host. This allows the attacker to create threads on the host as well as any type of namespace. It is not entirely clear what kind of harm this could cause.
 
 ## Decision Outcome
@@ -46,7 +46,7 @@ The solution proposed has already been implemented and will be available from ap
 
 ### Positive Consequences
 
-- Attackers can not exploit recent CVEs to access secrets cluster-wide.
+- Attackers can not exploit recent CVEs to access secrets Cluster-wide.
 - Increased platform security and reliability.
 - We avoid the security theater.
 

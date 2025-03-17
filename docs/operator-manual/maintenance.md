@@ -28,22 +28,22 @@ This maps to objectives in ISO Annex [A.12.6.1 Management of Technical Vulnerabi
 
 In short, there are three levels of maintenance that should be performed on a regular basis.
 
-- Patching the underlying OS on the nodes
+- Patching the underlying OS on the Nodes
 - Upgrading the Welkin application stack
 - Upgrading Welkin-Kubespray
 
 Let's go through them one by one.
 
-### Patching the nodes
+### Patching the Nodes
 
-Security patches for the underlying OS on the nodes is constantly being released, and to ensure your environment is secured, the nodes that run Welkin must be updated with these patches.
+Security patches for the underlying OS on the Nodes is constantly being released, and to ensure your environment is secured, the Nodes that run Welkin must be updated with these patches.
 We recommend that you use the [AutomaticSecurityUpdates](https://help.ubuntu.com/community/AutomaticSecurityUpdates) feature that is available in Ubuntu (similar feature exist in other Linux distributions) to install these updates.
-Note that the nodes still need to be rebooted for some of these updates to be applied.
-In order to reboot the nodes, you can either use a tool like [kured](https://github.com/kubereboot/kured) or you can do it manually by logging on to the nodes and rebooting them manually.
-When doing that, reboot one node at the time and make sure that the rebooted node is 'Ready' and that pods are scheduled to it before you move on to the next, or you risk downtime.
+Note that the Nodes still need to be rebooted for some of these updates to be applied.
+In order to reboot the Nodes, you can either use a tool like [kured](https://github.com/kubereboot/kured) or you can do it manually by logging on to the Nodes and rebooting them manually.
+When doing that, reboot one Node at the time and make sure that the rebooted Node is 'Ready' and that Pods are scheduled to it before you move on to the next, or you risk downtime.
 
-There is a playbook in the compliantkubernetes-kubespray repository that can assist with the reboot of nodes.
-It will cordon and reboot the nodes one by one.
+There is a playbook in the compliantkubernetes-kubespray repository that can assist with the reboot of Nodes.
+It will cordon and reboot the Nodes one by one.
 
 ```bash
 ./bin/ck8s-kubespray reboot-nodes <wc|sc> [--extra-vars manual_prompt=true] [<options>]
@@ -61,7 +61,7 @@ When a new version is released, it becomes available as a [tagged release](https
 
 - [ ] Notify the users (if any) before the upgrade starts;
 - [ ] Check if there are any pending changes to the environment;
-- [ ] Check the state of the environment, pods, nodes and backup jobs:
+- [ ] Check the state of the environment, Pods, Nodes and backup jobs:
 
 > [!NOTE]
 > the below steps should be run from compliantkubernetes-apps root directory.
@@ -128,9 +128,9 @@ Then check the release notes for each version in between to see if there are any
 
 ### Upgrading Kubespray/Kubernetes
 
-All clusters should stay up to date with the latest Kubespray version used in [compliantkubernetes-kubespray](https://github.com/elastisys/compliantkubernetes-kubespray).
+All Clusters should stay up to date with the latest Kubespray version used in [compliantkubernetes-kubespray](https://github.com/elastisys/compliantkubernetes-kubespray).
 
-1. Note what version of Kubespray that is currently used in the cluster and the Kubespray version we want to upgrade to.
+1. Note what version of Kubespray that is currently used in the Cluster and the Kubespray version we want to upgrade to.
     Then check the release notes for each version in between to see if there are anything that might cause any problems, if so then consult the rest of the operations team before proceeding.
     Also check if the newer Kubespray version would upgrade Kubernetes to a new minor version, if so then the Application Developer should get a notice of x weeks before proceeding to let them check for any deprecated APIs that they might be using.
     You should never upgrade more than one minor version of Kubespray at a time.
@@ -148,14 +148,14 @@ All clusters should stay up to date with the latest Kubespray version used in [c
 
 1. Upgrade compliantkubernetes-kubespray by following the relevant [documentation](https://github.com/elastisys/compliantkubernetes-kubespray/tree/main/migration) (e.g. [for upgrade to v2.17.x-ck8s1](https://github.com/elastisys/compliantkubernetes-kubespray/blob/v2.17.1-ck8s1/migration/v2.16.0-ck8s1-v2.17.x-ck8s1/upgrade-cluster.md)).
 
-1. Download the required files on the nodes:
+1. Download the required files on the Nodes:
 
     ```bash
     ./bin/ck8s-kubespray run-playbook sc upgrade-cluster.yml -b --tags=download
     ./bin/ck8s-kubespray run-playbook wc upgrade-cluster.yml -b --tags=download
     ```
 
-1. Upgrade the cluster to a new Kubernetes version:
+1. Upgrade the Cluster to a new Kubernetes version:
 
     ```bash
     ./bin/ck8s-kubespray run-playbook sc upgrade-cluster.yml -b --skip-tags=download
@@ -164,7 +164,7 @@ All clusters should stay up to date with the latest Kubespray version used in [c
 
 ### After doing any upgrades or maintenance
 
-- [ ] Check the state of the environment, pods and nodes:
+- [ ] Check the state of the environment, Pods and Nodes:
 
 > [!NOTE]
 > the below steps should be run from compliantkubernetes-apps root directory.

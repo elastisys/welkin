@@ -97,7 +97,7 @@ Welkin enables organizations across Europe to accelerate innovation through open
     <li><img class="add-white-background" src="img/logos/orgs/telia.svg" alt="Logo of Telia" /></li>
     <li><img class="add-white-background" src="img/logos/orgs/carasent.png" alt="Logo of Carasent" /></li>
     <li><img class="add-white-background" src="img/logos/orgs/prorenata.svg" alt="Logo of Prorenata" /></li>
-    <li><img class="add-white-background" src="img/logos/orgs/tempus.png" alt="Logo of Tempus" /></li>
+    <li><img class="add-white-background" src="img/logos/orgs/vitec.svg" alt="Logo of Vitec" /></li>
     <li><img class="add-white-background" src="img/logos/orgs/rise-logo-black.svg" alt="Logo of RISE" /></li>
 </ul>
 

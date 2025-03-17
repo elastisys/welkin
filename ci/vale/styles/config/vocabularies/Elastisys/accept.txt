@@ -23,8 +23,8 @@ Spotahome
 Sjunet
 Telavox
 Telia
-Tempus
 vSphere
+Vitec
 Yopass
 Zalando
 
@@ -133,6 +133,7 @@ Autoscaler
 autoscaled
 CRD
 CronJob
+emptyDir
 finalizer
 kops
 kubeadm

@@ -16,13 +16,13 @@ search:
    end='<!--disclaimer-end-->'
 %}
 
-This page will help you to install [MongoDB Community Operator](https://github.com/mongodb/mongodb-kubernetes-operator), so that you are allowed to install the cluster-wide resources that are required by MongoDB.
+This page will help you to install [MongoDB Community Operator](https://github.com/mongodb/mongodb-kubernetes-operator), so that you are allowed to install the Cluster-wide resources that are required by MongoDB.
 
 This guide is a complement to the [MongoDB Community Operator's](https://github.com/mongodb/mongodb-kubernetes-operator/tree/v0.8.3) own documentation.
 
 ## Preparation
 
-The self-managed cluster-wide resources feature adds specific Roles, ServiceAccounts, etc. for you.
+The self-managed Cluster-wide resources feature adds specific Roles, ServiceAccounts, etc. for you.
 This enables you to install and manage the resources that the MongoDB Community Operator needs.
 These pre-installed resources are propagated via HNC from your root namespace ([recall the documentation of this feature](../namespaces.md)).
 

@@ -65,7 +65,7 @@ This will generate a metric as follows: `probe_success{cluster="ckdemo-wc", inst
 
 ## Recommendations to Platform Administrators
 
-Blackbox should only be used for measuring uptime of internal services, i.e., those that are only exposed within the Kubernetes cluster. Examples include additional services, such as PostgreSQL, Redis and RabbitMQ.
+Blackbox should only be used for measuring uptime of internal services, i.e., those that are only exposed within the Kubernetes Cluster. Examples include additional services, such as PostgreSQL, Redis and RabbitMQ.
 
 For external endpoints -- specifically, Dex, Grafana, Kibana, Harbor and Ingress Controllers -- prefer using an external uptime service which integrates with an On-Call Management Tool, e.g., [Uptime Cloud Monitor Integration for Opsgenie](https://docs.opsgenie.com/v1.0/docs/copperegg-integration).
 

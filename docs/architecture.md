@@ -26,7 +26,7 @@ Compliance imposes restrictions on all levels of the tech stack. Your compliance
 
 Most regulations require logging to a tamper-proof environment. This is usually interpreted as an attacker gaining access to your application should not be able to delete logs showing their attack and the harm caused by their attack.
 
-To achieve this, Welkin is implemented as two Kubernetes clusters
+To achieve this, Welkin is implemented as two Kubernetes Clusters
 
 - A **Workload Cluster**, which hosts your application, and
 - A **Management Cluster**, which hosts services for monitoring, logging and vulnerability management.

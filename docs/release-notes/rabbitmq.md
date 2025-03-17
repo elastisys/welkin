@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v4.0.6-ck8s1](#v406-ck8s1) - 2025-02-28
 - [v3.13.7-ck8s1](#v3137-ck8s1) - 2024-12-09
 - [v3.12.6-ck8s1](#v3126-ck8s1) - 2024-01-17
 - [v3.11.18-ck8s1](#v31118-ck8s1) - 2023-07-03
@@ -23,13 +24,32 @@
 -->
 <!-- vale off -->
 
+### v4.0.6-ck8s1
+
+Released 2025-02-28
+
+!!! warning "Application Developer Notice(s)"
+
+    - Added Network Policies:
+        - For new clusters, these will deny access to the RabbitMQ cluster by default. To gain access to the RabbitMQ clusters, add this label to your pods: `elastisys.io/rabbitmq-<cluster_name>-access: allow`
+        - For existing clusters, these will **not** deny access to the RabbitMQ cluster by default. Once your pods have been labeled with `elastisys.io/rabbitmq-<cluster_name>-access: allow`, enforcement can be enabled by sending a Service Request to your Platform Administrator.
+    - AMQP 1.0 is now a core protocol, and is always enabled.<br>Classic queue mirroring is now removed.
+
+#### Feature(s)
+
+- Network Policies are added to the Cluster deployments which will deny access by default.
+
+#### Improvement(s)
+
+- RabbitMQ is upgraded v4.0, which is a new major release.
+
 ### v3.13.7-ck8s1
 
 Released 2024-12-09
 
 #### Improvement(s)
 
-- Updated cluster operator to `2.9.0`, updated server to `3.13.7` and monitoring to `2.9.0`.
+- Updated Cluster operator to `2.9.0`, updated server to `3.13.7` and monitoring to `2.9.0`.
 - Updated the backup process to use `rabbitmqctl` for improved reliability and compatibility.
 - Added a `LICENSE` file to the repository to provide clarity on usage and distribution.
 
@@ -48,7 +68,7 @@ Released 2023-07-03
 
 #### Updated
 
-- Updated cluster operator to `v2.3.0`, updated server to `3.11.18`
+- Updated Cluster operator to `v2.3.0`, updated server to `3.11.18`
 - Include updated Overview dashboard
 
 ### v3.10.7-ck8s2

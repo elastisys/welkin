@@ -14,7 +14,7 @@ This guide gives an introduction to Prometheus and Grafana and where they fit in
 
 ## Why Prometheus and Grafana?
 
-Prometheus is an open-source solution for monitoring and alerting. It works by collecting and processing metrics from the various services in the cluster. It is widely used, stable, and a [CNCF](https://www.cncf.io/) member. It is relatively easy to write ServiceMonitors for any custom services to get monitoring data from them into Prometheus.
+Prometheus is an open-source solution for monitoring and alerting. It works by collecting and processing metrics from the various services in the Cluster. It is widely used, stable, and a [CNCF](https://www.cncf.io/) member. It is relatively easy to write ServiceMonitors for any custom services to get monitoring data from them into Prometheus.
 
 Grafana is the most widely used technology for visualization of metrics and analytics. It supports a multitude of data sources and it is easy to create custom dashboards. Grafana is created by Grafana Labs, a CNCF Silver Member.
 
@@ -46,7 +46,7 @@ Prometheus and Grafana can help with this by making it easier to:
 
 ### Prometheus
 
-Welkin installs the prometheus-operator by default. The Prometheus Operator for Kubernetes provides easy monitoring definitions for Kubernetes services and deployment and management of Prometheus instances as it can create/configure/manage Prometheus clusters atop Kubernetes. The following CRDs are installed by default.
+Welkin installs the prometheus-operator by default. The Prometheus Operator for Kubernetes provides easy monitoring definitions for Kubernetes services and Deployment and management of Prometheus instances as it can create/configure/manage Prometheus Clusters atop Kubernetes. The following CRDs are installed by default.
 
 <!-- vale off -->
 | crd             | apigroup              | kind           | can be used by users |
@@ -85,13 +85,13 @@ Welkin deploys Grafana with a selection of dashboards by default. Dashboards are
 
 #### Node health
 
-The Nodes dashboard (Node Exporter / Nodes) gives a quick overview of the status (health) of a node in the cluster. By selecting an instance in the "instance" dropdown metrics for CPU, Load, Memory, Disk and Network I/O is showed for that node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.
+The Nodes dashboard (Node Exporter / Nodes) gives a quick overview of the status (health) of a Node in the Cluster. By selecting an instance in the "instance" dropdown metrics for CPU, Load, Memory, Disk and Network I/O is showed for that Node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.
 
 ![Node Health](../img/node_health.png "Nodes dashboard")
 
 #### Pod health
 
-The Pods dashboard (Kubernetes/Compute resources/Pods) gives a quick overview of the status (health) of a Pod in the cluster. By selecting a Pod in the "Pod" dropdown metrics for CPU, Memory, and Network I/O is showed for that node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.
+The Pods dashboard (Kubernetes/Compute resources/Pods) gives a quick overview of the status (health) of a Pod in the Cluster. By selecting a Pod in the "Pod" dropdown metrics for CPU, Memory, and Network I/O is showed for that Node. The time frame can be changed either by using the time dropdown or selecting directly in the graphs.
 
 ![Pod health](../img/pod_health.png "Pod health")
 
@@ -127,7 +127,7 @@ The "Explore" mode is great for developing queries and exploring the data set. I
 
 ### Troubleshooting metrics collection
 
-It is possible to see if monitors are picked up by [accessing the Prometheus web interface](#accessing-the-prometheus-ui). Navigating to "Status" > "Service Discovery" will show all monitors picked by Prometheus, and the "(x/y active targets)" will show how many targets of those monitors are active. Active targets are actively scraped by Prometheus and inactive targets are those that fail to match the selectors of the monitor.
+It is possible to see if monitors are picked up by [accessing the Prometheus web interface](#accessing-the-prometheus-ui). Navigating to `"Status" > "Service Discovery"` will show all monitors picked by Prometheus, and to the right of each listed monitor there is a `x/y` indicating how many targets of those monitors are active. Active targets are actively scraped by Prometheus and inactive targets are those that fail to match the selectors of the monitor.
 
 Monitors can be expanded further down to list and inspect its targets, within each one the "Discovered Labels" column will list information about the object in Kubernetes, and in the "Target Labels" it will show the labels recorded from the target.
 
@@ -203,7 +203,11 @@ If the "Target Labels" is "Dropped" for a target then it means that it has been 
 
 The same concept applies to PodMonitors and Pods.
 
-Then when the targets are active it is possible to see scrape information by navigating to "Status" > "Targets". Here Prometheus gives information about the time, status, and duration for scrapes.
+Then when the targets are active it is possible to see scrape information by navigating to `"Status" > "Target health"`. Here Prometheus gives information about the time, status, and duration for scrapes.
+
+<!-- Remove this once Welkin v0.42 reaches EOL -->
+> [!NOTE]
+> The Prometheus UI was changed in Welkin v0.43, the `target` page was previously `"Status" > "Targets"`.
 
 ## Grafana Dashboards as Code
 

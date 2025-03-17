@@ -34,7 +34,7 @@ Welkin recommends setting up at least two separate environments: one for non-pro
 For the purpose of this document we use the following distinction:
 
 - **Application Deployment** - One instance of a customer's application. Commonly, multiple application deployments are used in the software development life cycles, such as: local, development, integration, testing, staging, and production.
-- **Environment** - One instance of a Welkin deployment. One Environment is composed of two Kubernetes Clusters, the Management Cluster and Workload Cluster.
+- **Environment** - One instance of a Welkin Deployment. One Environment is composed of two Kubernetes Clusters, the Management Cluster and Workload Cluster.
 
 ## Levels of Isolation
 

@@ -7,12 +7,12 @@
 ## Context and Problem Statement
 
 Argo CD cannot create HNC namespaces and deploy services into them.
-Our current Argo offering is a namespaced installation where a CronJob patches the cluster [secret](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters) with the list of managed Namespaces every minute.
+Our current Argo offering is a namespaced installation where a CronJob patches the Cluster [secret](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#clusters) with the list of managed Namespaces every minute.
 An issue occurs when an Application Developer tries to create an Application which also includes a Namespace.
-As the new **not yet created/patched to the cluster secret** namespace is not managed, Argo CD fails at the comparison stage.
+As the new **not yet created/patched to the Cluster secret** namespace is not managed, Argo CD fails at the comparison stage.
 
 Currently, upstream ArgoCD is unaware of HNC resources, and does not give subnamespaces the needed precedence, read more [here](https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/#how-does-it-work).
-The cluster secret that takes a list of managed namespaces, does not take a regular expression, so it is hard for Application Developers to create namespaces as part of an Application.
+The Cluster secret that takes a list of managed namespaces, does not take a regular expression, so it is hard for Application Developers to create namespaces as part of an Application.
 
 So, do we want to let Application Developer create and delete subnamespaces dynamically via Argo CD?
 If yes, how?
@@ -45,14 +45,14 @@ If yes, how?
 
     - We investigated this, but found that sync waves are not a solution in this case, as the reconciliation is failing at the comparison stage which happens before sync waves are executed.
 
-1. Test to see if ArgoCD accepts regex in cluster secret.
+1. Test to see if ArgoCD accepts regex in Cluster secret.
 
     - We investigated this, but found that the secret does not accept wildcards or regex. See the open issue [here](https://github.com/argoproj/argo-cd/issues/10054#issue-1310861246).
 
-1. Setup Argo CD cluster-wide installation.
+1. Setup Argo CD Cluster-wide installation.
 
-    - Bad, because cluster-wide installation would give Argo a lot of permissions and right now, there is no good solution to stop Argo from deploying applications into our system namespaces such as Falco, gatekeeper-system, etc., assuming that one needs to use a wildcard as destinations in ArgoCD projects.
-    - Bad, because even if Argo CD is installed cluster-wide, When ArgoCD syncs by kind, it does not prioritize subnamespaces first. See [here](https://github.com/argoproj/gitops-engine/blob/bc9ce5764fa306f58cf59199a94f6c968c775a2d/pkg/sync/sync_tasks.go#L27-L66).
+    - Bad, because Cluster-wide installation would give Argo a lot of permissions and right now, there is no good solution to stop Argo from deploying applications into our system namespaces such as Falco, gatekeeper-system, etc., assuming that one needs to use a wildcard as destinations in ArgoCD projects.
+    - Bad, because even if Argo CD is installed Cluster-wide, When ArgoCD syncs by kind, it does not prioritize subnamespaces first. See [here](https://github.com/argoproj/gitops-engine/blob/bc9ce5764fa306f58cf59199a94f6c968c775a2d/pkg/sync/sync_tasks.go#L27-L66).
     - Bad, because this would also require us to build a lot of OPA policies and later makes it hard to pivot to new ways.
 
 ## Decision Outcome

@@ -40,9 +40,9 @@ Your administrator has already set up the platform for you. You will therefore h
 
 Required software:
 
-- [oidc-login](https://github.com/int128/kubelogin), which helps you log into your Kubernetes cluster via OpenID Connect integration with your Identity Provider of choice
+- [oidc-login](https://github.com/int128/kubelogin), which helps you log into your Kubernetes Cluster via OpenID Connect integration with your Identity Provider of choice
 
-Your cluster management software of choice, of which you can choose either or both:
+Your Cluster management software of choice, of which you can choose either or both:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/), a command-line tool to help manage your Kubernetes resources
 - [OpenLens](https://github.com/MuhammedKalkan/OpenLens/releases), a graphical user interface to help manage your Kubernetes resources (see also our [dedicated page on Lens integration](kubernetes-ui.md))
@@ -106,7 +106,7 @@ Your web portals are available at:
 Additional endpoints are also available, depending on if your platform has these additional managed services (AMS) or not:
 
 - `jaeger.$DOMAIN` -- the [Jaeger](./additional-services/jaeger.md) distributed tracing observability tool
-- `argocd.$DOMAIN` -- the [Argo CD](./additional-services/argocd.md) continuous deployment GitOps tool
+- `argocd.$DOMAIN` -- the [Argo CD](./additional-services/argocd.md) continuous Deployment GitOps tool
 
 <!--endpoint-access-end-->
 

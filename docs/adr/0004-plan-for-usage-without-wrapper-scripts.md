@@ -9,7 +9,7 @@
 We frequently write wrapper scripts. They bring the following value:
 
 1. They bind together several tools and make them work together as a whole, e.g., `sops` and `kubectl`.
-1. They encode domain knowledge and standard operating procedures, e.g., how to add a node, how a cluster should look like, where to find configuration files.
+1. They encode domain knowledge and standard operating procedures, e.g., how to add a Node, how a Cluster should look like, where to find configuration files.
 1. They enforce best practices, e.g., encrypt secrets consumed or produced by tools.
 
 Unfortunately, wrapper scripts can also bring disadvantages:

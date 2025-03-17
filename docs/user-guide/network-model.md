@@ -45,7 +45,7 @@ The diagram above present a useful model when reasoning about networking in Welk
 
 Your application Pods, as well as Pods of [additional services](additional-services/index.md), can communicate on a secure private network, via [RFC1918](https://datatracker.ietf.org/doc/html/rfc1918) private IP addresses. It is analogous to a [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) in VM-based workloads.
 
-In Welkin, it is the responsibility of the administrator to ensure the in-cluster private network is secure and trusted, either by performing an [infrastructure audit](../operator-manual/provider-audit.md) or deploying [Pod-to-Pod encryption](https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/).
+In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an [infrastructure audit](../operator-manual/provider-audit.md) or deploying [Pod-to-Pod encryption](https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/).
 
 You should use NetworkPolicies to segregate your Pods. This improves your security posture by reducing the blast radius in case parts of your application are under attack.
 
@@ -57,7 +57,7 @@ You should use NetworkPolicies to segregate your Pods. This improves your securi
 
 ## Private DNS
 
-The private network also features a private DNS. A Service `my-svc` in the namespace `my-namespace` can be accessed from within the Kubernetes cluster as `my-svc.my-namespace`.
+The private network also features a private DNS. A Service `my-svc` in the namespace `my-namespace` can be accessed from within the Kubernetes Cluster as `my-svc.my-namespace`.
 
 IP addresses of Pods are not stable. For example, the rollout of a new container image creates new Pods, which will have new IP addresses. Therefore, you should always use private DNS names of Services to connect your application Pods, as well as to connect your application to [additional services](additional-services/index.md).
 
@@ -136,7 +136,7 @@ spec:
 
 !!!example
 
-    Feel free to take inspiration from the [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L34).
+    Feel free to take inspiration from the [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/welkin-user-demo/values.yaml#L37-L43).
 
     If you want to protect your Ingress with OAuth2-based authentication, check out [oauth2-proxy](https://github.com/elastisys/welkin/blob/main/user-demo/deploy/oauth2-proxy.yaml).
 
@@ -148,7 +148,7 @@ spec:
 
     Some load-balancers fronting Welkin do not preserve source IP. This makes source IP allowlisting unusable.
 
-    To check if source IP is preserved, check the HTTP request headers received by your application, specifically `x-forwarded-for` and `x-real-ip`. The [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L24) logs all HTTP request headers, as shown in the screenshot below.
+    To check if source IP is preserved, check the HTTP request headers received by your application, specifically `x-forwarded-for` and `x-real-ip`. The [user demo](https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L29) logs all HTTP request headers, as shown in the screenshot below.
 
     ![HTTP request headers shown in the user demo](img/http-request-headers.png)
 
