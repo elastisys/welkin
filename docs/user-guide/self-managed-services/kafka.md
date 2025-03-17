@@ -138,6 +138,14 @@ You are now ready to deploy your Kafka Cluster!
 
 The example files provided by Strimzi [here](https://github.com/strimzi/strimzi-kafka-operator/tree/0.44.0/examples/kafka) serves as a good starting point.
 
+> [!IMPORTANT]
+>
+> Some Kafka features are not supported as they require Cluster wide permissions, these include but may not be limited to:
+>
+> - Rack awareness, using the `rack` keyword
+> - Storage resizing
+> - NodePort access
+
 Welkin requires that resource requests are specified for all containers. By default, the Strimzi Cluster Operator does not specify CPU and memory resource requests and limits for its deployed operands.
 
 Refer to [Further reading](#further-reading) for more information about resources.
@@ -153,9 +161,9 @@ curl https://raw.githubusercontent.com/elastisys/welkin/main/docs/user-guide/sel
 kubectl apply -f kafka-cluster/persistent-single.yaml
 ```
 
-!!! note "Note"
-
-    The example above has very low resource requests. It is recommended to adjust these according to your cluster.
+> [!NOTE]
+>
+> The example above has very low resource requests. It is recommended to adjust these according to your Cluster.
 
 Refer to [Further reading](#further-reading) to learn more about how you can configure your Kafka Cluster.
 
@@ -188,9 +196,9 @@ kubectl exec -it kafka-producer -- bin/kafka-console-producer.sh --bootstrap-ser
 kubectl exec -it kafka-consumer -- bin/kafka-console-consumer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic my-topic --from-beginning
 ```
 
-!!! note "Note"
-
-    If you are running the producer and/or consumer in different namespace than where your Kafka cluster is, make sure you specify the path to the bootstrap service. E.g. "my-cluster-kafka-bootstrap.kafka.svc:9092", if the Kafka cluster is in the "kafka" namespace.
+> [!NOTE]
+>
+> If you are running the producer and/or consumer in different namespace than where your Kafka Cluster is, make sure you specify the path to the bootstrap service. E.g. `my-cluster-kafka-bootstrap.kafka.svc:9092`, if the Kafka Cluster is in the `kafka` namespace.
 
 ## Further reading
 
