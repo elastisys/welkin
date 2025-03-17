@@ -4544,7 +4544,7 @@ If you have configured Dex you can login with a connected account, which can be 
 <!--user-demo-metrics-end-->
 
 <h3 id="troubleshooting-metrics-collection">Troubleshooting metrics collection<a class="headerlink" href="#troubleshooting-metrics-collection" title="Permanent link">&para;</a></h3>
-<p>It is possible to see if monitors are picked up by <a href="#accessing-the-prometheus-ui">accessing the Prometheus web interface</a>. Navigating to "Status" &gt; "Service Discovery" will show all monitors picked by Prometheus, and the "(x/y active targets)" will show how many targets of those monitors are active. Active targets are actively scraped by Prometheus and inactive targets are those that fail to match the selectors of the monitor.</p>
+<p>It is possible to see if monitors are picked up by <a href="#accessing-the-prometheus-ui">accessing the Prometheus web interface</a>. Navigating to <code>"Status" &gt; "Service Discovery"</code> will show all monitors picked by Prometheus, and to the right of each listed monitor there is a <code>x/y</code> indicating how many targets of those monitors are active. Active targets are actively scraped by Prometheus and inactive targets are those that fail to match the selectors of the monitor.</p>
 <p>Monitors can be expanded further down to list and inspect its targets, within each one the "Discovered Labels" column will list information about the object in Kubernetes, and in the "Target Labels" it will show the labels recorded from the target.</p>
 <p>If the "Target Labels" is "Dropped" for a target then it means that it has been excluded from scraping since it doesn't match the monitor. There are three key things to check to make sure a target is properly picked up by a monitor:</p>
 <ol>
@@ -4615,7 +4615,12 @@ spec:
 </li>
 </ol>
 <p>The same concept applies to PodMonitors and Pods.</p>
-<p>Then when the targets are active it is possible to see scrape information by navigating to "Status" &gt; "Targets". Here Prometheus gives information about the time, status, and duration for scrapes.</p>
+<p>Then when the targets are active it is possible to see scrape information by navigating to <code>"Status" &gt; "Target health"</code>. Here Prometheus gives information about the time, status, and duration for scrapes.</p>
+<!-- Remove this once Welkin v0.42 reaches EOL -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Prometheus UI was changed in Welkin v0.43, the <code>target</code> page was previously <code>"Status" &gt; "Targets"</code>.</p>
+</div>
 <h2 id="grafana-dashboards-as-code">Grafana Dashboards as Code<a class="headerlink" href="#grafana-dashboards-as-code" title="Permanent link">&para;</a></h2>
 <p>You can manage your Grafana Dashboards in a GitOps-fashion using the <a href="https://registry.terraform.io/providers/grafana/grafana/latest/docs">Terraform Provider for Grafana</a>.</p>
 <p>Proceed as follows:</p>
