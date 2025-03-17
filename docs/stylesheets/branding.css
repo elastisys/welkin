@@ -90,7 +90,6 @@
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
   font-family: var(--elastisys-headings-font);
   font-weight: var(--elastisys-headings-weight);
-  color: var(--elastisys-night-blue);
 }
 
 .md-nav__title, .md-header-nav__title, .md-footer-nav__title {
@@ -116,4 +115,25 @@
 
   --md-code-fg-color: black;
   --md-code-bg-color: var(--elastisys-snow);
+}
+
+[data-md-color-scheme="slate"][data-md-color-primary="elastisys-dark"] {
+  --md-default-fg-color: var(--elastisys-snow-light);
+  --md-default-fg-color--light: var(--elastisys-snow-light);
+  --md-default-bg-color: var(--elastisys-night-blue);
+
+  --md-primary-fg-color: var(--elastisys-night-blue);
+}
+
+[data-md-color-scheme="slate"][data-md-color-accent="elastisys-dark"] {
+  --md-typeset-a-color: var(--elastisys-northern-lights-2);
+  --md-accent-fg-color: var(--elastisys-hover);
+}
+
+/* Useful class for making images work with dark mode */
+img.add-white-background,
+div.add-white-background img {
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
 }

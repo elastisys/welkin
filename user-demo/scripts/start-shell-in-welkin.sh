@@ -1,7 +1,7 @@
 #!/bin/bash
 
-IMAGE=alpine/curl
-CMD=sh
+IMAGE=ubuntu:24.04
+CMD=bash
 
 OVERRIDES='''
 {
@@ -19,7 +19,7 @@ OVERRIDES='''
        "resources": {
          "requests": {
             "cpu": "100m",
-            "memory": "100m"
+            "memory": "100Mi"
          }
        }
     }]

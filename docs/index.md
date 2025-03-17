@@ -93,11 +93,12 @@ Welkin enables organizations across Europe to accelerate innovation through open
 ## Welkin is trusted by industry leaders
 
 <ul class="columns-always">
-    <li><img src="img/logos/orgs/telia.svg" alt="Logo of Telia" /></li>
-    <li><img src="img/logos/orgs/carasent.png" alt="Logo of Carasent" /></li>
-    <li><img src="img/logos/orgs/prorenata.svg" alt="Logo of Prorenata" /></li>
-    <li><img src="img/logos/orgs/vitec.svg" alt="Logo of Vitec" /></li>
-    <li><img src="img/logos/orgs/rise-logo-black.svg" alt="Logo of RISE" /></li>
+    <!-- Logos come with strict usage guidelines. For dark mode, simply add a white background. -->
+    <li><img class="add-white-background" src="img/logos/orgs/telia.svg" alt="Logo of Telia" /></li>
+    <li><img class="add-white-background" src="img/logos/orgs/carasent.png" alt="Logo of Carasent" /></li>
+    <li><img class="add-white-background" src="img/logos/orgs/prorenata.svg" alt="Logo of Prorenata" /></li>
+    <li><img class="add-white-background" src="img/logos/orgs/vitec.svg" alt="Logo of Vitec" /></li>
+    <li><img class="add-white-background" src="img/logos/orgs/rise-logo-black.svg" alt="Logo of RISE" /></li>
 </ul>
 
 <section>
@@ -113,7 +114,7 @@ Welkin enables organizations across Europe to accelerate innovation through open
 
 <ul class="columns">
     <li>
-        <img src="img/logos/cncf-member-silver-color.svg" alt="Logo of Cloud Native Computing Foundation Silver Member">
+        <img class="add-white-background" src="img/logos/cncf-member-silver-color.svg" alt="Logo of Cloud Native Computing Foundation Silver Member">
         <br>
         Maintained by Elastisys, proud CNCF silver member
     </li>

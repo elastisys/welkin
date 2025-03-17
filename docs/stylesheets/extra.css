@@ -67,6 +67,7 @@ a[href*="//"]:not([href*="elastisys."])::after {
 .md-typeset .elastisys > .admonition-title,
 .md-typeset .elastisys > summary {
   background-color: var(--elastisys-sky-blue);
+  color: black; /* for dark mode */
 }
 .md-typeset .elastisys.elastisys > .admonition-title::before,
 .md-typeset .elastisys.elastisys > summary::before {
@@ -88,6 +89,7 @@ a[href*="//"]:not([href*="elastisys."])::after {
 .md-typeset .elastisys-self-managed.elastisys-self-managed > .admonition-title,
 .md-typeset .elastisys-self-managed.elastisys-self-managed > summary {
   background-color: var(--elastisys-northern-lights-1);
+  color: black; /* for dark mode */
 }
 .md-typeset .elastisys-self-managed.elastisys-self-managed > .admonition-title::before,
 .md-typeset .elastisys-self-managed.elastisys-self-managed > summary::before {
