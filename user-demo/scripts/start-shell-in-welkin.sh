@@ -19,7 +19,7 @@ OVERRIDES='''
        "resources": {
          "requests": {
             "cpu": "100m",
-            "memory": "100M"
+            "memory": "100Mi"
          }
        }
     }]
