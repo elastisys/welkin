@@ -24,11 +24,42 @@
   script-src 'self' 'unsafe-inline' https://matomo.elastisys.com/;
 ">
 
-<!-- Disable localStorage, sessionStorage and cookies -->
+<!--
+  Disable localStorage, sessionStorage and cookies, except
+  for the light/dark mode preference for which we implicitly ask for consent.
+
+  The code is somewhat brittle, relying on internal mkdocs-material API.
+  It is designed to fail safely, prioritizing privacy over config persistence.
+-->
 <script>
 if (window.localStorage) {
-  window.localStorage.setItem = function() { };
-  window.localStorage.clear();
+  let realSetItem = window.localStorage.setItem;
+
+  window.localStorage.setItem = function(keyName, keyValue) {
+    window.localStorage.removeItem(keyName);
+    if (keyName == '/.__palette') {
+      try {
+        /* Only store mkdocs-material light/dark mode preference, but not auto.
+         * See https://github.com/squidfunk/mkdocs-material/blob/646c7ab30d2890c1b27c9b6444156bb1104a372e/src/templates/assets/javascripts/components/palette/index.ts#L88
+        */
+        const palette = JSON.parse(keyValue);
+        if (palette.index == 1 || palette.index == 2) {
+          realSetItem.apply(this, [keyName, keyValue]);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+
+  /* Purge all localStorage data not conforming to rule above */
+  let keys = [ ]
+  for (let i = 0; i < localStorage.length; i++) {
+    keys.push(window.localStorage.getItem(window.localStorage.key(i)));
+  }
+  for (let key in keys) {
+    window.localStorage.setItem(window.localStorage.getItem(key));
+  }
 }
 if (window.sessionStorage) {
   window.sessionStorage.setItem = function() { }
