@@ -50,12 +50,12 @@ theme:
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
-        name: Switch to light mode
+        name: Switch to light mode (stores preference on your device)
     - media: "(prefers-color-scheme: light)"
       scheme: elastisys
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Switch to dark mode (stores preference on your device)
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: elastisys-dark
