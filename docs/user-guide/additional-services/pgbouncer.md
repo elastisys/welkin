@@ -28,7 +28,7 @@ stringData:
   # E.g., postgresql1-pgbouncer.postgres-system.svc.cluster.local
   # PGHOST is changed to the DNS name for the PgBouncer service and should be used for all application connections.
   PGHOST: $PGHOST
-  # PGBOUNCER_AUTH_FILE represents the name of the auth_file Secret which stores database usernames and passwords for PgBouncer.
+  # PGBOUNCER_AUTH_FILE represents the name of the auth file Secret which stores database usernames and passwords for PgBouncer.
   PGBOUNCER_AUTH_FILE: $PGBOUNCER_AUTH_FILE
 ```
 
@@ -50,7 +50,7 @@ export PGBOUNCER_AUTH_FILE=$(kubectl -n $NAMESPACE get secret $SECRET -o 'jsonpa
 
 The `${PGBOUNCER_AUTH_FILE}` Secret contains the `userlist.txt` file. This file defines which users and passwords are allowed to authenticate, format for this file is described [here](https://www.pgbouncer.org/config.html#authentication-file-format). By default only the provided admin user `${PGUSER}` is allowed to authenticate.
 
-To change the PgBouncer auth_file, update the `userlist.txt` file by patching or editing the `${PGBOUNCER_AUTH_FILE}` Secret. When new changes are detected, the PgBouncer Deployment will be restarted automatically to load the new auth_file. This is disruptive for active connections.
+To change the PgBouncer auth file, update the `userlist.txt` file by patching or editing the `${PGBOUNCER_AUTH_FILE}` Secret. When new changes are detected, the PgBouncer Deployment will be restarted automatically to load the new auth file. This is disruptive for active connections.
 
 ## Configuration
 
