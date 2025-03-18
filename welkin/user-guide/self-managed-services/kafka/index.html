@@ -4396,6 +4396,15 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <h2 id="deploy-your-kafka-cluster">Deploy your Kafka Cluster<a class="headerlink" href="#deploy-your-kafka-cluster" title="Permanent link">&para;</a></h2>
 <p>You are now ready to deploy your Kafka Cluster!</p>
 <p>The example files provided by Strimzi <a href="https://github.com/strimzi/strimzi-kafka-operator/tree/0.44.0/examples/kafka">here</a> serves as a good starting point.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some Kafka features are not supported as they require Cluster wide permissions, these include but may not be limited to:</p>
+<ul>
+<li>Rack awareness, using the <code>rack</code> keyword</li>
+<li>Storage resizing</li>
+<li>NodePort access</li>
+</ul>
+</div>
 <p>Welkin requires that resource requests are specified for all containers. By default, the Strimzi Cluster Operator does not specify CPU and memory resource requests and limits for its deployed operands.</p>
 <p>Refer to <a href="#further-reading">Further reading</a> for more information about resources.</p>
 <p>You can fetch a modified persistent-single example that includes resource requests:</p>
@@ -4408,7 +4417,7 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The example above has very low resource requests. It is recommended to adjust these according to your cluster.</p>
+<p>The example above has very low resource requests. It is recommended to adjust these according to your Cluster.</p>
 </div>
 <p>Refer to <a href="#further-reading">Further reading</a> to learn more about how you can configure your Kafka Cluster.</p>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
@@ -4432,7 +4441,7 @@ kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </sp
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are running the producer and/or consumer in different namespace than where your Kafka cluster is, make sure you specify the path to the bootstrap service. E.g. "my-cluster-kafka-bootstrap.kafka.svc:9092", if the Kafka cluster is in the "kafka" namespace.</p>
+<p>If you are running the producer and/or consumer in different namespace than where your Kafka Cluster is, make sure you specify the path to the bootstrap service. E.g. <code>my-cluster-kafka-bootstrap.kafka.svc:9092</code>, if the Kafka Cluster is in the <code>kafka</code> namespace.</p>
 </div>
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
