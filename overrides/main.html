@@ -24,15 +24,31 @@
   script-src 'self' 'unsafe-inline' https://matomo.elastisys.com/;
 ">
 
-<!-- Disable localStorage, sessionStorage and cookies -->
+<!--
+  Disable localStorage, sessionStorage and cookies, except
+  for the auto/light/dark mode preference which is exempted from cookie consent
+  according to Section "3.6 UI customization cookies" in
+  "Opinion 04/2012 on Cookie Consent Exemption".
+
+  The code is somewhat brittle, relying on internal mkdocs-material API.
+  It is designed to fail safely, prioritizing privacy over config persistence.
+
+  See also:
+
+  - overrides/partials/javascripts/base.html
+-->
 <script>
 if (window.localStorage) {
   window.localStorage.setItem = function() { };
   window.localStorage.clear();
 }
 if (window.sessionStorage) {
-  window.sessionStorage.setItem = function() { }
-  window.sessionStorage.clear();
+  let realSetItem = window.sessionStorage.setItem
+  window.sessionStorage.setItem = function() {
+    if (keyName == '/.__palette') {
+      return realSetItem.apply(this, [keyName, keyValue]);
+    }
+  }
 }
 if(!document.__defineGetter__) {
   Object.defineProperty(document, 'cookie', {
