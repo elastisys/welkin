@@ -114,6 +114,7 @@ MD044: # proper-names
     - S3
     - StatefulSet
     - Thanos
+    - PgBouncer
     - "!!! welkin-enterprise"
     - "!!! welkin-managed"
 MD046: false # code-block-style - does not support admonitions
