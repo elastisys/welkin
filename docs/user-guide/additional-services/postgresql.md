@@ -172,6 +172,10 @@ To expose the PostgreSQL Cluster credentials to your application, follow one of 
 - [Create a Pod that has access to the secret data through a Volume](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume)
 - [Define container environment variables using Secret data](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data)
 
+## Connection pooling
+
+Connection pooling can be enabled without any additional cost via [Managed PgBouncer](./pgbouncer.md).
+
 <!--postgresql-setup-end-->
 
 ## Follow the Go-Live Checklist
