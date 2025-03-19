@@ -200,7 +200,7 @@ nav:
           - "Overview": "user-guide/additional-services/index.md"
           - "PostgreSQL":
               - "PostgreSQL": "user-guide/additional-services/postgresql.md"
-              - "PGBouncer": "user-guide/additional-services/pgbouncer.md"
+              - "PgBouncer": "user-guide/additional-services/pgbouncer.md"
           - "TimescaleDB": "user-guide/additional-services/timescaledb.md"
           - "Redis": "user-guide/additional-services/redis.md"
           - "RabbitMQ": "user-guide/additional-services/rabbitmq.md"
