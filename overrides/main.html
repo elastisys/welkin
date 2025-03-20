@@ -44,7 +44,7 @@ if (window.localStorage) {
 }
 if (window.sessionStorage) {
   let realSetItem = window.sessionStorage.setItem
-  window.sessionStorage.setItem = function() {
+  window.sessionStorage.setItem = function(keyName, keyValue) {
     if (keyName == '/.__palette') {
       return realSetItem.apply(this, [keyName, keyValue]);
     }
