@@ -11,7 +11,9 @@ search:
 
 ## Install Prerequisites
 
-When requesting an installation of Managed PgBouncer, you have the option to decide if PgBouncer will share Nodes with the PostgreSQL Cluster or if it can be scheduled on any worker Node. If PgBouncer shares Nodes with the PostgreSQL Cluster, allocated resources for PostgreSQL will be slightly decreased. PgBouncer does not usually use a lot of resources, compared to PostgreSQL.
+When requesting an installation of Managed PgBouncer, you have the option to decide if PgBouncer will share Nodes with the PostgreSQL Cluster or if it can be scheduled on any worker Node.
+If PgBouncer shares Nodes with the PostgreSQL Cluster, allocated resources for PostgreSQL will be slightly decreased.
+PgBouncer usually does not use a lot of resources, compared to PostgreSQL.
 
 ## Getting Access
 
@@ -47,7 +49,9 @@ export PGBOUNCER_AUTH_FILE=$(kubectl -n $NAMESPACE get secret $SECRET -o 'jsonpa
 
 ## Authentication file
 
-The `${PGBOUNCER_AUTH_FILE}` Secret contains the `userlist.txt` file. This file defines which users and passwords are allowed to authenticate, format for this file is described [here](https://www.pgbouncer.org/config.html#authentication-file-format). By default only the provided admin user `${PGUSER}` is allowed to authenticate.
+The `${PGBOUNCER_AUTH_FILE}` Secret contains the `userlist.txt` file.
+This file defines which users and passwords are allowed to authenticate, format for this file is described [here](https://www.pgbouncer.org/config.html#authentication-file-format).
+By default only the provided admin user `${PGUSER}` is allowed to authenticate.
 
 To change the PgBouncer auth file, update the `userlist.txt` file by patching or editing the `${PGBOUNCER_AUTH_FILE}` Secret.
 
@@ -74,9 +78,10 @@ Refer to the [upstream documentation](https://www.pgbouncer.org/config.html) for
 
 ### Default configuration
 
-The default PgBouncer configuration in the Managed PgBouncer offering will work in most cases. The default `max_client_conn` and `default_pool_size` settings are based on the PostgreSQL Cluster size and that the PostgreSQL Cluster has 5 active databases and 2 users per database.
+The default PgBouncer configuration in the Managed PgBouncer offering will work in most cases.
+The default `max_client_conn` and `default_pool_size` settings are based on the PostgreSQL Cluster size and that the PostgreSQL Cluster has 5 active databases and 2 users per database.
 
-Other noteworthy default configuration:
+Noteworthy default configuration:
 
 - `listen_port` is set to `5432`.
 - `pool_mode` is set to `transaction`.
