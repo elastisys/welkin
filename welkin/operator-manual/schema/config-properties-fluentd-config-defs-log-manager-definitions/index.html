@@ -180,7 +180,7 @@ if (window.localStorage) {
 }
 if (window.sessionStorage) {
   let realSetItem = window.sessionStorage.setItem
-  window.sessionStorage.setItem = function() {
+  window.sessionStorage.setItem = function(keyName, keyValue) {
     if (keyName == '/.__palette') {
       return realSetItem.apply(this, [keyName, keyValue]);
     }
@@ -4543,7 +4543,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 <p><code>object</code> (<a href="../config-properties-fluentd-config-defs-log-manager-definitions-properties-log-manager-job-ephemeral-volume/">Log Manager Job Ephemeral Volume</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Mar 20 08:32:47 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/3dc229fee3fcc15ff2d8eb7b5c097e4a43f7c95e">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Mar 20 08:53:20 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/3dc229fee3fcc15ff2d8eb7b5c097e4a43f7c95e">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
