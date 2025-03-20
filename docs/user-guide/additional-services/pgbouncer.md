@@ -9,13 +9,13 @@ search:
     Managed PgBouncer is an addition to the Managed PostgreSQL® offering.
     You can request Managed PgBouncer without any additional cost by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
 
-## Install prerequisites
+## Install Prerequisites
 
 When requesting an installation of Managed PgBouncer, you have the option to decide if PgBouncer will share Nodes with the PostgreSQL Cluster or if it can be scheduled on any worker Node. If PgBouncer shares Nodes with the PostgreSQL Cluster, allocated resources for PostgreSQL will be slightly decreased. PgBouncer does not usually use a lot of resources, compared to PostgreSQL.
 
 ## Getting Access
 
-When Managed PgBouncer is installed, the `<cluster-name>.user.access` Secret is updated with some new information:
+When Managed PgBouncer is installed, the Secret set up by your administrator for your PostgreSQL Cluster is updated with some new information:
 
 ```yaml
 apiVersion: v1
@@ -49,15 +49,26 @@ export PGBOUNCER_AUTH_FILE=$(kubectl -n $NAMESPACE get secret $SECRET -o 'jsonpa
 
 The `${PGBOUNCER_AUTH_FILE}` Secret contains the `userlist.txt` file. This file defines which users and passwords are allowed to authenticate, format for this file is described [here](https://www.pgbouncer.org/config.html#authentication-file-format). By default only the provided admin user `${PGUSER}` is allowed to authenticate.
 
-To change the PgBouncer auth file, update the `userlist.txt` file by patching or editing the `${PGBOUNCER_AUTH_FILE}` Secret. When new changes are detected, the PgBouncer Deployment will be restarted automatically to load the new auth file. This is disruptive for active connections.
+To change the PgBouncer auth file, update the `userlist.txt` file by patching or editing the `${PGBOUNCER_AUTH_FILE}` Secret.
+
+> [!WARNING]
+> When changes to the auth file are detected, the PgBouncer Deployment will be automatically restarted to load the new auth file.
+> This is disruptive for active connections.
 
 ## Configuration
 
 PgBouncer is configured via the `<cluster-name>-pgbouncer-config` ConfigMap, which contains the `pgbouncer.ini` file.
 
-Since PgBouncer configuration can be very specific to the PostgreSQL Cluster needs, the application developer with access to the PostgreSQL Cluster is allowed to change the PgBouncer configuration. The application developer is then responsible for making sure that any changed configuration works.
+Since PgBouncer configuration can be very specific to the PostgreSQL Cluster needs, the application developer with access to the PostgreSQL Cluster is allowed to change the PgBouncer configuration.
 
-To change the PgBouncer configuration, update the `pgbouncer.ini` file by patching or editing the `<cluster-name>-pgbouncer-config` ConfigMap. When new changes are detected, the PgBouncer Deployment will be restarted automatically to load the new configuration. This is disruptive for active connections.
+> [!CAUTION]
+> The application developer is then responsible for making sure that any changed configuration works. Misconfiguration can lead to loss of service.
+
+To change the PgBouncer configuration, update the `pgbouncer.ini` file by patching or editing the `<cluster-name>-pgbouncer-config` ConfigMap.
+
+> [!WARNING]
+> When changes to the configuration are detected, the PgBouncer Deployment will be automatically restarted to load the new configuration.
+> This is disruptive for active connections.
 
 Refer to the [upstream documentation](https://www.pgbouncer.org/config.html) for configuration details.
 
