@@ -32,9 +32,8 @@ stringData:
   PGBOUNCER_AUTH_FILE: $PGBOUNCER_AUTH_FILE
 ```
 
-!!!important
-
-    The Secret is very precious! Prefer not to persist any information extracted from it, as shown below.
+> [!IMPORTANT]
+> The Secret is very precious! Prefer not to persist any information extracted from it, as shown below.
 
 To extract this information, proceed as follows:
 

@@ -73,9 +73,8 @@ stringData:
   USER_ACCESS: $USER_ACCESS
 ```
 
-!!!important
-
-    The Secret is very precious! Prefer not to persist any information extracted from it, as shown below.
+> [!IMPORTANT]
+> The Secret is very precious! Prefer not to persist any information extracted from it, as shown below.
 
 To extract this information, proceed as follows:
 
@@ -90,13 +89,12 @@ export PGSSLMODE=$(kubectl -n $NAMESPACE get secret $SECRET -o 'jsonpath={.data.
 export USER_ACCESS=$(kubectl -n $NAMESPACE get secret $SECRET -o 'jsonpath={.data.USER_ACCESS}' | base64 --decode)
 ```
 
-!!!important
+> [!IMPORTANT]
+> Do not configure your application with the PostgreSQL admin username and password. Since the application will get too much permission, this will likely violate your access control policy.
 
-    Do not configure your application with the PostgreSQL admin username and password. Since the application will get too much permission, this will likely violate your access control policy.
-
-!!!important
-
-    If you change the password for $PGUSER, you are responsible for keeping track of the new password.
+<!-- markdownlint-disable MD028 -->
+> [!IMPORTANT]
+> If you change the password for $PGUSER, you are responsible for keeping track of the new password.
 
 ## Create an Application User
 
@@ -106,9 +104,8 @@ First, in one console, fetch the information from the access Secret as described
 kubectl -n $NAMESPACE port-forward svc/$USER_ACCESS 5432
 ```
 
-!!!important
-
-    Since humans are bad at generating random passwords, we recommend using [pwgen](https://linux.die.net/man/1/pwgen).
+> [!IMPORTANT]
+> Since humans are bad at generating random passwords, we recommend using [pwgen](https://linux.die.net/man/1/pwgen).
 
 Second, in another console, fetch the information from the access Secret again and run the PostgreSQL client to create the application database and user:
 
@@ -157,13 +154,11 @@ stringData:
 EOF
 ```
 
-!!!warning
-
-    Although most client libraries follow the `libpq` definition of these environment variables, some do not, and this will require changes to the application Secret.
-
-    Notably [`node-postgres`](https://github.com/brianc/node-postgres) does not currently do so for `PGSSLMODE`.
-    When this variable is set to `require`, it will do a full verification instead, requiring access to the PostgreSQL certificates to allow a connection.
-    To get the intended mode for `require` set the variable to `no-verify` instead.
+> [!WARNING]
+> Although most client libraries follow the `libpq` definition of these environment variables, some do not, and this will require changes to the application Secret.
+> Notably [`node-postgres`](https://github.com/brianc/node-postgres) does not currently do so for `PGSSLMODE`.
+> When this variable is set to `require`, it will do a full verification instead, requiring access to the PostgreSQL certificates to allow a connection.
+> To get the intended mode for `require` set the variable to `no-verify` instead.
 
 ## Expose PostgreSQL credentials to Your Application
 
