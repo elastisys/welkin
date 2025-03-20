@@ -78,8 +78,8 @@ Welkin should be built and should make it easy for the application to be built w
 - **Redundancy Principle**:
     - The overall system is designed in such a way that the failure of individual components does not compromise security-relevant functions.
     - The system design reduces both the likelihood and impact of issues arising from unrestricted resource consumption, such as memory or network bandwidth, which could lead to resource exhaustion or denial-of-service (DoS) attacks.
-- **Free From Known Vulnerabilities**:
-    - The system is built using components that are free from known security vulnerabilities.
+- **Free From Known Exploitable Vulnerabilities**:
+    - Exploitable vulnerability means a vulnerability that has the potential to be effectively used by an adversary under practical operational conditions. This definition is extracted from the [EU Cyberresilience Act (CRA)](https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng).
     - The platform makes it easy to detect vulnerabilities and apply security patches, both at the level of the application and the platform itself.
 
 The platform should support an organization's information security certification efforts, e.g., with ISO 27001:2022.
