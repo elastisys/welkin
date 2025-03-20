@@ -48,13 +48,13 @@ TimescaleDB is an extension on top of our managed PostgreSQL.
 This means that your administrator will be setting up a complete PostgreSQL Cluster for you and you just use it for TimescaleDB via the TimescaleDB extension.
 
 > [!NOTE]
-> TimescaleDB is not a viable option for collecting all metrics from the Kubernetes cluster. The data is uncompressed and would take a lot of space to store and use a lot of resources to analyze, unless you want to use it with a very short retention period.
-> This is not usually a problem for collecting application specific metrics, since they are not as many as the metrics that are generated from the Kubernetes cluster.
+> TimescaleDB is not a viable option for collecting all metrics from the Kubernetes Cluster. The data is uncompressed and would take a lot of space to store and use a lot of resources to analyze, unless you want to use it with a very short retention period.
+> This is not usually a problem for collecting application specific metrics, since they are not as many as the metrics that are generated from the Kubernetes Cluster.
 
 <!-- markdownlint-disable MD028 -->
 > [!IMPORTANT]
-> Due to very different performance-tuning characteristics, Timescale and PostgreSQL databases should never run on the same PostgreSQL cluster.
-> To comply with this, it is essential that every PostgreSQL database that gets created on the PostgreSQL cluster also has the Timescale extension created for it.
+> Due to very different performance-tuning characteristics, Timescale and PostgreSQL databases should never run on the same PostgreSQL Cluster.
+> To comply with this, it is essential that every PostgreSQL database that gets created on the PostgreSQL Cluster also has the Timescale extension created for it.
 
 If you want to use TimescaleDB on your Welkin Cluster, ask your administrator to provision a new PostgreSQL Cluster inside your Welkin environment. Then set up the TimescaleDB extension.
 
