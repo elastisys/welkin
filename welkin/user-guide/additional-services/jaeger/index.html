@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="https://elastisys.io/welkin/img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -53,7 +53,65 @@
     
       <link rel="stylesheet" href="../../../stylesheets/style.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!--
+  A collection of functions used from within some partials to allow the usage
+  of state saved in local or session storage, e.g. to model preferences.
+-->
+<!--
+  Elastisys changes: mkdocs-material uses localStorage for storing and
+  retrieving UI customization, such as auto/light/dark mode. We prefer using
+  sessionStorage instead, since these are exempted from cookie consent
+  according to Section "3.6 UI customization cookies" in
+  "Opinion 04/2012 on Cookie Consent Exemption".
+
+  See also:
+
+  - overrides/main.html
+-->
+<script>
+
+  /* Compute base path once to integrate with instant loading */
+  __md_scope = new URL("../../..", location)
+
+  /* Compute hash from the given string - see https://bit.ly/3pvPjXG */
+  __md_hash = v => [...v].reduce((h, c) => (h << 5) - h + c.charCodeAt(0), 0)
+
+  /* Fetch the value for a key from the given storage */
+  __md_get = (key, storage = sessionStorage, scope = __md_scope) => (
+    JSON.parse(storage.getItem(scope.pathname + "." + key))
+  )
+
+  /* Persist a key-value pair in the given storage */
+  __md_set = (key, value, storage = sessionStorage, scope = __md_scope) => {
+    try {
+      storage.setItem(scope.pathname + "." + key, JSON.stringify(value))
+    } catch (err) {
+      /* Uncritical, just swallow */
+    }
+  }
+</script>
     
 
 <!-- Matomo Tag Manager -->
@@ -106,15 +164,31 @@
   script-src 'self' 'unsafe-inline' https://matomo.elastisys.com/;
 ">
 
-<!-- Disable localStorage, sessionStorage and cookies -->
+<!--
+  Disable localStorage, sessionStorage and cookies, except
+  for the auto/light/dark mode preference which is exempted from cookie consent
+  according to Section "3.6 UI customization cookies" in
+  "Opinion 04/2012 on Cookie Consent Exemption".
+
+  The code is somewhat brittle, relying on internal mkdocs-material API.
+  It is designed to fail safely, prioritizing privacy over config persistence.
+
+  See also:
+
+  - overrides/partials/javascripts/base.html
+-->
 <script>
 if (window.localStorage) {
   window.localStorage.setItem = function() { };
   window.localStorage.clear();
 }
 if (window.sessionStorage) {
-  window.sessionStorage.setItem = function() { }
-  window.sessionStorage.clear();
+  let realSetItem = window.sessionStorage.setItem
+  window.sessionStorage.setItem = function() {
+    if (keyName == '/.__palette') {
+      return realSetItem.apply(this, [keyName, keyValue]);
+    }
+  }
 }
 if(!document.__defineGetter__) {
   Object.defineProperty(document, 'cookie', {
@@ -358,6 +432,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -378,6 +453,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Mission and Vision
+    
   </span>
   
 
@@ -410,6 +486,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     For Application Developers
+    
   </span>
   
 
@@ -435,6 +512,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -456,6 +534,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Understand the Basics
+    
   </span>
   
 
@@ -487,6 +566,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Getting Started
+    
   </span>
   
 
@@ -512,6 +592,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Step 1: Prepare
+    
   </span>
   
 
@@ -533,6 +614,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Step 2: Deploy
+    
   </span>
   
 
@@ -554,6 +636,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Step 3: Operate
+    
   </span>
   
 
@@ -593,6 +676,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Go Deeper
+    
   </span>
   
 
@@ -618,6 +702,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Prepare Your Application
+    
   </span>
   
 
@@ -639,6 +724,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Prepare Your Identity Provider (IdP)
+    
   </span>
   
 
@@ -660,6 +746,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Container registry
+    
   </span>
   
 
@@ -681,6 +768,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Continuous Development
+    
   </span>
   
 
@@ -702,6 +790,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     GPU
+    
   </span>
   
 
@@ -723,6 +812,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Network Model
+    
   </span>
   
 
@@ -744,6 +834,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Kubernetes API
+    
   </span>
   
 
@@ -765,6 +856,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Kubernetes UI
+    
   </span>
   
 
@@ -786,6 +878,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Namespaces
+    
   </span>
   
 
@@ -807,6 +900,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Logs
+    
   </span>
   
 
@@ -828,6 +922,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Log-based Alerts
+    
   </span>
   
 
@@ -849,6 +944,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Long-term Log Retention
+    
   </span>
   
 
@@ -870,6 +966,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Metrics
+    
   </span>
   
 
@@ -891,6 +988,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Metric Alerts
+    
   </span>
   
 
@@ -912,6 +1010,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Maintenance
+    
   </span>
   
 
@@ -933,6 +1032,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Backups
+    
   </span>
   
 
@@ -954,6 +1054,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     CI/CD
+    
   </span>
   
 
@@ -975,6 +1076,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Demarcation
+    
   </span>
   
 
@@ -996,6 +1098,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     How to Delegate
+    
   </span>
   
 
@@ -1017,6 +1120,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     How many environments?
+    
   </span>
   
 
@@ -1038,6 +1142,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Cluster API
+    
   </span>
   
 
@@ -1077,6 +1182,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Guardrails
+    
   </span>
   
 
@@ -1102,6 +1208,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -1123,6 +1230,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce No Root
+    
   </span>
   
 
@@ -1144,6 +1252,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Restricted Privileges
+    
   </span>
   
 
@@ -1165,6 +1274,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce NetworkPolicies
+    
   </span>
   
 
@@ -1186,6 +1296,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Resources
+    
   </span>
   
 
@@ -1207,6 +1318,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Trusted Registries
+    
   </span>
   
 
@@ -1228,6 +1340,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce No Latest Tag
+    
   </span>
   
 
@@ -1249,6 +1362,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Job TTL
+    
   </span>
   
 
@@ -1270,6 +1384,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce No LoadBalancer Service
+    
   </span>
   
 
@@ -1291,6 +1406,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce Minimum Replicas
+    
   </span>
   
 
@@ -1312,6 +1428,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce No Local Storage EmptyDir
+    
   </span>
   
 
@@ -1333,6 +1450,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Enforce No Pod Without Controller
+    
   </span>
   
 
@@ -1354,6 +1472,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Default Pod Topology Spread Constraints
+    
   </span>
   
 
@@ -1395,6 +1514,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Additional Services
+    
   </span>
   
 
@@ -1420,6 +1540,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -1441,6 +1562,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     PostgreSQL
+    
   </span>
   
 
@@ -1462,6 +1584,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     TimescaleDB
+    
   </span>
   
 
@@ -1483,6 +1606,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Redis
+    
   </span>
   
 
@@ -1504,6 +1628,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     RabbitMQ
+    
   </span>
   
 
@@ -1534,6 +1659,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Jaeger (preview)
+    
   </span>
   
 
@@ -1545,6 +1671,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Jaeger (preview)
+    
   </span>
   
 
@@ -1655,6 +1782,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Argo CD (preview)
+    
   </span>
   
 
@@ -1694,6 +1822,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Self-Managed Services
+    
   </span>
   
 
@@ -1719,6 +1848,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -1740,6 +1870,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     FerretDB (self-managed)
+    
   </span>
   
 
@@ -1761,6 +1892,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Keycloak (self-managed)
+    
   </span>
   
 
@@ -1782,6 +1914,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     JupyterHub (self-managed)
+    
   </span>
   
 
@@ -1803,6 +1936,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     SealedSecrets (self-managed)
+    
   </span>
   
 
@@ -1824,6 +1958,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     MongoDB (self-managed)
+    
   </span>
   
 
@@ -1845,6 +1980,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Sjunet (self-managed)
+    
   </span>
   
 
@@ -1866,6 +2002,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Flux (self-managed)
+    
   </span>
   
 
@@ -1887,6 +2024,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Kafka (self-managed)
+    
   </span>
   
 
@@ -1916,6 +2054,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Go-live Checklist
+    
   </span>
   
 
@@ -1937,6 +2076,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Troubleshooting
+    
   </span>
   
 
@@ -1958,6 +2098,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -1996,6 +2137,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     For Platform Administrators
+    
   </span>
   
 
@@ -2021,6 +2163,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -2042,6 +2185,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Understand the Basics
+    
   </span>
   
 
@@ -2063,6 +2207,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Understand Welkin
+    
   </span>
   
 
@@ -2084,6 +2229,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Getting Started
+    
   </span>
   
 
@@ -2105,6 +2251,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Provider Audit
+    
   </span>
   
 
@@ -2126,6 +2273,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Standard Template for on-prem Environment
+    
   </span>
   
 
@@ -2147,6 +2295,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Air-gapped Network
+    
   </span>
   
 
@@ -2178,6 +2327,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Advanced Configuration
+    
   </span>
   
 
@@ -2203,6 +2353,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -2224,6 +2375,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Sizing
+    
   </span>
   
 
@@ -2245,6 +2397,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Ingress
+    
   </span>
   
 
@@ -2266,6 +2419,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Access Control
+    
   </span>
   
 
@@ -2287,6 +2441,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     OpenSearch Mappings
+    
   </span>
   
 
@@ -2308,6 +2463,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     User Alerts
+    
   </span>
   
 
@@ -2329,6 +2485,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     User Managed CRDs (preview)
+    
   </span>
   
 
@@ -2358,6 +2515,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Disaster Recovery
+    
   </span>
   
 
@@ -2379,6 +2537,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Breaking the Glass
+    
   </span>
   
 
@@ -2400,6 +2559,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Use of Cryptography
+    
   </span>
   
 
@@ -2421,6 +2581,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Use of Credentials
+    
   </span>
   
 
@@ -2442,6 +2603,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Capacity Management
+    
   </span>
   
 
@@ -2463,6 +2625,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Clock Synchronization
+    
   </span>
   
 
@@ -2484,6 +2647,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Maintenance
+    
   </span>
   
 
@@ -2505,6 +2669,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Clean Up
+    
   </span>
   
 
@@ -2526,6 +2691,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Troubleshooting
+    
   </span>
   
 
@@ -2547,6 +2713,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -2568,6 +2735,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Additional Services
+    
   </span>
   
 
@@ -2599,6 +2767,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Configuration Reference
+    
   </span>
   
 
@@ -2624,6 +2793,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Index
+    
   </span>
   
 
@@ -2645,6 +2815,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Config
+    
   </span>
   
 
@@ -2666,6 +2837,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Secrets
+    
   </span>
   
 
@@ -2712,6 +2884,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     For CISOs and DPOs
+    
   </span>
   
 
@@ -2737,6 +2910,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -2758,6 +2932,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     GDPR (EU)
+    
   </span>
   
 
@@ -2779,6 +2954,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     ISO 27001 (EU)
+    
   </span>
   
 
@@ -2800,6 +2976,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     NIST SP 800-171
+    
   </span>
   
 
@@ -2831,6 +3008,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Information Security
+    
   </span>
   
 
@@ -2856,6 +3034,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -2877,6 +3056,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     DoD Enterprise DevSecOps Reference Design
+    
   </span>
   
 
@@ -2916,6 +3096,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Healthcare
+    
   </span>
   
 
@@ -2941,6 +3122,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     HSLF-FS 2016:40 (SE)
+    
   </span>
   
 
@@ -2962,6 +3144,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     HIPAA (US)
+    
   </span>
   
 
@@ -2983,6 +3166,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     MDR (EU)
+    
   </span>
   
 
@@ -3022,6 +3206,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Public sector
+    
   </span>
   
 
@@ -3047,6 +3232,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     MSBFS 2020:7 (SE)
+    
   </span>
   
 
@@ -3086,6 +3272,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     NIS2
+    
   </span>
   
 
@@ -3111,6 +3298,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -3132,6 +3320,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     KRITIS (DE)
+    
   </span>
   
 
@@ -3153,6 +3342,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     BSI IT-Grundschutz (DE)
+    
   </span>
   
 
@@ -3174,6 +3364,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     MSBFS 2018:8 (SE)
+    
   </span>
   
 
@@ -3213,6 +3404,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Industrial control systems
+    
   </span>
   
 
@@ -3238,6 +3430,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     ISA/IEC 62443
+    
   </span>
   
 
@@ -3277,6 +3470,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     CISO Dashboards
+    
   </span>
   
 
@@ -3302,6 +3496,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Audit Logs
+    
   </span>
   
 
@@ -3323,6 +3518,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Backup Dashboard
+    
   </span>
   
 
@@ -3344,6 +3540,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Cryptography Dashboard
+    
   </span>
   
 
@@ -3365,6 +3562,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Intrusion Detection Dashboard
+    
   </span>
   
 
@@ -3386,6 +3584,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Policy-as-Code Dashboard
+    
   </span>
   
 
@@ -3407,6 +3606,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Network Security Dashboard
+    
   </span>
   
 
@@ -3428,6 +3628,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Capacity Management (Kubernetes Status) Dashboard
+    
   </span>
   
 
@@ -3449,6 +3650,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Vulnerability Dashboard
+    
   </span>
   
 
@@ -3470,6 +3672,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Log Review
+    
   </span>
   
 
@@ -3499,6 +3702,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     FAQ
+    
   </span>
   
 
@@ -3520,6 +3724,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     How do I comply with GDPR Art. 17 Right to erasure ("right to be forgotten")?
+    
   </span>
   
 
@@ -3541,6 +3746,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     How do I comply with HSLF-FS 2016:40 4 kap. 9 § Kontroll av åtkomst till uppgifter?
+    
   </span>
   
 
@@ -3579,6 +3785,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     For Contributors
+    
   </span>
   
 
@@ -3604,6 +3811,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Overview
+    
   </span>
   
 
@@ -3625,6 +3833,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Architecture
+    
   </span>
   
 
@@ -3646,6 +3855,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Architectural Decision Log
+    
   </span>
   
 
@@ -3667,6 +3877,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Tech Radar
+    
   </span>
   
 
@@ -3688,6 +3899,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Quality Criteria
+    
   </span>
   
 
@@ -3726,6 +3938,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Release Notes
+    
   </span>
   
 
@@ -3751,6 +3964,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Release Cycle
+    
   </span>
   
 
@@ -3772,6 +3986,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin
+    
   </span>
   
 
@@ -3793,6 +4008,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin Kubespray
+    
   </span>
   
 
@@ -3814,6 +4030,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin Cluster API
+    
   </span>
   
 
@@ -3835,6 +4052,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin PostgreSQL
+    
   </span>
   
 
@@ -3856,6 +4074,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin RabbitMQ
+    
   </span>
   
 
@@ -3877,6 +4096,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin Redis
+    
   </span>
   
 
@@ -3898,6 +4118,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin Jaeger
+    
   </span>
   
 
@@ -3919,6 +4140,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Welkin Argo CD
+    
   </span>
   
 
@@ -3947,6 +4169,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Glossary
+    
   </span>
   
 
@@ -3967,6 +4190,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Fully Managed Welkin
+    
   </span>
   
 
@@ -3987,6 +4211,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Support for Self-Managed Welkin
+    
   </span>
   
 
@@ -4007,6 +4232,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Consulting
+    
   </span>
   
 
@@ -4027,6 +4253,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Official Training
+    
   </span>
   
 
@@ -4047,6 +4274,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Blog
+    
   </span>
   
 
@@ -4067,6 +4295,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Privacy Policy
+    
   </span>
   
 
@@ -4087,6 +4316,7 @@ if(!document.__defineGetter__) {
   
   <span class="md-ellipsis">
     Request a Feature
+    
   </span>
   
 
@@ -4213,6 +4443,7 @@ if(!document.__defineGetter__) {
               <article class="md-content__inner md-typeset">
                 
                   
+
 
   
   
@@ -4451,10 +4682,10 @@ Before going into production, don't forget to go through the <a href="../../go-l
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.top"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../../javascripts/feedback.js"></script>
       
