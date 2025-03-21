@@ -4616,6 +4616,42 @@ They provide a "northern star" to orient development.</p>
 </li>
 </ul>
 <h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>Welkin should be built and should make it easy for the application to be built with the following security principles in mind.</p>
+<ul>
+<li><strong>Security-By-Design</strong>:<ul>
+<li>The entire system and its individual components are designed from the ground up with security in mind.</li>
+<li>Deliberate attacks and unauthorized actions are explicitly considered, and the impact of security incidents is minimized through system design.</li>
+</ul>
+</li>
+<li><strong>Security-By-Default</strong>:<ul>
+<li>Security is enabled by default, requiring no additional configuration to ensure a secure state.</li>
+<li>Security features <em>may</em> be disabled only if:<ul>
+<li>their benefits strongly outweighs the limitations they impose;</li>
+<li>there are sufficient compensatory measures;</li>
+<li>the residual risk is clearly understood and documented.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Minimal-Need-To-Know Principle</strong>:<ul>
+<li>Each component and user is granted only the permissions necessary to perform a specific action.</li>
+</ul>
+</li>
+<li><strong>Defence-In-Depth Principle</strong>:<ul>
+<li>Security risks are not addressed by individual protective measures alone but are mitigated through the implementation of layered, multi-level, and complementary security measures.</li>
+</ul>
+</li>
+<li><strong>Redundancy Principle</strong>:<ul>
+<li>The overall system is designed in such a way that the failure of individual components does not compromise security-relevant functions.</li>
+<li>The system design reduces both the likelihood and impact of issues arising from unrestricted resource consumption, such as memory or network bandwidth, which could lead to resource exhaustion or denial-of-service (DoS) attacks.</li>
+</ul>
+</li>
+<li><strong>Free From Known Exploitable Vulnerabilities</strong>:<ul>
+<li>Exploitable vulnerability means a vulnerability that has the potential to be effectively used by an adversary under practical operational conditions. This definition is extracted from the <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng">EU Cyberresilience Act (CRA)</a>.</li>
+<li>The platform makes it easy to detect vulnerabilities and apply security patches, both at the level of the application and the platform itself.</li>
+</ul>
+</li>
+</ul>
 <p>The platform should support an organization's information security certification efforts, e.g., with ISO 27001:2022.</p>
 <h3 id="regulatory-compliance">Regulatory compliance<a class="headerlink" href="#regulatory-compliance" title="Permanent link">&para;</a></h3>
 <p>The platform should help an organization comply with various regulatory requirements, such as:</p>
