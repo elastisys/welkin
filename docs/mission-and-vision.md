@@ -60,6 +60,28 @@ Below we explain what we mean with each word in the mission and vision.
 
 ### Security
 
+Welkin should be built and should make it easy for the application to be built with the following security principles in mind.
+
+- **Security-By-Design**:
+    - The entire system and its individual components are designed from the ground up with security in mind.
+    - Deliberate attacks and unauthorized actions are explicitly considered, and the impact of security incidents is minimized through system design.
+- **Security-By-Default**:
+    - Security is enabled by default, requiring no additional configuration to ensure a secure state.
+    - Security features _may_ be disabled only if:
+        - their benefits strongly outweighs the limitations they impose;
+        - there are sufficient compensatory measures;
+        - the residual risk is clearly understood and documented.
+- **Minimal-Need-To-Know Principle**:
+    - Each component and user is granted only the permissions necessary to perform a specific action.
+- **Defence-In-Depth Principle**:
+    - Security risks are not addressed by individual protective measures alone but are mitigated through the implementation of layered, multi-level, and complementary security measures.
+- **Redundancy Principle**:
+    - The overall system is designed in such a way that the failure of individual components does not compromise security-relevant functions.
+    - The system design reduces both the likelihood and impact of issues arising from unrestricted resource consumption, such as memory or network bandwidth, which could lead to resource exhaustion or denial-of-service (DoS) attacks.
+- **Free From Known Exploitable Vulnerabilities**:
+    - Exploitable vulnerability means a vulnerability that has the potential to be effectively used by an adversary under practical operational conditions. This definition is extracted from the [EU Cyberresilience Act (CRA)](https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng).
+    - The platform makes it easy to detect vulnerabilities and apply security patches, both at the level of the application and the platform itself.
+
 The platform should support an organization's information security certification efforts, e.g., with ISO 27001:2022.
 
 ### Regulatory compliance
