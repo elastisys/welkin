@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.45.0](#v0450) - 2025-03-21
 - [v0.44.1](#v0441) - 2025-03-12
 - [v0.44.0](#v0440) - 2025-02-21
 - [v0.43.1](#v0431) - 2025-03-12
@@ -68,6 +69,41 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.45.0
+
+Released 2025-03-21
+
+!!! danger "Security Notice(s)"
+
+    - Upgraded cert-manager to v1.17.1 which addresses critical [CVE-2024-45337](https://github.com/advisories/GHSA-v778-237x-gjrc)
+
+!!! warning "Application Developer Notice(s)"
+
+    - A new guardrail is added that is enabled by default on ClusterAPI environments. It will by default warn but not deny usage of emptyDir storage, since this can stop cluster autoscaler from scaling down nodes. Read more on [this page](../user-guide/safeguards/enforce-no-local-storage-emptydir.md).
+    - A new guardrail is added that is enabled by default on ClusterAPI environments. It will by default warn but not deny usage of Pods without backing controllers, since this can stop cluster autoscaler from scaling down nodes. Read more on [this page](../user-guide/safeguards/enforce-no-pod-without-controller.md).
+    - Cert-manager was upgraded to v1.17.1. This comes with some potentially [breaking changes](https://github.com/cert-manager/cert-manager/releases/tag/v1.16.0) for [Venafi Issuer](https://cert-manager.io/docs/configuration/venafi/)
+    - RBAC to modify the configmaps `fluentd-extra-config` and `fluentd-extra-plugins`, and to delete any fluentd pod in the `fluentd` namespace has been removed.<br>Reach out to a platform administrator if any additional config or plugins are needed!
+
+### Feature(s)
+
+- Add gatekeeper policies to reject local storage emptydir and reject Pods without controller
+- Add cert-manager mixin dashboard
+
+### Improvement(s)
+
+- Update helm/trivy-operator to 0.26.0 and trivy-operator to 0.24.0
+- Upgrade cert-manager helm chart to v1.17.1
+- Upgrade Thanos chart to v15.13.1
+
+### Deprecation(s)
+
+- Remove rbac for additional Fluentd config and plugins configmaps
+
+### Other(s)
+
+- Change query expression for LessKubeletsThanNodes alerts
+- Fixed S3 size alert to not double count postgres buckets
 
 ## v0.44.1
 
