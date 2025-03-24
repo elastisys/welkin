@@ -327,7 +327,7 @@ Seeing logs from the user demo Pods in OpenSearch Dashboards:
     1. The DNS system MUST NOT recurs and MUST respond to all other requests with SERVFAIL.
 1. Certificate provisioning: You have several options:
     - Option A:
-    Run your own Certificate Authority which issues intermedate Certificate Authority (CA) certificates.
+    Run your own Certificate Authority which issues intermediate Certificate Authority (CA) certificates.
     Configure Welkin environments with an intermediate CA.
     Welkin will issue server certificates for Ingress resources as documented [on this page](../user-guide/network-model.md).
     See [CA in cert-manager Documentation](https://cert-manager.io/docs/configuration/ca/).

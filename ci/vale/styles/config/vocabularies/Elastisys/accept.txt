@@ -62,6 +62,7 @@ pgvector
 Pulumni
 Pushgateway
 Rclone
+rsync
 Strimzi
 Skaffold
 systemd
