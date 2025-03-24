@@ -198,6 +198,7 @@ exfiltrate
 impactful
 learnings
 misconfiguration
+misconfigure
 misconfigured
 mitigation
 offboarding
