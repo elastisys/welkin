@@ -2,9 +2,9 @@
 search:
   boost: 2
 tags:
-  - ISO 27001 A.12.1.2 Change Management
-  - ISO 27001 A.14.2.2 System Change Control Procedures
-  - ISO 27001 A.14.2.4 Restrictions on Changes to Software Packages
+  - [deprecated] ISO 27001:2013 A.12.1.2 Change Management
+  - [deprecated] ISO 27001:2013 A.14.2.2 System Change Control Procedures
+  - [deprecated] ISO 27001:2013 A.14.2.4 Restrictions on Changes to Software Packages
 ---
 
 # Avoid unexpected changes: disallowed tags

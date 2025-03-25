@@ -2,7 +2,7 @@
 search:
   boost: 2
 tags:
-  - ISO 27001 A.13.1 Network Security
+  - [deprecated] ISO 27001:2013 A.13.1 Network Security
   - BSI IT-Grundschutz APP.4.4.A7
   - BSI IT-Grundschutz APP.4.4.A18
 ---

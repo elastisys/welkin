@@ -2,9 +2,9 @@
 search:
   boost: 2
 tags:
-  - ISO 27001 A.9.4.4 Use of Privileged Utility Programmes
-  - ISO 27001 A.12.6.1 Management of Technical Vulnerabilities
-  - ISO 27001 A.14.2.5 Secure System Engineering Principles
+  - [deprecated] ISO 27001:2013 A.9.4.4 Use of Privileged Utility Programmes
+  - [deprecated] ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
+  - [deprecated] ISO 27001:2013 A.14.2.5 Secure System Engineering Principles
   - NIST SP 800-171 3.1.7
 ---
 

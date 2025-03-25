@@ -2,7 +2,7 @@
 search:
   boost: 2
 tags:
-  - ISO 27001 A.12.6.1 Management of Technical Vulnerabilities
+  - [deprecated] ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
   - NIST SP 800-171 3.4.8
   - NIST SP 800-171 3.4.9
 ---

@@ -1,6 +1,6 @@
 ---
 tags:
-- ISO 27001 A.17.2.1 Availability of information processing facilities
+- [deprecated] ISO 27001:2013 A.17.2.1 Availability of information processing facilities
 ---
 <!--
 Note to contributors: Aim for the following format.

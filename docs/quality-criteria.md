@@ -1,6 +1,6 @@
 ---
 tags:
-  - ISO 27001 A.14.2.9 System Acceptance Testing
+  - [deprecated] ISO 27001:2013 A.14.2.9 System Acceptance Testing
 ---
 
 # Quality Criteria

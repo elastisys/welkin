@@ -3,7 +3,7 @@ description: Alerting on metrics with AlertManager in Welkin, the Kubernetes pla
 search:
   boost: 2
 tags:
-  - ISO 27001 A.16 Information Security Incident Management
+  - [deprecated] ISO 27001:2013 A.16 Information Security Incident Management
   - NIS2 Minimum Requirement (b) Incident Handling
 ---
 

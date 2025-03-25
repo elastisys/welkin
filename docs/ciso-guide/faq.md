@@ -1,6 +1,6 @@
 ---
 tags:
-  - ISO 27001 A.18.1.2 Intellectual Property Rights
+  - [deprecated] ISO 27001:2013 A.18.1.2 Intellectual Property Rights
 ---
 
 # CISO FAQ
