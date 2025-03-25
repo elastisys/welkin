@@ -2490,6 +2490,54 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#index-per-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index Per Namespace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index Per Namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opensearch_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSearch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-access-control-per-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Access Control Per Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining Access Control Per Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opensearch_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSearch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4545,6 +4593,54 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#index-per-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index Per Namespace
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index Per Namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opensearch_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSearch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-access-control-per-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Access Control Per Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining Access Control Per Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opensearch_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSearch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4784,6 +4880,38 @@ Once there is one admin, they can set specific permissions for other users (ther
 <p>Administrator promotes the OpenID user to Harbor admin at <code>harbor.domain.tld/harbor/users</code></p>
 </li>
 </ol>
+<h2 id="index-per-namespace">Index Per Namespace<a class="headerlink" href="#index-per-namespace" title="Permanent link">&para;</a></h2>
+<p>This section defines how to enable indices for Kubernetes namespaces.</p>
+<h3 id="opensearch_2">OpenSearch<a class="headerlink" href="#opensearch_2" title="Permanent link">&para;</a></h3>
+<p>To enable logging and control indices per namespace in OpenSearch, this is configured in <code>common-config.yaml</code> as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">opensearch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">indexPerNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h2 id="defining-access-control-per-index">Defining Access Control Per Index<a class="headerlink" href="#defining-access-control-per-index" title="Permanent link">&para;</a></h2>
+<p>This section describes how to define access control for specific indices in OpenSearch.</p>
+<h3 id="opensearch_3">OpenSearch<a class="headerlink" href="#opensearch_3" title="Permanent link">&para;</a></h3>
+<p>This is configured via <code>sc-config.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">opensearch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">extraRoleMappings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mapping_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">namespace1_reader</span>
+<span class="w">      </span><span class="nt">definition</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user1@domain.tld</span>
+<span class="w">        </span><span class="nt">index_permissions</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">index_patterns</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;namespace1-*&quot;</span>
+<span class="w">            </span><span class="nt">allowed_actions</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mapping_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">namespace2_reader</span>
+<span class="w">      </span><span class="nt">definition</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">users</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user2@domain.tld</span>
+<span class="w">        </span><span class="nt">index_permissions</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">index_patterns</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;namespace2-*&quot;</span>
+<span class="w">            </span><span class="nt">allowed_actions</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+</code></pre></div>
 
 
 
