@@ -4344,6 +4344,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#restrictpoddisruptionbudgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      restrictPodDisruptionBudgets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#networkpolicies" class="md-nav__link">
     <span class="md-ellipsis">
       networkPolicies
@@ -4559,6 +4568,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-open-policy-agent-config-properties-safeguard-reject-pod-without-controller/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/rejectPodWithoutController">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#restrictpoddisruptionbudgets">restrictPodDisruptionBudgets</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-open-policy-agent-config-properties-safeguard-restrict-poddisruptionbudget/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/restrictPodDisruptionBudgets">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#networkpolicies">networkPolicies</a></td>
@@ -4824,6 +4840,29 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-open-policy-agent-config-properties-safeguard-reject-pod-without-controller/">Safeguard Reject Pod Without Controller</a>)</p>
+<h2 id="restrictpoddisruptionbudgets">restrictPodDisruptionBudgets<a class="headerlink" href="#restrictpoddisruptionbudgets" title="Permanent link">&para;</a></h2>
+<p>Configure constraint to reject PodDisruptionBudgets and connected Pod controllers if the PDB does not allow for at least 1 pod disruption.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a href="https://elastisys.io/welkin/user-guide/safeguards/enforce-restricted-pod-disruption-budgets/">the dev docs</a> for context.</p>
+</div>
+<p><code>restrictPodDisruptionBudgets</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-open-policy-agent-config-properties-safeguard-restrict-poddisruptionbudget/">Safeguard Restrict PodDisruptionBudget</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-open-policy-agent-config-properties-safeguard-restrict-poddisruptionbudget/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/restrictPodDisruptionBudgets">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-open-policy-agent-config-properties-safeguard-restrict-poddisruptionbudget/">Safeguard Restrict PodDisruptionBudget</a>)</p>
 <h2 id="networkpolicies">networkPolicies<a class="headerlink" href="#networkpolicies" title="Permanent link">&para;</a></h2>
 <p>Configure constraint to only allow Pods targeted by NetworkPolicies.</p>
 <div class="admonition note">
@@ -5016,7 +5055,7 @@ if(!document.__defineGetter__) {
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Tue Mar 25 10:33:32 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/3d1cdfd0ff58389bee2127e06fd5f03c2e907350">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Mar 26 03:50:46 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/d1efa13705de73b51736eab49089ac697f907318">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
