@@ -1,3 +1,8 @@
+---
+tags:
+  - ISO 27001 Annex A 5.34 Privacy and Protection of PII
+---
+
 # GDPR (Regulation (EU) 2016/679)
 
 {%

@@ -5,6 +5,7 @@ search:
 tags:
   - [deprecated] ISO 27001:2013 A.17.1.3 Verify, Review & Evaluate Information Security Continuity
   - HIPAA S26 - Contingency Plan - Testing and Revision Procedure - § 164.308(a)(7)(ii)(D)
+  - ISO 27001 Annex A 5.30 ICT Readiness for Business Continuity
 ---
 
 # Go-live Checklist

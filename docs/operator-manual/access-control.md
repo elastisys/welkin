@@ -8,6 +8,7 @@ tags:
   - MSBFS 2020:7 4 kap. 4 §
   - HSLF-FS 2016:40 4 kap. 3 § Styrning av behörigheter
   - NIS2 Minimum Requirement (i) Access Control
+  - ISO 27001 Annex A 5.15 Access Control
 ---
 
 # Access control

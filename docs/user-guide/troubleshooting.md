@@ -4,6 +4,7 @@ search:
   boost: 2
 tags:
   - NIS2 Minimum Requirement (b) Incident Handling
+  - ISO 27001 Annex A 5.24 Information Security Incident Management Planning and Preparation
 ---
 
 # Troubleshooting for Application Developers

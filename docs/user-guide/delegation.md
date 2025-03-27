@@ -16,6 +16,7 @@ tags:
   - NIST SP 800-171 3.1.5
   - NIST SP 800-171 3.1.6
   - NIS2 Minimum Requirement (i) Access Control
+  - ISO 27001 Annex A 5.15 Access Control
 ---
 
 # How to Delegate?

@@ -9,6 +9,7 @@ tags:
   - HSLF-FS 2016:40 3 kap. 13 § Säkerhetskopiering
   - NIST SP 800-171 3.6.3
   - NIS2 Minimum Requirement (c) Disaster Recovery
+  - ISO 27001 Annex A 5.30 ICT Readiness for Business Continuity
 ---
 
 # Disaster Recovery
