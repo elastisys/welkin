@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v2.27.0-ck8s1](#v2270-ck8s1) - 2025-03-28
 - [v2.26.0-ck8s3](#v2260-ck8s3) - 2025-02-06
 - [v2.26.0-ck8s2](#v2260-ck8s2) - 2025-01-14
 - [v2.26.0-ck8s1](#v2260-ck8s1) - 2024-11-08
@@ -37,6 +38,28 @@
 !!!note
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/changelog/).
+
+### v2.27.0-ck8s1
+
+Released 2025-03-28
+
+#### Updated
+
+- **Updated Kubespray to `v2.27.0`** <br/>
+  Kubernetes version upgraded to [v1.31.4](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.31.md#changelog-since-v1300). <br/>
+
+#### Feature(s)
+
+- Added support for Ubuntu 24.04 on UpCloud
+
+#### Improvement(s)
+
+- Support multiple LoadBalancers on UpCloud
+
+#### Other(s)
+
+- Default reserved memory for worker Nodes has been increased by `256Mi`.
+    - Worker Nodes will have `256Mi` less allocatable memory per Node.
 
 ### v2.26.0-ck8s3
 
@@ -113,7 +136,7 @@ Released 2024-06-26
 
 #### Improvement(s)
 
-- Update Kubespray submodule with private cloud lb and anti affinity changes for Upcloud
+- Update Kubespray submodule with private cloud lb and anti affinity changes for UpCloud
 
 ### v2.24.1-ck8s1
 
@@ -228,7 +251,7 @@ Released 2022-09-23
 
 #### Updated
 
-- **Bumped upcloud csi driver to `v0.3.3`**
+- **Bumped UpCloud csi driver to `v0.3.3`**
 
 ### v2.19.0-ck8s2
 
