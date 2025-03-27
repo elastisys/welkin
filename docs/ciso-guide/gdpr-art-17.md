@@ -1,6 +1,7 @@
 ---
 tags:
   - GDPR Art. 17 Right to erasure ("right to be forgotten")
+  - ISO 27001 Annex A 8.10 Information Deletion
 ---
 
 <!-- markdownlint-disable-file first-line-h1 -->

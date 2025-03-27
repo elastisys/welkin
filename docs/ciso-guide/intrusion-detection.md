@@ -7,6 +7,8 @@ tags:
   - MSBFS 2020:7 4 kap. 18 §
   - NIST SP 800-171 3.14.6
   - NIST SP 800-171 3.14.7
+  - ISO 27001 Annex A 8.7 Protection Against Malware
+  - ISO 27001 Annex A 8.16 Monitoring Activities
 ---
 
 # Intrusion Detection Dashboard

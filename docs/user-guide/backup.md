@@ -11,6 +11,7 @@ tags:
   - HSLF-FS 2016:40 3 kap. 12 § Säkerhetskopiering
   - GDPR Art. 17 Right to erasure ("right to be forgotten")
   - NIS2 Minimum Requirement (c) Backup Management
+  - ISO 27001 Annex A 8.13 Information Backup
 ---
 
 # Backups

@@ -4,6 +4,8 @@ search:
 tags:
   - BSI IT-Grundschutz APP.4.4.A2
   - BSI IT-Grundschutz APP.4.4.A10
+  - ISO 27001 Annex A 8.25 Secure Development Life Cycle
+  - ISO 27001 Annex A 8.32 Change Management
 ---
 
 # Argo™ CD (preview)

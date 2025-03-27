@@ -6,6 +6,7 @@ tags:
   - NIST SP 800-171 3.13.10
   - NIST SP 800-171 3.13.11
   - NIS2 Minimum Requirement (h) Cryptography
+  - ISO 27001 Annex A 8.24 Use of Cryptography
 ---
 
 # Use of Cryptography

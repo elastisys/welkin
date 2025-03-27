@@ -1,6 +1,7 @@
 ---
 tags:
-- [deprecated] ISO 27001:2013 A.17.2.1 Availability of information processing facilities
+  - [deprecated] ISO 27001:2013 A.17.2.1 Availability of information processing facilities
+  - ISO 27001 Annex A 8.14 Redundancy of Information Processing Facilities
 ---
 <!--
 Note to contributors: Aim for the following format.

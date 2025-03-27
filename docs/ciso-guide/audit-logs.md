@@ -7,6 +7,7 @@ tags:
   - HSLF-FS 2016:40 4 kap. 9 § Kontroll av åtkomst till uppgifter
   - NIST SP 800-171 3.1.7
   - NIST SP 800-171 3.3.1
+  - ISO 27001 Annex A 8.16 Monitoring Activities
 ---
 
 # Audit Logs

@@ -10,6 +10,7 @@ tags:
   - NIST SP 800-171 3.6.3
   - NIS2 Minimum Requirement (c) Disaster Recovery
   - ISO 27001 Annex A 5.30 ICT Readiness for Business Continuity
+  - ISO 27001 Annex A 8.13 Information Backup
 ---
 
 # Disaster Recovery

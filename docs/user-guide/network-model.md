@@ -20,6 +20,12 @@ tags:
   - NIST SP 800-171 3.13.6
   - NIS2 Minimum Requirement (e) Security in Network
   - NIS2 Minimum Requirement (h) Encryption-in-transit
+  - ISO 27001 Annex A 8.12 Data Leakage Prevention
+  - ISO 27001 Annex A 8.20 Networks Security
+  - ISO 27001 Annex A 8.21 Security of Network Services
+  - ISO 27001 Annex A 8.22 Segregation of Networks
+  - ISO 27001 Annex A 8.23 Web filtering
+  - ISO 27001 Annex A 8.24 Use of Cryptography
 ---
 
 # Network Model

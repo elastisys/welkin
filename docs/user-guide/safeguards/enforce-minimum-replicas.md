@@ -1,7 +1,8 @@
 ---
 search:
   boost: 2
-tags: []
+tags:
+  - ISO 27001 Annex A 8.14 Redundancy of Information Processing Facilities
 ---
 
 # Avoid Downtime with Replicas

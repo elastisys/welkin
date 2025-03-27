@@ -8,6 +8,7 @@ tags:
   - [deprecated] ISO 27001:2013 A.16 Information Security Incident Management
   - NIST SP 800-171 3.1.13
   - NIST SP 800-171 3.12.3
+  - ISO 27001 Annex A 8.15 Logging
 ---
 
 # Logging

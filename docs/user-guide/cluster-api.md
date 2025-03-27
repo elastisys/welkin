@@ -1,6 +1,8 @@
 ---
 search:
   boost: 2
+tags:
+  - ISO 27001 Annex A 8.6 Capacity Management
 ---
 # Cluster API
 
