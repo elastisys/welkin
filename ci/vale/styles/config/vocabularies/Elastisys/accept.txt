@@ -53,6 +53,7 @@ Kubespray
 Kured
 kustomization
 kustomize
+Kyverno
 MkDocs
 Monokle
 NGINX
