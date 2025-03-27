@@ -27,6 +27,7 @@ vSphere
 Vitec
 Yopass
 Zalando
+UpCloud
 
 # Project Names
 Alertmanager
