@@ -2,7 +2,7 @@
 search:
   boost: 2
 tags:
-  - [deprecated] ISO 27001:2013 A.12.1.4 Separation of Development, Testing & Operational Environments
+  #- ISO 27001:2013 A.12.1.4 Separation of Development, Testing & Operational Environments
   - HIPAA S12 - Information Access Management - Isolating Healthcare Clearinghouse Functions - § 164.308(a)(4)(ii)(A)
   - MSBFS 2020:7 3 kap. 1 §
   - MSBFS 2020:7 3 kap. 2 §

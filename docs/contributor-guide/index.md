@@ -1,6 +1,7 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
+  #- ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
+  - ISO 27001 Annex A 8.25 Secure Development Life Cycle
 ---
 
 # Contributor guide

@@ -1,7 +1,8 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.18.2.2 Compliance with Security Policies & Standards
-  - [deprecated] ISO 27001:2013 A.18.2.3 Technical Compliance Review
+  #- ISO 27001:2013 A.18.2.2 Compliance with Security Policies & Standards
+  #- ISO 27001:2013 A.18.2.3 Technical Compliance Review
+  - ISO 27001 Annex A 5.36 Compliance With Policies, Rules and Standards for Information Security
 ---
 
 # Policy-as-Code Dashboard

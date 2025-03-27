@@ -1,6 +1,6 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.12.1.3 Capacity Management
+  #- ISO 27001:2013 A.12.1.3 Capacity Management
   - ISO 27001 Annex A 8.6 Capacity Management
 ---
 

@@ -1,6 +1,6 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
+  #- ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
   - BSI IT-Grundschutz APP.4.4.A21
   - HIPAA S16 - Security Awareness and Training - Security Reminders - § 164.308(a)(5)(ii)(A)
   - MSBFS 2020:7 4 kap. 12 §

@@ -1,7 +1,7 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.12.4.1 Event Logging
-  - [deprecated] ISO 27001:2013 A.12.4.3 Administrator & Operator Logs
+  #- ISO 27001:2013 A.12.4.1 Event Logging
+  #- ISO 27001:2013 A.12.4.3 Administrator & Operator Logs
   - HIPAA S5 - Security Management Process - Information System Activity Review - § 164.308(a)(1)(ii)(D)
   - HIPAA S18 - Security Awareness, Training, and Tools - Log-in Monitoring - § 164.308(a)(5)(ii)(C)
   - MSBFS 2020:7 4 kap. 17 §

@@ -1,6 +1,10 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.13 Network Security
+  #- ISO 27001:2013 A.13 Network Security
+  - ISO 27001 Annex A 8.12 Data Leakage Prevention
+  - ISO 27001 Annex A 8.20 Networks Security
+  - ISO 27001 Annex A 8.21 Security of Network Services
+  - ISO 27001 Annex A 8.22 Segregation of Networks
 ---
 
 # Network Security Dashboard

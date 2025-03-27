@@ -1,6 +1,7 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.14.2.9 System Acceptance Testing
+  #- ISO 27001:2013 A.14.2.9 System Acceptance Testing
+  - ISO 27001 Annex A 8.29 Security Testing in Development and Acceptance
 ---
 
 # Quality Criteria

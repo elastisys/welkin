@@ -1,9 +1,7 @@
 ---
 tags:
-  - >-
-    ISO 27001 A.14.1.1 Information Security Requirements Analysis &
-    Specification
-  - [deprecated] ISO 27001:2013 A.14.2.4 Restrictions on Changes to Software Packages
+  #- ISO 27001 A.14.1.1 Information Security Requirements Analysis & Specification
+  #- ISO 27001:2013 A.14.2.4 Restrictions on Changes to Software Packages
   - NIST SP 800-171 3.13.2
   - NIST SP 800-171 3.13.3
   - ISO 27001 Annex A 8.27 Secure System Architecture and Engineering Principles

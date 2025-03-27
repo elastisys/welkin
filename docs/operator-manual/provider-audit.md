@@ -1,6 +1,6 @@
 ---
 tags:
-  - [deprecated] ISO 27001:2013 A.15 Supplier Relationships
+  #- ISO 27001:2013 A.15 Supplier Relationships
   - HIPAA S29 - Business Associate Contracts and Other Arrangements - § 164.308(b)(1)
   - HIPAA S31 - Facility Access Controls - § 164.310(a)(1)
   - HIPAA S32 - Facility Access Controls - Contingency Operations - § 164.310(a)(2)(i)

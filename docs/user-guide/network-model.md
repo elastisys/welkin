@@ -3,8 +3,8 @@ description: Explanation of the network model in Welkin, the Kubernetes platform
 search:
   boost: 2
 tags:
-  - [deprecated] ISO 27001:2013 A.10.1.2 Key Management
-  - [deprecated] ISO 27001:2013 A.13.1 Network Security
+  #- ISO 27001:2013 A.10.1.2 Key Management
+  #- ISO 27001:2013 A.13.1 Network Security
   - BSI IT-Grundschutz APP.4.4.A7
   - BSI IT-Grundschutz APP.4.4.A18
   - HIPAA S52 - Transmission - § 164.312(e)(1)
