@@ -326,6 +326,7 @@ Seeing logs from the user demo Pods in OpenSearch Dashboards:
     1. The DNS system MAY resolve `in-addr.arpa` (see [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035)) and `ip6.arpa` (see [RFC 3152](https://datatracker.ietf.org/doc/html/rfc3152)).
     1. The DNS system MUST NOT recurs and MUST respond to all other requests with SERVFAIL.
 1. Certificate provisioning: You have several options:
+    - Note: Currently, Welkin **only supports Option B**. Please contact Elastisys, if you prefer Option A or C.
     - Option A:
     Run your own Certificate Authority which issues intermediate Certificate Authority (CA) certificates.
     Configure Welkin environments with an intermediate CA.
@@ -337,7 +338,6 @@ Seeing logs from the user demo Pods in OpenSearch Dashboards:
     - Option C:
     Run your [Automatic Certificate Management Environment (ACME)](https://datatracker.ietf.org/doc/html/rfc8555).
     Configure Welkin to use your ACME server instead of LetsEncrypt.
-    - Note: Currently, Welkin **only supports Option B**. Please contact Elastisys, if you prefer Option A or C.
 1. Identity Provider (IdP):
     1. The IdP MUST be compatible with OpenID.
     1. The IdP MUST NOT depend on resources outside the air-gapped environment.
@@ -372,12 +372,11 @@ To successfully run in an air-gapped environment, Welkin and the underlying oper
     - use the object storage above;
     - use the identity provider above.
 - Containers MUST trust your Certificate Authority. This can be accomplished as follows:
-    - Option 1: Build containers so as to trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html)).
+    - Note: Currently, Welkin **only supports Option A**. Please contact Elastisys, if you prefer Option B or C.
+    - Option A: Build containers so as to trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html)).
         - This solution solves the trust problem at build-time. Some people see this as the most robust, as it can be more robustly tested and rolled out.
-    - Option 2: Inject the certificate of your Certificate Authority with [trust-manager](https://cert-manager.io/docs/trust/trust-manager/).
-        - Note: Currently, Welkin **does not support this option.**. Please contact Elastisys if you are interested.
-    - Option 3: Inject the certificate of your Certificate Authority with [Kyverno](https://kyverno.io/policies/other/add-certificates-volume/add-certificates-volume/).
-        - Note: Currently, Welkin **does not support this option.**. Please contact Elastisys if you are interested.
+    - Option B: Inject the certificate of your Certificate Authority with [trust-manager](https://cert-manager.io/docs/trust/trust-manager/).
+    - Option C: Inject the certificate of your Certificate Authority with [Kyverno](https://kyverno.io/policies/other/add-certificates-volume/add-certificates-volume/).
 
 ## References
 
