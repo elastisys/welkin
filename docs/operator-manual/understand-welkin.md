@@ -1,3 +1,8 @@
+---
+tags:
+  - ISO 27001 Annex A 8.9 Configuration Management
+  - ISO 27001 Annex A 8.32 Change Management
+---
 # Understand Welkin
 
 This page gives you a basic understanding of Welkin from the point-of-view of the Platform Administrator.

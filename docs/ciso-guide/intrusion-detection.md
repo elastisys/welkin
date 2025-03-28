@@ -1,12 +1,14 @@
 ---
 tags:
-  - ISO 27001 A.12.2.1 Controls Against Malware
-  - ISO 27001 A.12.6.1 Management of Technical Vulnerabilities
-  - ISO 27001 A.16 Information Security Incident Management
+  #- ISO 27001:2013 A.12.2.1 Controls Against Malware
+  #- ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
+  #- ISO 27001:2013 A.16 Information Security Incident Management
   - HIPAA S20 - Security Incident Procedures - § 164.308(a)(6)
   - MSBFS 2020:7 4 kap. 18 §
   - NIST SP 800-171 3.14.6
   - NIST SP 800-171 3.14.7
+  - ISO 27001 Annex A 8.7 Protection Against Malware
+  - ISO 27001 Annex A 8.16 Monitoring Activities
 ---
 
 # Intrusion Detection Dashboard

@@ -1,6 +1,7 @@
 ---
 tags:
-  - ISO 27001 A.17.1.1 Planning Information Security Continuity
+  #- ISO 27001:2013 A.17.1.1 Planning Information Security Continuity
+  - ISO 27001 Annex A 5.30 ICT Readiness for Business Continuity
 ---
 # We believe in community-driven open source
 

@@ -1,3 +1,8 @@
+---
+tags:
+  - ISO 27001 Annex A 5.1 Policies for Information Security
+  - ISO 27001 Annex A 8.27 Secure System Architecture and Engineering Principles
+---
 # Mission and Vision
 
 ## Purpose

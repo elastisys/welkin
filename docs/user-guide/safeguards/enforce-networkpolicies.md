@@ -2,9 +2,13 @@
 search:
   boost: 2
 tags:
-  - ISO 27001 A.13.1 Network Security
+  #- ISO 27001:2013 A.13.1 Network Security
   - BSI IT-Grundschutz APP.4.4.A7
   - BSI IT-Grundschutz APP.4.4.A18
+  - ISO 27001 Annex A 8.12 Data Leakage Prevention
+  - ISO 27001 Annex A 8.20 Networks Security
+  - ISO 27001 Annex A 8.21 Security of Network Services
+  - ISO 27001 Annex A 8.22 Segregation of Networks
 ---
 
 # Reduce blast radius: NetworkPolicies

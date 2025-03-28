@@ -9,6 +9,8 @@ tags:
   - NIST SP 800-171 3.3.2
   - NIS2 Minimum Requirement (i) Access Control
   - NIS2 Minimum Requirement (j) Multi-Factor Authentication
+  - ISO 27001 Annex A 5.16 Identity Management
+  - ISO 27001 Annex A 8.5 Secure Authentication
 ---
 
 # Prepare your Identity Provider (IdP)

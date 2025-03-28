@@ -13,6 +13,8 @@ tags:
   - NIST SP 800-171 3.1.15
   - NIST SP 800-171 3.13.3
   - NIS2 Minimum Requirement (i) Access Control
+  - ISO 27001 Annex A 5.3 Segregation of Duties
+  - ISO 27001 Annex A 8.2 Privileged Access Rights
 ---
 
 <!-- markdownlint-disable-file first-line-h1 -->

@@ -3,7 +3,7 @@ description: How to delegate and work with permissions in Welkin, the Kubernetes
 search:
   boost: 2
 tags:
-  - ISO 27001 A.9.4.1 Information Access Restriction
+  #- ISO 27001:2013 A.9.4.1 Information Access Restriction
   - BSI IT-Grundschutz APP.4.4.A3
   - HIPAA S13 - Information Access Management - Access Authorization - § 164.308(a)(4)(ii)(B)
   - HIPAA S14 - Information Access Management - Access Establishment and Modification - § 164.308(a)(4)(ii)(C)
@@ -16,6 +16,7 @@ tags:
   - NIST SP 800-171 3.1.5
   - NIST SP 800-171 3.1.6
   - NIS2 Minimum Requirement (i) Access Control
+  - ISO 27001 Annex A 5.15 Access Control
 ---
 
 # How to Delegate?

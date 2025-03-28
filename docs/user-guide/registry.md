@@ -3,7 +3,7 @@ description: How to work with the container registry in Welkin, the Kubernetes p
 search:
   boost: 2
 tags:
-  - ISO 27001 A.12.6.1 Management of Technical Vulnerabilities
+  #- ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
   - HIPAA S17 - Security Awareness, Training, and Tools - Protection from Malicious Software - § 164.308(a)(5)(ii)(B)
   - MSBFS 2020:7 4 kap. 20 §
   - NIST SP 800-171 3.1.13

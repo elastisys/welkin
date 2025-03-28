@@ -1,7 +1,7 @@
 ---
 tags:
-  - ISO 27001 A.12.3.1 Information Backup
-  - ISO 27001 A.17.1.1 Planning Information Security Continuity
+  #- ISO 27001:2013 A.12.3.1 Information Backup
+  #- ISO 27001:2013 A.17.1.1 Planning Information Security Continuity
   - BSI IT-Grundschutz APP.4.4.A5
   - HIPAA S23 - Contingency Plan - Data Backup Plan - § 164.308(a)(7)(ii)(A)
   - MSBFS 2020:7 4 kap. 14 §

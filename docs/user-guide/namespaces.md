@@ -3,8 +3,10 @@ description: How to work with namespaces in Welkin, the Kubernetes platform for 
 search:
   boost: 2
 tags:
-  - ISO 27001 A.12.1.4 Separation of Development, Testing & Operational Environments
-  - ISO 27001 A.14.2.5 Secure System Engineering Principles
+  #- ISO 27001:2013 A.12.1.4 Separation of Development, Testing & Operational Environments
+  #- ISO 27001:2013 A.14.2.5 Secure System Engineering Principles
+  - ISO 27001 Annex A 8.27 Secure System Architecture and Engineering Principles
+  - ISO 27001 Annex A 8.31 Separation of Development, Test and Production Environments
 ---
 
 # Namespaces

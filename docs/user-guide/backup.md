@@ -3,7 +3,7 @@ description: Backing up data in Welkin, the Kubernetes platform for software cri
 search:
   boost: 2
 tags:
-  - ISO 27001 A.12.3.1 Information Backup
+  #- ISO 27001:2013 A.12.3.1 Information Backup
   - BSI IT-Grundschutz APP.4.4.A5
   - HIPAA S23 - Contingency Plan - Data Backup Plan - § 164.308(a)(7)(ii)(A)
   - MSBFS 2020:7 4 kap. 14 §
@@ -11,6 +11,7 @@ tags:
   - HSLF-FS 2016:40 3 kap. 12 § Säkerhetskopiering
   - GDPR Art. 17 Right to erasure ("right to be forgotten")
   - NIS2 Minimum Requirement (c) Backup Management
+  - ISO 27001 Annex A 8.13 Information Backup
 ---
 
 # Backups

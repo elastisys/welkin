@@ -1,11 +1,12 @@
 ---
 tags:
   - MSBFS 2020:7 4 kap. 9 §
-  - ISO 27001 A.10 Cryptography
+  #- ISO 27001:2013 A.10 Cryptography
   - HIPAA S47 - Access Control - Encryption and Decryption - § 164.312(a)(2)(iv)
   - NIST SP 800-171 3.13.10
   - NIST SP 800-171 3.13.11
   - NIS2 Minimum Requirement (h) Cryptography
+  - ISO 27001 Annex A 8.24 Use of Cryptography
 ---
 
 # Use of Cryptography

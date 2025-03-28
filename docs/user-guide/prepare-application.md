@@ -3,7 +3,7 @@ description: How to prepare your application for Welkin, the Kubernetes platform
 search:
   boost: 2
 tags:
-  - ISO 27001 A.12.6.1 Management of Technical Vulnerabilities
+  #- ISO 27001:2013 A.12.6.1 Management of Technical Vulnerabilities
   - BSI IT-Grundschutz APP.4.4.A21
 ---
 

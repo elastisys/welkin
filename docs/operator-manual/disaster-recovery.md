@@ -1,7 +1,7 @@
 ---
 tags:
-  - ISO 27001 A.12.3.1 Information Backup
-  - ISO 27001 A.17.1.1 Planning Information Security Continuity
+  #- ISO 27001:2013 A.12.3.1 Information Backup
+  #- ISO 27001:2013 A.17.1.1 Planning Information Security Continuity
   - HIPAA S24 - Contingency Plan - Disaster Recovery Plan - § 164.308(a)(7)(ii)(B)
   - MSBFS 2020:7 4 kap. 14 §
   - MSBFS 2020:7 4 kap. 15 §
@@ -9,6 +9,8 @@ tags:
   - HSLF-FS 2016:40 3 kap. 13 § Säkerhetskopiering
   - NIST SP 800-171 3.6.3
   - NIS2 Minimum Requirement (c) Disaster Recovery
+  - ISO 27001 Annex A 5.30 ICT Readiness for Business Continuity
+  - ISO 27001 Annex A 8.13 Information Backup
 ---
 
 # Disaster Recovery

@@ -1,6 +1,6 @@
 ---
 tags:
-  - ISO 27001 A.15 Supplier Relationships
+  #- ISO 27001:2013 A.15 Supplier Relationships
   - HIPAA S29 - Business Associate Contracts and Other Arrangements - § 164.308(b)(1)
   - HIPAA S31 - Facility Access Controls - § 164.310(a)(1)
   - HIPAA S32 - Facility Access Controls - Contingency Operations - § 164.310(a)(2)(i)
@@ -18,6 +18,10 @@ tags:
   - GDPR Art. 28 Processor
   - NIST SP 800-171 3.13.16
   - NIS2 Minimum Requirement (d) Security of direct suppliers
+  - ISO 27001 Annex A 5.19 Information Security in Supplier Relationships
+  - ISO 27001 Annex A 5.20 Addressing Information Security Within Supplier Agreements
+  - ISO 27001 Annex A 5.21 Managing Information Security in the ICT Supply Chain
+  - ISO 27001 Annex A 7 Physical Controls
 ---
 
 # Infrastructure Provider Audit
