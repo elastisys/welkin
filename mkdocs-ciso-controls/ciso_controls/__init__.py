@@ -39,14 +39,14 @@ class CisoControlsPlugin(mkdocs.plugins.BasePlugin):
             log.info(f'Found tags index URL: {file.url}')
 
     def on_page_markdown(self, markdown, page, config, files):
-        if page.url.startswith(self.root_url):
-            log.info(f"Rendering tags index: {page.file.url}")
-            return self.__render_tag_index(markdown, page)
-
         # Add page to tags index
         for tag in page.meta.get("tags", []):
             tags_index = self._tag_to_tags_index(tag)
             self.tags[tags_index][tag].append(page)
+
+        if page.url.startswith(self.root_url):
+            log.info(f"Rendering tags index: {page.file.url}")
+            return self.__render_tag_index(markdown, page)
 
     def on_page_context(self, context, page, config, nav):
         # Inject tags into page (after search and before minification)
