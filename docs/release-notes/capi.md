@@ -4,12 +4,21 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.5.1](#v051) - 2025-03-28
 - [v0.5.0](#v050) - 2025-02-05
 - [v0.4.0](#v040) - 2024-11-28
 - [v0.3.0](#v030) - 2024-08-23
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.5.1
+
+Released 2025-03-28
+
+### Improvement(s)
+
+- Improved migration documentation to allow for less disruptive upgrades
 
 ## v0.5.0
 
