@@ -2377,6 +2377,30 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#catalog-of-requirements-for-an-air-gapped-environment-hosting-welkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Catalog of Requirements for an Air-gapped Environment Hosting Welkin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalog of Requirements for an Air-gapped Environment Hosting Welkin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References
@@ -4577,6 +4601,30 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#catalog-of-requirements-for-an-air-gapped-environment-hosting-welkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Catalog of Requirements for an Air-gapped Environment Hosting Welkin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalog of Requirements for an Air-gapped Environment Hosting Welkin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References
@@ -4872,6 +4920,99 @@ wget<span class="w"> </span><span class="s2">&quot;https://artifacts.opensearch.
 <p><img alt="Air-gapped User Demo metrics in Grafana" src="../../img/air-gapped-grafana-demo.png" /></p>
 <p>Seeing logs from the user demo Pods in OpenSearch Dashboards:</p>
 <p><img alt="Air-gapped User Demo logs in OpenSearch Dashboards" src="../../img/air-gapped-opensearch-demo.png" /></p>
+<h2 id="catalog-of-requirements-for-an-air-gapped-environment-hosting-welkin">Catalog of Requirements for an Air-gapped Environment Hosting Welkin<a class="headerlink" href="#catalog-of-requirements-for-an-air-gapped-environment-hosting-welkin" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a>.</p>
+</div>
+<ol>
+<li>NTP system:<ol>
+<li>The NTP system MUST provide accurate time without relying on external time-sources.</li>
+<li>The NTP system SHOULD fulfill requirements in <a href="https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html">BSI IT-Grundschutz OPS.1.2.6 NTP Time Synchronisation</a>. Requirements which are not fulfilled MUST have a clear justification for exclusion or a list of compensatory security measures.</li>
+</ol>
+</li>
+<li>DNS system:<ol>
+<li>The DNS system MUST be air-gapped and MUST NOT use external DNS servers, neither advertising nor resolving.</li>
+<li>The DNS system SHOULD fulfill requirements in <a href="https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html">BSI IT-Grundschutz APP.3.6 DNS Servers</a>. Requirements which are not fulfilled MUST have a clear justification for exclusion or a list of compensatory security measures.</li>
+<li>The DNS system MUST resolve all domain in <code>.internal</code>.</li>
+<li>The DNS system MAY resolve <code>in-addr.arpa</code> (see <a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035</a>) and <code>ip6.arpa</code> (see <a href="https://datatracker.ietf.org/doc/html/rfc3152">RFC 3152</a>).</li>
+<li>The DNS system MUST NOT recurs and MUST respond to all other requests with SERVFAIL.</li>
+</ol>
+</li>
+<li>Certificate provisioning: You have several options:<ul>
+<li>Option A:
+Run your own Certificate Authority which issues intermediate Certificate Authority (CA) certificates.
+Configure Welkin environments with an intermediate CA.
+Welkin will issue server certificates for Ingress resources as documented <a href="../../user-guide/network-model/">on this page</a>.
+See <a href="https://cert-manager.io/docs/configuration/ca/">CA in cert-manager Documentation</a>.</li>
+<li>Option B:
+Run your own Certificate Authority which issues server certificates.
+Install each server certificate in Welkin via Secrets of type <code>kubernetes.io/tls</code>.</li>
+<li>Option C:
+Run your <a href="https://datatracker.ietf.org/doc/html/rfc8555">Automatic Certificate Management Environment (ACME)</a>.
+Configure Welkin to use your ACME server instead of LetsEncrypt.</li>
+</ul>
+</li>
+<li>Identity Provider (IdP):<ol>
+<li>The IdP MUST be compatible with OpenID.</li>
+<li>The IdP MUST NOT depend on resources outside the air-gapped environment.</li>
+</ol>
+</li>
+<li>Object storage:<ol>
+<li>The object storage MUST be compatible with S3.</li>
+<li>The object storage SHOULD support <a href="https://docs.safespring.com/storage/object-locking/">object locking</a>.</li>
+<li>The object storage MUST NOT depend on resources outside the air-gapped environment.</li>
+</ol>
+</li>
+<li>Registry mirror:<ol>
+<li>The registry mirror MUST be compatible with OCI.</li>
+<li>The object storage MUST NOT depend on resources outside the air-gapped environment.</li>
+</ol>
+</li>
+<li>File server<ol>
+<li>The file server MUST be able to expose files via HTTP.</li>
+<li>The file server MUST allows upload via SSH, SCP, rsync or SFTP.</li>
+</ol>
+</li>
+<li>On-call management tool:<ol>
+<li>The on-call management tool MUST be compatible with a <a href="https://prometheus.io/docs/alerting/latest/clients/">Prometheus Alertmanager client</a>.<ul>
+<li>Note: Currently, Welkin <strong>only supports OpsGenie, Slack and Teams</strong>. Please contact Elastisys if you need support for other Alertmanager clients.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="implications">Implications<a class="headerlink" href="#implications" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/rfc2119">RFC 2119</a>.</p>
+</div>
+<p>To successfully run in an air-gapped environment, Welkin and the underlying operating system MUST be configured as follows:</p>
+<ul>
+<li>All servers in the air-gapped environment MUST be configured to:<ul>
+<li>use the NTP system above (see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-timesyncd.service.html">systemd-timesyncd</a>);</li>
+<li>use the DNS system above (see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html">systemd-resolved</a>);</li>
+<li>trust your Certificate Authority (see <a href="https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html">update-ca-certificates</a>);</li>
+<li>use the file server for OS repositories;</li>
+<li>use the registry mirror for container images (see description above).</li>
+</ul>
+</li>
+<li>Welkin MUST be configured to:<ul>
+<li>use the object storage above;</li>
+<li>use the identity provider above.</li>
+</ul>
+</li>
+<li>Containers MUST trust your Certificate Authority. This can be accomplished as follows:<ul>
+<li>Note: Currently, Welkin <strong>only supports Option A</strong>. Please contact Elastisys, if you prefer Option B or C.</li>
+<li>Option A: Build containers so as to trust your Certificate Authority (see <a href="https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html">update-ca-certificates</a>).<ul>
+<li>This solution solves the trust problem at build-time. Some people see this as the most robust, as it can be more robustly tested and rolled out.</li>
+</ul>
+</li>
+<li>Option B: Inject the certificate of your Certificate Authority with <a href="https://cert-manager.io/docs/trust/trust-manager/">trust-manager</a>.</li>
+<li>Option C: Inject the certificate of your Certificate Authority with <a href="https://kyverno.io/policies/other/add-certificates-volume/add-certificates-volume/">Kyverno</a>.</li>
+</ul>
+</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Air_gap_(networking)">Air gap (networking) on Wikipedia</a></li>
