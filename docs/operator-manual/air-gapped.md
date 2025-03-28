@@ -311,6 +311,72 @@ Seeing logs from the user demo Pods in OpenSearch Dashboards:
 
 ![Air-gapped User Demo logs in OpenSearch Dashboards](../img/air-gapped-opensearch-demo.png)
 
+## Catalog of Requirements for an Air-gapped Environment Hosting Welkin
+
+> [!NOTE]
+> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
+
+1. NTP system:
+    1. The NTP system MUST provide accurate time without relying on external time-sources.
+    1. The NTP system SHOULD fulfill requirements in [BSI IT-Grundschutz OPS.1.2.6 NTP Time Synchronisation](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html). Requirements which are not fulfilled MUST have a clear justification for exclusion or a list of compensatory security measures.
+1. DNS system:
+    1. The DNS system MUST be air-gapped and MUST NOT use external DNS servers, neither advertising nor resolving.
+    1. The DNS system SHOULD fulfill requirements in [BSI IT-Grundschutz APP.3.6 DNS Servers](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/it-grundschutz_node.html). Requirements which are not fulfilled MUST have a clear justification for exclusion or a list of compensatory security measures.
+    1. The DNS system MUST resolve all domain in `.internal`.
+    1. The DNS system MAY resolve `in-addr.arpa` (see [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035)) and `ip6.arpa` (see [RFC 3152](https://datatracker.ietf.org/doc/html/rfc3152)).
+    1. The DNS system MUST NOT recurs and MUST respond to all other requests with SERVFAIL.
+1. Certificate provisioning: You have several options:
+    - Option A:
+    Run your own Certificate Authority which issues intermediate Certificate Authority (CA) certificates.
+    Configure Welkin environments with an intermediate CA.
+    Welkin will issue server certificates for Ingress resources as documented [on this page](../user-guide/network-model.md).
+    See [CA in cert-manager Documentation](https://cert-manager.io/docs/configuration/ca/).
+    - Option B:
+    Run your own Certificate Authority which issues server certificates.
+    Install each server certificate in Welkin via Secrets of type `kubernetes.io/tls`.
+    - Option C:
+    Run your [Automatic Certificate Management Environment (ACME)](https://datatracker.ietf.org/doc/html/rfc8555).
+    Configure Welkin to use your ACME server instead of LetsEncrypt.
+1. Identity Provider (IdP):
+    1. The IdP MUST be compatible with OpenID.
+    1. The IdP MUST NOT depend on resources outside the air-gapped environment.
+1. Object storage:
+    1. The object storage MUST be compatible with S3.
+    1. The object storage SHOULD support [object locking](https://docs.safespring.com/storage/object-locking/).
+    1. The object storage MUST NOT depend on resources outside the air-gapped environment.
+1. Registry mirror:
+    1. The registry mirror MUST be compatible with OCI.
+    1. The object storage MUST NOT depend on resources outside the air-gapped environment.
+1. File server
+    1. The file server MUST be able to expose files via HTTP.
+    1. The file server MUST allows upload via SSH, SCP, rsync or SFTP.
+1. On-call management tool:
+    1. The on-call management tool MUST be compatible with a [Prometheus Alertmanager client](https://prometheus.io/docs/alerting/latest/clients/).
+        - Note: Currently, Welkin **only supports OpsGenie, Slack and Teams**. Please contact Elastisys if you need support for other Alertmanager clients.
+
+### Implications
+
+> [!NOTE]
+> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
+
+To successfully run in an air-gapped environment, Welkin and the underlying operating system MUST be configured as follows:
+
+- All servers in the air-gapped environment MUST be configured to:
+    - use the NTP system above (see [systemd-timesyncd](https://www.freedesktop.org/software/systemd/man/latest/systemd-timesyncd.service.html));
+    - use the DNS system above (see [systemd-resolved](https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html));
+    - trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html));
+    - use the file server for OS repositories;
+    - use the registry mirror for container images (see description above).
+- Welkin MUST be configured to:
+    - use the object storage above;
+    - use the identity provider above.
+- Containers MUST trust your Certificate Authority. This can be accomplished as follows:
+    - Note: Currently, Welkin **only supports Option A**. Please contact Elastisys, if you prefer Option B or C.
+    - Option A: Build containers so as to trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html)).
+        - This solution solves the trust problem at build-time. Some people see this as the most robust, as it can be more robustly tested and rolled out.
+    - Option B: Inject the certificate of your Certificate Authority with [trust-manager](https://cert-manager.io/docs/trust/trust-manager/).
+    - Option C: Inject the certificate of your Certificate Authority with [Kyverno](https://kyverno.io/policies/other/add-certificates-volume/add-certificates-volume/).
+
 ## References
 
 - [Air gap (networking) on Wikipedia](<https://en.wikipedia.org/wiki/Air_gap_(networking)>)

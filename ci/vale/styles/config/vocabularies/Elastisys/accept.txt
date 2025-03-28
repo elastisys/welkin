@@ -53,6 +53,7 @@ Kubespray
 Kured
 kustomization
 kustomize
+Kyverno
 MkDocs
 Monokle
 NGINX
@@ -62,6 +63,7 @@ pgvector
 Pulumni
 Pushgateway
 Rclone
+rsync
 Strimzi
 Skaffold
 systemd
