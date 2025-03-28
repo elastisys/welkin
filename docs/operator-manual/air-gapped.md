@@ -326,7 +326,6 @@ Seeing logs from the user demo Pods in OpenSearch Dashboards:
     1. The DNS system MAY resolve `in-addr.arpa` (see [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035)) and `ip6.arpa` (see [RFC 3152](https://datatracker.ietf.org/doc/html/rfc3152)).
     1. The DNS system MUST NOT recurs and MUST respond to all other requests with SERVFAIL.
 1. Certificate provisioning: You have several options:
-    - Note: Currently, Welkin **only supports Option B**. Please contact Elastisys, if you prefer Option A or C.
     - Option A:
     Run your own Certificate Authority which issues intermediate Certificate Authority (CA) certificates.
     Configure Welkin environments with an intermediate CA.
