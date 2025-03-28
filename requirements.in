@@ -1,0 +1,13 @@
+# For contributors:
+# - Why do we need this file? Read: https://stackoverflow.com/a/66828887
+# - Please keep this list sorted.
+# - Make sure to avoid major version updates, e.g., `mike>=2.1.3,<3.0.0`.
+# - Don't forget to regenerate `requirements.txt` using `pip-compile requirements.in`.
+
+-e file:./mkdocs-ciso-controls
+markdown-callouts>=0.4.0,<1.0.0
+mkdocs-include-markdown-plugin>=7.0.0,<8.0.0
+mkdocs-material>=9.6.9,<10.0.0
+mkdocs-material[imaging]>=9.6.9,<10.0.0
+mkdocs-redirects>=1.2.1,<2.0.0
+mike>=2.1.3,<3.0.0
