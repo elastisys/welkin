@@ -4497,10 +4497,10 @@ if(!document.__defineGetter__) {
 <h3 id="using-otel-sdk">Using OTEL SDK<a class="headerlink" href="#using-otel-sdk" title="Permanent link">&para;</a></h3>
 <p>You need to use the <code>OTEL(OpenTelemetry) SDK</code> client library and send the traces directly to the Jaeger collector using <a href="https://opentelemetry.io/docs/specs/otel/protocol/">OTLP protocol</a>. The application need to send the traces to the Jaeger collector endpoint, which in this case is <code>http://jaeger-operator-jaeger-collector.jaeger-system.svc.cluster.local:4318/v1/traces</code>.</p>
 <p>Here is an example using python:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">opentelemetry</span> <span class="kn">import</span> <span class="n">trace</span>
-<span class="kn">from</span> <span class="nn">opentelemetry.sdk.trace</span> <span class="kn">import</span> <span class="n">TracerProvider</span>
-<span class="kn">from</span> <span class="nn">opentelemetry.sdk.trace.export</span> <span class="kn">import</span> <span class="n">BatchSpanProcessor</span>
-<span class="kn">from</span> <span class="nn">opentelemetry.exporter.otlp.proto.http.trace_exporter</span> <span class="kn">import</span> <span class="n">OTLPSpanExporter</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry</span><span class="w"> </span><span class="kn">import</span> <span class="n">trace</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.sdk.trace</span><span class="w"> </span><span class="kn">import</span> <span class="n">TracerProvider</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.sdk.trace.export</span><span class="w"> </span><span class="kn">import</span> <span class="n">BatchSpanProcessor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.exporter.otlp.proto.http.trace_exporter</span><span class="w"> </span><span class="kn">import</span> <span class="n">OTLPSpanExporter</span>
 
 <span class="n">collector_endpoint</span> <span class="o">=</span> <span class="s2">&quot;http://jaeger-operator-jaeger-collector.jaeger-system.svc.cluster.local:4318/v1/traces&quot;</span>
 <span class="n">otlp_exporter</span> <span class="o">=</span> <span class="n">OTLPSpanExporter</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="n">collector_endpoint</span><span class="p">)</span>
