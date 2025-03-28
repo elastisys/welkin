@@ -221,7 +221,6 @@ This section describes how to define access control for specific indices in Open
 This is configured via `sc-config.yaml`
 
 ```yaml
-
 opensearch:
   extraRoles:
     - role_name: namespace1_reader
@@ -239,6 +238,11 @@ opensearch:
             allowed_actions:
               - read
   extraRoleMappings:
+    - mapping_name: kibana_user # needed to be able to view index patterns
+      definition:
+        users:
+          - user1@domain.tld
+          - user2@domain.tld
     - mapping_name: namespace1_reader
       definition:
         users:
