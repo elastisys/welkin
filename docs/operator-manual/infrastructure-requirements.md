@@ -53,7 +53,7 @@ Furthermore, your infrastructure SHOULD not block:
 <!-- vale off -->
 Note that the Swedish NTP servers are mandated by MSBFS 2020:7 "Myndigheten för samhällsskydd och beredskaps föreskrifter om säkerhetsåtgärder i informationssystem för statliga myndigheter" 3 kap § 13.
 <!-- vale on -->
-- Access to [LetsEncrypt](https://letsencrypt.org/) (outgoing and incoming packets on TCP port 80)
+- Access to [Let's Encrypt](https://letsencrypt.org/) (outgoing and incoming packets on TCP port 80)
 
 For initial setup, platform administrators need SSH access to the VMs.
 This can be done in a few ways:
