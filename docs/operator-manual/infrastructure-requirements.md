@@ -65,12 +65,12 @@ This can be done in a few ways:
 ## What if I lack ...?
 
 - ... a policy which allows SSH access to the VMs:
-Platform administrators needs to be empowered to use the tools which make them most efficient.
-Doing initial setup via "desktop share", such as [VNC](https://www.realvnc.com/en/connect/download/viewer/), [Remote Desktop](https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c) or [Citrix DaaS](https://docs.citrix.com/en-us/citrix-daas/overview.html), is tedious and error-prone.
-Let us help you by reading your Exception Policy, fill out your Exception Request Form and provide you with detailed Compensating Controls to mitigate risk associated with the exception.
+   Platform administrators needs to be empowered to use the tools which make them most efficient.
+   Doing initial setup via "desktop share", such as [VNC](https://www.realvnc.com/en/connect/download/viewer/), [Remote Desktop](https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c) or [Citrix DaaS](https://docs.citrix.com/en-us/citrix-daas/overview.html), is tedious and error-prone.
+   Let us help you by reading your Exception Policy, fill out your Exception Request Form and provide you with detailed Compensating Controls to mitigate risk associated with the exception.
 - ... an API to configure my infrastructure:
-Platform administrators will communicate with your infrastructure team via email or service tickets.
-In fact, we recommend that initial setup includes a detailed architecture diagram of the infrastructure, both to reduce misunderstandings, but also to serve as documentation, as required by ISO 27001 Annex A 5.37 Documented Operating Procedures.
+   Platform administrators will communicate with your infrastructure team via email or service tickets.
+   In fact, we recommend that initial setup includes a detailed architecture diagram of the infrastructure, both to reduce misunderstandings, but also to serve as documentation, as required by ISO 27001 Annex A 5.37 Documented Operating Procedures.
 - ... access to the Swedish NTP servers:
 Welkin can be configured with alternative NTP servers.
 This will ensure you conform with ISO 27001 Annex A 8.17 Clock Synchronization.
