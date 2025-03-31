@@ -268,6 +268,7 @@ nav:
           - "KRITIS (DE)": "ciso-guide/controls/kritis.md"
           - "BSI IT-Grundschutz (DE)": "ciso-guide/controls/bsi-it-grundschutz.md"
           - "MSBFS 2018:8 (SE)": "ciso-guide/controls/msbfs-20188.md"
+      - "EU Cyber Resilience Act (CRA)": "ciso-guide/controls/cra.md"
       - "Industrial control systems":
           - "ISA/IEC 62443": "ciso-guide/isa-iec-62443.md"
       - "CISO Dashboards":
