@@ -220,6 +220,7 @@ nav:
       - "FAQ": "user-guide/faq.md"
   - "For Platform Administrators":
       - "Overview": "operator-manual/index.md"
+      - "Infrastructure Requirements": "operator-manual/infrastructure-requirements.md"
       - "Understand the Basics": "operator-manual/understand-the-basics.md"
       - "Understand Welkin": "operator-manual/understand-welkin.md"
       - "Getting Started": "operator-manual/getting-started.md"
