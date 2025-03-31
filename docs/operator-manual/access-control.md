@@ -253,6 +253,12 @@ opensearch:
         users:
           - user2@domain.tld
         backend_roles: []
+# we also need to configure retention period in curator to delete the indices
+  curator:
+    retention:
+      - pattern: ^[^.].*
+        sizeGB: 5000
+        ageDays: 30
 ```
 
 Do note that the configured users needs to create the index patterns manually in OpenSearch Dashboards under `Dashboards Management` -> `Index patterns` -> `Create index pattern`:
