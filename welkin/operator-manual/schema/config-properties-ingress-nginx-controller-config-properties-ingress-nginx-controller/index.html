@@ -4317,6 +4317,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#extraenvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraEnvs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enablepublishservice" class="md-nav__link">
     <span class="md-ellipsis">
       enablepublishService
@@ -4491,6 +4500,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-extra-args/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/extraArgs">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#extraenvs">extraEnvs</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-extra-environment-variables/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/extraEnvs">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#enablepublishservice">enablepublishService</a></td>
@@ -4683,6 +4699,29 @@ Only enable this after evaluating the risks it poses.</p>
 <p>The default value is:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{}</span>
 </code></pre></div>
+<h2 id="extraenvs">extraEnvs<a class="headerlink" href="#extraenvs" title="Permanent link">&para;</a></h2>
+<p>Configure extra environment variables to Ingress NGINX Controller.</p>
+<p><code>extraEnvs</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>array</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-extra-environment-variables/">Ingress NGINX Extra Environment Variables</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-extra-environment-variables/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/extraEnvs">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>array</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-extra-environment-variables/">Ingress NGINX Extra Environment Variables</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[]</span>
+</code></pre></div>
 <h2 id="enablepublishservice">enablepublishService<a class="headerlink" href="#enablepublishservice" title="Permanent link">&para;</a></h2>
 <p>When enabled it allows customisation of the IP or FQDN to report the external address of the Service in the Ingress status field.</p>
 <p>When disabled it reports the IPs of the nodes where the controller pods are running.</p>
@@ -4834,7 +4873,7 @@ Only enable this after evaluating the risks it poses.</p>
 <p><code>object</code> (<a href="../config-defs-affinity/">Affinity</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Mon Mar 31 06:22:36 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/d1efa13705de73b51736eab49089ac697f907318">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Mon Mar 31 07:45:35 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/e87e32c264c452847c7e9f85256399351c374cf4">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
