@@ -1,0 +1,8 @@
+# For contributors:
+# - Why do we need this file? Read: https://stackoverflow.com/a/66828887
+# - Please keep this list sorted.
+# - Make sure to avoid accidental major version updates, e.g., `mike>=2.1.3,<3.0.0`.
+# - Don't forget to regenerate `requirements.txt` using `pip-compile requirements.in`.
+
+linkchecker>=10.5.0,<11.0.0
+pdfminer>=20191125
