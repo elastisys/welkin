@@ -72,28 +72,28 @@ This can be done in a few ways:
    Platform administrators will communicate with your infrastructure team via email or service tickets.
    In fact, we recommend that initial setup includes a detailed architecture diagram of the infrastructure, both to reduce misunderstandings, but also to serve as documentation, as required by ISO 27001 Annex A 5.37 Documented Operating Procedures.
 - ... access to the Swedish NTP servers:
-Welkin can be configured with alternative NTP servers.
-This will ensure you conform with ISO 27001 Annex A 8.17 Clock Synchronization.
+    Welkin can be configured with alternative NTP servers.
+    This will ensure you conform with ISO 27001 Annex A 8.17 Clock Synchronization.
 - ... access to LetsEncrypt:
-[This page](air-gapped.md) discusses alternative strategy for certificate provisioning.
-Note that this may reduce automation, hence is more human time intensive and error prone.
+    [This page](air-gapped.md) discusses alternative strategy for certificate provisioning.
+    Note that this may reduce automation, hence is more human time intensive and error prone.
 - ... an S3-compatible object storage:
-Consider using a public cloud-based fully-managed S3-compatible object storage.
+    Consider using a public cloud-based fully-managed S3-compatible object storage.
 - ... CSI-compatible block storage:
-If you have Rook/Ceph experts, then you can set up a Rook/Ceph Cluster.
-Note that this will increase infrastructure footprint and the skills needed for troubleshooting from your team.
-Always prefer using your existing block storage solution, such as your existing NFS server.
+    If you have Rook/Ceph experts, then you can set up a Rook/Ceph Cluster.
+    Note that this will increase infrastructure footprint and the skills needed for  troubleshooting from your team.
+    Always prefer using your existing block storage solution, such as your existing NFS server.
 - ... load-balancers:
-If Welkin may speak BGP with your routers, then you may use [kube-vip](https://kube-vip.io/) -- currently not part of Welkin.
-If not, then this will make it significantly harder to tolerate Node failures. We could potentially compensate by using DNS with health-checks, as provided by [AWS Route53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html), however fail-over times become a lot larger, e.g., up to 5 minutes. If DNS failover is unsuitable for you, then we recommend a manual failover process.
+    If Welkin may speak BGP with your routers, then you may use [kube-vip](https://kube-vip.io/) -- currently not part of Welkin.
+    If not, then this will make it significantly harder to tolerate Node failures. We could potentially compensate by using DNS with health-checks, as provided by [AWS Route53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html), however fail-over times become a lot larger, e.g., up to 5 minutes. If DNS failover is unsuitable for you, then we recommend a manual failover process.
 - ... private networks:
-You can use public IP addresses for the VMs and protect them using your firewall.
+    You can use public IP addresses for the VMs and protect them using your firewall.
 - ... three data centers:
-To tolerate one data center failure, you need three data centres.
-This requirement is due to Kubernetes needing a quorum.
-Some Additional Managed Services also need quorum for tolerating failure.
-You also need to have a load-balancer which is "stretched" across all data centers.
-This means that if one data center goes down, your load balancer needs to be able to direct traffic to the healthy data centers.
-This is usually achieved via [BGP Anycast](https://en.wikipedia.org/wiki/Anycast).
+    To tolerate one data center failure, you need three data centres.
+    This requirement is due to Kubernetes needing a quorum.
+    Some Additional Managed Services also need quorum for tolerating failure.
+    You also need to have a load-balancer which is "stretched" across all data centers.
+    This means that if one data center goes down, your load balancer needs to be able to direct traffic to the healthy data centers.
+    This is usually achieved via [BGP Anycast](https://en.wikipedia.org/wiki/Anycast).
 - ... Internet access:
-See [air-gapped](air-gapped.md).
+    See [air-gapped](air-gapped.md).
