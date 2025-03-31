@@ -28,19 +28,35 @@ At minimum, the product with digital elements shall be accompanied by:
 1.
 
 the name, registered trade name or registered trademark of the manufacturer, and the postal address, the email address or other digital contact as well as, where available, the website at which the manufacturer can be contacted;
+-->
 
+1. Manufacturer contact information: See [Elastisys Contact](https://elastisys.com/contact/).
+
+<!--
 2.
 
 the single point of contact where information about vulnerabilities of the product with digital elements can be reported and received, and where the manufacturer’s policy on coordinated vulnerability disclosure can be found;
+-->
 
+2. Where to report and receive vulnerabilities: See [Reporting security issues](https://github.com/elastisys/compliantkubernetes-apps/blob/main/SECURITY.md).
+
+<!--
 3.
 
 name and type and any additional information enabling the unique identification of the product with digital elements;
+-->
 
+3. Name and type of any additional additional information enabling the unique identification of Welkin: Both the Grafana and OpenSearch Service Endpoints feature a welcome dashboards which show the version of Welkin you are currently running.
+
+<!--
 4.
 
 the intended purpose of the product with digital elements, including the security environment provided by the manufacturer, as well as the product’s essential functionalities and information about the security properties;
+-->
 
+4. Intended purpose of Welkin: See [Mission and Vision](../../mission-and-vision.md).
+
+<!--
 5.
 
 any known or foreseeable circumstance, related to the use of the product with digital elements in accordance with its intended purpose or under conditions of reasonably foreseeable misuse, which may lead to significant cybersecurity risks;
