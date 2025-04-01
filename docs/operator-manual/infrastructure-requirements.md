@@ -43,7 +43,7 @@ Ideally, your infrastructure SHOULD provide:
 - Two private networks, one for the Management Cluster and one for the Workload Cluster
 - Two load-balancers
 - [CSI-compatible](https://kubernetes-csi.github.io/docs/drivers.html) block storage
-- [S3-compatible](https://www.techtarget.com/searchstorage/tip/How-to-use-S3-compatible-storage#:~:text=Top%20S3%2Dcompatible%20products%20and%20vendors) object storage
+- [S3-compatible](https://www.techtarget.com/searchstorage/tip/How-to-use-S3-compatible-storage) object storage
 - An [OpenTofu](https://opentofu.org/) or [Terraform Provider](https://registry.terraform.io/browse/providers) to configure all above via an API
 
 Furthermore, your infrastructure SHOULD not block:
