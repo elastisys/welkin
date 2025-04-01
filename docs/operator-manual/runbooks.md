@@ -42,6 +42,10 @@ One reason the compactor has halted is that the volume attached to Thanos compac
 
 ## Impact
 
+- Retention rules are not enforced
+- Query performance might degrade
+- Downsampling is not performed
+
 ## Diagnosis
 
 Start investigating if the PVC for the Thanos compactor is full.
