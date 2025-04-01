@@ -100,7 +100,7 @@ class CisoControlsPlugin(mkdocs.plugins.BasePlugin):
             # Ensure forward slashes, as we have to use the path of the source
             # file which contains the operating system's path separator.
             content.append("- [{}]({})".format(
-                page.meta.get("title", page.title),
+                page._title_from_render or page.title,
                 url
             ))
 
