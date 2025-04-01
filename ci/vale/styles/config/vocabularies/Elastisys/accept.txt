@@ -81,6 +81,7 @@ API
 allowlist
 (?i)allowlisting
 allowlisted
+anycast
 (?i)autoscaling
 burstable
 chroot
@@ -130,6 +131,7 @@ upstreaming
 URI
 UI
 VM
+VPN
 
 # Kubernetes terms
 Autoscaler
