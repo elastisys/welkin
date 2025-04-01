@@ -74,6 +74,7 @@ timesyncd
 Tekton
 Trivy
 Velero
+pwgen
 
 # General technical terms
 ADR
