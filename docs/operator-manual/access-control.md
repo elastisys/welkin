@@ -264,3 +264,48 @@ opensearch:
 Do note that the configured users needs to create the index patterns manually in OpenSearch Dashboards under `Dashboards Management` -> `Index patterns` -> `Create index pattern`:
 
 ![OpenSearch create index pattern](../img/opensearch-create-index-pattern.png)
+
+## OpenSearch Document-level security
+
+This section describes how to configure [Document-level security](https://opensearch.org/docs/latest/security/access-control/document-level-security/) in order to restrict access to a subset of documents within an index. This makes it possible to limit access to certain logs of an application based on the contents of fields.
+
+The following example describes a role that will not be able to display documents where the field `level=audit` or where `message` contains `level=audit`
+
+```yaml
+opensearch:
+  extraRoles:
+   - role_name: kubernetes-without-audit
+      definition:
+        index_permissions:
+          - index_patterns:
+              - "kubernetes*"
+            allowed_actions:
+              - read
+            dls: |-
+              {
+                "bool": {
+                  "must_not": [
+                    {
+                      "match_phrase": {
+                        "message": "level=audit"
+                      }
+                    },
+                    {
+                      "match_phrase": {
+                        "level": "audit"
+                      }
+                    }
+                  ]
+                }
+              }
+  extraRoleMappings:
+    - mapping_name: kubernetes-without-audit
+      definition:
+        users:
+          - less-privileged-user@domain.tld
+    - mapping_name: kibana_user # needed to be able to view index patterns
+      definition:
+        users:
+          - less-privileged-user@domain.tld
+
+```
