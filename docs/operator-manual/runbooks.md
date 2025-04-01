@@ -17,6 +17,11 @@ Welkin runbooks are searchable and describe what to do:
 
 The remainder of this page illustrates an example of a Welkin runbook for the ThanosCompactHalted alert.
 
+<!--
+    Ignore markdown errors below this line, given that we just included this document verbatimely.
+-->
+<!-- markdownlint-disable -->
+
 <hr>
 
 # Example: Thanos Compact Halted - PVC
