@@ -95,6 +95,7 @@ cybersecurity
 discoverability
 Dockerfile
 (?i)downsampled
+downsampling
 downscaling
 DPO
 failover
