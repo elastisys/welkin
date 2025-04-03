@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.6.0](#v060) - 2025-04-04
 - [v0.5.1](#v051) - 2025-03-28
 - [v0.5.0](#v050) - 2025-02-05
 - [v0.4.0](#v040) - 2024-11-28
@@ -11,6 +12,24 @@
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.6.0
+
+Released 2025-04-04
+
+### Feature(s)
+
+- Added support for load balancers to use predefined floating IP addresses.
+- Added local volume provisioner chart.
+
+### Improvement(s)
+
+- Improved migration documentation to allow for less disruptive upgrades.
+- Images built for Elastx now uses VirtIO-SCSI, allowing for more than 25 volumes to be attached to a Node.
+
+### Upgraded
+
+- Bumped default Kubernetes version to v1.31.7.
 
 ## v0.5.1
 
