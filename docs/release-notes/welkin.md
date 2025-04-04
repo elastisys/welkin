@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.43.3](#v0433) - 2025-03-28
 - [v0.43.2](#v0432) - 2025-03-25
 - [v0.43.1](#v0431) - 2025-03-12
 - [v0.43.0](#v0430) - 2025-01-27
@@ -66,6 +67,14 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.43.3
+
+Released 2025-03-28
+
+### Other(s)
+
+- Made Fluentd-forwarder image configurable
 
 ## v0.43.2
 
