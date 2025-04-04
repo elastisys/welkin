@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.45.1](#v0451) - 2025-03-25
 - [v0.45.0](#v0450) - 2025-03-21
 - [v0.44.1](#v0441) - 2025-03-12
 - [v0.44.0](#v0440) - 2025-02-21
@@ -69,6 +70,23 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.45.1
+
+Released 2025-03-25
+
+!!! danger "Security Notice(s)"
+
+    - Ingress-NGINX was upgraded to address the following vulnerabilities:
+        - CVE-2025-24513
+        - CVE-2025-24514
+        - CVE-2025-1097
+        - CVE-2025-1098
+        - CVE-2025-1974
+
+### Other(s)
+
+- Upgraded Ingress-NGINX chart to v4.12.1
 
 ## v0.45.0
 
