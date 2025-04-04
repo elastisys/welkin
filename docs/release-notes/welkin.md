@@ -11,6 +11,7 @@
 - [v0.44.0](#v0440) - 2025-02-21
 - [v0.43.1](#v0431) - 2025-03-12
 - [v0.43.0](#v0430) - 2025-01-27
+- [v0.42.4](#v0424) - 2025-03-28
 - [v0.42.3](#v0423) - 2025-03-25
 - [v0.42.2](#v0422) - 2025-03-12
 - [v0.42.1](#v0421) - 2025-01-02
@@ -173,6 +174,14 @@ Released 2025-01-27
 
 - Added JSON schema contribution guide
 - Rebrand to Welkin in configuration and documentation
+
+## v0.42.4
+
+Released 2025-03-28
+
+### Other(s)
+
+- Made Fluentd-forwarder image configurable
 
 ## v0.42.3
 
