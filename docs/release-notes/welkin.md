@@ -6,6 +6,8 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.43.3](#v0433) - 2025-03-28
+- [v0.43.2](#v0432) - 2025-03-25
 - [v0.43.1](#v0431) - 2025-03-12
 - [v0.43.0](#v0430) - 2025-01-27
 - [v0.42.1](#v0421) - 2025-01-02
@@ -65,6 +67,31 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.43.3
+
+Released 2025-03-28
+
+### Other(s)
+
+- Made Fluentd-forwarder image configurable
+
+## v0.43.2
+
+Released 2025-03-25
+
+!!! danger "Security Notice(s)"
+
+    - Ingress-NGINX was upgraded to address the following vulnerabilities:
+        - CVE-2025-24513
+        - CVE-2025-24514
+        - CVE-2025-1097
+        - CVE-2025-1098
+        - CVE-2025-1974
+
+### Other(s)
+
+- Upgraded Ingress-NGINX chart to v4.12.1
 
 ## v0.43.1
 
