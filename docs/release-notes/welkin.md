@@ -9,6 +9,7 @@
 - [v0.45.0](#v0450) - 2025-03-21
 - [v0.44.1](#v0441) - 2025-03-12
 - [v0.44.0](#v0440) - 2025-02-21
+- [v0.43.3](#v0433) - 2025-03-28
 - [v0.43.2](#v0432) - 2025-03-25
 - [v0.43.1](#v0431) - 2025-03-12
 - [v0.43.0](#v0430) - 2025-01-27
@@ -143,6 +144,14 @@ Released 2025-02-21
 
 - Changed some messages and documentation to Welkin, as part of our rebranding.
 - Fixed KubeContainerOOMKilled alert for newly created Pods.
+
+## v0.43.3
+
+Released 2025-03-28
+
+### Other(s)
+
+- Made Fluentd-forwarder image configurable
 
 ## v0.43.2
 
