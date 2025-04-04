@@ -9,6 +9,7 @@
 - [v0.45.0](#v0450) - 2025-03-21
 - [v0.44.1](#v0441) - 2025-03-12
 - [v0.44.0](#v0440) - 2025-02-21
+- [v0.43.2](#v0432) - 2025-03-25
 - [v0.43.1](#v0431) - 2025-03-12
 - [v0.43.0](#v0430) - 2025-01-27
 - [v0.42.4](#v0424) - 2025-03-28
@@ -142,6 +143,23 @@ Released 2025-02-21
 
 - Changed some messages and documentation to Welkin, as part of our rebranding.
 - Fixed KubeContainerOOMKilled alert for newly created Pods.
+
+## v0.43.2
+
+Released 2025-03-25
+
+!!! danger "Security Notice(s)"
+
+    - Ingress-NGINX was upgraded to address the following vulnerabilities:
+        - CVE-2025-24513
+        - CVE-2025-24514
+        - CVE-2025-1097
+        - CVE-2025-1098
+        - CVE-2025-1974
+
+### Other(s)
+
+- Upgraded Ingress-NGINX chart to v4.12.1
 
 ## v0.43.1
 
