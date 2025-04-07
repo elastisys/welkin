@@ -74,27 +74,37 @@ At minimum, the product with digital elements shall be accompanied by:
 7. Type of technical security support:
     - Customers may migrate from one minor version of Welkin to the immediately next one, unless otherwise noted.
     - A minor Welkin version receives security support, until all Elastisys customers have stopped using that version.
-    - For more information, see [Self-Managed Welkin](https://elastisys.com/self-managed/).
+    - For more information, see:
+        - [Maintenance](../../operator-manual/maintenance.md);
+        - [Self-Managed Welkin](https://elastisys.com/self-managed/).
 
 <!--
 8. detailed instructions or an internet address referring to such detailed instructions and information on:
+-->
 
-(a) the necessary measures during initial commissioning and throughout the lifetime of the product with digital elements to ensure its secure use;
+8. Detailed instructions and information on:
+    - (a) the necessary measures during initial commissioning and throughout the lifetime of the product with digital elements to ensure its secure use:
+        See point 5 above.
+    - (b) how changes to the product with digital elements can affect the security of data:
+        Welkin is designed to be secure-by-default.
+        Among others it includes [guardrails](../../user-guide/safeguards/index.md) to make it hard to do things which may reduce the security of data.
+        Such guardrails should only be disabled if the consequences are properly understood.
+    - (c) how security-relevant updates can be installed:
+        See [Maintenance](../../operator-manual/maintenance.md).
+    - (d) the secure decommissioning of the product with digital elements, including information on how user data can be securely removed:
+        User data is fully removed if the VMs, block storage volumes and object storage buckets are removed.
+        Note that configuration data may still persist in your git repository.
+        For details, see [Architecture](../../architecture.md) and [Understand Welkin](../../operator-manual/understand-welkin.md).
+    - (e) how the default setting enabling the automatic installation of security updates can be turned off: Two components deal with automatic installation of security updates: Kured and Tekton. Tekton is not turned on by default. Kured is turned on by default and can be disabled by setting `kured.enabled` to `false`. See [Configuration Reference](../../operator-manual/schema/README.md).
+    - (f) where the product with digital elements is intended for integration into other products with digital elements, the information necessary for the integrator to comply with the essential cybersecurity requirements set out in Annex I and the documentation requirements set out in Annex VII: See [Infrastructure Requirements](../../operator-manual/infrastructure-requirements.md), [Provider Audit](../../operator-manual/provider-audit.md) and [Prepare Identify Provider](../../user-guide/prepare-idp.md).
 
-(b) how changes to the product with digital elements can affect the security of data;
-
-(c) how security-relevant updates can be installed;
-
-(d) the secure decommissioning of the product with digital elements, including information on how user data can be securely removed;
-
-(e) how the default setting enabling the automatic installation of security updates, as required by Part I, point (2)(c), of Annex I, can be turned off;
-
-(f) where the product with digital elements is intended for integration into other products with digital elements, the information necessary for the integrator to comply with the essential cybersecurity requirements set out in Annex I and the documentation requirements set out in Annex VII.
-
+<!--
 9. If the manufacturer decides to make available the software bill of materials to the user, information on where the software bill of materials can be accessed.
 -->
 
-TBD
+9. Software bill of materials:
+    An older version can be found [here](https://github.com/elastisys/compliantkubernetes-apps/blob/main/docs/sbom.md).
+    If you need a newer version, please [contact Elastisys](https://elastisys.com/contact/).
 
 ## Technical Documentation (Annex VII CRA)
 
