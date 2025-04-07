@@ -50,11 +50,33 @@ At minimum, the product with digital elements shall be accompanied by:
 
 <!--
 5. any known or foreseeable circumstance, related to the use of the product with digital elements in accordance with its intended purpose or under conditions of reasonably foreseeable misuse, which may lead to significant cybersecurity risks;
+-->
 
+5. Foreseeable misuse, which may lead to significant cybersecurity risks:
+    - Welkin is a complex product and requires skilled people. See:
+        - [Application Developers: Understand the Basics](../../user-guide/understand-the-basics.md);
+        - [Platform Administrator: Understand the Basics](../../operator-manual/understand-the-basics.md);
+        - [Platform Administrator: Understand Welin](../../operator-manual/understand-welkin.md).
+    - Welkin needs a compliant and secure infrastructure. See:
+        - [Infrastructure Requirements](../../operator-manual/infrastructure-requirements.md);
+        - [Provider Audit](../../operator-manual/provider-audit.md).
+
+<!--
 6. where applicable, the internet address at which the EU declaration of conformity can be accessed;
+-->
 
+6. EU Declaration of Conformity: We are waiting for the European Commission to publish a list of notified bodies, as laid out in Article 44 CRA.
+
+<!--
 7. the type of technical security support offered by the manufacturer and the end-date of the support period during which users can expect vulnerabilities to be handled and to receive security updates;
+-->
 
+7. Type of technical security support:
+    - Customers may migrate from one minor version of Welkin to the immediately next one, unless otherwise noted.
+    - A minor Welkin version receives security support, until all Elastisys customers have stopped using that version.
+    - For more information, see [Self-Managed Welkin](https://elastisys.com/self-managed/).
+
+<!--
 8. detailed instructions or an internet address referring to such detailed instructions and information on:
 
 (a) the necessary measures during initial commissioning and throughout the lifetime of the product with digital elements to ensure its secure use;
