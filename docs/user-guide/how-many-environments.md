@@ -44,7 +44,7 @@ Various levels of isolation between Application Deployments can be achieved whil
 - **Labels**: in which Application Deployments reside in the same Namespace and are separated "only" by e.g. Helm Releases or Argo CD Application labels. Network Policies can apply here, but e.g. Secrets will be accessible throughout the entire Namespace.
 - **Namespace isolation**: in which Application Deployments share a Workload Cluster, but are separated logically using Namespaces. Network Policies work here, too, and Namespaces are a Kubernetes trust boundary when it comes to access to Secrets. Namespaces can also be used for resource quotas, for soft capacity allocation limitations.
 - **Node isolation**: in which Application Deployments share an environment, but are deployed on different Nodes. On this level, both performance and security isolation is greater than in the previous, since the underlying virtual machines are separate. This is what Welkin does with additional services, such as PostgreSQL and RabbitMQ. Node isolation can be done both with and without Namespace isolation.
-- **Cluster isolation**: in which Application Deployments share an Environment, but are deployed on separate Workload Clusters.
+- **Cluster isolation**: in which Application Deployments share an Environment, but are deployed on separate Workload Clusters. This helps improve isolation in terms of access control, but does no such thing in the services that Welkin provides for logging, metrics, and image registry as they all are deployed in a shared Management Cluster.
 - **Separate Environments**: in which Application Deployments share nothing. This level of isolation is the highest, which implies total isolation for access control, credentials, network traffic, performance, and there are no shared platform components.
 
 ## Relevant Regulations
@@ -72,3 +72,13 @@ Please use the two figures below to reason about environments, trading developer
 ![Ideal Developer Experience](img/environments/ideal-dx.svg)
 
 ![Ideal Promotion](img/environments/ideal-promotion.svg)
+
+## Multi-tenancy in Welkin
+
+Welkin does not support multi-tenancy in a way where multiple Application Teams share an environment but do not have access to each others data. Even with Cluster isolation with multiple Workload Clusters there is a shared Management Cluster within a Welkin Environment where common platform services run.
+
+Some services such as [OpenSearch](https://opensearch.org/docs/latest/security/multi-tenancy/tenant-index/) and [Grafana](https://grafana.com/docs/loki/latest/operations/multi-tenancy/) with [Thanos](https://thanos.io/tip/operating/multi-tenancy.md/#multi-tenancy) technically support multi-tenancy even if it is not implemented in Welkin as of yet. Harbor however, with its [system administrator role](https://goharbor.io/docs/2.12.0/administration/managing-users/#assigning-the-harbor-system-administrator-role), has no concept of multi-tenancy and can not be implemented without decreasing the permissions of an Application Developer in Welkin.
+
+This means that if multi-tenancy was implemented wherever possible, it would leave the responsibility of maintaining the trust boundary in the hands of the developers of the major application developer-facing Endpoints (i.e. Grafana, Harbor, OpenSearch, Thanos). Some of these projects are maintained by companies that may make choices to remove certain functionality they deem enterprise-only. Welkin would have to trust that they maintain the trust boundary as their software offering evolves, but this is not a given. We have already decided in [ADR-0050](../adr/0050-use-cluster-isolation.md) that Cluster isolation between the Workload and Management Cluster is necessary to achieve regulatory compliance, and in this page that multiple environments are recommended for further security between production and non-production data.
+
+We therefore deem that implementing software-level multi-tenancy to not be sufficient in securing necessary levels of isolation between tenants and that separate environments are needed if data isolation is required.
