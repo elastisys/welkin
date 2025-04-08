@@ -27,6 +27,9 @@ At minimum, the product with digital elements shall be accompanied by:
 1. the name, registered trade name or registered trademark of the manufacturer, and the postal address, the email address or other digital contact as well as, where available, the website at which the manufacturer can be contacted;
 -->
 
+<!-- We need to explicitly number list items, due to the interleaved comments. -->
+<!-- markdownlint-disable MD029 -->
+
 1. Manufacturer contact information: See [Elastisys Contact](https://elastisys.com/contact/).
 
 <!--
