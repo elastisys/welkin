@@ -39,7 +39,7 @@ At minimum, the product with digital elements shall be accompanied by:
 3. name and type and any additional information enabling the unique identification of the product with digital elements;
 -->
 
-3. Name and type of any additional additional information enabling the unique identification of Welkin: Both the Grafana and OpenSearch Service Endpoints feature a welcome dashboards which show the version of Welkin you are currently running.
+3. Name and type of any additional information enabling the unique identification of Welkin: Both the Grafana and OpenSearch Service Endpoints feature a welcome dashboards which show the version of Welkin you are currently running.
 
 <!--
 4. the intended purpose of the product with digital elements, including the security environment provided by the manufacturer, as well as the product’s essential functionalities and information about the security properties;
@@ -55,7 +55,7 @@ At minimum, the product with digital elements shall be accompanied by:
     - Welkin is a complex product and requires skilled people. See:
         - [Application Developers: Understand the Basics](../../user-guide/understand-the-basics.md);
         - [Platform Administrator: Understand the Basics](../../operator-manual/understand-the-basics.md);
-        - [Platform Administrator: Understand Welin](../../operator-manual/understand-welkin.md).
+        - [Platform Administrator: Understand Welkin](../../operator-manual/understand-welkin.md).
     - Welkin needs a compliant and secure infrastructure. See:
         - [Infrastructure Requirements](../../operator-manual/infrastructure-requirements.md);
         - [Provider Audit](../../operator-manual/provider-audit.md).
