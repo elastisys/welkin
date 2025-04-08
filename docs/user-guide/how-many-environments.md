@@ -75,7 +75,7 @@ Please use the two figures below to reason about environments, trading developer
 
 ## Multi-tenancy in Welkin
 
-Welkin does not support multi-tenancy in a way where multiple Application Teams share an environment but do not have access to each others data. Even in the Cluster isolation sense with multiple Workload Clusters there is a shared Management Cluster within a Welkin Environment where common platform services run.
+Welkin does not support multi-tenancy in a way where multiple Application Teams share an environment but do not have access to each others data. Even with Cluster isolation with multiple Workload Clusters there is a shared Management Cluster within a Welkin Environment where common platform services run.
 
 Some services such as [OpenSearch](https://opensearch.org/docs/latest/security/multi-tenancy/tenant-index/) and [Grafana](https://grafana.com/docs/loki/latest/operations/multi-tenancy/) with [Thanos](https://thanos.io/tip/operating/multi-tenancy.md/#multi-tenancy) technically support multi-tenancy even if it is not implemented in Welkin as of yet. Harbor however, with its [system administrator role](https://goharbor.io/docs/2.12.0/administration/managing-users/#assigning-the-harbor-system-administrator-role), has no concept of multi-tenancy and can not be implemented without decreasing the permissions of an Application Developer in Welkin.
 
