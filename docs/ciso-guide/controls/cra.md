@@ -101,7 +101,7 @@ At minimum, the product with digital elements shall be accompanied by:
         User data is fully removed if the VMs, block storage volumes and object storage buckets are removed.
         Note that configuration data may still persist in your git repository.
         For details, see [Architecture](../../architecture.md) and [Understand Welkin](../../operator-manual/understand-welkin.md).
-    - (e) how the default setting enabling the automatic installation of security updates can be turned off: Two components deal with automatic installation of security updates: Kured and Tekton. Tekton is not turned on by default. Kured is turned on by default and can be disabled by setting `kured.enabled` to `false`. See [Configuration Reference](../../operator-manual/schema/README.md).
+    - (e) how the default setting enabling the automatic installation of security updates can be turned off: Two components deal with automatic installation of security updates: Kured and Tekton. Both are turned off by default. See [Configuration Reference](../../operator-manual/schema/README.md).
     - (f) where the product with digital elements is intended for integration into other products with digital elements, the information necessary for the integrator to comply with the essential cybersecurity requirements set out in Annex I and the documentation requirements set out in Annex VII: See [Infrastructure Requirements](../../operator-manual/infrastructure-requirements.md), [Provider Audit](../../operator-manual/provider-audit.md) and [Prepare Identify Provider](../../user-guide/prepare-idp.md).
 
 <!--
