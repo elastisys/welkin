@@ -132,6 +132,8 @@ upscaling
 upstreaming
 URI
 UI
+# EU CRA (Regulation (EU) 2024/2847) seems to prefer British English.
+virtualised
 VM
 VPN
 
