@@ -3,7 +3,7 @@
 As explained [by the European Commission](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act):
 
 > The Cyber Resilience Act (CRA) aims to safeguard consumers and businesses buying software or hardware products with a digital component.
-> The Cyber Resilience Act  addresses the inadequate level of cybersecurity in many products, and the lack of timely security updates for products and software.
+> The Cyber Resilience Act addresses the inadequate level of cybersecurity in many products, and the lack of timely security updates for products and software.
 > It also tackles the challenges consumers and businesses currently face when trying to determining which products are cybersecure and in setting them up securely.
 > The new requirements will make it easier to take cybersecurity into account when selecting and using products that contain digital elements.
 > It will be more straightforward to identify hardware and software products with the proper cybersecurity features.
