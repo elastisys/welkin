@@ -19,7 +19,7 @@ Welkin interacts with a lot of credentials. This document captures all of them i
 ## Single Sign-On (SSO) Credentials
 
 - Example: Company Google Accounts
-- Purpose: authenticate a person with various system, in particular
+- Purpose: authenticate a person with various systems, in particular
     - Kubernetes API via Dex
     - Grafana via Dex
     - OpenSearch Dashboards via Dex

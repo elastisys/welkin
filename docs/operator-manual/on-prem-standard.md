@@ -101,8 +101,8 @@ This document contains instructions on how to set-up a new Welkin on-prem enviro
     === "For Docker"
 
         ``` markdown
-        * For Management Cluster: Added `docker_options: "--default-address-pool base=10.179.0.0/24,size=24"` in `${CK8S_CONFIG_PATH}/sc-config/group_vars/all/docker.yml` file.
-        * For Workload Cluster:  Added `docker_options: "--default-address-pool base=10.179.4.0/24,size=24"` in `${CK8S_CONFIG_PATH}/wc-config/group_vars/all/docker.yml` file.
+        * For Management Cluster: Add `docker_options: "--default-address-pool base=10.179.0.0/24,size=24"` in `${CK8S_CONFIG_PATH}/sc-config/group_vars/all/docker.yml` file.
+        * For Workload Cluster:  Add `docker_options: "--default-address-pool base=10.179.4.0/24,size=24"` in `${CK8S_CONFIG_PATH}/wc-config/group_vars/all/docker.yml` file.
         ```
 
 ### Init Kubespray configuration in your configuration path

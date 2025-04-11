@@ -83,26 +83,26 @@ If Dex is broken, you can manually create a `kubeconfig` file for a user. While 
 
     The kubeconfig file for `user1` user looks like:
 
-        ```yaml
-        apiVersion: v1
-        clusters:
-        - cluster:
-            certificate-authority-data: <CA>
-            server: https://control-node-ip:6443 # ip address of one of the control nodes
+    ```yaml
+    apiVersion: v1
+    clusters:
+    - cluster:
+        certificate-authority-data: <CA>
+        server: https://control-node-ip:6443 # ip address of one of the control nodes
 
-        name: <cluster-name>
-        contexts:
-        - context:
-            cluster: <cluster-name>
-            user: user1 # <USER>
-        name: <USER>@<CLUSTER-NAME>
-        kind: Config
-        users:
-        - name: user1
-        user:
-            client-certificate-data: <CLIENT-CRT-DATA>
-            client-key-data: <CLIENT-KEY-DATA>
-        ```
+    name: <cluster-name>
+    contexts:
+    - context:
+        cluster: <cluster-name>
+        user: user1 # <USER>
+    name: <USER>@<CLUSTER-NAME>
+    kind: Config
+    users:
+    - name: user1
+    user:
+        client-certificate-data: <CLIENT-CRT-DATA>
+        client-key-data: <CLIENT-KEY-DATA>
+    ```
 
 1. Add the user and namespaces that s/he has access to in wc-config.yaml file.
 

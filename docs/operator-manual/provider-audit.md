@@ -86,7 +86,7 @@ The remainder of this page contains open questions that you should ask your Infr
         1. Do you have immutable storage or object lock?
         1. Is OSaaS stretched across zones?
         1. Is object storage replicated across zones?
-    1. Do you offer Block storage as a Service (BLaaS)?
+    1. Do you offer Block storage as a Service (BSaaS)?
         1. Which API (OpenStack, VMware)?
         1. In which zones?
         1. Can I use a [Container Storage Interface (CSI) driver](https://kubernetes-csi.github.io/docs/drivers.html) for automatic creating of PersistentVolumes?

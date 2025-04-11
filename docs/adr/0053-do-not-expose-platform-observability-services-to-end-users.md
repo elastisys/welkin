@@ -44,7 +44,7 @@ We will allow external clients to push observability data (logs, metrics, traces
 **Additional Considerations Note**
 In accordance with our [ToS-A5.3 As a whole, for the intended use-case](https://elastisys.com/legal/terms-of-service/#a53-as-a-whole-for-the-intended-use-case), please note the following:
 
-- It is critical to acknowledge that while these components (OpenSearch, Prometheus) are technically capable of handling external clients, our platform observability services is designed and optimized to function as a secure platform for containerized applications. Using these components in isolation or for other use-cases introduces unknown risks, and such configurations are not covered by the Self-managed Plan. Therefore, support for external clients observability data is limited to Application Developers compliance with the intended use-case of our platform observability services.
+- It is critical to acknowledge that while these components (OpenSearch, Prometheus) are technically capable of handling external clients, our platform observability services are designed and optimized to function as a secure platform for containerized applications. Using these components in isolation or for other use-cases introduces unknown risks, and such configurations are not covered by the Self-managed Plan. Therefore, support for external clients observability data is limited to Application Developers compliance with the intended use-case of our platform observability services.
 - Authentication and authorization mechanisms will be in place to ensure only trusted external clients can send observability data. Any use of these services outside of the intended platform observability scope may not be supported by the platform.
 
 **Public Clients:**

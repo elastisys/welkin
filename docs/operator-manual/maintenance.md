@@ -36,7 +36,7 @@ Let's go through them one by one.
 
 ### Patching the Nodes
 
-Security patches for the underlying OS on the Nodes is constantly being released, and to ensure your environment is secured, the Nodes that run Welkin must be updated with these patches.
+Security patches for the underlying OS on the Nodes are constantly being released, and to ensure your environment is secured, the Nodes that run Welkin must be updated with these patches.
 We recommend that you use the [AutomaticSecurityUpdates](https://help.ubuntu.com/community/AutomaticSecurityUpdates) feature that is available in Ubuntu (similar feature exist in other Linux distributions) to install these updates.
 Note that the Nodes still need to be rebooted for some of these updates to be applied.
 In order to reboot the Nodes, you can either use a tool like [kured](https://github.com/kubereboot/kured) or you can do it manually by logging on to the Nodes and rebooting them manually.
@@ -52,7 +52,7 @@ It will cordon and reboot the Nodes one by one.
 ### Upgrading the Welkin application stack
 
 Welkin consists of a multitude of open source components that interact to form a smooth End User experience.
-In order to free you of the burden of keeping track of when to upgrade the various components, new versions of Welkin are regularly release.
+In order to free you of the burden of keeping track of when to upgrade the various components, new versions of Welkin are regularly released.
 When a new version is released, it becomes available as a [tagged release](https://github.com/elastisys/compliantkubernetes-apps/tags) in the GitHub repository.
 
 > Before upgrading to a new release, please review the [changelog](https://github.com/elastisys/compliantkubernetes-apps/tree/main/changelog) if possible, apply the upgrade to a staging environment before upgrading any environments with production data.
@@ -119,10 +119,10 @@ Then check the release notes for each version in between to see if there are any
 1. Verify that everything is running after the upgrade.
     At the minimum, at least run the tests in compliantkubernetes-apps.
 
-        ```bash
-        ./bin/ck8s test sc
-        ./bin/ck8s test wc
-        ```
+    ```bash
+    ./bin/ck8s test sc
+    ./bin/ck8s test wc
+    ```
 
 1. Go back to step 1 and repeat one new release of compliantkubernetes-apps at a time until you are at the latest release.
 
