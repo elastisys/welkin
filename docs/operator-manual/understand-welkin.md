@@ -112,14 +112,14 @@ Let us dive into the role of each of these files in the order you would commonly
 
 - `README.md` is a human description of the environment.
 This file is optional and ignored by Welkin.
-We recommend describing here the propose of the Environment, what kind of applications it hosts, what infrastructure provider it runs on and any noteworthy deviations.
+We recommend describing here the purpose of the Environment, what kind of applications it hosts, what infrastructure provider it runs on and any noteworthy deviations.
 - `adminlogs` is a folder where you can put text files (Markdown) describing operations you performed against this environment.
 This folder is optional and ignored by Welkin.
 We recommend having separate folders for changes, incidents and maintenance.
 - `.sops.yaml` contains [sops](https://github.com/getsops/sops) configuration, used by Welkin to encrypt secrets.
 Welkin makes sure to decrypt secrets when it needs them.
 - `ck8s-cluster-api`, `compliantkubernetes-apps` and `compliantkubernetes-kubespray` are the git submodules of the Cluster API, Apps and Kubespray layer, respectively.
-These contains the command-line tools to operate Welkin.
+These contain the command-line tools to operate Welkin.
 
 The Welkin Kubespray layer initializes and reads the following configuration files and folders:
 
@@ -127,7 +127,7 @@ The Welkin Kubespray layer initializes and reads the following configuration fil
 These folders are consumed by Ansible, which is part of this layer.
 If `group_vars`, `all` and `inventory.ini` look new to you, we recommend you [learn more about Ansible](understand-the-basics.md).
 
-The Welkin Cluster API layer initialized and reads the following configuration files and folders:
+The Welkin Cluster API layer initializes and reads the following configuration files and folders:
 
 - `capi/defaults` is a folder which contains the default `capi/values.yaml` for the infrastructure provider and flavor you chose when you initialized the configuration repository using Welkin.
 Do not change these files, as they may be overridden by Welkin.
@@ -158,7 +158,7 @@ The following files and folders are stored by Welkin in the configuration reposi
 
 - `.state` is a folder which contains the "state", i.e., files produced by Welkin needed to access an Environment during daily operations, in particular kubeconfig and S3 object storage access.
 Typically, these files should be encrypted with sops for information security purposes.
-In Welkin, kubeconfigs generally don't contain credentials, only pointer to OpenID configuration, hence are usually not encrypted.
+In Welkin, kubeconfigs generally don't contain credentials, only pointers to OpenID configuration, hence are usually not encrypted.
 
 To make sure your whole team knows exactly which version of Welkin an Environment runs, it is common practice to add the source code, in the example above `compliantkubernetes-apps` and `compliantkubernetes-kubespray`, as git submodules.
 An alternative is to pack all Welkin source code in a Docker image.
@@ -178,7 +178,7 @@ To make it easy to get started, Welkin supports several default configurations d
 
 You must specify a configuration repository in the environment variable `CK8S_CONFIG_PATH`.
 Then you can interact with Welkin via commands such as `ck8s` and `ck8s-kubespray` provided in the source code.
-A typical usage of these commands is describe later in this guide.
+A typical usage of these commands is described later in this guide.
 
 ## Next Steps
 
