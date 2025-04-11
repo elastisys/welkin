@@ -4512,26 +4512,24 @@ sudo<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> <
 </code></pre></div>
 <p>The certificate value is in Base64-encoded format under <code>status.certificate</code>. Put the content under <code>client-certificate-data:</code>. And also get the Base64 encoded content for the private key and put it under <code>client-key-data:</code>. To get the Base64 encoded content <code>cat user1.key | base64 | tr -d '\n'</code>.</p>
 <p>The kubeconfig file for <code>user1</code> user looks like:</p>
-<div class="highlight"><pre><span></span><code>```yaml
-apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority-data: &lt;CA&gt;
-    server: https://control-node-ip:6443 # ip address of one of the control nodes
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">clusters</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cluster</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">certificate-authority-data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;CA&gt;</span>
+<span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://control-node-ip:6443</span><span class="w"> </span><span class="c1"># ip address of one of the control nodes</span>
 
-name: &lt;cluster-name&gt;
-contexts:
-- context:
-    cluster: &lt;cluster-name&gt;
-    user: user1 # &lt;USER&gt;
-name: &lt;USER&gt;@&lt;CLUSTER-NAME&gt;
-kind: Config
-users:
-- name: user1
-user:
-    client-certificate-data: &lt;CLIENT-CRT-DATA&gt;
-    client-key-data: &lt;CLIENT-KEY-DATA&gt;
-```
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;cluster-name&gt;</span>
+<span class="nt">contexts</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">context</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;cluster-name&gt;</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user1</span><span class="w"> </span><span class="c1"># &lt;USER&gt;</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;USER&gt;@&lt;CLUSTER-NAME&gt;</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Config</span>
+<span class="nt">users</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user1</span>
+<span class="nt">user</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">client-certificate-data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;CLIENT-CRT-DATA&gt;</span>
+<span class="w">    </span><span class="nt">client-key-data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;CLIENT-KEY-DATA&gt;</span>
 </code></pre></div>
 </li>
 <li>

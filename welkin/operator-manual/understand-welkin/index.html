@@ -4621,14 +4621,14 @@ The commands can run either on the platform administrator's laptop or in a CI/CD
 <ul>
 <li><code>README.md</code> is a human description of the environment.
 This file is optional and ignored by Welkin.
-We recommend describing here the propose of the Environment, what kind of applications it hosts, what infrastructure provider it runs on and any noteworthy deviations.</li>
+We recommend describing here the purpose of the Environment, what kind of applications it hosts, what infrastructure provider it runs on and any noteworthy deviations.</li>
 <li><code>adminlogs</code> is a folder where you can put text files (Markdown) describing operations you performed against this environment.
 This folder is optional and ignored by Welkin.
 We recommend having separate folders for changes, incidents and maintenance.</li>
 <li><code>.sops.yaml</code> contains <a href="https://github.com/getsops/sops">sops</a> configuration, used by Welkin to encrypt secrets.
 Welkin makes sure to decrypt secrets when it needs them.</li>
 <li><code>ck8s-cluster-api</code>, <code>compliantkubernetes-apps</code> and <code>compliantkubernetes-kubespray</code> are the git submodules of the Cluster API, Apps and Kubespray layer, respectively.
-These contains the command-line tools to operate Welkin.</li>
+These contain the command-line tools to operate Welkin.</li>
 </ul>
 <p>The Welkin Kubespray layer initializes and reads the following configuration files and folders:</p>
 <ul>
@@ -4636,7 +4636,7 @@ These contains the command-line tools to operate Welkin.</li>
 These folders are consumed by Ansible, which is part of this layer.
 If <code>group_vars</code>, <code>all</code> and <code>inventory.ini</code> look new to you, we recommend you <a href="../understand-the-basics/">learn more about Ansible</a>.</li>
 </ul>
-<p>The Welkin Cluster API layer initialized and reads the following configuration files and folders:</p>
+<p>The Welkin Cluster API layer initializes and reads the following configuration files and folders:</p>
 <ul>
 <li><code>capi/defaults</code> is a folder which contains the default <code>capi/values.yaml</code> for the infrastructure provider and flavor you chose when you initialized the configuration repository using Welkin.
 Do not change these files, as they may be overridden by Welkin.
@@ -4666,7 +4666,7 @@ They only take as input explicit choices that you made and describe how an Envir
 <ul>
 <li><code>.state</code> is a folder which contains the "state", i.e., files produced by Welkin needed to access an Environment during daily operations, in particular kubeconfig and S3 object storage access.
 Typically, these files should be encrypted with sops for information security purposes.
-In Welkin, kubeconfigs generally don't contain credentials, only pointer to OpenID configuration, hence are usually not encrypted.</li>
+In Welkin, kubeconfigs generally don't contain credentials, only pointers to OpenID configuration, hence are usually not encrypted.</li>
 </ul>
 <p>To make sure your whole team knows exactly which version of Welkin an Environment runs, it is common practice to add the source code, in the example above <code>compliantkubernetes-apps</code> and <code>compliantkubernetes-kubespray</code>, as git submodules.
 An alternative is to pack all Welkin source code in a Docker image.</p>
@@ -4685,7 +4685,7 @@ An alternative is to pack all Welkin source code in a Docker image.</p>
 <h2 id="what-does-it-mean-to-use-welkin-as-a-platform-administrator-on-a-daily-basis">What does it mean to use Welkin as a Platform Administrator on a daily basis?<a class="headerlink" href="#what-does-it-mean-to-use-welkin-as-a-platform-administrator-on-a-daily-basis" title="Permanent link">&para;</a></h2>
 <p>You must specify a configuration repository in the environment variable <code>CK8S_CONFIG_PATH</code>.
 Then you can interact with Welkin via commands such as <code>ck8s</code> and <code>ck8s-kubespray</code> provided in the source code.
-A typical usage of these commands is describe later in this guide.</p>
+A typical usage of these commands is described later in this guide.</p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Now that you have a good understanding for Welkin, proceed with a <a href="../provider-audit/">provider audit</a> to understand the capabilities of the underlying infrastructure provider and determine how to best configure Welkin.</p>
 
