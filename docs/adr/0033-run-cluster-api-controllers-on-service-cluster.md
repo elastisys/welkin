@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-With Cluster API there multiple different ways to organise the management hierarchy that have different impacts on the environment in regard to cost, availability, security and ease of Deployment and maintainability.
+With Cluster API there are multiple different ways to organise the management hierarchy that have different impacts on the environment in regard to cost, availability, security and ease of Deployment and maintainability.
 
 Where should we run the Cluster API controller?
 
@@ -75,7 +75,7 @@ Chosen option: "Management Cluster", because it strikes the balance between secu
 
 - Good, no additional resource requirements
 - Good, Management Cluster has required supporting services
-- Bad, Workload Cluster lose management (auto healing and auto scaling) on Management Cluster failure, although...
+- Bad, Workload Cluster loses management (auto healing and auto scaling) on Management Cluster failure, although...
 - Good, Workload Cluster state can be backed up and restored
 - Good, environment can be managed as a group or individually if needed, although...
 - Bad, all Cluster can be impacted by configuration mistakes, although...

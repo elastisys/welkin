@@ -32,7 +32,7 @@ Unfortunately, wrapper scripts can also bring disadvantages:
 
 ## Decision Outcome
 
-We have chosen to keep wrapper scripts in general. However, they need to be written in a way that ensures that our artefacts (e.g., Terraform scripts, Ansible roles, Helmfiles and Helm Charts) are usable without wrapper scripts. Wrapper scripts should also be simple enough so they can be inspected and useful commands can be copy-pasted out. This ensures that said scripts do not need to be "too" powerful and "too" well documented, but at the same time they do brings the sought after value.
+We have chosen to keep wrapper scripts in general. However, they need to be written in a way that ensures that our artefacts (e.g., Terraform scripts, Ansible roles, Helmfiles and Helm Charts) are usable without wrapper scripts. Wrapper scripts should also be simple enough so they can be inspected and useful commands can be copy-pasted out. This ensures that said scripts do not need to be "too" powerful and "too" well documented, but at the same time they do bring the sought after value.
 
 This decision applies for new wrapper scripts. We will not rework old wrapper scripts.
 
@@ -44,4 +44,4 @@ This decision applies for new wrapper scripts. We will not rework old wrapper sc
 
 ### Negative Consequences
 
-- There will be a constant temptation to do things outside wrapper scripts, which will complicated knowledge sharing, operations and support. When this becomes a significant issue, we will need to draft clear guidelines on what should belong in a wrapper scripts and what not.
+- There will be a constant temptation to do things outside wrapper scripts, which will complicated knowledge sharing, operations and support. When this becomes a significant issue, we will need to draft clear guidelines on what should belong in the wrapper scripts and what shouldn't.

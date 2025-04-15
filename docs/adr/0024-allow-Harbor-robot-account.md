@@ -19,7 +19,7 @@ Should we allow creation of a Harbor robot account which can create other Harbor
 ## Considered Options
 
 - Do not allow Harbor robot account which can create Harbor robot accounts.
-- Allow Harbor robot accounts which can create Harbor robot accounts
+- Allow Harbor robot accounts which can create Harbor robot accounts.
 
 ## Decision Outcome
 
@@ -27,7 +27,7 @@ Chosen option: "Allow Harbor robot accounts which can create Harbor robot accoun
 
 ### Positive Consequences
 
-- Harbor is more flexible and easy to automate
+- Harbor is more flexible and easy to automate.
 
 ### Negative Consequences
 
@@ -35,4 +35,4 @@ Chosen option: "Allow Harbor robot accounts which can create Harbor robot accoun
 
 ## Recommendations to Platform Administrators
 
-Make it clear in the ticket requesting this that the Application Developer accepts the risk of "shooting themselves in the foot"
+Make it clear in the ticket requesting this that the Application Developer accepts the risk of "shooting themselves in the foot".

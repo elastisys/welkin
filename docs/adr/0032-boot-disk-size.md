@@ -7,7 +7,7 @@
 ## Context and Problem Statement
 
 We have often defaulted to using boot disks of 50GB where possible but as of late we have noticed that for some environments this is not sufficient. We also noticed that the available space is commonly filled up by Application Developer container images.
-We would like to have same boot disk sizes for all our Nodes on all the Infrastructure Providers if possible.
+We would like to have the same boot disk sizes for all our Nodes on all the Infrastructure Providers if possible.
 Should we increase the boot disk size to a bigger size?
 
 ## Decision Drivers

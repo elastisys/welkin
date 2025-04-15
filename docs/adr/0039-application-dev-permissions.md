@@ -8,7 +8,7 @@
 
 Kubernetes comes with a set of default ClusterRoles that are meant to be user-facing.
 One such ClusterRole is `admin`.
-It is meant to be granted on a per namespace basis, and it grants read and write permissions on _most_ of the default namespaced resources.
+It is meant to be granted on a per-namespace basis, and it grants read and write permissions on _most_ of the default namespaced resources.
 Welkin grants the `admin` ClusterRole in the appropriate namespaces to application developers.
 The `admin` ClusterRole is elevated with additional privileges through the use of the ClusterRole aggregation feature.
 Application developers are granted additional permissions for some Cluster-wide resources through the use of extra ClusterRoles and clusterRoleBindings.

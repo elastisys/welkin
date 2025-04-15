@@ -51,7 +51,7 @@ Chosen options: 2
 
 - The platform stability and scalability is improved.
 - We provide extra isolation of the AMS.
-- Being able to choose from options of scaling the Nodes both vertically and horizontally shows that we are flexible and we can satisfy more of the Application Developer needs.
+- Being able to choose from options of scaling the Nodes both vertically and horizontally shows that we are flexible, and we can satisfy more of the Application Developer needs.
 - We can add more labels that will better describe and schedule our AMS services, like `local-disk` and others.
 - With options 1 and 3 more resources are available to the Application Developer.
 
@@ -64,4 +64,4 @@ Chosen options: 2
 ## Recommendations to Platform Administrators
 
 - Use label like: `elastisys.io/ams-cluster-name`
-- Update the AMS repository and documentation with this and set it by default to automatically picked up from kubectl
+- Update the AMS repository and documentation with this label, and set it by default to automatically get picked up by kubectl

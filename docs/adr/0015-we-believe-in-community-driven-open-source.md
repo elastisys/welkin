@@ -25,7 +25,7 @@ This ADR clarifies one of the core values of the Welkin project, namely our beli
 
 - Prefer closed source solutions.
 - Prefer single-company open source solutions.
-- Prefer community-drive open source solutions.
+- Prefer community-driven open source solutions.
 
 ## Decision Outcome
 

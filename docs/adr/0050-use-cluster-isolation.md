@@ -76,7 +76,7 @@ Given the regulatory and information security landscape above, what level of iso
     - Good, because the application and observability stack can be in different Security Zones.
     - Bad, because traces end up in the same Security Zone as logs and metrics.
 1. Use Cluster isolation between application and observability stack. Host the application and its traces in one Cluster, while the other Cluster hosts logs and metrics.
-    - Good, because it avoids Cluster sprawl, i.e., only two Cluster, instead of the minimum of one.
+    - Good, because it avoids Cluster sprawl, i.e., only two Clusters, instead of the minimum of one.
     - Good, because it follows the Security Zone model.
 1. Use Cluster isolation with one Cluster for each of application, traces, logs and metrics.
     - Neutral, because, compared to the option above, it does allow more Security Zones. However, many Security Zones are likely to be of the same protection class, hence, the benefits in terms of security does not outweigh the cost.

@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-OpenShift likes to shift (pun intended) the UID -- i.e., assign arbitrary UIDs -- to containers. They do this as an additional security feature, given that OpenShift is a multi-tentant Kubernetes solution. Each OpenShift project received a non-overlapping UID range. Hence, in case an attacker escapes a container, it will be more difficult to interfere with other processes.
+OpenShift likes to shift (pun intended) the UID -- i.e., assign arbitrary UIDs -- to containers. They do this as an additional security feature, given that OpenShift is a multi-tenant Kubernetes solution. Each OpenShift project receives a non-overlapping UID range. Hence, in case an attacker escapes a container, it will be more difficult to interfere with other processes.
 
 However, this shifting of UIDs introduces an additional complexity: What if a process wants to write to the filesystem? What uid, gid and permissions should the files and folders have? To solve this problem, the OpenShift documentation (see ["Support arbitrary user ids"][openshift-docs]) recommends setting gid=0 on those files and folders. Specifically, the Dockerfiles of the container images should contain:
 

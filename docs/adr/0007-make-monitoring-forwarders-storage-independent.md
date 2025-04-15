@@ -64,7 +64,7 @@ Fluentd as forwarder is deployed via DaemonSet. Both, `emptyDir` and `hostPath` 
 - Good, because the buffer can be large.
 - Good, because no buffered monitoring information is lost if a Node goes down.
 - Good, because buffered monitoring information is preserved if the forwarder is redeployed.
-- Bad, because non-Node-local storage is generally slower. Note, however, that at least Safespring and CityCloud use a central Ceph storage Cluster for the VM's boot disk, which wipes out Node-local's storage advantage.)
+- Bad, because non-Node-local storage is generally slower. Note, however, that at least Safespring and CityCloud use a central Ceph storage Cluster for the VM's boot disk, which wipes out Node-local's storage advantage.
 - Bad, because the forwarder will fail if storage provider goes down. This is especially problematic for Exoscale, bare-metal and BYO-VMs.
 - Bad, because the forwarder cannot monitor the storage provider (circular dependency).
 - Bad, because setting right ownership requires init containers or [alpha features](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods).
