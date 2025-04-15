@@ -29,7 +29,7 @@ But what should be our strategy be to upgrade Kubernetes with Cluster API?
 
 ## Decision Outcome
 
-Chosen option: option 2, because we want to keep our Kubernetes installers in the same pace when it comes to new Kubernetes minor versions, and then we know that this version will be more tested and patched upstream.
+Chosen option: option 2, because we want to keep our Kubernetes installers in the same pace when it comes to new Kubernetes minor versions, and then we know that this version will be more thoroughly tested and patched upstream.
 
 ### Positive Consequences <!-- optional -->
 

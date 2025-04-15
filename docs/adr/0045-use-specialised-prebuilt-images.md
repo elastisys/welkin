@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-Some of the upstream images we include relies on package or plugins managers to enable support during runtime for different infrastructure providers.
+Some of the upstream images we include rely on package or plugins managers to enable support during runtime for different infrastructure providers.
 
 This is a security concern as a malicious actor could modify the packages or plugins to compromise the workload, and a reliability concern as even a good actor could take down packages which would render the workload unavailable.
 

@@ -40,7 +40,7 @@ Chosen options: 1 & 3 & 5
 ### Positive Consequences
 
 - We keep things simple and have the same solution on all Infrastructure Providers.
-- We keep the platform stable and secure and not risk when we replace Nodes or Nodes become unavailable.
+- We keep the platform stable and secure, and don't risk dropping traffic when we replace Nodes or Nodes become unavailable.
 - No changes are needed.
 - More resources are available on the AMS Nodes.
 - Reduce complexity.

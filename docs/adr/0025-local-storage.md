@@ -7,7 +7,7 @@
 ## Context and Problem Statement
 
 After performing several storage load testing and PostgreSQL load testing and benchmarking we have discovered that the local storage is significantly faster than network storage.
-We have one use case where the disk have proven to be too slow for a PostgreSQL database and the performance was not as expected.
+We have one use case where the disk has proven to be too slow for a PostgreSQL database and the performance was not as expected.
 How should we expose local storage to Managed Services?
 
 ## Decision Drivers
@@ -32,7 +32,7 @@ Chosen option: Use local storage with local-volume-provisioner and move the code
 ### Positive Consequences
 
 - Services using the local storage are performing better.
-- We are able to provide a PostgreSQL service that meet the high performance requirements.
+- We are able to provide a PostgreSQL service that meets the high performance requirements.
 
 ### Negative Consequences
 
@@ -41,7 +41,7 @@ Chosen option: Use local storage with local-volume-provisioner and move the code
 
 ## Recommendation to Platform Administrators
 
-When using the local-volume-provisioner please create dedicated partitions and make sure to reserve enough space for the boot partition. Failing to do so can lead to entire disc to become full and the Node will become unresponsive and crash.
+When using the local-volume-provisioner please create dedicated partitions and make sure to reserve enough space for the boot partition. Failing to do so can lead to the entire disk becoming full and the Node becoming unresponsive and crashing.
 
 ## Links
 

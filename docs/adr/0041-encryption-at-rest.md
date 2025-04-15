@@ -42,7 +42,7 @@ Object storage encryption:
     This is not doable since not all applications that interacts with object storage in Welkin supports this.
     Using a proxy gateway that can handle the encryption could have been a solution, however the only tool that we've found, MinIO Gateway, has been [deprecated](https://blog.min.io/deprecation-of-the-minio-gateway/).
 1. Encrypt data using server-side-encryption.
-    In Welkin we use Openstack Swift and the S3 API when interacting with object storage.
+    In Welkin, we use Openstack Swift and the S3 API when interacting with object storage.
     Openstack swift has no notion of server-side encryption where the data is encrypted at rest with a user provided key.
     The S3 API has server-side encryption but again some applications in Welkin lacks the features necessary to leverage it.
 1. Rely on Infrastructure Provider to provide encryption-at-rest.

@@ -28,7 +28,7 @@ So, should we enforce the usage of TTL on Jobs?
 
 ## Decision Outcome
 
-Chosen option: 3 - "Enforce TTL via Gatekeeper mutation, aka update Job spec if not set.
+Chosen option: 3 - "Enforce TTL via Gatekeeper mutation, aka update Job spec if not set."
 We decided for a default Job TTL of 7 days, as this is a good compromise between being able to inspect the Pod -- e.g., check exit status and logs -- and not keeping Pods for too long.
 
 ### Positive Consequences
@@ -36,7 +36,7 @@ We decided for a default Job TTL of 7 days, as this is a good compromise between
 - Application Developers don't need to worry about setting any value
 - We don't have to worry about setting any value for our jobs (assuming we will run Gatekeeper in SC, in the meantime we can just update our Job specs in Apps)
 - There won't be any lingering Jobs in Kubernetes (assuming that no bad finalizers are set)
-- TTL of Jobs will be visible in out IO site and possibly stated in our ToS
+- TTL of Jobs will be visible in our IO site and possibly stated in our ToS
 
 ### Negative Consequences
 

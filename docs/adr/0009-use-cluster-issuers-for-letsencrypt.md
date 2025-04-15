@@ -10,7 +10,7 @@ Technical Story: [Make apps less fragile](https://github.com/elastisys/compliant
 
 Data protection regulations require encrypting network traffic over public networks, e.g., via HTTPS. This requires provisioning and rotating TLS certificates. To automate this task, we use the [cert-manager](https://cert-manager.io/), which automates provisioning and rotation of TLS certificates from [Let's Encrypt](https://letsencrypt.org/).
 
-There are two ways to configure Let's Encrypt as an issuers for cert-manager: [Issuer and ClusterIssuer](https://cert-manager.io/docs/concepts/issuer/). The former is namespaced, whereas the latter is Cluster-wide. Should we use Issuer or ClusterIssuer?
+There are two ways to configure Let's Encrypt as an issuer for cert-manager: [Issuer and ClusterIssuer](https://cert-manager.io/docs/concepts/issuer/). The former is namespaced, whereas the latter is Cluster-wide. Should we use Issuer or ClusterIssuer?
 
 ## Decision Drivers
 

@@ -8,7 +8,7 @@ Technical Story: [Reduce Helmfile concurrency for improved predictability](https
 
 ## Context and Problem Statement
 
-> Dex requires persisting state to perform various tasks such as track refresh tokens, preventing replays, and rotating keys.
+> Dex requires persisting state to perform various tasks such as tracking refresh tokens, preventing replays, and rotating keys.
 
 What persistence option should we use?
 

@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-Elastisys is working around the clock to improve the security of our platform, so as to allow Application Developers to better protect Personal Data. Currently, we don't have the access management for the AMS-es i.e how these are supposed to be accessed by Pods that are deployed by Application Developers.
+Elastisys is working around the clock to improve the security of our platform, so as to allow Application Developers to better protect Personal Data. Currently, we don't have the access management for the AMS-es i.e. how these are supposed to be accessed by Pods that are deployed by Application Developers.
 
 We are considering Network Policies for AMS-es to enhance security and control. A key aspect of this change concerns how these services, such as our additional managed Redis or PostgreSQL, etc. instances, interact with applications deployed by Application Developers.
 
@@ -27,7 +27,7 @@ How should the access be managed and how should it be communicated to the Applic
     - `Good` because labels clearly indicate intent for access, making policy enforcement and audits simpler.
     - `Bad`, because it requires manual labelling of namespaces, which can be cumbersome in large environments.
 
-1. Give Application Developers a heads up before deploying the new AMS-es Release with Network Policies enabled and let Application Developers label the namespaces they Want to communicate with AMS-es.
+1. Give Application Developers a heads-up before deploying the new AMS-es Release with Network Policies enabled and let Application Developers label the namespaces they Want to communicate with AMS-es.
 
     - `Good`, because Application Developers will have the freedom to choose which namespaces need access, promoting responsibility and autonomy.
     - `Good`, because notification from us will allow developers to prepare and avoid sudden access issues upon AMS-es Deployment.
@@ -52,7 +52,7 @@ How should the access be managed and how should it be communicated to the Applic
 
 **Access Management Strategy:**
 
-Chosen option 1 & 2 i.e We will allow specific AMS-es Pod labels, specifically `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` and Application developers need to add the labels to their existing application Pods with `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` to ensure continuity.
+Chosen option 1 & 2 i.e. We will allow specific AMS-es Pod labels, specifically `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` and Application developers need to add the labels to their existing application Pods with `elastisys.io/<ams-name>-<ams-name-cluster-name>-access: allow` to ensure continuity.
 
 Example- `elastisys.io/redis-<redis-cluster-name>-access: allow`.
 

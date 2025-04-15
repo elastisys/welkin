@@ -23,7 +23,7 @@
 ## Decision Outcome
 
 Chosen options: `Expose Jaeger UI, but completely behind oauth2-proxy. Use config domain, groups, IP allowlisting and request logging for protecting it.` .
-If this solution turns out to serve our customer needs and our needs, we will consider adopting it for exposing other services UI's like Alertmanager and Prometheus.
+If this solution turns out to serve our customer needs and our needs, we will consider adopting it for exposing other services UIs like Alertmanager and Prometheus.
 
 ### Positive Consequences
 
@@ -33,7 +33,7 @@ If this solution turns out to serve our customer needs and our needs, we will co
 
 ### Negative Consequences
 
-- We need to add an additional component that needs to be configured, installed and maintained.
+- We need an additional component that needs to be configured, installed and maintained.
 
 ## Recommendation to Operators
 
@@ -63,9 +63,9 @@ Make sure that you use domain listing, groups and IP allowlisting.
 
 - Good, because we deliver a platform that is easy to use and easy to access.
 - Good, because we serve our customer need
-- Good, because we do not loose the ability to audit the access to it as using this option we can audit the access.
+- Good, because we do not lose the ability to audit the access to it as using this option we can audit the access.
 - Good, because we the security and stability of the platform is maintained by using the domain listing, groups and IP allowlisting.
-- Bad, because we need to add an additional component that needs to be configured, installed and maintained.
+- Bad, because we need an additional component that needs to be configured, installed and maintained.
 
 ### [option 4] - Expose Jaeger UI and audit access via request logging in Oath2Proxy
 
@@ -73,6 +73,6 @@ Make sure that you use domain listing, groups and IP allowlisting.
 
 - Good, because we deliver a platform that is easy to use and easy to access.
 - Good, because we serve our customer need
-- Good, because we do not loose the ability to audit the access to it as using this option we can audit the access.
-- Bad, because it is less secure then the `option 3`
-- Bad, because we need to add an additional component that needs to be configured, installed and maintained.
+- Good, because we do not lose the ability to audit the access to it as using this option we can audit the access.
+- Bad, because it is less secure than the `option 3`
+- Bad, because we need an additional component that needs to be configured, installed and maintained.
