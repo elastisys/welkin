@@ -4428,7 +4428,7 @@ if(!document.__defineGetter__) {
 <p>Technical Story: <a href="https://github.com/elastisys/compliantkubernetes-apps/issues/300">Make apps less fragile</a></p>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
 <p>Data protection regulations require encrypting network traffic over public networks, e.g., via HTTPS. This requires provisioning and rotating TLS certificates. To automate this task, we use the <a href="https://cert-manager.io/">cert-manager</a>, which automates provisioning and rotation of TLS certificates from <a href="https://letsencrypt.org/">Let's Encrypt</a>.</p>
-<p>There are two ways to configure Let's Encrypt as an issuers for cert-manager: <a href="https://cert-manager.io/docs/concepts/issuer/">Issuer and ClusterIssuer</a>. The former is namespaced, whereas the latter is Cluster-wide. Should we use Issuer or ClusterIssuer?</p>
+<p>There are two ways to configure Let's Encrypt as an issuer for cert-manager: <a href="https://cert-manager.io/docs/concepts/issuer/">Issuer and ClusterIssuer</a>. The former is namespaced, whereas the latter is Cluster-wide. Should we use Issuer or ClusterIssuer?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We want to make compliantkubernetes-apps less fragile, and Let's Encrypt rate limiting is a cause of fragility.</li>

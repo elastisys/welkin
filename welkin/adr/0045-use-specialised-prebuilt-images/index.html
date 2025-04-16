@@ -4459,7 +4459,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2024-01-18</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>Some of the upstream images we include relies on package or plugins managers to enable support during runtime for different infrastructure providers.</p>
+<p>Some of the upstream images we include rely on package or plugins managers to enable support during runtime for different infrastructure providers.</p>
 <p>This is a security concern as a malicious actor could modify the packages or plugins to compromise the workload, and a reliability concern as even a good actor could take down packages which would render the workload unavailable.</p>
 <p>To improve both the security and reliability of the platform we should therefore take better control over the workloads it includes to provide the images it needs, without external reliance on packages or plugins.</p>
 <h2 id="decision-drivers">Decision Drivers <!-- optional --><a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>

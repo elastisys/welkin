@@ -4417,7 +4417,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2024-01-19</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>Elastisys is working around the clock to improve the security of our platform, so as to allow Application Developers to better protect Personal Data. Currently, we don't have the access management for the AMS-es i.e how these are supposed to be accessed by Pods that are deployed by Application Developers.</p>
+<p>Elastisys is working around the clock to improve the security of our platform, so as to allow Application Developers to better protect Personal Data. Currently, we don't have the access management for the AMS-es i.e. how these are supposed to be accessed by Pods that are deployed by Application Developers.</p>
 <p>We are considering Network Policies for AMS-es to enhance security and control. A key aspect of this change concerns how these services, such as our additional managed Redis or PostgreSQL, etc. instances, interact with applications deployed by Application Developers.</p>
 <p>How should the access be managed and how should it be communicated to the Application Developers so that we have a smooth transition?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
@@ -4438,7 +4438,7 @@ if(!document.__defineGetter__) {
 </ul>
 </li>
 <li>
-<p>Give Application Developers a heads up before deploying the new AMS-es Release with Network Policies enabled and let Application Developers label the namespaces they Want to communicate with AMS-es.</p>
+<p>Give Application Developers a heads-up before deploying the new AMS-es Release with Network Policies enabled and let Application Developers label the namespaces they Want to communicate with AMS-es.</p>
 <ul>
 <li><code>Good</code>, because Application Developers will have the freedom to choose which namespaces need access, promoting responsibility and autonomy.</li>
 <li><code>Good</code>, because notification from us will allow developers to prepare and avoid sudden access issues upon AMS-es Deployment.</li>
@@ -4469,7 +4469,7 @@ if(!document.__defineGetter__) {
 </ol>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p><strong>Access Management Strategy:</strong></p>
-<p>Chosen option 1 &amp; 2 i.e We will allow specific AMS-es Pod labels, specifically <code>elastisys.io/&lt;ams-name&gt;-&lt;ams-name-cluster-name&gt;-access: allow</code> and Application developers need to add the labels to their existing application Pods with <code>elastisys.io/&lt;ams-name&gt;-&lt;ams-name-cluster-name&gt;-access: allow</code> to ensure continuity.</p>
+<p>Chosen option 1 &amp; 2 i.e. We will allow specific AMS-es Pod labels, specifically <code>elastisys.io/&lt;ams-name&gt;-&lt;ams-name-cluster-name&gt;-access: allow</code> and Application developers need to add the labels to their existing application Pods with <code>elastisys.io/&lt;ams-name&gt;-&lt;ams-name-cluster-name&gt;-access: allow</code> to ensure continuity.</p>
 <p>Example- <code>elastisys.io/redis-&lt;redis-cluster-name&gt;-access: allow</code>.</p>
 <p>This label will enable communication between Application Developers application Pods and the designated AMS-es.</p>
 <p><strong>For New Additional Managed Services (AMS-es) Clusters Ordered:</strong></p>

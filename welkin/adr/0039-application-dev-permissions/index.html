@@ -4419,7 +4419,7 @@ if(!document.__defineGetter__) {
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
 <p>Kubernetes comes with a set of default ClusterRoles that are meant to be user-facing.
 One such ClusterRole is <code>admin</code>.
-It is meant to be granted on a per namespace basis, and it grants read and write permissions on <em>most</em> of the default namespaced resources.
+It is meant to be granted on a per-namespace basis, and it grants read and write permissions on <em>most</em> of the default namespaced resources.
 Welkin grants the <code>admin</code> ClusterRole in the appropriate namespaces to application developers.
 The <code>admin</code> ClusterRole is elevated with additional privileges through the use of the ClusterRole aggregation feature.
 Application developers are granted additional permissions for some Cluster-wide resources through the use of extra ClusterRoles and clusterRoleBindings.</p>

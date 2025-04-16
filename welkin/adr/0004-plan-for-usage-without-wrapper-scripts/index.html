@@ -4442,7 +4442,7 @@ if(!document.__defineGetter__) {
 <li>On the other extreme, we completely "ban" wrapper scripts.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>We have chosen to keep wrapper scripts in general. However, they need to be written in a way that ensures that our artefacts (e.g., Terraform scripts, Ansible roles, Helmfiles and Helm Charts) are usable without wrapper scripts. Wrapper scripts should also be simple enough so they can be inspected and useful commands can be copy-pasted out. This ensures that said scripts do not need to be "too" powerful and "too" well documented, but at the same time they do brings the sought after value.</p>
+<p>We have chosen to keep wrapper scripts in general. However, they need to be written in a way that ensures that our artefacts (e.g., Terraform scripts, Ansible roles, Helmfiles and Helm Charts) are usable without wrapper scripts. Wrapper scripts should also be simple enough so they can be inspected and useful commands can be copy-pasted out. This ensures that said scripts do not need to be "too" powerful and "too" well documented, but at the same time they do bring the sought after value.</p>
 <p>This decision applies for new wrapper scripts. We will not rework old wrapper scripts.</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4452,7 +4452,7 @@ if(!document.__defineGetter__) {
 </ul>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <ul>
-<li>There will be a constant temptation to do things outside wrapper scripts, which will complicated knowledge sharing, operations and support. When this becomes a significant issue, we will need to draft clear guidelines on what should belong in a wrapper scripts and what not.</li>
+<li>There will be a constant temptation to do things outside wrapper scripts, which will complicated knowledge sharing, operations and support. When this becomes a significant issue, we will need to draft clear guidelines on what should belong in the wrapper scripts and what shouldn't.</li>
 </ul>
 
 

@@ -4426,7 +4426,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2023-03-30</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>The Maintainers of Starboard <a href="https://github.com/aquasecurity/starboard/discussions/1173">deprecated it</a> in favor of <a href="https://aquasecurity.github.io/trivy/v0.41/tutorials/kubernetes/cluster-scanning/">Trivy Kubernetes</a> with <a href="https://github.com/aquasecurity/trivy-operator">Trivy operator</a>. They will no longer make any bigger changes to Starboard operator. They announced the change in march.</p>
+<p>The Maintainers of Starboard <a href="https://github.com/aquasecurity/starboard/discussions/1173">deprecated it</a> in favor of <a href="https://aquasecurity.github.io/trivy/v0.41/tutorials/kubernetes/cluster-scanning/">Trivy Kubernetes</a> with <a href="https://github.com/aquasecurity/trivy-operator">Trivy operator</a>. They will no longer make any bigger changes to Starboard operator. They announced the change in March 2023.</p>
 <p>We currently use Starboard operator for scanning images with Trivy and for running the CIS Kubernetes benchmark with kube-bench. Trivy operator has support for scanning images and running a version of the CIS Kubernetes benchmark.</p>
 <p>Can or should we follow the evolution and replace starboard-operator with trivy-operator?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
@@ -4442,7 +4442,7 @@ if(!document.__defineGetter__) {
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
 <p>Chosen option: 2 - Move ahead and replace starboard-operator with trivy-operator and include the CIS Kubernetes benchmark</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
-<p>The main and the good reason for replacing starboard-operator with trivy-operator is that starboard-operator is getting replaces as stated above.</p>
+<p>The main and the good reason for replacing starboard-operator with trivy-operator is that starboard-operator is getting replaced as stated above.</p>
 <h3 id="negative-consequences">Negative Consequences<a class="headerlink" href="#negative-consequences" title="Permanent link">&para;</a></h3>
 <p>I have no obvious reason not to do it other than that we may want to wait for a second before we do it as the current state of the chart is slightly unstable. For example:</p>
 <p>https://github.com/aquasecurity/trivy-operator/discussions/1071</p>

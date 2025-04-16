@@ -4435,7 +4435,7 @@ if(!document.__defineGetter__) {
 <li>Date: 2023-01-26</li>
 </ul>
 <h2 id="context-and-problem-statement">Context and Problem Statement<a class="headerlink" href="#context-and-problem-statement" title="Permanent link">&para;</a></h2>
-<p>We use the Cinder CSI Driver to manage the lifecycle of OpenStack Cinder Volumes. Currently the csi-cinder-controllerplugin is running on arbitrary Nodes.
+<p>We use the Cinder CSI Driver to manage the lifecycle of OpenStack Cinder Volumes. Currently, the csi-cinder-controllerplugin is running on arbitrary Nodes.
 Where should we run the csi-cinder-controllerplugin?</p>
 <h2 id="decision-drivers">Decision Drivers<a class="headerlink" href="#decision-drivers" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4448,7 +4448,7 @@ Where should we run the csi-cinder-controllerplugin?</p>
 <li>Run the csi-cinder-controllerplugin on Elastisys Nodes.</li>
 </ul>
 <h2 id="decision-outcome">Decision Outcome<a class="headerlink" href="#decision-outcome" title="Permanent link">&para;</a></h2>
-<p>Chosen option: "Run the csi-cinder-controllerplugin on Elastisys Nodes", because it improves the stability and security of the platform and makes the application Nodes "light"</p>
+<p>Chosen option: "Run the csi-cinder-controllerplugin on Elastisys Nodes", because it improves the stability and security of the platform and makes the application Nodes "light".</p>
 <h3 id="positive-consequences">Positive Consequences<a class="headerlink" href="#positive-consequences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The application Nodes infrastructure footprint is lower.</li>
