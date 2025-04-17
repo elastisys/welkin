@@ -72,7 +72,7 @@ done
 # Bad, because the effects are difficult to predict and adjust
 for x in arr; do
     pushd $x
-    sops exec-file secrets "command --auto-approve $complicated_unexplained_arguments | yq r 'a.b.c' | xarg somthing-something"
+    sops exec-file secrets "command --auto-approve $complicated_unexplained_arguments | yq4 '.a.b.c' | xarg somthing-something"
     popd
 done
 
