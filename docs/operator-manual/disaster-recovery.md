@@ -548,9 +548,9 @@ and you can then use the following to handpick resources from the backup you wan
   export S3_PREFIX="<service-cluster|workload-cluster>"
   export S3_ACCESS_KEY=$(sops -d --extract '["objectStorage"]["sync"]["s3"]["accessKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
   export S3_SECRET_KEY=$(sops -d --extract '["objectStorage"]["sync"]["s3"]["secretKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
-  export S3_REGION=$(yq r "$CK8S_CONFIG_PATH/sc-config.yaml" "objectStorage.sync.s3.region")
-  export S3_ENDPOINT=$(yq r "$CK8S_CONFIG_PATH/sc-config.yaml" "objectStorage.sync.s3.regionEndpoint")
-  export S3_PATH_STYLE=$(yq r "$CK8S_CONFIG_PATH/sc-config.yaml" "objectStorage.sync.s3.forcePathStyle")
+  export S3_REGION=$(yq4 ".objectStorage.sync.s3.region" "$CK8S_CONFIG_PATH/sc-config.yaml" )
+  export S3_ENDPOINT=$(yq4 ".objectStorage.sync.s3.regionEndpoint" "$CK8S_CONFIG_PATH/sc-config.yaml")
+  export S3_PATH_STYLE=$(yq4 ".objectStorage.sync.s3.forcePathStyle" "$CK8S_CONFIG_PATH/sc-config.yaml")
 
   # Delete backups from default backup location, note that this is only the backup metadata
   ./bin/ck8s ops kubectl "${CLUSTER}" -n velero delete backups.velero.io --all
