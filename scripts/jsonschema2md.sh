@@ -30,7 +30,11 @@ log.error() {
 
 yq4() {
   if command -v yq > /dev/null; then
-    command yq "${@}"
+    if ! command yq -V | grep --extended-regexp "v4\." >/dev/null 2>&1; then
+      log.error "expecting the yq binary to be at least version v4"
+    else
+      command yq "${@}"
+    fi
   else
     command yq4 "${@}"
   fi
