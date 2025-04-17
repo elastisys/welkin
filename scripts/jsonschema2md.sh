@@ -28,11 +28,15 @@ log.error() {
   exit 1
 }
 
-yq() {
-  if command -v yq4 > /dev/null; then
-    command yq4 "${@}"
+yq4() {
+  if command -v yq > /dev/null; then
+    if ! command yq -V | grep --extended-regexp "v4\." >/dev/null 2>&1; then
+      log.error "expecting the yq binary to be at least version v4"
+    else
+      command yq "${@}"
+    fi
   else
-    command yq "${@}"
+    command yq4 "${@}"
   fi
 }
 
@@ -100,7 +104,7 @@ repo.resolve() {
     tags="$(curl -s "https://api.github.com/repos/${repo}/tags")"
 
     # Resolve the full revision from tags
-    revision="$(yq "[.[].name] | sort | reverse | [.[] | select(match(\"${revision}\"))] | .[0]" <<< "${tags}")"
+    revision="$(yq4 "[.[].name] | sort | reverse | [.[] | select(match(\"${revision}\"))] | .[0]" <<< "${tags}")"
 
     if [[ "${revision}" == "null" ]]; then
       log.error "unable to resolve full revision for ${rev}"
@@ -111,7 +115,7 @@ repo.resolve() {
   fi
 
   commit="$(curl -s "https://api.github.com/repos/${repo}/commits/${revision}")"
-  commit_url="$(yq '.html_url' <<< "${commit}")"
+  commit_url="$(yq4 '.html_url' <<< "${commit}")"
 
   log.note "resolved revision: ${revision}@${commit_url}"
 }
@@ -165,8 +169,8 @@ path)
   ;;
 esac
 
-yq -oj ".\"\$id\" = \"https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/config.yaml\"" < "${temp}/config.yaml" > "${temp}/config.schema.json"
-yq -oj ".\"\$id\" = \"https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/secrets.yaml\"" < "${temp}/secrets.yaml" > "${temp}/secrets.schema.json"
+yq4 --output-format json ".\"\$id\" = \"https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/config.yaml\"" < "${temp}/config.yaml" > "${temp}/config.schema.json"
+yq4 --output-format json ".\"\$id\" = \"https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/${revision}/config/schemas/secrets.yaml\"" < "${temp}/secrets.yaml" > "${temp}/secrets.schema.json"
 
 log.trace "converted schema"
 
