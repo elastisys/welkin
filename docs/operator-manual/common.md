@@ -237,13 +237,13 @@ To ensure that you have configured S3 correctly, run the following snippet:
 
 ```bash
 (
-    access_key=$(sops exec-file ${CK8S_CONFIG_PATH}/secrets.yaml 'yq4 ".objectStorage.s3.accessKey" {}')
-    secret_key=$(sops exec-file ${CK8S_CONFIG_PATH}/secrets.yaml 'yq4 ".objectStorage.s3.secretKey" {}')
-    sc_config=$(yq4 eval-all '. as $item ireduce ({}; . * $item )' ${CK8S_CONFIG_PATH}/defaults/sc-config.yaml ${CK8S_CONFIG_PATH}/sc-config.yaml)
-    region=$(echo ${sc_config} | yq4 '.objectStorage.s3.region')
-    host=$(echo ${sc_config} | yq4 '.objectStorage.s3.regionEndpoint')
+    access_key=$(sops exec-file ${CK8S_CONFIG_PATH}/secrets.yaml 'yq ".objectStorage.s3.accessKey" {}')
+    secret_key=$(sops exec-file ${CK8S_CONFIG_PATH}/secrets.yaml 'yq ".objectStorage.s3.secretKey" {}')
+    sc_config=$(yq eval-all '. as $item ireduce ({}; . * $item )' ${CK8S_CONFIG_PATH}/defaults/sc-config.yaml ${CK8S_CONFIG_PATH}/sc-config.yaml)
+    region=$(echo ${sc_config} | yq '.objectStorage.s3.region')
+    host=$(echo ${sc_config} | yq '.objectStorage.s3.regionEndpoint')
 
-    for bucket in $(echo ${sc_config} | yq4 '.objectStorage.buckets.*'); do
+    for bucket in $(echo ${sc_config} | yq '.objectStorage.buckets.*'); do
         s3cmd --access_key=${access_key} --secret_key=${secret_key} \
             --region=${region} --host=${host} \
             ls s3://${bucket} > /dev/null
