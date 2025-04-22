@@ -4733,20 +4733,12 @@ if(!document.__defineGetter__) {
 <h1 id="network-model">Network Model<a class="headerlink" href="#network-model" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This section helps you implement ISO 27001, specifically:</p>
-<ul>
-<li>A.10.1.2 Key Management</li>
-<li>A.13.1.1 Network Controls</li>
-<li>A.13.1.2 Security of Network Services</li>
-<li>A.13.1.3 Segregation in Networks</li>
-</ul>
+<p>This is just a <strong>model</strong> to help application developers get their application running securely.
+Under the hood, things are a lot more complicated.
+See <a href="#further-reading">Further reading</a> for resources giving more descriptions under-the-hood.</p>
 </div>
 <p><img alt="Welkin Network Model" src="../img/network-model.drawio.svg" /></p>
 <p>The diagram above present a useful model when reasoning about networking in Welkin.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is just a <strong>model</strong> and not an architectural diagram. Under the hood, things are a lot more complicated.</p>
-</div>
 <h2 id="private-network">Private Network<a class="headerlink" href="#private-network" title="Permanent link">&para;</a></h2>
 <p>Your application Pods, as well as Pods of <a href="../additional-services/">additional services</a>, can communicate on a secure private network, via <a href="https://datatracker.ietf.org/doc/html/rfc1918">RFC1918</a> private IP addresses. It is analogous to a <a href="https://en.wikipedia.org/wiki/Virtual_private_cloud">VPC</a> in VM-based workloads.</p>
 <p>In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an <a href="../../operator-manual/provider-audit/">infrastructure audit</a> or deploying <a href="https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/">Pod-to-Pod encryption</a>.</p>
@@ -4924,10 +4916,14 @@ if(!document.__defineGetter__) {
 <li>ensuring the private network is secure or trusted.</li>
 </ul>
 <h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
+<p>If you want to know more about Welkin's network internals, check out the following upstream documentation:</p>
 <ul>
-<li><a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services and Pods</a></li>
-<li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress</a></li>
-<li><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">NetworkPolicies</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">Kubernetes Documentation: Networking</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/">Kubernetes Documentation: Services, Load Balancing, and Networking</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">Kubernetes Documentation: DNS for Services and Pods</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Kubernetes Documentation: Ingress</a></li>
+<li><a href="Khttps://kubernetes.io/docs/concepts/services-networking/ingress-controllers/">Kubernetes Documentation: Ingress Controllers</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">Kubernetes Documentation: NetworkPolicies</a></li>
 </ul>
 
 
