@@ -30,22 +30,14 @@ tags:
 
 # Network Model
 
-!!!note
-
-    This section helps you implement ISO 27001, specifically:
-
-    * A.10.1.2 Key Management
-    * A.13.1.1 Network Controls
-    * A.13.1.2 Security of Network Services
-    * A.13.1.3 Segregation in Networks
+> [!NOTE]
+> This is just a **model** to help application developers get their application running securely.
+> Under the hood, things are a lot more complicated.
+> See [Further reading](#further-reading) for resources giving more descriptions under-the-hood.
 
 ![Welkin Network Model](img/network-model.drawio.svg)
 
 The diagram above present a useful model when reasoning about networking in Welkin.
-
-!!!note
-
-    This is just a **model** and not an architectural diagram. Under the hood, things are a lot more complicated.
 
 ## Private Network
 
@@ -271,6 +263,11 @@ The Welkin administrator is responsible for:
 
 ## Further Reading
 
-- [DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
-- [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-- [NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+If you want to know more about Welkin's network internals, check out the following upstream documentation:
+
+- [Kubernetes Documentation: Networking](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+- [Kubernetes Documentation: Services, Load Balancing, and Networking](https://kubernetes.io/docs/concepts/services-networking/)
+- [Kubernetes Documentation: DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+- [Kubernetes Documentation: Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+- [Kubernetes Documentation: Ingress Controllers](Khttps://kubernetes.io/docs/concepts/services-networking/ingress-controllers/)
+- [Kubernetes Documentation: NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
