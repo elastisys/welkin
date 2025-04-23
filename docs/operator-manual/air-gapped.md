@@ -51,8 +51,8 @@ If getting images from a running Cluster is not desirable, use the following com
 
 ```bash
 export KUBE_VERSION=# e.g. 1.27.5
-./bin/ck8s ops helmfile sc template --kube-version=$KUBE_VERSION | yq4 '..|.image? | select(.)' | sort -u > images-sc.list
-./bin/ck8s ops helmfile wc template --kube-version=$KUBE_VERSION | yq4 '..|.image? | select(.)' | sort -u > images-wc.list
+./bin/ck8s ops helmfile sc template --kube-version=$KUBE_VERSION | yq '..|.image? | select(.)' | sort -u > images-sc.list
+./bin/ck8s ops helmfile wc template --kube-version=$KUBE_VERSION | yq '..|.image? | select(.)' | sort -u > images-wc.list
 ```
 
 !!!note
