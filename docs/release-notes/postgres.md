@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v1.12.2-ck8s2](#v1122-ck8s2) - 2025-04-23
 - [v1.12.2-ck8s1](#v1122-ck8s1) - 2024-09-25
 - [v1.8.2-ck8s1](#v182-ck8s1) - 2022-08-24
 - [v1.7.1-ck8s2](#v171-ck8s2) - 2022-04-26
@@ -18,6 +19,21 @@
 
     The public changelog has not been kept up-to-date with development and new releases.
     Expect the naming schema to change and the content of new releases to be more full and descriptive.
+
+### v1.12.2-ck8s2
+
+Released 2025-04-23
+
+Default PostgreSQL versions:
+
+- 16.5
+- 15.9
+- 14.14
+- 13.17
+
+Changes:
+
+- `Spilo` image version bumped to `spilo-16:3.3-p1-24-11-18`
 
 ### v1.12.2-ck8s1
 
