@@ -269,5 +269,5 @@ If you want to know more about Welkin's network internals, check out the followi
 - [Kubernetes Documentation: Services, Load Balancing, and Networking](https://kubernetes.io/docs/concepts/services-networking/)
 - [Kubernetes Documentation: DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
 - [Kubernetes Documentation: Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-- [Kubernetes Documentation: Ingress Controllers](Khttps://kubernetes.io/docs/concepts/services-networking/ingress-controllers/)
+- [Kubernetes Documentation: Ingress Controllers](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/)
 - [Kubernetes Documentation: NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
