@@ -4337,6 +4337,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scrapetimeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      scrapeTimeout
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4415,6 +4424,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-defs-kubernetes-resource-requirements/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheusNodeExporter/properties/resources">Welkin Apps Config</a></td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="#scrapetimeout">scrapeTimeout</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-defs-scrapetimeout/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheusNodeExporter/properties/scrapeTimeout">Welkin Apps Config</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
@@ -4445,9 +4461,34 @@ if(!document.__defineGetter__) {
 <span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">256Mi</span>
 <span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">250m</span>
 </code></pre></div>
+<h2 id="scrapetimeout">scrapeTimeout<a class="headerlink" href="#scrapetimeout" title="Permanent link">&para;</a></h2>
+<p>Configure Prometheus Node Exporter ServiceMonitor scrape timeout.
+If not set, the upstream default of 10s is used</p>
+<p><code>scrapeTimeout</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-defs-scrapetimeout/">Prometheus Node Exporter ServiceMonitor scrape timeout</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-defs-scrapetimeout/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheusNodeExporter/properties/scrapeTimeout">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-defs-scrapetimeout/">Prometheus Node Exporter ServiceMonitor scrape timeout</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>pattern</strong>: the string must match the following regular expression:&#x20;</p>
+<div class="highlight"><pre><span></span><code>^((([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?|0)$
+</code></pre></div>
+<p><a href="https://regexr.com/?expression=%5E(((%5B0-9%5D%2B)y)%3F((%5B0-9%5D%2B)w)%3F((%5B0-9%5D%2B)d)%3F((%5B0-9%5D%2B)h)%3F((%5B0-9%5D%2B)m)%3F((%5B0-9%5D%2B)s)%3F((%5B0-9%5D%2B)ms)%3F%7C0)%24" title="try regular expression with regexr.com">try pattern</a></p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Apr 24 11:24:57 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/d3ff4df7a14131991514b6d2fbdbb15e339850a2">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Apr 25 13:30:55 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/2597059c7b8320eb26b1735ba656844e72d7b01a">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

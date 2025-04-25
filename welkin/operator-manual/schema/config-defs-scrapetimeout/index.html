@@ -13,7 +13,7 @@
         <meta name="author" content="Elastisys AB">
       
       
-        <link rel="canonical" href="https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-exporter-properties-opensearch-exporter-service-monitor-properties-scrape-timeout-for-the-service-monitor/">
+        <link rel="canonical" href="https://elastisys.io/welkin/operator-manual/schema/config-defs-scrapetimeout/">
       
       
       
@@ -131,7 +131,7 @@
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
       
-        <meta  property="og:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-exporter-properties-opensearch-exporter-service-monitor-properties-scrape-timeout-for-the-service-monitor.png" >
+        <meta  property="og:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-defs-scrapetimeout.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -139,7 +139,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-exporter-properties-opensearch-exporter-service-monitor-properties-scrape-timeout-for-the-service-monitor/" >
+        <meta  property="og:url"  content="https://elastisys.io/welkin/operator-manual/schema/config-defs-scrapetimeout/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -148,7 +148,7 @@
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
       
-        <meta  name="twitter:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-exporter-properties-opensearch-exporter-service-monitor-properties-scrape-timeout-for-the-service-monitor.png" >
+        <meta  name="twitter:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-defs-scrapetimeout.png" >
       
     
     
@@ -4378,13 +4378,18 @@ if(!document.__defineGetter__) {
 </table>
 <p><strong>TYPE</strong>:</p>
 <p><code>string</code> (<a href="./">Scrape timeout for the service monitor.</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>pattern</strong>: the string must match the following regular expression:&#x20;</p>
+<div class="highlight"><pre><span></span><code>^((([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?|0)$
+</code></pre></div>
+<p><a href="https://regexr.com/?expression=%5E(((%5B0-9%5D%2B)y)%3F((%5B0-9%5D%2B)w)%3F((%5B0-9%5D%2B)d)%3F((%5B0-9%5D%2B)h)%3F((%5B0-9%5D%2B)m)%3F((%5B0-9%5D%2B)s)%3F((%5B0-9%5D%2B)ms)%3F%7C0)%24" title="try regular expression with regexr.com">try pattern</a></p>
 <p><strong>DEFAULTS</strong>:</p>
 <p>The default value is:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;30s&quot;</span>
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Apr 24 11:24:57 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/d3ff4df7a14131991514b6d2fbdbb15e339850a2">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Apr 25 13:30:55 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/2597059c7b8320eb26b1735ba656844e72d7b01a">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
