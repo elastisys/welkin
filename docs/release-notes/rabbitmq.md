@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v4.0.6-ck8s2](#v406-ck8s2) - 2025-04-25
 - [v4.0.6-ck8s1](#v406-ck8s1) - 2025-02-28
 - [v3.13.7-ck8s1](#v3137-ck8s1) - 2024-12-09
 - [v3.12.6-ck8s1](#v3126-ck8s1) - 2024-01-17
@@ -17,6 +18,14 @@
 !!!note
 
     These are only the user-facing changes.
+
+### v4.0.6-ck8s2
+
+Released 2025-04-25
+
+#### Other(s)
+
+- Correct script to update Cluster DNS for Network Policies, no Application Developer facing change.
 
 <!--
     Release notes before 2024-11-29 are excluded from spellchecking.
