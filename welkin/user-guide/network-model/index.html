@@ -896,6 +896,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#internal-load-balancer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Load Balancer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lets-encrypt" class="md-nav__link">
     <span class="md-ellipsis">
       Let's Encrypt
@@ -4519,6 +4528,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#internal-load-balancer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Load Balancer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lets-encrypt" class="md-nav__link">
     <span class="md-ellipsis">
       Let's Encrypt
@@ -4825,6 +4843,23 @@ See <a href="#further-reading">Further reading</a> for resources giving more des
 <p>To check if source IP is preserved, check the HTTP request headers received by your application, specifically <code>x-forwarded-for</code> and <code>x-real-ip</code>. The <a href="https://github.com/elastisys/welkin/blob/main/user-demo/app.js#L29">user demo</a> logs all HTTP request headers, as shown in the screenshot below.</p>
 <p><img alt="HTTP request headers shown in the user demo" src="../img/http-request-headers.png" /></p>
 </div>
+<h2 id="internal-load-balancer">Internal Load Balancer<a class="headerlink" href="#internal-load-balancer" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is currently only supported on AWS, Azure, Elastx and UpCloud.</p>
+</div>
+<p>You can request an additional Load Balancer specifically for internal traffic by filing a service ticket to the administrator.
+This is useful for separating internal traffic and external traffic and to protect the internal customers in case of a DDoS attack against the external Load Balancer.</p>
+<blockquote>
+<p>![WARNING]
+There is a security concern if PROXY protocol is enabled on the Ingress Controller that can lead to an attacker being able to reach the internal endpoints from the public network.
+To avoid this, use the <a href="https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#whitelist-source-range">NGINX.Ingress.Kubernetes.io/whitelist-source-range</a> annotation on the internal ingresses and only allow the private network.
+This is not a concern if PROXY protocol is disabled.
+If you are unsure whether PROXY protocol is enabled or not, ask the administrator.</p>
+</blockquote>
+<p>Once the Load Balancer is set up, a wildcard DNS record that points towards the internal Load Balancer will be provided.
+<code>*.internal.$DOMAIN</code> where <code>$DOMAIN</code> is the environment-specific variable <a href="../prepare/#access-your-web-portals">you received from the administrator</a>.
+It is recommended that you create a CNAME record that points towards the provided DNS record.</p>
 <h2 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h2>
 <p>Let’s Encrypt is a certificate authority that provides free SSL/TLS certificates via an automated process. Their certificates are accepted by most of today’s browsers.</p>
 <p>On Welkin, we provide a cert-manager setup which you can use to create, sign, install and renew certificates for your domains/apps running in Welkin.</p>
