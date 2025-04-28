@@ -150,6 +150,24 @@ spec:
 
     ![HTTP request headers shown in the user demo](img/http-request-headers.png)
 
+## Internal Load Balancer
+
+> [!NOTE]
+> This is currently only supported on AWS, Azure, Elastx and UpCloud.
+
+You can request an additional Load Balancer specifically for internal traffic by filing a service ticket to the administrator.
+This is useful for separating internal traffic and external traffic and to protect the internal customers in case of a DDoS attack against the external Load Balancer.
+
+> ![WARNING]
+> There is a security concern if PROXY protocol is enabled on the Ingress Controller that can lead to an attacker being able to reach the internal endpoints from the public network.
+> To avoid this, use the [NGINX.Ingress.Kubernetes.io/whitelist-source-range](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#whitelist-source-range) annotation on the internal ingresses and only allow the private network.
+> This is not a concern if PROXY protocol is disabled.
+> If you are unsure whether PROXY protocol is enabled or not, ask the administrator.
+
+Once the Load Balancer is set up, a wildcard DNS record that points towards the internal Load Balancer will be provided.
+`*.internal.$DOMAIN` where `$DOMAIN` is the environment-specific variable [you received from the administrator](prepare.md#access-your-web-portals).
+It is recommended that you create a CNAME record that points towards the provided DNS record.
+
 ## Let's Encrypt
 
 Let’s Encrypt is a certificate authority that provides free SSL/TLS certificates via an automated process. Their certificates are accepted by most of today’s browsers.
