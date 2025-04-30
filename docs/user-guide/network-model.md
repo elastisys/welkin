@@ -158,7 +158,7 @@ spec:
 You can request an additional Load Balancer specifically for internal traffic by filing a service ticket to the administrator.
 This is useful for separating internal traffic and external traffic and to protect the internal customers in case of a DDoS attack against the external Load Balancer.
 
-> ![WARNING]
+> [!WARNING]
 > There is a security concern if PROXY protocol is enabled on the Ingress Controller that can lead to an attacker being able to reach the internal endpoints from the public network.
 > To avoid this, use the [NGINX.Ingress.Kubernetes.io/whitelist-source-range](https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#whitelist-source-range) annotation on the internal ingresses and only allow the private network.
 > This is not a concern if PROXY protocol is disabled.
