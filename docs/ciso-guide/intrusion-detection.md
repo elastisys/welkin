@@ -57,7 +57,7 @@ I know the "main" branch might not be very stable, however, I want to point the 
 to fresh information here. The link checker will alert us, if we need to update these.
 -->
 Therefore, Welkin enables by default the so-called [Falco stable rules](https://github.com/falcosecurity/rules/blob/main/rules/falco_rules.yaml).
-The [Falco incubating](https://github.com/falcosecurity/rules/blob/main/rules/falco-incubating_rules.yaml) and [Falco sandbox](https://github.com/falcosecurity/rules/blob/main/rules/falco-sandbox_rules.yaml) rules are disabled by default and can be enabled by configuring [`falco.customRules`](../operator-manual/schema.md) accordingly.
+The [Falco incubating](https://github.com/falcosecurity/rules/blob/main/rules/falco-incubating_rules.yaml) and [Falco sandbox](https://github.com/falcosecurity/rules/blob/main/rules/falco-sandbox_rules.yaml) rules are disabled by default and can be enabled by configuring [`falco.customRules`](../operator-manual/schema/config.md) accordingly.
 
 ## Handling Non-Compliance
 
