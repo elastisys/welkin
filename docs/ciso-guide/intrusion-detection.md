@@ -49,6 +49,16 @@ tags:
 
 The Welkin Intrusion Detection Dashboard allows to quickly audit any suspicious activity performed by code inside the Cluster, such as writing to suspicious files (e.g., in `/etc`) or attempting suspicious external network connections (e.g., SSH to a command-and-control server). Such activities may indicate anything from a misconfiguration issue to an ongoing attack. Therefore, this dashboard should be regularly reviewed, perhaps even daily.
 
+## Intrusion Detection Rules
+
+Welkin's [Mission and Vision](../mission-and-vision.md) requires all alerts to be actionable.
+<!--
+I know the "main" branch might not be very stable, however, I want to point the CISO
+to fresh information here. The link checker will alert us, if we need to update these.
+-->
+Therefore, Welkin enables by default the so-called [Falco stable rules](https://github.com/falcosecurity/rules/blob/main/rules/falco_rules.yaml).
+The [Falco incubating](https://github.com/falcosecurity/rules/blob/main/rules/falco-incubating_rules.yaml) and [Falco sandbox](https://github.com/falcosecurity/rules/blob/main/rules/falco-sandbox_rules.yaml) rules are disabled by default and can be enabled by configuring [`falco.customRules`](../operator-manual/schema/config.md) accordingly.
+
 ## Handling Non-Compliance
 
 Make sure you have a proper incident management policy in place. If an attack is ongoing, it might be better to take the system offline to protect data from getting in the wrong hands. Platform Administrators need to be trained on what events justify such an extreme action, otherwise, escalating the issue along the reporting chain may add delays that favor the attacker.
