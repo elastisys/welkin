@@ -3634,6 +3634,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#intrusion-detection-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intrusion Detection Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#handling-non-compliance" class="md-nav__link">
     <span class="md-ellipsis">
       Handling Non-Compliance
@@ -4489,6 +4498,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#intrusion-detection-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intrusion Detection Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#handling-non-compliance" class="md-nav__link">
     <span class="md-ellipsis">
       Handling Non-Compliance
@@ -4589,6 +4607,14 @@ if(!document.__defineGetter__) {
 <h2 id="welkin-intrusion-detection-dashboard">Welkin Intrusion Detection Dashboard<a class="headerlink" href="#welkin-intrusion-detection-dashboard" title="Permanent link">&para;</a></h2>
 <p><img alt="Intrusion Detection Dashboard" src="../img/intrusion-detection.png" /></p>
 <p>The Welkin Intrusion Detection Dashboard allows to quickly audit any suspicious activity performed by code inside the Cluster, such as writing to suspicious files (e.g., in <code>/etc</code>) or attempting suspicious external network connections (e.g., SSH to a command-and-control server). Such activities may indicate anything from a misconfiguration issue to an ongoing attack. Therefore, this dashboard should be regularly reviewed, perhaps even daily.</p>
+<h2 id="intrusion-detection-rules">Intrusion Detection Rules<a class="headerlink" href="#intrusion-detection-rules" title="Permanent link">&para;</a></h2>
+<p>Welkin's <a href="../../mission-and-vision/">Mission and Vision</a> requires all alerts to be actionable.</p>
+<!--
+I know the "main" branch might not be very stable, however, I want to point the CISO
+to fresh information here. The link checker will alert us, if we need to update these.
+-->
+<p>Therefore, Welkin enables by default the so-called <a href="https://github.com/falcosecurity/rules/blob/main/rules/falco_rules.yaml">Falco stable rules</a>.
+The <a href="https://github.com/falcosecurity/rules/blob/main/rules/falco-incubating_rules.yaml">Falco incubating</a> and <a href="https://github.com/falcosecurity/rules/blob/main/rules/falco-sandbox_rules.yaml">Falco sandbox</a> rules are disabled by default and can be enabled by configuring <a href="../../operator-manual/schema/config/"><code>falco.customRules</code></a> accordingly.</p>
 <h2 id="handling-non-compliance">Handling Non-Compliance<a class="headerlink" href="#handling-non-compliance" title="Permanent link">&para;</a></h2>
 <p>Make sure you have a proper incident management policy in place. If an attack is ongoing, it might be better to take the system offline to protect data from getting in the wrong hands. Platform Administrators need to be trained on what events justify such an extreme action, otherwise, escalating the issue along the reporting chain may add delays that favor the attacker.</p>
 <p>In less severe cases, simply contact the developers to investigate their code and fix any potential misconfiguration.</p>
