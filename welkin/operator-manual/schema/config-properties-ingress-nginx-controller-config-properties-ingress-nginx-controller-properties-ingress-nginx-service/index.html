@@ -4337,6 +4337,96 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      annotations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    <span class="md-ellipsis">
+      type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clusterip" class="md-nav__link">
+    <span class="md-ellipsis">
+      clusterIP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipfamilypolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      ipFamilyPolicy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipfamilies" class="md-nav__link">
+    <span class="md-ellipsis">
+      ipFamilies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allocateloadbalancernodeports" class="md-nav__link">
+    <span class="md-ellipsis">
+      allocateLoadBalancerNodePorts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadbalancerip" class="md-nav__link">
+    <span class="md-ellipsis">
+      loadBalancerIP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadbalancersourceranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      loadBalancerSourceRanges
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodeports" class="md-nav__link">
+    <span class="md-ellipsis">
+      nodePorts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      internal
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4396,6 +4486,24 @@ if(!document.__defineGetter__) {
 </table>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="./">Ingress-NGINX Service</a>)</p>
+<p>any of</p>
+<ul>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-disabled/" title="check type definition">Ingress-NGINX Service Disabled</a></p>
+</li>
+<li>
+<p>all of</p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-clusterip-enabled/" title="check type definition">Ingress-NGINX Service ClusterIP Enabled</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-loadbalancer-enabled/" title="check type definition">Ingress-NGINX Service LoadBalancer Enabled</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-nodeport-enabled/" title="check type definition">Ingress-NGINX Service NodePort Enabled</a></p>
+</li>
+</ul>
 <p><strong>PROPERTIES</strong>:</p>
 <table>
 <thead>
@@ -4413,7 +4521,77 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><code>boolean</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-service-enabled/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/enabled">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-enabled-1/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/enabled">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#annotations">annotations</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-annotations/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/annotations">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#type">type</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-type/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/type">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#clusterip">clusterIP</a></td>
+<td style="text-align: left;">Merged</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-clusterip/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/clusterIP">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#ipfamilypolicy">ipFamilyPolicy</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-family-policy/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/ipFamilyPolicy">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#ipfamilies">ipFamilies</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-families/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/ipFamilies">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#allocateloadbalancernodeports">allocateLoadBalancerNodePorts</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-node-ports/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/allocateLoadBalancerNodePorts">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#loadbalancerip">loadBalancerIP</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-ip/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/loadBalancerIP">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#loadbalancersourceranges">loadBalancerSourceRanges</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-source-ranges/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/loadBalancerSourceRanges">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#nodeports">nodePorts</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-node-ports/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/nodePorts">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#internal">internal</a></td>
+<td style="text-align: left;">Merged</td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-internal-service/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/internal">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4424,20 +4602,318 @@ if(!document.__defineGetter__) {
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>boolean</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-service-enabled/">Ingress-NGINX Service Enabled</a>)</p>
+<p>Type: <code>boolean</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-enabled-1/">Ingress-NGINX Service Enabled</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-service-enabled/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/enabled">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-enabled-1/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/enabled">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>boolean</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-service-enabled/">Ingress-NGINX Service Enabled</a>)</p>
+<p><code>boolean</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-enabled-1/">Ingress-NGINX Service Enabled</a>)</p>
+<h2 id="annotations">annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h2>
+<p><code>annotations</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-annotations/">Service Annotations</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-annotations/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/annotations">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-annotations/">Service Annotations</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{}</span>
+</code></pre></div>
+<h2 id="type">type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h2>
+<p>Configure the type of the Service.</p>
+<p><code>type</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-type/">Service Type</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-type/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/type">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-type/">Service Type</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>enum</strong>: the value of this property must be equal to one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>"ClusterIP"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"LoadBalancer"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"NodePort"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="clusterip">clusterIP<a class="headerlink" href="#clusterip" title="Permanent link">&para;</a></h2>
+<p><code>clusterIP</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-clusterip/">Service ClusterIP</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-clusterip/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/clusterIP">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-clusterip/">Service ClusterIP</a>)</p>
+<p>one (and only one) of</p>
+<ul>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-clusterip-oneof-0/" title="check type definition">Untitled undefined type in Welkin Apps Config</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-clusterip-oneof-1/" title="check type definition">Untitled undefined type in Welkin Apps Config</a></p>
+</li>
+</ul>
+<h2 id="ipfamilypolicy">ipFamilyPolicy<a class="headerlink" href="#ipfamilypolicy" title="Permanent link">&para;</a></h2>
+<p>Represents the dual-stack-ness requested or required by this Service. When
+utilizing an internal loadbalancer service (ie MetalLB), set this field to
+"RequireDualStack" if you want both IPv4 and IPv6 connectivity. The
+ipFamilies and clusterIPs fields depend on the value of this field.</p>
+<p>See <a href="https://kubernetes.io/docs/concepts/services-networking/dual-stack/">reference</a></p>
+<p><code>ipFamilyPolicy</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-family-policy/">Service IP Family Policy</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-family-policy/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/ipFamilyPolicy">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-family-policy/">Service IP Family Policy</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>enum</strong>: the value of this property must be equal to one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"SingleStack"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"PreferDualStack"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"RequireDualStack"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;SingleStack&quot;</span>
+</code></pre></div>
+<h2 id="ipfamilies">ipFamilies<a class="headerlink" href="#ipfamilies" title="Permanent link">&para;</a></h2>
+<p>List of IP families (e.g. IPv4, IPv6) assigned to the service. Default is IPv4 only. When utilizing an internal loadbalancer service (ie MetalLB),
+IPv6 would also need to be included in order for the ingress service to allocate an address in that family.</p>
+<p><code>ipFamilies</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string[]</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-families-service-ip-family/">Service IP Family</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-families/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/ipFamilies">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string[]</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-families-service-ip-family/">Service IP Family</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>unique items</strong>: all items in this array must be unique. Duplicates are not allowed.</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;IPv4&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+<h2 id="allocateloadbalancernodeports">allocateLoadBalancerNodePorts<a class="headerlink" href="#allocateloadbalancernodeports" title="Permanent link">&para;</a></h2>
+<p>When enabled node ports will be allocated for the Load Balancer Service.</p>
+<p>This should be enabled when the cluster is fronted by a proxy load balancer regardless if it is external or internal, and disabled if the cluster uses direct routing of ingress traffic.</p>
+<p>See <a href="https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-nodeport-allocation">reference</a></p>
+<p><code>allocateLoadBalancerNodePorts</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-node-ports/">Load Balancer Node Ports</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-node-ports/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/allocateLoadBalancerNodePorts">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-node-ports/">Load Balancer Node Ports</a>)</p>
+<h2 id="loadbalancerip">loadBalancerIP<a class="headerlink" href="#loadbalancerip" title="Permanent link">&para;</a></h2>
+<p>Configure the Load Balancer IP to use an existing IP if supported by the infrastructure provider.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>With OpenStack Octavia the floating IP can be created via the CLI beforehand, and one should set the annotation <code>loadbalancer.openstack.org/keep-floatingip: "true"</code> to prevent the floating IP to be deleted.</p>
+</div>
+<p><code>loadBalancerIP</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-ip/">Load Balancer IP</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-ip/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/loadBalancerIP">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-ip/">Load Balancer IP</a>)</p>
+<h2 id="loadbalancersourceranges">loadBalancerSourceRanges<a class="headerlink" href="#loadbalancersourceranges" title="Permanent link">&para;</a></h2>
+<p>Configure the source ranges to allow via the Load Balancer Service.</p>
+<p><code>loadBalancerSourceRanges</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string[]</code></p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-source-ranges/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/loadBalancerSourceRanges">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string[]</code></p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[]</span>
+</code></pre></div>
+<h2 id="nodeports">nodePorts<a class="headerlink" href="#nodeports" title="Permanent link">&para;</a></h2>
+<p>Configure the node ports to allocate for the Service.</p>
+<p><code>nodePorts</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-node-ports/">Node Ports</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-node-ports/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/nodePorts">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-node-ports/">Node Ports</a>)</p>
+<h2 id="internal">internal<a class="headerlink" href="#internal" title="Permanent link">&para;</a></h2>
+<p>Configure the Internal Service for traffic to Ingress-NGINX.</p>
+<p><code>internal</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-internal-service/">Ingress-NGINX Internal Service</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-internal-service/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/internal">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-internal-service/">Ingress-NGINX Internal Service</a>)</p>
+<p>any of</p>
+<ul>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-disabled/" title="check type definition">Ingress-NGINX Service Disabled</a></p>
+</li>
+<li>
+<p>all of</p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-clusterip-enabled/" title="check type definition">Ingress-NGINX Service ClusterIP Enabled</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-loadbalancer-enabled/" title="check type definition">Ingress-NGINX Service LoadBalancer Enabled</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-nodeport-enabled/" title="check type definition">Ingress-NGINX Service NodePort Enabled</a></p>
+</li>
+</ul>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Mon Apr 28 14:22:56 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/2597059c7b8320eb26b1735ba656844e72d7b01a">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri May  9 12:23:49 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/87a4695e967ff08d948d41457d8e86018402f61f">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

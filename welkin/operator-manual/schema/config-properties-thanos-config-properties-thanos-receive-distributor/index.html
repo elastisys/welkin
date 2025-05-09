@@ -4338,6 +4338,24 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#receivehashringsalgorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      receiveHashringsAlgorithm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receivemaxconcurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      receiveMaxConcurrency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#extraflags" class="md-nav__link">
     <span class="md-ellipsis">
       extraFlags
@@ -4444,6 +4462,20 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-replicas/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/thanos/properties/receiveDistributor/properties/replicaCount">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#receivehashringsalgorithm">receiveHashringsAlgorithm</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-algolrithm/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/thanos/properties/receiveDistributor/properties/receiveHashringsAlgorithm">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#receivemaxconcurrency">receiveMaxConcurrency</a></td>
+<td style="text-align: left;"><code>integer</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-maximum-concurrency/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/thanos/properties/receiveDistributor/properties/receiveMaxConcurrency">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="#extraflags">extraFlags</a></td>
 <td style="text-align: left;"><code>array</code></td>
 <td style="text-align: left;">Optional</td>
@@ -4488,6 +4520,68 @@ if(!document.__defineGetter__) {
 <p>The default value is:</p>
 <div class="highlight"><pre><span></span><code><span class="mi">1</span>
 </code></pre></div>
+<h2 id="receivehashringsalgorithm">receiveHashringsAlgorithm<a class="headerlink" href="#receivehashringsalgorithm" title="Permanent link">&para;</a></h2>
+<p>Algorithm used for distributing writes across Thanos receive replicas.</p>
+<p><code>receiveHashringsAlgorithm</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-algolrithm/">Thanos receiveDistributor algolrithm</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-algolrithm/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/thanos/properties/receiveDistributor/properties/receiveHashringsAlgorithm">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-algolrithm/">Thanos receiveDistributor algolrithm</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>enum</strong>: the value of this property must be equal to one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>"hashmod"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"ketama"</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;ketama&quot;</span>
+</code></pre></div>
+<h2 id="receivemaxconcurrency">receiveMaxConcurrency<a class="headerlink" href="#receivemaxconcurrency" title="Permanent link">&para;</a></h2>
+<p>Maximum number of concurrent write requests allowed by Thanos receiveDistributor.</p>
+<p><code>receiveMaxConcurrency</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>integer</code> (<a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-maximum-concurrency/">Thanos receiveDistributor maximum Concurrency</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-maximum-concurrency/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/thanos/properties/receiveDistributor/properties/receiveMaxConcurrency">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>integer</code> (<a href="../config-properties-thanos-config-properties-thanos-receive-distributor-properties-thanos-receivedistributor-maximum-concurrency/">Thanos receiveDistributor maximum Concurrency</a>)</p>
 <h2 id="extraflags">extraFlags<a class="headerlink" href="#extraflags" title="Permanent link">&para;</a></h2>
 <p>When set, the arguments will be passed onto the component as command-line flags. Refer to the <a href="https://github.com/bitnami/charts/blob/main/bitnami/thanos/README.md#adding-extra-flags">upstream doc</a> for more details.</p>
 <p><code>extraFlags</code></p>
@@ -4560,7 +4654,7 @@ if(!document.__defineGetter__) {
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Mon Apr 28 14:22:56 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/2597059c7b8320eb26b1735ba656844e72d7b01a">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri May  9 12:23:49 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/87a4695e967ff08d948d41457d8e86018402f61f">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

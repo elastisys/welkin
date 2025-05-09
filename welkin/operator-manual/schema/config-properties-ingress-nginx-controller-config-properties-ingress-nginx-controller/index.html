@@ -4583,7 +4583,7 @@ if(!document.__defineGetter__) {
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#service">service</a></td>
-<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Merged</td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service">Welkin Apps Config</a></td>
@@ -4827,6 +4827,24 @@ Only enable this after evaluating the risks it poses.</p>
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service/">Ingress-NGINX Service</a>)</p>
+<p>any of</p>
+<ul>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-disabled/" title="check type definition">Ingress-NGINX Service Disabled</a></p>
+</li>
+<li>
+<p>all of</p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-clusterip-enabled/" title="check type definition">Ingress-NGINX Service ClusterIP Enabled</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-loadbalancer-enabled/" title="check type definition">Ingress-NGINX Service LoadBalancer Enabled</a></p>
+</li>
+<li>
+<p><a href="../config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-nodeport-enabled/" title="check type definition">Ingress-NGINX Service NodePort Enabled</a></p>
+</li>
+</ul>
 <h2 id="usehostport">useHostPort<a class="headerlink" href="#usehostport" title="Permanent link">&para;</a></h2>
 <p>When enabled ingress traffic is directly forwarded from target ports on the nodes to reach Ingress-NGINX.</p>
 <p>This requires the namespace to use Pod Security Standard <code>privileged</code>.</p>
@@ -4939,7 +4957,7 @@ Only enable this after evaluating the risks it poses.</p>
 <p><code>object</code> (<a href="../config-defs-affinity/">Affinity</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Mon Apr 28 14:22:56 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/2597059c7b8320eb26b1735ba656844e72d7b01a">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri May  9 12:23:49 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/87a4695e967ff08d948d41457d8e86018402f61f">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

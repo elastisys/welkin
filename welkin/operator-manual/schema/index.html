@@ -4948,7 +4948,19 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-default-backend/" title="Configure the default backend deployment of Ingress-NGINX">Ingress-NGINX Default Backend</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/defaultBackend</code></p>
 </li>
 <li>
+<p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-properties-ingress-nginx-internal-service/" title="Configure the Internal Service for traffic to Ingress-NGINX">Ingress-NGINX Internal Service</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/properties/internal</code></p>
+</li>
+<li>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service/" title="Definition of Ingress-NGINX Service">Ingress-NGINX Service</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service</code></p>
+</li>
+<li>
 <p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service/" title="Configure the Service for traffic to Ingress-NGINX">Ingress-NGINX Service</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service</code></p>
+</li>
+<li>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-disabled/" title="Condition for when the Service is disabled">Ingress-NGINX Service Disabled</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service/properties/disabledCondition</code></p>
+</li>
+<li>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-ingress-nginx-service-enabled/" title="Condition for when the Service is enabled">Ingress-NGINX Service Enabled</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service/properties/enabledCondition</code></p>
 </li>
 <li>
 <p><a href="secrets-properties-harbor-secret-config-properties-internal-database/" title="Internal database password config">Internal Database</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/secrets.yaml#/properties/harbor/properties/internal</code></p>
@@ -5281,7 +5293,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-node-local-dns/" title="Configure node-local-dns, node local DNS resolving and caching">Node Local DNS</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/nodeLocalDns</code></p>
 </li>
 <li>
-<p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-then-properties-node-ports/" title="Configure the node ports to allocate for the Service">Node Ports</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/then/properties/nodePorts</code></p>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-node-ports/" title="Configure the node ports to allocate for the Service">Node Ports</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service/properties/nodePorts</code></p>
 </li>
 <li>
 <p><a href="config-defs-nodeaffinity/" title="Node affinity is a group of node affinity scheduling rules">NodeAffinity</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.core.v1.NodeAffinity</code></p>
@@ -5590,7 +5602,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-defs-secret-key-selector/" title="SecretKeySelector selects a key of a Secret">Secret Key Selector</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.api.core.v1.SecretKeySelector</code></p>
 </li>
 <li>
-<p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-then-properties-service-annotations/">Service Annotations</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/then/properties/annotations</code></p>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-annotations/">Service Annotations</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service/properties/annotations</code></p>
 </li>
 <li>
 <p><a href="config-properties-hnc-hierarchical-namespace-controller-config-properties-service-monitor/" title="Service monitor for Hierarchical Namespace Controller">Service Monitor</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/serviceMonitor</code></p>
@@ -5899,7 +5911,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-defs-list-of-ip-netmasks/" title="List of IP netmasks">List Of IP Netmasks</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/iplist</code></p>
 </li>
 <li>
-<p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-then-properties-load-balancer-source-ranges/" title="Configure the source ranges to allow via the Load Balancer Service">Load Balancer Source Ranges</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/then/properties/loadBalancerSourceRanges</code></p>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-load-balancer-source-ranges/" title="Configure the source ranges to allow via the Load Balancer Service">Load Balancer Source Ranges</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service/properties/loadBalancerSourceRanges</code></p>
 </li>
 <li>
 <p><a href="config-properties-hnc-hierarchical-namespace-controller-config-properties-managed-namespace-annotations/" title="Annotations that will be propagated to subnamespaces (allows regex)">Managed Namespace Annotations</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/hnc/properties/managedNamespaceAnnotations</code></p>
@@ -6070,7 +6082,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-open-policy-agent-config-properties-safeguard-trusted-registries-properties-safeguard-trusted-registries-urls/" title="Configure the registries that should be trusted by the constraint">Safeguard Trusted Registries URLs</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/imageRegistry/properties/URL</code></p>
 </li>
 <li>
-<p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-service-then-properties-service-ip-families/" title="List of IP families (e">Service IP Families</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/service/then/properties/ipFamilies</code></p>
+<p><a href="config-properties-ingress-nginx-controller-config-defs-ingress-nginx-service-properties-service-ip-families/" title="List of IP families (e">Service IP Families</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/$defs/service/properties/ipFamilies</code></p>
 </li>
 <li>
 <p><a href="config-properties-user-config-properties-serviceaccounts/" title="List of serviceAccounts to create RBAC rules for, used for dev situations">ServiceAccounts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/serviceAccounts</code></p>
@@ -6109,7 +6121,7 @@ if(!document.__defineGetter__) {
 <h2 id="version-note">Version Note<a class="headerlink" href="#version-note" title="Permanent link">&para;</a></h2>
 <p>The schemas linked above follow the JSON Schema Spec version: <code>https://json-schema.org/draft/2020-12/schema</code></p>
 <hr />
-<p>Generated Mon Apr 28 14:22:56 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/2597059c7b8320eb26b1735ba656844e72d7b01a">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri May  9 12:23:49 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/87a4695e967ff08d948d41457d8e86018402f61f">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
