@@ -71,11 +71,11 @@ jobs:
           if [ "$GITHUB_REF_NAME" == "main" ]; then
               # Latest version of the docs goes under https://elastisys.io/welkin
               VERSION_TITLE="main"
-              VERSION="welkin compliantkubernetes ck8s"
+              VERSION="welkin"
           else
               # Other versions go under https://elastisys.io/welkin-v0.42/
               VERSION_TITLE=$(echo "$GITHUB_REF_NAME" | cut -d- -f2)
-              VERSION="welkin-${VERSION_TITLE} compliantkubernetes-${VERSION_TITLE}"
+              VERSION="welkin-${VERSION_TITLE}"
           fi
           echo version: $VERSION version-title: $VERSION_TITLE
           mike deploy $VERSION -t $VERSION_TITLE --push --template overrides/redirect.html --alias-type redirect
