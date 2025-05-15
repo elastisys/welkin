@@ -352,9 +352,6 @@ Instructions for how to restore Harbor can be found in `compliantkubernetes-apps
 These instructions focuses on backups for the Workload Cluster using the Velero CLI.
 For instructions on using Velero in the Management Cluster see the [Grafana section](#grafana).
 
-> [!NOTE]
-> The steps for running Velero in this document assumes `v0.39` or later of Welkin, as the Velero CLI is now part of the `ck8s ops` CLI making it easier to operate on both Clusters with Velero without having to manually set `KUBECONFIG`, as long as `CK8S_CONFIG_PATH` points to the correct environment.
-
 Read more about Velero [here](../user-guide/backup.md).
 
 > [!NOTE]
@@ -394,14 +391,20 @@ Restoring from a backup with Velero is meant to be a type of disaster recovery.
 **Velero will not overwrite existing Resources when restoring.**
 As such, if you want to restore the state of a Resource that is still running, the Resource must be deleted first.
 
-If you want to restore the entire Cluster, all you need to run to restore the state from the latest daily backup, is:
+The default daily Velero backup in the Workload Cluster is used to backup everything in application developer namespaces and the Alertmanager configuration secret.
+If you want to restore the entire Workload Cluster, first you should delete the Alertmanager secret in WC, then all you need to run to restore the state from the latest daily backup is:
 
 ```bash
-./bin/ck8s ops velero sc restore create --from-schedule velero-daily-backup --wait
+# Delete the alertmanager secret so that it can be restored from backup
+./bin/ck8s ops kubectl wc delete secret -n alertmanager alertmanager-kube-prometheus-stack-alertmanager
 # Make sure application dependencies like Harbor, Postgres, RabbitMQ
 # and Redis are restored/installed before restoring wc with velero.
-./bin/ck8s ops velero wc restore create --from-schedule velero-daily-backup --wait
+# If this environment has managed ArgoCD, then that should be restored later.
+./bin/ck8s ops velero wc restore create --from-schedule velero-daily-backup --exclude-namespaces argocd-system --wait
 ```
+
+Velero in the Management Cluster is used to backup user Grafana.
+See the section `Grafana` further down on this page for instructions on how to restore that.
 
 > [!TIP]
 > Use `./bin/ck8s ops velero wc restore create --help` to see available flags and some examples.
