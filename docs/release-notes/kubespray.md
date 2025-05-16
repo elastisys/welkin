@@ -4,6 +4,8 @@
 
 <!-- BEGIN TOC -->
 
+- [v2.27.0-ck8s2](#v2270-ck8s2) - 2025-05-13
+- [v2.26.0-ck8s5](#v2260-ck8s5) - 2025-05-13
 - [v2.27.0-ck8s1](#v2270-ck8s1) - 2025-03-28
 - [v2.26.0-ck8s3](#v2260-ck8s3) - 2025-02-06
 - [v2.26.0-ck8s2](#v2260-ck8s2) - 2025-01-14
@@ -38,6 +40,26 @@
 !!!note
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/changelog/).
+
+### v2.27.0-ck8s2
+
+Released 2025-05-13
+
+#### Updated
+
+- Updated containerd version to `v1.7.27`
+
+#### Other(s)
+
+- Frontend port now uses port instead of `target_port`
+
+### v2.26.0-ck8s5
+
+Released 2025-05-13
+
+#### Updated
+
+- Updated containerd version to `v1.7.27`
 
 ### v2.27.0-ck8s1
 
