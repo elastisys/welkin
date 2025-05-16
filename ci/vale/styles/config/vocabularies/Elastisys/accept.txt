@@ -29,6 +29,7 @@ Vitec
 Yopass
 Zalando
 UpCloud
+Sigstore
 
 # Project Names
 Alertmanager
