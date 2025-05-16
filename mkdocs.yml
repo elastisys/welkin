@@ -189,6 +189,7 @@ nav:
           - "Enforce NetworkPolicies": "user-guide/safeguards/enforce-networkpolicies.md"
           - "Enforce Resources": "user-guide/safeguards/enforce-resources.md"
           - "Enforce Trusted Registries": "user-guide/safeguards/enforce-trusted-registries.md"
+          - "Enforce Signed Images": "user-guide/safeguards/enforce-signed-image-verification.md"
           - "Enforce No Latest Tag": "user-guide/safeguards/enforce-no-latest-tag.md"
           - "Enforce Job TTL": "user-guide/safeguards/enforce-job-ttl.md"
           - "Enforce No LoadBalancer Service": "user-guide/safeguards/enforce-no-load-balancer-service.md"
