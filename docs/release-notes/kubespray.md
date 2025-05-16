@@ -60,8 +60,7 @@ Released 2025-05-13
 
 #### Updated
 
-- **Updated containerd-version image to `v1.7.27`**<br/>
-  Update containerd-version image to v1.7.27
+- Updated containerd version to `v1.7.27`
 
 ### v2.27.0-ck8s1
 
