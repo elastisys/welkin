@@ -4382,6 +4382,33 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cookiettl" class="md-nav__link">
+    <span class="md-ellipsis">
+      cookieTtl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sessionttl" class="md-nav__link">
+    <span class="md-ellipsis">
+      sessionTtl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sessionkeepalive" class="md-nav__link">
+    <span class="md-ellipsis">
+      sessionKeepalive
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4494,6 +4521,27 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-defs-affinity/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/affinity">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#cookiettl">cookieTtl</a></td>
+<td style="text-align: left;"><code>integer</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-cookie-ttl/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/cookieTtl">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#sessionttl">sessionTtl</a></td>
+<td style="text-align: left;"><code>integer</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-ttl/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/sessionTtl">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#sessionkeepalive">sessionKeepalive</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-keepalive/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/sessionKeepalive">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4633,9 +4681,66 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-defs-affinity/">Affinity</a>)</p>
+<h2 id="cookiettl">cookieTtl<a class="headerlink" href="#cookiettl" title="Permanent link">&para;</a></h2>
+<p>Time-to-live for the session cookie in milliseconds. Overrides OpenSearch Dashboards internal default if set.</p>
+<p><code>cookieTtl</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>integer</code> (<a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-cookie-ttl/">OpenSearch Dashboards Cookie TTL</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-cookie-ttl/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/cookieTtl">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>integer</code> (<a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-cookie-ttl/">OpenSearch Dashboards Cookie TTL</a>)</p>
+<h2 id="sessionttl">sessionTtl<a class="headerlink" href="#sessionttl" title="Permanent link">&para;</a></h2>
+<p>Time-to-live for the session itself in milliseconds. Overrides OpenSearch Dashboards internal default if set.</p>
+<p><code>sessionTtl</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>integer</code> (<a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-ttl/">OpenSearch Dashboards Session TTL</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-ttl/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/sessionTtl">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>integer</code> (<a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-ttl/">OpenSearch Dashboards Session TTL</a>)</p>
+<h2 id="sessionkeepalive">sessionKeepalive<a class="headerlink" href="#sessionkeepalive" title="Permanent link">&para;</a></h2>
+<p>Whether the session TTL should be extended upon user activity. Overrides OpenSearch Dashboards internal default if set.</p>
+<p><code>sessionKeepalive</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-keepalive/">OpenSearch Dashboards Session Keepalive</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-keepalive/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch/properties/dashboards/properties/sessionKeepalive">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-opensearch-config-properties-opensearch-dashboards-properties-opensearch-dashboards-session-keepalive/">OpenSearch Dashboards Session Keepalive</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri May 16 03:55:18 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/f6fa0455e7346609618a2428fbd3005c335aff89">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Sat May 17 03:53:00 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/e1a5a2f03d250aceffd800cebdd60e9c14ac3100">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
