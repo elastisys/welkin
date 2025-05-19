@@ -270,7 +270,7 @@ The screenshot below gives an example of log entries produced by the user demo a
 
 OpenSearch has a [reporting feature](https://opensearch.org/docs/latest/reporting/report-dashboard-index/) which facilitates creating different types of reports in PNG, PDF and CSV format. If you want an alternative to the reporting feature in OpenSearch we recommend you to use [elasticsearch-dump](https://github.com/elasticsearch-dump/elasticsearch-dump).
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     Elasticsearch-dump is not enabled by default, but can be requested by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
 

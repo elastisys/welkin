@@ -15,7 +15,7 @@ tags:
 
 # Prepare your Identity Provider (IdP)
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     Please follow these steps to configure your IdP so that we can connect a new Welkin environment to it.
 

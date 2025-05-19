@@ -5,7 +5,7 @@ search:
 
 # Using GPU Workload in Welkin
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
     You can order a new Environment with GPU support by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
     Make sure to specify the need for GPU Nodes in "Additional information or comments".
     If you are unsure, get in touch with your account manager.
@@ -65,7 +65,7 @@ By using these labels and taints, we ensure that:
 1. General workloads remain on CPU Nodes by default.
 1. Only workloads explicitly configured to use `GPUs` are scheduled on GPU Nodes.
 
-!!! elastisys-self-managed "For Elastisys Self-Managed Customers"
+!!! welkin-enterprise "For Welkin Enterprise Customers"
 
     Elastisys can help you ensure that your GPU Nodes are labeled and tainted as described in this page.
     This prevents workloads from unintentionally consuming GPU resources, thereby avoiding unnecessary expenses.
