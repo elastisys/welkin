@@ -62,12 +62,12 @@ a[href*="//"]:not([href*="elastisys."])::after {
  */
 .md-typeset .admonition.welkin-managed,
 .md-typeset details.welkin-managed {
-  border-color: var(--elastisys-sky-blue-dark);
+  border-color: var(--elastisys-sky-blue);
 }
 .md-typeset .welkin-managed > .admonition-title,
 .md-typeset .welkin-managed > summary {
   background-color: var(--elastisys-sky-blue);
-  color: black; /* for dark mode */
+  color: var(--elastisys-midnight-dark);
 }
 .md-typeset .welkin-managed.welkin-managed > .admonition-title::before,
 .md-typeset .welkin-managed.welkin-managed > summary::before {
@@ -88,8 +88,8 @@ a[href*="//"]:not([href*="elastisys."])::after {
 }
 .md-typeset .welkin-enterprise.welkin-enterprise > .admonition-title,
 .md-typeset .welkin-enterprise.welkin-enterprise > summary {
-  background-color: var(--elastisys-northern-lights-1);
-  color: black; /* for dark mode */
+  background-color: var(--elastisys-northern-lights-2);
+  color: white;
 }
 .md-typeset .welkin-enterprise.welkin-enterprise > .admonition-title::before,
 .md-typeset .welkin-enterprise.welkin-enterprise > summary::before {
