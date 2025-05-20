@@ -35,7 +35,7 @@ repos:
         exclude: ^(user-demo/|docs/customer-quotes/|docs/tech-radar/)
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.12.1
+    rev: v0.14.0
     hooks:
       - id: markdownlint-cli2
         name: lint markdown files
