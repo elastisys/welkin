@@ -3232,6 +3232,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#definitions" class="md-nav__link">
     <span class="md-ellipsis">
       Definitions
@@ -3721,6 +3730,15 @@ if(!document.__defineGetter__) {
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containerimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      containerImage
+    </span>
+  </a>
   
 </li>
         
@@ -6626,6 +6644,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#definitions" class="md-nav__link">
     <span class="md-ellipsis">
       Definitions
@@ -7115,6 +7142,15 @@ if(!document.__defineGetter__) {
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containerimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      containerImage
+    </span>
+  </a>
   
 </li>
         
@@ -8478,6 +8514,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-kyverno-config/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/kyverno">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#images">images</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-images-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;">Additional Properties</td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
@@ -9407,6 +9450,26 @@ When logs are shipped to OpenSearch it is done directly from the forwarder daemo
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-kyverno-config/">Kyverno Config</a>)</p>
+<h2 id="images">images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h2>
+<p>Configure individual container URI for images of all Welkin components,
+and (optionally) enable support for global registry and/or repository.</p>
+<p><code>images</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-images-configuration/">Images Configuration</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-images-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-images-configuration/">Images Configuration</a>)</p>
 <p><strong>PROPERTIES</strong>:</p>
 <p>Additional properties are allowed, as long as they follow this schema:</p>
 <p>Configure additional properties not covered by the schema.</p>
@@ -10799,6 +10862,30 @@ When logs are shipped to OpenSearch it is done directly from the forwarder daemo
 <ul>
 <li><a href="../config-defs-podantiaffinity/" title="check type definition">PodAntiAffinity</a></li>
 </ul>
+<h3 id="containerimage">containerImage<a class="headerlink" href="#containerimage" title="Permanent link">&para;</a></h3>
+<p>Reference this group by using</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="s2">&quot;https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/containerImage&quot;</span><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Required</th>
+<th style="text-align: left;">Nullable</th>
+<th style="text-align: left;">Defined by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="iok8sapimachinerypkgapismetav1labelselectorrequirement">io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement<a class="headerlink" href="#iok8sapimachinerypkgapismetav1labelselectorrequirement" title="Permanent link">&para;</a></h3>
 <p>Reference this group by using</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="s2">&quot;https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/$defs/io.k8s.apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement&quot;</span><span class="p">}</span>
@@ -13030,7 +13117,7 @@ A constraint is considered "Unsatisfiable" for an incoming pod if and only if ev
 </tbody>
 </table>
 <hr />
-<p>Generated Tue May 20 09:09:36 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/13b2225238604213cfc2e78182f292375a36fac9">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Tue May 20 10:34:30 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/668e53c1d9a3f5c6652c1b74d11acc7344038107">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

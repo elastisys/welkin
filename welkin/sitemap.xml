@@ -2337,6 +2337,10 @@
          <lastmod>2025-05-20</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-defs-uri-for-a-container-image/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-defs-weightedpodaffinityterm-properties-podaffinityterm-default/</loc>
          <lastmod>2025-05-20</lastmod>
     </url>
@@ -3674,6 +3678,74 @@
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-hnc-hierarchical-namespace-controller-config/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-if-properties-enabled/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-if-properties/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-if/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-properties-enable-the-global-image-registry/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-properties-global-image-registry-uri/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-then/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository-if-properties-enabled/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository-if-properties/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository-if/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository-properties-enable-the-global-image-repository/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository-properties-global-image-repository/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository-then/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-repository/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/</loc>
+         <lastmod>2025-05-20</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration/</loc>
          <lastmod>2025-05-20</lastmod>
     </url>
     <url>
