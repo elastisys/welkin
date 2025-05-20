@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.46.0](#v0460) - 2025-05-15
 - [v0.45.1](#v0451) - 2025-03-25
 - [v0.45.0](#v0450) - 2025-03-21
 - [v0.44.2](#v0442) - 2025-03-25
@@ -75,6 +76,43 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.46.0
+
+Released 2025-05-15
+
+!!! danger "Security Notice(s)"
+
+    - Ingress-nginx upgraded to address the following CVEs:
+        -CVE-2025-24513
+        -CVE-2025-24514
+        -CVE-2025-1097
+        -CVE-2025-1098
+        -CVE-2025-1974
+
+!!! warning "Application Developer Notice(s)"
+
+    - A new GPU access rule is now configured, you need to explicitly request an NVIDIA GPU in your application's resource requests specification to access the GPU drivers.
+    - A new gatekeeper policy has been added that will deny any PodDisruptionBudget and connected Pod controller if the PodDisruptionBudget does not allow at least 1 Pod disruption.
+
+### Feature(s)
+
+- Add OPA policy to restrict PDBs, always allow at least 1 disruption
+- Add support for Kyverno
+- Allow exposing internal Ingress-NGINX LoadBalancer in workload Cluster
+
+### Improvement(s)
+
+- Upgrade Grafana to 11.5.1 (chart 8.9.1)
+- Upgrade GPU operator to 24.9.2, allow additional configuration options
+- Upgrade Ingress-NGINX chart to v4.12.1
+- Upgrade OPA/gatekeeper to v3.18.2
+- Upgrade kube-prometheus-stack to 70.6.0
+
+### Other(s)
+
+- Fix GPU driver insufficient for CUDA runtime issue in operator v24.9.2
+- Bump kubectl version to v1.31.7 in the requirements
 
 ## v0.45.1
 
