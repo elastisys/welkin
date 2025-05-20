@@ -92,7 +92,7 @@ Released 2025-05-15
 
 !!! warning "Application Developer Notice(s)"
 
-    - In GPU operator, NVIDIA_VISIBLE_DEVICES is now set to volume mounts, which means you need to explicitly request an NVIDIA gpu resource if you want your container to make use of it
+    - A new GPU access rule is now configured, you need to explicitly request an NVIDIA GPU in your application's resource requests specification to access the GPU drivers.
     - A new gatekeeper policy has been added that will deny any PodDisruptionBudget and connected Pod controller if the PodDisruptionBudget does not allow at least 1 Pod disruption.
 
 ### Feature(s)
