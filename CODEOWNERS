@@ -36,7 +36,7 @@
 /docs/user-guide/additional-services/argocd.md        @elastisys/goto-argocd
 /docs/user-guide/additional-services/postgresql.md    @elastisys/goto-postgresql
 /docs/user-guide/additional-services/rabbitmq.md      @elastisys/goto-rabbitmq
-/docs/user-guide/additional-services/redis.md         @elastisys/goto-redis
+/docs/user-guide/additional-services/valkey.md        @elastisys/goto-redis
 /docs/user-guide/additional-services/timescaledb.md   @elastisys/goto-postgresql
 /docs/user-guide/alerts.md                            @elastisys/goto-monitoring-stack
 /docs/user-guide/backup.md                            @elastisys/goto-backups
