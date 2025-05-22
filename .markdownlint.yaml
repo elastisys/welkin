@@ -59,6 +59,7 @@ MD044: # proper-names
     - compliantkubernetes-postgresql
     - compliantkubernetes-rabbitmq
     - compliantkubernetes-redis
+    - compliantkubernetes-valkey
     - ConfigMap
     - DaemonSet
     - Deployment
