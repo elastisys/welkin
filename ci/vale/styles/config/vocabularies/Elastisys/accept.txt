@@ -75,6 +75,7 @@ Thanos
 timesyncd
 Tekton
 Trivy
+Valkey
 Velero
 
 # General technical terms
