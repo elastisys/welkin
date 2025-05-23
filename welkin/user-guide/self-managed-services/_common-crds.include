@@ -5,7 +5,7 @@
     As a trade-off, we are launching this preview feature that allows for self-management of specific cluster-wide resources required for certain popular applications.
     It is disabled by default, so please ask your Platform Administrator to enable this preview feature.
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
     You can ask for this feature to be enabled by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/customer/portals).
     This is a preview feature. For more information, please read [ToS 9.1 Preview Features](https://elastisys.com/legal/terms-of-service/#91-preview-features).
 
