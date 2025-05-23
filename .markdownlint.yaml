@@ -64,7 +64,6 @@ MD044: # proper-names
     - Deployment
     - Dex
     - Elastisys
-    - "!!! elastisys"
     - Elastx
     - Exoscale
     - Falco
@@ -114,6 +113,8 @@ MD044: # proper-names
     - S3
     - StatefulSet
     - Thanos
+    - "!!! welkin-enterprise"
+    - "!!! welkin-managed"
 MD046: false # code-block-style - does not support admonitions
 MD048: false # code-fence-style - does not support admonitions
 MD049: # emphasis-style

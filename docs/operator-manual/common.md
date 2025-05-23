@@ -269,7 +269,7 @@ To ensure that you have configured S3 correctly, run the following snippet:
 
 <!--for-sme-customers-start-->
 
-!!! elastisys-self-managed "For Elastisys Self-Managed Customers"
+!!! welkin-enterprise "For Welkin Enterprise Customers"
 
     Please start by running [these commands](./troubleshooting.md#i-have-no-clue-where-to-start).
 

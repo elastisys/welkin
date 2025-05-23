@@ -4,7 +4,7 @@ search:
 ---
 <!-- markdownlint-disable-file first-line-h1 -->
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     You can ask for this feature to be enabled by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/customer/portals).
 
@@ -28,7 +28,7 @@ The Application Developer is responsible to install a supported VPN client on th
 
 _![Welkin](img/bac8d3.png) `Platform Administrators` area of responsibility ![Application Developer](img/b1ddf0.png) `Application Developers` area of responsibility ![Inera](img/76608a.png) `Ineras` area of responsibility_
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     Inform your Platform Administrator by filling a [service ticket](https://elastisys.atlassian.net/servicedesk/customer/portals) if additional IPs are required to be routed via the gateway machine.
     Or if additional security group ports, UDP/TCP, are required to be opened to allow traffic to flow in or out from the machine.

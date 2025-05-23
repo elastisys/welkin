@@ -4,7 +4,7 @@ search:
 ---
 # Jaeger™ (preview)
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     You can order Managed Jaeger™ by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
 

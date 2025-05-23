@@ -4,7 +4,7 @@
 > This page describes runbooks for platform administrators.
 > As an application developer, you are most likely looking for [Troubleshooting for Application Developers](../user-guide/troubleshooting.md).
 
-!!! elastisys-self-managed
+!!! welkin-enterprise "For Welkin Enterprise Customers"
     To get access to the Welkin runbooks, [contact Elastisys](https://elastisys.com/contact/).
 
 Runbooks document step-by-step processes, ensuring that tasks are performed consistently and correctly, reducing errors and reliance on tribal knowledge.
