@@ -89,7 +89,14 @@ kubectl delete all --all --all-namespaces
 
 ### From diagrams.net (source of truth in this repository)
 
-Files ending in `*.drawio.svg` are produced using [diagrams.net](https://www.diagrams.net/). They are exported as follows:
+Files ending in `*.drawio.svg` are produced using [diagrams.net](https://www.diagrams.net/).
+
+Before editing them, make sure you disable "dark mode smartness", because we don't want to have to worry about making diagrams look good both in light and in dark mode:
+
+1. Extras -> Appearance -> Light.
+1. Extras -> Adaptive Colors -> None.
+
+They are exported as follows:
 
 1. File -> Export As -> SVG
 1. Change "zoom" to 100%.
