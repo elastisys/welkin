@@ -136,14 +136,26 @@ Welkin enables organizations across Europe to accelerate innovation through open
 <dl class="columns-2" markdown="1">
   <div markdown="span">
     <dt markdown="span">
+      :fontawesome-solid-handshake:
+      Welkin Enterprise
+    </dt>
+    <dd class="grow-me">
+      Leverage Welkin on-prem with implementation and continuous support.
+    </dd>
+    <dd>
+      <a role="button" href="https://elastisys.com/self-managed/">Go to Welkin Enterprise</a>
+    </dd>
+  </div>
+  <div markdown="span">
+    <dt markdown="span">
       :fontawesome-solid-user-gear:
-      Managed Services
+      Welkin Managed
     </dt>
     <dd>
       A secure and fully managed Kubernetes platform for organizations that build and operate applications critical to our society.
     </dd>
     <dd>
-      <a role="button" href="https://elastisys.com/managed-services/">Go to Managed Services</a>
+      <a role="button" href="https://elastisys.com/managed-services/">Go to Welkin Managed</a>
     </dd>
   </div>
   <div markdown="span">
@@ -168,18 +180,6 @@ Welkin enables organizations across Europe to accelerate innovation through open
     </dd>
     <dd>
       <a role="button" href="https://elastisys.com/training/">Go to Training</a>
-    </dd>
-  </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-handshake:
-      Self-Managed
-    </dt>
-    <dd class="grow-me">
-      Leverage Welkin on-prem with implementation and continuous support.
-    </dd>
-    <dd>
-      <a role="button" href="https://elastisys.com/self-managed/">Go to Self-Managed</a>
     </dd>
   </div>
 </dl>
