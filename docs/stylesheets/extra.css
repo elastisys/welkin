@@ -68,15 +68,11 @@ a[href*="//"]:not([href*="elastisys."])::after {
 .md-typeset .welkin-managed > summary {
   background-color: var(--elastisys-sky-blue);
   color: var(--elastisys-midnight-dark);
+  padding-left: .6rem;
 }
 .md-typeset .welkin-managed.welkin-managed > .admonition-title::before,
 .md-typeset .welkin-managed.welkin-managed > summary::before {
-  background-image:
-    url('../img/logos/elastisys-logo-icon.svg');
-  background-size: cover;
-  -webkit-mask-image: none;
-  mask-image: none;
-  background-color: inherit;
+  content: none;
 }
 
 /* Configure the `welkin-enterprise` custom admonition
@@ -90,15 +86,11 @@ a[href*="//"]:not([href*="elastisys."])::after {
 .md-typeset .welkin-enterprise.welkin-enterprise > summary {
   background-color: var(--elastisys-northern-lights-2);
   color: white;
+  padding-left: .6rem;
 }
 .md-typeset .welkin-enterprise.welkin-enterprise > .admonition-title::before,
 .md-typeset .welkin-enterprise.welkin-enterprise > summary::before {
-  background-image:
-    url('../img/logos/elastisys-logo-icon.svg');
-  background-size: cover;
-  -webkit-mask-image: none;
-  mask-image: none;
-  background-color: inherit;
+  content: none;
 }
 
 /* Add space around the footer */
