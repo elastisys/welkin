@@ -107,6 +107,7 @@ plugins:
         "operator-manual/qa.md": "quality-criteria.md"
         "operator-manual/air-gapped-environment.md": "operator-manual/air-gapped.md"
         "ciso-guide/nis2.md": "ciso-guide/controls/nis2.md"
+        "user-guide/additional-services/redis.md": "user-guide/additional-services/valkey.md"
 
 markdown_extensions:
   - attr_list
