@@ -19,6 +19,7 @@ Resources for the Chief Information Security Officer (CISO) or similar:
 
 - [ISO 27001](./controls/iso-27001.md)
 - [NIS2](./controls/nis2.md)
+- [Cyber Resilience Act (CRA)](./controls/cra.md)
 
 Resources for the Data Protection Officers (DPO) or similar:
 
