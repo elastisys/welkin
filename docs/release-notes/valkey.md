@@ -1,6 +1,6 @@
 # Release Notes
 
-## Welkin Redis
+## Welkin Valkey (previously Welkin Redis)
 
 <!-- BEGIN TOC -->
 
