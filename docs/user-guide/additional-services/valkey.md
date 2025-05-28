@@ -3,7 +3,7 @@ search:
     boost: 2
 ---
 
-# Valkey™
+# Valkey™ (Previously Redis™)
 
 !!! elastisys "For Elastisys Managed Services Customers"
 
