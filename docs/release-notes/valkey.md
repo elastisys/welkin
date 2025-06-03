@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v8.0.3-ck8s1](#v803-ck8s1) - 2025-06-03
 - [v7.2.7-ck8s1](#v727-ck8s1) - 2025-01-07
 - [v7.2.5-ck8s1](#v725-ck8s1) - 2024-10-07
 - [v6.2.6-ck8s4](#v626-ck8s4) - 2024-05-03
@@ -18,6 +19,14 @@
 !!!note
 
     These are only the user-facing changes.
+
+## v8.0.3-ck8s1
+
+Released 2025-06-03
+
+### Release highlights
+
+- Redis has been replaced with [Valkey](https://valkey.io/).
 
 <!--
     Release notes before 2024-11-29 are excluded from spellchecking.
