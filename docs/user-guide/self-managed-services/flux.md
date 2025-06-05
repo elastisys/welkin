@@ -69,9 +69,17 @@ kubectl apply -k crds
 
 #### Namespace
 
-You need to create a namespace where Flux will work. This namespace must be called `flux-system`. Create this [sub-namespace](../namespaces.md) under e.g. `production`.
+You need to create a namespace where Flux will work. This namespace must be called `flux-system`. Create this [sub-namespace](../namespaces.md) under your parent namespace, e.g. `production`.
 
-`kubectl hns create -n production flux-system`
+```bash
+kubectl apply -f - <<EOF
+apiVersion: hnc.x-k8s.io/v1alpha2
+kind: SubnamespaceAnchor
+metadata:
+  name: flux-system
+  namespace: production
+EOF
+```
 
 #### Git Secret
 
