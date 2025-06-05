@@ -4777,8 +4777,15 @@ curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/strimzi
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>crds/kafka-crds.yaml
 </code></pre></div>
 <h3 id="namespace">Namespace<a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h3>
-<p>You need to create a namespace where Strimzi Kafka Operator will work. This namespace must be called <code>kafka</code>. Create this <a href="../../namespaces/">sub-namespace</a> under e.g. <code>production</code>.</p>
-<p><code>kubectl hns create -n production kafka</code></p>
+<p>You need to create a namespace where Strimzi Kafka Operator will work. This namespace must be called <code>kafka</code>. Create this <a href="../../namespaces/">sub-namespace</a> under your parent namespace, e.g. <code>production</code>.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">apiVersion: hnc.x-k8s.io/v1alpha2</span>
+<span class="s">kind: SubnamespaceAnchor</span>
+<span class="s">metadata:</span>
+<span class="s">  name: kafka</span>
+<span class="s">  namespace: production</span>
+<span class="s">EOF</span>
+</code></pre></div>
 <h3 id="roles-and-rolebindings">Roles and RoleBindings<a class="headerlink" href="#roles-and-rolebindings" title="Permanent link">&para;</a></h3>
 <p>You need to create the necessary Roles for Strimzi Kafka Operator to function. This needs to be done in every namespace that you want Strimzi Kafka Operator to work in.</p>
 <p>Since Welkin uses the Hierarchical Namespace Controller, the easiest way to achieve this is to place the Roles and RoleBindings in the parent namespace where <code>kafka</code> was created from. By doing so, all namespaces created under the same parent namespace will inherit the Roles and RoleBindings.</p>

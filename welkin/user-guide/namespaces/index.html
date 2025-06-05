@@ -4658,26 +4658,12 @@ if(!document.__defineGetter__) {
 <span class="go">  status: Ok</span>
 </code></pre></div>
 <p>If the status is <code>Ok</code> then the subnamespace is ready to go.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>HNC also comes with the <a href="https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/docs/user-guide/how-to.md#prepare-to-use-hierarchical-namespaces-as-a-user">HNS <code>kubectl</code> plugin</a>.</p>
-<p>Using this plugin creating subnamespaces is as easy as:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>hns<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;parent-namespace&gt;<span class="w"> </span>&lt;descendant-namespace&gt;
-</code></pre></div></p>
-<p>And provides more detailed information using:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>hns<span class="w"> </span>describe<span class="w"> </span>&lt;namespace&gt;
-
-kubectl<span class="w"> </span>hns<span class="w"> </span>tree<span class="w"> </span>&lt;namespace&gt;
-</code></pre></div></p>
-</div>
 <p>If you decide a subnamespace is no longer needed, then you can't delete it using <code>kubectl delete namespace &lt;descendant-namespace&gt;</code>. As you will get the following error:</p>
 <blockquote>
 <p>Error from server (Forbidden): namespaces <code>&lt;descendant-namespace&gt;</code> is forbidden: User <code>&lt;your user&gt;</code> cannot delete resource "namespaces" in API group "" in the namespace <code>&lt;descendant-namespace&gt;</code>: RBAC: [clusterrole.rbac.authorization.k8s.io "user-crds" not found, clusterrole.rbac.authorization.k8s.io "user-crds-resourcename-limit" not found]</p>
 </blockquote>
 <p>Instead you will have to delete it using either of these commands:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>subns<span class="w"> </span>-n<span class="w"> </span>&lt;parent-namespace&gt;<span class="w"> </span>&lt;descendant-namespace&gt;
-<span class="c1"># or</span>
-kubectl<span class="w"> </span>hns<span class="w"> </span>delete<span class="w"> </span>-n<span class="w"> </span>&lt;parent-namespace&gt;<span class="w"> </span>&lt;descendant-namespace&gt;<span class="w"> </span><span class="c1"># with the plugin installed</span>
 </code></pre></div>
 <h2 id="resource-propagation">Resource Propagation<a class="headerlink" href="#resource-propagation" title="Permanent link">&para;</a></h2>
 <p>When a subnamespace is created all <code>Roles</code>, <code>RoleBindings</code> and <code>NetworkPolicies</code> will propagate from the parent namespace to the descendant namespace to ensure that correct access is set. This is what lets you apply namespace-scoped RBAC resources to multiple namespaces at once.

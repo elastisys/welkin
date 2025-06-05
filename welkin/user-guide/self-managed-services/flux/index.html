@@ -4902,8 +4902,15 @@ curl<span class="w"> </span>https://raw.githubusercontent.com/fluxcd/flux2/v2.1.
 kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>crds
 </code></pre></div>
 <h4 id="namespace">Namespace<a class="headerlink" href="#namespace" title="Permanent link">&para;</a></h4>
-<p>You need to create a namespace where Flux will work. This namespace must be called <code>flux-system</code>. Create this <a href="../../namespaces/">sub-namespace</a> under e.g. <code>production</code>.</p>
-<p><code>kubectl hns create -n production flux-system</code></p>
+<p>You need to create a namespace where Flux will work. This namespace must be called <code>flux-system</code>. Create this <a href="../../namespaces/">sub-namespace</a> under your parent namespace, e.g. <code>production</code>.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">apiVersion: hnc.x-k8s.io/v1alpha2</span>
+<span class="s">kind: SubnamespaceAnchor</span>
+<span class="s">metadata:</span>
+<span class="s">  name: flux-system</span>
+<span class="s">  namespace: production</span>
+<span class="s">EOF</span>
+</code></pre></div>
 <h4 id="git-secret">Git Secret<a class="headerlink" href="#git-secret" title="Permanent link">&para;</a></h4>
 <p>Next to allow Flux to interact with your Git Repository you need to create a Secret containing the ssh private key created earlier. This can be done with the Flux CLI:</p>
 <div class="highlight"><pre><span></span><code>flux<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>git<span class="w"> </span>&lt;repo-name&gt;-auth<span class="w"> </span><span class="se">\</span>
