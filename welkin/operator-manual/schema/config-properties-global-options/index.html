@@ -4578,6 +4578,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ck8sconfigserial" class="md-nav__link">
+    <span class="md-ellipsis">
+      ck8sConfigSerial
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4753,6 +4762,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-global-options-properties-container-runtime/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/containerRuntime">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#ck8sconfigserial">ck8sConfigSerial</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-global-options-properties-timestamp-of-last-migration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ck8sConfigSerial">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -5220,9 +5236,33 @@ Normally one of <code>letsencrypt-staging</code> or <code>letsencrypt-prod</code
 <p>The default value is:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;containerd&quot;</span>
 </code></pre></div>
+<h2 id="ck8sconfigserial">ck8sConfigSerial<a class="headerlink" href="#ck8sconfigserial" title="Permanent link">&para;</a></h2>
+<p>This property is used during migrations to track state and ensure that the
+same version is used during <code>ck8s upgrade prepare</code> as during <code>ck8s upgrade
+apply</code>.</p>
+<p><code>ck8sConfigSerial</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-global-options-properties-timestamp-of-last-migration/">Timestamp of last migration</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-global-options-properties-timestamp-of-last-migration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ck8sConfigSerial">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-global-options-properties-timestamp-of-last-migration/">Timestamp of last migration</a>)</p>
+<p><strong>EXAMPLES</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="s">&#39;2025-04-29T08:34:21+00:00&#39;</span>
+</code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Jun  4 03:57:21 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/61bff3371f2123462cc8f55f0af906116960fa41">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Jun  5 03:57:48 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/db5d83bb1b61137e270acc635e1187b8d5b24044">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
