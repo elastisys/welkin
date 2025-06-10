@@ -610,6 +610,35 @@ and you can then use the following to handpick resources from the backup you wan
   ./bin/ck8s ops kubectl "${CLUSTER}" -n velero delete backupstoragelocations.velero.io backup
   ```
 
+#### Changing PV/PVC Storage Classes
+
+Velero can change the storage class of persistent volumes and persistent volume claims during restores. To configure a storage class mapping, create a ConfigMap in the Velero namespace:
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # any name can be used; Velero uses the labels (below)
+  # to identify it rather than the name
+  name: change-storage-class-config
+  # must be in the velero namespace
+  namespace: velero
+  # the below labels should be used verbatim in your
+  # ConfigMap.
+  labels:
+    # this value-less label identifies the ConfigMap as
+    # config for a plugin (i.e. the built-in restore item action plugin)
+    velero.io/plugin-config: ""
+    # this label identifies the name and kind of plugin
+    # that this ConfigMap is for.
+    velero.io/change-storage-class: RestoreItemAction
+data:
+  # add 1+ key-value pairs here, where the key is the old
+  # storage class name and the value is the new storage
+  # class name.
+  <old-storage-class>: <new-storage-class>
+```
+
 ## Grafana
 
 This section refers to the Management Cluster and specifically to the user Grafana, not the ops Grafana.
