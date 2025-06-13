@@ -1730,11 +1730,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guide/additional-services/redis/" class="md-nav__link">
+      <a href="../../../user-guide/additional-services/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Valkey
     
   </span>
   
@@ -4176,11 +4176,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/redis/" class="md-nav__link">
+      <a href="../../../release-notes/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Welkin Redis
+    Welkin Valkey
     
   </span>
   
@@ -4474,6 +4474,15 @@ if(!document.__defineGetter__) {
   <a href="#additionalscrapeconfigs" class="md-nav__link">
     <span class="md-ellipsis">
       additionalScrapeConfigs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devalertmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      devAlertmanager
     </span>
   </a>
   
@@ -4966,6 +4975,13 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 <td style="text-align: left;"><a href="../config-properties-prometheus-config-properties-prometheus-additional-scrape-configs/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/additionalScrapeConfigs">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#devalertmanager">devAlertmanager</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-properties-application-developer-alertmanager/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/devAlertmanager">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="#alertmanagerspec">alertmanagerSpec</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
@@ -5127,8 +5143,27 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>array</code> (<a href="../config-properties-prometheus-config-properties-prometheus-additional-scrape-configs/">Prometheus Additional Scrape Configs</a>)</p>
+<h2 id="devalertmanager">devAlertmanager<a class="headerlink" href="#devalertmanager" title="Permanent link">&para;</a></h2>
+<p>Configuration options for deploying an application developer-specific Alertmanager. Configuration shared with the service cluster alertmanager can be configured via <code>.alertmanagerSpec</code>.</p>
+<p><code>devAlertmanager</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-prometheus-config-properties-application-developer-alertmanager/">Application Developer Alertmanager</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-prometheus-config-properties-application-developer-alertmanager/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/devAlertmanager">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-prometheus-config-properties-application-developer-alertmanager/">Application Developer Alertmanager</a>)</p>
 <h2 id="alertmanagerspec">alertmanagerSpec<a class="headerlink" href="#alertmanagerspec" title="Permanent link">&para;</a></h2>
-<p>Configure service cluster Alertmanager.</p>
+<p>Configure service cluster &amp; workload cluster Alertmanager.</p>
 <p>Alertmanager receives alerts from Prometheus and Thanos and forwards them to the configured notification channel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6051,7 +6086,7 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 <p><code>string[]</code></p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Jun  5 11:49:40 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/40c4bda4ac12baa3806ec262c8d3e7d20e0272b4">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jun 13 07:17:52 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/6dc57a493e2846ad441e6959f5b872635c193658">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

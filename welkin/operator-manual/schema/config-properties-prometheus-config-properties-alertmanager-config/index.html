@@ -1730,11 +1730,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guide/additional-services/redis/" class="md-nav__link">
+      <a href="../../../user-guide/additional-services/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Valkey
     
   </span>
   
@@ -4176,11 +4176,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/redis/" class="md-nav__link">
+      <a href="../../../release-notes/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Welkin Redis
+    Welkin Valkey
     
   </span>
   
@@ -4489,6 +4489,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#tolerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      tolerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#affinity" class="md-nav__link">
     <span class="md-ellipsis">
       affinity
@@ -4527,7 +4536,7 @@ if(!document.__defineGetter__) {
 <p><a href="../config/">Return to the root config schema</a></p>
 <div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec
 </code></pre></div>
-<p>Configure service cluster Alertmanager.</p>
+<p>Configure service cluster &amp; workload cluster Alertmanager.</p>
 <p>Alertmanager receives alerts from Prometheus and Thanos and forwards them to the configured notification channel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4607,6 +4616,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-defs-kubernetes-topology-spread-constraints/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec/properties/topologySpreadConstraints">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#tolerations">tolerations</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-defs-kubernetes-tolerations/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec/properties/tolerations">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#affinity">affinity</a></td>
@@ -4728,6 +4744,26 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p>an array of merged types (<a href="../config-defs-kubernetes-topology-spread-constraints-items/">Details</a>)</p>
+<h2 id="tolerations">tolerations<a class="headerlink" href="#tolerations" title="Permanent link">&para;</a></h2>
+<p>Kubernetes Tolerations</p>
+<p><a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/">Kubernetes taint and toleration</a></p>
+<p><code>tolerations</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: an array of merged types (<a href="../config-defs-kubernetes-tolerations-items/">Details</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-defs-kubernetes-tolerations/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec/properties/tolerations">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p>an array of merged types (<a href="../config-defs-kubernetes-tolerations-items/">Details</a>)</p>
 <h2 id="affinity">affinity<a class="headerlink" href="#affinity" title="Permanent link">&para;</a></h2>
 <p>Affinity is a group of affinity scheduling rules.</p>
 <p><code>affinity</code></p>
@@ -4749,7 +4785,7 @@ if(!document.__defineGetter__) {
 <p><code>object</code> (<a href="../config-defs-affinity/">Affinity</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Jun  5 11:49:40 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/40c4bda4ac12baa3806ec262c8d3e7d20e0272b4">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jun 13 07:17:52 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/6dc57a493e2846ad441e6959f5b872635c193658">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

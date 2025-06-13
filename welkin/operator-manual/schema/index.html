@@ -1734,11 +1734,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/additional-services/redis/" class="md-nav__link">
+      <a href="../../user-guide/additional-services/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Valkey
     
   </span>
   
@@ -4276,11 +4276,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/redis/" class="md-nav__link">
+      <a href="../../release-notes/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Welkin Redis
+    Welkin Valkey
     
   </span>
   
@@ -4673,10 +4673,7 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-alerts-config-properties-alert-runbooks/" title="Configure runbooks for alertsRunbooks can be configured on an alert group level or per individual alert">Alert runbooks</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/alerts/properties/runbookUrls</code></p>
 </li>
 <li>
-<p><a href="config-properties-user-config-properties-alertmanager-config/" title="Configuration for application developer controlled alertmanager">Alertmanager Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/alertmanager</code></p>
-</li>
-<li>
-<p><a href="config-properties-prometheus-config-properties-alertmanager-config/" title="Configure service cluster Alertmanager">Alertmanager Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec</code></p>
+<p><a href="config-properties-prometheus-config-properties-alertmanager-config/" title="Configure service cluster &amp; workload cluster Alertmanager">Alertmanager Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec</code></p>
 </li>
 <li>
 <p><a href="config-properties-prometheus-config-properties-alertmanager-config-properties-alertmanager-storage/" title="Configure persistent storage for Alertmanager">Alertmanager Storage</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/alertmanagerSpec/properties/storage</code></p>
@@ -4698,6 +4695,9 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-external-traffic-policy-properties-allowlist-range/" title="Configure allowlist CIDR ranges for ingresses">Allowlist Range</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/externalTrafficPolicy/properties/whitelistRange</code></p>
+</li>
+<li>
+<p><a href="config-properties-prometheus-config-properties-application-developer-alertmanager/" title="Configuration options for deploying an application developer-specific Alertmanager">Application Developer Alertmanager</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/devAlertmanager</code></p>
 </li>
 <li>
 <p><a href="config-properties-prometheus-config-defs-autoscaled-nodegroup-alerts/" title="Configure whether to split KubeletDownForXm alerts into autoscaled and non-autoscaled nodes groups">Autoscaled NodeGroup Alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/autoscaledNodeGroupAlerts</code></p>
@@ -5055,9 +5055,6 @@ if(!document.__defineGetter__) {
 </li>
 <li>
 <p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-extra-args/" title="Configure extra args to pass to Ingress NGINX Controller">Ingress NGINX Extra Args</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/extraArgs</code></p>
-</li>
-<li>
-<p><a href="config-properties-user-config-properties-alertmanager-config-properties-ingress-for-alertmanager/" title="Ingress configuration for user alertmanager">Ingress for Alertmanager</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/user/properties/alertmanager/properties/ingress</code></p>
 </li>
 <li>
 <p><a href="config-properties-ingress-nginx-controller-config-properties-ingress-nginx-controller-properties-ingress-nginx-additional-config/" title="Configure additional configuration for Ingress-NGINX controller">Ingress-NGINX Additional Config</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/ingressNginx/properties/controller/properties/additionalConfig</code></p>
@@ -6251,7 +6248,7 @@ if(!document.__defineGetter__) {
 <h2 id="version-note">Version Note<a class="headerlink" href="#version-note" title="Permanent link">&para;</a></h2>
 <p>The schemas linked above follow the JSON Schema Spec version: <code>https://json-schema.org/draft/2020-12/schema</code></p>
 <hr />
-<p>Generated Thu Jun  5 11:49:40 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/40c4bda4ac12baa3806ec262c8d3e7d20e0272b4">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jun 13 07:17:52 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/6dc57a493e2846ad441e6959f5b872635c193658">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

@@ -1730,11 +1730,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guide/additional-services/redis/" class="md-nav__link">
+      <a href="../../../user-guide/additional-services/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Valkey
     
   </span>
   
@@ -4176,11 +4176,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/redis/" class="md-nav__link">
+      <a href="../../../release-notes/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Welkin Redis
+    Welkin Valkey
     
   </span>
   
@@ -4470,6 +4470,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#v2auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      v2Auth
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4562,6 +4571,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-s3-backend-config-properties-s3-force-path-style/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/s3/properties/forcePathStyle">Welkin Apps Config</a></td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="#v2auth">v2Auth</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-object-storage-config-properties-s3-backend-config-properties-s3-v2-authentication/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/s3/properties/v2Auth">Welkin Apps Config</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="region">region<a class="headerlink" href="#region" title="Permanent link">&para;</a></h2>
@@ -4625,9 +4641,28 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>boolean</code> (<a href="../config-properties-object-storage-config-properties-s3-backend-config-properties-s3-force-path-style/">S3 Force Path Style</a>)</p>
+<h2 id="v2auth">v2Auth<a class="headerlink" href="#v2auth" title="Permanent link">&para;</a></h2>
+<p>Force the use of v2 authentication, will default to using v4 authentication otherwise.</p>
+<p><code>v2Auth</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-object-storage-config-properties-s3-backend-config-properties-s3-v2-authentication/">S3 v2 authentication</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-object-storage-config-properties-s3-backend-config-properties-s3-v2-authentication/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/objectStorage/properties/s3/properties/v2Auth">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-object-storage-config-properties-s3-backend-config-properties-s3-v2-authentication/">S3 v2 authentication</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Jun  5 11:49:40 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/40c4bda4ac12baa3806ec262c8d3e7d20e0272b4">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jun 13 07:17:52 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/6dc57a493e2846ad441e6959f5b872635c193658">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

@@ -1734,11 +1734,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../user-guide/additional-services/redis/" class="md-nav__link">
+      <a href="../../user-guide/additional-services/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Valkey
     
   </span>
   
@@ -4234,11 +4234,11 @@ if(!document.__defineGetter__) {
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/redis/" class="md-nav__link">
+      <a href="../../release-notes/valkey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Welkin Redis
+    Welkin Valkey
     
   </span>
   
@@ -4541,20 +4541,20 @@ if(!document.__defineGetter__) {
 <p>Ensure the following configuration changes are set in <code>wc-config.yaml</code>:</p>
 <!-- markdownlint-disable MD044 -->
 <ol>
-<li>Ensure <a href="../schema/config-properties-user-config-properties-alertmanager-config/#enabled">user.alertmanager.enabled</a> is <strong>true</strong>.</li>
-<li>Ensure <a href="../schema/config-properties-user-config-properties-alertmanager-config/#ingress">user.alertmanager.ingress.enabled</a> is <strong>false</strong>.</li>
+<li>Ensure <a href="../schema/config-properties-prometheus-config-properties-application-developer-alertmanager/#enabled">prometheus.devAlertmanager.enabled</a> is <strong>true</strong>.</li>
+<li>Ensure <a href="../schema/config-properties-prometheus-config-properties-application-developer-alertmanager/#ingressEnabled">prometheus.devAlertmanager.ingressEnabled</a> is <strong>false</strong>.</li>
 </ol>
 <!-- markdownlint-enable MD044 -->
 
 <p>Then apply Welkin Apps.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Please find below an example taken from <code>wc-config.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">user</span><span class="p">:</span>
-<span class="w">  </span><span class="c1">## User controlled alertmanager configuration.</span>
-<span class="w">  </span><span class="nt">alertmanager</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">prometheus</span><span class="p">:</span>
+<span class="w">  </span><span class="c1">## Application developer controlled alertmanager configuration.</span>
+<span class="w">  </span><span class="nt">devAlertmanager</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="c1">## Create basic-auth protected ingress to alertmanager</span>
-<span class="w">    </span><span class="nt">ingress</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ingressEnabled</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 
