@@ -9,8 +9,8 @@ This is administrator-facing documentation associated with [this user guide](../
 Ensure the following configuration changes are set in `wc-config.yaml`:
 
 <!-- markdownlint-disable MD044 -->
-1. Ensure [user.alertmanager.enabled](schema/config-properties-user-config-properties-alertmanager-config.md#enabled) is **true**.
-1. Ensure [user.alertmanager.ingress.enabled](schema/config-properties-user-config-properties-alertmanager-config.md#ingress) is **false**.
+1. Ensure [prometheus.devAlertmanager.enabled](schema/config-properties-user-config-properties-alertmanager-config.md#enabled) is **true**.
+1. Ensure [prometheus.devAlertmanager.ingressEnabled](schema/config-properties-user-config-properties-alertmanager-config.md#ingress) is **false**.
 <!-- markdownlint-enable MD044 -->
 
 Then apply Welkin Apps.
@@ -20,11 +20,10 @@ Then apply Welkin Apps.
 Please find below an example taken from `wc-config.yaml`:
 
 ```yaml
-user:
+prometheus:
   ## User controlled alertmanager configuration.
-  alertmanager:
+  devAlertmanager:
     enabled: true
     ## Create basic-auth protected ingress to alertmanager
-    ingress:
-      enabled: false
+    ingressEnabled: false
 ```
