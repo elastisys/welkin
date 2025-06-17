@@ -21,10 +21,9 @@ Please find below an example taken from `wc-config.yaml`:
 
 ```yaml
 prometheus:
-  ## Application developer controlled alertmanager configuration.
+ ## Application developer controlled alertmanager configuration.
   devAlertmanager:
     enabled: true
     ## Create basic-auth protected ingress to alertmanager
-    ingressEnabled:
-      enabled: false
+    ingressEnabled: false
 ```
