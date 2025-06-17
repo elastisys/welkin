@@ -29,6 +29,7 @@ Vitec
 Yopass
 Zalando
 UpCloud
+Sigstore
 
 # Project Names
 Alertmanager
@@ -74,6 +75,7 @@ Thanos
 timesyncd
 Tekton
 Trivy
+Valkey
 Velero
 
 # General technical terms

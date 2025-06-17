@@ -4,7 +4,7 @@ search:
 ---
 # RabbitMQ®
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     You can order Managed RabbitMQ® by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/). Here are the highlights:
 

@@ -30,7 +30,7 @@ $ kubectl -n <namespace> get events
 ...
 ```
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     These restrictions are put in place to protect **your** data. They are meant to help you comply with GDPR. For more details, please read our Terms of Service, specifically:
 
@@ -169,7 +169,7 @@ Certain applications may need more privileges than what is allowed from the rest
 To do so application developers should put together a Pod Security Policy to be evaluated and accepted by the platform administrator, which then can allow access to these privileges in a certain namespace for resources with a certain label.
 The format should be as follows:
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     Please file a [service ticket](https://elastisys.atlassian.net/servicedesk/) and we will review and discuss your request for increased privileges. We will try to find a solution that works for you, but there is no guarantee that your request will be approved.
 

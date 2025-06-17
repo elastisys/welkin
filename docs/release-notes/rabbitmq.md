@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v4.0.6-ck8s3](#v406-ck8s3) - 2025-05-20
 - [v4.0.6-ck8s2](#v406-ck8s2) - 2025-04-25
 - [v4.0.6-ck8s1](#v406-ck8s1) - 2025-02-28
 - [v3.13.7-ck8s1](#v3137-ck8s1) - 2024-12-09
@@ -18,6 +19,25 @@
 !!!note
 
     These are only the user-facing changes.
+
+### v4.0.6-ck8s3
+
+Released 2025-05-20
+
+!!! warning "Application Developer Notice(s)"
+
+    - Allow applications to use the HTTP(S) management API from application developer namespaces.
+    - Network policies for external traffic now properly adapt based on exposed ports.
+
+#### Improvement(s)
+
+- deploy: Add Network Policy enabled flag, enabled by default
+- deploy: Allow internal management from application developer namespaces
+
+#### Other(s)
+
+- bug - deploy: Rework internal and external Network Policy rules
+- bug - scripts: Handle CNAME records for object storage hosts
 
 ### v4.0.6-ck8s2
 

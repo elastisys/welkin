@@ -10,7 +10,7 @@ tags:
 
 # Argo™ CD (preview)
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! welkin-managed "For Welkin Managed Customers"
 
     You can order Managed Argo™ CD by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/). Here are the highlights:
 
@@ -448,7 +448,7 @@ The reason for this choice is that, according to the [Welkin mission and vision]
 
 Argo CD is not allowed to manage its own namespace. This means that features such as [Apps of Apps](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern) does not work by default. Read more about the decision [here](../../adr/0044-argocd-managing-its-own-namespace.md).
 
-!!! elastisys "Apps of Apps (preview)"
+!!! welkin-managed "Apps of Apps (preview)"
 
     This is a preview feature. For more information, please read [ToS 9.1 Preview Features](https://elastisys.com/legal/terms-of-service/#91-preview-features).
 

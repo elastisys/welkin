@@ -129,6 +129,7 @@ The remainder of this page contains open questions that you should ask your Infr
         1. If not, do you have a private NTP server?
     1. Do you allow ACME (TCP port 80) for automated certificate provisioning via [Let's Encrypt](https://letsencrypt.org/)?
         1. If not, how will you provision certificates?
+    1. Do you periodically scan your IP ranges, e.g., via [ANTS](https://www.cert.se/rad-och-stod/ants/)?
 
 ## Organizational capabilities
 
@@ -173,7 +174,7 @@ The remainder of this page contains open questions that you should ask your Infr
     1. Does your colocation provider provide additional services beyond physical facilities as well as electricity and Internet?
 1. When did you perform the last penetration test? 1. Can you share anything about the major findings and how you resolved them?
 
-!!! elastisys-self-managed "For Elastisys Self-Managed Customers"
+!!! welkin-enterprise "For Welkin Enterprise Customers"
 
     Feel free to skip the questions below.
     They are designed for our [Managed Service](https://elastisys.com/managed-services/) and might not be relevant for you.

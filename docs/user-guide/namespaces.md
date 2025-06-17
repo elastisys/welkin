@@ -52,22 +52,6 @@ status:
 
 If the status is `Ok` then the subnamespace is ready to go.
 
-!!!tip
-
-    HNC also comes with the [HNS `kubectl` plugin](https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/docs/user-guide/how-to.md#prepare-to-use-hierarchical-namespaces-as-a-user).
-
-    Using this plugin creating subnamespaces is as easy as:
-    ```bash
-    kubectl hns create -n <parent-namespace> <descendant-namespace>
-    ```
-
-    And provides more detailed information using:
-    ```bash
-    kubectl hns describe <namespace>
-
-    kubectl hns tree <namespace>
-    ```
-
 If you decide a subnamespace is no longer needed, then you can't delete it using `kubectl delete namespace <descendant-namespace>`. As you will get the following error:
 
 > Error from server (Forbidden): namespaces `<descendant-namespace>` is forbidden: User `<your user>` cannot delete resource "namespaces" in API group "" in the namespace `<descendant-namespace>`: RBAC: [clusterrole.rbac.authorization.k8s.io "user-crds" not found, clusterrole.rbac.authorization.k8s.io "user-crds-resourcename-limit" not found]
@@ -76,8 +60,6 @@ Instead you will have to delete it using either of these commands:
 
 ```bash
 kubectl delete subns -n <parent-namespace> <descendant-namespace>
-# or
-kubectl hns delete -n <parent-namespace> <descendant-namespace> # with the plugin installed
 ```
 
 ## Resource Propagation
