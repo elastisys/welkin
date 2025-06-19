@@ -2783,6 +2783,21 @@ if(!document.__defineGetter__) {
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Restore from off-site backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-pvpvc-storage-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing PV/PVC Storage Classes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4888,6 +4903,21 @@ if(!document.__defineGetter__) {
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Restore from off-site backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-pvpvc-storage-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing PV/PVC Storage Classes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -5464,6 +5494,31 @@ kubectl<span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> 
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> </span>delete<span class="w"> </span>secret<span class="w"> </span>velero-backup
 ./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> </span>delete<span class="w"> </span>backups.velero.io<span class="w"> </span>--all
 ./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> </span>delete<span class="w"> </span>backupstoragelocations.velero.io<span class="w"> </span>backup
+</code></pre></div>
+<h4 id="changing-pvpvc-storage-classes">Changing PV/PVC Storage Classes<a class="headerlink" href="#changing-pvpvc-storage-classes" title="Permanent link">&para;</a></h4>
+<p>Velero can change the storage class of persistent volumes and persistent volume claims during restores. To configure a storage class mapping, create a ConfigMap in the Velero namespace:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># any name can be used; Velero uses the labels (below)</span>
+<span class="w">  </span><span class="c1"># to identify it rather than the name</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change-storage-class-config</span>
+<span class="w">  </span><span class="c1"># must be in the velero namespace</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">velero</span>
+<span class="w">  </span><span class="c1"># the below labels should be used verbatim in your</span>
+<span class="w">  </span><span class="c1"># ConfigMap.</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># this value-less label identifies the ConfigMap as</span>
+<span class="w">    </span><span class="c1"># config for a plugin (i.e. the built-in restore item action plugin)</span>
+<span class="w">    </span><span class="nt">velero.io/plugin-config</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">    </span><span class="c1"># this label identifies the name and kind of plugin</span>
+<span class="w">    </span><span class="c1"># that this ConfigMap is for.</span>
+<span class="w">    </span><span class="nt">velero.io/change-storage-class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RestoreItemAction</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># add 1+ key-value pairs here, where the key is the old</span>
+<span class="w">  </span><span class="c1"># storage class name and the value is the new storage</span>
+<span class="w">  </span><span class="c1"># class name.</span>
+<span class="w">  </span><span class="nt">&lt;old-storage-class&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;new-storage-class&gt;</span>
 </code></pre></div>
 <h2 id="grafana">Grafana<a class="headerlink" href="#grafana" title="Permanent link">&para;</a></h2>
 <p>This section refers to the Management Cluster and specifically to the user Grafana, not the ops Grafana.</p>
