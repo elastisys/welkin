@@ -122,7 +122,7 @@ cat <<EOF | psql -d postgres -h 127.0.0.1 -U $PGUSER \
     --set=APP_USERNAME=$APP_USERNAME \
     --set=APP_PASSWORD=$APP_PASSWORD
 create database :APP_DATABASE;
-create user :APP_USERNAME with encrypted password ':APP_PASSWORD';
+create user :APP_USERNAME with encrypted password :'APP_PASSWORD';
 grant all privileges on database :APP_DATABASE to :APP_USERNAME;
 EOF
 ```
