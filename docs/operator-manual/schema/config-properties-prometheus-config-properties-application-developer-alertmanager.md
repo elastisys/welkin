@@ -6,6 +6,6 @@
 >
 > If you want to see this locally check out [the contribution guide](https://github.com/elastisys/welkin/blob/main/CONTRIBUTING.md)!
 
-## enabled
+## `enabled`
 
-## ingressEnabled
+## `ingressEnabled`
