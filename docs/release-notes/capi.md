@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.7.0](#v070) - 2025-06-23
 - [v0.6.2](#v062) - 2025-05-21
 - [v0.6.1](#v061) - 2025-04-24
 - [v0.6.0](#v060) - 2025-04-04
@@ -14,6 +15,24 @@
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.7.0
+
+Released 2025-06-23
+
+### Feature(s)
+
+- Added support to configure for safespring
+- Enabled node group metrics in Cluster Autoscaler
+
+### Improvement(s)
+
+- Added support for node labels and taints in init configuration
+- Azure: added configuration options to set disk type and size
+
+### Other(s)
+
+- Upgraded openstack-cloud-controller-manager to v2.32.0
 
 ## v0.6.2
 
