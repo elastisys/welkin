@@ -23,11 +23,11 @@ Released 2025-06-23
 ### Feature(s)
 
 - Added Safespring as a supported cloud provider
-- Enabled node group metrics in Cluster Autoscaler
+- Enabled Node group metrics in Cluster Autoscaler
 
 ### Improvement(s)
 
-- Added support for node labels and taints in init configuration
+- Added support for Node labels and taints in init configuration
 - Azure: added configuration options to set disk type and size
 
 ### Other(s)
