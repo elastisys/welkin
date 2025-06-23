@@ -22,7 +22,7 @@ Released 2025-06-23
 
 ### Feature(s)
 
-- Added Safespring as a supported cloud provider
+- Added Safespring as a supported infrastructure provider
 - Enabled Node group metrics in Cluster Autoscaler
 
 ### Improvement(s)
