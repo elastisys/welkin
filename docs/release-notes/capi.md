@@ -22,17 +22,33 @@ Released 2025-06-23
 
 ### Feature(s)
 
-- Added Safespring as a supported infrastructure provider
-- Enabled Node group metrics in Cluster Autoscaler
+- Added templating for using local volumes
+- Opened SSH access to Nodes
+- Added OpenStack floatingIP pool for stable egress
+- Added ability to configure custom NTP servers
+- Implemented Kubespray -> ClusterAPI NTP settings migration
 
 ### Improvement(s)
 
-- Added support for Node labels and taints in init configuration
+- Upgraded cert-manager chart to v1.17.1
+- Reconfigured the containerd registry mirror authentication method
+- Implemented marketplace solution for Azure
+- Unified registry mirror configuration for OpenStack and Azure
+- Upgraded to CAPI v1.10 and CAPO v1.12
+- Allowed skipping health monitor creation for OpenStack Load Balancers
+- Added support for migrating local volumes from Kubespray to capi
+- Added default NTP servers
 - Azure: added configuration options to set disk type and size
 
 ### Other(s)
 
+- Removed all internal references from configuration and docs
+- Cleanup: purged all references to yq3
+- Cleanup: exposed affinity configuration for the local volume provisioner
+- Docs: added DR section for broken API server load balancer
 - Upgraded openstack-cloud-controller-manager to v2.32.0
+- Upgraded openstack-cinder-csi to v2.32.0
+- Fix: labeled CoreDNS PDB Helm release with type=application
 
 ## v0.6.2
 
