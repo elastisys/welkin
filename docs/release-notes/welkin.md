@@ -94,22 +94,22 @@ Released 2025-06-25
 ### Feature(s)
 
 - Incremental version checks during migration
-- Added optional parameters to opensearch
-  - Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
+- Added optional parameters to OpenSearch
+- Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
 - Centralized container image configuration
 
 ### Improvement(s)
 
-- alertmanager rework
+- Alertmanager rework
 - change enableAnnotationValidations to default
-- Ensure that the node-group label is set on all nodes
+- Ensure that the Node-group label is set on all Nodes
 - apps sc: make disk performance alerts less sensitive
-- Increase thanos distributor replicas
+- Increase Thanos distributor replicas
 
 ### Other(s)
 
-- Fix logic for disabled Opensearch snapshots
-- Fix node label check
+- Fix logic for disabled OpenSearch snapshots
+- Fix Node label check
 
 ## v0.46.0
 
