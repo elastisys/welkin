@@ -4,7 +4,7 @@ search:
 ---
 # PgBouncer
 
-!!! elastisys "For Elastisys Managed Services Customers"
+!!! Elastisys "For Elastisys Managed Services Customers"
 
     Managed PgBouncer is an addition to the Managed PostgreSQL® offering.
     You can request Managed PgBouncer without any additional cost by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
