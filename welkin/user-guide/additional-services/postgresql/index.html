@@ -19,7 +19,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../timescaledb/">
+        <link rel="next" href="../pgbouncer/">
       
       
       <link rel="icon" href="https://elastisys.io/welkin/img/favicon.ico">
@@ -1695,6 +1695,44 @@ if(!document.__defineGetter__) {
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PostgreSQL
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            PostgreSQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -1787,6 +1825,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection pooling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#follow-the-go-live-checklist" class="md-nav__link">
     <span class="md-ellipsis">
       Follow the Go-Live Checklist
@@ -1816,6 +1863,36 @@ if(!document.__defineGetter__) {
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgbouncer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PgBouncer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -4610,6 +4687,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection pooling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#follow-the-go-live-checklist" class="md-nav__link">
     <span class="md-ellipsis">
       Follow the Go-Live Checklist
@@ -4740,6 +4826,7 @@ The Secret has the following shape:</p>
 <p class="admonition-title">Important</p>
 <p>Do not configure your application with the PostgreSQL admin username and password. Since the application will get too much permission, this will likely violate your access control policy.</p>
 </div>
+<!-- markdownlint-disable MD028 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If you change the password for $PGUSER, you are responsible for keeping track of the new password.</p>
@@ -4790,8 +4877,8 @@ kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Although most client libraries follow the <code>libpq</code> definition of these environment variables, some do not, and this will require changes to the application Secret.</p>
-<p>Notably <a href="https://github.com/brianc/node-postgres"><code>node-postgres</code></a> does not currently do so for <code>PGSSLMODE</code>.
+<p>Although most client libraries follow the <code>libpq</code> definition of these environment variables, some do not, and this will require changes to the application Secret.
+Notably <a href="https://github.com/brianc/node-postgres"><code>node-postgres</code></a> does not currently do so for <code>PGSSLMODE</code>.
 When this variable is set to <code>require</code>, it will do a full verification instead, requiring access to the PostgreSQL certificates to allow a connection.
 To get the intended mode for <code>require</code> set the variable to <code>no-verify</code> instead.</p>
 </div>
@@ -4801,6 +4888,8 @@ To get the intended mode for <code>require</code> set the variable to <code>no-v
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#create-a-pod-that-has-access-to-the-secret-data-through-a-volume">Create a Pod that has access to the secret data through a Volume</a></li>
 <li><a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#define-container-environment-variables-using-secret-data">Define container environment variables using Secret data</a></li>
 </ul>
+<h2 id="connection-pooling">Connection pooling<a class="headerlink" href="#connection-pooling" title="Permanent link">&para;</a></h2>
+<p>Connection pooling can be enabled without any additional cost via <a href="../pgbouncer/">Managed PgBouncer</a>.</p>
 <!--postgresql-setup-end-->
 
 <h2 id="follow-the-go-live-checklist">Follow the Go-Live Checklist<a class="headerlink" href="#follow-the-go-live-checklist" title="Permanent link">&para;</a></h2>
@@ -4914,13 +5003,13 @@ Before going into production, don't forget to go through the <a href="../../go-l
         
         
           
-          <a href="../timescaledb/" class="md-footer__link md-footer__link--next" aria-label="Next: TimescaleDB">
+          <a href="../pgbouncer/" class="md-footer__link md-footer__link--next" aria-label="Next: PgBouncer">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                TimescaleDB
+                PgBouncer
               </div>
             </div>
             <div class="md-footer__button md-icon">
