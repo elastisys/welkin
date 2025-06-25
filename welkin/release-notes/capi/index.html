@@ -5158,17 +5158,33 @@ if(!document.__defineGetter__) {
 <p>Released 2025-06-23</p>
 <h3 id="features">Feature(s)<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Added Safespring as a supported infrastructure provider</li>
-<li>Enabled Node group metrics in Cluster Autoscaler</li>
+<li>Added templating for using local volumes</li>
+<li>Opened SSH access to Nodes</li>
+<li>Added OpenStack floatingIP pool for stable egress</li>
+<li>Added ability to configure custom NTP servers</li>
+<li>Implemented Kubespray -&gt; ClusterAPI NTP settings migration</li>
 </ul>
 <h3 id="improvements">Improvement(s)<a class="headerlink" href="#improvements" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Added support for Node labels and taints in init configuration</li>
+<li>Upgraded cert-manager chart to v1.17.1</li>
+<li>Reconfigured the containerd registry mirror authentication method</li>
+<li>Implemented marketplace solution for Azure</li>
+<li>Unified registry mirror configuration for OpenStack and Azure</li>
+<li>Upgraded to CAPI v1.10 and CAPO v1.12</li>
+<li>Allowed skipping health monitor creation for OpenStack Load Balancers</li>
+<li>Added support for migrating local volumes from Kubespray to capi</li>
+<li>Added default NTP servers</li>
 <li>Azure: added configuration options to set disk type and size</li>
 </ul>
 <h3 id="others">Other(s)<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
 <ul>
+<li>Removed all internal references from configuration and docs</li>
+<li>Cleanup: purged all references to yq3</li>
+<li>Cleanup: exposed affinity configuration for the local volume provisioner</li>
+<li>Docs: added DR section for broken API server load balancer</li>
 <li>Upgraded openstack-cloud-controller-manager to v2.32.0</li>
+<li>Upgraded openstack-cinder-csi to v2.32.0</li>
+<li>Fix: labeled CoreDNS PDB Helm release with type=application</li>
 </ul>
 <h2 id="v062">v0.6.2<a class="headerlink" href="#v062" title="Permanent link">&para;</a></h2>
 <p>Released 2025-05-21</p>
