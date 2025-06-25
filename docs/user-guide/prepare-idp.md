@@ -43,20 +43,20 @@ This page show what information you need to send to Platform Administrators and 
 1. Under Supported account types pick **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)**.
 1. Under **Redirect URI** select **web** and insert the Dex URL that Platform Administrators provided. This is generally `https://dex.$DOMAIN/callback`.
     If unsure, ask your Platform Administrators.
-1. Go to **Overview** and note down the **application ID**.
+1. Go to **Overview** and note down the **Application (client) ID**.
 1. Create a secret by going to **Certificates & secrets**.
-1. Select the tab **Client secret** and click **New client secret**.
+1. Select the tab **Client secrets** and click **New client secret**.
 1. Set **expiry date** to **24 months**.
-1. For improved security, navigate to **Overview** and note down **the tenant ID**. This limits who can authenticate to your Welkin environment.
+1. For improved security, navigate to **Overview** and note down the **Directory (tenant) ID**. This limits who can authenticate to your Welkin environment.
 1. Decide the **name of the Microsoft Entra ID group** that should have admin privileges in the environment.
 1. Securely send, e.g., via [YoPass](https://yopass.elastisys.com), the following information to your Platform Administrators:
     <!-- markdownlint-enable ol-prefix -->
     <!-- markdownlint-enable list-marker-space -->
 
-    - tenant ID;
-    - application ID;
-    - client secret;
-    - admin group.
+    - Directory (tenant) ID;
+    - Application (client) ID;
+    - Client secret;
+    - Admin group name.
 
 ### Further Reading
 
