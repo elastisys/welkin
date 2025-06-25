@@ -83,12 +83,9 @@
 Released 2025-06-25
 <!-- -->
 > [!IMPORTANT]
-> **Platform Administrator Notice(s)**
+> **Application Developer Notice(s)**
 >
-> - There are now safeguards in place to ensure `ck8s upgrade prepare` and `ck8s upgrade apply` are run in the correct order, with the same config, and completed before using `ck8s apply` again.<br>There's also a new `ck8s version` command that reports the version of apps in the config and cluster(s).
-> - Platform administrators can now configure the session timeout for OpenSearch Dashboards users by optionally setting the following keys under `opensearch.dashboards` in `sc-config.yaml`:<br>`cookieTtl`: Session cookie time-to-live in milliseconds (OpenSearch Dashboards defaults to 3600000 (1 hour)  if unset).<br>`sessionTtl`: Session time-to-live in milliseconds (OpenSearch Dashboards defaults to 3600000 (1 hour)  if unset).<br>`sessionKeepalive`: Boolean (`true`/`false`) to control if user activity extends the session (OpenSearch Dashboards defaults to `true` if unset).<br>If these keys are not present in `sc-config.yaml`, the generated configuration will omit them, and OpenSearch Dashboards will use its built-in default values.
-> - The conditional configuration validation for Ingress-NGINX is now within the schema rather than done through conditional set-me's.
-> - `user-Alertmanager` chart has been removed.
+> - The configuration of the user alertmanager secret has been updated. It is now managed via the `alertmanager-kube-prometheus-stack-alertmanager` secret.
 
 ## Release highlights
 
