@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.47.0](#v0470) - 2025-06-25
 - [v0.46.0](#v0460) - 2025-05-15
 - [v0.45.1](#v0451) - 2025-03-25
 - [v0.45.0](#v0450) - 2025-03-21
@@ -76,6 +77,39 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.47.0
+
+Released 2025-06-25
+
+!!! warning "Application Developer Notice(s)"
+
+    - The configuration of the user alertmanager secret has been updated. It is now managed via the `alertmanager-kube-prometheus-stack-alertmanager` secret.
+
+## Release highlights
+
+- Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
+- The `user-Alertmanager` chart has been removed. devAlertmanager is now managed by the `kube-prometheus-stack` chart via the new `prometheus.devAlertmanager` configuration options.
+
+### Feature(s)
+
+- Incremental version checks during migration
+- Added optional parameters to opensearch
+  - Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
+- Centralized container image configuration
+
+### Improvement(s)
+
+- alertmanager rework
+- change enableAnnotationValidations to default
+- Ensure that the node-group label is set on all nodes
+- apps sc: make disk performance alerts less sensitive
+- Increase thanos distributor replicas
+
+### Other(s)
+
+- Fix logic for disabled Opensearch snapshots
+- Fix node label check
 
 ## v0.46.0
 
