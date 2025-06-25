@@ -13,7 +13,7 @@
         <meta name="author" content="Elastisys AB">
       
       
-        <link rel="canonical" href="https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/">
+        <link rel="canonical" href="https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-kyverno-stack-image-configuration/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>ingress-nginx-chart image configuration Schema - Elastisys Welkin®</title>
+        <title>kyverno stack image configuration Schema - Elastisys Welkin®</title>
       
     
     
@@ -126,12 +126,12 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="ingress-nginx-chart image configuration Schema - Elastisys Welkin®" >
+        <meta  property="og:title"  content="kyverno stack image configuration Schema - Elastisys Welkin®" >
       
         <meta  property="og:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
       
-        <meta  property="og:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration.png" >
+        <meta  property="og:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-images-configuration-properties-kyverno-stack-image-configuration.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -139,16 +139,16 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/" >
+        <meta  property="og:url"  content="https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-kyverno-stack-image-configuration/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="ingress-nginx-chart image configuration Schema - Elastisys Welkin®" >
+        <meta  name="twitter:title"  content="kyverno stack image configuration Schema - Elastisys Welkin®" >
       
         <meta  name="twitter:description"  content="Documentation for Welkin, the Kubernetes platform for software critical to our society
 " >
       
-        <meta  name="twitter:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration.png" >
+        <meta  name="twitter:image"  content="https://elastisys.io/welkin/assets/images/social/operator-manual/schema/config-properties-images-configuration-properties-kyverno-stack-image-configuration.png" >
       
     
     
@@ -223,7 +223,7 @@ if(!document.__defineGetter__) {
     <div data-md-component="skip">
       
         
-        <a href="#ingress-nginx-chart-image-configuration-schema" class="md-skip">
+        <a href="#kyverno-stack-image-configuration-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -297,7 +297,7 @@ if(!document.__defineGetter__) {
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ingress-nginx-chart image configuration Schema
+              kyverno stack image configuration Schema
             
           </span>
         </div>
@@ -4510,36 +4510,36 @@ if(!document.__defineGetter__) {
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
+  <a href="#main" class="md-nav__link">
     <span class="md-ellipsis">
-      controller
+      main
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#controllerchroot" class="md-nav__link">
+  <a href="#init" class="md-nav__link">
     <span class="md-ellipsis">
-      controllerChroot
+      init
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaultbackend" class="md-nav__link">
+  <a href="#webhookscleanup" class="md-nav__link">
     <span class="md-ellipsis">
-      defaultBackend
+      webhooksCleanup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#admissionwebhookspatch" class="md-nav__link">
+  <a href="#crdsmigration" class="md-nav__link">
     <span class="md-ellipsis">
-      admissionWebhooksPatch
+      crdsMigration
     </span>
   </a>
   
@@ -4567,15 +4567,15 @@ if(!document.__defineGetter__) {
   
 
 
-<h1 id="ingress-nginx-chart-image-configuration-schema">ingress-nginx-chart image configuration Schema<a class="headerlink" href="#ingress-nginx-chart-image-configuration-schema" title="Permanent link">&para;</a></h1>
+<h1 id="kyverno-stack-image-configuration-schema">kyverno stack image configuration Schema<a class="headerlink" href="#kyverno-stack-image-configuration-schema" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is auto-generated documentation from a JSON schema that is under construction, this will improve over time.</p>
 </div>
 <p><a href="../config/">Return to the root config schema</a></p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx
+<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno
 </code></pre></div>
-<p>ingress-nginx-chart image configuration</p>
+<p>kyverno stack image configuration</p>
 <table>
 <thead>
 <tr>
@@ -4603,7 +4603,7 @@ if(!document.__defineGetter__) {
 </tbody>
 </table>
 <p><strong>TYPE</strong>:</p>
-<p><code>object</code> (<a href="./">ingress-nginx-chart image configuration</a>)</p>
+<p><code>object</code> (<a href="./">kyverno stack image configuration</a>)</p>
 <p><strong>PROPERTIES</strong>:</p>
 <table>
 <thead>
@@ -4617,37 +4617,37 @@ if(!document.__defineGetter__) {
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="#controller">controller</a></td>
+<td style="text-align: left;"><a href="#main">main</a></td>
 <td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/controller">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/main">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#controllerchroot">controllerChroot</a></td>
+<td style="text-align: left;"><a href="#init">init</a></td>
 <td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/controllerChroot">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/init">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#defaultbackend">defaultBackend</a></td>
+<td style="text-align: left;"><a href="#webhookscleanup">webhooksCleanup</a></td>
 <td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/defaultBackend">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/webhooksCleanup">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#admissionwebhookspatch">admissionWebhooksPatch</a></td>
+<td style="text-align: left;"><a href="#crdsmigration">crdsMigration</a></td>
 <td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/admissionWebhooksPatch">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/crdsMigration">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="controller">controller<a class="headerlink" href="#controller" title="Permanent link">&para;</a></h2>
-<p><code>controller</code></p>
+<h2 id="main">main<a class="headerlink" href="#main" title="Permanent link">&para;</a></h2>
+<p><code>main</code></p>
 <ul>
 <li>
 <p>is optional</p>
@@ -4659,7 +4659,7 @@ if(!document.__defineGetter__) {
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/controller">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/main">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
@@ -4668,8 +4668,8 @@ if(!document.__defineGetter__) {
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">&gt;-</span>
 <span class="w">  </span><span class="no">registry.k8s.io/ingress-nginx/controller-chroot:v1.12.1@sha256:90155c86548e0bb95b3abf1971cd687d8f5d43f340cfca0ad3484e2b8351096e</span>
 </code></pre></div>
-<h2 id="controllerchroot">controllerChroot<a class="headerlink" href="#controllerchroot" title="Permanent link">&para;</a></h2>
-<p><code>controllerChroot</code></p>
+<h2 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h2>
+<p><code>init</code></p>
 <ul>
 <li>
 <p>is optional</p>
@@ -4681,7 +4681,7 @@ if(!document.__defineGetter__) {
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/controllerChroot">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/init">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
@@ -4690,8 +4690,8 @@ if(!document.__defineGetter__) {
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">&gt;-</span>
 <span class="w">  </span><span class="no">registry.k8s.io/ingress-nginx/controller-chroot:v1.12.1@sha256:90155c86548e0bb95b3abf1971cd687d8f5d43f340cfca0ad3484e2b8351096e</span>
 </code></pre></div>
-<h2 id="defaultbackend">defaultBackend<a class="headerlink" href="#defaultbackend" title="Permanent link">&para;</a></h2>
-<p><code>defaultBackend</code></p>
+<h2 id="webhookscleanup">webhooksCleanup<a class="headerlink" href="#webhookscleanup" title="Permanent link">&para;</a></h2>
+<p><code>webhooksCleanup</code></p>
 <ul>
 <li>
 <p>is optional</p>
@@ -4703,7 +4703,7 @@ if(!document.__defineGetter__) {
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/defaultBackend">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/webhooksCleanup">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
@@ -4712,8 +4712,8 @@ if(!document.__defineGetter__) {
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">&gt;-</span>
 <span class="w">  </span><span class="no">registry.k8s.io/ingress-nginx/controller-chroot:v1.12.1@sha256:90155c86548e0bb95b3abf1971cd687d8f5d43f340cfca0ad3484e2b8351096e</span>
 </code></pre></div>
-<h2 id="admissionwebhookspatch">admissionWebhooksPatch<a class="headerlink" href="#admissionwebhookspatch" title="Permanent link">&para;</a></h2>
-<p><code>admissionWebhooksPatch</code></p>
+<h2 id="crdsmigration">crdsMigration<a class="headerlink" href="#crdsmigration" title="Permanent link">&para;</a></h2>
+<p><code>crdsMigration</code></p>
 <ul>
 <li>
 <p>is optional</p>
@@ -4725,7 +4725,7 @@ if(!document.__defineGetter__) {
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/ingressNginx/properties/admissionWebhooksPatch">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-defs-uri-for-a-container-image/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/images/properties/kyverno/properties/crdsMigration">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
@@ -4736,7 +4736,7 @@ if(!document.__defineGetter__) {
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Jun 25 07:50:40 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/ec969e028fb5a8127d461a320c10910ef1498788">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Jun 25 11:51:38 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/dcd76256a5c6caccd0426a78b1e7c39a5e5dec06">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

@@ -3685,6 +3685,34 @@
          <lastmod>2025-06-25</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-calico-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-cert-manager-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-dex-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-external-dns-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-falco-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-fluentd-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-gatekeeper-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-global-image-settings-properties-global-image-registry-if-properties-enabled/</loc>
          <lastmod>2025-06-25</lastmod>
     </url>
@@ -3745,7 +3773,55 @@
          <lastmod>2025-06-25</lastmod>
     </url>
     <url>
-         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/</loc>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-gpu-operator-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-harbor-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-hnc-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-ingress-nginx-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-kured-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-kyverno-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-monitoring-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-node-local-dns-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-opensearch-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-rclone-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-tekton-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-thanos-stack-image-configuration/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-images-configuration-properties-velero-stack-image-configuration/</loc>
          <lastmod>2025-06-25</lastmod>
     </url>
     <url>
