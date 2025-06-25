@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.47.0](#v0470) - 2025-06-25
 - [v0.46.0](#v0460) - 2025-05-15
 - [v0.45.1](#v0451) - 2025-03-25
 - [v0.45.0](#v0450) - 2025-03-21
@@ -76,6 +77,45 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+# v0.47.0
+
+Released 2025-06-25
+<!-- -->
+> [!IMPORTANT]
+> **Platform Administrator Notice(s)**
+>
+> - There are now safeguards in place to ensure `ck8s upgrade prepare` and `ck8s upgrade apply` are run in the correct order, with the same config, and completed before using `ck8s apply` again.<br>There's also a new `ck8s version` command that reports the version of apps in the config and cluster(s).
+> - Platform administrators can now configure the session timeout for OpenSearch Dashboards users by optionally setting the following keys under `opensearch.dashboards` in `sc-config.yaml`:<br>`cookieTtl`: Session cookie time-to-live in milliseconds (OpenSearch Dashboards defaults to 3600000 (1 hour)  if unset).<br>`sessionTtl`: Session time-to-live in milliseconds (OpenSearch Dashboards defaults to 3600000 (1 hour)  if unset).<br>`sessionKeepalive`: Boolean (`true`/`false`) to control if user activity extends the session (OpenSearch Dashboards defaults to `true` if unset).<br>If these keys are not present in `sc-config.yaml`, the generated configuration will omit them, and OpenSearch Dashboards will use its built-in default values.
+> - The conditional configuration validation for Ingress-NGINX is now within the schema rather than done through conditional set-me's.
+> - `user-Alertmanager` chart has been removed.
+
+## Release highlights
+
+- Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
+- The `user-Alertmanager` chart has been removed. devAlertmanager is now managed by the `kube-prometheus-stack` chart via the new `prometheus.devAlertmanager` configuration options.
+
+## Changes by kind
+
+### Feature(s)
+
+- Incremental version checks during migration
+- Added optional parameters to opensearch
+  - Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
+- Centralized container image configuration
+
+### Improvement(s)
+
+- alertmanager rework
+- change enableAnnotationValidations to default
+- Ensure that the node-group label is set on all nodes
+- apps sc: make disk performance alerts less sensitive
+- Increase thanos distributor replicas
+
+### Other(s)
+
+- Fix logic for disabled Opensearch snapshots
+- Fix node label check
 
 ## v0.46.0
 
