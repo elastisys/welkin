@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.47.0](#v0470) - 2025-06-25
 - [v0.46.0](#v0460) - 2025-05-15
 - [v0.45.1](#v0451) - 2025-03-25
 - [v0.45.0](#v0450) - 2025-03-21
@@ -76,6 +77,24 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.47.0
+
+Released 2025-06-25
+
+!!! warning "Application Developer Notice(s)"
+
+    - Alertmanager has been reworked.
+       -  The configuration of the user alertmanager secret has been updated. It is now managed via the `alertmanager-kube-prometheus-stack-alertmanager` secret.
+
+### Feature(s)
+
+- Added configuration options to control the user session timeout for OpenSearch Dashboards. These can be adjusted by the administrator.
+- Centralized container image configuration
+
+### Improvement(s)
+
+- Improved monitoring stability by inreasing Thanos distributor replicas
 
 ## v0.46.0
 
