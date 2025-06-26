@@ -86,7 +86,7 @@ Released 2025-06-25
 
     - Alertmanager has been reworked.
        -  The configuration of the user alertmanager secret has been updated. It is now managed via the `alertmanager-kube-prometheus-stack-alertmanager` secret.
-    
+
 ### Feature(s)
 
 - Added configuration options to control the user session timeout for OpenSearch Dashboards. These can be adjusted by the administrator.
