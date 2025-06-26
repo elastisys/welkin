@@ -84,32 +84,17 @@ Released 2025-06-25
 
 !!! warning "Application Developer Notice(s)"
 
-    - The configuration of the user alertmanager secret has been updated. It is now managed via the `alertmanager-kube-prometheus-stack-alertmanager` secret.
-
-## Release highlights
-
-- Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
-- The `user-Alertmanager` chart has been removed. devAlertmanager is now managed by the `kube-prometheus-stack` chart via the new `prometheus.devAlertmanager` configuration options.
-
+    - Alertmanager has been reworked.
+       -  The configuration of the user alertmanager secret has been updated. It is now managed via the `alertmanager-kube-prometheus-stack-alertmanager` secret.
+    
 ### Feature(s)
 
-- Incremental version checks during migration
-- Added optional parameters to OpenSearch
-- Added configuration options `opensearch.dashboards.cookieTtl`, `opensearch.dashboards.sessionTtl`, and `opensearch.dashboards.sessionKeepalive` in `sc-config.yaml` to control the user session timeout for OpenSearch Dashboards. If unset, OpenSearch Dashboards uses its internal defaults (typically 1 hour TTL, keepalive enabled).
+- Added configuration options to control the user session timeout for OpenSearch Dashboards. These can be adjusted by the administrator.
 - Centralized container image configuration
 
 ### Improvement(s)
 
-- Alertmanager rework
-- change enableAnnotationValidations to default
-- Ensure that the Node-group label is set on all Nodes
-- apps sc: make disk performance alerts less sensitive
-- Increase Thanos distributor replicas
-
-### Other(s)
-
-- Fix logic for disabled OpenSearch snapshots
-- Fix Node label check
+- Improved monitoring stability by inreasing Thanos distributor replicas
 
 ## v0.46.0
 
