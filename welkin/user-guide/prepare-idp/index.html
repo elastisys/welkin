@@ -4797,21 +4797,21 @@ Note, however, that Welkin supports any OpenID-compatible IdP, including GitHub 
 <li>Under Supported account types pick <strong>Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)</strong>.</li>
 <li>Under <strong>Redirect URI</strong> select <strong>web</strong> and insert the Dex URL that Platform Administrators provided. This is generally <code>https://dex.$DOMAIN/callback</code>.
     If unsure, ask your Platform Administrators.</li>
-<li>Go to <strong>Overview</strong> and note down the <strong>application ID</strong>.</li>
+<li>Go to <strong>Overview</strong> and note down the <strong>Application (client) ID</strong>.</li>
 <li>Create a secret by going to <strong>Certificates &amp; secrets</strong>.</li>
-<li>Select the tab <strong>Client secret</strong> and click <strong>New client secret</strong>.</li>
+<li>Select the tab <strong>Client secrets</strong> and click <strong>New client secret</strong>.</li>
 <li>Set <strong>expiry date</strong> to <strong>24 months</strong>.</li>
-<li>For improved security, navigate to <strong>Overview</strong> and note down <strong>the tenant ID</strong>. This limits who can authenticate to your Welkin environment.</li>
+<li>For improved security, navigate to <strong>Overview</strong> and note down the <strong>Directory (tenant) ID</strong>. This limits who can authenticate to your Welkin environment.</li>
 <li>Decide the <strong>name of the Microsoft Entra ID group</strong> that should have admin privileges in the environment.</li>
 <li>
 <p>Securely send, e.g., via <a href="https://yopass.elastisys.com">YoPass</a>, the following information to your Platform Administrators:
     <!-- markdownlint-enable ol-prefix -->
     <!-- markdownlint-enable list-marker-space --></p>
 <ul>
-<li>tenant ID;</li>
-<li>application ID;</li>
-<li>client secret;</li>
-<li>admin group.</li>
+<li>Directory (tenant) ID;</li>
+<li>Application (client) ID;</li>
+<li>Client secret;</li>
+<li>Admin group name.</li>
 </ul>
 </li>
 </ol>
