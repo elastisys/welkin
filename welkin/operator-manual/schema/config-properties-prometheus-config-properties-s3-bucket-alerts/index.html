@@ -4545,6 +4545,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      buckets
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4644,6 +4653,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-alerts-exclude/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/s3BucketAlerts/properties/exclude">Welkin Apps Config</a></td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="#buckets">buckets</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/s3BucketAlerts/properties/buckets">Welkin Apps Config</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="objects">objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
@@ -4722,9 +4738,28 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>string[]</code> (<a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-alerts-exclude-s3-bucket-name/">S3 Bucket Name</a>)</p>
+<h2 id="buckets">buckets<a class="headerlink" href="#buckets" title="Permanent link">&para;</a></h2>
+<p>Definitions for specific S3 bucket alerts.</p>
+<p><code>buckets</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object[]</code> (<a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts-s3-bucket-specific-alert/">S3 Bucket Specific Alert</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/properties/s3BucketAlerts/properties/buckets">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object[]</code> (<a href="../config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts-s3-bucket-specific-alert/">S3 Bucket Specific Alert</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Tue Jul  1 04:05:23 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/fbe20645b14adc7f8a1c17a0e8bd447eadf2d7b8">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Jul  2 04:00:02 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/18bf8c2bbc5fefb9e0581d2ff6b2b426cd66d03c">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 

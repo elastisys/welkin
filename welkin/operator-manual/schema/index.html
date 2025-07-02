@@ -4961,6 +4961,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-network-policies-config-properties-network-policies-fluentd-properties-extra-output-rule/" title="Configure extra output egress rules">Extra Output Rule</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/networkPolicies/properties/fluentd/properties/extraOutput</code></p>
 </li>
 <li>
+<p><a href="secrets-properties-dex-secrets-properties-extra-static-logins-extra-static-login/" title="Additional static logins for Dex">Extra Static Login</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/secrets.yaml#/properties/dex/properties/extraStaticLogins/items</code></p>
+</li>
+<li>
 <p><a href="config-properties-welcoming-dashboard-properties-extra-versions-extra-version/" title="Additional component to list on the welcoming dashboard">Extra Version</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/welcomingDashboard/properties/extraVersions/items</code></p>
 </li>
 <li>
@@ -5753,6 +5756,15 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-alerts-total-size/" title="Alert when all S3 buckets reaches the set percentage of the set size">S3 Bucket Alerts Total Size</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/totalSize</code></p>
 </li>
 <li>
+<p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts-s3-bucket-specific-alert/" title="S3 Bucket Alert configuration for specific bucket">S3 Bucket Specific Alert</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/buckets/items</code></p>
+</li>
+<li>
+<p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts-s3-bucket-specific-alert-properties-s3-bucket-specific-alerts-objects/" title="Alert when the S3 bucket reaches the set percentage of the set number of objects">S3 Bucket Specific Alerts Objects</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/buckets/items/properties/objects</code></p>
+</li>
+<li>
+<p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts-s3-bucket-specific-alert-properties-s3-bucket-specific-alerts-size/" title="Alert when the S3 bucket reaches the set percentage of the set size">S3 Bucket Specific Alerts Size</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/buckets/items/properties/size</code></p>
+</li>
+<li>
 <p><a href="config-properties-s3-exporter/" title="Configure S3 exporter, used to collect metrics about S3 usage">S3 Exporter</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/s3Exporter</code></p>
 </li>
 <li>
@@ -6125,6 +6137,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-issuers-config-properties-extra-issuers/">Extra Issuers</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/issuers/properties/extraIssuers</code></p>
 </li>
 <li>
+<p><a href="secrets-properties-dex-secrets-properties-extra-static-logins/" title="Configure additional static logins for Dex">Extra Static Logins</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/secrets.yaml#/properties/dex/properties/extraStaticLogins</code></p>
+</li>
+<li>
 <p><a href="config-properties-welcoming-dashboard-properties-extra-versions/" title="List of additional components to list on the welcoming dashboard">Extra Versions</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/welcomingDashboard/properties/extraVersions</code></p>
 </li>
 <li>
@@ -6332,6 +6347,9 @@ if(!document.__defineGetter__) {
 <p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-alerts-exclude/" title="Exclude buckets from S3 alerts">S3 Bucket Alerts Exclude</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/exclude</code></p>
 </li>
 <li>
+<p><a href="config-properties-prometheus-config-defs-s3-bucket-alerts-properties-s3-bucket-specific-alerts/" title="Definitions for specific S3 bucket alerts">S3 Bucket Specific Alerts</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/prometheus/$defs/s3BucketAlerts/properties/buckets</code></p>
+</li>
+<li>
 <p><a href="config-properties-open-policy-agent-config-properties-safeguard-disallowed-tags-properties-safeguard-disallowed-tags/" title="Configure the tags that should be disallowed by the constraint">Safeguard Disallowed Tags</a> – <code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opa/properties/disallowedTags/properties/tags</code></p>
 </li>
 <li>
@@ -6377,7 +6395,7 @@ if(!document.__defineGetter__) {
 <h2 id="version-note">Version Note<a class="headerlink" href="#version-note" title="Permanent link">&para;</a></h2>
 <p>The schemas linked above follow the JSON Schema Spec version: <code>https://json-schema.org/draft/2020-12/schema</code></p>
 <hr />
-<p>Generated Tue Jul  1 04:05:23 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/fbe20645b14adc7f8a1c17a0e8bd447eadf2d7b8">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Wed Jul  2 04:00:02 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/18bf8c2bbc5fefb9e0581d2ff6b2b426cd66d03c">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
