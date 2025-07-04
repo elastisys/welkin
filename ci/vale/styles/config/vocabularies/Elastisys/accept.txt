@@ -116,6 +116,7 @@ OAuth
 overcommitted
 queryable
 resync
+rollforward
 runbook
 runtime
 seccomp
