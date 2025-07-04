@@ -37,6 +37,14 @@ In short, there are three levels of maintenance that should be performed on a re
 
 Let's go through them one by one.
 
+> [!IMPORTANT]
+> Welkin advises against rollbacks and instead argues for performing staged rollouts and, in the case that a defective patch made it all the way to production, perform a rollforward instead.
+> Performing a rollback for distributed and stateful applications can be a very complex process, is prone to errors and can lead to data- loss, inconsistencies, corruption etc.
+> To avoid such issues, we recommend the following:
+>
+> - It is recommended to have separate staging and production environments, so that each new release is first tested in the staging environment before upgrading production.
+> - If issues are encountered in production, it is recommended to address and patch those issues instead of doing a rollback.
+
 ### Patching the Nodes
 
 Security patches for the underlying OS on the Nodes are constantly being released, and to ensure your environment is secured, the Nodes that run Welkin must be updated with these patches.
