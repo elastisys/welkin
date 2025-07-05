@@ -3292,18 +3292,9 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
-  <a href="#calicoaccountant" class="md-nav__link">
+  <a href="#networkplugin" class="md-nav__link">
     <span class="md-ellipsis">
-      calicoAccountant
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calicofelixmetrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      calicoFelixMetrics
+      networkPlugin
     </span>
   </a>
   
@@ -6704,18 +6695,9 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
-  <a href="#calicoaccountant" class="md-nav__link">
+  <a href="#networkplugin" class="md-nav__link">
     <span class="md-ellipsis">
-      calicoAccountant
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calicofelixmetrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      calicoFelixMetrics
+      networkPlugin
     </span>
   </a>
   
@@ -8596,18 +8578,11 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;"><a href="../config-properties-opensearch-config/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/opensearch">Welkin Apps Config</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="#calicoaccountant">calicoAccountant</a></td>
+<td style="text-align: left;"><a href="#networkplugin">networkPlugin</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-calico-accountant/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/calicoAccountant">Welkin Apps Config</a></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="#calicofelixmetrics">calicoFelixMetrics</a></td>
-<td style="text-align: left;"><code>object</code></td>
-<td style="text-align: left;">Optional</td>
-<td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-calico-felix-metrics/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/calicoFelixMetrics">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-network-plugin/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/networkPlugin">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#certmanager">certmanager</a></td>
@@ -9388,44 +9363,25 @@ When logs are shipped to OpenSearch it is done directly from the forwarder daemo
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-opensearch-config/">OpenSearch Config</a>)</p>
-<h2 id="calicoaccountant">calicoAccountant<a class="headerlink" href="#calicoaccountant" title="Permanent link">&para;</a></h2>
-<p>Configure Calico accountant, used to collect metrics about packets affected by Network Policies when using Calico.</p>
-<p><code>calicoAccountant</code></p>
+<h2 id="networkplugin">networkPlugin<a class="headerlink" href="#networkplugin" title="Permanent link">&para;</a></h2>
+<p>Configure the network plugin used in the cluster.</p>
+<p><code>networkPlugin</code></p>
 <ul>
 <li>
 <p>is optional</p>
 </li>
 <li>
-<p>Type: <code>object</code> (<a href="../config-properties-calico-accountant/">Calico Accountant</a>)</p>
+<p>Type: <code>object</code> (<a href="../config-properties-network-plugin/">Network Plugin</a>)</p>
 </li>
 <li>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-calico-accountant/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/calicoAccountant">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-network-plugin/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/networkPlugin">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
-<p><code>object</code> (<a href="../config-properties-calico-accountant/">Calico Accountant</a>)</p>
-<h2 id="calicofelixmetrics">calicoFelixMetrics<a class="headerlink" href="#calicofelixmetrics" title="Permanent link">&para;</a></h2>
-<p>Configure Calico Felix metrics, used to collect metrics about Calico.</p>
-<p><code>calicoFelixMetrics</code></p>
-<ul>
-<li>
-<p>is optional</p>
-</li>
-<li>
-<p>Type: <code>object</code> (<a href="../config-properties-calico-felix-metrics/">Calico Felix Metrics</a>)</p>
-</li>
-<li>
-<p>cannot be null</p>
-</li>
-<li>
-<p>defined in: <a href="../config-properties-calico-felix-metrics/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/calicoFelixMetrics">Welkin Apps Config</a></p>
-</li>
-</ul>
-<p><strong>TYPE</strong>:</p>
-<p><code>object</code> (<a href="../config-properties-calico-felix-metrics/">Calico Felix Metrics</a>)</p>
+<p><code>object</code> (<a href="../config-properties-network-plugin/">Network Plugin</a>)</p>
 <h2 id="certmanager">certmanager<a class="headerlink" href="#certmanager" title="Permanent link">&para;</a></h2>
 <p>Configure cert-manager, used to provision certificates either self-signed or via Let's Encrypt.</p>
 <p><code>certmanager</code></p>
@@ -13276,7 +13232,7 @@ A constraint is considered "Unsatisfiable" for an incoming pod if and only if ev
 </tbody>
 </table>
 <hr />
-<p>Generated Fri Jul  4 03:59:35 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/ca44f356ad9265fd2df18e72d9dec5d7d14fdcda">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Sat Jul  5 03:56:07 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/99bf19e062172674c70c326f7778cbc44dbadae2">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
