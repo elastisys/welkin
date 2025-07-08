@@ -5917,14 +5917,6 @@
          <lastmod>2025-07-08</lastmod>
     </url>
     <url>
-         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-ageseconds/</loc>
-         <lastmod>2025-07-08</lastmod>
-    </url>
-    <url>
-         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-maxrequestseconds/</loc>
-         <lastmod>2025-07-08</lastmod>
-    </url>
-    <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-maximum-retained-snapshots/</loc>
          <lastmod>2025-07-08</lastmod>
     </url>
@@ -5934,14 +5926,6 @@
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-minimum-retained-snapshots/</loc>
-         <lastmod>2025-07-08</lastmod>
-    </url>
-    <url>
-         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-retention-job-active-deadline/</loc>
-         <lastmod>2025-07-08</lastmod>
-    </url>
-    <url>
-         <loc>https://elastisys.io/welkin/operator-manual/schema/config-properties-opensearch-config-properties-opensearch-snapshot-properties-opensearch-retention-job-starting-deadline/</loc>
          <lastmod>2025-07-08</lastmod>
     </url>
     <url>

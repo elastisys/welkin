@@ -4890,7 +4890,7 @@ cat<span class="w"> </span><span class="s">&lt;&lt;EOF | psql -d postgres -h 127
 <span class="s">    --set=APP_USERNAME=$APP_USERNAME \</span>
 <span class="s">    --set=APP_PASSWORD=$APP_PASSWORD</span>
 <span class="s">create database :APP_DATABASE;</span>
-<span class="s">create user :APP_USERNAME with encrypted password &#39;:APP_PASSWORD&#39;;</span>
+<span class="s">create user :APP_USERNAME with encrypted password :&#39;APP_PASSWORD&#39;;</span>
 <span class="s">grant all privileges on database :APP_DATABASE to :APP_USERNAME;</span>
 <span class="s">EOF</span>
 </code></pre></div>
