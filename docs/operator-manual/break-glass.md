@@ -89,17 +89,16 @@ If Dex is broken, you can manually create a `kubeconfig` file for a user. While 
     - cluster:
         certificate-authority-data: <CA>
         server: https://control-node-ip:6443 # ip address of one of the control nodes
-
-    name: <cluster-name>
+      name: <cluster-name>
     contexts:
     - context:
         cluster: <cluster-name>
         user: user1 # <USER>
-    name: <USER>@<CLUSTER-NAME>
+      name: <USER>@<CLUSTER-NAME>
     kind: Config
     users:
     - name: user1
-    user:
+      user:
         client-certificate-data: <CLIENT-CRT-DATA>
         client-key-data: <CLIENT-KEY-DATA>
     ```
