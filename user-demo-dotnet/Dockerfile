@@ -11,6 +11,8 @@ RUN dotnet publish -c Release -o /app --no-restore
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
+LABEL org.opencontainers.image.source=https://github.com/elastisys/welkin
+
 WORKDIR /app
 COPY --from=build /app .
 
