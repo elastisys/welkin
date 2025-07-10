@@ -4591,6 +4591,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#usecontainerengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      useContainerEngine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       resources
@@ -4759,6 +4768,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-falco-config-properties-falco-sidekick/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/falco/properties/falcoSidekick">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#usecontainerengine">useContainerEngine</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-falco-config-properties-use-the-new-containerengine-collector/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/falco/properties/useContainerEngine">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#resources">resources</a></td>
@@ -4977,6 +4993,29 @@ if(!document.__defineGetter__) {
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-falco-config-properties-falco-sidekick/">Falco Sidekick</a>)</p>
+<h2 id="usecontainerengine">useContainerEngine<a class="headerlink" href="#usecontainerengine" title="Permanent link">&para;</a></h2>
+<p>Use the new container engine collector that replaces the old docker, containerd, crio and podman collectors.</p>
+<p><code>useContainerEngine</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-falco-config-properties-use-the-new-containerengine-collector/">Use the new containerEngine collector</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-falco-config-properties-use-the-new-containerengine-collector/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/falco/properties/useContainerEngine">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-falco-config-properties-use-the-new-containerengine-collector/">Use the new containerEngine collector</a>)</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="kc">true</span>
+</code></pre></div>
 <h2 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p>Resource requests are used by the kube-scheduler to pick a node to schedule pods on.</p>
 <p>Limits are enforced. Resources are commonly 'cpu' and 'memory'.</p>
@@ -5069,7 +5108,7 @@ if(!document.__defineGetter__) {
 <p><code>object</code> (<a href="../config-defs-affinity/">Affinity</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Jul  9 04:01:49 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/eb07027b7bc27262bcd5c999d03110e07b592876">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Jul 10 04:01:36 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/42ef84e36807abeaaf35758d61565727f29f0723">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
