@@ -4653,6 +4653,42 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enforceipfamilypolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforceIPFamilyPolicy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforceipfamilies" class="md-nav__link">
+    <span class="md-ellipsis">
+      enforceIPFamilies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipfamilypolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      ipFamilyPolicy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipfamilies" class="md-nav__link">
+    <span class="md-ellipsis">
+      ipFamilies
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4835,6 +4871,34 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-global-options-properties-timestamp-of-last-migration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ck8sConfigSerial">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#enforceipfamilypolicy">enforceIPFamilyPolicy</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-global-options-properties-enforce-ipfamilypolicy-to-all-services-that-doesnt-explicitly-set-it/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/enforceIPFamilyPolicy">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#enforceipfamilies">enforceIPFamilies</a></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-global-options-properties-enforce-ipfamilies-to-all-services-that-doesnt-explicitly-set-it/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/enforceIPFamilies">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#ipfamilypolicy">ipFamilyPolicy</a></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-global-options-properties-global-setting-for-ipfamilypolicy-for-services/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ipFamilyPolicy">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#ipfamilies">ipFamilies</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-global-options-properties-global-setting-for-ipfamilies-for-services/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ipFamilies">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -5326,9 +5390,132 @@ apply</code>.</p>
 <p><strong>EXAMPLES</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="s">&#39;2025-04-29T08:34:21+00:00&#39;</span>
 </code></pre></div>
+<h2 id="enforceipfamilypolicy">enforceIPFamilyPolicy<a class="headerlink" href="#enforceipfamilypolicy" title="Permanent link">&para;</a></h2>
+<p>Enforce ipFamilyPolicy to all services that doesn't explicitly set it.
+This is done using a mutating webhook to all services that doesn't set this.
+The value it sets is taken from <code>.global.ipFamilyPolicy</code></p>
+<p><code>enforceIPFamilyPolicy</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-global-options-properties-enforce-ipfamilypolicy-to-all-services-that-doesnt-explicitly-set-it/">Enforce ipFamilyPolicy to all services that doesn't explicitly set it.</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-global-options-properties-enforce-ipfamilypolicy-to-all-services-that-doesnt-explicitly-set-it/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/enforceIPFamilyPolicy">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-global-options-properties-enforce-ipfamilypolicy-to-all-services-that-doesnt-explicitly-set-it/">Enforce ipFamilyPolicy to all services that doesn't explicitly set it.</a>)</p>
+<h2 id="enforceipfamilies">enforceIPFamilies<a class="headerlink" href="#enforceipfamilies" title="Permanent link">&para;</a></h2>
+<p>Enforce ipFamilyPolicy to all services that doesn't explicitly set it.
+This is done using a mutating webhook to all services that doesn't set this.
+The value it sets is taken from <code>.global.ipFamilies</code></p>
+<p><code>enforceIPFamilies</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>boolean</code> (<a href="../config-properties-global-options-properties-enforce-ipfamilies-to-all-services-that-doesnt-explicitly-set-it/">Enforce ipFamilies to all services that doesn't explicitly set it.</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-global-options-properties-enforce-ipfamilies-to-all-services-that-doesnt-explicitly-set-it/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/enforceIPFamilies">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>boolean</code> (<a href="../config-properties-global-options-properties-enforce-ipfamilies-to-all-services-that-doesnt-explicitly-set-it/">Enforce ipFamilies to all services that doesn't explicitly set it.</a>)</p>
+<h2 id="ipfamilypolicy">ipFamilyPolicy<a class="headerlink" href="#ipfamilypolicy" title="Permanent link">&para;</a></h2>
+<p>Used to set the ipFamilyPolicy for all configurable services.</p>
+<p><code>ipFamilyPolicy</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string</code> (<a href="../config-properties-global-options-properties-global-setting-for-ipfamilypolicy-for-services/">Global setting for ipFamilyPolicy for services</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-global-options-properties-global-setting-for-ipfamilypolicy-for-services/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ipFamilyPolicy">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string</code> (<a href="../config-properties-global-options-properties-global-setting-for-ipfamilypolicy-for-services/">Global setting for ipFamilyPolicy for services</a>)</p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>enum</strong>: the value of this property must be equal to one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>"SingleStack"</code></td>
+<td style="text-align: left;">Single-stack service. The control plane allocates a cluster IP for the Service, using the first configured service cluster IP range.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"PreferDualStack"</code></td>
+<td style="text-align: left;">Allocates both IPv4 and IPv6 cluster IPs for the Service when dual-stack is enabled. If dual-stack is not enabled or supported, it falls back to single-stack behavior.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>"RequireDualStack"</code></td>
+<td style="text-align: left;">Allocates Service `.spec.clusterIPs` from both IPv4 and IPv6 address ranges when dual-stack is enabled. If dual-stack is not enabled or supported, the Service API object creation fails.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;SingleStack&quot;</span>
+</code></pre></div>
+<p><strong>EXAMPLES</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">SingleStack</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">PreferDualStack</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">RequireDualStack</span>
+</code></pre></div>
+<h2 id="ipfamilies">ipFamilies<a class="headerlink" href="#ipfamilies" title="Permanent link">&para;</a></h2>
+<p>Used to set the ipFamilyPolicy for all configurable services.</p>
+<p><code>ipFamilies</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string[]</code></p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-global-options-properties-global-setting-for-ipfamilies-for-services/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/global/properties/ipFamilies">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string[]</code></p>
+<p><strong>CONSTRAINTS</strong>:</p>
+<p><strong>unique items</strong>: all items in this array must be unique. Duplicates are not allowed.</p>
+<p><strong>DEFAULTS</strong>:</p>
+<p>The default value is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;IPv4&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Jul 10 04:01:36 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/42ef84e36807abeaaf35758d61565727f29f0723">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Jul 11 04:04:16 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/5e0052587f48aeba9f06bc4f25290ccdcee026f9">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
