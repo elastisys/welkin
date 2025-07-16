@@ -8,7 +8,7 @@ search:
 
 Welcome to the fourth and final step, Application Developer!
 
-Sometimes, your application might be end up with issue - for instance, it might be stuck, fail silently. In such cases, you may want to debug the pod. 
+Sometimes, your application might be end up with issue - for instance, it might be stuck, fail silently. In such cases, you may want to debug the pod.
 
 ## Attach a Debug Container
 
@@ -28,7 +28,7 @@ kubectl debug -n staging my-app-6c9f75f457-abcde \
   --target=my-app \
   --share-processes \
   --tty --stdin
-'''
+```
 
 ## Next step? Going deeper!
 
