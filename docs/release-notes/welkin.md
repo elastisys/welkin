@@ -6,7 +6,9 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.47.1](#v0471) - 2025-07-17
 - [v0.47.0](#v0470) - 2025-06-25
+- [v0.46.1](#v0461) - 2025-07-17
 - [v0.46.0](#v0460) - 2025-05-15
 - [v0.45.1](#v0451) - 2025-03-25
 - [v0.45.0](#v0450) - 2025-03-21
@@ -78,6 +80,14 @@
 -->
 <!-- vale off -->
 
+## v0.47.1
+
+Released 2025-07-17
+
+### Other(s)
+
+- Fix NetworkPolicy for NGINX to allow uptime Ingress
+
 ## v0.47.0
 
 Released 2025-06-25
@@ -95,6 +105,10 @@ Released 2025-06-25
 ### Improvement(s)
 
 - Improved monitoring stability by inreasing Thanos distributor replicas
+
+## v0.46.1
+
+Released 2025-07-17
 
 ## v0.46.0
 
