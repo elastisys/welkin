@@ -272,7 +272,7 @@ OpenSearch has a [reporting feature](https://opensearch.org/docs/latest/reportin
 
 !!! welkin-managed "For Welkin Managed Customers"
 
-    Elasticsearch-dump is not enabled by default, but can be requested by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
+    Permissions for reporting are not added from the start and elasticsearch-dump is not enabled by default, but either one can be requested by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
 
 Example of exporting the `kubernetes-*` index pattern to a folder `opensearch-dump`:
 
