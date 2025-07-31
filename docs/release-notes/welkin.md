@@ -93,7 +93,6 @@ Released 2025-07-31
 
 - Fix indexpernamespace for OpenSearch alerting role
 - Bump Grafana image version to 11.5.7
-- Sum ThanosReceiveTrafficBelowThreshold alert to adjust for multiple receive distributors
 
 # v0.47.0
 
