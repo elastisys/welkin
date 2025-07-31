@@ -4545,6 +4545,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#extraenvvars" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraEnvVars
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4644,6 +4653,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-defs-kubernetes-resource-requirements/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/trivy/properties/resources">Welkin Apps Config</a></td>
 </tr>
+<tr>
+<td style="text-align: left;"><a href="#extraenvvars">extraEnvVars</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-harbor-config-properties-trivy-config-properties-trivy-extra-environment-variables/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/trivy/properties/extraEnvVars">Welkin Apps Config</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="affinity">affinity<a class="headerlink" href="#affinity" title="Permanent link">&para;</a></h2>
@@ -4734,9 +4750,28 @@ if(!document.__defineGetter__) {
 <span class="w">  </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">256Mi</span>
 <span class="w">  </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">250m</span>
 </code></pre></div>
+<h2 id="extraenvvars">extraEnvVars<a class="headerlink" href="#extraenvvars" title="Permanent link">&para;</a></h2>
+<p>Array of additional environment variables to pass to Trivy</p>
+<p><code>extraEnvVars</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object[]</code> (<a href="../config-properties-harbor-config-properties-trivy-config-properties-trivy-extra-environment-variables-settings-to-pass-to-trivy/">Settings to pass to Trivy</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-harbor-config-properties-trivy-config-properties-trivy-extra-environment-variables/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/trivy/properties/extraEnvVars">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object[]</code> (<a href="../config-properties-harbor-config-properties-trivy-config-properties-trivy-extra-environment-variables-settings-to-pass-to-trivy/">Settings to pass to Trivy</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Wed Jul 30 04:08:08 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/74cb37efe03517aa519f51ba990eab4d212e701a">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Thu Jul 31 04:07:40 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/c14ca798771422e32e6724ab18dcc786f0c5635f">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
