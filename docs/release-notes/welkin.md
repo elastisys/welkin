@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.47.2](#v0472) - 2025-07-31
 - [v0.47.1](#v0471) - 2025-07-17
 - [v0.47.0](#v0470) - 2025-06-25
 - [v0.46.1](#v0461) - 2025-07-17
@@ -79,6 +80,21 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.47.2
+
+Released 2025-07-31
+
+## Changes by kind
+
+### Improvement(s)
+
+- Upgrade Falco chart to v6.0.2
+
+### Other(s)
+
+- Fix indexpernamespace for OpenSearch alerting role
+- Bump Grafana image version to 11.5.7
 
 ## v0.47.1
 
