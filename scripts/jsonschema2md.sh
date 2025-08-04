@@ -171,7 +171,7 @@ yq --output-format json ".\"\$id\" = \"https://raw.githubusercontent.com/elastis
 log.trace "converted schema"
 
 pushd "${root}" &>/dev/null || log.error "failed to change directory"
-npx jsonschema2md -d "${temp}" -f yaml -o "${staging}" -x "${staging}/json"
+$(command -v jsonschema2md >/dev/null || echo npx) jsonschema2md -d "${temp}" -f yaml -o "${staging}" -x "${staging}/json"
 popd &>/dev/null || log.error "failed to change directory"
 
 log.trace "generated documentation"
