@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.48.0](#v0480) - 2025-08-05
 - [v0.47.2](#v0472) - 2025-07-31
 - [v0.47.1](#v0471) - 2025-07-17
 - [v0.47.0](#v0470) - 2025-06-25
@@ -80,6 +81,26 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.48.0
+
+Released 2025-08-05
+
+!!! warning "Application Developer Notice(s)"
+
+    - Grafana was upgraded to new major version 12, this comes some new features such as the ["Drilldown" page](https://grafana.com/blog/2025/02/20/grafana-drilldown-apps-the-improved-queryless-experience-formerly-known-as-the-explore-apps/). Please refer to the upstream release notes to see all [changes](https://grafana.com/docs/grafana/latest/whatsnew/whats-new-in-v12-0/).
+
+### Feature(s)
+
+- Added a safeguard to enforce signed image verification. This safeguard is disabled by default and can be enabled by your Platform Administrator. You can read more about this safeguard in our [documentation](../user-guide/safeguards/enforce-signed-image-verification.md).
+- Added Cilium support.
+- Added dual-stack support.
+
+### Improvement(s)
+
+- Upgraded Harbor to v2.13.1.
+- Upgraded Falco chart to v6.0.2.
+- Upgraded Grafana to v12.0.3.
 
 ## v0.47.2
 
