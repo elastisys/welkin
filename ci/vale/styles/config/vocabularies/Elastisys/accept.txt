@@ -221,6 +221,8 @@ rollout
 schedulable
 timepoint
 untrusted
+ippool
+blocksize
 
 # YAML terms
 frontmatter
