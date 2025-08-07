@@ -6,7 +6,7 @@ search:
 
 # Step 3: Operate
 
-Welcome to the third and final step, Application Developer!
+Welcome to the third step, Application Developer!
 
 In this step, you will learn how to operate your application on Welkin.
 
@@ -90,9 +90,3 @@ As an Application Developer, you should perform capacity management on a Pod lev
 Welkin comes with [Argo CD](additional-services/argocd.md) as an Additional Service.
 
 Welkin can also be integrated with an [external CI/CD](ci-cd.md), such as GitHub Actions.
-
-## Next step? Going deeper!
-
-By now, you're fully up and running! You have an application, updating it is a breeze, and you can monitor it and look at its logs. The next step is to open the "Go Deeper" section of this documentation and read up on more topics that interest you.
-
-Thank you for starting your journey beyond the clouds with Welkin!
