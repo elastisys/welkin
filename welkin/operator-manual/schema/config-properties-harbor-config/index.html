@@ -4537,6 +4537,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#mpucleaner" class="md-nav__link">
+    <span class="md-ellipsis">
+      mpuCleaner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#core" class="md-nav__link">
     <span class="md-ellipsis">
       core
@@ -4797,6 +4806,13 @@ All config variables that exists in harbor are not exposed via our config.</p>
 <td style="text-align: left;"><a href="../config-properties-harbor-config-properties-backup-job-config/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/backup">Welkin Apps Config</a></td>
 </tr>
 <tr>
+<td style="text-align: left;"><a href="#mpucleaner">mpuCleaner</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-harbor-config-properties-multipartupload-cleaner-job-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/mpuCleaner">Welkin Apps Config</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="#core">core</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
@@ -4984,6 +5000,25 @@ All config variables that exists in harbor are not exposed via our config.</p>
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-harbor-config-properties-backup-job-config/">Backup Job Config</a>)</p>
+<h2 id="mpucleaner">mpuCleaner<a class="headerlink" href="#mpucleaner" title="Permanent link">&para;</a></h2>
+<p>Configuration options for MultipartUpload cleaner job</p>
+<p><code>mpuCleaner</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-harbor-config-properties-multipartupload-cleaner-job-configuration/">MultipartUpload cleaner job configuration</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-harbor-config-properties-multipartupload-cleaner-job-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/harbor/properties/mpuCleaner">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-harbor-config-properties-multipartupload-cleaner-job-configuration/">MultipartUpload cleaner job configuration</a>)</p>
 <h2 id="core">core<a class="headerlink" href="#core" title="Permanent link">&para;</a></h2>
 <p>Configuration options for Core.</p>
 <p><code>core</code></p>
@@ -5347,7 +5382,7 @@ For more details how to configure harbor to use an external redis check the <a h
 <p><code>object</code> (<a href="../config-properties-harbor-config-properties-exporter-config/">Exporter Config</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Aug  8 04:08:16 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/a2a3553939e11c3bdc22c72d9c597fe5663fdeec">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Sat Aug  9 03:59:50 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/649a018843f665d00697bf2f5e628c9bf0fa714f">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
