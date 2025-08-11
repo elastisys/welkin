@@ -34,4 +34,4 @@ Please look through the different pages in this Guardrails section to make yours
 
 ## Further Reading
 
-- [Introduction to Guardrails and Paved Paths](https://www.daytona.io/dotfiles/introduction-to-guardrails-and-paved-paths).
+- [Introduction to Guardrails and Paved Paths](https://kerrsecure.com/2023/07/28/guard-rails-and-paved-roads-%F0%9F%9B%A3%EF%B8%8F-2/).

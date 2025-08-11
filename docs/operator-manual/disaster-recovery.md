@@ -383,7 +383,7 @@ If you want to create a backup from existing schedule you can run the following:
 ### Restore
 
 > [!NOTE]
-> If you are restoring an environment under a new domain name then there is a possibility to reconfigure image references with [Velero](https://velero.io/docs/main/restore-reference/#changing-poddeploymentstatefulsetdaemonsetreplicasetreplicationcontrollerjobcronjob-image-repositories), but other resources that might contain domain names such as Ingresses, ConfigMaps and Secrets must be updated manually.
+> If you are restoring an environment under a new domain name then there is a possibility to reconfigure image references with [Velero](https://velero.io/docs/main/restore-reference/#changing-image-repositories), but other resources that might contain domain names such as Ingresses, ConfigMaps and Secrets must be updated manually.
 >
 > If you are restoring an environment and want or need to change the StorageClass of PersistentVolumes then it is possible to configure a StorageClass mapping, see [the Velero documentation](https://velero.io/docs/main/restore-reference/#changing-pvpvc-storage-classes).
 
