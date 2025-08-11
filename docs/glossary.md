@@ -182,7 +182,7 @@ Usage notes:
 See also:
 
 - [EU NIS2 Directive: Sectors of High Criticality](https://eur-lex.europa.eu/eli/dir/2022/2555/oj#d1e32-143-1)
-- [Swedish MSBFS 2024:4 Rules on identification of providers of essential services](https://www.msb.se/contentassets/b15833b9aaa0425ca0c898cc0a120c81/myndigheten-for-samhallsskydd-och-beredskaps-foreskrifter-om-anmalan-och-identifiering-av-leverantorer-av-samhallsviktiga-tjanster-2024-4-pdf.pdf)
+- [Swedish MSBFS 2024:4 Rules on identification of providers of essential services](https://www.msb.se/sv/regler/gallande-regler/msbfs-20244/)
 
 ## Kubernetes Cluster
 
