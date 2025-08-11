@@ -5384,7 +5384,7 @@ Here is a basic example of how to use Velero to take a backup of all Kubernetes 
 <h3 id="restore_2">Restore<a class="headerlink" href="#restore_2" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are restoring an environment under a new domain name then there is a possibility to reconfigure image references with <a href="https://velero.io/docs/main/restore-reference/#changing-poddeploymentstatefulsetdaemonsetreplicasetreplicationcontrollerjobcronjob-image-repositories">Velero</a>, but other resources that might contain domain names such as Ingresses, ConfigMaps and Secrets must be updated manually.</p>
+<p>If you are restoring an environment under a new domain name then there is a possibility to reconfigure image references with <a href="https://velero.io/docs/main/restore-reference/#changing-image-repositories">Velero</a>, but other resources that might contain domain names such as Ingresses, ConfigMaps and Secrets must be updated manually.</p>
 <p>If you are restoring an environment and want or need to change the StorageClass of PersistentVolumes then it is possible to configure a StorageClass mapping, see <a href="https://velero.io/docs/main/restore-reference/#changing-pvpvc-storage-classes">the Velero documentation</a>.</p>
 </div>
 <p>Restoring from a backup with Velero is meant to be a type of disaster recovery.
