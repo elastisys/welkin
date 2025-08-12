@@ -19,7 +19,6 @@ Welkin supports Kubernetes `kubectl debug` command, which allows you to temporar
 > - The image must come from an [allowed registry](safeguards/enforce-trusted-registries.md)
 > - The container must run as a **non-root user**
 > - Privilege escalation is not allowed
-> - Your user must have `patch` permission on `pods/ephemeralcontainers` in your namespace (this is handled via Welkin RBAC)
 
 ### Example Usage
 
