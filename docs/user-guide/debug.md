@@ -15,7 +15,7 @@ Sometimes, your application might be end up with issue - for instance, it might 
 Welkin supports Kubernetes `kubectl debug` command, which allows you to temporarily attach an **ephemeral container** to a running Pod for troubleshooting purposes. This container can share the Pod’s process and network space and can include useful tools not available in the original container image.
 
 !!!note
-   
+
     Welkin enforces security guardrails:
 
     - The image must come from an [allowed registry](safeguards/enforce-trusted-registries.md)
