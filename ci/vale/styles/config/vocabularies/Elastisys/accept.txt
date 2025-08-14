@@ -206,6 +206,7 @@ Informationstechnik
 # No clue why Vale doesn't recognize these words
 approver
 auditability
+auditable
 digitalization
 exfiltrate
 impactful

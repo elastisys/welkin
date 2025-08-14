@@ -1,5 +1,23 @@
 # BSI IT-Grundschutz Controls
 
+The **BSI IT-Grundschutz** framework, developed by Germany’s Federal Office for Information Security (BSI), provides a structured, modular approach to implementing information security management.
+<!-- vale off -->
+Its "building blocks" (_Bausteine_) address specific components, processes, and technologies, offering concrete safeguards that can be tailored to different protection needs.
+<!-- vale on -->
+These modules are grouped into thematic layers—such as Applications (APP), Systems (SYS), and Networks (NET)—and link security objectives with implementation guidance and verification steps, forming a cohesive, auditable framework.
+
+Within the Applications layer, **APP.4.4 – Kubernetes** focuses on securing container orchestration environments.
+Introduced in the 2022 edition of the IT-Grundschutz Compendium, this module addresses risks specific to Kubernetes Clusters, from configuration management and access control to backup and recovery.
+APP.4.4 complements SYS.1.6 (Containerisation) by translating general container security principles into Kubernetes-specific measures, ensuring that both operational practices and technical configurations meet robust, verifiable security standards.
+
+> [!IMPORTANT]
+> Many requirements in APP.4.4 **cannot be fulfilled by an application platform alone**, because they depend on factors outside the product's scope—such as how Welkin is deployed, integrated, and operated in a specific environment, as well as how the application on top is developed and deployed.
+> While a platform can provide features and guardrails (e.g., RBAC, audit logs) to support these controls, full compliance depends on correct configuration, secure surrounding infrastructure, and disciplined operational processes.
+>
+> That is why this documentation does not present an "all green checkboxes" compliance table for APP.4.4.
+> Instead, it maps each relevant requirement to the parts of the product documentation that explain how Welkin can support or enable it.
+> This approach allows platform administrators to combine Welkin's capabilities with their own environment-specific configurations, policies, and processes, ensuring a realistic and verifiable assessment rather than a misleading implication of complete, out-of-the-box compliance.
+
 Click on the links below to navigate the documentation by control.
 
 [TAGS]
