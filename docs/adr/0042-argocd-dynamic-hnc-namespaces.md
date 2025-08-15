@@ -11,7 +11,7 @@ Our current Argo offering is a namespaced installation where a CronJob patches t
 An issue occurs when an Application Developer tries to create an Application which also includes a Namespace.
 As the new **not yet created/patched to the Cluster secret** namespace is not managed, Argo CD fails at the comparison stage.
 
-Currently, upstream ArgoCD is unaware of HNC resources, and does not give subnamespaces the needed precedence, read more [here](https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/#how-does-it-work).
+Currently, upstream ArgoCD is unaware of HNC resources, and does not give subnamespaces the needed precedence, read more [here](https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/).
 The Cluster secret that takes a list of managed namespaces, does not take a regular expression, so it is hard for Application Developers to create namespaces as part of an Application.
 
 So, do we want to let Application Developer create and delete subnamespaces dynamically via Argo CD?
