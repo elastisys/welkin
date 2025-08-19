@@ -67,6 +67,13 @@ if(!document.__defineGetter__) {
 <link rel="shortcut icon" href="/welkin/img/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/welkin/img/apple-touch-icon.png" />
 <link rel="manifest" href="/welkin/img/site.webmanifest" />
+
+{% if page and page.meta and page.meta.robots %}
+  <meta name="robots" content="{{ page.meta.robots }}">
+{% elif page and "Superseded" in page.title %}
+  <!-- Help robots avoid superseded pages -->
+  <meta name="robots" content="noindex">
+{% endif %}
 {% endblock %}
 
 <!--
