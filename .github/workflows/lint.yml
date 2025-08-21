@@ -36,7 +36,7 @@ jobs:
           SKIP: no-commit-to-branch
 
       - name: Auto-generate documentation
-        run: ./scripts/jsonschema2md.sh --rev main
+        run: ./scripts/jsonschema2md.py
 
       - name: Build docs
         run: mkdocs build
