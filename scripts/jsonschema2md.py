@@ -5,28 +5,33 @@ Convert JSON Schemas into a nice table
 import argparse
 import io
 import os
+import re
 import sys
-import time
 
 import pycurl
 import yaml
 
 MISSING = "—"  # Em dash for missing values
 
-def sanitize(value, inline=False):
-    """Escape pipes and optionally replace newlines for table cells."""
-    if value is None or value == "":
+def sanitize(value, add_breaks=False):
+    """
+    Sanitize for table cells: escape pipes, replace newlines and optionally
+    add breaks.
+    """
+    if value is None or not value:
         return MISSING
     if not isinstance(value, str):
         value = str(value)
-    value = value.replace("|", "\\|")
-    if inline:
-        value = value.replace("\n", "<br>")
+    value = value.replace("|", "\\|").replace("\n", "<br>")
+    if add_breaks:
+        value = re.sub(r'([./_-])', r'\1<wbr>', value)
     return value
 
-def shorten_key(key: str) -> str:
-    """Insert <wbr> breakpoints so long keys can wrap in Markdown/HTML."""
-    return key.replace(".", ".<wbr>").replace("[]", "[]<wbr>")
+def make_anchor(path):
+    # Turn JSON path into safe anchor id
+    anchor = re.sub(r'[^a-zA-Z0-9_-]+', '-', path).strip('-').lower()
+    label = sanitize(path, add_breaks=True)
+    return f'<a id="{anchor}"></a>[{label}](#{anchor})'
 
 def traverse(schema, path="", notes=None):
     rows = []
@@ -49,13 +54,13 @@ def traverse(schema, path="", notes=None):
                 notes[note_id] = desc
                 desc_cell = f"See note [^{note_id}]"
             else:
-                desc_cell = sanitize(desc, inline=True)
+                desc_cell = sanitize(desc)
 
         rows.append([
-            sanitize(shorten_key(path), inline=True),   # Key
-            sanitize(schema.get("type", ""), True),     # Type
-            sanitize(schema.get("default", ""), True),  # Default
-            desc_cell                                   # Description
+            make_anchor(path),
+            sanitize(schema.get("type"), add_breaks=True),
+            sanitize(schema.get("default"), add_breaks=True),
+            desc_cell
         ])
 
     # Handle object properties (sorted alphabetically)
@@ -93,9 +98,13 @@ def schema_to_markdown(schema, source_name):
 
     # Source attribution
     if source_name.startswith("http://") or source_name.startswith("https://"):
-        md.append(f"This table was generated from [{source_name}]({source_name}).\n")
+        filename = source_name.split('/')[-1]
+        md.append(f"This table was generated from [{filename}]({source_name}).\n")
     else:
         md.append(f"This table was generated from the file `{source_name}`.\n")
+
+    # Legend
+    md.append('Cells marked with "—" mean "not specified in schema".\n')
 
     # Table header
     md.append("| " + " | ".join(rows[0]) + " |")
@@ -104,9 +113,6 @@ def schema_to_markdown(schema, source_name):
     # Table body
     for row in rows[1:]:
         md.append("| " + " | ".join(row) + " |")
-
-    # Legend
-    md.append("\n*Cells marked with — mean \"not specified in schema\".*")
 
     # Footnotes
     if notes:
