@@ -38,20 +38,6 @@ def traverse(schema, path="", notes=None):
 
     schema_type = schema.get("type")
 
-    # Handle object properties (sorted alphabetically)
-    if schema_type == "object" and "properties" in schema:
-        for key in sorted(schema["properties"].keys()):
-            subschema = schema["properties"][key]
-            full_path = f"{path}.{key}" if path else key
-            subrows, notes = traverse(subschema, full_path, notes)
-            rows.extend(subrows)
-
-    # Handle array items
-    elif schema_type == "array" and "items" in schema:
-        full_path = f"{path}[]" if path else "[]"
-        subrows, notes = traverse(schema["items"], full_path, notes)
-        rows.extend(subrows)
-
     # Add current node
     if path:
         desc = schema.get("description", "")
@@ -72,6 +58,20 @@ def traverse(schema, path="", notes=None):
             desc_cell                                   # Description
         ])
 
+    # Handle object properties (sorted alphabetically)
+    if schema_type == "object" and "properties" in schema:
+        for key in sorted(schema["properties"].keys()):
+            subschema = schema["properties"][key]
+            full_path = f"{path}.{key}" if path else key
+            subrows, notes = traverse(subschema, full_path, notes)
+            rows.extend(subrows)
+
+    # Handle array items
+    elif schema_type == "array" and "items" in schema:
+        full_path = f"{path}[]" if path else "[]"
+        subrows, notes = traverse(schema["items"], full_path, notes)
+        rows.extend(subrows)
+
     return rows, notes
 
 def format_footnote(idx, text):
@@ -88,9 +88,6 @@ def schema_to_markdown(schema, source_name):
     rows = [["Key", "Type", "Default", "Description"]]
     rows_body, notes = traverse(schema)
     rows += rows_body
-
-    # Sort final rows (excluding header) alphabetically by Key
-    rows[1:] = sorted(rows[1:], key=lambda r: r[0])
 
     md = []
 
