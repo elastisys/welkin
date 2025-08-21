@@ -12,12 +12,11 @@ import pycurl
 import yaml
 
 MISSING = "—"  # Em dash for missing values
+BOLD = "\033[1m"  # Terminal bold start
+RESET = "\033[0m" # Terminal bold end
 
 def sanitize(value, add_breaks=False):
-    """
-    Sanitize for table cells: escape pipes, replace newlines and optionally
-    add breaks.
-    """
+    """Escape pipes/newlines and insert <wbr> soft-breaks for Markdown."""
     if value is None or not value:
         return MISSING
     if not isinstance(value, str):
@@ -28,18 +27,40 @@ def sanitize(value, add_breaks=False):
     return value
 
 def make_anchor(path):
-    # Turn JSON path into safe anchor id
+    """
+    Turns a JSON path into safe anchor to be used in a table cell
+    """
     anchor = re.sub(r'[^a-zA-Z0-9_-]+', '-', path).strip('-').lower()
     label = sanitize(path, add_breaks=True)
     return f'<a id="{anchor}"></a>[{label}](#{anchor})'
 
-def traverse(schema, path="", notes=None):
+def traverse(schema, path="", notes=None, counters=None):
+    """
+    Traverse a JSON Schema and extract table rows.
+
+    Args:
+        schema: The current JSON Schema node.
+        path: JSON path of this node (dot/bracket notation).
+        notes: Dictionary of footnotes collected so far.
+        counters: Dict tracking number of missing types/descriptions.
+
+    Returns:
+        A tuple of:
+            - rows: list of rows for the Markdown table,
+            - notes: updated notes dict,
+            - counters: updated counters dict.
+    """
     rows = []
     if notes is None:
         notes = {}
+    if counters is None:
+        counters = {"missing_type": 0, "missing_desc": 0}
 
+    # JSON Schema allows non-dict nodes (e.g. `true` / `false` for
+    # boolean schemas, or scalars in certain contexts like `enum`).
+    # These don’t have type/description/default, so we skip them here.
     if not isinstance(schema, dict):
-        return rows, notes
+        return rows, notes, counters
 
     schema_type = schema.get("type")
 
@@ -55,6 +76,11 @@ def traverse(schema, path="", notes=None):
                 desc_cell = f"See note [^{note_id}]"
             else:
                 desc_cell = sanitize(desc)
+        else:
+            counters["missing_desc"] += 1
+
+        if not schema_type:
+            counters["missing_type"] += 1
 
         rows.append([
             make_anchor(path),
@@ -68,16 +94,16 @@ def traverse(schema, path="", notes=None):
         for key in sorted(schema["properties"].keys()):
             subschema = schema["properties"][key]
             full_path = f"{path}.{key}" if path else key
-            subrows, notes = traverse(subschema, full_path, notes)
+            subrows, notes, counters = traverse(subschema, full_path, notes, counters)
             rows.extend(subrows)
 
     # Handle array items
     elif schema_type == "array" and "items" in schema:
         full_path = f"{path}[]" if path else "[]"
-        subrows, notes = traverse(schema["items"], full_path, notes)
+        subrows, notes, counters = traverse(schema["items"], full_path, notes, counters)
         rows.extend(subrows)
 
-    return rows, notes
+    return rows, notes, counters
 
 def format_footnote(idx, text):
     """Format footnotes so MkDocs/GitHub render them properly."""
@@ -90,8 +116,11 @@ def format_footnote(idx, text):
     return "\n".join(out)
 
 def schema_to_markdown(schema, source_name):
+    """
+    Converts a schema into a markdown document. Count missing stuff.
+    """
     rows = [["Key", "Type", "Default", "Description"]]
-    rows_body, notes = traverse(schema)
+    rows_body, notes, counters = traverse(schema)
     rows += rows_body
 
     md = []
@@ -113,6 +142,7 @@ def schema_to_markdown(schema, source_name):
     # Table body
     for row in rows[1:]:
         md.append("| " + " | ".join(row) + " |")
+    counters['rows'] = len(rows[1:])
 
     # Footnotes
     if notes:
@@ -120,10 +150,23 @@ def schema_to_markdown(schema, source_name):
         for idx, text in notes.items():
             md.append(format_footnote(idx, text))
 
-    return "\n".join(md)
+    return "\n".join(md), counters
 
 def load_schema(path_or_url):
-    """Load schema from a local file or a URL."""
+    """
+    Load a JSON Schema (YAML) from a local file or URL.
+
+    Args:
+        path_or_url: Path to a schema file on disk, or an HTTP(S) URL.
+
+    Returns:
+        A Python object (dict) representing the parsed YAML schema.
+
+    Raises:
+        OSError: If the file cannot be read.
+        pycurl.error: If the URL cannot be fetched.
+        yaml.YAMLError: If the content cannot be parsed as YAML.
+    """
     if path_or_url.startswith("http://") or path_or_url.startswith("https://"):
         # pycurl downloads in < 0.3s, whereas requests takes > 10s
         # Didn't fully understand why.
@@ -135,12 +178,14 @@ def load_schema(path_or_url):
         c.perform()
         c.close()
         raw = buffer.getvalue()
-        return yaml.safe_load(raw)
     else:
-        with open(path_or_url, "r") as f:
-            return yaml.safe_load(f)
+        with open(path_or_url, "rb") as f:
+            raw = f.read()
+
+    return yaml.safe_load(raw)
 
 def main():
+    """Entrypoint (duh!)"""
     parser = argparse.ArgumentParser(
         description="Convert JSON Schema (YAML) to Markdown tables"
     )
@@ -157,8 +202,10 @@ def main():
     # Apply defaults if no inputs provided
     if not args.inputs:
         args.inputs = [
-            "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/refs/heads/main/config/schemas/config.yaml",
-            "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/refs/heads/main/config/schemas/secrets.yaml",
+            "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps"
+            "/refs/heads/main/config/schemas/config.yaml",
+            "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps"
+            "/refs/heads/main/config/schemas/secrets.yaml",
         ]
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -170,7 +217,13 @@ def main():
 
             print(f"⚙️ Processing… {input_path}")
             source_name = input_path
-            markdown = schema_to_markdown(schema, source_name)
+            markdown, counters = schema_to_markdown(schema, source_name)
+
+            print(
+                f"⚠️ Missing type: {BOLD}{counters['missing_type']}{RESET}, "
+                f"missing description: {BOLD}{counters['missing_desc']}{RESET}, "
+                f"out of {counters['rows']} configuration keys."
+            )
 
             # Pick a name
             base = os.path.basename(input_path)
@@ -178,11 +231,11 @@ def main():
                 base = base.rsplit(".", 1)[0]
             out_path = os.path.join(args.output_dir, f"{base}.md")
 
-            with open(out_path, "w") as f:
+            with open(out_path, "w", encoding="utf-8") as f:
                 f.write(markdown)
 
             print(f"✅ Wrote {out_path}")
-        except Exception as e:
+        except (OSError, yaml.YAMLError, pycurl.error) as e:
             print(f"❌ Failed to process {input_path}: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
