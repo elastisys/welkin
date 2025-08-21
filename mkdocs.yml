@@ -112,6 +112,7 @@ plugins:
 markdown_extensions:
   - attr_list
   - admonition
+  - footnotes
   - github-callouts
   - md_in_html
   - meta
@@ -253,7 +254,6 @@ nav:
       - "FAQ": "operator-manual/faq.md"
       - "Additional Services": "operator-manual/additional-services.md"
       - "Configuration Reference":
-          - "Index": "operator-manual/schema/README.md"
           - "Config": "operator-manual/schema/config.md"
           - "Secrets": "operator-manual/schema/secrets.md"
   - "For CISOs and DPOs":
