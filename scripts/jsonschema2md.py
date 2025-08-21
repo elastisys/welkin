@@ -8,6 +8,7 @@ import os
 import re
 import sys
 
+from dataclasses import dataclass
 import pycurl
 import yaml
 
@@ -34,6 +35,15 @@ def make_anchor(path):
     label = sanitize(path, add_breaks=True)
     return f'<a id="{anchor}"></a>[{label}](#{anchor})'
 
+@dataclass
+class Counters:
+    """
+    Various counters which should be displayed at the end.
+    """
+    missing_type: int = 0
+    missing_desc: int = 0
+    keys: int = 0
+
 def traverse(schema, path="", notes=None, counters=None):
     """
     Traverse a JSON Schema and extract table rows.
@@ -48,13 +58,13 @@ def traverse(schema, path="", notes=None, counters=None):
         A tuple of:
             - rows: list of rows for the Markdown table,
             - notes: updated notes dict,
-            - counters: updated counters dict.
+            - counters: updated Counters.
     """
     rows = []
     if notes is None:
         notes = {}
     if counters is None:
-        counters = {"missing_type": 0, "missing_desc": 0}
+        counters = Counters()
 
     # JSON Schema allows non-dict nodes (e.g. `true` / `false` for
     # boolean schemas, or scalars in certain contexts like `enum`).
@@ -77,10 +87,10 @@ def traverse(schema, path="", notes=None, counters=None):
             else:
                 desc_cell = sanitize(desc)
         else:
-            counters["missing_desc"] += 1
+            counters.missing_desc += 1
 
         if not schema_type:
-            counters["missing_type"] += 1
+            counters.missing_type += 1
 
         rows.append([
             make_anchor(path),
@@ -88,6 +98,7 @@ def traverse(schema, path="", notes=None, counters=None):
             sanitize(schema.get("default"), add_breaks=True),
             desc_cell
         ])
+        counters.keys += 1
 
     # Handle object properties (sorted alphabetically)
     if schema_type == "object" and "properties" in schema:
@@ -142,7 +153,6 @@ def schema_to_markdown(schema, source_name):
     # Table body
     for row in rows[1:]:
         md.append("| " + " | ".join(row) + " |")
-    counters['rows'] = len(rows[1:])
 
     # Footnotes
     if notes:
@@ -220,9 +230,9 @@ def main():
             markdown, counters = schema_to_markdown(schema, source_name)
 
             print(
-                f"⚠️ Missing type: {BOLD}{counters['missing_type']}{RESET}, "
-                f"missing description: {BOLD}{counters['missing_desc']}{RESET}, "
-                f"out of {counters['rows']} configuration keys."
+                f"⚠️ Missing type: {BOLD}{counters.missing_type}{RESET}, "
+                f"missing description: {BOLD}{counters.missing_desc}{RESET}, "
+                f"out of {counters.keys} configuration keys."
             )
 
             # Pick a name
