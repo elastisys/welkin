@@ -53,7 +53,7 @@ Released 2025-08-22
 
 #### Feature(s)
 
-- Support for Cilium as network plugin for new clusters
+- Support for Cilium as network plugin for new Clusters
 
 ### v2.27.0-ck8s2
 
