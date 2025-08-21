@@ -142,14 +142,21 @@ def main():
         description="Convert JSON Schema (YAML) to Markdown tables"
     )
     parser.add_argument(
-        "inputs", nargs="+",
-        help="Schema files or URLs"
+        "inputs", nargs="*",
+        help="Schema files or URLs (default: Welkin Apps schemas from GitHub)"
     )
     parser.add_argument(
-        "-o", "--output-dir", default=".",
-        help="Output folder (default: current directory)"
+        "-o", "--output-dir", default="./docs/operator-manual/schema/",
+        help="Output folder (default: ./docs/operator-manual/schema/)"
     )
     args = parser.parse_args()
+
+    # Apply defaults if no inputs provided
+    if not args.inputs:
+        args.inputs = [
+            "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/refs/heads/main/config/schemas/config.yaml",
+            "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/refs/heads/main/config/schemas/secrets.yaml",
+        ]
 
     os.makedirs(args.output_dir, exist_ok=True)
 
