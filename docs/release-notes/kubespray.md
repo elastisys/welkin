@@ -49,7 +49,7 @@ Released 2025-08-22
 #### Updated
 
 - **Updated Kubespray to `v2.28.0`** <br/>
-  Kubernetes version upgraded to [v1.32.5](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.32.md#v1325). <br/>
+  Kubernetes version upgraded to [v1.32.5](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.32.md#changelog-since-v1310). <br/>
 
 #### Feature(s)
 
