@@ -204,6 +204,8 @@ This can be done with tools such as [`script`](https://man7.org/linux/man-pages/
 > [!IMPORTANT]
 > Since the terminal output captured may contain sensitive information, it is also strongly recommended to encrypt the output file if it is planned to be stored in a Git repository or similar.
 
+[Templates for admin logs can be found here](https://github.com/elastisys/welkin/tree/main/examples/adminlogs/) which can be used and adapted to your needs.
+
 ## Next Steps
 
 Now that you have a good understanding for Welkin, proceed with a [provider audit](provider-audit.md) to understand the capabilities of the underlying infrastructure provider and determine how to best configure Welkin.
