@@ -77,7 +77,7 @@ os_url=https://opensearch.$(yq '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-co
 Get the name of the snapshot repository:
 
 ```bash
-curl -kL -u "${user}:${password}" "${os_url}/_cat/repositories?v"
+curl -L -u "${user}:${password}" "${os_url}/_cat/repositories?v"
 ```
 
 Set variable for the snapshot repository:
@@ -89,7 +89,7 @@ snapshot_repo=<name/id from previous step>
 Take snapshot:
 
 ```bash
-curl -kL -u "${user}:${password}" -X PUT "${os_url}/_snapshot/${snapshot_repo}/manual-snapshot" -H 'Content-Type: application/json' -d'
+curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/${snapshot_repo}/manual-snapshot" -H 'Content-Type: application/json' -d'
 {
   "indices": "*,-.opendistro_security",
   "include_global_state": false
@@ -150,7 +150,7 @@ os_url=https://opensearch.$(yq '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-co
 
         First import the backup into the main S3 service and register the restored bucket as a new snapshot repository:
         ```bash
-        curl -kL -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
+        curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
         {
           "type": "s3",
           "settings": {
@@ -173,7 +173,7 @@ os_url=https://opensearch.$(yq '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-co
 List snapshot repositories:
 
 ```bash
-curl -kL -u "${user}:${password}" "${os_url}/_cat/repositories?v"
+curl -L -u "${user}:${password}" "${os_url}/_cat/repositories?v"
 ```
 
 Output should be similar to:
@@ -186,7 +186,7 @@ opensearch-snapshots   s3
 <details><summary>Detailed output</summary>
 
 ```bash
-curl -kL -u "${user}:${password}" "${os_url}/_snapshot/?pretty"
+curl -L -u "${user}:${password}" "${os_url}/_snapshot/?pretty"
 {
   "opensearch-snapshots" : {
     "type" : "s3",
@@ -205,7 +205,7 @@ List available snapshots:
 ```bash
 snapshot_repo=<name/id from previous step>
 
-curl -kL -u "${user}:${password}" "${os_url}/_cat/snapshots/${snapshot_repo}?v&s=id"
+curl -L -u "${user}:${password}" "${os_url}/_cat/snapshots/${snapshot_repo}?v&s=id"
 ```
 
 Output should be similar to:
@@ -222,10 +222,10 @@ snapshot-20220101_120002z SUCCESS 1641038403  12:00:03   1641038533 12:02:13    
 
 ```bash
 # Detailed list of all snapshots
-curl -kL -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/_all?pretty"
+curl -L -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/_all?pretty"
 
 # Detailed list of specific snapshot
-curl -kL -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/snapshot-20220104_120002z?pretty"
+curl -L -u "${user}:${password}" "${os_url}/_snapshot/${snapshot_repo}/snapshot-20220104_120002z?pretty"
 {{
   "snapshots" : [
     {
@@ -272,7 +272,7 @@ snapshot_name=<Snapshot name from previous step>
 # Use "-.*" if index per namespace is enabled
 indices="kubernetes-*,kubeaudit-*,other-*,authlog-*"
 
-curl -kL -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/${snapshot_name}/_restore?pretty" -H 'Content-Type: application/json' -d'
+curl -L -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/${snapshot_name}/_restore?pretty" -H 'Content-Type: application/json' -d'
 {
   "indices": "'${indices}'"
 }
@@ -292,34 +292,34 @@ There can be multiple `.kibana` indices in OpenSearch, the current index should 
 ```bash
 snapshot_name=<Snapshot name from previous step>
 
-curl -kL -u "${user}:${password}" -X GET ${os_url}'/.kibana*?pretty' | jq 'keys'
+curl -L -u "${user}:${password}" -X GET ${os_url}'/.kibana*?pretty' | jq 'keys'
 ```
 
 If multiple `.kibana_x` indices show up, run this to see the index that the alias is currently looking at.
 
 ```bash
-curl -kL -u "${user}:${password}" -X GET ${os_url}'/_alias/.kibana*?pretty' | jq 'keys'
+curl -L -u "${user}:${password}" -X GET ${os_url}'/_alias/.kibana*?pretty' | jq 'keys'
 ```
 
 Make sure that the index you want to restore also exists on the snapshot. (May be an issue if you are using an old snapshot)
 
 ```bash
-curl -kL -u "${user}:${password}" -X GET "${os_url}/_snapshot/${snapshot_repo}/${snapshot_name}?pretty" | jq '.snapshots[].indices' | grep .kibana
+curl -L -u "${user}:${password}" -X GET "${os_url}/_snapshot/${snapshot_repo}/${snapshot_name}?pretty" | jq '.snapshots[].indices' | grep .kibana
 ```
 
 > [!NOTE]
 > If you visit the `"<os_url>/app/dashboards"` page in the OpenSearch GUI after deleting the index and before restoring the index, another empty index `.kibana` will be created. You need to delete this manually, which can be done with:
 >
 > ```bash
-> curl -kL -u "${user}:${password}" -X DELETE "${os_url}/.kibana?pretty"
+> curl -L -u "${user}:${password}" -X DELETE "${os_url}/.kibana?pretty"
 > ```
 
 ```bash
 index_to_restore=<Index name from previous step>
 
-curl -kL -u "${user}:${password}" -X DELETE "${os_url}/${index_to_restore}?pretty"
+curl -L -u "${user}:${password}" -X DELETE "${os_url}/${index_to_restore}?pretty"
 
-curl -kL -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/${snapshot_name}/_restore?pretty" -H 'Content-Type: application/json' -d'
+curl -L -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/${snapshot_name}/_restore?pretty" -H 'Content-Type: application/json' -d'
 {
   "indices": "'${index_to_restore}'"
 }
