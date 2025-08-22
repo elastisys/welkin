@@ -4597,6 +4597,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#restoreresourcepriorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      restoreResourcePriorities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#storageprefix" class="md-nav__link">
     <span class="md-ellipsis">
       storagePrefix
@@ -4761,6 +4770,13 @@ if(!document.__defineGetter__) {
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
 <td style="text-align: left;"><a href="../config-properties-velero-config-properties-velero-excluded-namespaces-1/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/velero/properties/excludedExtraNamespaces">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#restoreresourcepriorities">restoreResourcePriorities</a></td>
+<td style="text-align: left;"><code>array</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-velero-config-properties-velero-restore-resource-priority/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/velero/properties/restoreResourcePriorities">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#storageprefix">storagePrefix</a></td>
@@ -4976,6 +4992,29 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>string[]</code> (<a href="../config-properties-velero-config-properties-velero-excluded-namespaces-1-namespace/">Namespace</a>)</p>
+<h2 id="restoreresourcepriorities">restoreResourcePriorities<a class="headerlink" href="#restoreresourcepriorities" title="Permanent link">&para;</a></h2>
+<p>Configure restore order for resources</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a href="https://velero.io/docs/main/restore-reference/#restore-order">upstream documentation for reference</a></p>
+</div>
+<p><code>restoreResourcePriorities</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>string[]</code> (<a href="../config-properties-velero-config-properties-velero-restore-resource-priority-resource/">Resource</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-velero-config-properties-velero-restore-resource-priority/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/main/config/schemas/config.yaml#/properties/velero/properties/restoreResourcePriorities">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>string[]</code> (<a href="../config-properties-velero-config-properties-velero-restore-resource-priority-resource/">Resource</a>)</p>
 <h2 id="storageprefix">storagePrefix<a class="headerlink" href="#storageprefix" title="Permanent link">&para;</a></h2>
 <p>Configure unique storage prefix for this cluster when storing backups and snapshots in object storage.</p>
 <p>When multiple workload clusters share the same bucket or container ensure that they use separate storage prefixes.</p>
@@ -5093,7 +5132,7 @@ Uses the Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://e
 </code></pre></div>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Fri Aug 22 03:53:37 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/5cac2b2218b0b6a49c8088809bee9eb6e1d559ba">elastisys/compliantkubernetes-apps@main</a></p>
+<p>Generated Fri Aug 22 13:34:47 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/7d855f6013f6a282e2fd16850fa6ddba8bd12a8d">elastisys/compliantkubernetes-apps@main</a></p>
 
 
 
