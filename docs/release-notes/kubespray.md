@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v2.28.0-ck8s1](#v2280-ck8s1) - 2025-08-22
 - [v2.27.0-ck8s2](#v2270-ck8s2) - 2025-05-13
 - [v2.26.0-ck8s5](#v2260-ck8s5) - 2025-05-13
 - [v2.27.0-ck8s1](#v2270-ck8s1) - 2025-03-28
@@ -40,6 +41,19 @@
 !!!note
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-kubespray/blob/main/changelog/).
+
+### v2.28.0-ck8s1
+
+Released 2025-08-22
+
+#### Updated
+
+- **Updated Kubespray to `v2.28.0`** <br/>
+  Kubernetes version upgraded to [v1.32.5](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.32.md#changelog-since-v1310). <br/>
+
+#### Feature(s)
+
+- Support for Cilium as network plugin for new Clusters
 
 ### v2.27.0-ck8s2
 
