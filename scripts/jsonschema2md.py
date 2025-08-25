@@ -51,7 +51,6 @@ def traverse(schema, path=""):
     Args:
         schema: The current JSON Schema node.
         path: JSON path of this node (dot/bracket notation).
-        counters: Dict tracking number of missing types/descriptions.
 
     Returns:
         A generator returning tubles: key path, type, default and description.
@@ -116,9 +115,8 @@ def schema_to_markdown(schema, source_name):
     # Legend
     md.append('Cells marked with "—" mean "not specified in schema".\n')
 
-    # Table header
-    md.append("| " + " | ".join(header) + " |")
-    md.append("|" + "|".join(["---"] * len(header)) + "|")
+    # Keep track to split the table
+    last_section = None
 
     # Table body
     for path, schema_type, default, desc in traverse(schema):
@@ -126,6 +124,19 @@ def schema_to_markdown(schema, source_name):
 
         if not schema_type:
             counters.missing_type += 1
+
+        section = path.split('.')[0]
+        if section != last_section:
+            # Section header
+            md.append(f'\n## `{section}`\n')
+            md.append(f'{desc}\n') # desc is assumed to be markdown
+
+            # Table header
+            md.append("| " + " | ".join(header) + " |")
+            md.append("|" + "|".join(["---"] * len(header)) + "|")
+            last_section = section
+
+            continue
 
         desc_cell = MISSING
         if desc:
@@ -141,7 +152,7 @@ def schema_to_markdown(schema, source_name):
 
         md.append("| " + " | ".join([
             make_anchor(path),
-            sanitize(type, add_breaks=True),
+            sanitize(schema_type, add_breaks=True),
             sanitize(default, add_breaks=True),
             desc_cell
         ]) + " |")
