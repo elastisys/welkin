@@ -16,23 +16,43 @@ MISSING = "—"  # Em dash for missing values
 BOLD = "\033[1m"  # Terminal bold start
 RESET = "\033[0m" # Terminal bold end
 
-def sanitize(value, add_breaks=False):
+def sanitize(value):
     """Escape pipes/newlines and insert <wbr> soft-breaks for Markdown."""
     if value is None or not value:
         return MISSING
     if not isinstance(value, str):
         value = str(value)
     value = value.replace("|", "\\|").replace("\n", "<br>")
-    if add_breaks:
-        value = re.sub(r'([./_-])', r'\1<wbr>', value)
     return value
 
-def make_anchor(path):
+CODE_REGEX = re.compile("^[^`#]*$")
+def render_code(value):
+    """Sanitize a value to Markdown code"""
+    if value is None or not value:
+        return MISSING
+    if not isinstance(value, str):
+        value = str(value)
+    if not CODE_REGEX.fullmatch(value):
+        raise ValueError(f'Value {value} does not match expected regex {CODE_REGEX}.')
+    return f'`{value}`'
+
+PATH_REGEX = re.compile(r"^[a-zA-Z0-9\[\]/._-]*$")
+def render_path(path):
     """
     Turns a JSON path into safe anchor to be used in a table cell
     """
+    if path is None or not path:
+        raise ValueError('Missing path')
+    if not isinstance(path, str):
+        path = str(path)
+
     anchor = re.sub(r'[^a-zA-Z0-9_-]+', '-', path).strip('-').lower()
-    label = sanitize(path, add_breaks=True)
+
+    if not PATH_REGEX.fullmatch(path):
+        raise ValueError(f'Path {path} does not match expected regex {PATH_REGEX}.')
+
+    label = re.sub(r'([./_-])', r'\1<wbr>', path)
+
     return f'<a id="{anchor}"></a>[{label}](#{anchor})'
 
 @dataclass
@@ -66,6 +86,8 @@ def traverse(schema, path=""):
     # Add current node
     if path:
         desc = schema.get("description")
+        enum = schema.get("enum")
+        examples = schema.get("examples")
 
         # Handle array items
         if schema_type == "array":
@@ -84,7 +106,9 @@ def traverse(schema, path=""):
             path,
             schema_type,
             schema.get("default"),
-            desc
+            desc,
+            enum,
+            examples,
         ]
 
     # Handle object properties (sorted alphabetically)
@@ -129,11 +153,13 @@ def schema_to_markdown(schema, source_name):
     last_section = None
 
     # Table body
-    for path, schema_type, default, desc in traverse(schema):
+    for path, schema_type, default, desc, enum, examples \
+            in traverse(schema):
         counters.keys += 1
 
         if not schema_type:
             counters.missing_type += 1
+            schema_type = MISSING
 
         section = path.split('.')[0]
         if section != last_section:
@@ -151,6 +177,21 @@ def schema_to_markdown(schema, source_name):
             continue
 
         desc_cell = MISSING
+
+        # Add enums and examples to description
+        if not desc:
+            desc = ''
+        if examples:
+            desc += '\n\nExamples:\n'
+            for e in examples:
+                desc += f'\n- {render_code(e)}'
+            desc += '\n'
+        if enum:
+            desc += '\n\nPossible values:\n'
+            for e in enum:
+                desc += f'\n- {render_code(e)}'
+            desc += '\n'
+
         if desc:
             lines = desc.splitlines()
             if len(desc) > 200 or len(lines) > 3:  # heuristic
@@ -162,9 +203,9 @@ def schema_to_markdown(schema, source_name):
             counters.missing_desc += 1
 
         md.append("| " + " | ".join([
-            make_anchor(path),
-            sanitize(schema_type, add_breaks=True),
-            sanitize(default, add_breaks=True),
+            render_path(path),
+            re.sub(r'[^a-zA-Z0-9_ -]+', '-', str(schema_type)),
+            render_code(default),
             desc_cell
         ]) + " |")
 
