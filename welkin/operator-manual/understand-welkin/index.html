@@ -2432,6 +2432,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#writing-administrator-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing administrator logs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -4680,6 +4689,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#writing-administrator-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing administrator logs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -4829,7 +4847,8 @@ This file is optional and ignored by Welkin.
 We recommend describing here the purpose of the Environment, what kind of applications it hosts, what infrastructure provider it runs on and any noteworthy deviations.</li>
 <li><code>adminlogs</code> is a folder where you can put text files (Markdown) describing operations you performed against this environment.
 This folder is optional and ignored by Welkin.
-We recommend having separate folders for changes, incidents and maintenance.</li>
+We recommend having separate folders for changes, incidents and maintenance.
+See more on writing administrator logs in a later <a href="#writing-administrator-logs">section</a>.</li>
 <li><code>.sops.yaml</code> contains <a href="https://github.com/getsops/sops">sops</a> configuration, used by Welkin to encrypt secrets.
 Welkin makes sure to decrypt secrets when it needs them.</li>
 <li><code>ck8s-cluster-api</code>, <code>compliantkubernetes-apps</code> and <code>compliantkubernetes-kubespray</code> are the git submodules of the Cluster API, Apps and Kubespray layer, respectively.
@@ -4891,6 +4910,28 @@ An alternative is to pack all Welkin source code in a Docker image.</p>
 <p>You must specify a configuration repository in the environment variable <code>CK8S_CONFIG_PATH</code>.
 Then you can interact with Welkin via commands such as <code>ck8s</code> and <code>ck8s-kubespray</code> provided in the source code.
 A typical usage of these commands is described later in this guide.</p>
+<h2 id="writing-administrator-logs">Writing administrator logs<a class="headerlink" href="#writing-administrator-logs" title="Permanent link">&para;</a></h2>
+<p>We highly recommend writing admin logs to capture any changes made to a Welkin environment.
+These logs should summarize:</p>
+<ul>
+<li>What happened</li>
+<li>Why it was done</li>
+<li>The steps taken</li>
+</ul>
+<p>Admin logs serves as a reference for future you and your team, offering guidance when repeating similar changes or for troubleshooting.</p>
+<p>We recommend separating admin logs into three different categories:</p>
+<ul>
+<li><strong>Maintenance</strong> - Document steps done during a scheduled maintenance e.g. Kubespray or Welkin Apps upgrade</li>
+<li><strong>Change</strong> - Document steps done for changes done outside of scheduled maintenance, e.g. configuration changes</li>
+<li><strong>Incident</strong> - Describe the incident and the steps taken to resolve it</li>
+</ul>
+<p>When operating on a Cluster, we recommend capturing terminal output to keep a detailed log of what steps were taken to solve e.g. an incident.
+This can be done with tools such as <a href="https://man7.org/linux/man-pages/man1/script.1.html"><code>script</code></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since the terminal output captured may contain sensitive information, it is also strongly recommended to encrypt the output file if it is planned to be stored in a Git repository or similar.</p>
+</div>
+<p><a href="https://github.com/elastisys/welkin/tree/main/examples/adminlogs/">Templates for admin logs can be found here</a> which can be used and adapted to your needs.</p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Now that you have a good understanding for Welkin, proceed with a <a href="../provider-audit/">provider audit</a> to understand the capabilities of the underlying infrastructure provider and determine how to best configure Welkin.</p>
 
