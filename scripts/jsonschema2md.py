@@ -182,6 +182,8 @@ def schema_to_markdown(schema, source_name):
         # Add enums and examples to description
         if not desc:
             desc = ''
+            counters.missing_desc += 1
+
         if examples:
             desc += '\n\nExamples:\n'
             for e in examples:
@@ -193,15 +195,12 @@ def schema_to_markdown(schema, source_name):
                 desc += f'\n- {render_code(e)}'
             desc += '\n'
 
-        if desc:
-            lines = desc.splitlines()
-            if len(desc) > 200 or len(lines) > 3:  # heuristic
-                notes[path] = desc
-                desc_cell = f'<a id="noteref:{path}" href="#note:{path}">See note</a>'
-            else:
-                desc_cell = sanitize(desc)
+        lines = desc.splitlines()
+        if len(desc) > 200 or len(lines) > 3:  # heuristic
+            notes[path] = desc
+            desc_cell = f'<a id="noteref:{path}" href="#note:{path}">See note</a>'
         else:
-            counters.missing_desc += 1
+            desc_cell = sanitize(desc)
 
         md.append("| " + " | ".join([
             render_path(path),
