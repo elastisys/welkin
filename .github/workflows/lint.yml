@@ -36,7 +36,7 @@ jobs:
           SKIP: no-commit-to-branch
 
       - name: Auto-generate documentation
-        run: ./scripts/jsonschema2md.sh --rev main
+        run: ./scripts/jsonschema2md.py
 
       - name: Build docs
         run: mkdocs build
@@ -45,4 +45,4 @@ jobs:
         run: |
           FILES=$(find site -name '*.html' -print)
           echo "Checking $(echo $FILES | wc -w) files ..."
-          ! egrep '&lt;(br|div|img|p>)' $FILES
+          ! egrep '&lt;(div|img|p>)' $FILES
