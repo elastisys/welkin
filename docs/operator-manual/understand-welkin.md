@@ -116,6 +116,7 @@ We recommend describing here the purpose of the Environment, what kind of applic
 - `adminlogs` is a folder where you can put text files (Markdown) describing operations you performed against this environment.
 This folder is optional and ignored by Welkin.
 We recommend having separate folders for changes, incidents and maintenance.
+See more on writing administrator logs in a later [section](#writing-administrator-logs).
 - `.sops.yaml` contains [sops](https://github.com/getsops/sops) configuration, used by Welkin to encrypt secrets.
 Welkin makes sure to decrypt secrets when it needs them.
 - `ck8s-cluster-api`, `compliantkubernetes-apps` and `compliantkubernetes-kubespray` are the git submodules of the Cluster API, Apps and Kubespray layer, respectively.
@@ -179,6 +180,31 @@ To make it easy to get started, Welkin supports several default configurations d
 You must specify a configuration repository in the environment variable `CK8S_CONFIG_PATH`.
 Then you can interact with Welkin via commands such as `ck8s` and `ck8s-kubespray` provided in the source code.
 A typical usage of these commands is described later in this guide.
+
+## Writing administrator logs
+
+We highly recommend writing admin logs to capture any changes made to a Welkin environment.
+These logs should summarize:
+
+- What happened
+- Why it was done
+- The steps taken
+
+Admin logs serves as a reference for future you and your team, offering guidance when repeating similar changes or for troubleshooting.
+
+We recommend separating admin logs into three different categories:
+
+- **Maintenance** - Document steps done during a scheduled maintenance e.g. Kubespray or Welkin Apps upgrade
+- **Change** - Document steps done for changes done outside of scheduled maintenance, e.g. configuration changes
+- **Incident** - Describe the incident and the steps taken to resolve it
+
+When operating on a Cluster, we recommend capturing terminal output to keep a detailed log of what steps were taken to solve e.g. an incident.
+This can be done with tools such as [`script`](https://man7.org/linux/man-pages/man1/script.1.html).
+
+> [!IMPORTANT]
+> Since the terminal output captured may contain sensitive information, it is also strongly recommended to encrypt the output file if it is planned to be stored in a Git repository or similar.
+
+[Templates for admin logs can be found here](https://github.com/elastisys/welkin/tree/main/examples/adminlogs/) which can be used and adapted to your needs.
 
 ## Next Steps
 
