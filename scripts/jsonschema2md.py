@@ -80,10 +80,16 @@ def traverse(schema, path=""):
             full_path = f"{path}.{key}" if path else key
             yield from traverse(subschema, full_path)
 
-    # Handle array items
-    elif schema_type == "array" and "items" in schema:
-        full_path = f"{path}[]" if path else "[]"
-        yield from traverse(schema["items"], full_path)
+def flush_notes(md, notes):
+    """Write out all notes and clear list of notes"""
+    for path, text in sorted(notes.items()):
+        md.append("\n")
+        md.append(f'<h3 id="note:{path}">Notes for <code>{path}</code></h3>')
+        md.append(text)
+        md.append('\n')
+        md.append(f'<a href="#noteref:{path}" title="Jump back to {path}">↩</a>')
+        md.append('\n')
+    notes.clear()
 
 def schema_to_markdown(schema, source_name):
     """
@@ -117,14 +123,7 @@ def schema_to_markdown(schema, source_name):
 
         section = path.split('.')[0]
         if section != last_section:
-            # Footnotes from previous section
-            for path, text in sorted(notes.items()):
-                md.append("\n")
-                md.append(f'<h3 id="note:{path}">Notes for <code>{path}</code></h3>')
-                md.append(text)
-                md.append('\n')
-                md.append(f'<a href="#noteref:{path}" title="Jump back to {path}">↩</a>')
-                md.append('\n')
+            flush_notes(md, notes)
 
             # Section header
             md.append(f'\n## `{section}`\n')
@@ -155,6 +154,7 @@ def schema_to_markdown(schema, source_name):
             desc_cell
         ]) + " |")
 
+    flush_notes(md, notes)
 
     return "\n".join(md), counters
 
