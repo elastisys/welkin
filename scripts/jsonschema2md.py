@@ -237,8 +237,12 @@ def load_schema(path_or_url):
         c.setopt(c.FOLLOWLOCATION, True)
         c.setopt(c.WRITEDATA, buffer)
         c.perform()
+        status = c.getinfo(pycurl.RESPONSE_CODE)
         c.close()
         raw = buffer.getvalue()
+
+        if status != 200:
+            raise FileNotFoundError(f"Schema not found at {path_or_url} → HTTP {status}")
     else:
         with open(path_or_url, "rb") as f:
             raw = f.read()
