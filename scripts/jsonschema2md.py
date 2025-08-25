@@ -66,9 +66,23 @@ def traverse(schema, path=""):
     # Add current node
     if path:
         desc = schema.get("description")
+
+        # Handle array items
+        if schema_type == "array":
+            path = f"{path}[]" if path else "[]"
+
+            item_schema = schema.get("items", {})
+            item_desc = item_schema.get("description")
+            if item_desc:
+                desc += f'\n\n{item_desc}'
+
+            item_type = item_schema.get("type")
+            if item_type:
+                schema_type += f' of {item_type}'
+
         yield [
             path,
-            schema.get("type"),
+            schema_type,
             schema.get("default"),
             desc
         ]
