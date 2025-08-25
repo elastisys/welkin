@@ -44,77 +44,47 @@ class Counters:
     missing_desc: int = 0
     keys: int = 0
 
-def traverse(schema, path="", notes=None, counters=None):
+def traverse(schema, path=""):
     """
-    Traverse a JSON Schema and extract table rows.
+    Traverse a JSON Schema and yield table rows.
 
     Args:
         schema: The current JSON Schema node.
         path: JSON path of this node (dot/bracket notation).
-        notes: Dictionary of footnotes collected so far.
         counters: Dict tracking number of missing types/descriptions.
 
     Returns:
-        A tuple of:
-            - rows: list of rows for the Markdown table,
-            - notes: updated notes dict,
-            - counters: updated Counters.
+        A generator returning tubles: key path, type, default and description.
     """
-    rows = []
-    if notes is None:
-        notes = {}
-    if counters is None:
-        counters = Counters()
-
     # JSON Schema allows non-dict nodes (e.g. `true` / `false` for
     # boolean schemas, or scalars in certain contexts like `enum`).
     # These don’t have type/description/default, so we skip them here.
     if not isinstance(schema, dict):
-        return rows, notes, counters
+        return
 
     schema_type = schema.get("type")
 
     # Add current node
     if path:
-        desc = schema.get("description", "")
-        desc_cell = MISSING
-        if desc:
-            lines = desc.splitlines()
-            if len(desc) > 200 or len(lines) > 3:  # heuristic
-                note_id = len(notes) + 1
-                notes[note_id] = desc
-                desc_cell = f"See note [^{note_id}]"
-            else:
-                desc_cell = sanitize(desc)
-        else:
-            counters.missing_desc += 1
-
-        if not schema_type:
-            counters.missing_type += 1
-
-        rows.append([
-            make_anchor(path),
-            sanitize(schema.get("type"), add_breaks=True),
-            sanitize(schema.get("default"), add_breaks=True),
-            desc_cell
-        ])
-        counters.keys += 1
+        desc = schema.get("description")
+        yield [
+            path,
+            schema.get("type"),
+            schema.get("default"),
+            desc
+        ]
 
     # Handle object properties (sorted alphabetically)
     if schema_type == "object" and "properties" in schema:
         for key in sorted(schema["properties"].keys()):
             subschema = schema["properties"][key]
             full_path = f"{path}.{key}" if path else key
-            subrows, notes, counters = traverse(subschema, full_path, notes, counters)
-            rows.extend(subrows)
+            yield from traverse(subschema, full_path)
 
     # Handle array items
     elif schema_type == "array" and "items" in schema:
         full_path = f"{path}[]" if path else "[]"
-        subrows, notes, counters = traverse(schema["items"], full_path, notes, counters)
-        rows.extend(subrows)
-
-    return rows, notes, counters
+        yield from traverse(schema["items"], full_path)
 
 def format_footnote(idx, text):
     """Format footnotes so MkDocs/GitHub render them properly."""
@@ -130,11 +100,11 @@ def schema_to_markdown(schema, source_name):
     """
     Converts a schema into a markdown document. Count missing stuff.
     """
-    rows = [["Key", "Type", "Default", "Description"]]
-    rows_body, notes, counters = traverse(schema)
-    rows += rows_body
-
+    counters = Counters()
     md = []
+    notes = {}
+
+    header = ["Key", "Type", "Default", "Description"]
 
     # Source attribution
     if source_name.startswith("http://") or source_name.startswith("https://"):
@@ -147,12 +117,34 @@ def schema_to_markdown(schema, source_name):
     md.append('Cells marked with "—" mean "not specified in schema".\n')
 
     # Table header
-    md.append("| " + " | ".join(rows[0]) + " |")
-    md.append("|" + "|".join(["---"] * len(rows[0])) + "|")
+    md.append("| " + " | ".join(header) + " |")
+    md.append("|" + "|".join(["---"] * len(header)) + "|")
 
     # Table body
-    for row in rows[1:]:
-        md.append("| " + " | ".join(row) + " |")
+    for path, schema_type, default, desc in traverse(schema):
+        counters.keys += 1
+
+        if not schema_type:
+            counters.missing_type += 1
+
+        desc_cell = MISSING
+        if desc:
+            lines = desc.splitlines()
+            if len(desc) > 200 or len(lines) > 3:  # heuristic
+                note_id = len(notes) + 1
+                notes[note_id] = desc
+                desc_cell = f"See note [^{note_id}]"
+            else:
+                desc_cell = sanitize(desc)
+        else:
+            counters.missing_desc += 1
+
+        md.append("| " + " | ".join([
+            make_anchor(path),
+            sanitize(type, add_breaks=True),
+            sanitize(default, add_breaks=True),
+            desc_cell
+        ]) + " |")
 
     # Footnotes
     if notes:
