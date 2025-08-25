@@ -10,6 +10,7 @@ import sys
 
 from dataclasses import dataclass
 import pycurl
+import requests
 import yaml
 
 MISSING = "—"  # Em dash for missing values
@@ -249,6 +250,35 @@ def load_schema(path_or_url):
 
     return yaml.safe_load(raw)
 
+def resolve_schema_ref(repo, rev):
+    """
+    Convert a branch name in the Welkin public docs to a tag name in Welkin Apps.
+
+    Examples:
+
+    - main -> main
+    - release-v0.47 -> v0.47.2
+    """
+    if re.match(r"release-", rev):
+        version = rev.split("-", 1)[1]
+
+        # Fetch tags
+        tags_url = f"https://api.github.com/repos/{repo}/tags"
+        resp = requests.get(tags_url, timeout=10)
+        resp.raise_for_status()
+        tags = [t["name"] for t in resp.json()]
+
+        # Sort tags reverse (like yq: sort | reverse)
+        tags_sorted = sorted(tags, reverse=True)
+
+        # Find the first tag that matches the version
+        matches = [t for t in tags_sorted if re.search(version, t)]
+        if matches:
+            return matches[0]
+        raise ValueError(f"unable to resolve full revision for {rev}")
+
+    return rev
+
 def main():
     """Entrypoint (duh!)"""
     parser = argparse.ArgumentParser(
@@ -262,15 +292,25 @@ def main():
         "-o", "--output-dir", default="./docs/operator-manual/schema/",
         help="Output folder (default: ./docs/operator-manual/schema/)"
     )
+    parser.add_argument(
+        "-r", "--rev", default=os.environ.get('GITHUB_REF_NAME', 'main'),
+        help=
+            "Produce specified documentation version "
+            "(default: $GITHUB_REF_NAME or 'main')"
+    )
     args = parser.parse_args()
 
     # Apply defaults if no inputs provided
     if not args.inputs:
+        print(f"🔎 Resolving ref… {args.rev}")
+        ref = resolve_schema_ref(
+            'elastisys/compliantkubernetes-apps', args.rev)
+        print(f"🏷️  Resolved {args.rev} → {ref}")
         args.inputs = [
             "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps"
-            "/refs/heads/main/config/schemas/config.yaml",
+            f"/{ref}/config/schemas/config.yaml",
             "https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps"
-            "/refs/heads/main/config/schemas/secrets.yaml",
+            f"/{ref}/config/schemas/secrets.yaml",
         ]
 
     os.makedirs(args.output_dir, exist_ok=True)
