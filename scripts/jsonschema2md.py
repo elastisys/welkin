@@ -85,16 +85,6 @@ def traverse(schema, path=""):
         full_path = f"{path}[]" if path else "[]"
         yield from traverse(schema["items"], full_path)
 
-def format_footnote(idx, text):
-    """Format footnotes so MkDocs/GitHub render them properly."""
-    lines = text.strip().splitlines()
-    if not lines:
-        return f"[^{idx}]:"
-    out = [f"[^{idx}]: {lines[0]}"]
-    for line in lines[1:]:
-        out.append("    " + line)  # indent continuation lines
-    return "\n".join(out)
-
 def schema_to_markdown(schema, source_name):
     """
     Converts a schema into a markdown document. Count missing stuff.
@@ -127,6 +117,15 @@ def schema_to_markdown(schema, source_name):
 
         section = path.split('.')[0]
         if section != last_section:
+            # Footnotes from previous section
+            for path, text in sorted(notes.items()):
+                md.append("\n")
+                md.append(f'<h3 id="note:{path}">Notes for <code>{path}</code></h3>')
+                md.append(text)
+                md.append('\n')
+                md.append(f'<a href="#noteref:{path}" title="Jump back to {path}">↩</a>')
+                md.append('\n')
+
             # Section header
             md.append(f'\n## `{section}`\n')
             md.append(f'{desc}\n') # desc is assumed to be markdown
@@ -142,9 +141,8 @@ def schema_to_markdown(schema, source_name):
         if desc:
             lines = desc.splitlines()
             if len(desc) > 200 or len(lines) > 3:  # heuristic
-                note_id = len(notes) + 1
-                notes[note_id] = desc
-                desc_cell = f"See note [^{note_id}]"
+                notes[path] = desc
+                desc_cell = f'<a id="noteref:{path}" href="#note:{path}">See note</a>'
             else:
                 desc_cell = sanitize(desc)
         else:
@@ -157,11 +155,6 @@ def schema_to_markdown(schema, source_name):
             desc_cell
         ]) + " |")
 
-    # Footnotes
-    if notes:
-        md.append("\n")
-        for idx, text in notes.items():
-            md.append(format_footnote(idx, text))
 
     return "\n".join(md), counters
 
