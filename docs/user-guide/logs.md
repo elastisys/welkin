@@ -301,7 +301,7 @@ For more examples and how to use the tool, read the documentation [in the reposi
 ## Logs over HTTP
 
 Some applications might not directly output certain logs to stdout/stderr.
-For example, [MinIO](https://docs.min.io/enterprise/aistor-object-store/operations/monitoring/minio-logging/) can be configured to send audit logs to an HTTP endpoint.
+For example, [MinIO](https://docs.min.io/community/minio-object-store/operations/monitoring/minio-logging.html#publish-audit-logs-to-http-webhook) can be configured to send audit logs to an HTTP endpoint.
 In such cases, we recommend running your own instance of Fluentd as a sidecar container.
 Said sidecar container outputs received HTTP requests to stdout.
 This allows Welkin -- which happens to also use Fluentd -- to pick up, filter and buffer the logs.
