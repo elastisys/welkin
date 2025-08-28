@@ -5247,7 +5247,7 @@ docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </
 <p>For more examples and how to use the tool, read the documentation <a href="https://github.com/elasticsearch-dump/elasticsearch-dump#use">in the repository</a>.</p>
 <h2 id="logs-over-http">Logs over HTTP<a class="headerlink" href="#logs-over-http" title="Permanent link">&para;</a></h2>
 <p>Some applications might not directly output certain logs to stdout/stderr.
-For example, <a href="https://docs.min.io/enterprise/aistor-object-store/operations/monitoring/minio-logging/">MinIO</a> can be configured to send audit logs to an HTTP endpoint.
+For example, <a href="https://docs.min.io/community/minio-object-store/operations/monitoring/minio-logging.html#publish-audit-logs-to-http-webhook">MinIO</a> can be configured to send audit logs to an HTTP endpoint.
 In such cases, we recommend running your own instance of Fluentd as a sidecar container.
 Said sidecar container outputs received HTTP requests to stdout.
 This allows Welkin -- which happens to also use Fluentd -- to pick up, filter and buffer the logs.</p>
