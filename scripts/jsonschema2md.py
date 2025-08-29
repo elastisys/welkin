@@ -3,12 +3,12 @@
 Convert JSON Schemas into a nice table
 """
 import argparse
-import io
 import os
 import re
 import sys
 
 from dataclasses import dataclass
+import jsonref
 import requests
 import yaml
 
@@ -235,7 +235,8 @@ def load_schema(path_or_url):
         with open(path_or_url, "rb") as f:
             content = f.read()
 
-    return yaml.safe_load(content)
+    data = yaml.safe_load(content)
+    return jsonref.JsonRef.replace_refs(data)
 
 def resolve_schema_ref(repo, rev):
     """
