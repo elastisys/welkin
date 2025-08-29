@@ -203,7 +203,7 @@ def schema_to_markdown(schema, source_name):
 
         md.append("| " + " | ".join([
             render_path(path),
-            re.sub(r'[^a-zA-Z0-9_ -]+', '-', str(schema_type)),
+            re.sub(rf'[^a-zA-Z0-9_ {MISSING}-]+', '-', str(schema_type)),
             render_code(default),
             desc_cell
         ]) + " |")
