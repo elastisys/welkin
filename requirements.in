@@ -5,6 +5,7 @@
 # - Don't forget to regenerate `requirements.txt` using `pip-compile requirements.in`.
 
 -e file:./mkdocs-ciso-controls
+jsonref>=1.1.0,<2.0.0
 markdown-callouts>=0.4.0,<1.0.0
 mkdocs-include-markdown-plugin>=7.0.0,<8.0.0
 mkdocs-material>=9.6.9,<10.0.0
