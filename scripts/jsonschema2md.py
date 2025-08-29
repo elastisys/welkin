@@ -9,7 +9,6 @@ import re
 import sys
 
 from dataclasses import dataclass
-import pycurl
 import requests
 import yaml
 
@@ -225,29 +224,18 @@ def load_schema(path_or_url):
 
     Raises:
         OSError: If the file cannot be read.
-        pycurl.error: If the URL cannot be fetched.
+        IOError: If the URL cannot be read.
         yaml.YAMLError: If the content cannot be parsed as YAML.
     """
     if path_or_url.startswith("http://") or path_or_url.startswith("https://"):
-        # pycurl downloads in < 0.3s, whereas requests takes > 10s
-        # Didn't fully understand why.
-        buffer = io.BytesIO()
-        c = pycurl.Curl()
-        c.setopt(c.URL, path_or_url)
-        c.setopt(c.FOLLOWLOCATION, True)
-        c.setopt(c.WRITEDATA, buffer)
-        c.perform()
-        status = c.getinfo(pycurl.RESPONSE_CODE)
-        c.close()
-        raw = buffer.getvalue()
-
-        if status != 200:
-            raise FileNotFoundError(f"Schema not found at {path_or_url} → HTTP {status}")
+        resp = requests.get(path_or_url, timeout=10, stream=True)
+        resp.raise_for_status()
+        content = resp.content
     else:
         with open(path_or_url, "rb") as f:
-            raw = f.read()
+            content = f.read()
 
-    return yaml.safe_load(raw)
+    return yaml.safe_load(content)
 
 def resolve_schema_ref(repo, rev):
     """
@@ -339,7 +327,7 @@ def main():
                 f.write(markdown)
 
             print(f"✅ Wrote {out_path}")
-        except (OSError, yaml.YAMLError, pycurl.error) as e:
+        except (OSError, IOError, yaml.YAMLError) as e:
             print(f"❌ Failed to process {input_path}: {e}", file=sys.stderr)
 
 if __name__ == "__main__":

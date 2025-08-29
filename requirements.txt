@@ -94,8 +94,6 @@ platformdirs==4.3.7
     # via mkdocs-get-deps
 pycparser==2.22
     # via cffi
-pycurl==7.45.6
-    # via -r requirements.in
 pygments==2.19.1
     # via mkdocs-material
 pymdown-extensions==10.14.3
