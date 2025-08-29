@@ -4,9 +4,6 @@
 
 ### Deploy Rook
 
-!!! welkin-enterprise "For Welkin Enterprise Customers"
-    To get access to the `welkin-rook` repository, [contact Elastisys](https://elastisys.com/contact/).
-
 To deploy Rook, go to the `welkin-rook` repository and follow the instructions [here](https://github.com/elastisys/welkin-rook/blob/main/README.md) for each Cluster.
 
 > [!NOTE]
