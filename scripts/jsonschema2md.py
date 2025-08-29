@@ -186,12 +186,12 @@ def schema_to_markdown(schema, source_name):
         if examples:
             desc += '\n\nExamples:\n'
             for e in examples:
-                desc += f'\n- {render_code(e)}'
+                desc += f'\n```yaml\n{e}\n```\n'
             desc += '\n'
         if enum:
             desc += '\n\nPossible values:\n'
             for e in enum:
-                desc += f'\n- {render_code(e)}'
+                desc += f'\n```yaml\n{e}\n```\n'
             desc += '\n'
 
         lines = desc.splitlines()
