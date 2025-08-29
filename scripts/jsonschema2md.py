@@ -163,11 +163,16 @@ def schema_to_markdown(schema, source_name):
 
         section = path.split('.')[0]
         if section != last_section:
+            if last_section:
+                md.append('\n</div> <!-- wide-table -->\n')
             flush_notes(md, notes)
 
             # Section header
             md.append(f'\n## `{section}`\n')
             md.append(f'{desc}\n') # desc is assumed to be markdown
+
+            # Begin wide table
+            md.append('\n<div class="wide-table" markdown>\n')
 
             # Table header
             md.append("| " + " | ".join(header) + " |")
@@ -208,6 +213,8 @@ def schema_to_markdown(schema, source_name):
             desc_cell
         ]) + " |")
 
+    if last_section:
+        md.append('\n</div> <!-- wide-table -->\n')
     flush_notes(md, notes)
 
     return "\n".join(md), counters

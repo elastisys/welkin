@@ -1,3 +1,8 @@
+/* Configuration reference has a really wide table. Make use of all screen width */
+.md-grid:has(.wide-table) {
+  max-width: initial;
+}
+
 /* Stuff on the landing page needs to be more specific than mkdocs-material's CSS. */
 .md-content .landing-page {
   /* .columns */
@@ -115,11 +120,6 @@
   font-family: var(--elastisys-details-font);
   font-weight: var(--elastisys-details-weight);
 }
-
-.md-content .landing-page a[role=button]:hover {
-  background-color: var(--md-accent-fg-color);
-}
-
 .md-content .landing-page .columns-always {
   margin: 0;
   padding: 0;
@@ -154,3 +154,5 @@
 }
 
 /* .landing-page */
+
+/*# sourceMappingURL=style.css.map */
