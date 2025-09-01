@@ -9,8 +9,8 @@ This is administrator-facing documentation associated with [this user guide](../
 Ensure the following configuration changes are set in `wc-config.yaml`:
 
 <!-- markdownlint-disable MD044 -->
-1. Ensure [prometheus.devAlertmanager.enabled](schema/config.md) is **true**.
-1. Ensure [prometheus.devAlertmanager.ingressEnabled](schema/config.md) is **false**.
+1. Ensure [prometheus.devAlertmanager.enabled](schema/config.md#prometheus-devalertmanager-enabled) is **true**.
+1. Ensure [prometheus.devAlertmanager.ingressEnabled](schema/config.md#prometheus-devalertmanager-ingressenabled) is **false**.
 <!-- markdownlint-enable MD044 -->
 
 Then apply Welkin Apps.
