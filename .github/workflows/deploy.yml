@@ -64,7 +64,7 @@ jobs:
           set +x
 
       - name: Auto-generate documentation
-        run: ./scripts/jsonschema2md.sh
+        run: ./scripts/jsonschema2md.py
 
       - name: Deploy with mike
         run: |

@@ -15,4 +15,4 @@ Welkin overrides some of Kubespray's defaults, as shown [here](https://github.co
 
 ## Apps Layer
 
-The configuration of the apps layer is documented [here](schema/README.md).
+The configuration of the apps layer is documented [here](schema/config.md) and [here](schema/secrets.md).
