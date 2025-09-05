@@ -53,7 +53,10 @@ def render_path(path):
 
     label = re.sub(r'([./_-])', r'\1<wbr>', path)
 
-    return f'<a id="{anchor}"></a>[{label}](#{anchor})'
+    return (
+        f'{label}' +
+        f'<a id="{anchor}" class="headerlink" href="#{anchor}" title="Permanent link">¶</a>'
+    )
 
 @dataclass
 class Counters:
