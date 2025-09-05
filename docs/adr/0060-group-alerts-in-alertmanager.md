@@ -2,7 +2,7 @@
 
 - Status: Accepted
 - Deciders: Product Team
-- Supersedes: 0013-configure-alerts-in-omt
+- Supersedes: [ADR-0013](0013-configure-alerts-in-omt.md) Configure Alerts in On-call Management Tool (e.g., Opsgenie)
 - Date: 2025-04-29
 
 ## Context and Problem Statement
@@ -11,7 +11,7 @@ As a Welkin administrator, I experience frustration when receiving multiple aler
 This is particularly noticeable when identical alerts are fired for each Pod, such as when a Fluentd issue triggers multiple alerts from every Fluentd Pod.
 
 [ADR-0013](0013-configure-alerts-in-omt.md) previously decided to configure alerting within the on-call management tool (OMT).
-However, given that our current OMT (OpsGenie) lacks robust support for alert grouping, and considering a probable future transition away from OpsGenie, we aim to leverage Alertmanager's native grouping capabilities to mitigate this issue.
+However, given that some OMT's -- such as OpsGenie -- lacks robust support for alert grouping, we aim to leverage Alertmanager's native grouping capabilities to mitigate this issue.
 
 Should we begin utilizing the grouping feature in Alertmanager?
 
