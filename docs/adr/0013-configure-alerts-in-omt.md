@@ -1,6 +1,6 @@
 # [Superseded by [ADR-0060](0060-group-alerts-in-alertmanager.md)] Configure Alerts in On-call Management Tool (e.g., Opsgenie)
 
-- Status: accepted
+- Status: superseded
 - Deciders: Architecture Meeting
 - Date: 2021-06-03
 
