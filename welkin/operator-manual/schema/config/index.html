@@ -7769,6 +7769,42 @@ When logs are shipped to OpenSearch it is done directly from the forwarder daemo
 <td>Kubernetes Tolerations<br><br><a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/">Kubernetes taint and toleration</a></td>
 </tr>
 <tr>
+<td>fluentd.<wbr>objectStorage<a id="fluentd-objectstorage" class="headerlink" href="#fluentd-objectstorage" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configuration options for using object storage specific to Fluentd.</td>
+</tr>
+<tr>
+<td>fluentd.<wbr>objectStorage.<wbr>s3<a id="fluentd-objectstorage-s3" class="headerlink" href="#fluentd-objectstorage-s3" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configurations for using S3 storage.</td>
+</tr>
+<tr>
+<td>fluentd.<wbr>objectStorage.<wbr>s3.<wbr>forcePathStyle<a id="fluentd-objectstorage-s3-forcepathstyle" class="headerlink" href="#fluentd-objectstorage-s3-forcepathstyle" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+</tr>
+<tr>
+<td>fluentd.<wbr>objectStorage.<wbr>s3.<wbr>region<a id="fluentd-objectstorage-s3-region" class="headerlink" href="#fluentd-objectstorage-s3-region" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Region to store data.</td>
+</tr>
+<tr>
+<td>fluentd.<wbr>objectStorage.<wbr>s3.<wbr>regionEndpoint<a id="fluentd-objectstorage-s3-regionendpoint" class="headerlink" href="#fluentd-objectstorage-s3-regionendpoint" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+</tr>
+<tr>
+<td>fluentd.<wbr>objectStorage.<wbr>s3.<wbr>v2Auth<a id="fluentd-objectstorage-s3-v2auth" class="headerlink" href="#fluentd-objectstorage-s3-v2auth" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of v2 authentication, will default to using v4 authentication otherwise.</td>
+</tr>
+<tr>
 <td>fluentd.<wbr>scLogs<a id="fluentd-sclogs" class="headerlink" href="#fluentd-sclogs" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
@@ -9797,6 +9833,42 @@ All config variables that exists in harbor are not exposed via our config.</p>
 <td>object</td>
 <td>—</td>
 <td>—</td>
+</tr>
+<tr>
+<td>harbor.<wbr>objectStorage<a id="harbor-objectstorage" class="headerlink" href="#harbor-objectstorage" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configuration options for using object storage specific to harbor.</td>
+</tr>
+<tr>
+<td>harbor.<wbr>objectStorage.<wbr>s3<a id="harbor-objectstorage-s3" class="headerlink" href="#harbor-objectstorage-s3" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configurations for using S3 storage.</td>
+</tr>
+<tr>
+<td>harbor.<wbr>objectStorage.<wbr>s3.<wbr>forcePathStyle<a id="harbor-objectstorage-s3-forcepathstyle" class="headerlink" href="#harbor-objectstorage-s3-forcepathstyle" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+</tr>
+<tr>
+<td>harbor.<wbr>objectStorage.<wbr>s3.<wbr>region<a id="harbor-objectstorage-s3-region" class="headerlink" href="#harbor-objectstorage-s3-region" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Region to store data.</td>
+</tr>
+<tr>
+<td>harbor.<wbr>objectStorage.<wbr>s3.<wbr>regionEndpoint<a id="harbor-objectstorage-s3-regionendpoint" class="headerlink" href="#harbor-objectstorage-s3-regionendpoint" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+</tr>
+<tr>
+<td>harbor.<wbr>objectStorage.<wbr>s3.<wbr>v2Auth<a id="harbor-objectstorage-s3-v2auth" class="headerlink" href="#harbor-objectstorage-s3-v2auth" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of v2 authentication, will default to using v4 authentication otherwise.</td>
 </tr>
 <tr>
 <td>harbor.<wbr>oidc<a id="harbor-oidc" class="headerlink" href="#harbor-oidc" title="Permanent link">¶</a></td>
@@ -14106,13 +14178,13 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>restore.<wbr>destinations.<wbr>s3<a id="objectstorage-restore-destinations-s3" class="headerlink" href="#objectstorage-restore-destinations-s3" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>Supports both AWS and non-AWS implementations.</td>
+<td>Configurations for using S3 storage.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>restore.<wbr>destinations.<wbr>s3.<wbr>forcePathStyle<a id="objectstorage-restore-destinations-s3-forcepathstyle" class="headerlink" href="#objectstorage-restore-destinations-s3-forcepathstyle" title="Permanent link">¶</a></td>
 <td>boolean</td>
 <td>—</td>
-<td>Force the use of path style access instead of virtual host style access.<br><br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>restore.<wbr>destinations.<wbr>s3.<wbr>region<a id="objectstorage-restore-destinations-s3-region" class="headerlink" href="#objectstorage-restore-destinations-s3-region" title="Permanent link">¶</a></td>
@@ -14124,7 +14196,7 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>restore.<wbr>destinations.<wbr>s3.<wbr>regionEndpoint<a id="objectstorage-restore-destinations-s3-regionendpoint" class="headerlink" href="#objectstorage-restore-destinations-s3-regionendpoint" title="Permanent link">¶</a></td>
 <td>string</td>
 <td>—</td>
-<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br><br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>restore.<wbr>destinations.<wbr>s3.<wbr>v2Auth<a id="objectstorage-restore-destinations-s3-v2auth" class="headerlink" href="#objectstorage-restore-destinations-s3-v2auth" title="Permanent link">¶</a></td>
@@ -14238,13 +14310,13 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>restore.<wbr>sources.<wbr>s3<a id="objectstorage-restore-sources-s3" class="headerlink" href="#objectstorage-restore-sources-s3" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>Supports both AWS and non-AWS implementations.</td>
+<td>Configurations for using S3 storage.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>restore.<wbr>sources.<wbr>s3.<wbr>forcePathStyle<a id="objectstorage-restore-sources-s3-forcepathstyle" class="headerlink" href="#objectstorage-restore-sources-s3-forcepathstyle" title="Permanent link">¶</a></td>
 <td>boolean</td>
 <td>—</td>
-<td>Force the use of path style access instead of virtual host style access.<br><br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>restore.<wbr>sources.<wbr>s3.<wbr>region<a id="objectstorage-restore-sources-s3-region" class="headerlink" href="#objectstorage-restore-sources-s3-region" title="Permanent link">¶</a></td>
@@ -14256,7 +14328,7 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>restore.<wbr>sources.<wbr>s3.<wbr>regionEndpoint<a id="objectstorage-restore-sources-s3-regionendpoint" class="headerlink" href="#objectstorage-restore-sources-s3-regionendpoint" title="Permanent link">¶</a></td>
 <td>string</td>
 <td>—</td>
-<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br><br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>restore.<wbr>sources.<wbr>s3.<wbr>v2Auth<a id="objectstorage-restore-sources-s3-v2auth" class="headerlink" href="#objectstorage-restore-sources-s3-v2auth" title="Permanent link">¶</a></td>
@@ -14346,13 +14418,13 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>s3<a id="objectstorage-s3" class="headerlink" href="#objectstorage-s3" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>Supports both AWS and non-AWS implementations.</td>
+<td>Configurations for using S3 storage.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>s3.<wbr>forcePathStyle<a id="objectstorage-s3-forcepathstyle" class="headerlink" href="#objectstorage-s3-forcepathstyle" title="Permanent link">¶</a></td>
 <td>boolean</td>
 <td>—</td>
-<td>Force the use of path style access instead of virtual host style access.<br><br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>s3.<wbr>region<a id="objectstorage-s3-region" class="headerlink" href="#objectstorage-s3-region" title="Permanent link">¶</a></td>
@@ -14364,7 +14436,7 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>s3.<wbr>regionEndpoint<a id="objectstorage-s3-regionendpoint" class="headerlink" href="#objectstorage-s3-regionendpoint" title="Permanent link">¶</a></td>
 <td>string</td>
 <td>—</td>
-<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br><br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>s3.<wbr>v2Auth<a id="objectstorage-s3-v2auth" class="headerlink" href="#objectstorage-s3-v2auth" title="Permanent link">¶</a></td>
@@ -14544,13 +14616,13 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>sync.<wbr>s3<a id="objectstorage-sync-s3" class="headerlink" href="#objectstorage-sync-s3" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>Supports both AWS and non-AWS implementations.</td>
+<td>Configurations for using S3 storage.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>sync.<wbr>s3.<wbr>forcePathStyle<a id="objectstorage-sync-s3-forcepathstyle" class="headerlink" href="#objectstorage-sync-s3-forcepathstyle" title="Permanent link">¶</a></td>
 <td>boolean</td>
 <td>—</td>
-<td>Force the use of path style access instead of virtual host style access.<br><br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>sync.<wbr>s3.<wbr>region<a id="objectstorage-sync-s3-region" class="headerlink" href="#objectstorage-sync-s3-region" title="Permanent link">¶</a></td>
@@ -14562,7 +14634,7 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>objectStorage.<wbr>sync.<wbr>s3.<wbr>regionEndpoint<a id="objectstorage-sync-s3-regionendpoint" class="headerlink" href="#objectstorage-sync-s3-regionendpoint" title="Permanent link">¶</a></td>
 <td>string</td>
 <td>—</td>
-<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br><br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
 </tr>
 <tr>
 <td>objectStorage.<wbr>sync.<wbr>s3.<wbr>v2Auth<a id="objectstorage-sync-s3-v2auth" class="headerlink" href="#objectstorage-sync-s3-v2auth" title="Permanent link">¶</a></td>
@@ -15980,6 +16052,42 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td>number</td>
 <td><code>1000</code></td>
 <td>Configures the maximum number of shards permitted on one node.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>objectStorage<a id="opensearch-objectstorage" class="headerlink" href="#opensearch-objectstorage" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configuration options for using object storage specific to OpenSearch.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>objectStorage.<wbr>s3<a id="opensearch-objectstorage-s3" class="headerlink" href="#opensearch-objectstorage-s3" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configurations for using S3 storage.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>objectStorage.<wbr>s3.<wbr>forcePathStyle<a id="opensearch-objectstorage-s3-forcepathstyle" class="headerlink" href="#opensearch-objectstorage-s3-forcepathstyle" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>objectStorage.<wbr>s3.<wbr>region<a id="opensearch-objectstorage-s3-region" class="headerlink" href="#opensearch-objectstorage-s3-region" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Region to store data.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>objectStorage.<wbr>s3.<wbr>regionEndpoint<a id="opensearch-objectstorage-s3-regionendpoint" class="headerlink" href="#opensearch-objectstorage-s3-regionendpoint" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>objectStorage.<wbr>s3.<wbr>v2Auth<a id="opensearch-objectstorage-s3-v2auth" class="headerlink" href="#opensearch-objectstorage-s3-v2auth" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of v2 authentication, will default to using v4 authentication otherwise.</td>
 </tr>
 <tr>
 <td>opensearch.<wbr>overwriteTemplates<a id="opensearch-overwritetemplates" class="headerlink" href="#opensearch-overwritetemplates" title="Permanent link">¶</a></td>
@@ -17662,7 +17770,37 @@ Additionally Prometheus evaluates recording rules for both service and workload 
 <td>thanos.<wbr>objectStorage<a id="thanos-objectstorage" class="headerlink" href="#thanos-objectstorage" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>Configure Object Storage for Thanos.<br><br>Allows for using OpenStack Swift as the object storage backend type.</td>
+<td>Configure Object Storage for Thanos.<br><br>Allows for using OpenStack Swift as the object storage backend type. Also allows use separate configuration of s3 specific to Thanos.</td>
+</tr>
+<tr>
+<td>thanos.<wbr>objectStorage.<wbr>s3<a id="thanos-objectstorage-s3" class="headerlink" href="#thanos-objectstorage-s3" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configurations for using S3 storage.</td>
+</tr>
+<tr>
+<td>thanos.<wbr>objectStorage.<wbr>s3.<wbr>forcePathStyle<a id="thanos-objectstorage-s3-forcepathstyle" class="headerlink" href="#thanos-objectstorage-s3-forcepathstyle" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+</tr>
+<tr>
+<td>thanos.<wbr>objectStorage.<wbr>s3.<wbr>region<a id="thanos-objectstorage-s3-region" class="headerlink" href="#thanos-objectstorage-s3-region" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Region to store data.</td>
+</tr>
+<tr>
+<td>thanos.<wbr>objectStorage.<wbr>s3.<wbr>regionEndpoint<a id="thanos-objectstorage-s3-regionendpoint" class="headerlink" href="#thanos-objectstorage-s3-regionendpoint" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+</tr>
+<tr>
+<td>thanos.<wbr>objectStorage.<wbr>s3.<wbr>v2Auth<a id="thanos-objectstorage-s3-v2auth" class="headerlink" href="#thanos-objectstorage-s3-v2auth" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of v2 authentication, will default to using v4 authentication otherwise.</td>
 </tr>
 <tr>
 <td>thanos.<wbr>objectStorage.<wbr>type<a id="thanos-objectstorage-type" class="headerlink" href="#thanos-objectstorage-type" title="Permanent link">¶</a></td>
@@ -18738,6 +18876,42 @@ See <a href="https://elastisys.io/welkin/operator-manual/air-gapped/#trivy">the 
 <td>object</td>
 <td>—</td>
 <td><a id="noteref:velero.nodeSelector" href="#note:velero.nodeSelector">See note</a></td>
+</tr>
+<tr>
+<td>velero.<wbr>objectStorage<a id="velero-objectstorage" class="headerlink" href="#velero-objectstorage" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configuration options for using object storage specific to Velero.</td>
+</tr>
+<tr>
+<td>velero.<wbr>objectStorage.<wbr>s3<a id="velero-objectstorage-s3" class="headerlink" href="#velero-objectstorage-s3" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configurations for using S3 storage.</td>
+</tr>
+<tr>
+<td>velero.<wbr>objectStorage.<wbr>s3.<wbr>forcePathStyle<a id="velero-objectstorage-s3-forcepathstyle" class="headerlink" href="#velero-objectstorage-s3-forcepathstyle" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of path style access instead of virtual host style access.<br>Generally <code>false</code> when using AWS, Exoscale, and UpCloud and <code>true</code> for other providers.</td>
+</tr>
+<tr>
+<td>velero.<wbr>objectStorage.<wbr>s3.<wbr>region<a id="velero-objectstorage-s3-region" class="headerlink" href="#velero-objectstorage-s3-region" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Region to store data.</td>
+</tr>
+<tr>
+<td>velero.<wbr>objectStorage.<wbr>s3.<wbr>regionEndpoint<a id="velero-objectstorage-s3-regionendpoint" class="headerlink" href="#velero-objectstorage-s3-regionendpoint" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td>Endpoint to reach the S3 service, mainly applicable for non-AWS implementations.<br>Make sure to prepend the protocol (e.g. <code>https://</code>).</td>
+</tr>
+<tr>
+<td>velero.<wbr>objectStorage.<wbr>s3.<wbr>v2Auth<a id="velero-objectstorage-s3-v2auth" class="headerlink" href="#velero-objectstorage-s3-v2auth" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>Force the use of v2 authentication, will default to using v4 authentication otherwise.</td>
 </tr>
 <tr>
 <td>velero.<wbr>resources<a id="velero-resources" class="headerlink" href="#velero-resources" title="Permanent link">¶</a></td>
