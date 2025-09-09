@@ -364,7 +364,7 @@ To successfully run in an air-gapped environment, Welkin and the underlying oper
 - All servers in the air-gapped environment MUST be configured to:
     - use the NTP system above (see [systemd-timesyncd](https://www.freedesktop.org/software/systemd/man/latest/systemd-timesyncd.service.html));
     - use the DNS system above (see [systemd-resolved](https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html));
-    - trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html));
+    - trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/noble/en/man8/update-ca-certificates.8.html));
     - use the file server for OS repositories;
     - use the registry mirror for container images (see description above).
 - Welkin MUST be configured to:
@@ -372,7 +372,7 @@ To successfully run in an air-gapped environment, Welkin and the underlying oper
     - use the identity provider above.
 - Containers MUST trust your Certificate Authority. This can be accomplished as follows:
     - Note: Currently, Welkin **only supports Option A**. Please contact Elastisys, if you prefer Option B or C.
-    - Option A: Build containers so as to trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html)).
+    - Option A: Build containers so as to trust your Certificate Authority (see [update-ca-certificates](https://manpages.ubuntu.com/manpages/noble/en/man8/update-ca-certificates.8.html)).
         - This solution solves the trust problem at build-time. Some people see this as the most robust, as it can be more robustly tested and rolled out.
     - Option B: Inject the certificate of your Certificate Authority with [trust-manager](https://cert-manager.io/docs/trust/trust-manager/).
     - Option C: Inject the certificate of your Certificate Authority with [Kyverno](https://kyverno.io/policies/other/add-certificates-volume/add-certificates-volume/).
