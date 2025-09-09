@@ -208,7 +208,7 @@ The following steps assumes SealedSecrets is installed in the Cluster. For insta
 
 ### Using `vals` with HashiCorp's Vault
 
-If you want to use [`vals`](https://github.com/helmfile/vals) with [Vault](https://www.vaultproject.io/), you will need to contact your Platform Administrator requesting that you want to use `vals` with Vault together with Argo CD.
+If you want to use [`vals`](https://github.com/helmfile/vals) with [Vault](https://developer.hashicorp.com/vault), you will need to contact your Platform Administrator requesting that you want to use `vals` with Vault together with Argo CD.
 
 1. Create a Secret in the `argocd-system` namespace called `vals-secret`:
 
