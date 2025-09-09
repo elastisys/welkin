@@ -123,6 +123,7 @@ seccomp
 setgid
 setuid
 SLA
+OMT
 # `snowflakiness` is rather informal, but it's rather used, so let's admit it.
 # See https://martinfowler.com/bliki/SnowflakeServer.html
 snowflakiness
