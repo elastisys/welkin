@@ -5241,7 +5241,7 @@ Configure Welkin to use your ACME server instead of LetsEncrypt.</li>
 <li>All servers in the air-gapped environment MUST be configured to:<ul>
 <li>use the NTP system above (see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-timesyncd.service.html">systemd-timesyncd</a>);</li>
 <li>use the DNS system above (see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-resolved.service.html">systemd-resolved</a>);</li>
-<li>trust your Certificate Authority (see <a href="https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html">update-ca-certificates</a>);</li>
+<li>trust your Certificate Authority (see <a href="https://manpages.ubuntu.com/manpages/noble/en/man8/update-ca-certificates.8.html">update-ca-certificates</a>);</li>
 <li>use the file server for OS repositories;</li>
 <li>use the registry mirror for container images (see description above).</li>
 </ul>
@@ -5253,7 +5253,7 @@ Configure Welkin to use your ACME server instead of LetsEncrypt.</li>
 </li>
 <li>Containers MUST trust your Certificate Authority. This can be accomplished as follows:<ul>
 <li>Note: Currently, Welkin <strong>only supports Option A</strong>. Please contact Elastisys, if you prefer Option B or C.</li>
-<li>Option A: Build containers so as to trust your Certificate Authority (see <a href="https://manpages.ubuntu.com/manpages/xenial/man8/update-ca-certificates.8.html">update-ca-certificates</a>).<ul>
+<li>Option A: Build containers so as to trust your Certificate Authority (see <a href="https://manpages.ubuntu.com/manpages/noble/en/man8/update-ca-certificates.8.html">update-ca-certificates</a>).<ul>
 <li>This solution solves the trust problem at build-time. Some people see this as the most robust, as it can be more robustly tested and rolled out.</li>
 </ul>
 </li>
