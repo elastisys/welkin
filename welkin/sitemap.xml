@@ -269,6 +269,10 @@
          <lastmod>2025-09-09</lastmod>
     </url>
     <url>
+         <loc>https://elastisys.io/welkin/adr/0060-group-alerts-in-alertmanager/</loc>
+         <lastmod>2025-09-09</lastmod>
+    </url>
+    <url>
          <loc>https://elastisys.io/welkin/adr/template/</loc>
          <lastmod>2025-09-09</lastmod>
     </url>
