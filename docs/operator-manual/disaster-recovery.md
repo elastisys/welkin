@@ -279,6 +279,23 @@ curl -L -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/$
 '
 ```
 
+To monitor the progress of the restore process and make sure that the index or indices are restored as expected you can watch the indices details:
+
+```bash
+watch -n 2 curl -Ls -u "${user}:${password}" "${os_url}/_cat/indices/${indices}?v"
+```
+
+The output will update every 2 seconds and show a list of the restored indices.
+The health of all indices should eventually transition to `green` and other columns such as `docs.count` (Total documents) and `store.size` (Total size) will be populated with their expected values.
+
+Confirm the Cluster health status:
+
+```bash
+curl -Ls -u "${user}:${password}" "${os_url}/_cluster/health" | jq -r '.status'
+```
+
+Output should say `green` if the Cluster is healthy.
+
 Read the [documentation](https://opensearch.org/docs/latest/opensearch/snapshot-restore/) to see the API, all parameters and their explanations.
 
 #### Restoring OpenSearch Dashboards data
