@@ -5315,6 +5315,15 @@ curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span>
 <span class="s1">}</span>
 <span class="s1">&#39;</span>
 </code></pre></div>
+<p>To monitor the progress of the restore process and make sure that the index or indices are restored as expected you can watch the indices details:</p>
+<div class="highlight"><pre><span></span><code>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>curl<span class="w"> </span>-Ls<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cat/indices/</span><span class="si">${</span><span class="nv">indices</span><span class="si">}</span><span class="s2">?v&quot;</span>
+</code></pre></div>
+<p>The output will update every 2 seconds and show a list of the restored indices.
+The health of all indices should eventually transition to <code>green</code> and other columns such as <code>docs.count</code> (Total documents) and <code>store.size</code> (Total size) will be populated with their expected values.</p>
+<p>Confirm the Cluster health status:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-Ls<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cluster/health&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.status&#39;</span>
+</code></pre></div>
+<p>Output should say <code>green</code> if the Cluster is healthy.</p>
 <p>Read the <a href="https://opensearch.org/docs/latest/opensearch/snapshot-restore/">documentation</a> to see the API, all parameters and their explanations.</p>
 <h4 id="restoring-opensearch-dashboards-data">Restoring OpenSearch Dashboards data<a class="headerlink" href="#restoring-opensearch-dashboards-data" title="Permanent link">&para;</a></h4>
 <p>Data in OpenSearch Dashboards (saved searches, visualizations, dashboards, etc) is stored in the indices pointed to by the alias <code>.kibana</code>. To restore that data you first need to delete the index and then do a restore.</p>
