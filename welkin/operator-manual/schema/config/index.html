@@ -16375,6 +16375,10 @@ Additionally until memory allocation is at 2 GiB and more it is recommended that
 <h3 id="note:opensearch.indexPerNamespace">Notes for <code>opensearch.indexPerNamespace</code></h3>
 <p>When enabled logs are ingested into multiple indices per namespace.
 When disabled logs are ingested into a single <code>kubernetes</code> index.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When enabling this feature, you must also add an entry to <code>opensearch.curator.retention</code> in <code>sc-config.yaml</code> with <code>pattern: ^[^.].*</code> which matches all non-system indices.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Must be set for both service and workload cluster.</p>
