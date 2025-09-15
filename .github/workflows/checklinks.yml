@@ -26,8 +26,7 @@ jobs:
 
           # Extract and install
           tar -xzf /tmp/lychee.tar.gz -C /tmp
-          sudo mv /tmp/lychee /usr/local/bin/lychee
-          chmod +x /usr/local/bin/lychee
+          sudo install -m755 /tmp/lychee /usr/local/bin/lychee
 
           lychee --version
 
