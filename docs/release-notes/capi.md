@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.7.2](#v072) - 2025-09-15
 - [v0.7.1](#v071) - 2025-08-05
 - [v0.7.0](#v070) - 2025-06-23
 - [v0.6.2](#v062) - 2025-05-21
@@ -16,6 +17,19 @@
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.7.2
+
+Released 2025-09-15
+
+### Improvement(s)
+
+- Update Cloud Provider for Azure to 1.33.3
+
+### Other(s)
+
+- Update image builder template file
+- Update image.bash script to use OS_AUTH_TYPE
 
 ## v0.7.1
 
