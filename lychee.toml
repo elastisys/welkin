@@ -21,6 +21,8 @@ exclude = [
   '\/\/www.oreilly.com',
   '\/\/inera.atlassian.net',
   # Too many redirects
-  'https://admin.google.com/',
+  '^https://admin.google.com/',
+  # Fails unexpectedly
+  '^https://www.bsi.bund.de/',
 ]
 include-fragments = true
