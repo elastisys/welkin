@@ -1,26 +1,34 @@
 name: Regularly check links
 
 on:
+  workflow_dispatch:
   schedule:
     # Runs "Daily on every day-of-week from Monday through Friday." (see https://crontab.guru)
     - cron: "40 9 * * 1-5"
 
 jobs:
-  build:
-    name: Check links
+  linkchecker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: requirements-linkchecker.txt
-
-      - name: Install Python requirements
-        run: pip3 install -r requirements-linkchecker.txt
-
-      - name: Run linkchecker
+      - name: Install lychee v0.20.1 (with SHA256 verification)
         run: |
-          linkchecker --config linkchecker.conf https://elastisys.io
+          set -euo pipefail
+
+          # Download archive
+          curl -sSfL \
+            https://github.com/lycheeverse/lychee/releases/download/lychee-v0.20.1/lychee-x86_64-unknown-linux-gnu.tar.gz \
+            -o /tmp/lychee.tar.gz
+
+          # Verify checksum
+          echo "1dd08bb064e2114c2c9d0c9009f51577de24e805361d6332162807972d8e9474  /tmp/lychee.tar.gz" | sha256sum -c -
+
+          # Extract and install
+          tar -xzf /tmp/lychee.tar.gz -C /tmp
+          sudo install -m755 /tmp/lychee /usr/local/bin/lychee
+
+          lychee --version
+
+      - name: Run elastisys.io link check
+        run: ./scripts/check-elastisys-io.sh
