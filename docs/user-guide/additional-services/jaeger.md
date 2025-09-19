@@ -6,9 +6,7 @@ search:
 
 !!! welkin-managed "For Welkin Managed Customers"
 
-    You can order Managed Jaeger™ by filing a [service ticket](https://elastisys.atlassian.net/servicedesk/).
-
-    This is a preview feature. For more information, please read [ToS 9.1 Preview Features](https://elastisys.com/legal/terms-of-service/#91-preview-features).
+    We have deprecated Jaeger as a managed service while environments with it already installed will be able to keep running it for now, but we will not be adding Managed Jaeger to any new environments.
 
 !!!Warning "Deprecation notice: Jaeger Agent"
 
