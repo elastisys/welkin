@@ -77,6 +77,19 @@ kubectl get rolebindings.rbac.authorization.k8s.io workload-admin -o yaml
 
 If you are not using groups, contact your administrator.
 
+After adding a user to a group in your IdP, the group membership may not be immediately visible because of credential caching.
+To make the new membership visible right away, you can clear the cache.
+This will trigger a new login to Dex, which will fetch the correct groups.
+Any of the following commands will clear the credential cache for `kubectl`:
+
+```bash
+# For modern kubelogin versions >= 1.32.0
+kubectl oidc-login clean
+
+# For older kubelogin versions:
+rm ~/.kube/cache/oidc-login/*
+```
+
 ## How do I add a new namespace?
 
 See [Namespaces](namespaces.md).
