@@ -15922,28 +15922,88 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <td><a id="noteref:opensearch.ism.additionalPolicies" href="#note:opensearch.ism.additionalPolicies">See note</a></td>
 </tr>
 <tr>
+<td>opensearch.<wbr>ism.<wbr>authlog<a id="opensearch-ism-authlog" class="headerlink" href="#opensearch-ism-authlog" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configures rollover for <code>authlog</code> index</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>authlog.<wbr>rolloverAgeDays<a id="opensearch-ism-authlog-rolloveragedays" class="headerlink" href="#opensearch-ism-authlog-rolloveragedays" title="Permanent link">¶</a></td>
+<td>number</td>
+<td><code>1</code></td>
+<td>Configures the age a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>authlog.<wbr>rolloverSizeMB<a id="opensearch-ism-authlog-rolloversizemb" class="headerlink" href="#opensearch-ism-authlog-rolloversizemb" title="Permanent link">¶</a></td>
+<td>number</td>
+<td><code>1000</code></td>
+<td>Configures the size a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
 <td>opensearch.<wbr>ism.<wbr>defaultPolicies<a id="opensearch-ism-defaultpolicies" class="headerlink" href="#opensearch-ism-defaultpolicies" title="Permanent link">¶</a></td>
 <td>boolean</td>
 <td><code>True</code></td>
 <td><a id="noteref:opensearch.ism.defaultPolicies" href="#note:opensearch.ism.defaultPolicies">See note</a></td>
 </tr>
 <tr>
-<td>opensearch.<wbr>ism.<wbr>overwritePolicies<a id="opensearch-ism-overwritepolicies" class="headerlink" href="#opensearch-ism-overwritepolicies" title="Permanent link">¶</a></td>
-<td>boolean</td>
-<td><code>True</code></td>
-<td>When set OpenSearch can be configured with index state management policies via <code>additionalPolicies</code> that overwrite the ones configured via <code>defaultPolicies</code>.</td>
+<td>opensearch.<wbr>ism.<wbr>kubeaudit<a id="opensearch-ism-kubeaudit" class="headerlink" href="#opensearch-ism-kubeaudit" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configures rollover for <code>kubeaudit</code> index</td>
 </tr>
 <tr>
-<td>opensearch.<wbr>ism.<wbr>rolloverAgeDays<a id="opensearch-ism-rolloveragedays" class="headerlink" href="#opensearch-ism-rolloveragedays" title="Permanent link">¶</a></td>
+<td>opensearch.<wbr>ism.<wbr>kubeaudit.<wbr>rolloverAgeDays<a id="opensearch-ism-kubeaudit-rolloveragedays" class="headerlink" href="#opensearch-ism-kubeaudit-rolloveragedays" title="Permanent link">¶</a></td>
 <td>number</td>
 <td><code>1</code></td>
 <td>Configures the age a write index must reach before it is rolled over to a new one.</td>
 </tr>
 <tr>
-<td>opensearch.<wbr>ism.<wbr>rolloverSizeGB<a id="opensearch-ism-rolloversizegb" class="headerlink" href="#opensearch-ism-rolloversizegb" title="Permanent link">¶</a></td>
+<td>opensearch.<wbr>ism.<wbr>kubeaudit.<wbr>rolloverSizeMB<a id="opensearch-ism-kubeaudit-rolloversizemb" class="headerlink" href="#opensearch-ism-kubeaudit-rolloversizemb" title="Permanent link">¶</a></td>
+<td>number</td>
+<td><code>1000</code></td>
+<td>Configures the size a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>kubernetes<a id="opensearch-ism-kubernetes" class="headerlink" href="#opensearch-ism-kubernetes" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configures rollover for <code>kubernetes</code> index</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>kubernetes.<wbr>rolloverAgeDays<a id="opensearch-ism-kubernetes-rolloveragedays" class="headerlink" href="#opensearch-ism-kubernetes-rolloveragedays" title="Permanent link">¶</a></td>
 <td>number</td>
 <td><code>1</code></td>
+<td>Configures the age a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>kubernetes.<wbr>rolloverSizeMB<a id="opensearch-ism-kubernetes-rolloversizemb" class="headerlink" href="#opensearch-ism-kubernetes-rolloversizemb" title="Permanent link">¶</a></td>
+<td>number</td>
+<td><code>1000</code></td>
 <td>Configures the size a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>other<a id="opensearch-ism-other" class="headerlink" href="#opensearch-ism-other" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configures rollover for <code>other</code> index</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>other.<wbr>rolloverAgeDays<a id="opensearch-ism-other-rolloveragedays" class="headerlink" href="#opensearch-ism-other-rolloveragedays" title="Permanent link">¶</a></td>
+<td>number</td>
+<td><code>1</code></td>
+<td>Configures the age a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>other.<wbr>rolloverSizeMB<a id="opensearch-ism-other-rolloversizemb" class="headerlink" href="#opensearch-ism-other-rolloversizemb" title="Permanent link">¶</a></td>
+<td>number</td>
+<td><code>1000</code></td>
+<td>Configures the size a write index must reach before it is rolled over to a new one.</td>
+</tr>
+<tr>
+<td>opensearch.<wbr>ism.<wbr>overwritePolicies<a id="opensearch-ism-overwritepolicies" class="headerlink" href="#opensearch-ism-overwritepolicies" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td><code>True</code></td>
+<td>When set OpenSearch can be configured with index state management policies via <code>additionalPolicies</code> that overwrite the ones configured via <code>defaultPolicies</code>.</td>
 </tr>
 <tr>
 <td>opensearch.<wbr>masterNode<a id="opensearch-masternode" class="headerlink" href="#opensearch-masternode" title="Permanent link">¶</a></td>
@@ -16104,7 +16164,7 @@ The pre-defined rules can be found <a href="https://github.com/elastisys/complia
 <tr>
 <td>opensearch.<wbr>promIndexAlerts[]<a id="opensearch-promindexalerts" class="headerlink" href="#opensearch-promindexalerts" title="Permanent link">¶</a></td>
 <td>array of object</td>
-<td><code>[{'prefix': 'authlog-default', 'alertSizeMB': 2}, {'prefix': 'kubeaudit-default', 'alertSizeMB': 5500}, {'prefix': 'kubernetes-default', 'alertSizeMB': 5500}, {'prefix': 'other-default', 'alertSizeMB': 400}]</code></td>
+<td><code>[{'prefix': 'authlog-default', 'alertSizeMB': 3}, {'prefix': 'kubeaudit-default', 'alertSizeMB': 5500}, {'prefix': 'kubernetes-default', 'alertSizeMB': 5500}, {'prefix': 'other-default', 'alertSizeMB': 400}]</code></td>
 <td>Configures the index alerts monitoring the function of index state management.<br><br>Configures the index alert monitoring the function of index state management.</td>
 </tr>
 <tr>
