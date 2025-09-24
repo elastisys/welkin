@@ -4769,6 +4769,16 @@ Here is an example command (please replace the <code>$MY_HARBOR_IMAGE</code>):</
 <span class="c1"># look at the &#39;subjects&#39; field</span>
 </code></pre></div>
 <p>If you are not using groups, contact your administrator.</p>
+<p>After adding a user to a group in your IdP, the group membership may not be immediately visible because of credential caching.
+To make the new membership visible right away, you can clear the cache.
+This will trigger a new login to Dex, which will fetch the correct groups.
+Any of the following commands will clear the credential cache for <code>kubectl</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For modern kubelogin versions &gt;= 1.32.0</span>
+kubectl<span class="w"> </span>oidc-login<span class="w"> </span>clean
+
+<span class="c1"># For older kubelogin versions:</span>
+rm<span class="w"> </span>~/.kube/cache/oidc-login/*
+</code></pre></div>
 <h2 id="how-do-i-add-a-new-namespace">How do I add a new namespace?<a class="headerlink" href="#how-do-i-add-a-new-namespace" title="Permanent link">&para;</a></h2>
 <p>See <a href="../namespaces/">Namespaces</a>.</p>
 <h2 id="connection-reset-by-peer-when-port-forwarding-to-postgresql">"Connection reset by peer" when port-forwarding to PostgreSQL?<a class="headerlink" href="#connection-reset-by-peer-when-port-forwarding-to-postgresql" title="Permanent link">&para;</a></h2>
