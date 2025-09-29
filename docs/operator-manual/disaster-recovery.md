@@ -115,7 +115,11 @@ Install the OpenSearch suite:
 ./bin/ck8s ops helmfile sc -l app=opensearch apply
 ```
 
-Wait for the installation to complete.
+Snapshots are by default taken regularly. To avoid uploading empty snapshots consider suspending this automatic process during recovery:
+
+```bash
+curl -L -u "${user}:${password}" -X POST "${os_url}/_plugins/_sm/policies/snapshot_management_policy/_stop"
+```
 
 After the installation, continue to the **Restore** section to proceed with the restore.
 If you want to restore all indices, use the following `indices` variable:
@@ -295,6 +299,13 @@ curl -Ls -u "${user}:${password}" "${os_url}/_cluster/health" | jq -r '.status'
 ```
 
 Output should say `green` if the Cluster is healthy.
+
+> [!NOTE]
+> If you previously suspended the automatic creation of snapshots via the ``snapshot_management_policy``, you should now enable it once again:
+>
+> ```bash
+> curl -L -u "${user}:${password}" -X POST "${os_url}/_plugins/_sm/policies/snapshot_management_policy/_start"
+> ```
 
 Read the [documentation](https://opensearch.org/docs/latest/opensearch/snapshot-restore/) to see the API, all parameters and their explanations.
 
