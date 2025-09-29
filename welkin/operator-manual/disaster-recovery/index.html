@@ -5171,7 +5171,9 @@ Otherwise, skip ahead to the <a href="#restore"><strong>Restore</strong></a> sec
 <p>Install the OpenSearch suite:</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>helmfile<span class="w"> </span>sc<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>opensearch<span class="w"> </span>apply
 </code></pre></div>
-<p>Wait for the installation to complete.</p>
+<p>Snapshots are by default taken regularly. To avoid uploading empty snapshots consider suspending this automatic process during recovery:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_plugins/_sm/policies/snapshot_management_policy/_stop&quot;</span>
+</code></pre></div>
 <p>After the installation, continue to the <strong>Restore</strong> section to proceed with the restore.
 If you want to restore all indices, use the following <code>indices</code> variable:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">indices</span><span class="o">=</span><span class="s2">&quot;kubernetes-*,kubeaudit-*,other-*,authlog-*&quot;</span>
@@ -5324,6 +5326,12 @@ The health of all indices should eventually transition to <code>green</code> and
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-Ls<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_cluster/health&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.status&#39;</span>
 </code></pre></div>
 <p>Output should say <code>green</code> if the Cluster is healthy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you previously suspended the automatic creation of snapshots via the <code>snapshot_management_policy</code>, you should now enable it once again:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_plugins/_sm/policies/snapshot_management_policy/_start&quot;</span>
+</code></pre></div>
+</div>
 <p>Read the <a href="https://opensearch.org/docs/latest/opensearch/snapshot-restore/">documentation</a> to see the API, all parameters and their explanations.</p>
 <h4 id="restoring-opensearch-dashboards-data">Restoring OpenSearch Dashboards data<a class="headerlink" href="#restoring-opensearch-dashboards-data" title="Permanent link">&para;</a></h4>
 <p>Data in OpenSearch Dashboards (saved searches, visualizations, dashboards, etc) is stored in the indices pointed to by the alias <code>.kibana</code>. To restore that data you first need to delete the index and then do a restore.</p>
