@@ -45,7 +45,7 @@ Required software:
 Your Cluster management software of choice, of which you can choose either or both:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/), a command-line tool to help manage your Kubernetes resources
-- [OpenLens](https://github.com/MuhammedKalkan/OpenLens/releases), a graphical user interface to help manage your Kubernetes resources (see also our [dedicated page on Lens integration](kubernetes-ui.md))
+- [Kubernetes VS Code extension](https://code.visualstudio.com/docs/azure/kubernetes), a graphical user interface to help manage your Kubernetes resources (see also our [dedicated page on Kubernetes UIs](kubernetes-ui.md))
 
 Optional, but very useful, tools for developers and DevOps engineers:
 
