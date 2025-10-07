@@ -40,19 +40,23 @@ See [the instructions in `compliantkubernetes-apps` for how to restore off-site 
 
 - Configure and set base ck8s-configs:
 
-  sc-config.yaml:
+  **sc-config.yaml:**
 
   `harbor.persistence.swift.*`,`objectStorage.sync.*`
 
-  common-config.yaml:
+  **common-config.yaml:**
 
-  `objectStorage.s3.region`, `objectStorage.s3.regionEndpoint`
+  `objectStorage.s3.region`, `objectStorage.s3.regionEndpoint` if S3 is used.
 
-  secrets.yaml:
+  **secrets.yaml:**
 
-  `dex.connectors.*`, `harbor.persistence.swift.username`, `harbor.persistence.swift.password`, `objectStorage.s3.accessKey`, `objectStorage.s3.secretKey`
+  `dex.connectors.*`, `harbor.persistence.swift.username`, `harbor.persistence.swift.password`.
 
-  .state/s3cfg.ini:
+  `objectStorage.azure.storageAccountKey` if Azure is used.
+
+  `objectStorage.s3.accessKey`, `objectStorage.s3.secretKey` if S3 is used.
+
+  **.state/s3cfg.ini:** (only if S3 is used)
 
   `access_key`, `secret_key`, `host_base`, `host_bucket`
 
@@ -64,7 +68,7 @@ See [the instructions in `compliantkubernetes-apps` for how to restore off-site 
 
 ### Backup
 
-OpenSearch is set up to store snapshots in an S3 bucket. There is a [Snapshot Management (SM) policy](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-management/) in OpenSearch which is responsible for the lifecycle management of snapshots, i.e. creation and retention. Note that any manually created snapshot will not be handled by the SM policy, and should be manually cleaned up when no longer needed. If you need to create a snapshot on-demand, you may do so through the OpenSearch API.
+OpenSearch is set up to store snapshots in object storage. There is a [Snapshot Management (SM) policy](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-management/) in OpenSearch which is responsible for the lifecycle management of snapshots, i.e. creation and retention. Note that any manually created snapshot will not be handled by the SM policy, and should be manually cleaned up when no longer needed. If you need to create a snapshot on-demand, you may do so through the OpenSearch API.
 
 Configure the following variables:
 
@@ -129,9 +133,9 @@ indices="kubernetes-*,kubeaudit-*,other-*,authlog-*"
 ```
 
 > [!NOTE]
-> This process assumes that you are using the same S3 bucket as your previous Cluster. If you aren't:
+> This process assumes that you are using the same bucket as your previous Cluster. If you aren't:
 >
-> - Register a new S3 snapshot repository to the old bucket as [described here](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-restore/#register-repository)
+> - Register a new snapshot repository to the old bucket as [described here](https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-restore/#register-repository)
 > - Use the newly registered snapshot repository in the restore process
 
 ### Restore
@@ -168,14 +172,29 @@ os_url=https://opensearch.$(yq '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-co
         }
         '
         ```
+
+        For Azure, instead use:
+        ```
+        curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
+        {
+          "type": "azure",
+          "settings": {
+            "container": "<restored-bucket>",
+            "client": "default",
+            "readonly": true
+          }
+        }
+        '
+        ```
+
         Then restore from this snapshot repository (`backup-repository`) in OpenSearch.
 
     - To restore from an **unencrypted** off-site backup:
 
-        Configure the remote and bucket as the main S3 service and bucket for apps and OpenSearch respectively, then update the OpenSearch Helm releases and perform the restore.
+        Configure the off-site object storage as the main object storage for apps and OpenSearch respectively, then update the OpenSearch Helm releases and perform the restore.
         It is recommended to either suspend or remove the OpenSearch backup CronJob to prevent it from running while restoring.
 
-        Remember to revert to the regular S3 service afterwards and reactivate the backup CronJob! <br/>
+        Remember to revert to the regular object storage afterwards and reactivate the backup CronJob! <br/>
         Replace the previous snapshot repository if it is unusable.
 
 List snapshot repositories:
@@ -362,8 +381,8 @@ curl -L -u "${user}:${password}" -X POST "${os_url}/_snapshot/${snapshot_repo}/$
 
 ### Backup
 
-Harbor is set up to store backups of the database in an S3 bucket (note that this does not include the actual images, since those are already stored in S3 by default).
-There is a CronJob called `harbor-backup-cronjob` in the Cluster that is taking a database dump and uploading it to a S3 bucket.
+Harbor is set up to store backups of the database in object storage (note that this does not include the actual images, since those are already stored in object storage by default).
+There is a CronJob called `harbor-backup-cronjob` in the Cluster that is taking a database dump and uploading it.
 
 To take a backup on-demand, execute
 
@@ -375,7 +394,7 @@ To take a backup on-demand, execute
 
 !!!important "Restoring from off-site backup"
 
-    Since Harbor stores both database backups and images in the same bucket it is recommended to restore the off-site backup into the main S3 service first, reconfigure Harbor to use it, then restore the database from it.
+    Since Harbor stores both database backups and images in the same bucket it is recommended to restore the off-site backup into the main object storage first, reconfigure Harbor to use it, then restore the database from it.
 
 Instructions for how to restore Harbor can be found in `compliantkubernetes-apps`: <https://github.com/elastisys/compliantkubernetes-apps/blob/main/restore/harbor/README.md>
 
@@ -391,7 +410,7 @@ Read more about Velero [here](../user-guide/backup.md).
 
 ### Backup
 
-Velero is set up to take daily backups and store them in an S3 bucket.
+Velero is set up to take daily backups and store them in object storage.
 The daily backup will not take backups of everything in a Kubernetes Cluster, it will instead look for certain labels and annotations.
 Read more about those labels and annotations [here](../user-guide/backup.md#backing-up).
 
@@ -562,7 +581,7 @@ and you can then use the following to handpick resources from the backup you wan
 
 - Restoring from **encrypted** off-site backup:
 
-  Recover the encrypted bucket into the main S3 service and reconfigure Velero to use this bucket, then follow the regular instructions.
+  Recover the encrypted bucket into the main object storage and reconfigure Velero to use this bucket, then follow the regular instructions.
 
   The references in Kubernetes might need to be deleted so Velero can resync from the bucket:
 
@@ -607,6 +626,33 @@ and you can then use the following to handpick resources from the backup you wan
       --credential=velero-backup=cloud
   ```
 
+  <details>
+    <summary>Azure-specific instructions</summary>
+    For Azure-based storage, use the following instructions instead:
+
+    ```bash
+    export CLUSTER=<sc|wc>
+    export AZURE_CONTAINER=<off-site-azure-blob-container>
+    export AZURE_PREFIX=<service-cluster|workload-cluster>
+    export AZURE_RESOURCE_GROUP=$(yq ".objectStorage.sync.azure.resourceGroup" "$CK8S_CONFIG_PATH/sc-config.yaml")
+    export AZURE_STORAGE_ACCOUNT=$(yq ".objectStorage.sync.azure.storageAccountName" "$CK8S_CONFIG_PATH/sc-config.yaml")
+    export AZURE_STORAGE_ACCOUNT_KEY=$(sops -d --extract '["objectStorage"]["sync"]["azure"]["storageAccountKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
+
+    # Create secret for credentials
+    ./bin/ck8s ops kubectl "${CLUSTER}" -n velero create secret generic velero-backup --from-literal=cloud="$(echo -e "AZURE_STORAGE_ACCOUNT_KEY=${AZURE_STORAGE_ACCOUNT_KEY}\nAZURE_CLOUD_NAME=AzurePublicCloud")"
+
+    # Create off-site backup location
+    ./bin/ck8s ops velero "${CLUSTER}" backup-location create backup \
+        --access-mode ReadOnly \
+        --provider azure \
+        --bucket "${AZURE_CONTAINER}" \
+        --prefix "${AZURE_PREFIX}" \
+        --config="resourceGroup=${AZURE_RESOURCE_GROUP},storageAccount=${AZURE_STORAGE_ACCOUNT},storageAccountKeyEnvVar=AZURE_STORAGE_ACCOUNT_KEY" \
+        --credential=velero-backup=cloud
+    ```
+
+  </details>
+
   Check that the backup-location becomes available:
 
   ```console
@@ -627,7 +673,7 @@ and you can then use the following to handpick resources from the backup you wan
   ./bin/ck8s ops velero "${CLUSTER}" restore create <name-of-restore> --from-backup <name-of-backup>
   ```
 
-  After the restore is complete Velero should be reconfigured to use the main S3 service again, with a new bucket if the previous one is unusable.
+  After the restore is complete Velero should be reconfigured to use the main object storage again, with a new bucket if the previous one is unusable.
   Updating or syncing the Helm chart:
 
   ```bash
