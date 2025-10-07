@@ -8,6 +8,7 @@
 
 - [v0.49.0](#v0490) - 2025-10-07
 - [v0.48.0](#v0480) - 2025-08-05
+- [v0.47.3](#v0473) - 2025-09-30
 - [v0.47.2](#v0472) - 2025-07-31
 - [v0.47.1](#v0471) - 2025-07-17
 - [v0.47.0](#v0470) - 2025-06-25
@@ -121,6 +122,14 @@ Released 2025-08-05
 - Upgraded Harbor to v2.13.1.
 - Upgraded Falco chart to v6.0.2.
 - Upgraded Grafana to v12.0.3.
+
+## v0.47.3
+
+Released 2025-09-30
+
+### Improvement(s)
+
+- Patched calico-accountant.
 
 ## v0.47.2
 
