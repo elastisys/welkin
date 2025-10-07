@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.47.3](#v0473) - 2025-09-30
 - [v0.47.2](#v0472) - 2025-07-31
 - [v0.47.1](#v0471) - 2025-07-17
 - [v0.47.0](#v0470) - 2025-06-25
@@ -79,6 +80,14 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.47.3
+
+Released 2025-09-30
+
+### Improvement(s)
+
+- Patched calico-accountant.
 
 ## v0.47.2
 
