@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.49.0](#v0490) - 2025-10-07
 - [v0.48.0](#v0480) - 2025-08-05
 - [v0.47.2](#v0472) - 2025-07-31
 - [v0.47.1](#v0471) - 2025-07-17
@@ -81,6 +82,25 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.49.0
+
+Released 2025-10-07
+
+!!! warning "Application Developer Notice(s)"
+
+    - Prometheus by default overwrites the namespace label for metrics that already has a namespace label, to the namespace of the pod that was scraped for metrics. This is now changed for the instances that were currently affected. The namespace label will now keep the original information, usually the namespace of the object it is referring to, e.g. for cert-manager this is usually the namespace where a certificate exists instead of the cert-manager namespace.<br>Prometheus added a exported_namespace label when it was overwriting the namespace label, with the original value of the namespace label. This is kept for now, but it is deprecated and will be removed in a later version, likely v0.52.
+
+### Feature(s)
+
+- Added a Fluentd metric and alert which catches rejections due to mapping conflicts in OpenSearch.
+
+### Improvement(s)
+
+- Upgraded OpenSearch to v2.19.3.
+- Make namespace label in metric refer to resource, not exporter.
+- Added logging for failing DNS requests.
+- OpenSearch namespace is now PSS restricted.
 
 ## v0.48.0
 
