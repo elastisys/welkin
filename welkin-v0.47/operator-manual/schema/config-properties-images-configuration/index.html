@@ -4527,6 +4527,15 @@ if(!document.__defineGetter__) {
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#calico" class="md-nav__link">
+    <span class="md-ellipsis">
+      calico
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4555,7 +4564,7 @@ if(!document.__defineGetter__) {
 <p>This is auto-generated documentation from a JSON schema that is under construction, this will improve over time.</p>
 </div>
 <p><a href="../config/">Return to the root config schema</a></p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.2/config/schemas/config.yaml#/properties/images
+<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images
 </code></pre></div>
 <p>Configure individual container URI for images of all Welkin components,
 and (optionally) enable support for global registry and/or repository.</p>
@@ -4581,7 +4590,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td style="text-align: left;">Forbidden</td>
 <td style="text-align: left;">Forbidden</td>
 <td style="text-align: left;">none</td>
-<td style="text-align: left;"><a href="https://github.com/elastisys/compliantkubernetes-apps/blob/v0.47.2/config/schemas/config.yaml" title="open original schema">config/schemas/config.yaml*</a></td>
+<td style="text-align: left;"><a href="https://github.com/elastisys/compliantkubernetes-apps/blob/v0.47.3/config/schemas/config.yaml" title="open original schema">config/schemas/config.yaml*</a></td>
 </tr>
 </tbody>
 </table>
@@ -4604,14 +4613,21 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-images-configuration-properties-global-image-settings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.2/config/schemas/config.yaml#/properties/images/properties/global">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-images-configuration-properties-global-image-settings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images/properties/global">Welkin Apps Config</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="#ingressnginx">ingressNginx</a></td>
 <td style="text-align: left;"><code>object</code></td>
 <td style="text-align: left;">Optional</td>
 <td style="text-align: left;">cannot be null</td>
-<td style="text-align: left;"><a href="../config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.2/config/schemas/config.yaml#/properties/images/properties/ingressNginx">Welkin Apps Config</a></td>
+<td style="text-align: left;"><a href="../config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images/properties/ingressNginx">Welkin Apps Config</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#calico">calico</a></td>
+<td style="text-align: left;"><code>object</code></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">cannot be null</td>
+<td style="text-align: left;"><a href="../config-properties-images-configuration-properties-calico-stack-image-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images/properties/calico">Welkin Apps Config</a></td>
 </tr>
 </tbody>
 </table>
@@ -4633,7 +4649,7 @@ that doesn't have a repository, the global repository will be used instead.</p>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-images-configuration-properties-global-image-settings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.2/config/schemas/config.yaml#/properties/images/properties/global">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-images-configuration-properties-global-image-settings/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images/properties/global">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
@@ -4652,14 +4668,33 @@ that doesn't have a repository, the global repository will be used instead.</p>
 <p>cannot be null</p>
 </li>
 <li>
-<p>defined in: <a href="../config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.2/config/schemas/config.yaml#/properties/images/properties/ingressNginx">Welkin Apps Config</a></p>
+<p>defined in: <a href="../config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images/properties/ingressNginx">Welkin Apps Config</a></p>
 </li>
 </ul>
 <p><strong>TYPE</strong>:</p>
 <p><code>object</code> (<a href="../config-properties-images-configuration-properties-ingress-nginx-chart-image-configuration/">ingress-nginx-chart image configuration</a>)</p>
+<h2 id="calico">calico<a class="headerlink" href="#calico" title="Permanent link">&para;</a></h2>
+<p>calico stack image configuration</p>
+<p><code>calico</code></p>
+<ul>
+<li>
+<p>is optional</p>
+</li>
+<li>
+<p>Type: <code>object</code> (<a href="../config-properties-images-configuration-properties-calico-stack-image-configuration/">calico stack image configuration</a>)</p>
+</li>
+<li>
+<p>cannot be null</p>
+</li>
+<li>
+<p>defined in: <a href="../config-properties-images-configuration-properties-calico-stack-image-configuration/" title="https://raw.githubusercontent.com/elastisys/compliantkubernetes-apps/v0.47.3/config/schemas/config.yaml#/properties/images/properties/calico">Welkin Apps Config</a></p>
+</li>
+</ul>
+<p><strong>TYPE</strong>:</p>
+<p><code>object</code> (<a href="../config-properties-images-configuration-properties-calico-stack-image-configuration/">calico stack image configuration</a>)</p>
 <p><a href="../config/">Return to the root config schema</a></p>
 <hr />
-<p>Generated Thu Jul 31 12:29:42 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/8ae14aaed7453040879db4c8b4b44decf13fc9ee">elastisys/compliantkubernetes-apps@v0.47.2</a></p>
+<p>Generated Thu Oct  9 07:02:59 UTC 2025 from <a href="https://github.com/elastisys/compliantkubernetes-apps/commit/baba5e409ca97c31580b46123165bb433181b0d2">elastisys/compliantkubernetes-apps@v0.47.3</a></p>
 
 
 
