@@ -150,6 +150,10 @@ os_url=https://opensearch.$(yq '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-co
 
 !!!important "Restoring from off-site backup"
 
+     - To restore using Rclone:
+
+        If buckets were restored from an off-site object store with Rclone _after_ OpenSearch was installed, remove the new snapshot repository created with the fresh install, then sync OpenSearch to let the configurer re-run, making you able to use the restored snapshots.
+
      - To restore from an **encrypted** off-site backup:
 
         First import the backup into the main S3 service and register the restored bucket as a new snapshot repository:
