@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v4.1.4-ck8s1](#v414-ck8s1) - 2025-10-16
 - [v4.0.6-ck8s3](#v406-ck8s3) - 2025-05-20
 - [v4.0.6-ck8s2](#v406-ck8s2) - 2025-04-25
 - [v4.0.6-ck8s1](#v406-ck8s1) - 2025-02-28
@@ -19,6 +20,23 @@
 !!!note
 
     These are only the user-facing changes.
+
+### v4.1.4-ck8s1
+
+Released 2025-10-16
+
+!!! warning "Application Developer Notice(s)"
+
+    - RabbitMQ has been upgraded to version 4.1. Read through the [breaking changes](https://www.rabbitmq.com/blog/2025/04/15/rabbitmq-4.1.0-is-released#breaking-changes-and-compatibility-notes) of this version.
+        - Most notably users of [amqplib](https://github.com/amqp-node/amqplib/) (a popular library for node.js) must [upgrade to a compatible version](https://github.com/amqp-node/amqplib/blob/main/CHANGELOG.md#v0107).
+    - Network policies for external traffic now properly adapt based on exposed ports.
+    - Allow applications to use the HTTP(S) management API from application developer namespaces.
+
+#### Improvement(s)
+
+- RabbitMQ has been upgraded to v4.1.
+- A `PodDisruptionBudget` is now configured for the RabbitMQ Cluster to ensure high availability during voluntary disruptions.
+- The "RabbitMQ-Overview" Grafana dashboard has been updated.
 
 ### v4.0.6-ck8s3
 
