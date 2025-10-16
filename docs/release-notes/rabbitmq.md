@@ -27,10 +27,10 @@ Released 2025-10-16
 
 !!! warning "Application Developer Notice(s)"
 
-    - Network policies for external traffic now properly adapt based on exposed ports.
-    - Allow applications to use the HTTP(S) management API from application developer namespaces.
     - RabbitMQ has been upgraded to version 4.1. Read through the [breaking changes](https://www.rabbitmq.com/blog/2025/04/15/rabbitmq-4.1.0-is-released#breaking-changes-and-compatibility-notes) of this version.
         - Most notably users of [amqplib](https://github.com/amqp-node/amqplib/) (a popular library for node.js) must [upgrade to a compatible version](https://github.com/amqp-node/amqplib/blob/main/CHANGELOG.md#v0107).
+    - Network policies for external traffic now properly adapt based on exposed ports.
+    - Allow applications to use the HTTP(S) management API from application developer namespaces.
 
 #### Improvement(s)
 
