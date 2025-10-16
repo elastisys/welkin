@@ -5201,6 +5201,10 @@ If you want to restore all indices, use the following <code>indices</code> varia
 <p class="admonition-title">Restoring from off-site backup</p>
 <ul>
 <li>
+<p>To restore using Rclone:</p>
+<p>If buckets were restored from an off-site object store with Rclone <em>after</em> OpenSearch was installed, remove the new snapshot repository created with the fresh install, then sync OpenSearch to let the configurer re-run, making you able to use the restored snapshots.</p>
+</li>
+<li>
 <p>To restore from an <strong>encrypted</strong> off-site backup:</p>
 <p>First import the backup into the main S3 service and register the restored bucket as a new snapshot repository:
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/backup-repository?pretty&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>-d<span class="s1">&#39;</span>
