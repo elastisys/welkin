@@ -4286,6 +4286,30 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v414-ck8s1" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.1.4-ck8s1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.1.4-ck8s1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improvement(s)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v406-ck8s3" class="md-nav__link">
     <span class="md-ellipsis">
       v4.0.6-ck8s3
@@ -4296,7 +4320,7 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improvements" class="md-nav__link">
+  <a href="#improvements_1" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4362,7 +4386,7 @@ if(!document.__defineGetter__) {
 </li>
         
           <li class="md-nav__item">
-  <a href="#improvements_1" class="md-nav__link">
+  <a href="#improvements_2" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4386,7 +4410,7 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improvements_2" class="md-nav__link">
+  <a href="#improvements_3" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4887,6 +4911,30 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v414-ck8s1" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.1.4-ck8s1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.1.4-ck8s1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improvement(s)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v406-ck8s3" class="md-nav__link">
     <span class="md-ellipsis">
       v4.0.6-ck8s3
@@ -4897,7 +4945,7 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improvements" class="md-nav__link">
+  <a href="#improvements_1" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4963,7 +5011,7 @@ if(!document.__defineGetter__) {
 </li>
         
           <li class="md-nav__item">
-  <a href="#improvements_1" class="md-nav__link">
+  <a href="#improvements_2" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -4987,7 +5035,7 @@ if(!document.__defineGetter__) {
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#improvements_2" class="md-nav__link">
+  <a href="#improvements_3" class="md-nav__link">
     <span class="md-ellipsis">
       Improvement(s)
     </span>
@@ -5221,6 +5269,7 @@ if(!document.__defineGetter__) {
 <!-- BEGIN TOC -->
 
 <ul>
+<li><a href="#v414-ck8s1">v4.1.4-ck8s1</a> - 2025-10-16</li>
 <li><a href="#v406-ck8s3">v4.0.6-ck8s3</a> - 2025-05-20</li>
 <li><a href="#v406-ck8s2">v4.0.6-ck8s2</a> - 2025-04-25</li>
 <li><a href="#v406-ck8s1">v4.0.6-ck8s1</a> - 2025-02-28</li>
@@ -5238,6 +5287,25 @@ if(!document.__defineGetter__) {
 <p class="admonition-title">Note</p>
 <p>These are only the user-facing changes.</p>
 </div>
+<h3 id="v414-ck8s1">v4.1.4-ck8s1<a class="headerlink" href="#v414-ck8s1" title="Permanent link">&para;</a></h3>
+<p>Released 2025-10-16</p>
+<div class="admonition warning">
+<p class="admonition-title">Application Developer Notice(s)</p>
+<ul>
+<li>RabbitMQ has been upgraded to version 4.1. Read through the <a href="https://www.rabbitmq.com/blog/2025/04/15/rabbitmq-4.1.0-is-released#breaking-changes-and-compatibility-notes">breaking changes</a> of this version.<ul>
+<li>Most notably users of <a href="https://github.com/amqp-node/amqplib/">amqplib</a> (a popular library for node.js) must <a href="https://github.com/amqp-node/amqplib/blob/main/CHANGELOG.md#v0107">upgrade to a compatible version</a>.</li>
+</ul>
+</li>
+<li>Network policies for external traffic now properly adapt based on exposed ports.</li>
+<li>Allow applications to use the HTTP(S) management API from application developer namespaces.</li>
+</ul>
+</div>
+<h4 id="improvements">Improvement(s)<a class="headerlink" href="#improvements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>RabbitMQ has been upgraded to v4.1.</li>
+<li>A <code>PodDisruptionBudget</code> is now configured for the RabbitMQ Cluster to ensure high availability during voluntary disruptions.</li>
+<li>The "RabbitMQ-Overview" Grafana dashboard has been updated.</li>
+</ul>
 <h3 id="v406-ck8s3">v4.0.6-ck8s3<a class="headerlink" href="#v406-ck8s3" title="Permanent link">&para;</a></h3>
 <p>Released 2025-05-20</p>
 <div class="admonition warning">
@@ -5247,7 +5315,7 @@ if(!document.__defineGetter__) {
 <li>Network policies for external traffic now properly adapt based on exposed ports.</li>
 </ul>
 </div>
-<h4 id="improvements">Improvement(s)<a class="headerlink" href="#improvements" title="Permanent link">&para;</a></h4>
+<h4 id="improvements_1">Improvement(s)<a class="headerlink" href="#improvements_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>deploy: Add Network Policy enabled flag, enabled by default</li>
 <li>deploy: Allow internal management from application developer namespaces</li>
@@ -5286,13 +5354,13 @@ if(!document.__defineGetter__) {
 <ul>
 <li>Network Policies are added to the Cluster deployments which will deny access by default.</li>
 </ul>
-<h4 id="improvements_1">Improvement(s)<a class="headerlink" href="#improvements_1" title="Permanent link">&para;</a></h4>
+<h4 id="improvements_2">Improvement(s)<a class="headerlink" href="#improvements_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>RabbitMQ is upgraded v4.0, which is a new major release.</li>
 </ul>
 <h3 id="v3137-ck8s1">v3.13.7-ck8s1<a class="headerlink" href="#v3137-ck8s1" title="Permanent link">&para;</a></h3>
 <p>Released 2024-12-09</p>
-<h4 id="improvements_2">Improvement(s)<a class="headerlink" href="#improvements_2" title="Permanent link">&para;</a></h4>
+<h4 id="improvements_3">Improvement(s)<a class="headerlink" href="#improvements_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Updated Cluster operator to <code>2.9.0</code>, updated server to <code>3.13.7</code> and monitoring to <code>2.9.0</code>.</li>
 <li>Updated the backup process to use <code>rabbitmqctl</code> for improved reliability and compatibility.</li>
