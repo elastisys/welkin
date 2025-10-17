@@ -12,6 +12,7 @@ The list of currently supported applications for self-management is:
 - MongoDB
 - Flux
 - Kafka
+- Jaeger
 
 ## Limitations
 
@@ -38,6 +39,9 @@ user:
     enabled: true
   # Enable Kafka
   kafka:
+    enabled: true
+  # Enable Jaeger
+  jaeger:
     enabled: true
 
 gatekeeper:

@@ -221,6 +221,7 @@ nav:
           - "Sjunet (self-managed)": "user-guide/self-managed-services/sjunet.md"
           - "Flux (self-managed)": "user-guide/self-managed-services/flux.md"
           - "Kafka (self-managed)": "user-guide/self-managed-services/kafka.md"
+          - "Jaeger (self-managed)": "user-guide/self-managed-services/jaeger.md"
       - "Go-live Checklist": "user-guide/go-live.md"
       - "Troubleshooting": "user-guide/troubleshooting.md"
       - "FAQ": "user-guide/faq.md"
