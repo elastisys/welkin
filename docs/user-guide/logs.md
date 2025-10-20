@@ -163,7 +163,7 @@ The figure below shows the dashboard generated from the above steps showing the 
 
 When new fields are indexed in OpenSearch they are not immediately available for query in OpenSearch Dashboards. This unavailability can also happen to once queryable older fields, but with the reason being different e.g. some kind of issue occurred.
 
-If you find fields missing from a selected index pattern, you can try to refresh the field list for the particular index pattern by:
+If you find fields missing from a selected index pattern, or if you are seeing the error message `Unindexed fields can not be searched`, you can try to refresh the field list for the particular index pattern by:
 
 1. Open the sidebar and click **Dashboards Management** under Management.
 1. Click **Index patterns** in the top left side.
