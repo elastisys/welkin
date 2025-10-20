@@ -66,17 +66,19 @@ You can read more about the Pod termination process in the [official Kubernetes 
 
 ## Make Sure Your Application Tolerates Nodes Replacement
 
-!!!important
+> [!IMPORTANT]
+> This section helps you implement ISO 27001, specifically:
+>
+> - A.12.6.1 Management of Technical Vulnerabilities
 
-    This section helps you implement ISO 27001, specifically:
+In Kubernetes, Nodes will sometimes need to be replaced or [drained](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_drain/).
+To mitigate any impact caused by these actions you have some options.
 
-    * A.12.6.1 Management of Technical Vulnerabilities
-
-Welkin recommends **against** [PodDisruptionBudgets (PDBs)](https://kubernetes.io/docs/tasks/run-application/configure-pdb/).
-PDBs can easily be misconfigured to block draining Nodes, which interferes with automatic OS patching and compromises the security posture of the environment.
-Instead, prefer engineering your application to deal with disruptions.
-The user demo already showcases how to achieve this with replication and topologySpreadConstraints.
-Make sure to move state, even soft state, to [specialized services](additional-services/index.md).
+As the user demo already showcases you can add replication and topologySpreadConstraints to your application.
+Another thing that can be done is add [PodDisruptionBudgets (PDBs)](https://kubernetes.io/docs/tasks/run-application/configure-pdb/).
+This will make it so Kubernetes knows to pause draining Nodes which has applications using PDBs in them until those applications are sufficiently running.
+Normally PDBs have the downside of being easy to misconfigure but with this [guardrail](safeguards/enforce-restricted-pod-disruption-budgets.md) enabled, Welkin will deny the creation of PDBs that would block Node from draining.
+Lastly make sure to move state, even soft state, to [specialized services](additional-services/index.md).
 
 ## Further reading
 
