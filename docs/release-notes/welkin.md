@@ -7,6 +7,7 @@
 <!-- BEGIN TOC -->
 
 - [v0.49.0](#v0490) - 2025-10-07
+- [v0.48.1](#v0481) - 2025-10-15
 - [v0.48.0](#v0480) - 2025-08-05
 - [v0.47.3](#v0473) - 2025-09-30
 - [v0.47.2](#v0472) - 2025-07-31
@@ -102,6 +103,14 @@ Released 2025-10-07
 - Make namespace label in metric refer to resource, not exporter.
 - Added logging for failing DNS requests.
 - OpenSearch namespace is now PSS restricted.
+
+## v0.48.1
+
+Released 2025-10-15
+
+### Improvement(s)
+
+- Mirror kubectl bitnami image
 
 ## v0.48.0
 
