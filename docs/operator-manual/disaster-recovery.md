@@ -160,32 +160,38 @@ os_url=https://opensearch.$(yq '.global.opsDomain' ${CK8S_CONFIG_PATH}/common-co
 
      - To restore from an **encrypted** off-site backup:
 
-        First import the backup into the main S3 service and register the restored bucket as a new snapshot repository:
-        ```bash
-        curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
-        {
-          "type": "s3",
-          "settings": {
-            "bucket": "<restored-bucket>",
-            "readonly": true
-          }
-        }
-        '
-        ```
+        First import the backup into the main object storage and register the restored bucket as a new snapshot repository:
 
-        For Azure, instead use:
-        ```
-        curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
-        {
-          "type": "azure",
-          "settings": {
-            "container": "<restored-bucket>",
-            "client": "default",
-            "readonly": true
+        <details>
+          <summary>For S3-compatible storage</summary>
+          ```bash
+          curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
+          {
+            "type": "s3",
+            "settings": {
+              "bucket": "<restored-bucket>",
+              "readonly": true
+            }
           }
-        }
-        '
-        ```
+          '
+          ```
+        </details>
+
+        <details>
+          <summary>For Azure-based storage</summary>
+          ```bash
+          curl -L -u "${user}:${password}" -X PUT "${os_url}/_snapshot/backup-repository?pretty" -H 'Content-Type: application/json' -d'
+          {
+            "type": "azure",
+            "settings": {
+              "container": "<restored-bucket>",
+              "client": "default",
+              "readonly": true
+            }
+          }
+          '
+          ```
+        </details>
 
         Then restore from this snapshot repository (`backup-repository`) in OpenSearch.
 
@@ -594,41 +600,46 @@ and you can then use the following to handpick resources from the backup you wan
 
 - Restoring from **unencrypted** off-site backup:
 
-  To recover directly from off-site backup the backup-location must be reconfigured:
-
-  ```bash
-  export CLUSTER="<sc|wc>"
-  export S3_BUCKET="<off-site-s3-bucket>" # Do not include s3:// prefix
-  export S3_PREFIX="<service-cluster|workload-cluster>"
-  export S3_ACCESS_KEY=$(sops -d --extract '["objectStorage"]["sync"]["s3"]["accessKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
-  export S3_SECRET_KEY=$(sops -d --extract '["objectStorage"]["sync"]["s3"]["secretKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
-  export S3_REGION=$(yq ".objectStorage.sync.s3.region" "$CK8S_CONFIG_PATH/sc-config.yaml" )
-  export S3_ENDPOINT=$(yq ".objectStorage.sync.s3.regionEndpoint" "$CK8S_CONFIG_PATH/sc-config.yaml")
-  export S3_PATH_STYLE=$(yq ".objectStorage.sync.s3.forcePathStyle" "$CK8S_CONFIG_PATH/sc-config.yaml")
-
-  # Delete backups from default backup location, note that this is only the backup metadata
-  ./bin/ck8s ops kubectl "${CLUSTER}" -n velero delete backups.velero.io --all
-
-  # Delete default backup location
-  ./bin/ck8s ops velero "${CLUSTER}" backup-location delete default
-
-  # Create off-site credentials
-  kubectl -n velero create secret generic velero-backup \
-    --from-literal=cloud="$(echo -e "[default]\naws_access_key_id: ${S3_ACCESS_KEY}\naws_secret_access_key: ${S3_SECRET_KEY}\n")"
-
-  # Create off-site backup location
-  ./bin/ck8s ops velero "${CLUSTER}" backup-location create backup \
-      --access-mode ReadOnly \
-      --provider aws \
-      --bucket "${S3_BUCKET}" \
-      --prefix "${S3_PREFIX}" \
-      --config="region=${S3_REGION},s3Url=${S3_ENDPOINT},s3ForcePathStyle=${S3_PATH_STYLE}" \
-      --credential=velero-backup=cloud
-  ```
+  To recover directly from off-site backup the backup-location must be reconfigured.
+  Follow the instructions for the relevant storage type below.
 
   <details>
-    <summary>Azure-specific instructions</summary>
-    For Azure-based storage, use the following instructions instead:
+    <summary>S3-compatible object storage</summary>
+
+    ```bash
+    export CLUSTER="<sc|wc>"
+    export S3_BUCKET="<off-site-s3-bucket>" # Do not include s3:// prefix
+    export S3_PREFIX="<service-cluster|workload-cluster>"
+    export S3_ACCESS_KEY=$(sops -d --extract '["objectStorage"]["sync"]["s3"]["accessKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
+    export S3_SECRET_KEY=$(sops -d --extract '["objectStorage"]["sync"]["s3"]["secretKey"]' "$CK8S_CONFIG_PATH/secrets.yaml")
+    export S3_REGION=$(yq ".objectStorage.sync.s3.region" "$CK8S_CONFIG_PATH/sc-config.yaml" )
+    export S3_ENDPOINT=$(yq ".objectStorage.sync.s3.regionEndpoint" "$CK8S_CONFIG_PATH/sc-config.yaml")
+    export S3_PATH_STYLE=$(yq ".objectStorage.sync.s3.forcePathStyle" "$CK8S_CONFIG_PATH/sc-config.yaml")
+
+    # Delete backups from default backup location, note that this is only the backup metadata
+    ./bin/ck8s ops kubectl "${CLUSTER}" -n velero delete backups.velero.io --all
+
+    # Delete default backup location
+    ./bin/ck8s ops velero "${CLUSTER}" backup-location delete default
+
+    # Create off-site credentials
+    kubectl -n velero create secret generic velero-backup \
+      --from-literal=cloud="$(echo -e "[default]\naws_access_key_id: ${S3_ACCESS_KEY}\naws_secret_access_key: ${S3_SECRET_KEY}\n")"
+
+    # Create off-site backup location
+    ./bin/ck8s ops velero "${CLUSTER}" backup-location create backup \
+        --access-mode ReadOnly \
+        --provider aws \
+        --bucket "${S3_BUCKET}" \
+        --prefix "${S3_PREFIX}" \
+        --config="region=${S3_REGION},s3Url=${S3_ENDPOINT},s3ForcePathStyle=${S3_PATH_STYLE}" \
+        --credential=velero-backup=cloud
+    ```
+
+  </details>
+
+  <details>
+    <summary>Azure-based storage</summary>
 
     ```bash
     export CLUSTER=<sc|wc>
