@@ -161,7 +161,7 @@ The figure below shows the dashboard generated from the above steps showing the 
 
 ### Refresh field list for index pattern
 
-When new fields are indexed in OpenSearch they are not immediately available for query in OpenSearch Dashboards. This unavailability can also happen to once queryable older fields, but with the reason being different e.g. some kind of issue occurred.
+When new fields are indexed in OpenSearch they are not immediately available for query in OpenSearch Dashboards, as the field list is created when the index pattern is created, and is not automatically updated when new fields are indexed. This is the most common reason for seeing the `Unindexed fields can not be searched` message. This unavailability can also happen to once queryable older fields, but with the reason being different e.g. conflicting mapping types caused by a race condition with dynamic mapping and applications pushing logs with different types, where one is unindexed.
 
 If you find fields missing from a selected index pattern, or if you are seeing the error message `Unindexed fields can not be searched`, you can try to refresh the field list for the particular index pattern by:
 
@@ -170,6 +170,9 @@ If you find fields missing from a selected index pattern, or if you are seeing t
 1. Click the index pattern you want to refresh e.g. `kubernetes*`.
 1. Click **Refresh field list.** which is the refresh icon located at the top right side of the page.
 1. Finally click **Refresh** and the fields would hopefully be queryable again.
+
+> [!NOTE]
+> Refreshing the field list is a relatively low impact operation that usually only takes seconds. It will reset the non-persistent `popularity` score of fields on the Discover page.
 
 If this didn't help with the missing fields, you can contact your Platform Administrator for additional assistance.
 
