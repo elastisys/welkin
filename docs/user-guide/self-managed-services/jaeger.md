@@ -78,8 +78,6 @@ config:
     network.host: 0.0.0.0
     action:
       auto_create_index: "jaeger*,.opensearch*,.opendistro-*,security-auditlog-*"
-persistence:
-  enableInitChown: false
 resources:
   requests:
     cpu: 500m
