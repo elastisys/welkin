@@ -2147,6 +2147,28 @@ if(!document.__defineGetter__) {
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/self-managed-services/jaeger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jaeger (self-managed)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4631,6 +4653,7 @@ The list of currently supported applications for self-management is:</p>
 <li>MongoDB</li>
 <li>Flux</li>
 <li>Kafka</li>
+<li>Jaeger</li>
 </ul>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <p>Welkin does not allow application developers to install ClusterRoles and ClusterRoleBindings.
@@ -4652,6 +4675,9 @@ To enable it, add the following snippet to the environments <code>wc-config.yaml
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="c1"># Enable Kafka</span>
 <span class="w">  </span><span class="nt">kafka</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="c1"># Enable Jaeger</span>
+<span class="w">  </span><span class="nt">jaeger</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="nt">gatekeeper</span><span class="p">:</span>
