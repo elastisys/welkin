@@ -27,7 +27,7 @@ The table below summarizes common variants, from least to most restrictive.
 | **2. Outbound-only** | ✅ Allowed | ❌ Blocked (except VPN) | Typical for secure enterprise setups with limited inbound access. |
 | **3. Proxy-mediated outbound** | ⚙️ Through HTTP/HTTPS proxy only | ❌ Blocked | Common practical setup; controlled outbound for updates and telemetry. |
 | **4. Toggle-off default** | 🚫 Disabled by default, can be temporarily enabled | ❌ Blocked | Higher-security networks; outbound enabled only on request. |
-| **5. Fully air-gapped** | 🚫 None | 🚫 None | Complete physical or logical isolation; on-premises access only. Used to be the default for IT systems deployed in defence contexts, but this is [no longer the case](https://en.wikipedia.org/wiki/Delta_(situational_awareness_system)). |
+| **5. Fully air-gapped** | 🚫 None | 🚫 None | Complete physical or logical isolation; on-premises access only. |
 
 ### Maintenance access via VPN
 
