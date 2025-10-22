@@ -5125,13 +5125,15 @@ Most commands found in these instructions are expected to be run from the <a hre
 <ul>
 <li>Configure and set base ck8s-configs:</li>
 </ul>
-<p>sc-config.yaml:</p>
+<p><strong>sc-config.yaml:</strong></p>
 <p><code>harbor.persistence.swift.*</code>,<code>objectStorage.sync.*</code></p>
-<p>common-config.yaml:</p>
-<p><code>objectStorage.s3.region</code>, <code>objectStorage.s3.regionEndpoint</code></p>
-<p>secrets.yaml:</p>
-<p><code>dex.connectors.*</code>, <code>harbor.persistence.swift.username</code>, <code>harbor.persistence.swift.password</code>, <code>objectStorage.s3.accessKey</code>, <code>objectStorage.s3.secretKey</code></p>
-<p>.state/s3cfg.ini:</p>
+<p><strong>common-config.yaml:</strong></p>
+<p><code>objectStorage.s3.region</code>, <code>objectStorage.s3.regionEndpoint</code> if S3 is used.</p>
+<p><strong>secrets.yaml:</strong></p>
+<p><code>dex.connectors.*</code>, <code>harbor.persistence.swift.username</code>, <code>harbor.persistence.swift.password</code>.</p>
+<p><code>objectStorage.azure.storageAccountKey</code> if Azure is used.</p>
+<p><code>objectStorage.s3.accessKey</code>, <code>objectStorage.s3.secretKey</code> if S3 is used.</p>
+<p><strong>.state/s3cfg.ini:</strong> (only if S3 is used)</p>
 <p><code>access_key</code>, <code>secret_key</code>, <code>host_base</code>, <code>host_bucket</code></p>
 <ul>
 <li>Configure and set custom ck8s-configs:</li>
@@ -5139,7 +5141,7 @@ Most commands found in these instructions are expected to be run from the <a hre
 <p>Examples can be files containing Identity Provider, Infrastructure Provider, or DNS critical information.</p>
 <h2 id="opensearch">OpenSearch<a class="headerlink" href="#opensearch" title="Permanent link">&para;</a></h2>
 <h3 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h3>
-<p>OpenSearch is set up to store snapshots in an S3 bucket. There is a <a href="https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-management/">Snapshot Management (SM) policy</a> in OpenSearch which is responsible for the lifecycle management of snapshots, i.e. creation and retention. Note that any manually created snapshot will not be handled by the SM policy, and should be manually cleaned up when no longer needed. If you need to create a snapshot on-demand, you may do so through the OpenSearch API.</p>
+<p>OpenSearch is set up to store snapshots in object storage. There is a <a href="https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-management/">Snapshot Management (SM) policy</a> in OpenSearch which is responsible for the lifecycle management of snapshots, i.e. creation and retention. Note that any manually created snapshot will not be handled by the SM policy, and should be manually cleaned up when no longer needed. If you need to create a snapshot on-demand, you may do so through the OpenSearch API.</p>
 <p>Configure the following variables:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">user</span><span class="o">=</span>admin
 <span class="nv">password</span><span class="o">=</span><span class="k">$(</span>sops<span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">CK8S_CONFIG_PATH</span><span class="si">}</span>/secrets.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>yq<span class="w"> </span><span class="s1">&#39;.opensearch.adminPassword&#39;</span><span class="k">)</span>
@@ -5180,9 +5182,9 @@ If you want to restore all indices, use the following <code>indices</code> varia
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This process assumes that you are using the same S3 bucket as your previous Cluster. If you aren't:</p>
+<p>This process assumes that you are using the same bucket as your previous Cluster. If you aren't:</p>
 <ul>
-<li>Register a new S3 snapshot repository to the old bucket as <a href="https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-restore/#register-repository">described here</a></li>
+<li>Register a new snapshot repository to the old bucket as <a href="https://opensearch.org/docs/latest/tuning-your-cluster/availability-and-recovery/snapshots/snapshot-restore/#register-repository">described here</a></li>
 <li>Use the newly registered snapshot repository in the restore process</li>
 </ul>
 </div>
@@ -5206,8 +5208,10 @@ If you want to restore all indices, use the following <code>indices</code> varia
 </li>
 <li>
 <p>To restore from an <strong>encrypted</strong> off-site backup:</p>
-<p>First import the backup into the main S3 service and register the restored bucket as a new snapshot repository:
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/backup-repository?pretty&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>-d<span class="s1">&#39;</span>
+<p>First import the backup into the main object storage and register the restored bucket as a new snapshot repository:</p>
+<p><details>
+  <summary>For S3-compatible storage</summary>
+  <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/backup-repository?pretty&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>-d<span class="s1">&#39;</span>
 <span class="s1">{</span>
 <span class="s1">  &quot;type&quot;: &quot;s3&quot;,</span>
 <span class="s1">  &quot;settings&quot;: {</span>
@@ -5217,13 +5221,28 @@ If you want to restore all indices, use the following <code>indices</code> varia
 <span class="s1">}</span>
 <span class="s1">&#39;</span>
 </code></pre></div>
-Then restore from this snapshot repository (<code>backup-repository</code>) in OpenSearch.</p>
+</details></p>
+<p><details>
+  <summary>For Azure-based storage</summary>
+  <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">os_url</span><span class="si">}</span><span class="s2">/_snapshot/backup-repository?pretty&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span>-d<span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">  &quot;type&quot;: &quot;azure&quot;,</span>
+<span class="s1">  &quot;settings&quot;: {</span>
+<span class="s1">    &quot;container&quot;: &quot;&lt;restored-bucket&gt;&quot;,</span>
+<span class="s1">    &quot;client&quot;: &quot;default&quot;,</span>
+<span class="s1">    &quot;readonly&quot;: true</span>
+<span class="s1">  }</span>
+<span class="s1">}</span>
+<span class="s1">&#39;</span>
+</code></pre></div>
+</details></p>
+<p>Then restore from this snapshot repository (<code>backup-repository</code>) in OpenSearch.</p>
 </li>
 <li>
 <p>To restore from an <strong>unencrypted</strong> off-site backup:</p>
-<p>Configure the remote and bucket as the main S3 service and bucket for apps and OpenSearch respectively, then update the OpenSearch Helm releases and perform the restore.
+<p>Configure the off-site object storage as the main object storage for apps and OpenSearch respectively, then update the OpenSearch Helm releases and perform the restore.
 It is recommended to either suspend or remove the OpenSearch backup CronJob to prevent it from running while restoring.</p>
-<p>Remember to revert to the regular S3 service afterwards and reactivate the backup CronJob! <br/>
+<p>Remember to revert to the regular object storage afterwards and reactivate the backup CronJob! <br/>
 Replace the previous snapshot repository if it is unusable.</p>
 </li>
 </ul>
@@ -5369,15 +5388,15 @@ curl<span class="w"> </span>-L<span class="w"> </span>-u<span class="w"> </span>
 </code></pre></div>
 <h2 id="harbor">Harbor<a class="headerlink" href="#harbor" title="Permanent link">&para;</a></h2>
 <h3 id="backup_1">Backup<a class="headerlink" href="#backup_1" title="Permanent link">&para;</a></h3>
-<p>Harbor is set up to store backups of the database in an S3 bucket (note that this does not include the actual images, since those are already stored in S3 by default).
-There is a CronJob called <code>harbor-backup-cronjob</code> in the Cluster that is taking a database dump and uploading it to a S3 bucket.</p>
+<p>Harbor is set up to store backups of the database in object storage (note that this does not include the actual images, since those are already stored in object storage by default).
+There is a CronJob called <code>harbor-backup-cronjob</code> in the Cluster that is taking a database dump and uploading it.</p>
 <p>To take a backup on-demand, execute</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span>sc<span class="w"> </span>-n<span class="w"> </span>harbor<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>--from<span class="o">=</span>cronjob/harbor-backup-cronjob<span class="w"> </span>&lt;name-of-job&gt;
 </code></pre></div>
 <h3 id="restore_1">Restore<a class="headerlink" href="#restore_1" title="Permanent link">&para;</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Restoring from off-site backup</p>
-<p>Since Harbor stores both database backups and images in the same bucket it is recommended to restore the off-site backup into the main S3 service first, reconfigure Harbor to use it, then restore the database from it.</p>
+<p>Since Harbor stores both database backups and images in the same bucket it is recommended to restore the off-site backup into the main object storage first, reconfigure Harbor to use it, then restore the database from it.</p>
 </div>
 <p>Instructions for how to restore Harbor can be found in <code>compliantkubernetes-apps</code>: <a href="https://github.com/elastisys/compliantkubernetes-apps/blob/main/restore/harbor/README.md">https://github.com/elastisys/compliantkubernetes-apps/blob/main/restore/harbor/README.md</a></p>
 <h2 id="velero">Velero<a class="headerlink" href="#velero" title="Permanent link">&para;</a></h2>
@@ -5389,7 +5408,7 @@ For instructions on using Velero in the Management Cluster see the <a href="#gra
 <p>This documentation uses the Velero CLI, as opposed to Velero CRDs, since that is what is encouraged by upstream documentation.</p>
 </div>
 <h3 id="backup_2">Backup<a class="headerlink" href="#backup_2" title="Permanent link">&para;</a></h3>
-<p>Velero is set up to take daily backups and store them in an S3 bucket.
+<p>Velero is set up to take daily backups and store them in object storage.
 The daily backup will not take backups of everything in a Kubernetes Cluster, it will instead look for certain labels and annotations.
 Read more about those labels and annotations <a href="../../user-guide/backup/#backing-up">here</a>.</p>
 <p>It is also possible to take on-demand backups.
@@ -5525,7 +5544,7 @@ or creating a special purpose Pod that only binds the volume, we can let Velero 
 <ul>
 <li>Restoring from <strong>encrypted</strong> off-site backup:</li>
 </ul>
-<p>Recover the encrypted bucket into the main S3 service and reconfigure Velero to use this bucket, then follow the regular instructions.</p>
+<p>Recover the encrypted bucket into the main object storage and reconfigure Velero to use this bucket, then follow the regular instructions.</p>
 <p>The references in Kubernetes might need to be deleted so Velero can resync from the bucket:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Note that this is only backup metadata</span>
 ./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span>sc<span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> </span>delete<span class="w"> </span>backups.velero.io<span class="w"> </span>--all
@@ -5535,8 +5554,12 @@ or creating a special purpose Pod that only binds the volume, we can let Velero 
 <ul>
 <li>Restoring from <strong>unencrypted</strong> off-site backup:</li>
 </ul>
-<p>To recover directly from off-site backup the backup-location must be reconfigured:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CLUSTER</span><span class="o">=</span><span class="s2">&quot;&lt;sc|wc&gt;&quot;</span>
+<p>To recover directly from off-site backup the backup-location must be reconfigured.
+  Follow the instructions for the relevant storage type below.</p>
+<details>
+    <summary>S3-compatible object storage</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CLUSTER</span><span class="o">=</span><span class="s2">&quot;&lt;sc|wc&gt;&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">S3_BUCKET</span><span class="o">=</span><span class="s2">&quot;&lt;off-site-s3-bucket&gt;&quot;</span><span class="w"> </span><span class="c1"># Do not include s3:// prefix</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">S3_PREFIX</span><span class="o">=</span><span class="s2">&quot;&lt;service-cluster|workload-cluster&gt;&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">S3_ACCESS_KEY</span><span class="o">=</span><span class="k">$(</span>sops<span class="w"> </span>-d<span class="w"> </span>--extract<span class="w"> </span><span class="s1">&#39;[&quot;objectStorage&quot;][&quot;sync&quot;][&quot;s3&quot;][&quot;accessKey&quot;]&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CK8S_CONFIG_PATH</span><span class="s2">/secrets.yaml&quot;</span><span class="k">)</span>
@@ -5564,6 +5587,34 @@ kubectl<span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> 
 <span class="w">    </span>--config<span class="o">=</span><span class="s2">&quot;region=</span><span class="si">${</span><span class="nv">S3_REGION</span><span class="si">}</span><span class="s2">,s3Url=</span><span class="si">${</span><span class="nv">S3_ENDPOINT</span><span class="si">}</span><span class="s2">,s3ForcePathStyle=</span><span class="si">${</span><span class="nv">S3_PATH_STYLE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--credential<span class="o">=</span>velero-backup<span class="o">=</span>cloud
 </code></pre></div>
+
+  </details>
+
+<details>
+    <summary>Azure-based storage</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CLUSTER</span><span class="o">=</span>&lt;sc<span class="p">|</span>wc&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_CONTAINER</span><span class="o">=</span>&lt;off-site-azure-blob-container&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_PREFIX</span><span class="o">=</span>&lt;service-cluster<span class="p">|</span>workload-cluster&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_RESOURCE_GROUP</span><span class="o">=</span><span class="k">$(</span>yq<span class="w"> </span><span class="s2">&quot;.objectStorage.sync.azure.resourceGroup&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CK8S_CONFIG_PATH</span><span class="s2">/sc-config.yaml&quot;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_STORAGE_ACCOUNT</span><span class="o">=</span><span class="k">$(</span>yq<span class="w"> </span><span class="s2">&quot;.objectStorage.sync.azure.storageAccountName&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CK8S_CONFIG_PATH</span><span class="s2">/sc-config.yaml&quot;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_STORAGE_ACCOUNT_KEY</span><span class="o">=</span><span class="k">$(</span>sops<span class="w"> </span>-d<span class="w"> </span>--extract<span class="w"> </span><span class="s1">&#39;[&quot;objectStorage&quot;][&quot;sync&quot;][&quot;azure&quot;][&quot;storageAccountKey&quot;]&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CK8S_CONFIG_PATH</span><span class="s2">/secrets.yaml&quot;</span><span class="k">)</span>
+
+<span class="c1"># Create secret for credentials</span>
+./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>kubectl<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>velero-backup<span class="w"> </span>--from-literal<span class="o">=</span><span class="nv">cloud</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;AZURE_STORAGE_ACCOUNT_KEY=</span><span class="si">${</span><span class="nv">AZURE_STORAGE_ACCOUNT_KEY</span><span class="si">}</span><span class="s2">\nAZURE_CLOUD_NAME=AzurePublicCloud&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># Create off-site backup location</span>
+./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>velero<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>backup-location<span class="w"> </span>create<span class="w"> </span>backup<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--access-mode<span class="w"> </span>ReadOnly<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--provider<span class="w"> </span>azure<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--bucket<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_CONTAINER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--prefix<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">AZURE_PREFIX</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config<span class="o">=</span><span class="s2">&quot;resourceGroup=</span><span class="si">${</span><span class="nv">AZURE_RESOURCE_GROUP</span><span class="si">}</span><span class="s2">,storageAccount=</span><span class="si">${</span><span class="nv">AZURE_STORAGE_ACCOUNT</span><span class="si">}</span><span class="s2">,storageAccountKeyEnvVar=AZURE_STORAGE_ACCOUNT_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--credential<span class="o">=</span>velero-backup<span class="o">=</span>cloud
+</code></pre></div>
+
+  </details>
+
 <p>Check that the backup-location becomes available:</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>velero<span class="w"> </span>backup-location<span class="w"> </span>get
 <span class="go">NAME     PROVIDER   BUCKET/PREFIX       PHASE       LAST VALIDATED   ACCESS MODE   DEFAULT</span>
@@ -5575,7 +5626,7 @@ kubectl<span class="w"> </span>-n<span class="w"> </span>velero<span class="w"> 
 <p>When they are available restore one of them using:</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>velero<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>restore<span class="w"> </span>create<span class="w"> </span>&lt;name-of-restore&gt;<span class="w"> </span>--from-backup<span class="w"> </span>&lt;name-of-backup&gt;
 </code></pre></div>
-<p>After the restore is complete Velero should be reconfigured to use the main S3 service again, with a new bucket if the previous one is unusable.
+<p>After the restore is complete Velero should be reconfigured to use the main object storage again, with a new bucket if the previous one is unusable.
   Updating or syncing the Helm chart:</p>
 <div class="highlight"><pre><span></span><code>./bin/ck8s<span class="w"> </span>ops<span class="w"> </span>helmfile<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-f<span class="w"> </span>helmfile<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>velero<span class="w"> </span>-i<span class="w"> </span>apply
 </code></pre></div>
