@@ -4744,11 +4744,13 @@ You can both have <code>preStop</code> hooks and catch the TERM signal for the s
 <li>A.12.6.1 Management of Technical Vulnerabilities</li>
 </ul>
 </div>
-<p>Welkin recommends <strong>against</strong> <a href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">PodDisruptionBudgets (PDBs)</a>.
-PDBs can easily be misconfigured to block draining Nodes, which interferes with automatic OS patching and compromises the security posture of the environment.
-Instead, prefer engineering your application to deal with disruptions.
-The user demo already showcases how to achieve this with replication and topologySpreadConstraints.
-Make sure to move state, even soft state, to <a href="../additional-services/">specialized services</a>.</p>
+<p>In Kubernetes, Nodes will sometimes need to be replaced or <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_drain/">drained</a>.
+To mitigate any impact caused by these actions you have some options.</p>
+<p>As the user demo already showcases you can add replication and topologySpreadConstraints to your application.
+Another thing that can be done is add <a href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">PodDisruptionBudgets (PDBs)</a>.
+This will make it so Kubernetes knows to pause draining Nodes which has applications using PDBs in them until those applications are sufficiently running.
+Normally PDBs have the downside of being easy to misconfigure but with this <a href="../safeguards/enforce-restricted-pod-disruption-budgets/">guardrail</a> enabled, Welkin will deny the creation of PDBs that would block Node from draining.
+Lastly make sure to move state, even soft state, to <a href="../additional-services/">specialized services</a>.</p>
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://kubernetes.io/docs/concepts/workloads/pods/disruptions/#dealing-with-disruptions">Dealing with Disruptions</a></li>
