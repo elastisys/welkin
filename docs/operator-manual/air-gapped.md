@@ -42,7 +42,7 @@ The table below summarizes common variants, from least to most restrictive.
 | **3. None (on-site only)** | Administrators must be physically present; no remote access permitted. |
 
 !!!note
-    While Elastisys Welkin can be adapted to any air-gapped network, we have so far validated it in networks with proxy-mediated outbound Internet access.
+    Elastisys Welkin can be adapted to any type of air-gapped network scenario listed above. Unless otherwise noted, this guide is written with the "proxy-mediated outbound" type in mind, due to both its prevalence in the industry and to keep this guide readable.
 
     Contact [Elastisys Support](https://elastisys.com/self-managed/) for assistance with other configurations.
 
