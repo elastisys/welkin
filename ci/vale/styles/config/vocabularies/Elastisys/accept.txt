@@ -103,6 +103,7 @@ downsampling
 downscaling
 DPO
 failover
+firewalled
 Gbps
 geospatial
 hostname

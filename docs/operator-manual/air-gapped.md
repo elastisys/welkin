@@ -1,8 +1,10 @@
 # Welkin in Air-gapped Network
 
 !!!warning
+    Air-gapped networks differ widely in how strictly they are isolated.
+    Before proceeding, see [Types of air-gapped networks](#types-of-air-gapped-networks) to understand which level applies to your setup.
 
-    Each air-gapped network is different. Therefore, this page should only be taken as a guideline, not as "works out-of-the-box instructions". Contact [Elastisys Support](https://elastisys.com/self-managed/) if you need help.
+    Contact [Elastisys Support](https://elastisys.com/self-managed/) if you need help.
 
 {%
     include "./common.md"
@@ -13,6 +15,36 @@
 ## Background
 
 In an air-gapped network, machines are isolated from insecure networks such as the public Internet. Air-gapping is used for networks that handle highly confidential data such as military or governmental systems, or in life-critical systems, for example, in nuclear power plants or for medical equipment. This document provides guidelines on how to configure Welkin Apps to work inside an air-gapped network.
+
+## Types of air-gapped networks
+
+The term **air-gapped** is used with different meanings in different contexts.
+The table below summarizes common variants, from least to most restrictive.
+
+| Level | Outbound Internet | Inbound Internet | Description |
+|:------|:------------------|:-----------------|:-------------|
+| **1. Firewalled** | ✅ Allowed through firewalls | ✅ Allowed through firewalls | Sometimes marketed as "air-gapped", but not truly isolated. |
+| **2. Outbound-only** | ✅ Allowed | ❌ Blocked (except VPN) | Typical for secure enterprise setups with limited inbound access. |
+| **3. Proxy-mediated outbound** | ⚙️ Through HTTP/HTTPS proxy only | ❌ Blocked | Common practical setup; controlled outbound for updates and telemetry. |
+| **4. Toggle-off default** | 🚫 Disabled by default, can be temporarily enabled | ❌ Blocked | Higher-security networks; outbound enabled only on request. |
+| **5. Fully air-gapped** | 🚫 None | 🚫 None | Complete physical or logical isolation; on-premises access only. |
+
+### Maintenance access via VPN
+
+Remote maintenance access is often treated as a separate channel from general inbound Internet traffic.
+Different organizations apply different policies depending on risk tolerance and operational needs.
+The table below summarizes common variants, from least to most restrictive.
+
+| Access Policy | Description |
+|:---------------|:-------------|
+| **1. Permanent** | Always-on VPN access limited to a small set of authorized users from a limited set of IP ranges. |
+| **2. Temporary** | VPN access can be enabled on request for specific maintenance windows. |
+| **3. None (on-site only)** | Administrators must be physically present; no remote access permitted. |
+
+!!!note
+    Elastisys Welkin can be adapted to any type of air-gapped network scenario listed above. Unless otherwise noted, this guide is written with the "proxy-mediated outbound" type in mind, due to both its prevalence in the industry and to keep this guide readable.
+
+    Contact [Elastisys Support](https://elastisys.com/self-managed/) for assistance with other configurations.
 
 ## System Context Diagram
 
