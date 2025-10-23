@@ -2506,6 +2506,30 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#types-of-air-gapped-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of air-gapped networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of air-gapped networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-access-via-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance access via VPN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#system-context-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       System Context Diagram
@@ -4752,6 +4776,30 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#types-of-air-gapped-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of air-gapped networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of air-gapped networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-access-via-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance access via VPN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#system-context-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       System Context Diagram
@@ -4929,7 +4977,9 @@ if(!document.__defineGetter__) {
 <h1 id="welkin-in-air-gapped-network">Welkin in Air-gapped Network<a class="headerlink" href="#welkin-in-air-gapped-network" title="Permanent link">&para;</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Each air-gapped network is different. Therefore, this page should only be taken as a guideline, not as "works out-of-the-box instructions". Contact <a href="https://elastisys.com/self-managed/">Elastisys Support</a> if you need help.</p>
+<p>Air-gapped networks differ widely in how strictly they are isolated.
+Before proceeding, see <a href="#types-of-air-gapped-networks">Types of air-gapped networks</a> to understand which level applies to your setup.</p>
+<p>Contact <a href="https://elastisys.com/self-managed/">Elastisys Support</a> if you need help.</p>
 </div>
 <div class="admonition welkin-enterprise">
 <p class="admonition-title">For Welkin Enterprise Customers</p>
@@ -4968,6 +5018,82 @@ We need to look both at the commands you typed and their output.</p>
 </div>
 <h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>In an air-gapped network, machines are isolated from insecure networks such as the public Internet. Air-gapping is used for networks that handle highly confidential data such as military or governmental systems, or in life-critical systems, for example, in nuclear power plants or for medical equipment. This document provides guidelines on how to configure Welkin Apps to work inside an air-gapped network.</p>
+<h2 id="types-of-air-gapped-networks">Types of air-gapped networks<a class="headerlink" href="#types-of-air-gapped-networks" title="Permanent link">&para;</a></h2>
+<p>The term <strong>air-gapped</strong> is used with different meanings in different contexts.
+The table below summarizes common variants, from least to most restrictive.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Level</th>
+<th style="text-align: left;">Outbound Internet</th>
+<th style="text-align: left;">Inbound Internet</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Firewalled</strong></td>
+<td style="text-align: left;">✅ Allowed through firewalls</td>
+<td style="text-align: left;">✅ Allowed through firewalls</td>
+<td style="text-align: left;">Sometimes marketed as "air-gapped", but not truly isolated.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Outbound-only</strong></td>
+<td style="text-align: left;">✅ Allowed</td>
+<td style="text-align: left;">❌ Blocked (except VPN)</td>
+<td style="text-align: left;">Typical for secure enterprise setups with limited inbound access.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Proxy-mediated outbound</strong></td>
+<td style="text-align: left;">⚙️ Through HTTP/HTTPS proxy only</td>
+<td style="text-align: left;">❌ Blocked</td>
+<td style="text-align: left;">Common practical setup; controlled outbound for updates and telemetry.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Toggle-off default</strong></td>
+<td style="text-align: left;">🚫 Disabled by default, can be temporarily enabled</td>
+<td style="text-align: left;">❌ Blocked</td>
+<td style="text-align: left;">Higher-security networks; outbound enabled only on request.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Fully air-gapped</strong></td>
+<td style="text-align: left;">🚫 None</td>
+<td style="text-align: left;">🚫 None</td>
+<td style="text-align: left;">Complete physical or logical isolation; on-premises access only.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintenance-access-via-vpn">Maintenance access via VPN<a class="headerlink" href="#maintenance-access-via-vpn" title="Permanent link">&para;</a></h3>
+<p>Remote maintenance access is often treated as a separate channel from general inbound Internet traffic.
+Different organizations apply different policies depending on risk tolerance and operational needs.
+The table below summarizes common variants, from least to most restrictive.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Access Policy</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Permanent</strong></td>
+<td style="text-align: left;">Always-on VPN access limited to a small set of authorized users from a limited set of IP ranges.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Temporary</strong></td>
+<td style="text-align: left;">VPN access can be enabled on request for specific maintenance windows.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. None (on-site only)</strong></td>
+<td style="text-align: left;">Administrators must be physically present; no remote access permitted.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Elastisys Welkin can be adapted to any type of air-gapped network scenario listed above. Unless otherwise noted, this guide is written with the "proxy-mediated outbound" type in mind, due to both its prevalence in the industry and to keep this guide readable.</p>
+<p>Contact <a href="https://elastisys.com/self-managed/">Elastisys Support</a> for assistance with other configurations.</p>
+</div>
 <h2 id="system-context-diagram">System Context Diagram<a class="headerlink" href="#system-context-diagram" title="Permanent link">&para;</a></h2>
 <p>The following is a generic system context diagram over an air-gapped network consisting of a Welkin Environment. The diagram shows the Platform Administrator Machine that has access to both the Internet and the air-gapped network. Inside the air-gapped network, Welkin Clusters can access other services residing on the same private network such as an object storage for long-term storage, a container registry mirror, DNS and NTP servers, etc.</p>
 <p><img alt="Diagram" src="../../img/air-gapped.drawio.png" /></p>
