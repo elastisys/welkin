@@ -29,7 +29,7 @@ Indexes also contain mappings and settings:
 - A mapping is the collection of fields that documents in the index have. In this case, those fields are `title` and `release_date`.
 - Settings include data like the index name, creation date, and number of shards.
 
-You can define how documents and their fields are stored and indexed by creating a mapping. The mapping specifies the list of fields for a document. Every field in the document has a field type, which corresponds to the type of data the field contains. For example, you may want to specify that the `release_date` field should be of type `date`. To learn more, see [Supported field types](https://opensearch.org/docs/latest/field-types/supported-field-types/index/).
+You can define how documents and their fields are stored and indexed by creating a mapping. The mapping specifies the list of fields for a document. Every field in the document has a field type, which corresponds to the type of data the field contains. For example, you may want to specify that the `release_date` field should be of type `date`. To learn more, see [Supported field types](https://docs.opensearch.org/latest/mappings/supported-field-types/index/).
 
 ## Dynamic mapping
 
