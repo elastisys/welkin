@@ -209,8 +209,8 @@ nav:
           - "TimescaleDB": "user-guide/additional-services/timescaledb.md"
           - "Valkey": "user-guide/additional-services/valkey.md"
           - "RabbitMQ": "user-guide/additional-services/rabbitmq.md"
-          - "Jaeger (preview)": "user-guide/additional-services/jaeger.md"
           - "Argo CD (preview)": "user-guide/additional-services/argocd.md"
+          - "Jaeger (deprecated)": "user-guide/additional-services/jaeger.md"
       - "Self-Managed Services":
           - "Overview": "user-guide/self-managed-services/index.md"
           - "FerretDB (self-managed)": "user-guide/self-managed-services/ferretdb.md"
