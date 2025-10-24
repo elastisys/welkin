@@ -1,12 +1,14 @@
 ---
 search:
-  boost: 2
+  exclude: true
 ---
-# Jaeger™ (preview)
+# Jaeger™ (deprecated)
 
 !!! welkin-managed "For Welkin Managed Customers"
 
     We have deprecated Jaeger as a managed service while environments with it already installed will be able to keep running it for now, but we will not be adding Managed Jaeger to any new environments.
+
+    However, you can install Jaeger yourself. See [this page](../self-managed-services/jaeger.md) for details.
 
 !!!Warning "Deprecation notice: Jaeger Agent"
 
