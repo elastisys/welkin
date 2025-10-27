@@ -18,7 +18,7 @@ Our SBOM generation captures components from Helm charts and container images. F
 
 - All Helm charts (both custom charts and upstream charts from external repositories)
 - All container images referenced in deployments
-- Version information and source repositories for each component
+- Version information and PURL for each component
 - License information
 
 To learn even more about our approach, you can view our most recently updated
