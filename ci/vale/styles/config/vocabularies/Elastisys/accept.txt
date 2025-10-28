@@ -120,6 +120,7 @@ resync
 rollforward
 runbook
 runtime
+SBOMs
 seccomp
 setgid
 setuid

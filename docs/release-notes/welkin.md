@@ -79,6 +79,9 @@
 
     For a more detailed look check out the full [changelog](https://github.com/elastisys/compliantkubernetes-apps/tree/main/changelog).
 
+    For versions and licenses of software dependencies , see our
+    [Software Bill of Materials](https://github.com/elastisys/compliantkubernetes-apps/blob/main/sbom/sbom.cdx.json)
+
 <!--
     Release notes before 2024-11-29 are excluded from spellchecking.
     Please make sure to put new release notes above this line.
