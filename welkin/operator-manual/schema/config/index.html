@@ -3051,6 +3051,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#crossplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      crossplane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dex" class="md-nav__link">
     <span class="md-ellipsis">
       dex
@@ -5031,6 +5040,15 @@ if(!document.__defineGetter__) {
 </li>
       
         <li class="md-nav__item">
+  <a href="#crossplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      crossplane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dex" class="md-nav__link">
     <span class="md-ellipsis">
       dex
@@ -6450,6 +6468,71 @@ AlertName: link-to-specific-alert-runbook</p>
 </tbody>
 </table>
 </div>
+<h2 id="crossplane"><code>crossplane</code><a class="headerlink" href="#crossplane" title="Permanent link">&para;</a></h2>
+<p>Configure Crossplane</p>
+<div class="wide-table">
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crossplane.<wbr>enabled<a id="crossplane-enabled" class="headerlink" href="#crossplane-enabled" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>crossplane.<wbr>functions<a id="crossplane-functions" class="headerlink" href="#crossplane-functions" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Crossplane Function resource configuration</td>
+</tr>
+<tr>
+<td>crossplane.<wbr>providers<a id="crossplane-providers" class="headerlink" href="#crossplane-providers" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Crossplane Provider resource configuration</td>
+</tr>
+<tr>
+<td>crossplane.<wbr>rbacManager<a id="crossplane-rbacmanager" class="headerlink" href="#crossplane-rbacmanager" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Crossplane RBAC manager configuration</td>
+</tr>
+<tr>
+<td>crossplane.<wbr>resources<a id="crossplane-resources" class="headerlink" href="#crossplane-resources" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td><a id="noteref:crossplane.resources" href="#note:crossplane.resources">See note</a></td>
+</tr>
+<tr>
+<td>crossplane.<wbr>resources.<wbr>limits<a id="crossplane-resources-limits" class="headerlink" href="#crossplane-resources-limits" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>crossplane.<wbr>resources.<wbr>requests<a id="crossplane-resources-requests" class="headerlink" href="#crossplane-resources-requests" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- wide-table --><!-- wide-table --><!-- wide-table --><h3 id="note:crossplane.resources">Notes for <code>crossplane.resources</code></h3>
+<p>Resource requests are used by the kube-scheduler to pick a node to schedule pods on.</p>
+<p>Limits are enforced. Resources are commonly 'cpu' and 'memory'.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{</span><span class="s">&#39;requests&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&#39;memory&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;128Mi&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;cpu&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;100m&#39;</span><span class="p p-Indicator">},</span><span class="w"> </span><span class="s">&#39;limits&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">&#39;memory&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;256Mi&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;cpu&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;250m&#39;</span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<p><a href="#noteref:crossplane.resources" title="Jump back to crossplane.resources">↩</a></p>
 <h2 id="dex"><code>dex</code><a class="headerlink" href="#dex" title="Permanent link">&para;</a></h2>
 <p>Configure Dex, the federated OIDC Identity Provider.</p>
 <div class="admonition note">
@@ -6638,7 +6721,7 @@ AlertName: link-to-specific-alert-runbook</p>
 </tbody>
 </table>
 </div>
-<!-- wide-table --><!-- wide-table --><!-- wide-table --><h3 id="note:dex.expiry.deviceRequests">Notes for <code>dex.expiry.deviceRequests</code></h3>
+<!-- wide-table --><h3 id="note:dex.expiry.deviceRequests">Notes for <code>dex.expiry.deviceRequests</code></h3>
 <p>An amount of time</p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">300s</span>
@@ -10783,7 +10866,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>calico<a id="images-calico" class="headerlink" href="#images-calico" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>calico stack image configuration</td>
+<td>Calico stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>calico.<wbr>accountant<a id="images-calico-accountant" class="headerlink" href="#images-calico-accountant" title="Permanent link">¶</a></td>
@@ -10822,10 +10905,40 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td><a id="noteref:images.certManager.webhook" href="#note:images.certManager.webhook">See note</a></td>
 </tr>
 <tr>
+<td>images.<wbr>crossplane<a id="images-crossplane" class="headerlink" href="#images-crossplane" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>crossplane stack image configuration</td>
+</tr>
+<tr>
+<td>images.<wbr>crossplane.<wbr>functions<a id="images-crossplane-functions" class="headerlink" href="#images-crossplane-functions" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Crossplane Function images configuration</td>
+</tr>
+<tr>
+<td>images.<wbr>crossplane.<wbr>image<a id="images-crossplane-image" class="headerlink" href="#images-crossplane-image" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td><a id="noteref:images.crossplane.image" href="#note:images.crossplane.image">See note</a></td>
+</tr>
+<tr>
+<td>images.<wbr>crossplane.<wbr>kubectl<a id="images-crossplane-kubectl" class="headerlink" href="#images-crossplane-kubectl" title="Permanent link">¶</a></td>
+<td>string</td>
+<td>—</td>
+<td><a id="noteref:images.crossplane.kubectl" href="#note:images.crossplane.kubectl">See note</a></td>
+</tr>
+<tr>
+<td>images.<wbr>crossplane.<wbr>providers<a id="images-crossplane-providers" class="headerlink" href="#images-crossplane-providers" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Crossplane Provider images configuration</td>
+</tr>
+<tr>
 <td>images.<wbr>dex<a id="images-dex" class="headerlink" href="#images-dex" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>dex stack image configuration</td>
+<td>Dex stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>dex.<wbr>image<a id="images-dex-image" class="headerlink" href="#images-dex-image" title="Permanent link">¶</a></td>
@@ -10837,7 +10950,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>externalDns<a id="images-externaldns" class="headerlink" href="#images-externaldns" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>external-dns stack image configuration</td>
+<td>ExternalDNS stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>externalDns.<wbr>image<a id="images-externaldns-image" class="headerlink" href="#images-externaldns-image" title="Permanent link">¶</a></td>
@@ -10879,7 +10992,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>fluentd<a id="images-fluentd" class="headerlink" href="#images-fluentd" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>fluentd stack image configuration</td>
+<td>Fluentd stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>fluentd.<wbr>aggregator<a id="images-fluentd-aggregator" class="headerlink" href="#images-fluentd-aggregator" title="Permanent link">¶</a></td>
@@ -10903,7 +11016,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>gatekeeper<a id="images-gatekeeper" class="headerlink" href="#images-gatekeeper" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>gatekeeper stack image configuration</td>
+<td>Gatekeeper stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>gatekeeper.<wbr>image<a id="images-gatekeeper-image" class="headerlink" href="#images-gatekeeper-image" title="Permanent link">¶</a></td>
@@ -10975,7 +11088,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>gpuOperator<a id="images-gpuoperator" class="headerlink" href="#images-gpuoperator" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>gpu-operator stack image configuration</td>
+<td>GPU operator stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>gpuOperator.<wbr>nodeFeatureDiscovery<a id="images-gpuoperator-nodefeaturediscovery" class="headerlink" href="#images-gpuoperator-nodefeaturediscovery" title="Permanent link">¶</a></td>
@@ -10993,7 +11106,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>harbor<a id="images-harbor" class="headerlink" href="#images-harbor" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>harbor stack image configuration</td>
+<td>Harbor stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>harbor.<wbr>backupJob<a id="images-harbor-backupjob" class="headerlink" href="#images-harbor-backupjob" title="Permanent link">¶</a></td>
@@ -11071,7 +11184,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>hnc<a id="images-hnc" class="headerlink" href="#images-hnc" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>hnc stack image configuration</td>
+<td>HNC stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>hnc.<wbr>image<a id="images-hnc-image" class="headerlink" href="#images-hnc-image" title="Permanent link">¶</a></td>
@@ -11119,7 +11232,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>kured<a id="images-kured" class="headerlink" href="#images-kured" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>kured stack image configuration</td>
+<td>Kured stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>kured.<wbr>image<a id="images-kured-image" class="headerlink" href="#images-kured-image" title="Permanent link">¶</a></td>
@@ -11161,7 +11274,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>monitoring<a id="images-monitoring" class="headerlink" href="#images-monitoring" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>monitoring stack image configuration</td>
+<td>Monitoring stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>monitoring.<wbr>admissionWebhooksPatch<a id="images-monitoring-admissionwebhookspatch" class="headerlink" href="#images-monitoring-admissionwebhookspatch" title="Permanent link">¶</a></td>
@@ -11251,7 +11364,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>nodeLocalDns<a id="images-nodelocaldns" class="headerlink" href="#images-nodelocaldns" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>node-local-dns stack image configuration</td>
+<td>NodeLocal DNSCache stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>nodeLocalDns.<wbr>image<a id="images-nodelocaldns-image" class="headerlink" href="#images-nodelocaldns-image" title="Permanent link">¶</a></td>
@@ -11305,7 +11418,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>rclone<a id="images-rclone" class="headerlink" href="#images-rclone" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>rclone stack image configuration</td>
+<td>Rclone stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>rclone.<wbr>image<a id="images-rclone-image" class="headerlink" href="#images-rclone-image" title="Permanent link">¶</a></td>
@@ -11317,7 +11430,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>tekton<a id="images-tekton" class="headerlink" href="#images-tekton" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>tekton stack image configuration</td>
+<td>Tekton stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>tekton.<wbr>controller<a id="images-tekton-controller" class="headerlink" href="#images-tekton-controller" title="Permanent link">¶</a></td>
@@ -11341,7 +11454,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>thanos<a id="images-thanos" class="headerlink" href="#images-thanos" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>thanos stack image configuration</td>
+<td>Thanos stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>thanos.<wbr>image<a id="images-thanos-image" class="headerlink" href="#images-thanos-image" title="Permanent link">¶</a></td>
@@ -11353,7 +11466,7 @@ and (optionally) enable support for global registry and/or repository.</p>
 <td>images.<wbr>velero<a id="images-velero" class="headerlink" href="#images-velero" title="Permanent link">¶</a></td>
 <td>object</td>
 <td>—</td>
-<td>velero stack image configuration</td>
+<td>Velero stack image configuration</td>
 </tr>
 <tr>
 <td>images.<wbr>velero.<wbr>image<a id="images-velero-image" class="headerlink" href="#images-velero-image" title="Permanent link">¶</a></td>
@@ -11424,6 +11537,18 @@ and (optionally) enable support for global registry and/or repository.</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">registry.k8s.io/ingress-nginx/controller-chroot:v1.12.1@sha256:90155c86548e0bb95b3abf1971cd687d8f5d43f340cfca0ad3484e2b8351096e</span>
 </code></pre></div>
 <p><a href="#noteref:images.certManager.webhook" title="Jump back to images.certManager.webhook">↩</a></p>
+<h3 id="note:images.crossplane.image">Notes for <code>images.crossplane.image</code></h3>
+
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">registry.k8s.io/ingress-nginx/controller-chroot:v1.12.1@sha256:90155c86548e0bb95b3abf1971cd687d8f5d43f340cfca0ad3484e2b8351096e</span>
+</code></pre></div>
+<p><a href="#noteref:images.crossplane.image" title="Jump back to images.crossplane.image">↩</a></p>
+<h3 id="note:images.crossplane.kubectl">Notes for <code>images.crossplane.kubectl</code></h3>
+
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">registry.k8s.io/ingress-nginx/controller-chroot:v1.12.1@sha256:90155c86548e0bb95b3abf1971cd687d8f5d43f340cfca0ad3484e2b8351096e</span>
+</code></pre></div>
+<p><a href="#noteref:images.crossplane.kubectl" title="Jump back to images.crossplane.kubectl">↩</a></p>
 <h3 id="note:images.dex.image">Notes for <code>images.dex.image</code></h3>
 
 <p>Examples:</p>
@@ -13217,6 +13342,36 @@ Most parameters are mapped from <code>camelCase</code> to <code>--kebab-case</co
 <td>object</td>
 <td>—</td>
 <td>Configure network policy rule to allow CoreDNS to query the internal service IP.</td>
+</tr>
+<tr>
+<td>networkPolicies.<wbr>crossplane<a id="networkpolicies-crossplane" class="headerlink" href="#networkpolicies-crossplane" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configure Crossplane network policy rules.</td>
+</tr>
+<tr>
+<td>networkPolicies.<wbr>crossplane.<wbr>enabled<a id="networkpolicies-crossplane-enabled" class="headerlink" href="#networkpolicies-crossplane-enabled" title="Permanent link">¶</a></td>
+<td>boolean</td>
+<td><code>True</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>networkPolicies.<wbr>crossplane.<wbr>packageRegistry<a id="networkpolicies-crossplane-packageregistry" class="headerlink" href="#networkpolicies-crossplane-packageregistry" title="Permanent link">¶</a></td>
+<td>object</td>
+<td>—</td>
+<td>Configure network policy rules to allow Crossplane to access the Package registry</td>
+</tr>
+<tr>
+<td>networkPolicies.<wbr>crossplane.<wbr>packageRegistry.<wbr>ips[]<a id="networkpolicies-crossplane-packageregistry-ips" class="headerlink" href="#networkpolicies-crossplane-packageregistry-ips" title="Permanent link">¶</a></td>
+<td>array of string</td>
+<td>—</td>
+<td>List of IP netmasks<br><br>A IP address with netmask</td>
+</tr>
+<tr>
+<td>networkPolicies.<wbr>crossplane.<wbr>packageRegistry.<wbr>ports[]<a id="networkpolicies-crossplane-packageregistry-ports" class="headerlink" href="#networkpolicies-crossplane-packageregistry-ports" title="Permanent link">¶</a></td>
+<td>array of integer</td>
+<td>—</td>
+<td>A 16 bit unsigned integer</td>
 </tr>
 <tr>
 <td>networkPolicies.<wbr>defaultDeny<a id="networkpolicies-defaultdeny" class="headerlink" href="#networkpolicies-defaultdeny" title="Permanent link">¶</a></td>
