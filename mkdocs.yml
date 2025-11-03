@@ -226,6 +226,7 @@ nav:
       - "Troubleshooting": "user-guide/troubleshooting.md"
       - "FAQ": "user-guide/faq.md"
   - "For Platform Administrators":
+      - "Quick Setup (Not for Production)": "operator-manual/quick-setup.md"
       - "Overview": "operator-manual/index.md"
       - "Infrastructure Requirements": "operator-manual/infrastructure-requirements.md"
       - "Understand the Basics": "operator-manual/understand-the-basics.md"
