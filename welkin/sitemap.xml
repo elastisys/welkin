@@ -2,806 +2,806 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://elastisys.io/welkin/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/architecture/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/glossary/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/mission-and-vision/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/quality-criteria/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/request-a-feature/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0000-use-markdown-architectural-decision-records/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0001-use-rook-storage-orchestrator/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0002-use-kubespray-for-cluster-lifecycle/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0003-push-metrics-via-influxdb/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0004-plan-for-usage-without-wrapper-scripts/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0005-use-individual-ssh-keys/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0006-use-standard-kubeconfig-mechanisms/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0007-make-monitoring-forwarders-storage-independent/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0008-use-hostnetwork-or-loadbalancer-for-ingress/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0009-use-cluster-issuers-for-letsencrypt/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0010-run-managed-services-in-workload-cluster/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0011-let-upstream-projects-handle-crds/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0012-do-not-persist-dex/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0013-configure-alerts-in-omt/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0014-use-bats-for-testing-bash-wrappers/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0015-we-believe-in-community-driven-open-source/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0016-gid-0-is-okey-but-not-by-default/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0017-persist-dex/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0018-use-probe-to-measure-internal-uptime/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0019-push-metrics-via-thanos/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0020-filter-by-cluster-label-then-data-source/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0021-tls-for-additional-services/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0022-use-dedicated-nodes-for-additional-services/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0023-allow-snippets-annotations/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0024-allow-Harbor-robot-account/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0025-local-storage/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0026-hnc/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0027-postgresql-external-replication/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0028-harder-pod-eviction-when-node-goes-OOM/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0029-expose-jaeger-ui/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0030-run-argocd-on-elastisys-nodes/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0031-run-csi-cinder-controllerplugin-on-elastisys-nodes/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0032-boot-disk-size/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0033-run-cluster-api-controllers-on-service-cluster/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0034-how-to-run-multiple-ams-packages-of-the-same-type/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0035-run-tekton-on-service-cluster/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0036-run-ingress-nginx-as-daemonset/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0037-enforce-ttl-on-jobs/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0038-replace-starboard-operator-with-trivy-operator/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0039-application-dev-permissions/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0040-allow-group-id-0/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0041-encryption-at-rest/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0042-argocd-dynamic-hnc-namespaces/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0043-rclone-and-encryption-adhere-cryptography-policy/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0044-argocd-managing-its-own-namespace/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0045-use-specialised-prebuilt-images/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0046-handle-crds/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0047-kubernetes-versions/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0048-access-management-for-AMS-with-network-policies/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0049-run-ingress-nginx-in-chroot/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0050-use-cluster-isolation/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0051-open-cert-manager-netpols/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0052-azure-encryption-at-rest/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0053-do-not-expose-platform-observability-services-to-end-users/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0054-allow-write-access-to-endpoints-and-endpointslices-after-risk-acceptance/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0055-welkin-to-consist-of-both-public-and-private-open-source/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0056-allow-snippets-annotations-after-risk-acceptance/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0057-why-we-do-not-use-cloud-managed-kubernetes-services/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0058-boot-disk-sizes/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0059-welkin-to-consist-public-open-source-code-and-proprietary-documentation/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/0060-group-alerts-in-alertmanager/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/adr/template/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/audit-logs/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/backup/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/capacity-management/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/cryptography/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/faq/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/gdpr-art-17/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/intrusion-detection/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/isa-iec-62443/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/log-review/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/network-security/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/pdl-audit-logs/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/policy-as-code/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/sbom/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/vulnerability/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/information-security/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/information-security/dod-enterprise-devsecops-reference-design-kubernetes/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/contributor-guide/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/access-control/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/additional-services/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/air-gapped/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/break-glass/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/capacity-management/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/clean-up/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/clock-synchronization/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/cluster-sizing/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/common/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/configure/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/credentials/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/cryptography/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/disaster-recovery/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/faq/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/getting-started/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/infrastructure-requirements/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/ingress/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/maintenance/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/on-prem-standard/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/opensearch-mappings/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/provider-audit/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/runbooks/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/troubleshooting/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/understand-the-basics/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/understand-welkin/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/user-alerts/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/user-managed-crds/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/config/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/operator-manual/schema/secrets/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/argocd/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/capi/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/jaeger/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/kubespray/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/postgres/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/rabbitmq/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/valkey/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/release-notes/welkin/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/alerts/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/backup/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/ci-cd/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/cluster-api/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/continous-development/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/debug/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/delegation/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/demarcation/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/deploy/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/faq/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/go-live/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/gpu/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/how-many-environments/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/kubernetes-api/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/kubernetes-ui/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/log-based-alerts/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/logs/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/long-term-log-retention/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/maintenance/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/metrics/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/namespaces/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/network-model/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/operate/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/prepare-application/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/prepare-idp/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/prepare/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/registry/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/troubleshooting/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/understand-the-basics/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/argocd/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/jaeger/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/pgbouncer/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/postgresql/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/rabbitmq/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/timescaledb/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/additional-services/valkey/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/default-pod-topology-spread-constraints/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-job-ttl/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-minimum-replicas/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-networkpolicies/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-no-latest-tag/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-no-load-balancer-service/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-no-local-storage-emptydir/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-no-pod-without-controller/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-no-root/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-podsecuritypolicies/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-resources/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-restricted-pod-disruption-budgets/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-signed-image-verification/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/safeguards/enforce-trusted-registries/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/ferretdb/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/flux/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/jaeger/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/jupyterhub/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/kafka/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/keycloak/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/mongodb/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/sealedsecrets/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/user-guide/self-managed-services/sjunet/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/bsi-it-grundschutz/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/cra/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/gdpr/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/hipaa/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/hslf-fs-201640/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/iso-27001/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/kritis/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/mdr/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/msbfs-20188/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/msbfs-20207/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/nis2/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
     <url>
          <loc>https://elastisys.io/welkin/ciso-guide/controls/nist-sp-800-171/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <lastmod>2025-11-05</lastmod>
     </url>
 </urlset>
