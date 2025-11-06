@@ -383,7 +383,7 @@ Seeing logs from the user demo Pods in OpenSearch Dashboards:
     1. The file server MUST be able to expose files via HTTP.
     1. The file server MUST allows upload via SSH, SCP, rsync or SFTP.
 1. On-call management tool:
-    1. The on-call management tool MUST be compatible with a [Prometheus Alertmanager client](https://prometheus.io/docs/alerting/latest/clients/).
+    1. The on-call management tool MUST be compatible with a [Prometheus Alertmanager client](https://prometheus.io/docs/alerting/0.28/clients/);
         - Note: Currently, Welkin **only supports OpsGenie, Slack and Teams**. Please contact Elastisys if you need support for other Alertmanager clients.
 
 ### Implications
