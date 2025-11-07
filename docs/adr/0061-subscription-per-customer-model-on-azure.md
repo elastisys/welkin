@@ -1,8 +1,8 @@
 # Use one Subscription per Customer on Azure
 
-* Status: Accepted
-* Deciders: PA and P.O
-* Date: 2023-03-19
+- Status: Accepted
+- Deciders: PA and P.O
+- Date: 2023-03-19
 
 ## Context and Problem Statement
 
@@ -13,10 +13,10 @@ Should we consider the per Subscription-per-Customer Model for managing Azure re
 
 ## Decision Drivers
 
-* We want to maintain Platform security and stability.
-* We want to find a solution which is scalable and minimises Platform Administrator burden.
-* We want to make the Platform Administrator life easier.
-* We want to have simplified billing and invoices.
+- We want to maintain Platform security and stability.
+- We want to find a solution which is scalable and minimises Platform Administrator burden.
+- We want to make the Platform Administrator life easier.
+- We want to have simplified billing and invoices.
 
 ## Considered Options
 
@@ -29,7 +29,7 @@ Should we consider the per Subscription-per-Customer Model for managing Azure re
    - `Good`, because virtual networks are scoped to a subscription, simplifying network management and isolation between customers.
    - `Bad`, because setting up network communication between subscriptions will require additional work than within a single subscription.
 
-2. Isolation at the Resource Group Level
+1. Isolation at the Resource Group Level
 
    - `Good` because resource groups allow for organising resources more flexibly within a single subscription, facilitating easier management of resources.
    - `Good` because managing subscriptions can reduce the complexity and overhead associated with subscription management, permissions, and billing setups.
@@ -46,13 +46,13 @@ Isolation at the Subscription level i.e Subscription-per-Customer Model because,
 
 ### Positive Consequences
 
-* We maintain Platform security and resource isolation.
-* We don't increase the operational complexity.
-* We have stricter access controls and limit the scope of potential security breaches.
-* We have simplified billing and invoices.
-* We avoid potential resource contention issues.
+- We maintain Platform security and resource isolation.
+- We don't increase the operational complexity.
+- We have stricter access controls and limit the scope of potential security breaches.
+- We have simplified billing and invoices.
+- We avoid potential resource contention issues.
 
 ### Negative Consequences
 
-* Managing multiple subscriptions can increase the administrative workload.
-* Network communication across tenant requires advanced networking setups, like virtual network peering, etc
+- Managing multiple subscriptions can increase the administrative workload.
+- Network communication across tenant requires advanced networking setups, like virtual network peering, etc
