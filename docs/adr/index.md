@@ -1,7 +1,5 @@
 ---
 tags:
-  #- ISO 27001 A.14.1.1 Information Security Requirements Analysis & Specification
-  #- ISO 27001:2013 A.14.2.4 Restrictions on Changes to Software Packages
   - NIST SP 800-171 3.13.2
   - NIST SP 800-171 3.13.3
   - ISO 27001 Annex A 8.27 Secure System Architecture and Engineering Principles
@@ -88,7 +86,7 @@ This log lists the architectural decisions for Welkin.
 - [ADR-0010](0010-run-managed-services-in-workload-cluster.md) - Run managed services in Workload Cluster
 - [ADR-0011](0011-let-upstream-projects-handle-crds.md) - [Superseded by [ADR-0046](0046-handle-crds.md)] Let upstream projects handle CRDs
 - [ADR-0012](0012-do-not-persist-dex.md) - [Superseded by [ADR-0017](0017-persist-dex.md)] Do not persist Dex
-- [ADR-0013](0013-configure-alerts-in-omt.md) - Configure Alerts in On-call Management Tool (e.g., Opsgenie)
+- [ADR-0013](0013-configure-alerts-in-omt.md) - [Superseded by [ADR-0060](0060-group-alerts-in-alertmanager.md)] Configure Alerts in On-call Management Tool (e.g., Opsgenie)
 - [ADR-0014](0014-use-bats-for-testing-bash-wrappers.md) - Use bats for testing bash wrappers
 - [ADR-0015](0015-we-believe-in-community-driven-open-source.md) - We believe in community-driven open source
 - [ADR-0016](0016-gid-0-is-okey-but-not-by-default.md) - [Superseded by [ADR-0040](0040-allow-group-id-0.md)] gid=0 is okay, but not by default
@@ -107,7 +105,7 @@ This log lists the architectural decisions for Welkin.
 - [ADR-0029](0029-expose-jaeger-ui.md) - Expose Jaeger UI in WC
 - [ADR-0030](0030-run-argocd-on-elastisys-nodes.md) - Run ArgoCD on the Elastisys Nodes
 - [ADR-0031](0031-run-csi-cinder-controllerplugin-on-elastisys-nodes.md) - Run csi-cinder-controllerplugin on the Elastisys Nodes
-- [ADR-0032](0032-boot-disk-size.md) - Boot disk size on Nodes
+- [ADR-0032](0032-boot-disk-size.md) - [Superseded by [ADR-0058](0058-boot-disk-sizes.md)]Boot disk size on Nodes
 - [ADR-0033](0033-run-cluster-api-controllers-on-service-cluster.md) - Run Cluster API controllers on Management Cluster
 - [ADR-0034](0034-how-to-run-multiple-ams-packages-of-the-same-type.md) - How to run multiple AMS packages of the same type in the same environment
 - [ADR-0035](0035-run-tekton-on-service-cluster.md) - Run Tekton on Management Cluster
@@ -135,6 +133,8 @@ This log lists the architectural decisions for Welkin.
 - [ADR-0057](0057-why-we-do-not-use-cloud-managed-kubernetes-services.md) - Do Not Use Managed Kubernetes Services
 - [ADR-0058](0058-boot-disk-sizes.md) - Boot disk size on Nodes
 - [ADR-0059](0059-welkin-to-consist-public-open-source-code-and-proprietary-documentation.md) - Welkin to Consist of Public Open Source Code and Proprietary Documentation
+- [ADR-0060](0060-group-alerts-in-alertmanager.md) - Group alerts in Alertmanager
+- [ADR-0061](0061-subscription-per-customer-model-on-azure.md) - Use one Subscription per Customer on Azure
 
 <!-- adrlogstop -->
 
