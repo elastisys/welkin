@@ -86,18 +86,24 @@ Being a non-production deployment, the following limitations apply:
 
 Input the following information to generate a basic Welkin Apps configuration.
 
-<div>
-    <label for="objectStorage.s3.regionEndpoint">Object storage URL:</label>
-    <input id="objectStorage.s3.regionEndpoint" type="text" placeholder="https://s3.mycorp.test" />
-    <br>
+<div style="
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 12px;
+  align-items: center;
+  max-width: 600px;
+  padding: 20px 24px;
+  border: 1px dashed var(--elastisys-sky-blue-dark);
+  border-radius: 1px;
+">
+  <label for="objectStorage.s3.regionEndpoint">Object storage URL:</label>
+  <input id="objectStorage.s3.regionEndpoint" type="text" placeholder="https://s3.mycorp.test" />
 
-    <label for="objectStorage.s3.accessKey">Object storage access key:</label>
-    <input id="objectStorage.s3.accessKey" type="text" placeholder="AKIAIOSFODNN7EXAMPLE" />
-    <br>
+  <label for="objectStorage.s3.accessKey">Object storage access key:</label>
+  <input id="objectStorage.s3.accessKey" type="text" placeholder="AKIAIOSFODNN7EXAMPLE" />
 
-    <label for="objectStorage.s3.secretKey">Object storage secret key:</label>
-    <input id="objectStorage.s3.secretKey" type="text" placeholder="EXAMPLESECRETKEY" />
-    <br>
+  <label for="objectStorage.s3.secretKey">Object storage secret key:</label>
+  <input id="objectStorage.s3.secretKey" type="text" placeholder="EXAMPLESECRETKEY" />
 </div>
 
 ### Welkin Apps Configuration
@@ -109,11 +115,11 @@ Place the files generated below in the `.config` folder you created above.
 
 <script>
 function genConfig() {
-    const regionEndpoint = document.getElementById('objectStorage.s3.regionEndpoint').value;
-    const accessKey = document.getElementById('objectStorage.s3.accessKey').value;
-    const secretKey = document.getElementById('objectStorage.s3.secretKey').value;
+  const regionEndpoint = document.getElementById('objectStorage.s3.regionEndpoint').value;
+  const accessKey = document.getElementById('objectStorage.s3.accessKey').value;
+  const secretKey = document.getElementById('objectStorage.s3.secretKey').value;
 
-    document.getElementById('sc-config.yaml').innerHTML = `# sc-config.yaml
+  document.getElementById('sc-config.yaml').innerHTML = `# sc-config.yaml
 objectStorage:
   type: s3
   regionEndpoint: ${regionEndpoint}
@@ -123,13 +129,13 @@ objectStorage:
 }
 
 for (const i of [
-    'objectStorage.s3.regionEndpoint',
-    'objectStorage.s3.accessKey',
-    'objectStorage.s3.secretKey',
+  'objectStorage.s3.regionEndpoint',
+  'objectStorage.s3.accessKey',
+  'objectStorage.s3.secretKey',
 ]) {
-    const el = document.getElementById(i);
-    console.log('Adding listener', i, el);
-    el.addEventListener("input", (event) => { genConfig(); })
+  const el = document.getElementById(i);
+  console.log('Adding listener', i, el);
+  el.addEventListener("input", (event) => { genConfig(); })
 }
 genConfig();
 </script>
