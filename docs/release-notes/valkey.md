@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v9.0.0-ck8s1](#v900-ck8s1) - 2025-11-13
 - [v8.0.3-ck8s1](#v803-ck8s1) - 2025-06-03
 - [v7.2.7-ck8s1](#v727-ck8s1) - 2025-01-07
 - [v7.2.5-ck8s1](#v725-ck8s1) - 2024-10-07
@@ -19,6 +20,14 @@
 !!!note
 
     These are only the user-facing changes.
+
+## v9.0.0-ck8s1
+
+Released 2025-11-13
+
+### Release highlights
+
+- Valkey version will be upgraded from v8.0.3 to v9.0.0
 
 ## v8.0.3-ck8s1
 
