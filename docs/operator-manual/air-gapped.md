@@ -257,7 +257,7 @@ opensearch:
 
 ### Trivy
 
-Trivy checks for vulnerabilities from a vulnerability database as well as a Java index database which are usually downloaded directly from GitHub (`ghcr.io`). In an air-gapped network, you can download these databases manually and push them to a private registry inside the air-gapped network. Please [read the air-gapped documentation for Trivy](https://aquasecurity.github.io/trivy/v0.47/docs/advanced/air-gap/#download-the-vulnerability-database) on how to download and copy over this database. The tool [`oras`](https://oras.land/docs/) can be useful for working with and managing OCI repositories.
+Trivy checks for vulnerabilities from a vulnerability database as well as a Java index database which are usually downloaded directly from GitHub (`ghcr.io`). In an air-gapped network, you can download these databases manually and push them to a private registry inside the air-gapped network. Please [read the air-gapped documentation for Trivy](https://trivy.dev/docs/v0.67/advanced/air-gap/) on how to download and copy over this database. The tool [`oras`](https://oras.land/docs/) can be useful for working with and managing OCI repositories.
 
 Once the databases are available in the air-gapped private-registry, you need to configure the following variables in `common-config.yaml` for Trivy to download from the private registry:
 
