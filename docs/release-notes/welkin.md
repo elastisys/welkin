@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.50.0](#v0500) - 2025-11-14
 - [v0.49.0](#v0490) - 2025-10-07
 - [v0.48.1](#v0481) - 2025-10-15
 - [v0.48.0](#v0480) - 2025-08-05
@@ -87,6 +88,22 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.50.0
+
+Released 2025-11-14
+
+### Feature(s)
+
+- Add self-managed Jaeger Operator support. You can read more about Jaeger (self-managed) in our [documentation](../user-guide/self-managed-services/jaeger.md).
+- Added a new dashboard to Grafana that allows you to filter by namespace and see write and read throughput and IOPS for Pods with persistent volumes. Named `Read and Write - Namespace (Pods with PVCs)`.
+
+### Improvement(s)
+
+- Upgrade Prometheus-blackbox-exporter chart to v11.3.1.
+- Upgrade kube-prometheus-stack chart to v77.11.1.
+- Upgrade Ingress-NGINX chart to v4.13.3 and app to v1.13.3.
+- Upgrade Gatekeeper chart to v3.20.1.
 
 ## v0.49.0
 
