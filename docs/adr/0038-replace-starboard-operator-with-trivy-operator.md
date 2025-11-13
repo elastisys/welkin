@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-The Maintainers of Starboard [deprecated it](https://github.com/aquasecurity/starboard/discussions/1173) in favor of [Trivy Kubernetes](https://aquasecurity.github.io/trivy/v0.41/tutorials/kubernetes/cluster-scanning/) with [Trivy operator](https://github.com/aquasecurity/trivy-operator). They will no longer make any bigger changes to Starboard operator. They announced the change in March 2023.
+The Maintainers of Starboard [deprecated it](https://github.com/aquasecurity/starboard/discussions/1173) in favor of [Trivy Kubernetes](https://trivy.dev/docs/v0.67/tutorials/kubernetes/cluster-scanning/#cluster-scanning) with [Trivy operator](https://github.com/aquasecurity/trivy-operator). They will no longer make any bigger changes to Starboard operator. They announced the change in March 2023.
 
 We currently use Starboard operator for scanning images with Trivy and for running the CIS Kubernetes benchmark with kube-bench. Trivy operator has support for scanning images and running a version of the CIS Kubernetes benchmark.
 

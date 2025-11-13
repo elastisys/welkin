@@ -29,7 +29,7 @@ This section provides some useful links to build up this understanding.
     - [OpenSearch](https://opensearch.org/docs/latest/)
 - Container registries and container vulnerability scanning
     - [Harbor](https://goharbor.io/)
-    - [Trivy](https://trivy.dev/v0.57/)
+    - [Trivy](https://trivy.dev/)
 - Kubernetes security hardening
     - We recommend [Certified Kubernetes Security Specialist (CKS)](https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/)
     - [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
