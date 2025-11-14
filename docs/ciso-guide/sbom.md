@@ -23,3 +23,10 @@ Our SBOM generation captures components from Helm charts and container images. F
 
 To learn even more about our approach, you can view our most recently updated
 [SBOM for Welkin Apps](https://github.com/elastisys/compliantkubernetes-apps/blob/main/sbom/sbom.cdx.json)
+
+## Visualizing SBOMs
+
+For visualizing SBOMs, we recommend the [Sunshine](https://cyclonedx.github.io/Sunshine/) tool.
+See the screenshot below for an example output:
+
+![Example output from Sunshine](img/sbom-sunshine-screenshot.png)
