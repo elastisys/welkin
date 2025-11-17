@@ -3,7 +3,7 @@ accept = [
   # Various anticrawlers :(
   403, 429,
   # Avoid being someone else's uptime monitor :)
-  500, 504,
+  500, 503, 504,
 ]
 exclude = [
   '\/\/localhost',
@@ -24,5 +24,6 @@ exclude = [
   '^https://admin.google.com/',
   # Fails unexpectedly
   '^https://www.bsi.bund.de/',
+  '^https://www.gnu.org/licenses/gpl-faq.en.html',
 ]
 include-fragments = true
