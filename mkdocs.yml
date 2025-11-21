@@ -42,7 +42,7 @@ strict: true
 theme:
   name: material
   font: false
-  logo: "img/favicon.svg"
+  logo: "img/welkin-by-elastisys-logo_green-midnight.svg"
   # "The Internet" recommends using absolute URLs for favicons.
   favicon: "https://elastisys.io/welkin/img/favicon.ico"
   custom_dir: overrides
