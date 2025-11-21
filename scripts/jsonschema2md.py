@@ -88,6 +88,7 @@ def traverse(schema, path=""):
 
     # Add current node
     if path:
+        title = schema.get("title")
         desc = schema.get("description")
         enum = schema.get("enum")
         examples = schema.get("examples")
@@ -109,7 +110,7 @@ def traverse(schema, path=""):
             path,
             schema_type,
             schema.get("default"),
-            desc,
+            ': '.join(filter(None, [title, desc])),
             enum,
             examples,
         ]
@@ -140,7 +141,7 @@ def schema_to_markdown(schema, source_name):
     md = []
     notes = {}
 
-    header = ["Key", "Type", "Default", "Description"]
+    header = ["Key", "Type", "Default", "Title and Description"]
 
     # Source attribution
     if source_name.startswith("http://") or source_name.startswith("https://"):
