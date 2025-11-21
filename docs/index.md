@@ -47,9 +47,20 @@ Welkin gives you peace of mind, knowing your critical services are in safe hands
 
 ## What is Welkin?
 
-<a href="img/marchitecture_pyramid_welkin.svg">
-<img src="img/marchitecture_pyramid_welkin.svg" alt="Components of Welkin" />
-</a>
+Welkin is the foundation for critical software.
+Built on Kubernetes and trusted cloud native technologies, it delivers a secure, compliant, and effortless platform for running modern applications at scale.
+
+Critical systems demand absolute trust.
+Regulations like NIS2, CRA, and ISO 27001 don't just raise the bar, they redefine it.
+Welkin delivers a secure and compliant foundation for any cloud, on-premises, or air-gapped environment.
+Reliable under pressure.
+Secure by design.
+
+<img
+    class="add-dark-background"
+    src="img/welkin-application-platform.png"
+    alt="Overview of the Welkin Application Platform"
+/>
 
 ## Benefits of Welkin
 

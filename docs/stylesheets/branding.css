@@ -138,6 +138,14 @@ div.add-white-background img {
   border-radius: 5px;
 }
 
+/* Useful class for making images work with light mode */
+img.add-dark-background,
+div.add-dark-background img {
+  background: var(--elastisys-night-blue);
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .md-header.md-header {
   color: var(--elastisys-night-blue);
   background: linear-gradient(
