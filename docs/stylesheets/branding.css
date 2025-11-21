@@ -126,7 +126,7 @@
 }
 
 [data-md-color-scheme="slate"][data-md-color-accent="elastisys-dark"] {
-  --md-typeset-a-color: var(--elastisys-northern-lights-2);
+  --md-typeset-a-color: var(--elastisys-northern-lights-1);
   --md-accent-fg-color: var(--elastisys-hover);
 }
 
