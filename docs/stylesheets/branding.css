@@ -137,3 +137,13 @@ div.add-white-background img {
   padding: 5px;
   border-radius: 5px;
 }
+
+.md-header.md-header {
+  color: var(--elastisys-night-blue);
+  background: linear-gradient(
+    to right,
+    var(--elastisys-northern-lights-1),
+    var(--elastisys-northern-lights-2),
+    var(--elastisys-sky-blue-dark)
+  );
+}
