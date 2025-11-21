@@ -64,10 +64,10 @@ Secure by design.
 
 ## Benefits of Welkin
 
-<dl class="columns-1" markdown="1">
+<dl class="columns" markdown="1">
   <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-user-check:
+    <dt>
+      <img src="img/icons/platform-you-would-build-yourself-icon.svg" /><br>
       The platform you would build yourself
     </dt>
     <dd markdown="span">
@@ -77,9 +77,9 @@ Secure by design.
     </dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-heart:
+  <div>
+    <dt>
+      <img src="img/icons/loved-by-ciso-and-dpo-icon.svg" /><br>
       Loved❤️ by CISOs👮 and DPOs🧑‍⚖️
     </dt>
     <dd>
@@ -90,9 +90,9 @@ Secure by design.
     </dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-cloud:
+  <div>
+    <dt>
+      <img src="img/icons/cloud-agnostic-icon.svg" /><br>
       Cloud agnostic, running in production in 10+ clouds
     </dt>
     <dd>
