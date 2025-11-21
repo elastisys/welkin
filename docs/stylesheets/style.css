@@ -70,8 +70,7 @@
 .md-content .landing-page .columns img,
 .md-content .landing-page .columns-1 img,
 .md-content .landing-page .columns-2 img {
-  max-width: 256px;
-  height: 128px;
+  max-width: 48px;
 }
 .md-content .landing-page .columns dt,
 .md-content .landing-page .columns-1 dt,

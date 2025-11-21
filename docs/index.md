@@ -8,11 +8,11 @@ Security made in Sweden.
 Built for organizations where reliability and compliance are not optional.
 Welkin gives you peace of mind, knowing your critical services are in safe hands.
 
-<nav markdown="1">
-<dl class="columns-1" markdown="1">
-  <div markdown="span">
-    <dt markdown="span" class="grow-me">
-      :fontawesome-solid-code:
+<nav>
+<dl class="columns">
+  <div>
+    <dt class="grow-me">
+      <img src="img/icons/for-application-developers-icon.svg" /><br>
       For application developers
     </dt>
     <dd class="grow-me">
@@ -21,9 +21,9 @@ Welkin gives you peace of mind, knowing your critical services are in safe hands
     <dd><a role="button" href="./user-guide/">Get started</a></dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span" class="grow-me">
-      :fontawesome-solid-user-secret:
+  <div>
+    <dt class="grow-me">
+      <img src="img/icons/for-ciso-and-dpo-icon.svg" /><br>
       For CISOs and DPOs
     </dt>
     <dd class="grow-me">
@@ -32,9 +32,9 @@ Welkin gives you peace of mind, knowing your critical services are in safe hands
     <dd><a role="button" href="./ciso-guide/">Help me comply</a></dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span" class="grow-me">
-      :fontawesome-solid-users-gear:
+  <div>
+    <dt class="grow-me">
+      <img src="img/icons/for-platform-administrators-icon.svg" /><br>
       For platform administrators
     </dt>
     <dd class="grow-me">
