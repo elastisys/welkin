@@ -108,10 +108,11 @@
   width: initial;
 }
 .md-content .landing-page a[role=button] {
-  background-color: var(--elastisys-northern-lights-2);
-  color: var(--elastisys-snow-light);
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgb(203, 255, 139) 22%, rgb(34, 164, 114) 100%);
+  color: var(--elastisys-night-blue);
   padding: 12px 24px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 14px;
   display: block;
   width: fit-content;
