@@ -2,11 +2,11 @@
 
 <div class="landing-page" markdown="1">
 
-# Innovate at speed in regulated industries
+# The Application Platform for Software Critical to Society
 
-Welcome to Welkin, the Kubernetes platform for software critical to our society!
-
-Welkin enables organizations across Europe to accelerate innovation through open source cloud-native technology, while ensuring security and regulatory compliance.
+Security made in Sweden.
+Built for organizations where reliability and compliance are not optional.
+Welkin gives you peace of mind, knowing your critical services are in safe hands.
 
 <nav markdown="1">
 <dl class="columns-1" markdown="1">
