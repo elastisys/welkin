@@ -47,6 +47,13 @@ theme:
   favicon: "https://elastisys.io/welkin/img/favicon.ico"
   custom_dir: overrides
   palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: elastisys-dark
+      accent: elastisys-dark
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
@@ -56,13 +63,6 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: elastisys-dark
-      accent: elastisys-dark
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
   features:
     - content.code.annotate
     - content.code.copy
