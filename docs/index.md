@@ -142,6 +142,7 @@ Secure by design.
 </ul>
 
 ## Commercial offering
+
 <nav>
 <dl class="columns-2">
   <div>
