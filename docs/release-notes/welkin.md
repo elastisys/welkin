@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.49.1](#v0491) - 2025-11-24
 - [v0.49.0](#v0490) - 2025-10-07
 - [v0.48.0](#v0480) - 2025-08-05
 - [v0.47.2](#v0472) - 2025-07-31
@@ -82,6 +83,14 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.49.1
+
+Released 2025-11-24
+
+### Other(s)
+
+- Fixed issue where user Alertmanager secret would get overwritten when upgrading Welkin
 
 ## v0.49.0
 
