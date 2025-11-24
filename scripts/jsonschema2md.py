@@ -3,6 +3,7 @@
 Convert JSON Schemas into a nice table
 """
 import argparse
+import html
 import os
 import re
 import sys
@@ -36,7 +37,7 @@ def render_code(value):
         raise ValueError(f'Value {value} does not match expected regex {CODE_REGEX}.')
     return f'`{value}`'
 
-PATH_REGEX = re.compile(r"^[a-zA-Z0-9\[\]/._-]*$")
+PATH_REGEX = re.compile(r"^[a-zA-Z0-9\[\]/._<>-]*$")
 def render_path(path):
     """
     Turns a JSON path into safe anchor to be used in a table cell
@@ -51,7 +52,7 @@ def render_path(path):
     if not PATH_REGEX.fullmatch(path):
         raise ValueError(f'Path {path} does not match expected regex {PATH_REGEX}.')
 
-    label = re.sub(r'([./_-])', r'\1<wbr>', path)
+    label = re.sub(r'([./_-])', r'\1<wbr>', html.escape(path))
 
     return (
         f'{label}' +
@@ -88,6 +89,7 @@ def traverse(schema, path=""):
 
     # Add current node
     if path:
+        title = schema.get("title")
         desc = schema.get("description")
         enum = schema.get("enum")
         examples = schema.get("examples")
@@ -109,7 +111,7 @@ def traverse(schema, path=""):
             path,
             schema_type,
             schema.get("default"),
-            desc,
+            ': '.join(filter(None, [title, desc])),
             enum,
             examples,
         ]
@@ -120,6 +122,16 @@ def traverse(schema, path=""):
             subschema = schema["properties"][key]
             full_path = f"{path}.{key}" if path else key
             yield from traverse(subschema, full_path)
+
+    # Handle patternProperties (regex-based keys)
+    if schema_type == "object" and "patternProperties" in schema:
+        for _pattern, patternschema in \
+                sorted(schema["patternProperties"].items()):
+            patternkey = '<name>'
+            patternpath = f"{path}.{patternkey}" if path else patternkey
+            for key, subschema in sorted(patternschema.items()):
+                full_path = f"{patternpath}.{key}" if patternpath else key
+                yield from traverse(subschema, full_path)
 
 def flush_notes(md, notes):
     """Write out all notes and clear list of notes"""
@@ -140,7 +152,7 @@ def schema_to_markdown(schema, source_name):
     md = []
     notes = {}
 
-    header = ["Key", "Type", "Default", "Description"]
+    header = ["Key", "Type", "Default", "Title and Description"]
 
     # Source attribution
     if source_name.startswith("http://") or source_name.startswith("https://"):
