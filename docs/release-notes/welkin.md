@@ -6,7 +6,14 @@
 
 <!-- BEGIN TOC -->
 
+<<<<<<< HEAD
+
 - [v0.50.0](#v0500) - 2025-11-14
+=======
+- [v0.49.1](#v0491) - 2025-11-24
+
+>>>>>>> bba4d246b3c (Add release note for Welkin 0.49.1)
+
 - [v0.49.0](#v0490) - 2025-10-07
 - [v0.48.1](#v0481) - 2025-10-15
 - [v0.48.0](#v0480) - 2025-08-05
@@ -104,6 +111,14 @@ Released 2025-11-14
 - Upgrade kube-prometheus-stack chart to v77.11.1.
 - Upgrade Ingress-NGINX chart to v4.13.3 and app to v1.13.3.
 - Upgrade Gatekeeper chart to v3.20.1.
+
+## v0.49.1
+
+Released 2025-11-24
+
+### Other(s)
+
+- Fixed issue where user Alertmanager secret would get overwritten when upgrading Welkin
 
 ## v0.49.0
 
