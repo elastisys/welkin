@@ -80,7 +80,7 @@ Secure by design.
   <div>
     <dt>
       <img src="img/icons/loved-by-ciso-and-dpo-icon.svg" alt="Loved by CISOs and DPOs Icon" /><br>
-      Loved❤️ by CISOs👮 and DPOs🧑‍⚖️
+      Loved by CISOs and DPOs
     </dt>
     <dd>
         Built around controls to achieve EU regulatory compliance with:
@@ -142,12 +142,10 @@ Secure by design.
 </ul>
 
 ## Commercial offering
-
-<nav markdown="1">
-<dl class="columns-2" markdown="1">
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-handshake:
+<nav>
+<dl class="columns-2">
+  <div>
+    <dt>
       Welkin Enterprise
     </dt>
     <dd class="grow-me">
@@ -157,9 +155,8 @@ Secure by design.
       <a role="button" href="https://elastisys.com/self-managed/">Go to Welkin Enterprise</a>
     </dd>
   </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-user-gear:
+  <div>
+    <dt>
       Welkin Managed
     </dt>
     <dd>
@@ -169,9 +166,8 @@ Secure by design.
       <a role="button" href="https://elastisys.com/managed-services/">Go to Welkin Managed</a>
     </dd>
   </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-laptop-code:
+  <div>
+    <dt>
       Consulting
     </dt>
     <dd class="grow-me">
@@ -181,9 +177,8 @@ Secure by design.
       <a role="button" href="https://elastisys.com/consulting/">Go to Consulting</a>
     </dd>
   </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-user-graduate:
+  <div>
+    <dt>
       Training
     </dt>
     <dd class="grow-me">

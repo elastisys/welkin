@@ -111,7 +111,7 @@
   text-transform: uppercase;
   background: linear-gradient(135deg, rgb(203, 255, 139) 22%, rgb(34, 164, 114) 100%);
   color: var(--elastisys-night-blue);
-  padding: 12px 24px;
+  padding: 12px 12px;
   border-radius: 30px;
   font-size: 14px;
   display: block;
