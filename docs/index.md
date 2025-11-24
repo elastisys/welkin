@@ -12,7 +12,7 @@ Welkin gives you peace of mind, knowing your critical services are in safe hands
 <dl class="columns">
   <div>
     <dt class="grow-me">
-      <img src="img/icons/for-application-developers-icon.svg" /><br>
+      <img src="img/icons/for-application-developers-icon.svg" alt="For Application Developers Icon" /><br>
       For application developers
     </dt>
     <dd class="grow-me">
@@ -23,7 +23,7 @@ Welkin gives you peace of mind, knowing your critical services are in safe hands
 
   <div>
     <dt class="grow-me">
-      <img src="img/icons/for-ciso-and-dpo-icon.svg" /><br>
+      <img src="img/icons/for-ciso-and-dpo-icon.svg" alt="For CISOs and DPOs Icon" /><br>
       For CISOs and DPOs
     </dt>
     <dd class="grow-me">
@@ -34,7 +34,7 @@ Welkin gives you peace of mind, knowing your critical services are in safe hands
 
   <div>
     <dt class="grow-me">
-      <img src="img/icons/for-platform-administrators-icon.svg" /><br>
+      <img src="img/icons/for-platform-administrators-icon.svg" alt="For Platform Administrators Icon" /><br>
       For platform administrators
     </dt>
     <dd class="grow-me">
@@ -67,7 +67,7 @@ Secure by design.
 <dl class="columns" markdown="1">
   <div markdown="span">
     <dt>
-      <img src="img/icons/platform-you-would-build-yourself-icon.svg" /><br>
+      <img src="img/icons/platform-you-would-build-yourself-icon.svg" alt="Platform you would build yourself icon" /><br>
       The platform you would build yourself
     </dt>
     <dd markdown="span">
@@ -79,7 +79,7 @@ Secure by design.
 
   <div>
     <dt>
-      <img src="img/icons/loved-by-ciso-and-dpo-icon.svg" /><br>
+      <img src="img/icons/loved-by-ciso-and-dpo-icon.svg" alt="Loved by CISOs and DPOs Icon" /><br>
       Loved❤️ by CISOs👮 and DPOs🧑‍⚖️
     </dt>
     <dd>
@@ -92,7 +92,7 @@ Secure by design.
 
   <div>
     <dt>
-      <img src="img/icons/cloud-agnostic-icon.svg" /><br>
+      <img src="img/icons/cloud-agnostic-icon.svg" alt="Cloud Agnostic Icon" /><br>
       Cloud agnostic, running in production in 10+ clouds
     </dt>
     <dd>
