@@ -14,3 +14,5 @@ Quality gates:
 > You can find such links with `egrep -R '\[.*\]\(.*user-demo.*#L.*)' docs`.
 
 - [ ] I have updated links to code snippets or I haven't changed code snippets.
+
+- [ ] I have updated CISO/DPO controls or no such updates are needed. (If in doubt, assign the Elastisys CISO and DPO as a reviewer.)
