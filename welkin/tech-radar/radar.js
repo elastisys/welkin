@@ -48,7 +48,7 @@ function radar_visualization(config) {
   ];
 
   const rings = [
-    { radius: 130 },
+    { radius: 150 },
     { radius: 220 },
     { radius: 310 },
     { radius: 400 }

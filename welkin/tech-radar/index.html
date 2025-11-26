@@ -25,12 +25,12 @@ radar_visualization({
     grid: "#bbb",
     inactive: "#ddd"
   },
-  title: "Welkin Tech Radar — 2025-01-21",
+  title: "Welkin Tech Radar — 2025-11-25",
   quadrants: [
     { name: "Languages", },
     { name: "CNCF Projects" },
     { name: "Techniques" },
-    { name: "Tools" },
+    { name: "Tools (non-CNCF)" },
   ],
   rings: [
     { name: "ADOPT", color: "#5ba300" },
@@ -42,371 +42,85 @@ radar_visualization({
   // zoomed_quadrant: 0,
   //ENTRIES
   entries: [
-    // Keep sorted
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "Ansible",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 0,
-      ring: 0,
-      label: "Bash",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 0,
-      ring: 0,
-      label: "Python",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 0,
-      ring: 0,
-      label: "Go",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "bats",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Cert-manager",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Containerd",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Fluentd",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Harbor",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Dex",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "ArgoCD",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "OpenSearch",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "NGINX-ingress controller",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Calico",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Velero",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Kured",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "RabbitMQ",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "postgresql",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Timescale DB",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "Kyverno",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "Cilium",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "Knative",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "Istio",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "Telepresence",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "OpenTofu",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "KubeFlow",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "CloudNativePG",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 2,
-      label: "Redis",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Falco",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "OAuth2",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "Grafana",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Helm",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 2,
-      ring: 0,
-      label: "Infrastructure as Code",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 2,
-      ring: 0,
-      label: "Configuration Management",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 2,
-      ring: 0,
-      label: "PaaS",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 2,
-      ring: 0,
-      label: "GitOps",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 2,
-      ring: 0,
-      label: "Policy as Code",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 0,
-      ring: 3,
-      label: "jsonnet",
-      active: false,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Thanos",
-      active: true,
-      moved: 1
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Trivy",
-      active: true,
-      moved: 1
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Jaeger",
-      active: true,
-      moved: 1
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Cluster API",
-      active: true,
-      moved: 1
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "jq",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Kubespray",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "OPA/Gatekeeper",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Prometheus",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Rook",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 1,
-      ring: 0,
-      label: "Tekton",
-      active: true,
-      moved: 1
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "Terraform",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "Rclone",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "Cluster-API",
-      active: true,
-      moved: 0
-    },
-    {
-      quadrant: 3,
-      ring: 0,
-      label: "yq",
-      active: false,
-      moved: 0
-    },
+    /*
+     * BEGIN Techniques
+     */
+    { quadrant: 2, ring: 0, label: "Configuration Management" },
+    { quadrant: 2, ring: 0, label: "GitOps" },
+    { quadrant: 2, ring: 0, label: "Infrastructure as Code" },
+    { quadrant: 2, ring: 0, label: "PaaS" },
+    { quadrant: 2, ring: 0, label: "Policy as Code" },
+    /*
+     * END Techniques
+     */
+
+    /*
+     * BEGIN Languages
+     */
+    { quadrant: 0, ring: 0, label: "Bash" },
+    { quadrant: 0, ring: 0, label: "Go" },
+    { quadrant: 0, ring: 0, label: "Javascript" },
+    { quadrant: 0, ring: 3, label: "jsonnet" },
+    { quadrant: 0, ring: 0, label: "Python" },
+    /*
+     * END Languages
+     */
+
+    /*
+     * BEGIN Tools (non-CNCF)
+     */
+    { quadrant: 3, ring: 0, label: "Ansible" },
+    { quadrant: 3, ring: 0, label: "bats" },
+    { quadrant: 3, ring: 0, label: "Grafana" },
+    { quadrant: 3, ring: 0, label: "jq" },
+    { quadrant: 3, ring: 0, label: "PostgreSQL" },
+    { quadrant: 3, ring: 0, label: "RabbitMQ" },
+    { quadrant: 3, ring: 0, label: "Rclone" },
+    { quadrant: 3, ring: 3, label: "Redis" },
+    { quadrant: 3, ring: 3, label: "Terraform" },
+    { quadrant: 3, ring: 0, label: "Timescale DB" },
+    { quadrant: 3, ring: 0, label: "Trivy" },
+    { quadrant: 3, ring: 0, label: "yq" },
+    /*
+     * END Tools
+     */
+
+    /*
+     * BEGIN CNCF Projects
+     */
+    { quadrant: 1, ring: 3, label: "Argo CD" },
+    { quadrant: 1, ring: 3, label: "Calico" },
+    { quadrant: 1, ring: 0, label: "Cert-manager" },
+    { quadrant: 1, ring: 0, label: "Cilium" },
+    { quadrant: 1, ring: 2, label: "CloudNativePG" },
+    { quadrant: 1, ring: 0, label: "Cluster API" },
+    { quadrant: 1, ring: 0, label: "Containerd" },
+    { quadrant: 1, ring: 0, label: "Crossplane" },
+    { quadrant: 1, ring: 0, label: "Dex" },
+    { quadrant: 1, ring: 0, label: "Falco"  },
+    { quadrant: 1, ring: 2, label: "Fluentbit" },
+    { quadrant: 1, ring: 0, label: "Fluentd" },
+    { quadrant: 1, ring: 0, label: "Harbor" },
+    { quadrant: 1, ring: 0, label: "Helm" },
+    { quadrant: 1, ring: 3, label: "Ingress NGINX Controller" },
+    { quadrant: 1, ring: 3, label: "Istio" },
+    { quadrant: 1, ring: 3, label: "Jaeger" },
+    { quadrant: 1, ring: 2, label: "Knative" },
+    { quadrant: 1, ring: 2, label: "KubeFlow" },
+    { quadrant: 1, ring: 0, label: "Kubernetes" },
+    { quadrant: 1, ring: 0, label: "Kubespray" },
+    { quadrant: 1, ring: 0, label: "Kured" },
+    { quadrant: 1, ring: 0, label: "Kyverno" },
+    { quadrant: 1, ring: 0, label: "OPA/Gatekeeper" },
+    { quadrant: 1, ring: 0, label: "OpenSearch" },
+    { quadrant: 1, ring: 0, label: "OpenTofu" },
+    { quadrant: 1, ring: 0, label: "Prometheus" },
+    { quadrant: 1, ring: 1, label: "Rook/Ceph" },
+    { quadrant: 1, ring: 2, label: "Telepresence" },
+    { quadrant: 1, ring: 0, label: "Tekton" },
+    { quadrant: 1, ring: 0, label: "Thanos" },
+    { quadrant: 1, ring: 0, label: "Valkey" },
+    { quadrant: 1, ring: 0, label: "Velero" },
 ]
 //ENTRIES
 });
