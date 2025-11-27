@@ -92,6 +92,13 @@ Noteworthy default configuration:
 - `auth_file` should not be changed.
 - `pidfile` should not be changed.
 
+### PgBouncer for PostgreSQL replica
+
+You may want to point your read-only queries towards the PostgreSQL replica to offload the PostgreSQL master.
+To do this with PgBouncer we can install a separate PgBouncer Deployment that connects to the replica.
+This Deployment is configured separately, the ConfigMap and Secret for this Deployment contain `pgbouncer-repl`, e.g. `cluster-name-pgbouncer-repl-config` and `cluster-name-pgbouncer-repl-auth-file` respectively.
+This separate PgBouncer Deployment is disabled by default to avoid taking up unnecessary resources if unused, but can be enabled by filing a service ticket.
+
 ## Migration for application developers
 
 Follow these steps if you as an application developer already use the Managed PostgreSQL offering and want to start using Managed PgBouncer.
