@@ -2,17 +2,17 @@
 
 <div class="landing-page" markdown="1">
 
-# Innovate at speed in regulated industries
+# The Application Platform for Software Critical to Society
 
-Welcome to Welkin, the Kubernetes platform for software critical to our society!
+Security made in Sweden.
+Built for organizations where reliability and compliance are not optional.
+Welkin gives you peace of mind, knowing your critical services are in safe hands.
 
-Welkin enables organizations across Europe to accelerate innovation through open source cloud-native technology, while ensuring security and regulatory compliance.
-
-<nav markdown="1">
-<dl class="columns-1" markdown="1">
-  <div markdown="span">
-    <dt markdown="span" class="grow-me">
-      :fontawesome-solid-code:
+<nav>
+<dl class="columns">
+  <div>
+    <dt class="grow-me">
+      <img src="img/icons/for-application-developers-icon.svg" alt="For Application Developers Icon" /><br>
       For application developers
     </dt>
     <dd class="grow-me">
@@ -21,9 +21,9 @@ Welkin enables organizations across Europe to accelerate innovation through open
     <dd><a role="button" href="./user-guide/">Get started</a></dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span" class="grow-me">
-      :fontawesome-solid-user-secret:
+  <div>
+    <dt class="grow-me">
+      <img src="img/icons/for-ciso-and-dpo-icon.svg" alt="For CISOs and DPOs Icon" /><br>
       For CISOs and DPOs
     </dt>
     <dd class="grow-me">
@@ -32,9 +32,9 @@ Welkin enables organizations across Europe to accelerate innovation through open
     <dd><a role="button" href="./ciso-guide/">Help me comply</a></dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span" class="grow-me">
-      :fontawesome-solid-users-gear:
+  <div>
+    <dt class="grow-me">
+      <img src="img/icons/for-platform-administrators-icon.svg" alt="For Platform Administrators Icon" /><br>
       For platform administrators
     </dt>
     <dd class="grow-me">
@@ -47,16 +47,27 @@ Welkin enables organizations across Europe to accelerate innovation through open
 
 ## What is Welkin?
 
-<a href="img/marchitecture_pyramid_welkin.svg">
-<img src="img/marchitecture_pyramid_welkin.svg" alt="Components of Welkin" />
-</a>
+Welkin is the foundation for critical software.
+Built on Kubernetes and trusted cloud native technologies, it delivers a secure, compliant, and effortless platform for running modern applications at scale.
+
+Critical systems demand absolute trust.
+Regulations like NIS2, CRA, and ISO 27001 don't just raise the bar, they redefine it.
+Welkin delivers a secure and compliant foundation for any cloud, on-premises, or air-gapped environment.
+Reliable under pressure.
+Secure by design.
+
+<img
+    class="add-dark-background"
+    src="img/welkin-application-platform.png"
+    alt="Overview of the Welkin Application Platform"
+/>
 
 ## Benefits of Welkin
 
-<dl class="columns-1" markdown="1">
+<dl class="columns" markdown="1">
   <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-user-check:
+    <dt>
+      <img src="img/icons/platform-you-would-build-yourself-icon.svg" alt="Platform you would build yourself icon" /><br>
       The platform you would build yourself
     </dt>
     <dd markdown="span">
@@ -66,10 +77,10 @@ Welkin enables organizations across Europe to accelerate innovation through open
     </dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-heart:
-      Loved❤️ by CISOs👮 and DPOs🧑‍⚖️
+  <div>
+    <dt>
+      <img src="img/icons/loved-by-ciso-and-dpo-icon.svg" alt="Loved by CISOs and DPOs Icon" /><br>
+      Loved by CISOs and DPOs
     </dt>
     <dd>
         Built around controls to achieve EU regulatory compliance with:
@@ -79,9 +90,9 @@ Welkin enables organizations across Europe to accelerate innovation through open
     </dd>
   </div>
 
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-cloud:
+  <div>
+    <dt>
+      <img src="img/icons/cloud-agnostic-icon.svg" alt="Cloud Agnostic Icon" /><br>
       Cloud agnostic, running in production in 10+ clouds
     </dt>
     <dd>
@@ -132,11 +143,10 @@ Welkin enables organizations across Europe to accelerate innovation through open
 
 ## Commercial offering
 
-<nav markdown="1">
-<dl class="columns-2" markdown="1">
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-handshake:
+<nav>
+<dl class="columns-2">
+  <div>
+    <dt>
       Welkin Enterprise
     </dt>
     <dd class="grow-me">
@@ -146,9 +156,8 @@ Welkin enables organizations across Europe to accelerate innovation through open
       <a role="button" href="https://elastisys.com/self-managed/">Go to Welkin Enterprise</a>
     </dd>
   </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-user-gear:
+  <div>
+    <dt>
       Welkin Managed
     </dt>
     <dd>
@@ -158,9 +167,8 @@ Welkin enables organizations across Europe to accelerate innovation through open
       <a role="button" href="https://elastisys.com/managed-services/">Go to Welkin Managed</a>
     </dd>
   </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-laptop-code:
+  <div>
+    <dt>
       Consulting
     </dt>
     <dd class="grow-me">
@@ -170,9 +178,8 @@ Welkin enables organizations across Europe to accelerate innovation through open
       <a role="button" href="https://elastisys.com/consulting/">Go to Consulting</a>
     </dd>
   </div>
-  <div markdown="span">
-    <dt markdown="span">
-      :fontawesome-solid-user-graduate:
+  <div>
+    <dt>
       Training
     </dt>
     <dd class="grow-me">

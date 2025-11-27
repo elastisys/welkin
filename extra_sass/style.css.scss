@@ -54,7 +54,7 @@
     }
 
     div {
-      border: 5px solid var(--elastisys-sky-blue-dark);
+      border: 1px solid var(--elastisys-midnight-dark);
       text-align: center;
       padding: 12px 24px;
       margin: 0;
@@ -73,8 +73,7 @@
     }
 
     img {
-      max-width: 256px;
-      height: 128px;
+      max-width: 48px;
     }
 
     dt {
@@ -109,10 +108,11 @@
   } /* .columns */
 
   a[role=button] {
-    background-color: var(--elastisys-northern-lights-2);
-    color: var(--elastisys-snow-light);
-    padding: 12px 24px;
-    border-radius: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, rgb(203, 255, 139) 22%, rgb(34, 164, 114) 100%);
+    color: var(--elastisys-night-blue);
+    padding: 12px 12px;
+    border-radius: 30px;
     font-size: 14px;
     display: block;
     width: fit-content;

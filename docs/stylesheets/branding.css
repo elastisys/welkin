@@ -126,7 +126,7 @@
 }
 
 [data-md-color-scheme="slate"][data-md-color-accent="elastisys-dark"] {
-  --md-typeset-a-color: var(--elastisys-northern-lights-2);
+  --md-typeset-a-color: var(--elastisys-northern-lights-1);
   --md-accent-fg-color: var(--elastisys-hover);
 }
 
@@ -136,4 +136,22 @@ div.add-white-background img {
   background: white;
   padding: 5px;
   border-radius: 5px;
+}
+
+/* Useful class for making images work with light mode */
+img.add-dark-background,
+div.add-dark-background img {
+  background: var(--elastisys-night-blue);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.md-header.md-header {
+  color: var(--elastisys-night-blue);
+  background: linear-gradient(
+    to right,
+    var(--elastisys-northern-lights-1),
+    var(--elastisys-northern-lights-2),
+    var(--elastisys-sky-blue-dark)
+  );
 }

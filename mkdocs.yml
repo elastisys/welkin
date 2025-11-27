@@ -1,5 +1,5 @@
 ---
-site_name: Elastisys Welkin®
+site_name: User Docs
 site_url: https://elastisys.io/
 site_description: >
   Documentation for Welkin,
@@ -42,11 +42,18 @@ strict: true
 theme:
   name: material
   font: false
-  logo: "img/favicon.svg"
+  logo: "img/welkin-by-elastisys-logo_green-midnight.svg"
   # "The Internet" recommends using absolute URLs for favicons.
   favicon: "https://elastisys.io/welkin/img/favicon.ico"
   custom_dir: overrides
   palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: elastisys-dark
+      accent: elastisys-dark
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
@@ -56,13 +63,6 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: elastisys-dark
-      accent: elastisys-dark
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
   features:
     - content.code.annotate
     - content.code.copy
