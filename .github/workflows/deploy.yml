@@ -63,6 +63,54 @@ jobs:
 
           set +x
 
+      - id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_PRIV_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            compliantkubernetes-apps
+
+      - name: Fetch run id from apps
+        id: fetch-run-id
+        continue-on-error: true
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const { data: result } = await github.rest.actions.listWorkflowRuns({
+              owner: ${{ github.repository_owner }},
+              repo: 'compliantkubernetes-apps',
+              workflow_id: 'tests.yml',
+              branch: 'main',
+              event: 'push',
+              status: 'success'
+            });
+
+            if (result.total_count <= 0) {
+              console.error("No action runs found")
+              return 1
+            }
+
+            return result.workflow_runs[0].id
+
+      - name: Download network policy artifact
+        id: download-artifact
+        continue-on-error: true
+        if: steps.fetch-run-id.outcome == 'success'
+        uses: actions/download-artifact@v5
+        with:
+          name: network-policy-values
+          github-token: ${{ steps.app-token.outputs.token }}
+          repository: ${{ github.repository_owner }}/compliantkubernetes-apps
+          run-id: ${{ steps.fetch-run-id.outputs.result }}
+          path: ./scripts/templates/
+
+      - name: Template network policy docs
+        if: steps.fetch-run-id.outcome == 'success' && steps.download-artifact.outcome == 'success'
+        run: ./scripts/render-gomplate.sh
+
       - name: Auto-generate documentation
         run: ./scripts/jsonschema2md.py
 

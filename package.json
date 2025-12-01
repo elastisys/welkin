@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@adobe/jsonschema2md": "^8.0.2"
+    "@adobe/jsonschema2md": "^8.0.2",
+    "gomplate": "^4.1.0"
   }
 }
