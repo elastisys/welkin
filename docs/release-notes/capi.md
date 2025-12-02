@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.7.3](#v073) - 2025-12-02
 - [v0.7.2](#v072) - 2025-09-15
 - [v0.7.1](#v071) - 2025-08-05
 - [v0.7.0](#v070) - 2025-06-23
@@ -17,6 +18,19 @@
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.7.3
+
+Released 2025-12-02
+
+### Improvement(s)
+
+- Import GPU containerd configuration if it exists
+
+### Other(s)
+
+- Enable FelixConfiguration by default
+- Add auto-mount for Node local volumes
 
 ## v0.7.2
 
