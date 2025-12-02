@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v3.1.7-ck8s1](#v317-ck8s1) - 2025-12-02
 - [v2.14.3-ck8s1](#v2143-ck8s1) - 2025-03-05
 - [v2.12.0-ck8s1](#v2120-ck8s1) - 2024-09-02
 - [v2.9.9-ck8s1](#v299-ck8s1) - 2024-03-20
@@ -17,6 +18,19 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v3.1.7-ck8s1
+
+Released 2025-12-02
+
+## Feature(s)
+
+- Add support for kustomize build options
+
+### Improvement(s)
+
+- Upgraded ArgoCD to v3.1.7
+- Add templating and default CSP for ArgoCD server
 
 ## v2.14.3-ck8s1
 
