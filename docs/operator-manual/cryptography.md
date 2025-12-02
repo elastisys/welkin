@@ -29,7 +29,7 @@ The key cryptographic parameters are listed below.
 | Function             | Algorithm                                                                                                                     |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Block Ciphers        | AES<br/>Camellia<br/>Serpent                                                                                                  |
-| Hash Functions       | SHA-2 (256, 384, 512, 512/256)<br />SHA-3 (256, 384, 512, SHAKE128, SHAKE256)<br />Whirlpool (512)<br />BLAKE (256, 584, 512) |
+| Hash Functions       | SHA-2 (256, 384, 512, 512/256)<br />SHA-3 (256, 384, 512, SHAKE128, SHAKE256)<br />Whirlpool (512)<br />BLAKE (256, 384, 512) |
 | Public Key Primitive | RSA (>3072) <br/> DSA (>256/3072) <br/> ECDSA (>256)                                                                          |
 
 ## Recommended Implementation
