@@ -23,7 +23,7 @@
 
 Released 2025-12-02
 
-## Feature(s)
+### Feature(s)
 
 - Add support for kustomize build options
 
