@@ -30,7 +30,7 @@ Released 2025-12-02
 ### Improvement(s)
 
 - Upgraded ArgoCD to v3.1.7
-- Add templating and default CSP for ArgoCD server
+- Added templating and default values for ContentSecurityPolicy in ArgoCD server
 
 ## v2.14.3-ck8s1
 
