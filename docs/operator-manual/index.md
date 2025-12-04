@@ -62,7 +62,7 @@ We recommend you to proceed in 4 steps as shown below:
       Practice [maintenance](maintenance.md), [capacity management](capacity-management.md) and [troubleshooting](troubleshooting.md).
     </dd>
     <dd>
-      <a role="button" href="https://elastisys.com/free-guide-how-to-operate-a-secure-kubernetes-platform/">Learn how to operate a Kubernetes platform</a>
+      <a role="button" href="https://elastisys.com/blog/free-guide-how-to-operate-a-secure-kubernetes-platform/">Learn how to operate a Kubernetes platform</a>
     </dd>
   </div>
 </dl>

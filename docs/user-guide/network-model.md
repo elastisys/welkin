@@ -43,7 +43,7 @@ The diagram above present a useful model when reasoning about networking in Welk
 
 Your application Pods, as well as Pods of [additional services](additional-services/index.md), can communicate on a secure private network, via [RFC1918](https://datatracker.ietf.org/doc/html/rfc1918) private IP addresses. It is analogous to a [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) in VM-based workloads.
 
-In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an [infrastructure audit](../operator-manual/provider-audit.md) or deploying [Pod-to-Pod encryption](https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/).
+In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an [infrastructure audit](../operator-manual/provider-audit.md) or deploying [Pod-to-Pod encryption](https://elastisys.com/blog/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/).
 
 You should use NetworkPolicies to segregate your Pods. This improves your security posture by reducing the blast radius in case parts of your application are under attack.
 
