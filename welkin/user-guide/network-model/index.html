@@ -4926,7 +4926,7 @@ See <a href="#further-reading">Further reading</a> for resources giving more des
 <p>The diagram above present a useful model when reasoning about networking in Welkin.</p>
 <h2 id="private-network">Private Network<a class="headerlink" href="#private-network" title="Permanent link">&para;</a></h2>
 <p>Your application Pods, as well as Pods of <a href="../additional-services/">additional services</a>, can communicate on a secure private network, via <a href="https://datatracker.ietf.org/doc/html/rfc1918">RFC1918</a> private IP addresses. It is analogous to a <a href="https://en.wikipedia.org/wiki/Virtual_private_cloud">VPC</a> in VM-based workloads.</p>
-<p>In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an <a href="../../operator-manual/provider-audit/">infrastructure audit</a> or deploying <a href="https://elastisys.com/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/">Pod-to-Pod encryption</a>.</p>
+<p>In Welkin, it is the responsibility of the administrator to ensure the in-Cluster private network is secure and trusted, either by performing an <a href="../../operator-manual/provider-audit/">infrastructure audit</a> or deploying <a href="https://elastisys.com/blog/redundancy-across-data-centers-with-kubernetes-wireguard-and-rook/">Pod-to-Pod encryption</a>.</p>
 <p>You should use NetworkPolicies to segregate your Pods. This improves your security posture by reducing the blast radius in case parts of your application are under attack.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
