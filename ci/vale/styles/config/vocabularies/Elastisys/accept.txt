@@ -106,6 +106,7 @@ failover
 firewalled
 Gbps
 geospatial
+gomplate
 hostname
 ICT
 loopback

@@ -124,7 +124,7 @@ make -C docs/img preview
 
 The viewer's output should be updated live as you save the source `dot` file.
 
-## Auto-generated documentation
+## Auto-generated schema documentation
 
 Welkin Apps configuration and secrets have auto-generated documentation from [the JSON schemas defined in it repository](https://github.com/elastisys/compliantkubernetes-apps/tree/main/config/schemas).
 
@@ -141,6 +141,27 @@ To auto-generate and preview locally run from the root of this repository:
 ```bash
 npm install
 ./script/jsonschema2md.sh
+```
+
+> [!important]
+>
+> Do not commit the generated files into the repository!
+
+## Auto-generated Network Policy documentation
+
+Welkin Apps Network Policy have auto-generated documentation based on [the Network Policy values defined in the repository](https://github.com/elastisys/compliantkubernetes-apps/blob/main/helmfile.d/values/networkpolicies).
+
+This is driven using go templating and [gomplate](https://github.com/hairyhenderson/gomplate).
+The template file is available [here](scripts/templates/microsegmentation.md.tmpl).
+
+This documentation is only generated in the GitHub Actions deploy workflow, as it generates considerable amount of files.
+
+To auto-generate and preview locally, first download an artifact from the most recent [successful job here](https://github.com/elastisys/compliantkubernetes-apps/actions/workflows/tests.yml?query=branch%3Amain). Unzip into the `scripts/templates/` directory and run:
+
+```bash
+npm install
+
+./scripts/render-gomplate.sh
 ```
 
 > [!important]
