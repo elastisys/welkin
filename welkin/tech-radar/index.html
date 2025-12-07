@@ -2,10 +2,17 @@
 
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  connect-src 'self' https://matomo.elastisys.com/;
+  script-src 'self' 'unsafe-inline' https://matomo.elastisys.com/;
+">
 <title>Welkin Tech Radar</title>
 <link rel="shortcut icon" href="/welkin/img/favicon.ico">
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="d3.v7.min.js"></script>
 <script src="radar.js"></script>
 
 <link rel="stylesheet" href="radar.css">
@@ -88,7 +95,7 @@ radar_visualization({
     /*
      * BEGIN CNCF Projects
      */
-    { quadrant: 1, ring: 3, label: "Argo CD" },
+    { quadrant: 1, ring: 0, label: "Argo CD" },
     { quadrant: 1, ring: 3, label: "Calico" },
     { quadrant: 1, ring: 0, label: "Cert-manager" },
     { quadrant: 1, ring: 0, label: "Cilium" },
@@ -163,14 +170,16 @@ Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of Tho
 </td></tr>
 </table>
 
+<!-- Matomo Tag Manager -->
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-68368435-4', 'auto');
-  ga('send', 'pageview');
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://matomo.elastisys.com/js/container_HyieGcLB.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
+<!-- End Matomo Tag Manager -->
 
 </body>
 </html>
