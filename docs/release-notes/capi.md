@@ -4,6 +4,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.8.0](#v080) - 2025-12-08
 - [v0.7.3](#v073) - 2025-12-02
 - [v0.7.2](#v072) - 2025-09-15
 - [v0.7.1](#v071) - 2025-08-05
@@ -18,6 +19,32 @@
 - [v0.2.0](#v020) - 2024-06-28
 - [v0.1.0](#v010) - 2024-01-24
 <!-- END TOC -->
+
+## v0.8.0
+
+Released 2025-12-08
+
+### Feature(s)
+
+- Add Cilium support
+- Add support for Safespring as infrastructure provider
+- Add support for kube-vip as service load balancer
+- Add resources to generate SBOMs in future releases
+- Enable Node group metrics in Cluster Autoscaler
+
+### Improvement(s)
+
+- Allow customisation to Azure disk type and size
+- Add server group configuration
+- Import containerd configuration for GPU supports
+- Update audit policy for Valkey
+
+### Other(s)
+
+- other - Upgrade Kubernetes to v1.33.6
+- other - Upgrade Calico to v3.30.2
+- other - Upgrade Azure components for v1.33
+- other - Upgrade OpenStack components for v1.33
 
 ## v0.7.3
 
