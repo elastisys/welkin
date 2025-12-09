@@ -37,18 +37,54 @@ cd compliantkubernetes-apps
 ./bin/ck8s install-requirements
 ```
 
+## Secrets Encryption (SOPS & GPG)
+
+Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets. 
+
+### 1. Install SOPS
+
+You must have the `sops` binary installed and available in your path.
+
+**Linux:**
+
+```bash
+# Download the binary (adjust version v3.9.4 if needed)
+curl -LO curl -LO https://github.com/getsops/sops/releases/download/v3.9.4/sops-v3.9.4.linux.amd64
+
+# Install it to your local bin directory
+sudo install sops-v3.9.1.linux.amd64 /usr/local/bin/sops
+
+# Verify it works
+sops --version
+```
+
+### 2. Generate a GPG Key
+
+If you do not already have a GPG key, generate one now.
+
+1. Run the generation command:
+   ```bash
+   gpg --full-generate-key
+   ```
+2. When prompted:
+   - Select **RSA and RSA** (default).
+   - Choose a key size of **4096** bits.
+   - Set the expiration as preferred.
+   - Enter your Name and Email.
+
+### 3. Verify GPG Setup
+
+To ensure SOPS can use your GPG key, locate your GPG Fingerprint:
+
+```bash
+gpg --list-secret-keys --keyid-format LONG
+```
+Note: Need this fingerprint later to set Welkin environment variable.
+
 ## Misc
 
 Welkin relies on SSH for accessing Nodes. If you haven't already done so, generate an SSH key as follows:
 
 ```bash
 ssh-keygen
-```
-
-Configuration secrets in Welkin are encrypted using [SOPS](https://github.com/getsops/sops).
-We currently only support using PGP when encrypting secrets.
-If you haven't already done so, generate your own PGP key as follows:
-
-```bash
-gpg --full-generate-key
 ```
