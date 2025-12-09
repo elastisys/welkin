@@ -39,7 +39,7 @@ cd compliantkubernetes-apps
 
 ## Secrets Encryption (SOPS & GPG)
 
-Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets.
+Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets. We currently only support using PGP when encrypting secrets.
 
 ### 1. Generate a GPG Key
 
