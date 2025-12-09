@@ -39,26 +39,9 @@ cd compliantkubernetes-apps
 
 ## Secrets Encryption (SOPS & GPG)
 
-Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets.s
+Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets.
 
-### 1. Install SOPS
-
-You must have the `sops` binary installed and available in your path.
-
-**Linux:**
-
-```bash
-# Download the binary (adjust version v3.9.4 if needed)
-curl -LO curl -LO https://github.com/getsops/sops/releases/download/v3.9.4/sops-v3.9.4.linux.amd64
-
-# Install it to your local bin directory
-sudo install sops-v3.9.1.linux.amd64 /usr/local/bin/sops
-
-# Verify it works
-sops --version
-```
-
-### 2. Generate a GPG Key
+### 1. Generate a GPG Key
 
 If you do not already have a GPG key, generate one now.
 
@@ -74,7 +57,7 @@ If you do not already have a GPG key, generate one now.
    - Set the expiration as preferred.
    - Enter your Name and Email.
 
-### 3. Verify GPG Setup
+### 2. Verify GPG Setup
 
 To ensure SOPS can use your GPG key, locate your GPG Fingerprint:
 
