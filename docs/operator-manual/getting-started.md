@@ -39,7 +39,7 @@ cd compliantkubernetes-apps
 
 ## Secrets Encryption (SOPS & GPG)
 
-Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets. 
+Welkin uses [SOPS](https://github.com/getsops/sops) encrypt configuration secrets.s
 
 ### 1. Install SOPS
 
@@ -63,10 +63,12 @@ sops --version
 If you do not already have a GPG key, generate one now.
 
 1. Run the generation command:
+
    ```bash
    gpg --full-generate-key
    ```
-2. When prompted:
+
+1. When prompted:
    - Select **RSA and RSA** (default).
    - Choose a key size of **4096** bits.
    - Set the expiration as preferred.
@@ -79,7 +81,8 @@ To ensure SOPS can use your GPG key, locate your GPG Fingerprint:
 ```bash
 gpg --list-secret-keys --keyid-format LONG
 ```
-Note: Need this fingerprint later to set Welkin environment variable.
+
+Note: You will need this fingerprint later to set the CK8S_PGP_FP environment variable to configure your Cluster secrets.
 
 ## Misc
 
