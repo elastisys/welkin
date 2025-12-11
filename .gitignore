@@ -8,3 +8,7 @@ site/
 .cache
 
 node_modules
+
+# Network policy templating
+scripts/templates/.tmp
+scripts/templates/known-cidrs.yaml

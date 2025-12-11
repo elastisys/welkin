@@ -1,0 +1,117 @@
+{{- $data := dict -}}
+
+{{- range $cluster := datasource "state" -}}
+  {{- $mergedPolicies := dict -}}
+  {{- $mergedRules := dict -}}
+  {{- range $filename := datasource "state" $cluster -}}
+    {{- $state := datasource "state" (printf "%s/%s" $cluster $filename) -}}
+
+    {{- $mergedPolicies = coll.Merge $state.policies $mergedPolicies -}}
+    {{- $mergedRules = coll.Merge $state.rules $mergedRules -}}
+  {{- end -}}
+
+  {{- $data := coll.Set $cluster (dict "policies" $mergedPolicies "rules" $mergedRules) $data -}}
+{{- end -}}
+
+{{- $known_cidrs := dict -}}
+{{- $known_cidrs = (datasource "known_cidrs").known_cidrs -}}
+
+{{- define "table" -}}
+  {{- $keywords := dict -}}
+  {{- if eq .type "ingress" -}}
+    {{- $keywords = dict "direction" "incoming" "peer_header" "From" "port_header" "To" "any_peer" "Any source" -}}
+  {{- else if eq .type "egress" -}}
+    {{- $keywords = dict "direction" "outgoing" "peer_header" "To" "port_header" "On" "any_peer" "Any destination" -}}
+  {{- end -}}
+
+##### {{ .type | strings.Title }} Rules ({{ $keywords.direction | strings.Title }} Traffic)
+  {{- if and (has .policy .type) (gt (len (index .policy .type)) 0) }}
+  | Rule | Description | {{ $keywords.peer_header }} (Peers) | {{ $keywords.port_header }} (Ports) |
+  |---|---|---|---|
+  {{- range $i, $rule := index .policy .type }}
+  | **{{- add $i 1 -}}** |
+  {{- if has $rule "name" }} **{{ $rule.name }}**<br>{{ end -}}
+  {{- $finalRule := $rule -}}
+  {{- if has $rule "rule" -}}
+  _Reference to: `{{ $rule.rule }}`_ {{- $finalRule = index $.rules $rule.rule -}}
+  {{- else -}}
+  _Inline Rule_
+  {{- end -}} | {{- /* Peers Column */ -}}
+  {{- if has $finalRule "peers" -}}
+    {{- range $j, $peer := $finalRule.peers -}}
+      {{- if has $peer "cidr" -}}
+        {{- if has $.known_cidrs $peer.cidr -}}
+          {{- index $.known_cidrs $peer.cidr -}}
+        {{- else -}}
+          Configurable IP Block<br/>
+        {{- end -}}
+      {{- else if has $peer "podSelectorLabels" -}}
+        Pods with labels:<br>
+        {{- range $k, $v := $peer.podSelectorLabels -}}`{{ $k }}={{ $v }}`<br>{{- end -}}
+        {{- if has $peer "namespaceSelectorLabels" -}}
+          in namespace:<br>`
+          {{- range $k, $v := $peer.namespaceSelectorLabels -}}{{ $v }}{{- end -}}`
+
+          {{- if ne $j (math.Sub ($finalRule.peers | len) 1) -}}<br>{{- end -}}
+        {{- end -}}<br>
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+  _{{- $keywords.any_peer -}}_
+  {{- end -}} | {{- /* Ports Column */ -}}
+    {{- $ports := "" -}}
+  {{- if has $rule "ports" -}}
+    {{- $ports = $rule.ports -}}
+  {{- else if has $finalRule "ports" -}}
+    {{- $ports = $finalRule.ports -}}
+  {{- end -}}
+  {{- if $ports -}}
+    {{- range $port := $ports -}}
+      {{- range $proto, $num := $port }}`{{ strings.ToUpper $proto }}/{{ $num }}`<br>{{- end -}}
+    {{- end -}}
+  {{- else -}}
+  _All ports_
+  {{- end -}} |
+  {{- end }}
+  {{- else if has .policy .type }}
+  - **DENY ALL** {{ $keywords.direction }} traffic.
+  {{- else }}
+  - **ALLOW ALL** {{ $keywords.direction }} traffic.
+  {{- end -}}
+{{- end -}}
+
+{{- define "cluster_policies" }}
+## {{ .cluster }} Network Policies
+{{- range $namespace, $policies := .data.policies }}
+### Namespace: `{{ $namespace }}`
+{{- range $policyName, $policy := $policies }}
+#### Policy: `{{ $policyName }}`
+
+**Pod Selector:**
+{{- if and (has $policy "podSelectorLabels") (ne (len $policy.podSelectorLabels) 0) }}
+This policy applies to pods with the following labels:
+```yaml
+{{- range $label, $value := $policy.podSelectorLabels }}
+{{ $label }}: {{ $value }}
+{{- end }}
+```
+{{- else }}
+This policy applies to **all pods** in the namespace.
+{{- end }}
+
+---
+
+{{ template "table" (dict "policy" $policy "rules" $.data.rules "type" "ingress" "known_cidrs" $.known_cidrs) }}
+
+---
+
+{{ template "table" (dict "policy" $policy "rules" $.data.rules "type" "egress" "known_cidrs" $.known_cidrs) }}
+
+---
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- template "cluster_policies" (dict "cluster" "Management Cluster" "data" $data.sc "known_cidrs" $known_cidrs) }}
+
+{{- template "cluster_policies" (dict "cluster" "Workload Cluster" "data" $data.wc "known_cidrs" $known_cidrs) }}
