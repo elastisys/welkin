@@ -75,6 +75,7 @@ Thanos
 timesyncd
 Tekton
 Trivy
+typha
 Valkey
 Velero
 pwgen
