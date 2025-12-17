@@ -12,7 +12,6 @@
 /.pre-commit-config.yaml            @elastisys/goto-public-docs @elastisys/qa
 /.vale.ini                          @elastisys/goto-public-docs @elastisys/qa
 /linkchecker.conf                   @elastisys/goto-public-docs @elastisys/qa
-/package.json                       @elastisys/goto-public-docs @elastisys/qa
 /requirements-linkchecker.txt       @elastisys/goto-public-docs @elastisys/qa
 /docs/quality-criteria.md           @elastisys/goto-public-docs @elastisys/qa
 /docs/release-notes/                @elastisys/goto-public-docs @elastisys/qa
