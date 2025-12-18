@@ -5,6 +5,7 @@
 <!-- BEGIN TOC -->
 
 - [v0.8.0](#v080) - 2025-12-08
+- [v0.7.4](#v074) - 2025-12-17
 - [v0.7.3](#v073) - 2025-12-02
 - [v0.7.2](#v072) - 2025-09-15
 - [v0.7.1](#v071) - 2025-08-05
@@ -45,6 +46,15 @@ Released 2025-12-08
 - other - Upgrade Calico to v3.30.2
 - other - Upgrade Azure components for v1.33
 - other - Upgrade OpenStack components for v1.33
+
+## v0.7.4
+
+Released 2025-12-17
+
+### Improvements
+
+- Upgrade tigera-operator to v3.30.2
+- Block access to cloud metadata instance server for Calico
 
 ## v0.7.3
 
