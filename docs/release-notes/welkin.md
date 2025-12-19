@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.49.2](#v0492) - 2025-12-17
 - [v0.49.1](#v0491) - 2025-11-24
 - [v0.49.0](#v0490) - 2025-10-07
 - [v0.48.0](#v0480) - 2025-08-05
@@ -83,6 +84,18 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.49.2
+
+Released 2025-12-17
+
+### Improvement(s)
+
+- Upgraded Rclone to v1.72.0 to improve its memory footprint.
+
+### Other(s)
+
+- Falco's driver will be automatically migrated _from_ `kmod` OR `modern-bfp` _to_ `modern_ebpf`.
 
 ## v0.49.1
 
