@@ -6,6 +6,7 @@
 
 <!-- BEGIN TOC -->
 
+- [v0.50.1](#v0501) - 2025-12-17
 - [v0.50.0](#v0500) - 2025-11-14
 - [v0.49.1](#v0491) - 2025-11-24
 - [v0.49.0](#v0490) - 2025-10-07
@@ -89,6 +90,21 @@
     Please make sure to put new release notes above this line.
 -->
 <!-- vale off -->
+
+## v0.50.1
+
+Released 2025-12-17
+
+### Improvement(s)
+
+- Bump rclone to v1.72.0
+- Remove denial logging from node-local-dns, due to spamming
+- OpenSearch top_queries index improvements
+
+### Other(s)
+
+- Fix velero snapshots
+- Copy falco driver migration to v0.50
 
 ## v0.50.0
 
