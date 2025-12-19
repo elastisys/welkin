@@ -97,14 +97,11 @@ Released 2025-12-17
 
 ### Improvement(s)
 
-- Bump rclone to v1.72.0
-- Remove denial logging from Node-local-dns, due to spamming
-- OpenSearch top_queries index improvements
+- Upgraded Rclone to v1.72.0 to improve its memory footprint.
 
 ### Other(s)
 
-- Fix velero snapshots
-- Copy Falco driver migration to v0.50
+- Falco's driver will be automatically migrated _from_ `kmod` OR `modern-bfp` _to_ `modern_ebpf`.
 
 ## v0.50.0
 
