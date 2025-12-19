@@ -1,5 +1,10 @@
 [
   {
+    "version": "welkin-v0.50",
+    "title": "v0.50",
+    "aliases": []
+  },
+  {
     "version": "welkin-v0.49",
     "title": "v0.49",
     "aliases": []
@@ -34,8 +39,8 @@
     "version": "welkin",
     "title": "main",
     "aliases": [
-      "ck8s",
-      "compliantkubernetes"
+      "compliantkubernetes",
+      "ck8s"
     ]
   }
 ]

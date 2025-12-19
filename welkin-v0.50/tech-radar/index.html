@@ -1,0 +1,185 @@
+<html>
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  connect-src 'self' https://matomo.elastisys.com/;
+  script-src 'self' 'unsafe-inline' https://matomo.elastisys.com/;
+">
+<title>Welkin Tech Radar</title>
+<link rel="shortcut icon" href="/welkin/img/favicon.ico">
+
+<script src="d3.v7.min.js"></script>
+<script src="radar.js"></script>
+
+<link rel="stylesheet" href="radar.css">
+</head>
+
+<body>
+
+<svg id="radar"></svg>
+
+<script>
+radar_visualization({
+  svg_id: "radar",
+  width: 1450,
+  height: 1000,
+  colors: {
+    background: "#fff",
+    grid: "#bbb",
+    inactive: "#ddd"
+  },
+  title: "Welkin Tech Radar — 2025-11-25",
+  quadrants: [
+    { name: "Languages", },
+    { name: "CNCF Projects" },
+    { name: "Techniques" },
+    { name: "Tools (non-CNCF)" },
+  ],
+  rings: [
+    { name: "ADOPT", color: "#5ba300" },
+    { name: "TRIAL", color: "#009eb0" },
+    { name: "ASSESS", color: "#c7ba00" },
+    { name: "HOLD", color: "#e09b96" }
+  ],
+  print_layout: true,
+  // zoomed_quadrant: 0,
+  //ENTRIES
+  entries: [
+    /*
+     * BEGIN Techniques
+     */
+    { quadrant: 2, ring: 0, label: "Configuration Management" },
+    { quadrant: 2, ring: 0, label: "GitOps" },
+    { quadrant: 2, ring: 0, label: "Infrastructure as Code" },
+    { quadrant: 2, ring: 0, label: "PaaS" },
+    { quadrant: 2, ring: 0, label: "Policy as Code" },
+    /*
+     * END Techniques
+     */
+
+    /*
+     * BEGIN Languages
+     */
+    { quadrant: 0, ring: 0, label: "Bash" },
+    { quadrant: 0, ring: 0, label: "Go" },
+    { quadrant: 0, ring: 0, label: "Javascript" },
+    { quadrant: 0, ring: 3, label: "jsonnet" },
+    { quadrant: 0, ring: 0, label: "Python" },
+    /*
+     * END Languages
+     */
+
+    /*
+     * BEGIN Tools (non-CNCF)
+     */
+    { quadrant: 3, ring: 0, label: "Ansible" },
+    { quadrant: 3, ring: 0, label: "bats" },
+    { quadrant: 3, ring: 0, label: "Grafana" },
+    { quadrant: 3, ring: 0, label: "jq" },
+    { quadrant: 3, ring: 0, label: "PostgreSQL" },
+    { quadrant: 3, ring: 0, label: "RabbitMQ" },
+    { quadrant: 3, ring: 0, label: "Rclone" },
+    { quadrant: 3, ring: 3, label: "Redis" },
+    { quadrant: 3, ring: 3, label: "Terraform" },
+    { quadrant: 3, ring: 0, label: "Timescale DB" },
+    { quadrant: 3, ring: 0, label: "Trivy" },
+    { quadrant: 3, ring: 0, label: "yq" },
+    /*
+     * END Tools
+     */
+
+    /*
+     * BEGIN CNCF Projects
+     */
+    { quadrant: 1, ring: 0, label: "Argo CD" },
+    { quadrant: 1, ring: 3, label: "Calico" },
+    { quadrant: 1, ring: 0, label: "Cert-manager" },
+    { quadrant: 1, ring: 0, label: "Cilium" },
+    { quadrant: 1, ring: 2, label: "CloudNativePG" },
+    { quadrant: 1, ring: 0, label: "Cluster API" },
+    { quadrant: 1, ring: 0, label: "Containerd" },
+    { quadrant: 1, ring: 0, label: "Crossplane" },
+    { quadrant: 1, ring: 0, label: "Dex" },
+    { quadrant: 1, ring: 0, label: "Falco"  },
+    { quadrant: 1, ring: 2, label: "Fluentbit" },
+    { quadrant: 1, ring: 0, label: "Fluentd" },
+    { quadrant: 1, ring: 0, label: "Harbor" },
+    { quadrant: 1, ring: 0, label: "Helm" },
+    { quadrant: 1, ring: 3, label: "Ingress NGINX Controller" },
+    { quadrant: 1, ring: 3, label: "Istio" },
+    { quadrant: 1, ring: 3, label: "Jaeger" },
+    { quadrant: 1, ring: 2, label: "Knative" },
+    { quadrant: 1, ring: 2, label: "KubeFlow" },
+    { quadrant: 1, ring: 0, label: "Kubernetes" },
+    { quadrant: 1, ring: 0, label: "Kubespray" },
+    { quadrant: 1, ring: 0, label: "Kured" },
+    { quadrant: 1, ring: 0, label: "Kyverno" },
+    { quadrant: 1, ring: 0, label: "OPA/Gatekeeper" },
+    { quadrant: 1, ring: 0, label: "OpenSearch" },
+    { quadrant: 1, ring: 0, label: "OpenTofu" },
+    { quadrant: 1, ring: 0, label: "Prometheus" },
+    { quadrant: 1, ring: 1, label: "Rook/Ceph" },
+    { quadrant: 1, ring: 2, label: "Telepresence" },
+    { quadrant: 1, ring: 0, label: "Tekton" },
+    { quadrant: 1, ring: 0, label: "Thanos" },
+    { quadrant: 1, ring: 0, label: "Valkey" },
+    { quadrant: 1, ring: 0, label: "Velero" },
+]
+//ENTRIES
+});
+</script>
+
+<table>
+<tr>
+<td>
+
+<h3>What is the Tech Radar?</h3>
+
+<p>
+The Welkin Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
+</p>
+
+<ul>
+<li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in Welkin production environments, low risk and recommended to be widely used.</li>
+<li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
+<li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
+<li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
+</ul>
+
+</td><td>
+
+<h3>What is the purpose?</h3>
+
+<p>
+The Tech Radar is a tool to inspire and support engineering teams working with Welkin to pick the best technologies; it provides a platform to share knowledge and experience in technologies, to reflect on technology decisions and continuously evolve our technology landscape.
+</p>
+
+<h3>Thanks</h3>
+
+<p>
+Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of ThoughtWorks</a>, our Tech Radar sets out the changes in technologies that are interesting in software development &mdash; changes that we think our engineering teams should pay attention to and consider using in their projects.
+</p>
+
+<p>This repo is forked from <a href="https://github.com/zalando/tech-radar">Zalando's tech radar</a>. Special thanks for making the visualization generation code open sourced the code.
+</p>
+
+</td></tr>
+</table>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://matomo.elastisys.com/js/container_HyieGcLB.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager -->
+
+</body>
+</html>
