@@ -98,13 +98,13 @@ Released 2025-12-17
 ### Improvement(s)
 
 - Bump rclone to v1.72.0
-- Remove denial logging from node-local-dns, due to spamming
+- Remove denial logging from Node-local-dns, due to spamming
 - OpenSearch top_queries index improvements
 
 ### Other(s)
 
 - Fix velero snapshots
-- Copy falco driver migration to v0.50
+- Copy Falco driver migration to v0.50
 
 ## v0.50.0
 
