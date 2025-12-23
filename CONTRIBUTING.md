@@ -128,8 +128,6 @@ The viewer's output should be updated live as you save the source `dot` file.
 
 Welkin Apps configuration and secrets have auto-generated documentation from [the JSON schemas defined in it repository](https://github.com/elastisys/compliantkubernetes-apps/tree/main/config/schemas).
 
-This is driven via a script using [adobe/jsonschema2md](https://github.com/adobe/jsonschema2md).
-
 This documentation is only generated in the GitHub Actions deploy workflow, as it generates considerable amount of files.
 
 To auto-generate and preview locally run from the root of this repository:
@@ -139,8 +137,7 @@ To auto-generate and preview locally run from the root of this repository:
 > It can target a local path or a different repository or revision, see the arguments using `--help`.
 
 ```bash
-npm install
-./script/jsonschema2md.sh
+./scripts/jsonschema2md.py
 ```
 
 > [!important]

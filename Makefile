@@ -21,7 +21,6 @@ help:
 default: help
 
 verify-prerequisites: ## Verify that needed prerequisites are installed
-	npm --version
 	python3 --version
 	@echo
 	@echo "All prerequisites seem to be installed."
